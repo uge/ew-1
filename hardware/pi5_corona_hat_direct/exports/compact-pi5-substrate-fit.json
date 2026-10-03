@@ -1,0 +1,29 @@
+{
+  "pi_solids": 2689,
+  "bbox_candidates": [],
+  "substrate_collisions": [],
+  "carrier_dimensions_mm": [
+    281,
+    150,
+    1.6
+  ],
+  "pi_native_rotation_deg": [
+    180,
+    0,
+    90
+  ],
+  "pi_assembly_translation_mm": [
+    3,
+    -115,
+    14.906
+  ],
+  "carrier_usb_relief_mm": null,
+  "pi_gpio_overlap_only_assumption": true,
+  "excludes": [
+    "Cooler",
+    "Enclosure",
+    "Cables",
+    "Complete carrier component collision test",
+    "Connector mating tolerance validation"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "revision": "F-layout-2",
+  "board_only_dnp": [
+    "MP1"
+  ],
+  "gpio_xy_alignment_error_mm": 1.4210854715202004e-14,
+  "J2_layer": "F.Cu",
+  "MP1_model_rotation_deg": [
+    180,
+    0,
+    0
+  ],
+  "MP1_model_offset_mm": [
+    0,
+    0,
+    13.306
+  ],
+  "Pi_standoff_assumption_mm": 12,
+  "aligned_pi_mounting_holes": [
+    "H1",
+    "H2"
+  ],
+  "outboard_pi_support_required": true,
+  "pi_substrate_collisions": 0,
+  "substrate_fit_report": "compact-pi5-substrate-fit.json",
+  "usb_relief_notch_mm": [
+    24,
+    10
+  ]
+}

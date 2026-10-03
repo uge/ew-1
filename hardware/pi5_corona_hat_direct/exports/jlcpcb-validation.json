@@ -1,0 +1,38 @@
+{
+  "revision": "F",
+  "kicad_version": "10.0.6",
+  "parts": 152,
+  "catalog_assigned": 149,
+  "unassigned": [
+    "TP50",
+    "T1",
+    "J60"
+  ],
+  "unique_annotation": true,
+  "netlist_annotation_warning": false,
+  "erc_violations": 0,
+  "pin_net_groups_preserved_after_mosfet_pad_mapping": true,
+  "dnp_refs": [
+    "C63",
+    "R64"
+  ],
+  "pin_pad_mismatches": [
+
+  ],
+  "jlcpcb_bom_part_quantity": 146,
+  "jlcpcb_bom_rows": 58,
+  "catalog_checked": "2026-10-02 / 2026-10-03",
+  "stock_not_reserved": true,
+  "production_release": false,
+  "grounded_pd_exposed_pad": true,
+  "konnect_symbol_overlaps": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "manual_visual_review": "Six sheets; catalog fields hidden. Q1 fields moved clear of symbol and rail text.",
+  "native_footprint_exports_parse": true
+}

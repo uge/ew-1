@@ -1,0 +1,6 @@
+Adding snap-specific PYTHONPATH to sys.path: /home/uge/snap/freecad/common/.local/lib/python3.12/site-packages:/snap/freecad/2741/lib/python3.12/site-packages:/snap/freecad/2741/usr/lib/python3/dist-packages
+{"pi_solids": 2689, "bbox_candidates": [{"solid": 1340, "native_bounds": [70.329999164495, 87.77999916462001, 39.749680555874995, 54.249680556301996, -0.16597917321599986, 17.36100077151], "posed_bounds": [120.329999164495, 137.77999916462, 42.749680555874995, 57.249680556301996, -2.455000771509999, 15.071979173216]}], "substrate_collisions": [], "carrier_dimensions_mm": [296, 155, 1.6], "pi_native_rotation_deg": [180, 0, 0], "pi_assembly_translation_mm": [50, -3, 14.906], "carrier_usb_relief_mm": {"x": [117, 141], "y": [50, 60]}, "pi_gpio_overlap_only_assumption": true, "excludes": ["Cooler", "Enclosure", "Cables", "Complete carrier component collision test", "Connector mating tolerance validation"]}
+FreeCAD 1.1.1, Libs: 1.1.1R44227 +647 (Git)
+(C) 2001-2026 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+

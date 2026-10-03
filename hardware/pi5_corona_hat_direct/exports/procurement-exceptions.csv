@@ -1,0 +1,6 @@
+Designator,MPN,LCSC Part #,DNP,Procurement Status,Catalog Stock,Notes
+C73,C2220C185J5RAC7800,C3900748,No,CATALOG_MATCH,0,1.8uF 50V X7R 5%; budget retains conservative 10%. Zero catalog stock: source/preorder required.
+TP50,"","",No,PCB_FEATURE,,Copper test pad; no purchased or placed component.
+T1,FL2015-4LD,"",No,EXTERNAL_SOURCE,,No exact FL2015-4LD JLCPCB catalog match found. Coilcraft sourcing/consignment or manual fit; do not substitute a PFL2015 inductor.
+J60,"","",No,HV_TERMINATION_REDESIGN,,Existing 5.08mm WJ500V terminal is only 250V class and is not approved for the intended 15kV output. Needs a rated HV termination and footprint redesign; no unsuitable C8465 assignment.
+K1,N4078-2C-DC12V-0.2W,C52195125,No,ELECTRICAL_REVIEW,2,"12V coil retained from original design on variable HV_VM rail: coil supply must be fixed to rated 12V or interlock redesigned before fabrication. Catalog ID is exact footprint-family candidate, not approval for 5-20V operation."

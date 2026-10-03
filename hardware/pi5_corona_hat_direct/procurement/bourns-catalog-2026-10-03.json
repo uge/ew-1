@@ -1,0 +1,54 @@
+{
+  "checked_date": "2026-10-03",
+  "source_api": "https://cart.jlcpcb.com/shoppingCart/smtGood/getComponentDetail?componentCode=C2089706",
+  "part": {
+    "componentCode": "C2089706",
+    "componentBrandEn": "BOURNS",
+    "componentModelEn": "CHV2512-JW-107ELF",
+    "dataManualUrl": "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121736_BOURNS-CHV2512-JW-107ELF_C2089706.pdf",
+    "dataManualOfficialLink": "",
+    "componentSpecificationEn": "2512",
+    "attributes": [
+      {
+        "attribute_name_en": "Resistance",
+        "component_code": "C2089706",
+        "attribute_value_name": "100MΩ"
+      },
+      {
+        "attribute_name_en": "Operating Temperature",
+        "component_code": "C2089706",
+        "attribute_value_name": "-55℃~+155℃"
+      },
+      {
+        "attribute_name_en": "Power(Watts)",
+        "component_code": "C2089706",
+        "attribute_value_name": "1W"
+      },
+      {
+        "attribute_name_en": "Type",
+        "component_code": "C2089706",
+        "attribute_value_name": "Thick Film Resistor"
+      },
+      {
+        "attribute_name_en": "Voltage-Supply(Max)",
+        "component_code": "C2089706",
+        "attribute_value_name": "3kV"
+      },
+      {
+        "attribute_name_en": "Tolerance",
+        "component_code": "C2089706",
+        "attribute_value_name": "±5%"
+      },
+      {
+        "attribute_name_en": "Temperature Coefficient",
+        "component_code": "C2089706",
+        "attribute_value_name": "±200ppm/℃"
+      }
+    ],
+    "stockCount": 5109,
+    "componentLibraryType": "expand",
+    "canPresaleNumber": 5087,
+    "componentStatus": "yes",
+    "assemblyMode": "smtWeld"
+  }
+}

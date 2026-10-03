@@ -1,0 +1,104 @@
+{
+ "routed_single": [
+  "/01_power_mcu/SDA",
+  "/01_power_mcu/SCL",
+  "/02_drive_transformer/DRV_nFAULT",
+  "/01_power_mcu/BULK_EN",
+  "/DRV_nSLEEP",
+  "/DRV_IN1",
+  "/DRV_IN2"
+ ],
+ "failed_single": [],
+ "open_single": [],
+ "failed_multipoint": [],
+ "multipoint_nets": 1,
+ "multipoint_pads_connected": 26,
+ "multipoint_pads_total": 26,
+ "multipoint_edges_routed": 2,
+ "multipoint_edges_failed": 0,
+ "ripup_success_pairs": [],
+ "rerouted_pairs": [],
+ "single_ended_target_swaps": [],
+ "layer_swaps": 0,
+ "successful": 7,
+ "failed": 0,
+ "total_time": 0.16999999999999998,
+ "total_iterations": 451311,
+ "total_vias": 25,
+ "cleanup_disconnected": [],
+ "min_clearance_used": 0.2,
+ "design_rules": {
+  "escalation_policy": "off",
+  "fab_tier": "auto",
+  "board_floors": {
+   "clearance": 0.2,
+   "track_width": 0.15,
+   "via_diameter": 0.45,
+   "via_drill": 0.3,
+   "hole_to_hole": 0.25,
+   "annular": 0.1,
+   "board_edge": 0.5
+  },
+  "count": 0,
+  "nets": [],
+  "narrowed": [],
+  "min_delivered": {},
+  "fab_tier_escalations": 0,
+  "fab_tier_contexts": [],
+  "fab_tier_target": "advanced",
+  "unsupported_rules": []
+ },
+ "plane_fragility": {
+  "source": "kicad_refill",
+  "islands": 16,
+  "refill_status": "ok",
+  "why": "the KiCad refill succeeded",
+  "machine_dependent": false
+ },
+ "oracle_check": "disabled",
+ "pad_pairs_connected": 23,
+ "pad_pairs_total": 23,
+ "power_trace_ampacity": [
+  {
+   "net": "/01_power_mcu/SCL",
+   "bottleneck_width_mm": 0.2,
+   "bottleneck_layer": "B.Cu",
+   "copper_oz": 1.0,
+   "max_current_a": 0.74,
+   "max_current_ipc2152_a": 0.74,
+   "temp_rise_c": 10.0,
+   "trace_length_mm": 194.3
+  }
+ ],
+ "scope": "merged",
+ "board_scoped_keys": [
+  "power_trace_ampacity",
+  "min_clearance_used"
+ ],
+ "env_knobs": {},
+ "blockers": [],
+ "finalize_excluded_nets": [
+  "GND"
+ ],
+ "pad_pairs_open": [],
+ "regrade": {
+  "board": "file",
+  "graded_nets": 12,
+  "seconds": 0.19,
+  "unowned_broken": [],
+  "recovered": [
+   "/01_power_mcu/SCL"
+  ]
+ },
+ "via_in_pad": {
+  "count": 0,
+  "sites": [],
+  "stamped": 0,
+  "restored": 0,
+  "protected": 0,
+  "unstampable": 0,
+  "site_created": 0,
+  "unprotected": [],
+  "note": "via-in-pad requires IPC-4761 Type VII (filled + capped + plated); state it on the fab drawing or solder wicks into the barrel"
+ }
+}

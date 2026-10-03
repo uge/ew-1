@@ -1,0 +1,23 @@
+{
+  "kicad_version": "10.0.6",
+  "schematic_sheets": 6,
+  "original_nets": 112,
+  "updated_nets": 152,
+  "pin_net_groups_unchanged": false,
+  "erc_violations": 0,
+  "konnect_symbol_overlaps": {
+    "01_power_mcu": 0,
+    "02_drive_transformer": 0,
+    "03_multiplier": 0,
+    "04_sense_safety": 0,
+    "pi5_corona_hv": 0,
+    "05_illumination": 0
+  },
+  "existing_netlist_annotation_warning": false,
+  "text_supply_labels_replaced": 32,
+  "additional_supply_symbols": 3,
+  "supply_symbols_scope": "sheet-local; hierarchical interfaces retained",
+  "retained_circuitry_connectivity_unchanged": true,
+  "intentional_changes": "Revision F: Bourns 2512 replacements; three series resistors per bleeder bank; R39 bypass corrected. Other component-pin connectivity and supply values preserved.",
+  "revision": "F"
+}

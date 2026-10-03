@@ -1,0 +1,10 @@
+# Local editor state and recovery history
+*.kicad_prl
+*.lck
+~*.kicad*
+.history/
+*-backups/
+
+# Python caches
+__pycache__/
+*.py[cod]

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ionic_thrust_hv")(type "KiCad")(uri "${KIPRJMOD}/pi5_corona_hv.kicad_sym")(options "")(descr "Pi 5 Corona HAT Project Symbols"))
+)

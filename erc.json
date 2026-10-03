@@ -1,0 +1,373 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-01T21:09:41",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/bd972e30-d182-479f-bf40-03346aa29b0c",
+            "violations": [
+                {
+                    "description": "Symbol 'SRN6028-3R9M' doesn't match copy in library 'ionic_thrust_hv'",
+                    "items": [
+                        {
+                            "description": "Symbol L1 [SRN6028-3R9M]",
+                            "pos": {
+                                "x": 1.143,
+                                "y": 1.4224
+                            },
+                            "uuid": "de050816-87f8-4dac-afb1-6e1611f2f5b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 1.0922 mm",
+                            "pos": {
+                                "x": 0.381,
+                                "y": 1.6256
+                            },
+                            "uuid": "d0f59643-c141-4621-ab2a-3977f48aaba0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Label connects more than one wire at 2082800, 1358900",
+                    "items": [
+                        {
+                            "description": "Label 'ARM_SW'",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.3589
+                            },
+                            "uuid": "c1c02378-0e59-4757-b824-7cb80fdc82c8"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0.1524 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.3208
+                            },
+                            "uuid": "0d54adcc-761a-48e4-8179-85cef430df67"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "label_multiple_wires"
+                },
+                {
+                    "description": "Label connects more than one wire at 2082800, 1435100",
+                    "items": [
+                        {
+                            "description": "Label 'MCU_BOOT'",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.4351
+                            },
+                            "uuid": "09f1eefb-73c7-47c8-ba9b-e293b62bb802"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0.1524 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.3208
+                            },
+                            "uuid": "0d54adcc-761a-48e4-8179-85cef430df67"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "label_multiple_wires"
+                },
+                {
+                    "description": "Label connects more than one wire at 2082800, 1473200",
+                    "items": [
+                        {
+                            "description": "Label 'GND'",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.4732
+                            },
+                            "uuid": "69df9f0e-a27f-4bf1-8b03-006bc56dc29e"
+                        },
+                        {
+                            "description": "Vertical Wire, length 0.1651 mm",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.6002
+                            },
+                            "uuid": "03258210-74c8-48d7-9f6a-eb095a4ce869"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "label_multiple_wires"
+                },
+                {
+                    "description": "Symbol pin or wire end off connection grid",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 3.1936 mm",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 0.762
+                            },
+                            "uuid": "5e96d4b8-613e-44ce-8eb5-69a311a451b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "endpoint_off_grid"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 3.1936 mm",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 0.762
+                            },
+                            "uuid": "5e96d4b8-613e-44ce-8eb5-69a311a451b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 1.0160 mm",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.4732
+                            },
+                            "uuid": "73b14779-72b6-47c6-895e-0013a4d9b289"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                }
+            ]
+        },
+        {
+            "path": "/01_power_mcu/",
+            "uuid_path": "/bd972e30-d182-479f-bf40-03346aa29b0c/7d83fcc0-e054-4f2a-b655-ac97aa1aa47a",
+            "violations": [
+                {
+                    "description": "Pins of type Power output and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol #FLG2 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 0.5588,
+                                "y": 0.8382
+                            },
+                            "uuid": "50dfe75a-5d04-4785-958a-a493e0d967ad"
+                        },
+                        {
+                            "description": "Symbol #FLG5 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 1.0668,
+                                "y": 0.4826
+                            },
+                            "uuid": "e365232f-c5b6-459d-9428-889d744a5d0e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Power output and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol #FLG3 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 1.524,
+                                "y": 1.3208
+                            },
+                            "uuid": "0c5e5204-13a0-4191-932b-ab1ac7f66783"
+                        },
+                        {
+                            "description": "Symbol #FLG5 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 1.0668,
+                                "y": 0.4826
+                            },
+                            "uuid": "e365232f-c5b6-459d-9428-889d744a5d0e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 Pin 5 [IO6, Bidirectional, Line]",
+                            "pos": {
+                                "x": 2.5527,
+                                "y": 1.3589
+                            },
+                            "uuid": "75802e6f-fcb3-47e0-a43b-ba5e58107fbe"
+                        },
+                        {
+                            "description": "Symbol #FLG3 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 1.524,
+                                "y": 1.3208
+                            },
+                            "uuid": "0c5e5204-13a0-4191-932b-ab1ac7f66783"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U1 Pin 8 [IO9, Bidirectional, Line]",
+                            "pos": {
+                                "x": 2.5527,
+                                "y": 1.4351
+                            },
+                            "uuid": "11b8f041-c439-44c0-90df-2be908a0b531"
+                        },
+                        {
+                            "description": "Symbol #FLG3 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 1.524,
+                                "y": 1.3208
+                            },
+                            "uuid": "0c5e5204-13a0-4191-932b-ab1ac7f66783"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Both 3V3 and MCU_EN are attached to the same items; 3V3 will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Label '3V3'",
+                            "pos": {
+                                "x": 2.0828,
+                                "y": 1.905
+                            },
+                            "uuid": "ee5599a7-9e2d-4960-82ec-d5bfb81f896a"
+                        },
+                        {
+                            "description": "Label 'MCU_EN'",
+                            "pos": {
+                                "x": 3.0353,
+                                "y": 2.4003
+                            },
+                            "uuid": "6873e010-dcd0-4f68-b1e7-b3a1c1e955b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                }
+            ]
+        },
+        {
+            "path": "/04_sense_safety/",
+            "uuid_path": "/bd972e30-d182-479f-bf40-03346aa29b0c/007b4e4e-d11c-4e15-9cf5-6921880a3929",
+            "violations": [
+                {
+                    "description": "Both GND and RELAY_COIL_POS are attached to the same items; GND will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Label 'GND'",
+                            "pos": {
+                                "x": 0.5588,
+                                "y": 2.1336
+                            },
+                            "uuid": "b770b07c-8d66-4631-8593-8c7bbc2d59c2"
+                        },
+                        {
+                            "description": "Label 'RELAY_COIL_POS'",
+                            "pos": {
+                                "x": 2.8448,
+                                "y": 1.9558
+                            },
+                            "uuid": "e9087c8f-cb01-4b3a-96e7-342806262f4f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                }
+            ]
+        },
+        {
+            "path": "/02_drive_transformer/",
+            "uuid_path": "/bd972e30-d182-479f-bf40-03346aa29b0c/b7153f3d-5f09-4d5a-bd91-070257b3be9e",
+            "violations": [
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U2 Pin 9 [EP, Power input, Line]",
+                            "pos": {
+                                "x": 1.2827,
+                                "y": 0.9144
+                            },
+                            "uuid": "6df0c0b1-b7c5-4fd4-b2bb-cef0ac8112e3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2 Pin 9 [EP, Power input, Line]",
+                            "pos": {
+                                "x": 1.2827,
+                                "y": 0.9144
+                            },
+                            "uuid": "6df0c0b1-b7c5-4fd4-b2bb-cef0ac8112e3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                }
+            ]
+        },
+        {
+            "path": "/03_multiplier/",
+            "uuid_path": "/bd972e30-d182-479f-bf40-03346aa29b0c/883c3cb6-c163-4a00-ad2e-e471fc52c1bb",
+            "violations": []
+        }
+    ],
+    "source": "ionic_thrust_hv.kicad_sch"
+}

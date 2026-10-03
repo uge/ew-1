@@ -1,0 +1,226 @@
+[
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_P1"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_P2"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_P3"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_P4"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_P5"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_S1"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_S2"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_S3"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_S4"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/03_multiplier/CW_S5"
+  },
+  {
+    "netclass": "HV_OUT",
+    "pattern": "/04_sense_safety/HV_OUT"
+  },
+  {
+    "netclass": "HV_OUT",
+    "pattern": "/HV_RAW"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "/SEC_A"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(D20-K)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R20-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R21-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R22-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R23-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R24-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R25-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R26-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R27-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R28-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R30-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R31-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R32-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R33-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R34-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R35-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R36-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R37-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R38-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R140-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R141-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R142-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R143-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R144-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R145-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R146-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R147-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R148-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R149-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R150-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R151-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R152-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R153-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R154-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R155-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R156-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R157-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R158-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R159-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R160-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R161-Pad1)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R162-Pad2)"
+  },
+  {
+    "netclass": "HV_STAGE",
+    "pattern": "Net-(R163-Pad1)"
+  }
+]

@@ -1,0 +1,7474 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "2cb9381c-6d13-4956-a4c3-b4bdd2869741")
+	(paper "A3")
+	(title_block
+		(title "Raspberry Pi 5 HAT Corona HV Supply - System Overview")
+		(company "Antigravity Engineering")
+		(rev "F")
+		(date "2026-10-03")
+	)
+	(lib_symbols
+		(symbol "ionic_thrust_hv:AP63203WU-7"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(id 0)
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AP63203WU-7"
+				(id 1)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:TSOT-26_L2.9-W1.6-P0.95-LS2.8-BL"
+				(id 2)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C780769.pdf"
+				(id 3)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "DIODES(美台)"
+				(id 4)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "AP63203WU-7"
+				(id 5)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C780769"
+				(id 6)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "AC-DC Controllers & Regulators"
+				(id 8)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "AP63203WU-7_0_1"
+				(rectangle
+					(start -6.35 5.08)
+					(end 6.35 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -5.08 3.81)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -8.89 2.54 0)
+					(length 2.54)
+					(name "FB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -0.00 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -8.89 -2.54 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 8.89 -2.54 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 8.89 -0.00 180)
+					(length 2.54)
+					(name "SW"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 2.54 180)
+					(length 2.54)
+					(name "BST"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:DRV8220DSGR_C3681269"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(id 0)
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DRV8220DSGR_C3681269"
+				(id 1)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:WSON-8_L2.0-W2.0-P0.50-TL-EP"
+				(id 2)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C3681269.pdf"
+				(id 3)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "TI(德州仪器)"
+				(id 4)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "DRV8220DSGR"
+				(id 5)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C3681269"
+				(id 6)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "DRV8220DSGR_C3681269_0_1"
+				(rectangle
+					(start -11.43 7.62)
+					(end 11.43 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -10.16 6.35)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at -13.97 2.54 0)
+					(length 2.54)
+					(name "VM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -13.97 -0.00 0)
+					(length 2.54)
+					(name "OUT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -13.97 -2.54 0)
+					(length 2.54)
+					(name "OUT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -13.97 -5.08 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 -5.08 180)
+					(length 2.54)
+					(name "IN2/EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 -2.54 180)
+					(length 2.54)
+					(name "IN1/PH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 -0.00 180)
+					(length 2.54)
+					(name "MODE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 2.54 180)
+					(length 2.54)
+					(name "nSLEEP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 13.97 5.08 180)
+					(length 2.54)
+					(name "EP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:TLV9001IDBVR"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(id 0)
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TLV9001IDBVR"
+				(id 1)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR"
+				(id 2)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/General-Purpose-Amplifiers_Texas-Instruments-TI-TLV9001IDBVR_C398363.html"
+				(id 3)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "TI(德州仪器)"
+				(id 4)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "TLV9001IDBVR"
+				(id 5)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C398363"
+				(id 6)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Operational Amplifier"
+				(id 8)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "TLV9001IDBVR_0_1"
+				(rectangle
+					(start -6.35 5.08)
+					(end 6.35 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -5.08 3.81)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin output line
+					(at -8.89 2.54 0)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -8.89 -0.00 0)
+					(length 2.54)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -2.54 0)
+					(length 2.54)
+					(name "IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 8.89 -2.54 180)
+					(length 2.54)
+					(name "IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 8.89 2.54 180)
+					(length 2.54)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:BAT54S"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(id 0)
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BAT54S"
+				(id 1)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
+				(id 2)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_BAT54S_C83935.html"
+				(id 3)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "ST(先科)"
+				(id 4)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "BAT54S"
+				(id 5)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C83935"
+				(id 6)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Schottky Barrier Diodes (SBD)"
+				(id 8)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "BAT54S"
+				(id 9)
+				(at 0 -25.40 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "BAT54S_0_1"
+				(polyline
+					(pts
+						(xy 0.00 -1.02)
+						(xy -2.54 -2.54)
+						(xy 0.00 -4.32)
+						(xy 0.00 -1.02)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.02)
+						(xy 0.00 2.54)
+						(xy -2.54 4.32)
+						(xy -2.54 1.02)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.30 -1.02)
+						(xy -3.30 -0.76)
+						(xy -2.79 -0.76)
+						(xy -2.79 -4.57)
+						(xy -2.29 -4.57)
+						(xy -2.29 -4.32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.76 1.02)
+						(xy 0.76 0.76)
+						(xy 0.25 0.76)
+						(xy 0.25 4.57)
+						(xy -0.25 4.57)
+						(xy -0.25 4.32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.00 2.54)
+						(xy 2.54 2.54)
+						(xy 2.54 -2.54)
+						(xy 0.00 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -6.35 2.54 0)
+					(length 3.81)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 -0.00 180)
+					(length 3.81)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 -2.54 0)
+					(length 3.81)
+					(name "K2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:SMAJ18A_C173513"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMAJ18A_C173513"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:SMA_L4.4-W2.6-LS5.0-RD"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/TVS_Jiangsu-Yutai-Elec-SMAJ18A_C173513.html"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "MDD(辰达半导体)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "SMAJ18A"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C173513"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "TVS"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "SMAJ18A_C173513_0_1"
+				(polyline
+					(pts
+						(xy 1.27 -1.52)
+						(xy -1.27 -0.00)
+						(xy 1.27 1.78)
+						(xy 1.27 -1.52)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.29 2.29)
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+						(xy -0.25 -2.29)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 3.81)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 3.81)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:nSMD100-16V"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(id 0)
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "nSMD100-16V"
+				(id 1)
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:F1206"
+				(id 2)
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Surface-Mount-Fuses_1A-16V-Self-healing-fuse_C70082.html"
+				(id 3)
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "台湾陆海"
+				(id 4)
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "nSMD100-16V"
+				(id 5)
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C70082"
+				(id 6)
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Resettable Fuses"
+				(id 8)
+				(at 0 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "1A 16V"
+				(id 9)
+				(at 0 -24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "nSMD100-16V_0_1"
+				(polyline
+					(pts
+						(xy -3.81 -1.27)
+						(xy -2.54 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.27)
+						(xy 3.81 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27)
+						(xy 0.00 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.00 -1.27)
+						(xy 2.54 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -8.89 -1.27 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 -1.27 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:19-217_GHC-YR1S2_3T"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(id 0)
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "19-217/GHC-YR1S2/3T"
+				(id 1)
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:LED0603-RD"
+				(id 2)
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Light-Emitting-Diodes-LED_0603-Green-light_C72043.html"
+				(id 3)
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "EVERLIGHT(亿光)"
+				(id 4)
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "19-217/GHC-YR1S2/3T"
+				(id 5)
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C72043"
+				(id 6)
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Light Emitting Diodes (LED)"
+				(id 8)
+				(at 0 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "0603"
+				(id 9)
+				(at 0 -24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "19-217_GHC-YR1S2_3T_0_1"
+				(polyline
+					(pts
+						(xy -0.51 0.76)
+						(xy -2.29 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 1.78)
+						(xy -1.27 3.56)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0.25)
+						(xy -1.27 -2.79)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.79)
+						(xy -1.27 -1.27)
+						(xy 1.27 0.25)
+						(xy 1.27 -2.79)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.29 2.54)
+						(xy -1.27 2.03)
+						(xy -1.78 1.52)
+						(xy -2.29 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.56)
+						(xy -0.25 3.05)
+						(xy -0.76 2.54)
+						(xy -1.27 3.56)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 5.08 -1.27 180)
+					(length 3.81)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -1.27 0)
+					(length 3.81)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:TS-1187A-B-A-B"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(id 0)
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TS-1187A-B-A-B"
+				(id 1)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5"
+				(id 2)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Tactile-Switches_XKB-Enterprise-TS-1187-B-A-A_C318884.html"
+				(id 3)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "XKB Connection(中国星坤)"
+				(id 4)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "TS-1187A-B-A-B"
+				(id 5)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C318884"
+				(id 6)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Tactile Switches"
+				(id 8)
+				(at 0 -25.40 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "TS-1187A-B-A-B_0_1"
+				(circle
+					(center 0.00 0.51)
+					(radius 0.32)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0.00 -2.79)
+					(radius 0.32)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -5.08)
+						(xy 2.54 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.54)
+						(xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.00 0.76)
+						(xy 0.00 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.00 -3.30)
+						(xy 0.00 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 0.76)
+						(xy -1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:WJ500V-5.08-2P-14-00A"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "P"
+				(id 0)
+				(at 0 0.00 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "WJ500V-5.08-2P-14-00A"
+				(id 1)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
+				(id 2)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
+				(id 3)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "KANGNEX(康奈克斯电气)"
+				(id 4)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "WJ500V-5.08-2P"
+				(id 5)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C8465"
+				(id 6)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Screw terminal"
+				(id 8)
+				(at 0 -25.40 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "WJ500V-5.08-2P"
+				(id 9)
+				(at 0 -27.94 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "WJ500V-5.08-2P-14-00A_0_1"
+				(rectangle
+					(start -3.81 5.08)
+					(end 3.81 0.00)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -1.27 -5.08 90)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 1.27 -5.08 90)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:DS1021-1X6SF11-B"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(id 0)
+				(at 0 11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DS1021-1X6SF11-B"
+				(id 1)
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:CONN-TH_DS1021-1X6SF11-B"
+				(id 2)
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C7430362.pdf"
+				(id 3)
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "CONNFLY"
+				(id 4)
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "DS1021-1x6SF11-B"
+				(id 5)
+				(at 0 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C7430362"
+				(id 6)
+				(at 0 -24.13 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Pin Headers"
+				(id 8)
+				(at 0 -26.67 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "DS1021-1X6SF11-B_0_1"
+				(rectangle
+					(start -1.27 8.89)
+					(end 3.81 -8.89)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0.00 7.62)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -3.81 6.35 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 3.81 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 1.27 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 -1.27 0)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 -3.81 0)
+					(length 2.54)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -3.81 -6.35 0)
+					(length 2.54)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:D2F-L"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(id 0)
+				(at 0 0.00 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D2F-L"
+				(id 1)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:SW-TH_D2F-L"
+				(id 2)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Others_Omron-Electronics_D2F-L_Omron-Electronics-D2F-L_C231337.html"
+				(id 3)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "OMRON(欧姆龙)"
+				(id 4)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "D2F-L"
+				(id 5)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C231337"
+				(id 6)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Microswitches"
+				(id 8)
+				(at 0 -25.40 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "D2F-L_0_1"
+				(rectangle
+					(start -6.35 5.08)
+					(end 6.35 -2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 5.08)
+						(xy -5.08 5.84)
+						(xy -3.81 5.84)
+						(xy -3.81 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -2.54)
+						(xy -3.81 -0.00)
+						(xy -2.29 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.29 -0.00)
+						(xy -0.51 1.02)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 -0.00)
+						(xy 1.27 -0.00)
+						(xy 1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -0.00)
+						(xy 3.81 2.03)
+						(xy -1.02 2.03)
+						(xy -1.02 0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -3.81 -5.08 90)
+					(length 5.08)
+					(name "COM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 1.27 -5.08 90)
+					(length 5.08)
+					(name "NO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 -5.08 90)
+					(length 5.08)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:HVM12"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HVM12"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C7436450.pdf"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "YFW(佑风微)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "HVM12"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C7436450"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Diodes - Fast Recovery Rectifiers"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "HVM12_0_1"
+				(polyline
+					(pts
+						(xy 1.27 1.78)
+						(xy -1.27 -0.00)
+						(xy 1.27 -1.78)
+						(xy 1.27 1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -0.00)
+						(xy -2.54 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -0.00)
+						(xy 1.27 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.78)
+						(xy -1.27 -1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:S102M59Z5UU83L0R"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "S102M59Z5UU83L0R"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C1620009.pdf"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "VISHAY(威世)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "S102M59Z5UU83L0R"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C1620009"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Pre-ordered RLCs"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "S102M59Z5UU83L0R_0_1"
+				(polyline
+					(pts
+						(xy -0.51 -0.00)
+						(xy -2.54 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 2.03)
+						(xy 0.51 -2.03)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -0.00)
+						(xy 0.51 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 -2.03)
+						(xy -0.51 2.03)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:MGR0W2J0106A10"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MGR0W2J0106A10"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:RES-TH_BD3.5-L9.5-P13.50-D0.6"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C51904770.pdf"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(厚声)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "MGR0W2J0106A10"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C51904770"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "MGR0W2J0106A10_0_1"
+				(rectangle
+					(start -2.54 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:MGR0W2J0107A10"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MGR0W2J0107A10"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:RES-TH_BD3.5-L9.5-P13.50-D0.6"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C51904773.pdf"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(厚声)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "MGR0W2J0107A10"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C51904773"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "MGR0W2J0107A10_0_1"
+				(rectangle
+					(start -2.54 1.27)
+					(end 2.54 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:CC0805KKX5R8BB106"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CC0805KKX5R8BB106"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:C0805"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_10uF-106-10-25V_C89831.html"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "YAGEO(国巨)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "CC0805KKX5R8BB106"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C89831"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Multilayer Ceramic Capacitors MLCC - SMD/SMT"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "CC0805KKX5R8BB106_0_1"
+				(polyline
+					(pts
+						(xy -0.51 2.03)
+						(xy -0.51 -2.03)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 2.03)
+						(xy 0.51 -2.03)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -0.00)
+						(xy -0.51 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 -0.00)
+						(xy 1.27 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -3.81 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:TCC0805X5R226M100FT"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(id 0)
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TCC0805X5R226M100FT"
+				(id 1)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:C0805"
+				(id 2)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/New-Arrivals_CCTC-TCC0805X5R226M100FT_C380338.html"
+				(id 3)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "CCTC(三环)"
+				(id 4)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "TCC0805X5R226M100FT"
+				(id 5)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C380338"
+				(id 6)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Multilayer Ceramic Capacitors MLCC - SMD/SMT"
+				(id 8)
+				(at 0 -25.40 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "TCC0805X5R226M100FT_0_1"
+				(polyline
+					(pts
+						(xy 0.00 -0.51)
+						(xy 0.00 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.03 0.51)
+						(xy 2.03 0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.00 2.54)
+						(xy 0.00 0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.03 -0.51)
+						(xy -2.03 -0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0.00 5.08 270)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0.00 -5.08 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:CC0603KRX7R9BB104"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CC0603KRX7R9BB104"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:C0603"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "YAGEO(国巨)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "CC0603KRX7R9BB104"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C14663"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Multilayer Ceramic Capacitors MLCC - SMD/SMT"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "100nF (104) ±10% 50V"
+				(id 9)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "CC0603KRX7R9BB104_0_1"
+				(polyline
+					(pts
+						(xy -0.51 -2.03)
+						(xy -0.51 2.03)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -0.00)
+						(xy 0.51 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 2.03)
+						(xy 0.51 -2.03)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 -0.00)
+						(xy -2.54 -0.00)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:0603WAF1002T5E"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0603WAF1002T5E"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:R0603"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_10KR-1002-1_C25804.html"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(厚声)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "0603WAF1002T5E"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C25804"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Resistors"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "10KΩ (1002) ±1%"
+				(id 9)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "0603WAF1002T5E_0_1"
+				(rectangle
+					(start -2.54 1.02)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:0603WAF1001T5E"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0603WAF1001T5E"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:R0603"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_1KR-1001-1_C21190.html"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(厚声)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "0603WAF1001T5E"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C21190"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Resistors"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "1KΩ (1001) ±1%"
+				(id 9)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "0603WAF1001T5E_0_1"
+				(rectangle
+					(start -2.54 1.02)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:0603WAF8202T5E"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(id 0)
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0603WAF8202T5E"
+				(id 1)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:R0603"
+				(id 2)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_82KR-8202-1_C23254.html"
+				(id 3)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "UNI-ROYAL(厚声)"
+				(id 4)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "0603WAF8202T5E"
+				(id 5)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C23254"
+				(id 6)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_keywords" "Resistors"
+				(id 8)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "ki_description" "82KΩ (8202) ±1%"
+				(id 9)
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "0603WAF8202T5E_0_1"
+				(rectangle
+					(start -2.54 1.02)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 5.08 -0.00 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -0.00 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:FL2015-4LD"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "T"
+				(id 0)
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "FL2015-4LD"
+				(id 1)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:Coilcraft_FL2015-4L"
+				(id 2)
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "Coilcraft"
+				(id 3)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "FL2015-4LD"
+				(id 4)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "FL2015-4LD_0_1"
+				(rectangle
+					(start -7.62 8.89)
+					(end 7.62 -8.89)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "PRI_A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "PRI_CT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "PRI_B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "SEC_A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "SEC_B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "FB_A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "FB_B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:SRN6028-3R9M"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(id 0)
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SRN6028-3R9M"
+				(id 1)
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:Inductor_SMD_6.0x6.0mm"
+				(id 2)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C2046441.pdf"
+				(id 3)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Manufacturer" "Bourns"
+				(id 4)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "SRN6028-3R9M"
+				(id 5)
+				(at 0 -12.70 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C2046441"
+				(id 6)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "SRN6028-3R9M_0_1"
+				(polyline
+					(pts
+						(xy -3.81 0.0)
+						(xy -3.64 0.63)
+						(xy -3.17 1.1)
+						(xy -2.54 1.27)
+						(xy -1.9 1.1)
+						(xy -1.44 0.63)
+						(xy -1.27 0.0)
+						(xy -1.1 0.63)
+						(xy -0.63 1.1)
+						(xy 0.0 1.27)
+						(xy 0.64 1.1)
+						(xy 1.1 0.63)
+						(xy 1.27 0.0)
+						(xy 1.44 0.63)
+						(xy 1.91 1.1)
+						(xy 2.54 1.27)
+						(xy 3.18 1.1)
+						(xy 3.64 0.63)
+						(xy 3.81 0.0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:N4078-2C-12V"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "K"
+				(id 0)
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "N4078-2C-12V"
+				(id 1)
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:Relay_DPDT_N4078"
+				(id 2)
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C52195125"
+				(id 3)
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "N4078-2C-12V"
+				(id 4)
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "N4078-2C-12V_0_1"
+				(rectangle
+					(start -10.16 11.43)
+					(end 10.16 -11.43)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -12.7 7.62 0)
+					(length 2.54)
+					(name "COIL+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 -7.62 0)
+					(length 2.54)
+					(name "COIL-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 7.62 180)
+					(length 2.54)
+					(name "COM1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 10.16 180)
+					(length 2.54)
+					(name "NC1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "NO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -7.62 180)
+					(length 2.54)
+					(name "COM2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -5.08 180)
+					(length 2.54)
+					(name "NC2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 12.7 -10.16 180)
+					(length 2.54)
+					(name "NO2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:BFC236821124"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(id 0)
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "120nF 100V"
+				(id 1)
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:C_Radial_P10.0mm"
+				(id 2)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C3771644"
+				(id 3)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "BFC236821124"
+				(id 4)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "BFC236821124_0_1"
+				(polyline
+					(pts
+						(xy -0.635 1.905)
+						(xy -0.635 -1.905)
+					)
+					(stroke
+						(width 0.381)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905)
+						(xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.381)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:1N4148WS"
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(id 0)
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N4148WS"
+				(id 1)
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ionic_thrust_hv:D_SOD-323"
+				(id 2)
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "LCSC Part" "C81598"
+				(id 3)
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "MPN" "1N4148WS"
+				(id 4)
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "1N4148WS_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27)
+						(xy 1.27 0)
+						(xy -1.27 -1.27)
+						(xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:PWR_FLAG"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(property "Reference" "#FLG"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					hide
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.54)
+						(xy 0 1.27)
+						(xy 1.27 2.54)
+						(xy -1.27 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ionic_thrust_hv:3V3"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(power global)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "3V3"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ionic_thrust_hv:GND"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(power global)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ionic_thrust_hv:VIN_PROTECTED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(power local)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VIN_PROTECTED"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Sheet-local power rail VIN_PROTECTED; preserve hierarchical interfaces"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "local power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VIN_PROTECTED_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VIN_PROTECTED_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ionic_thrust_hv:HV_VM"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(power local)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HV_VM"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Sheet-local power rail HV_VM; preserve hierarchical interfaces"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "local power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "HV_VM_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "HV_VM_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ionic_thrust_hv:HV_RAW"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(power local)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HV_RAW"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Sheet-local power rail HV_RAW; preserve hierarchical interfaces"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "local power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "HV_RAW_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "HV_RAW_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ionic_thrust_hv:HV_RETURN"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(power local)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HV_RETURN"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Sheet-local power rail HV_RETURN; preserve hierarchical interfaces"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "local power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "HV_RETURN_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "HV_RETURN_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(sheet
+		(at 60.96 50.8)
+		(size 99.06 63.5)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "1709378f-a8a2-4798-b42d-99352f87d149")
+		(property "Sheetname" "01_power_mcu"
+			(at 60.96 45.72 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "01_power_mcu.kicad_sch"
+			(at 60.96 119.38 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left top)
+			)
+			(hide yes)
+		)
+		(pin "VIN_PROTECTED" output
+			(at 160.02 58.419999999999995 0)
+			(uuid "92f7d41e-00e2-4140-b6f3-83612861060f")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "3V3" output
+			(at 160.02 63.49999999999999 0)
+			(uuid "8f206a07-cf82-407f-ab88-71f506b490c3")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" bidirectional
+			(at 160.02 68.58 0)
+			(uuid "dbe21414-9c71-470c-9149-4e6c3a26daa7")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "DRV_IN1" output
+			(at 160.02 73.66 0)
+			(uuid "d0c94e44-280e-449f-9338-6fc325eaec41")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "DRV_IN2" output
+			(at 160.02 78.74 0)
+			(uuid "6d3e20ac-ba4e-4c94-b35f-f26eceadf60f")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "INTERLOCK_OK" input
+			(at 160.02 83.82 0)
+			(uuid "2c86d539-5942-4da7-97a3-93c4627586af")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_SENSE_ADC" input
+			(at 160.02 88.89999999999999 0)
+			(uuid "a1f4d780-742f-473e-8663-36f1b2239042")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_CURR_ADC" input
+			(at 160.02 93.97999999999999 0)
+			(uuid "86477cad-74ec-4b06-8678-c23a25eb90cd")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "DRV_nSLEEP" output
+			(at 160.02 99.06 0)
+			(uuid "65c97e68-d680-437f-8d99-7ee682e801ed")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDA" bidirectional
+			(at 160.02 104.14 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+			(uuid "3c798eb6-6db2-4501-b197-b080755d9701")
+		)
+		(pin "SCL" bidirectional
+			(at 160.02 109.22 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+			(uuid "806c4cd6-4b4e-4d42-be4d-3ab1d4ac964a")
+		)
+	)
+	(sheet
+		(at 254.0 50.8)
+		(size 99.06 63.5)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6837c0a3-1ca9-42aa-89d0-96358f3e428b")
+		(property "Sheetname" "04_sense_safety"
+			(at 254.0 45.72 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "04_sense_safety.kicad_sch"
+			(at 254.0 119.38 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left top)
+			)
+			(hide yes)
+		)
+		(pin "VIN_PROTECTED" input
+			(at 254.0 58.419999999999995 180)
+			(uuid "31b7296a-cd2f-4b15-a504-0d17fdfaf48d")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "3V3" input
+			(at 254.0 63.49999999999999 180)
+			(uuid "cfe0962c-3aab-4925-a078-75475c86a2e2")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" bidirectional
+			(at 254.0 68.58 180)
+			(uuid "49e2f8fe-8bb5-4d41-a13e-609e305be213")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "INTERLOCK_OK" output
+			(at 254.0 73.66 180)
+			(uuid "5ce07aab-ab8b-41e2-aa54-7ba7889d06c5")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "HV_SENSE_ADC" output
+			(at 254.0 78.74 180)
+			(uuid "2bda38f0-d290-41a2-8e75-15916d40ef3c")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "HV_CURR_ADC" output
+			(at 254.0 83.82 180)
+			(uuid "26693705-9b9b-42d9-b7af-337fb82ad607")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "HV_VM" output
+			(at 353.06 58.419999999999995 0)
+			(uuid "03b7480b-8267-4f97-bbad-f4be2c25d815")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "GND" bidirectional
+			(at 353.06 63.49999999999999 0)
+			(uuid "1df0936f-fe60-458d-adf0-d670e464376f")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_RAW" input
+			(at 353.06 68.58 0)
+			(uuid "f12372d9-0232-4858-a97c-d9996f1abf63")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_RETURN" input
+			(at 353.06 73.66 0)
+			(uuid "dd2c4afc-acc9-4426-ac03-1c77ab7c177a")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+	)
+	(sheet
+		(at 60.96 160.02)
+		(size 99.06 63.5)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6db4da9a-2f77-41fb-a28d-f514a0b2daea")
+		(property "Sheetname" "02_drive_transformer"
+			(at 60.96 154.94 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "02_drive_transformer.kicad_sch"
+			(at 60.96 228.60000000000002 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left top)
+			)
+			(hide yes)
+		)
+		(pin "HV_VM" input
+			(at 60.96 167.64000000000001 180)
+			(uuid "be2657cb-e510-4131-b590-76610d41085c")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "DRV_nSLEEP" input
+			(at 60.96 172.72000000000003 180)
+			(uuid "35c28ef0-29ca-4519-87f0-aa23465304a4")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" bidirectional
+			(at 60.96 177.8 180)
+			(uuid "502635d3-6512-40f7-b468-50c77fbdf242")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "DRV_IN1" input
+			(at 60.96 182.88000000000002 180)
+			(uuid "d877d393-7397-4026-a618-ba99759eeff2")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "DRV_IN2" input
+			(at 60.96 187.96 180)
+			(uuid "a4032c38-7302-4296-b7b8-c5ff31b7c474")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "SEC_A" output
+			(at 160.02 167.64000000000001 0)
+			(uuid "32df465d-c978-49bf-8437-2e71f645f78a")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_RETURN" output
+			(at 160.02 172.72000000000003 0)
+			(uuid "700bfd4a-6081-4482-8bb7-005f941f2101")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+	)
+	(sheet
+		(at 254.0 160.02)
+		(size 99.06 63.5)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "0f7ec210-7bd8-4430-9989-4c86a2c79963")
+		(property "Sheetname" "03_multiplier"
+			(at 254.0 154.94 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "03_multiplier.kicad_sch"
+			(at 254.0 228.60000000000002 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left top)
+			)
+			(hide yes)
+		)
+		(pin "SEC_A" input
+			(at 254.0 167.64000000000001 180)
+			(uuid "b046cdbd-42e6-4a36-b947-2913584f9d56")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "HV_RETURN" input
+			(at 254.0 172.72000000000003 180)
+			(uuid "6388616b-4b80-4f92-81a2-f8ce3f1d4894")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify left)
+			)
+		)
+		(pin "HV_RAW" output
+			(at 353.06 167.64000000000001 0)
+			(uuid "28af0712-a037-406f-88d7-7a98ed1e1ea0")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_RETURN" output
+			(at 353.06 172.72000000000003 0)
+			(uuid "70b2381a-7b81-41b0-9a57-eb87215d0ca9")
+			(effects
+				(font
+					(size 1.0 1.0)
+				)
+				(justify right)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 160.02 58.419999999999995)
+			(xy 165.10000000000002 58.419999999999995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "340cf6ca-99b0-4dac-b1e7-9ed962b7738a")
+	)
+	(wire
+		(pts
+			(xy 160.02 63.49999999999999)
+			(xy 165.10000000000002 63.49999999999999)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1886a21b-8ce9-49df-96bb-5edc896d8ae0")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:3V3")
+		(at 165.1 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "dbebefd3-df89-45f0-99f7-371f0cd725cb")
+		(property "Reference" "#PWR201"
+			(at 165.1 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "3V3"
+			(at 165.1 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.1 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 160.02 68.58)
+			(xy 165.10000000000002 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e530737a-8fe1-4fc9-aa91-d918c353ddc8")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 165.1 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "7b70361e-a8cb-4459-bd95-e1df387aae3d")
+		(property "Reference" "#PWR202"
+			(at 165.1 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "GND"
+			(at 165.1 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Footprint" ""
+			(at 165.1 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 160.02 73.66)
+			(xy 165.10000000000002 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "914e2b68-aa84-4c9a-8cc6-9ec186b2e22a")
+	)
+	(label "DRV_IN1"
+		(at 165.10000000000002 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "467c8c18-4f95-4c6a-b40b-5d35b0edabc6")
+	)
+	(wire
+		(pts
+			(xy 160.02 78.74)
+			(xy 165.10000000000002 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2699496e-6928-49fd-9529-7f90b77d75c6")
+	)
+	(label "DRV_IN2"
+		(at 165.10000000000002 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "46d104e5-61e8-48b7-ac86-16bcf8c96eda")
+	)
+	(wire
+		(pts
+			(xy 160.02 83.82)
+			(xy 165.10000000000002 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fe39ede-9f8b-4b56-814f-506e7ee67f06")
+	)
+	(label "DRV_nSLEEP"
+		(at 165.10000000000002 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8d499f24-dfc6-41b7-9531-472254ba99cc")
+	)
+	(wire
+		(pts
+			(xy 160.02 88.89999999999999)
+			(xy 165.10000000000002 88.89999999999999)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68070823-48e4-4af7-a864-3700301a8d4a")
+	)
+	(label "HV_SENSE_ADC"
+		(at 165.10000000000002 88.89999999999999 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7b1789d4-14f4-4494-8695-aa65b19928d4")
+	)
+	(wire
+		(pts
+			(xy 160.02 93.97999999999999)
+			(xy 165.10000000000002 93.97999999999999)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1c4c0a4-acd3-4c8c-818d-2eae04c624a8")
+	)
+	(label "HV_CURR_ADC"
+		(at 165.10000000000002 93.97999999999999 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "33122df6-1a3a-4543-962e-ea0f4c217c89")
+	)
+	(wire
+		(pts
+			(xy 160.02 99.06)
+			(xy 165.10000000000002 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d922494e-63c1-46f7-81fe-68a770881d5d")
+	)
+	(label "DRV_nSLEEP"
+		(at 165.10000000000002 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dda4b13a-911c-4e0d-920e-58c7a0a4d0dd")
+	)
+	(wire
+		(pts
+			(xy 254.0 58.419999999999995)
+			(xy 248.92 58.419999999999995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53b546b5-092b-4863-9284-d0f2e0b8da8f")
+	)
+	(wire
+		(pts
+			(xy 254.0 63.49999999999999)
+			(xy 248.92 63.49999999999999)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e35766d4-3019-4a69-a7c9-00c47a7a9183")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:3V3")
+		(at 248.92 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "857e5c89-3ed3-44c6-9826-53d621969d03")
+		(property "Reference" "#PWR203"
+			(at 248.92 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "3V3"
+			(at 248.92 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR203")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 254.0 68.58)
+			(xy 248.92 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "539aaefa-fd7f-4e95-a7c2-bcf316f26910")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 248.92 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "4389787c-df22-42d3-b99d-f6d1a0d8201c")
+		(property "Reference" "#PWR204"
+			(at 248.92 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "GND"
+			(at 248.92 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Footprint" ""
+			(at 248.92 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 254.0 73.66)
+			(xy 248.92 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bf2c1d9-4977-48f7-889c-1603afb29386")
+	)
+	(label "DRV_nSLEEP"
+		(at 248.92 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cca7f77e-1f33-4d8a-8c29-4c2d73d78d1f")
+	)
+	(wire
+		(pts
+			(xy 254.0 78.74)
+			(xy 248.92 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ac5b346-45cf-4f7b-8832-b2c2e6dc2901")
+	)
+	(label "HV_SENSE_ADC"
+		(at 248.92 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "326cadf1-d38f-4ec5-bdbf-3c1899dbdcb4")
+	)
+	(wire
+		(pts
+			(xy 254.0 83.82)
+			(xy 248.92 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74cd174d-a11e-454b-9c4d-c79d7c1af398")
+	)
+	(label "HV_CURR_ADC"
+		(at 248.92 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b2bc3a49-15b0-4356-ae0e-d369c7e9cf02")
+	)
+	(wire
+		(pts
+			(xy 353.06 58.419999999999995)
+			(xy 358.14 58.419999999999995)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "001582e9-ac3e-4d55-85de-c503a731b0dd")
+	)
+	(wire
+		(pts
+			(xy 353.06 63.49999999999999)
+			(xy 358.14 63.49999999999999)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c03de27-b880-4ac4-9390-f999c22ede33")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 358.14 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d6527a65-ad54-4fa3-9a7f-c4d2e334da83")
+		(property "Reference" "#PWR205"
+			(at 358.14 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "GND"
+			(at 358.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Footprint" ""
+			(at 358.14 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR205")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 353.06 68.58)
+			(xy 358.14 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9bf5ebe-1600-4a73-abbd-18308bc08da0")
+	)
+	(wire
+		(pts
+			(xy 353.06 73.66)
+			(xy 358.14 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8de192a-2c59-4934-9a01-22923a620215")
+	)
+	(wire
+		(pts
+			(xy 60.96 167.64000000000001)
+			(xy 55.88 167.64000000000001)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc945e4a-6843-4634-8920-f8f51842e093")
+	)
+	(wire
+		(pts
+			(xy 60.96 172.72000000000003)
+			(xy 55.88 172.72000000000003)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd1529c8-bcbd-4e52-bc4e-fb033c88504f")
+	)
+	(label "DRV_nSLEEP"
+		(at 55.88 172.72000000000003 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e8ac6f14-e61b-4fa9-bcc1-e4375ec4320c")
+	)
+	(wire
+		(pts
+			(xy 60.96 177.8)
+			(xy 55.88 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f726116-a5ad-46d2-a384-c36b09291e93")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 55.88 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ce0512ce-c6b8-401d-93d0-63a4690b903a")
+		(property "Reference" "#PWR206"
+			(at 55.88 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "GND"
+			(at 55.88 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Footprint" ""
+			(at 55.88 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR206")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 60.96 182.88000000000002)
+			(xy 55.88 182.88000000000002)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "886d7743-5f5e-438d-a875-20c15d483351")
+	)
+	(label "DRV_IN1"
+		(at 55.88 182.88000000000002 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e5dc9110-63b0-4951-93c7-d1798e00f681")
+	)
+	(wire
+		(pts
+			(xy 60.96 187.96)
+			(xy 55.88 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f23fdf64-03f7-42e7-80e3-86f5306837ea")
+	)
+	(label "DRV_IN2"
+		(at 55.88 187.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cce3525b-f68e-4190-925d-48207fcd1e51")
+	)
+	(wire
+		(pts
+			(xy 160.02 167.64000000000001)
+			(xy 165.10000000000002 167.64000000000001)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c12e58e8-e63f-4e97-80cd-3ef11b93b228")
+	)
+	(label "SEC_A"
+		(at 165.10000000000002 167.64000000000001 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a1d95085-68a8-4164-8ef1-b9d2544747ff")
+	)
+	(wire
+		(pts
+			(xy 160.02 172.72000000000003)
+			(xy 165.10000000000002 172.72000000000003)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e68f68f0-61de-4f86-86c9-05cc82491cdc")
+	)
+	(wire
+		(pts
+			(xy 254.0 167.64000000000001)
+			(xy 248.92 167.64000000000001)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4b25e41-5290-40a6-836e-f2baaa1879b0")
+	)
+	(label "SEC_A"
+		(at 248.92 167.64000000000001 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b5104904-2e0c-4ac6-9035-0c65e7c08d90")
+	)
+	(wire
+		(pts
+			(xy 254.0 172.72000000000003)
+			(xy 248.92 172.72000000000003)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49960676-450e-4195-add7-80e8ce2dfbc8")
+	)
+	(wire
+		(pts
+			(xy 353.06 167.64000000000001)
+			(xy 358.14 167.64000000000001)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a07d1d5-f2ba-4e50-b3b5-aef86fe16f11")
+	)
+	(wire
+		(pts
+			(xy 353.06 172.72000000000003)
+			(xy 358.14 172.72000000000003)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21d47f14-3fc8-4019-8ede-a8be787ddaea")
+	)
+	(text "SYSTEM OVERVIEW / SIGNAL FLOW"
+		(at 20.32 15.24 0)
+		(effects
+			(font
+				(size 2.286 2.286)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "39d97773-8d1a-45aa-84c4-56ce73bbb02a")
+	)
+	(text "USB-C PD and Pi host → hardware interlock → transformer drive → HV multiplier → sensing"
+		(at 20.32 25.4 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "af35f3c6-36f5-4309-8590-c21553512c01")
+	)
+	(text "Pi interface and programmable input"
+		(at 60.96 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "53ea5e79-713e-44fe-8423-16114810fb76")
+	)
+	(text "Voltage/current sensing and hardware interlock"
+		(at 254 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a31dd318-5e2e-4883-821b-61507c2480b3")
+	)
+	(text "PWM bridge and resonant transformer"
+		(at 60.96 234.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c4833b77-529c-4ce2-a2e7-06c4c23de1df")
+	)
+	(text "High-voltage ladder and passive discharge"
+		(at 254 234.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4b6e7ba4-ac19-4e0f-bfb6-282af5ea7703")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:VIN_PROTECTED")
+		(at 165.10000000000002 58.419999999999995 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b82d572e-2e89-4ec0-800d-6e4581fa64bb")
+		(property "Reference" "#PWR1023"
+			(at 165.10000000000002 58.419999999999995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "VIN_PROTECTED"
+			(at 166.37000000000003 57.14999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.10000000000002 58.419999999999995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "8b23e820-d0fa-4878-9fbe-96c41afd1824")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:VIN_PROTECTED")
+		(at 248.92 58.419999999999995 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5984d1ca-e2d2-4a39-b87a-95e4dd32d017")
+		(property "Reference" "#PWR1024"
+			(at 248.92 58.419999999999995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "VIN_PROTECTED"
+			(at 247.64999999999998 57.14999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 58.419999999999995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "dc0f28b3-5dd9-4338-87cc-4cad03fb5d22")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_VM")
+		(at 358.14 58.419999999999995 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "7fa698ef-9a88-437d-aec9-e30a49e85e6e")
+		(property "Reference" "#PWR1025"
+			(at 358.14 58.419999999999995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_VM"
+			(at 359.40999999999997 57.14999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 358.14 58.419999999999995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "51ebef47-27e6-4e4a-b941-1cc9cc84d08c")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_RAW")
+		(at 358.14 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a5f82b9b-9714-4221-94f8-98cf3c9d0124")
+		(property "Reference" "#PWR1026"
+			(at 358.14 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_RAW"
+			(at 359.40999999999997 67.31 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 358.14 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "02832957-d725-4b83-8849-c590115f9613")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_RETURN")
+		(at 358.14 73.66 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d12be2cc-3b8c-414c-b293-3f3868f6a031")
+		(property "Reference" "#PWR1027"
+			(at 358.14 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_RETURN"
+			(at 370.84 74.92999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 358.14 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "b83ecb69-8ba4-4ef9-8d14-521a7a2f698e")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_VM")
+		(at 55.88 167.64000000000001 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "2f0dd9d7-5fa3-4f74-baba-c5a3590f1b0e")
+		(property "Reference" "#PWR1028"
+			(at 55.88 167.64000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_VM"
+			(at 54.61 166.37 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 167.64000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "448f196f-c414-4ec3-b1df-c080a015a75d")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_RETURN")
+		(at 165.10000000000002 172.72000000000003 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd232e9c-11ef-4449-8f2d-8d5390086c29")
+		(property "Reference" "#PWR1029"
+			(at 165.10000000000002 172.72000000000003 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_RETURN"
+			(at 177.8 173.99000000000004 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 165.10000000000002 172.72000000000003 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "97657ca3-0ca9-4bf5-a3d7-bf1d0cbbd1ce")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_RETURN")
+		(at 248.92 172.72000000000003 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a8f63a99-9dc4-4edf-8e5c-92e412600db5")
+		(property "Reference" "#PWR1030"
+			(at 248.92 172.72000000000003 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_RETURN"
+			(at 236.22 173.99000000000004 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 172.72000000000003 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "8d92b379-d8e0-45b7-9a0e-99b30372e008")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_RAW")
+		(at 358.14 167.64000000000001 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7093795-84d6-4ca4-8c41-cd0f0655d5de")
+		(property "Reference" "#PWR1031"
+			(at 358.14 167.64000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_RAW"
+			(at 359.40999999999997 166.37 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 358.14 167.64000000000001 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "4961d54b-5f99-4ebf-9e33-a44f6c7b6fc2")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:HV_RETURN")
+		(at 358.14 172.72000000000003 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "12b95c22-df26-4303-a95e-eb4238acd8c8")
+		(property "Reference" "#PWR1032"
+			(at 358.14 172.72000000000003 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+			(hide yes)
+		)
+		(property "Value" "HV_RETURN"
+			(at 370.84 173.99000000000004 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 358.14 172.72000000000003 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "bff0c3e6-44fe-4cf0-a824-243e703f2a5e")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR1032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 187.96 91.44)
+		(size 55.88 38.1)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "70a5f7e9-c52e-4234-9093-1233f0587cec")
+		(property "Sheetname" "05_illumination"
+			(at 187.96 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "05_illumination.kicad_sch"
+			(at 187.96 132.08 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left top)
+				hide
+			)
+		)
+		(pin "SDA" bidirectional
+			(at 187.96 101.6 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+			(uuid "739e2cf3-8413-4d40-b950-8024b36fefed")
+		)
+		(pin "SCL" bidirectional
+			(at 187.96 109.22 180)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+			(uuid "dad5bd5f-5a41-4c7b-95db-2c33539bf2c9")
+		)
+		(pin "3V3" input
+			(at 243.84 101.6 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+			(uuid "f2effdbc-15cc-48ef-b65a-6419936217b0")
+		)
+		(pin "GND" input
+			(at 243.84 109.22 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify right)
+			)
+			(uuid "c4606794-c5fe-49d3-89c9-40d084dc2013")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(page "6")
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 243.84 101.6)
+			(xy 248.92 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84f12e64-c126-46a5-9bd0-2f671c53c0ff")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:3V3")
+		(at 248.92 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "01461967-3169-4635-856f-63731bc27daf")
+		(property "Reference" "#PWR4300"
+			(at 248.92 99.05999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				hide
+			)
+		)
+		(property "Value" "3V3"
+			(at 248.92 97.78999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 101.6 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "9ae191d1-7011-4c47-89dc-bd2ea8ccae80")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR4300")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 243.84 109.22)
+			(xy 248.92 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fda4fcc3-ad68-4e33-adf9-105bf2855c5c")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 248.92 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e4d8c07c-d63e-48a7-a34c-3cef8114daa6")
+		(property "Reference" "#PWR4301"
+			(at 248.92 106.67999999999999 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				hide
+			)
+		)
+		(property "Value" "GND"
+			(at 248.92 105.41 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				hide
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 109.22 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				hide
+			)
+		)
+		(pin "1"
+			(uuid "046e1a80-4386-4993-a838-4f97ffc651ed")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741"
+					(reference "#PWR4301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "J50 <-> J51 / 4-wire cable"
+		(at 190.5 142.24 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "663e880b-a04d-4d0e-bec6-4b6c96159eff")
+	)
+	(wire
+		(pts
+			(xy 160.02 104.14)
+			(xy 177.8 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79af5ef6-c6da-48b1-bb5f-9a9627244ef2")
+	)
+	(wire
+		(pts
+			(xy 177.8 104.14)
+			(xy 177.8 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4aca630d-dbee-4d4c-834b-53f06b312403")
+	)
+	(wire
+		(pts
+			(xy 177.8 101.6)
+			(xy 187.96 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce5d3138-1aaf-4bbf-aa15-0e5f41464485")
+	)
+	(wire
+		(pts
+			(xy 160.02 109.22)
+			(xy 187.96 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61c12a3a-eabe-4879-bb47-73878c971dcf")
+	)
+)

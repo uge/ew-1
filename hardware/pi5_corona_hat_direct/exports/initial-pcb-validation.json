@@ -1,0 +1,172 @@
+{
+  "revision": "F-layout-2",
+  "kicad_version": "10.0.6",
+  "copper_layers": 2,
+  "main_board_mm": [
+    296,
+    155
+  ],
+  "pcb_envelope_mm": [
+    296,
+    180
+  ],
+  "main_area_reduction_percent": 25.03267973856209,
+  "all_schematic_pin_nets_match": true,
+  "schematic_parity_issues": 0,
+  "courtyard_overlaps": 0,
+  "schematic_footprints": 152,
+  "board_only_dnp": [
+    "MP1"
+  ],
+  "schematic_dnp": [
+    "C63",
+    "R64"
+  ],
+  "gpio_xy_alignment_error_mm": 1.4210854715202004e-14,
+  "J2_layer": "F.Cu",
+  "MP1_model_rotation_deg": [
+    180,
+    0,
+    0
+  ],
+  "MP1_model_offset_mm": [
+    0,
+    0,
+    13.306
+  ],
+  "Pi_standoff_assumption_mm": 12,
+  "aligned_pi_mounting_holes": [
+    "H1",
+    "H2"
+  ],
+  "outboard_pi_support_required": true,
+  "HV_netclasses_assigned": 56,
+  "HV_stage_guard_mm": 4,
+  "HV_highest_guard_mm": 10,
+  "HV_highest_edge_guard_mm": 10,
+  "routing_complete": false,
+  "unconnected_items": 280,
+  "remaining_drc_violations": [
+    {
+      "description": "Clearance violation (rule 'HV_OUT copper clearance' clearance 10.0000 mm; actual 3.0800 mm)",
+      "items": [
+        {
+          "description": "PTH pad 2 [/HV_RETURN] of J60",
+          "pos": {
+            "x": 335.54,
+            "y": 70.0
+          },
+          "uuid": "9b99c60e-6666-4d1d-bd0f-05c2b23d1c55"
+        },
+        {
+          "description": "PTH pad 1 [/04_sense_safety/HV_OUT] of J60",
+          "pos": {
+            "x": 330.46,
+            "y": 70.0
+          },
+          "uuid": "5b40bc39-9cae-4bff-9a81-9e9885abc673"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'HV_OUT copper clearance' clearance 10.0000 mm; actual 3.0800 mm)",
+      "items": [
+        {
+          "description": "PTH pad 2 [/HV_RETURN] of J60",
+          "pos": {
+            "x": 335.54,
+            "y": 70.0
+          },
+          "uuid": "9b99c60e-6666-4d1d-bd0f-05c2b23d1c55"
+        },
+        {
+          "description": "PTH pad 1 [/04_sense_safety/HV_OUT] of J60",
+          "pos": {
+            "x": 330.46,
+            "y": 70.0
+          },
+          "uuid": "5b40bc39-9cae-4bff-9a81-9e9885abc673"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'HV_STAGE copper clearance' clearance 4.0000 mm; actual 3.2000 mm)",
+      "items": [
+        {
+          "description": "PTH pad 5 [/SEC_A] of T1",
+          "pos": {
+            "x": 142.5,
+            "y": 111.0
+          },
+          "uuid": "8239ae2f-d53e-4468-943b-20275fc929f6"
+        },
+        {
+          "description": "PTH pad 8 [/HV_RETURN] of T1",
+          "pos": {
+            "x": 142.5,
+            "y": 116.0
+          },
+          "uuid": "859274e1-3cd2-463f-ac9e-49ed0c8c4677"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'HV_STAGE copper clearance' clearance 4.0000 mm; actual 3.2000 mm)",
+      "items": [
+        {
+          "description": "PTH pad 5 [/SEC_A] of T1",
+          "pos": {
+            "x": 142.5,
+            "y": 111.0
+          },
+          "uuid": "8239ae2f-d53e-4468-943b-20275fc929f6"
+        },
+        {
+          "description": "PTH pad 8 [/HV_RETURN] of T1",
+          "pos": {
+            "x": 142.5,
+            "y": 116.0
+          },
+          "uuid": "859274e1-3cd2-463f-ac9e-49ed0c8c4677"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Footprint 'D_SOD-323' does not match copy in library 'ionic_thrust_hv'",
+      "items": [
+        {
+          "description": "Footprint D3",
+          "pos": {
+            "x": 85.0,
+            "y": 166.0
+          },
+          "uuid": "99b3434e-0a3c-4efa-b569-fa8d3caa74cd"
+        }
+      ],
+      "severity": "warning",
+      "type": "lib_footprint_mismatch"
+    }
+  ],
+  "production_release": false,
+  "pi_substrate_collisions": 0,
+  "usb_relief_notch_mm": {
+    "width": 24,
+    "depth": 10,
+    "x": [
+      117,
+      141
+    ],
+    "y": [
+      50,
+      60
+    ]
+  }
+}
