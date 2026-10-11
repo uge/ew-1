@@ -20,14 +20,40 @@ ROTATION_OFFSETS = {
     "J2": 270.0,  # 180 + 270 = 450 = 90.0 deg
     # BME280: KiCad horizontal top/bottom pins -> JLCPCB EasyEDA vertical left/right pins
     "U5": 90.0,   # 0 + 90 = 90.0 deg
+    # AO4407A SO-8 MOSFET: KiCad vertical (rot 0) -> EasyEDA horizontal (rot 270)
+    "Q1": 270.0,  # 0 + 270 = 270.0 deg
+    # DRV8876PWPR HTSSOP-16: KiCad vertical (rot 0) -> EasyEDA horizontal (rot 270)
+    "U2": 270.0,  # 0 + 270 = 270.0 deg
+    # ADS1115 MSOP-10: KiCad vertical (rot 90) -> EasyEDA horizontal (rot 0)
+    "U6": 270.0,  # 90 + 270 = 360 = 0.0 deg
+    # HUSB238A QFN-16: KiCad Pin 1 top-left -> EasyEDA Pin 1 bottom-left (rot 270)
+    "U7": 270.0,  # 0 + 270 = 270.0 deg
+    # TSL2591 DFN-6: KiCad vertical (rot 0) -> EasyEDA horizontal (rot 270)
+    "U8": 270.0,  # 0 + 270 = 270.0 deg
+    # TPS7A0230 SOT-23-5: KiCad standard footprint inverted 180 deg vs EasyEDA
+    "U10": 180.0, # 90 + 180 = 270.0 deg
+    # Omron G6K-2F-Y DPDT Relay: KiCad vertical (rot 180) -> EasyEDA horizontal (rot 90)
+    "K1": 270.0,  # 180 + 270 = 450 = 90.0 deg
+    # SS36 SMC Schottky diodes: KiCad cathode pin 1 is left, EasyEDA C16237 pin 1 is right (180 deg flip)
+    "D52": 180.0, # 90 + 180 = 270.0 deg
+    "D53": 180.0, # 90 + 180 = 270.0 deg
+    "D54": 180.0, # 90 + 180 = 270.0 deg
+    "D55": 180.0, # 90 + 180 = 270.0 deg
 }
 
 # Centroid overrides (Mid X, Mid Y) in board coordinates (mm)
 # KiCad CPL uses (PosX, -PosY)
 CENTROID_OVERRIDES = {
-    # J2: KiCad origin is Pin 1 at (54.23, 106.63).
-    # True geometric midpoint is (55.5000, 82.5000).
+    # J2: KiCad origin is Pin 1 at (54.23, 106.63). True geometric midpoint is (55.5000, 82.5000).
     "J2": (55.5000, 82.5000),
+    # C11: KiCad origin is Pin 1 at (110.0, 131.0). True geometric midpoint is (117.5000, 131.0000).
+    "C11": (117.5000, 131.0000),
+    # C60: KiCad origin is Pin 1 at (97.0, 147.0). True geometric midpoint is (98.0000, 147.0000).
+    "C60": (98.0000, 147.0000),
+    # C70: KiCad origin is Pin 1 at (97.0, 104.0). True geometric midpoint is (98.0000, 104.0000).
+    "C70": (98.0000, 104.0000),
+    # J3: USB-C receptacle origin is at front edge (88.0, 54.675). True package center is at (88.0000, 56.1730).
+    "J3": (88.0000, 56.1730),
 }
 
 

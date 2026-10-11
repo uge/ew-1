@@ -30,14 +30,35 @@ kicad-cli pcb render --side top --quality high --width 1920 --height 1080 --outp
 kicad-cli pcb render --view isometric --quality high --width 1920 --height 1080 --output docs/media/pcb_render_iso.png hardware/ionic_thrust_hv.kicad_pcb
 ```
 
-### Component & 3D Model Import via LCSC ID
+### Component & 3D Model Import via LCSC ID (Strict KiCad 10 Pipeline)
 ```bash
+# 1. Fetch raw assets from EasyEDA / LCSC
 pipx run easyeda2kicad \
   --full \
   --lcsc_id <LCSC_ID> \
   --output hardware/ionic_thrust_hv.kicad_sym \
   --project-relative \
   --overwrite
+
+# 2. Immediately upgrade imported symbol library and footprint directory to native KiCad 10 format:
+kicad-cli sym upgrade --force hardware/pi5_corona_hat_direct/pi5_corona_hv.kicad_sym
+kicad-cli fp upgrade --force hardware/pi5_corona_hat_direct/ionic_thrust_hv.pretty
+
+# 3. Verify project-wide KiCad 10 compliance:
+python3 hardware/pi5_corona_hat_direct/layout/validation/verify_kicad10_compliance.py --root hardware
+```
+
+### KiCad 10 File Format Rules & Verification
+Always maintain all project files in native KiCad 10 format:
+- **PCBs (`.kicad_pcb`):** `(version 20260206) (generator "pcbnew") (generator_version "10.0")`
+- **Schematics (`.kicad_sch`):** `(version 20260306) (generator "eeschema") (generator_version "10.0")`
+- **Symbols (`.kicad_sym`):** `(version 20251024) (generator "kicad_symbol_editor") (generator_version "10.0")`
+- **Footprints (`.kicad_mod`):** `(version 20260206) (generator "pcbnew") (generator_version "10.0")`
+- **Library Tables (`fp-lib-table`, `sym-lib-table`):** `(version 7)`
+- **Environment Variables:** Strict `${KICAD10_3DMODEL_DIR}` or `${KIPRJMOD}` only (zero `${KICAD8_*}` or generic `${KICAD_*}`).
+```bash
+# Run KiCad 10 Strict Compliance Verification
+python3 hardware/pi5_corona_hat_direct/layout/validation/verify_kicad10_compliance.py --root hardware
 ```
 
 ### Fabrication Exports

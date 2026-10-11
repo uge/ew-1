@@ -39,16 +39,16 @@
       "source": "https://jlcpcb.com/partdetail/C37593"
     },
     "01_power_mcu/J3": {
-      "lcsc": "C2894897",
-      "manufacturer": "HCTL",
-      "mpn": "HC-TYPE-C-16P-01A",
+      "lcsc": "C165948",
+      "manufacturer": "Korean Hroparts Elec",
+      "mpn": "TYPE-C-31-M-12",
       "status": "CATALOG_MATCH",
       "notes": "",
       "footprint": null,
-      "stock": 43515,
+      "stock": 408639,
       "class": "Extended",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C2894897"
+      "source": "https://jlcpcb.com/partdetail/Korean_Hroparts_Elec-TYPE_C_31_M_12/C165948"
     },
     "01_power_mcu/U7": {
       "lcsc": "C24833806",

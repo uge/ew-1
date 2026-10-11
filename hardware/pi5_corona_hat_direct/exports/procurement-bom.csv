@@ -4,7 +4,7 @@ AO4407A,Q1,Package_SO:SO-8_3.9x4.9mm_P1.27mm,C16072,Alpha & Omega Semicon,AO4407
 10uF 50V 10%,"C12,C22",Capacitor_SMD:C_1210_3225Metric,C386166,Taiyo Yuden,UMK325AB7106KMHP,2,No,CATALOG_MATCH,176509,Extended,smtWeld,https://jlcpcb.com/partdetail/C386166,""
 100k 1%,"R10,R12,R70",Resistor_SMD:R_0603_1608Metric,C25803,UNI-ROYAL(Uniroyal Elec),0603WAF1003T5E,3,No,CATALOG_MATCH,22123082,Basic,smtWeld,https://jlcpcb.com/partdetail/C25803,""
 1M 1%,"R15,R16",Resistor_SMD:R_0603_1608Metric,C22935,UNI-ROYAL(Uniroyal Elec),0603WAF1004T5E,2,No,CATALOG_MATCH,1000000,Basic,smtWeld,https://jlcpcb.com/partdetail/C22935,1M 1% 0603 pulldown resistor on HUSB238A DEBUG_N pin.
-USB-C PD INPUT,J3,Connector_USB:USB_C_Receptacle_HCTL_HC-TYPE-C-16P-01A,C2894897,HCTL,HC-TYPE-C-16P-01A,1,No,CATALOG_MATCH,43515,Extended,smtWeld,https://jlcpcb.com/partdetail/C2894897,""
+USB-C PD INPUT,J3,ionic_thrust_hv:USB_C_Receptacle_HRO_TYPE-C-31-M-12,C165948,Korean Hroparts Elec,TYPE-C-31-M-12,1,No,CATALOG_MATCH,408639,Extended,smtWeld,https://jlcpcb.com/partdetail/Korean_Hroparts_Elec-TYPE_C_31_M_12/C165948,""
 5mR 1%,R13,Resistor_SMD:R_2512_6332Metric,C393074,TA-I Tech,RLP25FEGMR005,1,No,CATALOG_MATCH,222289,Extended,smtWeld,https://jlcpcb.com/partdetail/C393074,""
 SM04B-SRSS-TB(LF)(SN),"J50,J51",Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,C160404,JST,SM04B-SRSS-TB(LF)(SN),2,No,CATALOG_MATCH,34960,Extended,smtWeld,https://jlcpcb.com/partdetail/C160404,""
 4.7uF 50V 10%,C21,Capacitor_SMD:C_1210_3225Metric,C126618,Murata Electronics,GCM32ER71H475KA55L,1,No,CATALOG_MATCH,202439,Extended,smtWeld,https://jlcpcb.com/partdetail/C126618,""
