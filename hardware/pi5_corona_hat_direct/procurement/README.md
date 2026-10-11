@@ -17,14 +17,14 @@ This is a procurement BOM. An compact two-layer PCB placement now exists. Routin
 | U4 buffer | TLV9001IDBVR | C398363 |
 | U5 environment | BME280 | C92489 |
 | U6 ADC | ADS1115IDGSR | C37593 |
-| U7 PD sink | AP33772SDKZ-13-FA01 | C24374260 |
+| U7 PD sink | AP33772SDKZ-13-FA02 | C50341643 |
 | U8 illumination | TSL25911FN | C176812 |
 | U9 eFuse | TPS259470LRPWR | C3662793 |
 | Q1 switch | AO4262E | C431178 |
 | J3 USB-C | HC-TYPE-C-16P-01A | C2894897 |
 | J50/J51 cable connectors | SM04B-SRSS-TB(LF)(SN) | C160404 |
 
-Part IDs are supported by the linked catalog records, for example [U7](https://jlcpcb.com/partdetail/C24374260), [U9](https://jlcpcb.com/partdetail/C3662793), and [J50/J51](https://jlcpcb.com/partdetail/C160404). Check stock and service availability again at ordering.
+Part IDs are supported by the linked catalog records, for example [U7](https://jlcpcb.com/partdetail/C50341643), [U9](https://jlcpcb.com/partdetail/C3662793), and [J50/J51](https://jlcpcb.com/partdetail/C160404). Check stock and service availability again at ordering.
 
 # Physical and annotation corrections
 
@@ -40,8 +40,8 @@ R71 uses an 0805 footprint for the selected 976 kΩ / 0.1% part. C73 is now Sams
 - TP50: copper test pad, no purchased component required.
 - J60/J61: separate single solder-wire HV terminations; no purchased connector or invented catalog ID. Verify external wire insulation, spacing, enclosure and strain relief. J62–J65 are solderable plated-hole pairs for detached microswitch connections; no purchased parts are required.
 - K1: Omron G6K-2F-Y DC3 C93168, regulated 3 V coil and independent logic contacts; pickup and fault behavior require bench qualification.
-- C73 has an in-stock 1 µF replacement. C63 remains intentionally DNP; C82/C83 have limited stock and require a new availability check.
-- NTC1 is NCP18XH103F03RB: 10 kΩ / 1%, B25/50 = 3380 K. Confirm the PD-controller thermal settings against this curve. Confirm AP33772S FA01 firmware compatibility with the host driver.
+- C73 has an in-stock 1 µF replacement. C63 remains intentionally DNP; C82/C83 are assigned to Samsung CL21A225KBQNNNE (C377773), 2.2 µF / 50 V / X5R in 0805, JLCPCB Basic Library.
+- NTC1 is NCP18XH103F03RB: 10 kΩ / 1%, B25/50 = 3380 K. Confirm the PD-controller thermal settings against this curve. Confirm AP33772S FA02 firmware compatibility with the host driver.
 - Verify C60/C70 ripple current, ESR, temperature rise, C11 resonant current and ceramic DC-bias derating on the built circuit. Selecting catalog IDs does not replace these checks.
 
 C63 and R64 are the only DNP components. Neither missing stock nor manual/THT assembly changes a part's intended population flag. INTERLOCK_OK, DRV_SLEEP_CMD and DRV_nSLEEP are now distinct nets, verified by regression checks.
@@ -66,7 +66,7 @@ The native footprint has a 3 × 12 mm body, 0.6 mm leads, 26 mm formed pitch, 0.
 
 ## Audit selections, 2026-10-03
 
-K1: Omron G6K-2F-Y DC3 C93168; U10: TI TPS7A0230PDBVR C3747031; R90: Vishay CRCW120610K0FKEAHP C313977; D5: LRC SMBJ15A C2912077; C82/C83: CCTC TCC0805X7R225K160FT C380348; R91/R92: UNI 0603WAF1002T5E C25804. Live evidence and manufacturer PDFs are saved here. C380348 had only four pieces in stock: two are required, so recheck supply before ordering. Confirm effective LDO capacitance and relay pickup over supply/temperature; these selections do not close bench holds.
+K1: Omron G6K-2F-Y DC3 C93168; U10: TI TPS7A0230PDBVR C3747031; R90: Vishay CRCW120610K0FKEAHP C313977; D5: LRC SMBJ15A C2912077; C82/C83: Samsung CL21A225KBQNNNE C377773 (2.2 µF / 50 V / X5R 0805 Basic); R91/R92: UNI 0603WAF1002T5E C25804. Live evidence and manufacturer PDFs are saved here. Confirm effective LDO capacitance and relay pickup over supply/temperature; these selections do not close bench holds.
 
 Transformer T1 remains externally sourced. Its native footprint now follows Coilcraft's SMT Package 1, and the corrected pin map is in AUDIT.md.
 

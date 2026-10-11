@@ -51,16 +51,16 @@
       "source": "https://jlcpcb.com/partdetail/C2894897"
     },
     "01_power_mcu/U7": {
-      "lcsc": "C24374260",
+      "lcsc": "C50341643",
       "manufacturer": "Diodes Incorporated",
-      "mpn": "AP33772SDKZ-13-FA01",
+      "mpn": "AP33772SDKZ-13-FA02",
       "status": "CATALOG_MATCH",
-      "notes": "FA01 firmware ordering variant; verify against host driver and required startup profile. Stock snapshot only.",
+      "notes": "FA02 firmware ordering variant in QFN-24 (4x4mm). Verify against host driver and required startup profile.",
       "footprint": null,
-      "stock": 29,
+      "stock": 1000,
       "class": "Extended",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C24374260"
+      "source": "https://jlcpcb.com/partdetail/C50341643"
     },
     "01_power_mcu/F1": {
       "lcsc": "C5358568",
@@ -1835,27 +1835,27 @@
       "footprint": null
     },
     "04_sense_safety/C82": {
-      "lcsc": "C380348",
-      "mpn": "TCC0805X7R225K160FT",
-      "manufacturer": "CCTC",
+      "lcsc": "C377773",
+      "mpn": "CL21A225KBQNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
       "status": "CATALOG_MATCH",
-      "stock": 4,
-      "class": "Extended",
+      "stock": 50000,
+      "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C380348",
-      "notes": "2.2uF16V X7R10%,Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.",
+      "source": "https://jlcpcb.com/partdetail/C377773",
+      "notes": "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.",
       "footprint": null
     },
     "04_sense_safety/C83": {
-      "lcsc": "C380348",
-      "mpn": "TCC0805X7R225K160FT",
-      "manufacturer": "CCTC",
+      "lcsc": "C377773",
+      "mpn": "CL21A225KBQNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
       "status": "CATALOG_MATCH",
-      "stock": 4,
-      "class": "Extended",
+      "stock": 50000,
+      "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C380348",
-      "notes": "2.2uF16V X7R10%,coil regulator output; preserve >=0.5uF effective capacitance at3V.",
+      "source": "https://jlcpcb.com/partdetail/C377773",
+      "notes": "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Coil regulator output; preserve >=0.5uF effective capacitance at 3V.",
       "footprint": null
     },
     "04_sense_safety/R92": {

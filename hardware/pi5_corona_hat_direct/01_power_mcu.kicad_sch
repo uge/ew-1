@@ -18644,7 +18644,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C24374260"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C50341643"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18666,7 +18666,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C24374260"
+		(property "LCSC" "C50341643"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18677,7 +18677,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C24374260"
+		(property "JLCPCB Part #" "C50341643"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18699,7 +18699,7 @@
 				)
 			)
 		)
-		(property "MPN" "AP33772SDKZ-13-FA01"
+		(property "MPN" "AP33772SDKZ-13-FA02"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18732,7 +18732,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "FA01 firmware ordering variant; verify against host driver and required startup profile. Stock snapshot only."
+		(property "Procurement Notes" "FA02 firmware ordering variant in QFN-24 (4x4mm). Verify against host driver and required startup profile."
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18743,7 +18743,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C24374260"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C50341643"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18776,7 +18776,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C24374260"
+		(property "LCSC Part" "C50341643"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)

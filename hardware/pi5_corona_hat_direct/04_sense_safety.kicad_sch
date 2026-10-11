@@ -15490,7 +15490,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2uF 16V X7R"
+		(property "Value" "2.2uF 50V X5R"
 			(at 57.785 247.65 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15513,7 +15513,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C377773"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15534,7 +15534,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C380348"
+		(property "LCSC" "C377773"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15545,7 +15545,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C380348"
+		(property "LCSC Part" "C377773"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15556,7 +15556,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C380348"
+		(property "JLCPCB Part #" "C377773"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15567,7 +15567,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "CCTC"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15578,7 +15578,7 @@
 				)
 			)
 		)
-		(property "MPN" "TCC0805X7R225K160FT"
+		(property "MPN" "CL21A225KBQNNNE"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15600,7 +15600,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "2.2uF16V X7R10%,Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V."
+		(property "Procurement Notes" "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V."
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15611,7 +15611,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C380348"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C377773"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -15622,7 +15622,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 53.34 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20278,7 +20278,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2uF 16V X7R"
+		(property "Value" "2.2uF 50V X5R"
 			(at 151.765 247.65 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20301,7 +20301,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C377773"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20322,7 +20322,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C380348"
+		(property "LCSC" "C377773"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20333,7 +20333,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C380348"
+		(property "LCSC Part" "C377773"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20344,7 +20344,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C380348"
+		(property "JLCPCB Part #" "C377773"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20355,7 +20355,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "CCTC"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20366,7 +20366,7 @@
 				)
 			)
 		)
-		(property "MPN" "TCC0805X7R225K160FT"
+		(property "MPN" "CL21A225KBQNNNE"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20388,7 +20388,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "2.2uF16V X7R10%,coil regulator output; preserve >=0.5uF effective capacitance at3V."
+		(property "Procurement Notes" "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Coil regulator output; preserve >=0.5uF effective capacitance at 3V."
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20399,7 +20399,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C380348"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C377773"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20410,7 +20410,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 147.32 246.38 0)
 			(hide yes)
 			(show_name no)

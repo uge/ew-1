@@ -4488,7 +4488,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2uF 16V X7R"
+		(property "Value" "2.2uF 50V X5R"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4500,7 +4500,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C377773"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4534,7 +4534,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C380348"
+		(property "LCSC" "C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4546,7 +4546,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C380348"
+		(property "LCSC Part" "C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4558,7 +4558,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C380348"
+		(property "JLCPCB Part #" "C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4570,7 +4570,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "CCTC"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4582,7 +4582,7 @@
 				)
 			)
 		)
-		(property "MPN" "TCC0805X7R225K160FT"
+		(property "MPN" "CL21A225KBQNNNE"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4606,7 +4606,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "2.2uF16V X7R10%,Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V."
+		(property "Procurement Notes" "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4618,7 +4618,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C380348"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -4630,7 +4630,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11431,7 +11431,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2uF 16V X7R"
+		(property "Value" "2.2uF 50V X5R"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11443,7 +11443,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C377773"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11477,7 +11477,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C380348"
+		(property "LCSC" "C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11489,7 +11489,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C380348"
+		(property "LCSC Part" "C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11501,7 +11501,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C380348"
+		(property "JLCPCB Part #" "C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11513,7 +11513,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "CCTC"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11525,7 +11525,7 @@
 				)
 			)
 		)
-		(property "MPN" "TCC0805X7R225K160FT"
+		(property "MPN" "CL21A225KBQNNNE"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11549,7 +11549,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "2.2uF16V X7R10%,coil regulator output; preserve >=0.5uF effective capacitance at3V."
+		(property "Procurement Notes" "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Coil regulator output; preserve >=0.5uF effective capacitance at 3V."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11561,7 +11561,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C380348"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C377773"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11573,7 +11573,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -37310,7 +37310,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C24374260"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C50341643"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -37344,7 +37344,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C24374260"
+		(property "LCSC" "C50341643"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
@@ -37356,7 +37356,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C24374260"
+		(property "JLCPCB Part #" "C50341643"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
@@ -37380,7 +37380,7 @@
 				)
 			)
 		)
-		(property "MPN" "AP33772SDKZ-13-FA01"
+		(property "MPN" "AP33772SDKZ-13-FA02"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
@@ -37416,7 +37416,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "FA01 firmware ordering variant; verify against host driver and required startup profile. Stock snapshot only."
+		(property "Procurement Notes" "FA02 firmware ordering variant in QFN-24 (4x4mm). Verify against host driver and required startup profile."
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
@@ -37428,7 +37428,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C24374260"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C50341643"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
@@ -37464,7 +37464,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C24374260"
+		(property "LCSC Part" "C50341643"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
