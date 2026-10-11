@@ -1,0 +1,2355 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+CMD: python3 /home/uge/.local/share/KiCadRoutingTools/py_router/route.py /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-input.kicad_pcb /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb --nets /INTERLOCK_OK /01_power_mcu/SDA /01_power_mcu/SCL 3V3 GND /01_power_mcu/USB_DP /01_power_mcu/USB_DN /01_power_mcu/CC1 /01_power_mcu/CC2 /01_power_mcu/PD_VMON /01_power_mcu/GATE /01_power_mcu/ISENP /01_power_mcu/IFB /01_power_mcu/V18 /01_power_mcu/V5V /01_power_mcu/OTP_NTC /01_power_mcu/EN_DRV /01_power_mcu/EFUSE_OVLO /01_power_mcu/EFUSE_DVDT /01_power_mcu/EFUSE_ILM /02_drive_transformer/DRV_IPROPI /02_drive_transformer/DRV_IMODE /02_drive_transformer/DRV_VCP /02_drive_transformer/DRV_CPH /02_drive_transformer/DRV_CPL "Net-(R8-Pad2)" "Net-(U4-IN-)" /HV_SENSE_ADC /HV_CURR_ADC "Net-(C63-Pad1)" --layers F.Cu B.Cu --track-width 0.25 --clearance 0.2 --net-clearances /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/net-clearances.json --via-size 0.6 --via-drill 0.3 --escalation off --no-fix-drc-settings --no-stub-layer-swap --same-net-pad-clearance 0.2 --write-fill --max-ripup 2 --max-iterations 50000 --json-out /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-router-result.json
+ENV KNOBS: none
+--clearance 0.2: the Default net class routes at it this run; other classes are honoured (pass --clearance-ceiling to cap every class).
+--hole-to-hole-clearance not given; using 0.25mm [board constraint].
+--board-edge-clearance not given; using 0.5mm [board constraint].
+Loading /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-input.kicad_pcb to expand net patterns...
+WARNING: 2 'unconnected-*' net(s) with >=2 pads excluded from the wildcard: 'unconnected-(U9-FLT-Pad4)' (2 pads), 'unconnected-(U9-ITIMER-Pad10)' (2 pads). If these are a reversible footprint's doubled pins they DO need a trace -- route them explicitly by naming them in --nets. Shield/mounting tabs joined mechanically can stay unrouted (#513 item 7).
+Routing 30 nets: ['/INTERLOCK_OK', '/01_power_mcu/SDA', '/01_power_mcu/SCL', '3V3', 'GND']...
+Loaded per-net clearances for 57/160 nets from /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/net-clearances.json
+Loading /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-input.kicad_pcb...
+Using 2 routing layers: ['F.Cu', 'B.Cu']
+  Layer costs: F.Cu=1.0x, B.Cu=3.0x
+Auto-detected 1 BGA exclusion zone(s):
+  U5: (66.9, 76.7) to (69.1, 79.3), edge_tol=0.71mm
+Same-net pad via clearance 0.2mm (from flag, #581): vias stay off same-net pads
+
+Skipping 1 already-routed net(s): Already fully connected
+
+Using MPS ordering strategy...
+MPS: Using segment intersection method (no nets on BGA chips)
+MPS: 29 nets with 36 crossing conflicts detected
+MPS Round 1: 16 units: Net-(U4-IN-), /01_power_mcu/V5V, /01_power_mcu/EFUSE_OVLO, /01_power_mcu/V18, /02_drive_transformer/DRV_CPL, Net-(R8-Pad2), Net-(C63-Pad1), /01_power_mcu/USB_DN, /01_power_mcu/OTP_NTC, /01_power_mcu/EFUSE_DVDT, /02_drive_transformer/DRV_IPROPI, /01_power_mcu/PD_VMON, /02_drive_transformer/DRV_IMODE, /01_power_mcu/CC2, /INTERLOCK_OK, /01_power_mcu/SDA
+MPS Round 2: 7 units: /02_drive_transformer/DRV_CPH, /01_power_mcu/EFUSE_ILM, /01_power_mcu/EN_DRV, /01_power_mcu/USB_DP, /02_drive_transformer/DRV_VCP, /01_power_mcu/GATE, 3V3
+MPS Round 3: 3 units: /01_power_mcu/IFB, /01_power_mcu/ISENP, /HV_CURR_ADC
+MPS Round 4: 3 units: /01_power_mcu/CC1, /01_power_mcu/SCL, /HV_SENSE_ADC
+
+Routing 29 single-ended net(s)...
+============================================================
+Building base obstacle map...
+12 unprotected pre-existing net(s) registered as main-pass rip candidates (<=30 seg/<=6 via, custody-backed; KICAD_RIP_PREEXISTING=0 disables)
+  .kicad_dru: rule 'HV_STAGE copper clearance': clearance 4.0mm has a non-layer scope (netclass/area/... condition) -- skipped, KiCad will still enforce it
+  .kicad_dru: rule 'HV_OUT copper clearance': clearance 10.0mm has a non-layer scope (netclass/area/... condition) -- skipped, KiCad will still enforce it
+  .kicad_dru: rule 'R30 divider drop within rated 3kV resistor': clearance 4.0mm has a non-layer scope (netclass/area/... condition) -- skipped, KiCad will still enforce it
+  .kicad_dru: rule 'R163 bleeder drop within rated 3kV resistor': clearance 4.0mm has a non-layer scope (netclass/area/... condition) -- skipped, KiCad will still enforce it
+  .kicad_dru: rule 'Adjacent bleeder nodes separated by one rated resistor': clearance 4.0mm has a non-layer scope (netclass/area/... condition) -- skipped, KiCad will still enforce it
+  .kicad_dru: rule 'C111 rated 6kV capacitor pin spacing': clearance 4.0mm has a non-layer scope (netclass/area/... condition) -- skipped, KiCad will still enforce it
+Copper-to-hole clearance 0.25mm (from the board's own min_hole_clearance, above the 0.2mm fab floor)
+Base obstacle map built in 0.20s
+Found 110 unrouted nets in PCB for stub proximity
+Pre-computing net obstacle cache...
+Net obstacle cache built in 0.27s (110 nets)
+Plane fragility: exact-fill geometry (14 filled island(s) from KiCad refill)
+Plane fragility field: 152382 cells near the edges of 1 pour(s) (KICAD_PLANE_FRAGILITY_COST=2.0mm-equiv, DYNAMIC #466 (=0 via KICAD_PLANE_FRAGILITY_DYNAMIC reverts))
+History congestion (#590) armed: +0.1mm-equiv per contest, cap 0.5, escalate 0.0, rip weight 1.0 (radius +0.25mm), frontier weight 0.25
+
+[1/29] Routing Net-(U4-IN-) (id=127)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=11.00mm)
+  Phase 1 routed in 32413 iterations, 8 segments
+  SUCCESS: 8 segments, 2 vias, 32413 iterations, length=9.72mm (stubs=0.00mm) (0.03s)
+
+[2/29] Routing /01_power_mcu/V5V (id=98)
+backward stuck (14 < 5000), forward=5000
+  backward cell (812, 740, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(1 pad)
+No route found after 5014 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (14 iterations, 22 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U7), unconnected-(U7-NC-Pad21) (U7)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5014 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion. For fine-pitch parts try a finer grid and/or smaller clearance/track, e.g. --grid-step 0.05 scoped to just the failing nets via --nets (board-global it is ~14M cells/layer and may exhaust memory) --clearance 0.15 --track-width 0.15 (current: grid 0.1, clearance 0.2, track 0.25 mm)
+
+[3/29 (1 failed)] Routing /01_power_mcu/EFUSE_OVLO (id=128)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=6.50mm)
+  Phase 1 edge (pads 0,1) failed after 5001 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=2.41mm)
+  Phase 1 edge (pads 1,2) failed after 5001 iterations
+  Failed to route a main edge after 10002 iterations (2 edge(s) tried)
+  backward stuck (1 < 5000), forward=5000
+    backward cell (919, 922, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)  [x2]
+  forward stuck (1 < 5000), backward=5000
+    forward cell (919, 922, layer=0): ok, 8/8 neighbors blocked
+  FAILED: Could not find route (0.03s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  Frontier blocked by 1 nets (3 cells, 3 unique; near: 3 src, 0 tgt)
+  Coverage: 3/8 frontier cells attributed to routed nets; 5 static/unrippable
+  Top blockers:
+    1. BULK_EN: 3 (100.0%), 3 uniq (100%), near: 3 src, 0 tgt
+  Ripping up BULK_EN to retry...
+      PRE-EXISTING rip: 'BULK_EN' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+    Ripped BULK_EN
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=6.50mm)
+  backward stuck (1 < 5000), forward=5000
+    backward cell (919, 922, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: BULK_EN(2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+  Phase 1 edge (pads 0,1) failed after 5001 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=2.41mm)
+  forward stuck (1 < 5000), backward=5000
+    forward cell (919, 922, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: BULK_EN(2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+  Phase 1 edge (pads 1,2) failed after 5001 iterations
+  Failed to route a main edge after 10002 iterations (2 edge(s) tried)
+  RETRY FAILED (N=1)
+    Retry had 131 blocked cells
+  Re-analyzing 131 blocked cells from N=1 retry:
+    No previously-routed nets blocking (likely blocked by pads/stubs/zones)
+  No additional rippable blockers from retry analysis
+  All rip-up attempts failed: Restoring 1 net(s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5001 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[4/29 (2 failed)] Routing /01_power_mcu/V18 (id=89)
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.900mm < floor half-width) -- rejecting the route rather than shipping a short
+Route found in 47 iterations, path length: 47
+  FAILED: Could not find route (0.01s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 47 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[5/29 (3 failed)] Routing /02_drive_transformer/DRV_CPL (id=33)
+  SUCCESS: 8 segments, 2 vias, 1207 iterations, length=6.36mm (stubs=0.00mm) (0.01s)
+
+[6/29 (3 failed)] Routing Net-(R8-Pad2) (id=82)
+backward stuck (1 < 5000), forward=5000
+  backward cell (1280, 1912, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking (likely blocked by pads/stubs/zones)
+  ROUTE FAILED - no rippable blockers found
+
+[7/29 (4 failed)] Routing Net-(C63-Pad1) (id=21)
+  SUCCESS: 18 segments, 0 vias, 1302 iterations, length=16.18mm (stubs=0.00mm) (0.01s)
+
+[8/29 (4 failed)] Routing /01_power_mcu/USB_DN (id=50)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=22.54mm)
+  Phase 1 edge (pads 0,1) failed after 5001 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=1.00mm)
+  Phase 1 edge (pads 1,2) failed after 2 iterations
+  Failed to route a main edge after 5003 iterations (2 edge(s) tried)
+  backward stuck (1 < 5000), forward=5000
+    backward cell (878, 584, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: /01_power_mcu/USB_DP(1 pad)  [x2]
+  Both directions stuck (forward=1, backward=1 < 5000)
+    forward cell (878, 584, layer=0): ok, 8/8 neighbors blocked
+    backward cell (888, 584, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: /01_power_mcu/CC1(1 pad)
+  FAILED: Could not find route (0.04s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking (likely blocked by pads/stubs/zones)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 2 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[9/29 (5 failed)] Routing /01_power_mcu/OTP_NTC (id=123)
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 2.109mm < floor half-width) -- rejecting the route rather than shipping a short
+Route found in 2640 iterations, path length: 92
+  FAILED: Could not find route (0.01s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 2640 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[10/29 (6 failed)] Routing /01_power_mcu/EFUSE_DVDT (id=26)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Existing copper joins 3 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=11.17mm)
+  Phase 1 routed in 3626 iterations, 9 segments
+  SUCCESS: 9 segments, 0 vias, 3626 iterations, length=13.20mm (stubs=0.00mm) (0.01s)
+
+[11/29 (6 failed)] Routing /02_drive_transformer/DRV_IPROPI (id=25)
+backward stuck (31 < 5000), forward=5000
+  backward cell (862, 1380, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /02_drive_transformer/DRV_IMODE(1 pad)
+No route found after 5031 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (31 iterations, 33 blocked cells)
+  Frontier blocked by 1 nets (4 cells, 4 unique; near: 0 src, 4 tgt)
+  Coverage: 4/33 frontier cells attributed to routed nets; 29 static/unrippable
+  Top blockers:
+    1. /02_drive_transformer/DRV_nFAULT: 4 (100.0%), 4 uniq (100%), near: 0 src, 4 tgt
+  Ripping up /02_drive_transformer/DRV_nFAULT to retry...
+      PRE-EXISTING rip: '/02_drive_transformer/DRV_nFAULT' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+    Ripped /02_drive_transformer/DRV_nFAULT
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 44247 iterations, path length: 119
+  RETRY SUCCESS (N=1): 18 segments, 2 vias, length=13.40mm
+
+[12/29 (6 failed)] Routing /01_power_mcu/PD_VMON (id=17)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=14.98mm)
+  Phase 1 edge (pads 0,1) failed after 5035 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=2.35mm)
+  Phase 1 routed in 5060 iterations, 3 segments
+  SUCCESS: 3 segments, 0 vias, 5060 iterations, length=2.45mm (stubs=0.00mm) (0.03s)
+
+[13/29 (6 failed)] Routing /02_drive_transformer/DRV_IMODE (id=30)
+  SUCCESS: 29 segments, 2 vias, 45260 iterations, length=25.80mm (stubs=0.00mm) (0.02s)
+
+[14/29 (6 failed)] Routing /01_power_mcu/CC2 (id=52)
+Both directions stuck (forward=1, backward=14 < 5000)
+  forward cell (862, 584, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/VBUS_RAW(2 pad)
+  backward cell (800, 722, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/IFB(1 pad)
+No route found after 15 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: /01_power_mcu/VBUS_RAW (J3)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 15 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[15/29 (7 failed)] Routing /INTERLOCK_OK (id=103)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+No route found after 50000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 100000 (base 50000)
+No route found after 160000 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  Forward direction failed fastest (55000 iterations, 1515 blocked cells)
+  Frontier blocked by 5 nets (831 cells, 831 unique; near: 40 src, 0 tgt)
+  Coverage: 831/1515 frontier cells attributed to routed nets; 684 static/unrippable
+  Top blockers:
+    1. /DRV_IN1: 355 (42.7%), 355 uniq (100%), near: 27 src, 0 tgt
+    2. BULK_CMD: 217 (26.1%), 217 uniq (100%)
+    3. /04_sense_safety/RELAY_COIL_POS: 165 (19.9%), 165 uniq (100%), near: 13 src, 0 tgt
+    4. /DRV_IN2: 60 (7.2%), 60 uniq (100%)
+    5. COIL_3V: 34 (4.1%), 34 uniq (100%)
+  Ripping up /DRV_IN1 to retry...
+      PRE-EXISTING rip: '/DRV_IN1' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+    Ripped /DRV_IN1
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 253864 (base 50000)
+Route found in 263864 iterations, path length: 436
+  RETRY SUCCESS (N=1): 22 segments, 1 vias, length=51.63mm
+
+[16/29 (7 failed)] Routing /01_power_mcu/SDA (id=19)
+  Detected multi-point net with 4 pads (Phase 1: main route only)
+  Existing copper joins 4 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 2 and 3, length=65.01mm)
+  Phase 1 edge (pads 2,3) failed after 5017 iterations
+  Phase 1 exhausted from the pads; deferring 1 edge(s) to Phase 3's island-copper sources (base component: 3 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 5017 iterations, length=143.21mm (stubs=143.21mm) (0.04s)
+
+[17/29 (7 failed)] Routing /02_drive_transformer/DRV_CPH (id=32)
+  SUCCESS: 15 segments, 2 vias, 37184 iterations, length=27.36mm (stubs=0.00mm) (0.02s)
+
+[18/29 (7 failed)] Routing /01_power_mcu/EFUSE_ILM (id=131)
+forward stuck (1 < 5000), backward=5000
+  forward cell (901, 922, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U9), unconnected-(U9-ITIMER-Pad10) (U9); pre-existing tracks: GND
+  Via-in-pad decline blamed PRE-EXISTING net(s) 'GND' - not rippable this run; retry with --rip-existing-nets to authorize
+  ROUTE FAILED - no rippable blockers found
+
+[19/29 (8 failed)] Routing /01_power_mcu/EN_DRV (id=126)
+forward stuck (18 < 5000), backward=5000
+  forward cell (828, 740, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/VBUS_IN(1 pad)
+No route found after 5018 iterations (both directions)
+  FAILED: Could not find route (0.02s)
+  Forward direction failed fastest (18 iterations, 22 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: /01_power_mcu/VIN_PD (U7), GND (U7), /01_power_mcu/VBUS_IN (U7)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5018 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[20/29 (9 failed)] Routing /01_power_mcu/USB_DP (id=49)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=22.04mm)
+  Phase 1 edge (pads 0,1) failed after 5001 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=1.00mm)
+  Phase 1 edge (pads 1,2) failed after 2 iterations
+  Failed to route a main edge after 5003 iterations (2 edge(s) tried)
+  backward stuck (1 < 5000), forward=5000
+    backward cell (872, 584, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: unconnected-(J3-SBU1-PadA8)(1 pad)  [x2]
+  Both directions stuck (forward=1, backward=1 < 5000)
+    forward cell (872, 584, layer=0): ok, 8/8 neighbors blocked
+    backward cell (882, 584, layer=0): ok, 8/8 neighbors blocked
+      Blocking obstacles: /01_power_mcu/USB_DN(1 pad)
+  FAILED: Could not find route (0.04s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: unconnected-(J3-SBU1-PadA8) (J3)
+  ROUTE FAILED - no rippable blockers found
+
+[21/29 (10 failed)] Routing /02_drive_transformer/DRV_VCP (id=31)
+  SUCCESS: 23 segments, 4 vias, 35215 iterations, length=24.86mm (stubs=0.00mm) (0.02s)
+
+[22/29 (10 failed)] Routing /01_power_mcu/GATE (id=108)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 2 and 1, length=38.34mm)
+  Phase 1 routed in 101493 iterations, 18 segments
+  SUCCESS: 18 segments, 2 vias, 101493 iterations, length=39.55mm (stubs=0.00mm) (0.03s)
+
+[23/29 (10 failed)] Routing 3V3 (id=10)
+  Detected multi-point net with 11 pads (Phase 1: main route only)
+  Existing copper joins 11 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 6 and 8, length=16.00mm)
+  Phase 1 edge (pads 6,8) failed after 5030 iterations
+  Phase 1 exhausted from the pads; deferring 1 edge(s) to Phase 3's island-copper sources (base component: 10 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 5030 iterations, length=315.27mm (stubs=315.27mm) (0.05s)
+
+[24/29 (10 failed)] Routing /01_power_mcu/IFB (id=37)
+backward stuck (14 < 5000), forward=5000
+  backward cell (800, 718, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/CC2(1 pad)
+No route found after 5014 iterations (both directions)
+  FAILED: Could not find route (0.02s)
+  Backward direction failed fastest (14 iterations, 22 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U7), unconnected-(U7-NC-Pad14) (U7)
+  ROUTE FAILED - no rippable blockers found
+
+[25/29 (11 failed)] Routing /01_power_mcu/ISENP (id=115)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 2, length=9.64mm)
+  Phase 1 routed in 67 iterations, 3 segments
+  SUCCESS: 3 segments, 0 vias, 67 iterations, length=7.88mm (stubs=0.00mm) (0.01s)
+
+[26/29 (11 failed)] Routing /HV_CURR_ADC (id=16)
+  Detected multi-point net with 4 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 2, length=79.10mm)
+  Phase 1 edge (pads 0,2) failed after 36 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/3) (pads 2 and 1, length=6.95mm)
+  Phase 1 edge (pads 2,1) failed after 5001 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (3/3) (pads 1 and 3, length=5.70mm)
+  Phase 1 routed in 5165 iterations, 3 segments
+  SUCCESS: 3 segments, 0 vias, 5165 iterations, length=6.45mm (stubs=0.00mm) (0.05s)
+
+[27/29 (11 failed)] Routing /01_power_mcu/CC1 (id=48)
+Both directions stuck (forward=1, backward=18 < 5000)
+  forward cell (892, 584, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(1 pad)  [x2]
+  backward cell (800, 728, layer=0): ok, 3/8 neighbors blocked
+No route found after 19 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking (likely blocked by pads/stubs/zones)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 19 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[28/29 (12 failed)] Routing /01_power_mcu/SCL (id=20)
+backward stuck (18 < 5000), forward=5000
+  backward cell (840, 712, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: unconnected-(U7-FLIP-Pad6)(1 pad)
+No route found after 5018 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (18 iterations, 22 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U7), /01_power_mcu/SDA (U7), unconnected-(U7-FLIP-Pad6) (U7)
+  ROUTE FAILED - no rippable blockers found
+
+[29/29 (13 failed)] Routing /HV_SENSE_ADC (id=15)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=104.35mm)
+  Phase 1 edge (pads 0,1) failed after 5013 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=7.25mm)
+  Phase 1 routed in 5675 iterations, 8 segments
+  SUCCESS: 8 segments, 2 vias, 5675 iterations, length=8.14mm (stubs=0.00mm) (0.03s)
+
+[REROUTE 30/31 (13 failed)] Re-routing ripped net /02_drive_transformer/DRV_nFAULT
+  Multi-point net with 3 pads - routing main + taps
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=9.27mm)
+  forward stuck (23 < 5000), backward=5000
+    forward cell (862, 1367, layer=0): ok, 3/8 neighbors blocked
+      Blocking obstacles: 3V3(1 pad)
+  Phase 1 edge (pads 0,1) failed after 5023 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 1 and 2, length=4.83mm)
+  Phase 1 routed in 8260 iterations, 11 segments
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/0] Routing MST edge: pad 1 -> pad 0 (length=9.27mm) target=(86.22, 136.68)
+      backward stuck (23 < 5000), forward=5000
+        backward cell (862, 1367, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: 3V3(1 pad)
+      Failed to route MST edge after 5023 iterations (0.01s)
+    Fallback: attempting orphaned pad 0 directly from connected copper
+    [2/0] (1 failed) Routing MST edge: pad 1 -> pad 0 (length=9.27mm) target=(86.22, 136.68)
+      backward stuck (23 < 5000), forward=5000
+        backward cell (862, 1367, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: 3V3(1 pad)
+      Failed to route MST edge after 5023 iterations (0.01s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 11 total segments, 2 total vias
+    Tap routing: 0 segments, 0 vias
+    NOT CONNECTED (so far): /02_drive_transformer/DRV_nFAULT - U2 pad 4 at (86.22, 136.68) - may still be recovered; final verdict in the end-of-run summary
+  REROUTE SUCCESS: 11 segments, 2 vias, length=4.79mm (stubs=0.00mm) (0.04s)
+
+[REROUTE 31/31 (13 failed)] Re-routing ripped net /DRV_IN1
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 200000 (base 50000)
+No route found after 200000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 200000 (base 50000)
+No route found after 410000 iterations (both directions)
+  REROUTE FAILED: (0.09s) - attempting rip-up and retry...
+  Frontier blocked by 12 nets (1266 cells, 1266 unique; near: 133 src, 0 tgt)
+  Coverage: 1266/4783 frontier cells attributed to routed nets; 3517 static/unrippable
+  Top blockers:
+    1. /01_power_mcu/GATE: 262 (20.7%), 262 uniq (100%)
+    2. /04_sense_safety/RELAY_COIL_POS: 211 (16.7%), 211 uniq (100%)
+    3. /02_drive_transformer/DRV_IPROPI: 172 (13.6%), 172 uniq (100%), near: 82 src, 0 tgt
+    4. BULK_CMD: 171 (13.5%), 171 uniq (100%)
+    5. /02_drive_transformer/DRV_CPH: 134 (10.6%), 134 uniq (100%)
+    6. /DRV_IN2: 106 (8.4%), 106 uniq (100%), near: 35 src, 0 tgt
+    7. /02_drive_transformer/DRV_IMODE: 64 (5.1%), 64 uniq (100%)
+    8. /DRV_nSLEEP: 38 (3.0%), 38 uniq (100%)
+    9. COIL_3V: 34 (2.7%), 34 uniq (100%)
+    10. /02_drive_transformer/DRV_VCP: 29 (2.3%), 29 uniq (100%), near: 16 src, 0 tgt
+    ... and 2 more nets (45 cells)
+  Ripping up /01_power_mcu/GATE to retry reroute...
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 500000 (base 50000)
+No route found after 500000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 250000 (base 50000)
+No route found after 760000 iterations (both directions)
+  REROUTE RETRY FAILED (N=1)
+    Retry had 15985 blocked cells
+  Re-analyzing 15985 blocked cells from N=1 retry:
+    Frontier blocked by 13 nets (3615 cells, 3615 unique; near: 136 src, 76 tgt)
+    Coverage: 3615/15985 frontier cells attributed to routed nets; 12370 static/unrippable
+    Top blockers:
+      1. /DRV_IN2: 1009 (27.9%), 1009 uniq (100%), near: 31 src, 0 tgt
+      2. BULK_CMD: 756 (20.9%), 756 uniq (100%), near: 0 src, 40 tgt
+      3. /DRV_SLEEP_CMD: 341 (9.4%), 341 uniq (100%), near: 0 src, 36 tgt
+      4. /04_sense_safety/RELAY_COIL_POS: 305 (8.4%), 305 uniq (100%)
+      5. /02_drive_transformer/DRV_CPH: 289 (8.0%), 289 uniq (100%)
+      6. /DRV_nSLEEP: 252 (7.0%), 252 uniq (100%)
+      7. /02_drive_transformer/DRV_IPROPI: 168 (4.6%), 168 uniq (100%), near: 86 src, 0 tgt
+      8. COIL_3V: 138 (3.8%), 138 uniq (100%)
+      9. /01_power_mcu/EFUSE_DVDT: 131 (3.6%), 131 uniq (100%)
+      10. /02_drive_transformer/DRV_IMODE: 102 (2.8%), 102 uniq (100%)
+      ... and 3 more nets (124 cells)
+  Extending to N=2: ripping /DRV_IN2...
+      PRE-EXISTING rip: '/DRV_IN2' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 200000 (base 50000)
+No route found after 200000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 250000 (base 50000)
+No route found after 460000 iterations (both directions)
+  REROUTE RETRY FAILED (N=2)
+    Retry had 13073 blocked cells
+  All rip-up attempts failed: Restoring 2 net(s)
+      restore skipped (net 28): saved copper would short other-net copper; left ripped (#134)
+      restore skipped (net 108): saved copper would short other-net copper; left ripped (#134)
+
+Sync pcb_data: 1146 -> 968 (kept stubs) -> 1146 (after adding 178)
+
+============================================================
+Multi-point Phase 3: Routing 9 tap connections
+============================================================
+Phase 3 order (boxed-in risk first): /01_power_mcu/SDA, /01_power_mcu/ISENP, /01_power_mcu/EFUSE_DVDT, /HV_SENSE_ADC, /01_power_mcu/PD_VMON, 3V3, /HV_CURR_ADC, Net-(U4-IN-), /01_power_mcu/GATE
+
+/01_power_mcu/SDA (net 19):
+  Seeding tap sources from the base island's existing copper (1267 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/9] Routing MST edge: pad 2 -> pad 3 (length=65.01mm) target=(83.96, 71.75)
+      backward stuck (13 < 5000), forward=5000
+        backward cell (840, 718, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: GND(5 track, 1 pad)
+      Failed to route MST edge after 5013 iterations (0.01s)
+    Fallback: attempting orphaned pad 3 directly from connected copper
+    [2/9] (1 failed) Routing MST edge: pad 2 -> pad 3 (length=65.01mm) target=(83.96, 71.75)
+      backward stuck (13 < 5000), forward=5000
+        backward cell (840, 718, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: GND(5 track, 1 pad)
+      Failed to route MST edge after 5013 iterations (0.00s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 0 total segments, 0 total vias
+  NOT CONNECTED (so far): /01_power_mcu/SDA - U7 pad 4 at (83.96, 71.75) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.04s, 15043 iterations
+
+/01_power_mcu/ISENP (net 115):
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/9] (1 failed) Routing MST edge: pad 2 -> pad 1 (length=9.32mm) target=(83.96, 73.25)
+      Routed in 8303 iterations (0.00s)
+      terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.850mm) -- failing the MST edge rather than shipping a short
+    Fallback: attempting orphaned pad 1 directly from connected copper
+    [2/9] (2 failed) Routing MST edge: pad 2 -> pad 1 (length=9.32mm) target=(83.96, 73.25)
+      Routed in 8546 iterations (0.00s)
+      terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.850mm) -- failing the MST edge rather than shipping a short
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 3 total segments, 0 total vias
+  NOT CONNECTED (so far): /01_power_mcu/ISENP - U7 pad 1 at (83.96, 73.25) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.03s, 16916 iterations
+
+/01_power_mcu/EFUSE_DVDT (net 26):
+  No remaining MST edges to route in Phase 3
+  Net total time: 0.01s, 3626 iterations
+
+/HV_SENSE_ADC (net 15):
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [2/9] (2 failed) Routing MST edge: pad 1 -> pad 0 (length=104.35mm) target=(82.50, 109.15)
+      backward stuck (13 < 5000), forward=5000
+        backward cell (825, 1092, layer=0): ok, 6/8 neighbors blocked
+          Blocking obstacles: GND(2 track, 1 pad), /HV_CURR_ADC(1 pad)
+      Failed to route MST edge after 5013 iterations (0.01s)
+    Fallback: attempting orphaned pad 0 directly from connected copper
+    [3/9] (3 failed) Routing MST edge: pad 1 -> pad 0 (length=104.35mm) target=(82.50, 109.15)
+      backward stuck (13 < 5000), forward=5000
+        backward cell (825, 1092, layer=0): ok, 6/8 neighbors blocked
+          Blocking obstacles: GND(2 track, 1 pad), /HV_CURR_ADC(1 pad)
+      Failed to route MST edge after 5013 iterations (0.01s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 8 total segments, 2 total vias
+  NOT CONNECTED (so far): /HV_SENSE_ADC - U6 pad 4 at (82.50, 109.15) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.02s, 15701 iterations
+
+/01_power_mcu/PD_VMON (net 17):
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [3/9] (3 failed) Routing MST edge: pad 1 -> pad 0 (length=14.98mm) target=(83.00, 104.85)
+      backward stuck (35 < 5000), forward=5000
+        backward cell (830, 1048, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: unconnected-(U6-AIN3-Pad7)(1 pad)
+      Failed to route MST edge after 5035 iterations (0.00s)
+    Fallback: attempting orphaned pad 0 directly from connected copper
+    [4/9] (4 failed) Routing MST edge: pad 1 -> pad 0 (length=14.98mm) target=(83.00, 104.85)
+      backward stuck (35 < 5000), forward=5000
+        backward cell (830, 1048, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: unconnected-(U6-AIN3-Pad7)(1 pad)
+      Failed to route MST edge after 5035 iterations (0.00s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 3 total segments, 0 total vias
+    Ripping 3V3 (net 10) to retry tap route...
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [4/9] (4 failed) Routing MST edge: pad 1 -> pad 0 (length=14.98mm) target=(83.00, 104.85)
+      backward stuck (35 < 5000), forward=5000
+        backward cell (830, 1048, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: unconnected-(U6-AIN3-Pad7)(1 pad)
+      Failed to route MST edge after 5035 iterations (0.01s)
+    Fallback: attempting orphaned pad 0 directly from connected copper
+    [5/9] (5 failed) Routing MST edge: pad 1 -> pad 0 (length=14.98mm) target=(83.00, 104.85)
+      backward stuck (35 < 5000), forward=5000
+        backward cell (830, 1048, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: unconnected-(U6-AIN3-Pad7)(1 pad)
+      Failed to route MST edge after 5035 iterations (0.00s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 3 total segments, 0 total vias
+    /01_power_mcu/PD_VMON: Retry FAILED (N=1): still 1 failed edges
+      Retry had 109 blocked cells
+    Re-analyzing 109 blocked cells from N=1 retry:
+      No previously-routed nets blocking (likely blocked by pads/stubs/zones)
+    No additional rippable blockers from retry analysis
+    /01_power_mcu/PD_VMON: All rip-up attempts failed, restoring 1 net(s)...
+  NOT CONNECTED (so far): /01_power_mcu/PD_VMON - U6 pad 6 at (83.00, 104.85) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.07s, 15130 iterations
+
+3V3 (net 10):
+  Seeding tap sources from the base island's existing copper (2833 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [4/9] (4 failed) Routing MST edge: pad 6 -> pad 8 (length=16.00mm) target=(86.22, 137.32)
+      backward stuck (23 < 5000), forward=5000
+        backward cell (862, 1373, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: /02_drive_transformer/DRV_nFAULT(1 pad)
+      Failed to route MST edge after 5023 iterations (0.01s)
+    Fallback: attempting orphaned pad 8 directly from connected copper
+    [5/9] (5 failed) Routing MST edge: pad 6 -> pad 8 (length=16.00mm) target=(86.22, 137.32)
+      backward stuck (23 < 5000), forward=5000
+        backward cell (862, 1373, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: /02_drive_transformer/DRV_nFAULT(1 pad)
+      Failed to route MST edge after 5023 iterations (0.00s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 0 total segments, 0 total vias
+    Ripping /02_drive_transformer/DRV_IPROPI (net 25) to retry tap route...
+  Seeding tap sources from the base island's existing copper (2833 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [4/9] (5 failed) Routing MST edge: pad 6 -> pad 8 (length=16.00mm) target=(86.22, 137.32)
+      Routed in 80855 iterations (0.02s)
+  Phase 3 routing complete: 1 edges, 8 total segments, 2 total vias
+    3V3: Retry SUCCESS (N=1): 1 -> 0 failed edges
+    Adding 8 tap segments, 2 tap vias to obstacles before re-routing...
+    Re-routing 1 ripped net(s)...
+
+  Re-routing /02_drive_transformer/DRV_IPROPI (net 25)...
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 78218 (base 50000)
+Route found in 88218 iterations, path length: 156
+    Re-routed main path: 16 segments, 2 vias
+  Added 8 tap segments, 2 tap vias
+  Net total time: 0.16s, 95931 iterations
+
+/HV_CURR_ADC (net 16):
+  Multi-point net Phase 3: routing 2 remaining MST edges (longest first)
+    [4/9] (5 failed) Routing MST edge: pad 1 -> pad 2 (length=6.95mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+    Fallback: attempting orphaned pad 2 directly from connected copper
+    [5/9] (6 failed) Routing MST edge: pad 1 -> pad 2 (length=6.95mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+    Fallback: attempting orphaned pad 0 directly from connected copper
+    [5/9] (6 failed) Routing MST edge: pad 1 -> pad 0 (length=84.15mm) target=(83.00, 109.15)
+      backward stuck (33 < 5000), forward=5000
+        backward cell (830, 1092, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: /HV_SENSE_ADC(1 pad)
+      Failed to route MST edge after 5033 iterations (0.00s)
+  Warning: 2 pad(s) not connected (2 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 3 total segments, 0 total vias
+  NOT CONNECTED (so far): /HV_CURR_ADC - U6 pad 5 at (83.00, 109.15) - may still be recovered; final verdict in the end-of-run summary
+  NOT CONNECTED (so far): /HV_CURR_ADC - R91 pad 2 at (91.25, 180.00) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.03s, 20200 iterations
+
+Net-(U4-IN-) (net 127):
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [6/9] (7 failed) Routing MST edge: pad 1 -> pad 2 (length=4.50mm) target=(117.95, 185.70)
+      Routed in 26 iterations (0.00s)
+  Phase 3 routing complete: 1 edges, 16 total segments, 2 total vias
+  Added 8 tap segments, 0 tap vias
+  Net total time: 0.02s, 32439 iterations
+
+/01_power_mcu/GATE (net 108):
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [7/9] (7 failed) Routing MST edge: pad 2 -> pad 0 (length=14.50mm) target=(76.83, 77.00)
+      Routed in 145 iterations (0.00s)
+  Phase 3 routing complete: 1 edges, 24 total segments, 2 total vias
+  Added 6 tap segments, 0 tap vias
+  Net total time: 0.02s, 101638 iterations
+Issue #134 recovery: re-routing 1 net(s) left ripped to avoid a short: /DRV_IN2
+
+[REROUTE 32/32] Re-routing ripped net /DRV_IN1
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 200000 (base 50000)
+No route found after 200000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 250000 (base 50000)
+No route found after 460000 iterations (both directions)
+  REROUTE FAILED: (0.11s) - attempting rip-up and retry...
+  Frontier blocked by 11 nets (1073 cells, 1073 unique; near: 95 src, 0 tgt)
+  Coverage: 1073/4525 frontier cells attributed to routed nets; 3452 static/unrippable
+  Top blockers:
+    1. BULK_CMD: 248 (23.1%), 248 uniq (100%)
+    2. /DRV_nSLEEP: 212 (19.8%), 212 uniq (100%), near: 11 src, 0 tgt
+    3. /04_sense_safety/RELAY_COIL_POS: 176 (16.4%), 176 uniq (100%)
+    4. /02_drive_transformer/DRV_IPROPI: 150 (14.0%), 150 uniq (100%), near: 73 src, 0 tgt
+    5. /02_drive_transformer/DRV_CPH: 107 (10.0%), 107 uniq (100%)
+    6. /DRV_SLEEP_CMD: 57 (5.3%), 57 uniq (100%)
+    7. COIL_3V: 34 (3.2%), 34 uniq (100%)
+    8. /02_drive_transformer/DRV_VCP: 24 (2.2%), 24 uniq (100%), near: 11 src, 0 tgt
+    9. /02_drive_transformer/DRV_CPL: 22 (2.1%), 22 uniq (100%)
+    10. /01_power_mcu/PD_VMON: 22 (2.1%), 22 uniq (100%)
+    ... and 1 more nets (21 cells)
+  Ripping up BULK_CMD to retry reroute...
+      PRE-EXISTING rip: 'BULK_CMD' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 178923 (base 50000)
+Route found in 188923 iterations, path length: 500
+  REROUTE RETRY SUCCESS (N=1): 47 segments, 5 vias, length=60.16mm (stubs=0.00mm)
+
+[REROUTE 33/33] Re-routing ripped net /DRV_IN2
+forward stuck (36 < 5000), backward=5000
+  forward cell (862, 1354, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /DRV_nSLEEP(1 pad)
+No route found after 5036 iterations (both directions)
+  REROUTE FAILED: (0.03s) - attempting rip-up and retry...
+  Frontier blocked by 1 nets (3 cells, 3 unique; near: 3 src, 0 tgt)
+  Coverage: 3/35 frontier cells attributed to routed nets; 32 static/unrippable
+  Top blockers:
+    1. /DRV_nSLEEP: 3 (100.0%), 3 uniq (100%), near: 3 src, 0 tgt
+  Ripping up /DRV_nSLEEP to retry reroute...
+      PRE-EXISTING rip: '/DRV_nSLEEP' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 228200 (base 50000)
+Route found in 238200 iterations, path length: 786
+  REROUTE RETRY SUCCESS (N=1): 68 segments, 4 vias, length=96.96mm (stubs=0.00mm)
+
+[REROUTE 34/34] Re-routing ripped net BULK_CMD
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 100000 (base 50000)
+No route found after 100000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 150000 (base 50000)
+No route found after 260000 iterations (both directions)
+  REROUTE FAILED: (0.06s) - attempting rip-up and retry...
+  Frontier blocked by 4 nets (591 cells, 591 unique; near: 4 src, 0 tgt)
+  Coverage: 591/2378 frontier cells attributed to routed nets; 1787 static/unrippable
+  Top blockers:
+    1. /DRV_SLEEP_CMD: 212 (35.9%), 212 uniq (100%)
+    2. /04_sense_safety/RELAY_COIL_POS: 191 (32.3%), 191 uniq (100%), near: 4 src, 0 tgt
+    3. COIL_3V: 156 (26.4%), 156 uniq (100%)
+    4. /DRV_IN2: 32 (5.4%), 32 uniq (100%)
+  Ripping up /DRV_SLEEP_CMD to retry reroute...
+      PRE-EXISTING rip: '/DRV_SLEEP_CMD' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+Route found in 4344 iterations, path length: 505
+  REROUTE RETRY SUCCESS (N=1): 45 segments, 0 vias, length=58.69mm (stubs=0.00mm)
+
+[REROUTE 35/35] Re-routing ripped net /DRV_nSLEEP
+  Multi-point net with 3 pads - routing main + taps
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 1, length=13.97mm)
+  Phase 1 routed in 104 iterations, 11 segments
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/0] Routing MST edge: pad 1 -> pad 2 (length=13.58mm) target=(86.22, 136.03)
+      Routed in 5721 iterations (0.00s)
+  Phase 3 routing complete: 1 edges, 29 total segments, 2 total vias
+    Tap routing: 18 segments, 2 vias
+  REROUTE SUCCESS: 29 segments, 2 vias, length=28.43mm (stubs=0.00mm) (0.02s)
+
+[REROUTE 36/35] Re-routing ripped net /DRV_SLEEP_CMD
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 350000 (base 50000)
+No route found after 350000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 100000 (base 50000)
+No route found after 460000 iterations (both directions)
+  REROUTE FAILED: (0.10s) - attempting rip-up and retry...
+  Frontier blocked by 2 nets (12 cells, 12 unique)
+  Coverage: 12/5814 frontier cells attributed to routed nets; 5802 static/unrippable
+  Top blockers:
+    1. /04_sense_safety/RELAY_COIL_POS: 11 (91.7%), 11 uniq (100%)
+    2. COIL_3V: 1 (8.3%), 1 uniq (100%)
+  Ripping up /04_sense_safety/RELAY_COIL_POS to retry reroute...
+      PRE-EXISTING rip: '/04_sense_safety/RELAY_COIL_POS' (earlier-step copper) removed -- queued for reroute this run; original restored if the reroute fails
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 350000 (base 50000)
+No route found after 350000 iterations (forward), trying backward...
+dynamic iterations (#529): search extended to 88945 (base 50000)
+Route found in 448945 iterations, path length: 414
+  REROUTE RETRY SUCCESS (N=1): 91 segments, 4 vias, length=50.83mm (stubs=0.00mm)
+
+[REROUTE 37/36] Re-routing ripped net /04_sense_safety/RELAY_COIL_POS
+  Multi-point net with 6 pads - routing main + taps
+  Multi-point net Phase 1: routing longest MST edge (pads 3 and 4, length=69.62mm)
+  Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+  No route found after 50000 iterations (forward), trying backward...
+  dynamic iterations (#529): search extended to 64350 (base 50000)
+  Phase 1 routed in 124350 iterations, 59 segments
+  Multi-point net Phase 3: routing 4 remaining MST edges (longest first)
+    [1/0] Routing MST edge: pad 3 -> pad 0 (length=41.54mm) target=(32.54, 194.00)
+      Routed in 1793 iterations (0.00s)
+    [2/0] Routing MST edge: pad 0 -> pad 1 (length=14.86mm) target=(39.00, 185.60)
+      Routed in 32203 iterations (0.01s)
+    [3/0] Routing MST edge: pad 4 -> pad 5 (length=11.55mm) target=(81.25, 120.00)
+      Routed in 44709 iterations (0.01s)
+    [4/0] Routing MST edge: pad 5 -> pad 2 (length=13.35mm) target=(68.90, 119.00)
+      Probe: forward=5000, backward=5000 iters, trying forward with full iterations...  [x2]
+      No route found after 50000 iterations (forward), trying backward...
+      No route found after 5000 iterations (forward), trying backward...
+      Failed to route MST edge after 110000 iterations (0.05s)
+    Fallback: attempting orphaned pad 2 directly from connected copper
+    [5/0] (1 failed) Routing MST edge: pad 5 -> pad 2 (length=13.35mm) target=(68.90, 119.00)
+      Probe: forward=5000, backward=5000 iters, trying forward with full iterations...  [x2]
+      No route found after 50000 iterations (forward), trying backward...
+      No route found after 5000 iterations (forward), trying backward...
+      Failed to route MST edge after 110000 iterations (0.04s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 3 edges, 86 total segments, 5 total vias
+    Tap routing: 27 segments, 3 vias
+    NOT CONNECTED (so far): /04_sense_safety/RELAY_COIL_POS - D3 pad 1 at (68.90, 119.00) - may still be recovered; final verdict in the end-of-run summary
+  REROUTE SUCCESS: 86 segments, 5 vias, length=138.74mm (stubs=0.00mm) (0.15s)
+
+Per-net fine-parameter rescue (#331/#371): 19 candidate net(s)
+  Rescuing /01_power_mcu/CC1 (failed, 2 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 31757 iterations, path length: 709
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 1.850mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 31757 iterations, path length: 709
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 1.850mm < floor half-width) -- rejecting the route rather than shipping a short
+    rescue failed (0.3s)
+  Rescuing /01_power_mcu/CC2 (failed, 2 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 73148 iterations, path length: 689
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 1.325mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 73148 iterations, path length: 689
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 1.325mm < floor half-width) -- rejecting the route rather than shipping a short
+    rescue failed (0.3s)
+  Rescuing /01_power_mcu/EFUSE_ILM (failed, 2 disconnected parts)
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+    bare-ball escape: R73.1 dogbone (11 seg(s), 1 via(s)) (#666)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3604, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3604, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5011 iterations (both directions)
+    improved (2 -> 2 parts, 0.2s)
+  Rescuing /01_power_mcu/EFUSE_OVLO (failed, 3 disconnected parts)
+    bare-ball escape: R71.2 dogbone (12 seg(s), 1 via(s)) (#666)
+    bare-ball escape: R72.1 dogbone (11 seg(s), 1 via(s)) (#666)
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 162019 iterations, path length: 247
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (21 segs, 1 vias, 162019 iters)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+    improved (3 -> 2 parts, 0.3s)
+  Rescuing /01_power_mcu/EN_DRV (failed, 2 disconnected parts)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+    bare-ball escape: R14.1 dogbone (11 seg(s), 1 via(s)) (#666)
+Route found in 1780 iterations, path length: 323
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (15 segs, 0 vias, 1780 iters)
+    fully reconnected (2 -> 1 parts, 0.1s)
+  Rescuing /01_power_mcu/GATE (partial, 2 disconnected parts)
+    bare-ball escape: R12.1 dogbone (21 seg(s), 1 via(s)) (#666)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 1105397 (base 1000000)
+Route found in 1115397 iterations, path length: 1762
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (63 segs, 1 vias, 1115397 iters)
+    fully reconnected (2 -> 1 parts, 0.5s)
+  Rescuing /01_power_mcu/IFB (failed, 2 disconnected parts)
+    bare-ball escape: C20.1 dogbone (11 seg(s), 1 via(s)) (#666)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 225037 iterations, path length: 263
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (11 segs, 1 vias, 225037 iters)
+    fully reconnected (2 -> 1 parts, 0.1s)
+  Rescuing /01_power_mcu/ISENP (partial, 2 disconnected parts)
+    bare-ball escape: U7.1 dogbone (9 seg(s), 1 via(s)) (#666)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 373148 iterations, path length: 364
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (14 segs, 1 vias, 373148 iters)
+    fully reconnected (2 -> 1 parts, 0.1s)
+  Rescuing /01_power_mcu/OTP_NTC (failed, 2 disconnected parts)
+    bare-ball escape: U7.13 dogbone (9 seg(s), 1 via(s)) (#666)
+    bare-ball escape: NTC1.1 dogbone (11 seg(s), 1 via(s)) (#666)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 20548 iterations, path length: 356
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.825mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 20548 iterations, path length: 356
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.825mm < floor half-width) -- rejecting the route rather than shipping a short
+    improved (2 -> 2 parts, 0.1s)
+  Rescuing /01_power_mcu/PD_VMON (partial, 2 disconnected parts)
+backward stuck (835 < 5000), forward=5000
+  backward cell (3320, 4194, layer=0): ok, 0/8 neighbors blocked
+No route found after 5835 iterations (both directions)
+backward stuck (835 < 5000), forward=5000
+  backward cell (3320, 4194, layer=0): ok, 0/8 neighbors blocked
+No route found after 5835 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/SCL (failed, 2 disconnected parts)
+backward stuck (418 < 5000), forward=5000
+  backward cell (3358, 2850, layer=0): ok, 0/8 neighbors blocked
+No route found after 5418 iterations (both directions)
+backward stuck (418 < 5000), forward=5000
+  backward cell (3358, 2850, layer=0): ok, 0/8 neighbors blocked
+No route found after 5418 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/SDA (partial, 2 disconnected parts)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (342 < 5000), forward=5000
+  backward cell (3358, 2870, layer=0): ok, 0/8 neighbors blocked
+No route found after 5342 iterations (both directions)
+backward stuck (342 < 5000), forward=5000
+  backward cell (3358, 2870, layer=0): ok, 0/8 neighbors blocked
+No route found after 5342 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/USB_DN (failed, 3 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 1 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+    bare-ball escape: U7.18 dogbone (27 seg(s), 1 via(s)) (#666)
+Route found in 621 iterations, path length: 101
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (11 segs, 0 vias, 621 iters)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 338621 iterations, path length: 870
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (44 segs, 0 vias, 338621 iters)
+    fully reconnected (3 -> 1 parts, 1.1s)
+  Rescuing /01_power_mcu/USB_DP (failed, 3 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/2 inner balls got a gap via site (2 via-in-pad fallback)
+  Dog-bone escape: 0/2 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 2 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority (issue #129): single pass dropped 2 ball(s) and 1 multi-ball net(s) have 1 extra ball(s) -- retrying with one escape per net first, extra escapes second
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 2 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+  Escape priority wins: 2 -> 1 dropped ball(s); using it
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Route found in 411 iterations, path length: 101
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (9 segs, 0 vias, 411 iters)
+backward stuck (648 < 5000), forward=5000
+  backward cell (3230, 2958, layer=0): ok, 0/8 neighbors blocked
+No route found after 5648 iterations (both directions)
+backward stuck (648 < 5000), forward=5000
+  backward cell (3230, 2958, layer=0): ok, 0/8 neighbors blocked
+No route found after 5648 iterations (both directions)
+    improved (3 -> 2 parts, 1.4s)
+  Rescuing /01_power_mcu/V18 (failed, 2 disconnected parts)
+    bare-ball escape: C18.1 dogbone (12 seg(s), 1 via(s)) (#666)
+    bare-ball escape: U7.12 dogbone (11 seg(s), 1 via(s)) (#666)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 66412 iterations, path length: 185
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (3 segs, 0 vias, 66412 iters)
+    fully reconnected (2 -> 1 parts, 0.1s)
+  Rescuing /01_power_mcu/V5V (failed, 2 disconnected parts)
+    bare-ball escape: C19.1 dogbone (11 seg(s), 1 via(s)) (#666)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (206 < 5000), forward=5000
+  backward cell (3250, 2958, layer=0): ok, 0/8 neighbors blocked
+No route found after 5206 iterations (both directions)
+backward stuck (206 < 5000), forward=5000
+  backward cell (3250, 2958, layer=0): ok, 0/8 neighbors blocked
+No route found after 5206 iterations (both directions)
+    improved (2 -> 2 parts, 0.1s)
+  Rescuing /HV_CURR_ADC (partial, 3 disconnected parts)
+backward stuck (1 < 5000), forward=5000
+  backward cell (3650, 7200, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (1 < 5000), forward=5000
+  backward cell (3650, 7200, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (179 < 5000), forward=5000
+  backward cell (1660, 2183, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /HV_SENSE_ADC(1 pad)
+No route found after 5179 iterations (both directions)
+backward stuck (179 < 5000), forward=5000
+  backward cell (1660, 2183, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /HV_SENSE_ADC(1 pad)
+No route found after 5179 iterations (both directions)
+    rescue failed (0.5s)
+  Rescuing /HV_SENSE_ADC (partial, 2 disconnected parts)
+    endpoint cell blocked for R7.2 -- seeded 11 free on-pad cell(s)
+backward stuck (29 < 5000), forward=5000
+  backward cell (1650, 2183, layer=0): ok, 6/8 neighbors blocked
+    Blocking obstacles: GND(2 track, 1 pad), /HV_CURR_ADC(1 pad)
+No route found after 5029 iterations (both directions)
+    endpoint cell blocked for R7.2 -- seeded 11 free on-pad cell(s)
+backward stuck (29 < 5000), forward=5000
+  backward cell (1650, 2183, layer=0): ok, 6/8 neighbors blocked
+    Blocking obstacles: GND(2 track, 1 pad), /HV_CURR_ADC(1 pad)
+No route found after 5029 iterations (both directions)
+    rescue failed (0.4s)
+  Rescuing Net-(R8-Pad2) (failed, 2 disconnected parts)
+    bare-ball escape: R8.2 dogbone (11 seg(s), 1 via(s)) (#666)
+backward stuck (1 < 5000), forward=5000
+  backward cell (5120, 7650, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (1 < 5000), forward=5000
+  backward cell (5120, 7650, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+    improved (2 -> 2 parts, 0.2s)
+Rescue pass: 6 recovered, 6 improved, 7 unchanged (6.2s)
+
+Pre-existing rip outcome(s) (8 net(s)):
+  '/02_drive_transformer/DRV_nFAULT' (was blocking '/02_drive_transformer/DRV_IPROPI'): rerouted PARTIAL (pads still disconnected; original corridor taken -- reconciliation retries it)
+  '/DRV_IN1' (was blocking '/INTERLOCK_OK'): rerouted
+  '/DRV_IN2' (was blocking '/DRV_IN1'): rerouted
+  '/DRV_nSLEEP' (was blocking '/DRV_IN2'): rerouted
+  '/04_sense_safety/RELAY_COIL_POS' (was blocking '/DRV_SLEEP_CMD'): rerouted PARTIAL (pads still disconnected; original corridor taken -- reconciliation retries it)
+  'BULK_CMD' (was blocking '/DRV_IN1'): rerouted
+  'BULK_EN' (was blocking '/01_power_mcu/EFUSE_OVLO'): original copper restored
+  '/DRV_SLEEP_CMD' (was blocking 'BULK_CMD'): rerouted
+Dropped 18 phantom segment(s) and 2 phantom via(s) not on the board from the write-list
+Graze prune: removed 3 grazing segment(s) across 1 net(s)
+Cycle prune: removed 23 redundant loop segment(s) across 15 net(s)
+Octolinear smoothing: collapsed 103 staircase span(s) on 21 net(s), -36.18 mm of copper (#536)
+Bridged 1 same-net soft joint(s) with a tiny connector
+Merged 116 collinear joint(s) on 20 net(s): -116 redundant segment(s) (#811)
+Stripped 99 stale input segment(s) of ripped/re-routed nets not on the final board (#220)
+Stripping 12 stale input via(s) of ripped/re-routed nets not on the final board
+
+WARNING: 3 stacked-copper finding(s) on the write model (same-net duplicates KiCad will not flag):
+  GND B.Cu: 2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)
+  GND F.Cu: 2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)
+  GND F.Cu: 2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)
+
+============================================================
+Routing complete
+============================================================
+  Single-ended:  16/29 routed (7 FAILED, 2 OPEN)
+  Multi-point:   55/62 pads connected (7 FAILED)
+  Total vias:    59
+  Total time:    0.90s
+  Iterations:    1,237,957
+  Fragility refresh (#466): 21 windows, 0.29s total
+  History congestion (#590): 10 contest + 13 rip + 28 blocked-frontier event(s) over 56931 cell(s), peak 0.50mm-equiv (inc 0.1mm, cap 0.5, escalate 0.0, rip weight 1.0, frontier weight 0.25), 0.02s of field upkeep
+
+Failed single-ended nets:
+  /01_power_mcu/V5V
+  Net-(R8-Pad2)
+  /01_power_mcu/OTP_NTC
+  /01_power_mcu/CC2
+  /01_power_mcu/EFUSE_ILM
+  /01_power_mcu/CC1
+  /01_power_mcu/SCL
+
+Routed-but-OPEN single-ended nets (result kept, pads disconnected):
+  /01_power_mcu/EFUSE_OVLO
+  /01_power_mcu/USB_DP
+
+Failed multi-point connections:
+  /01_power_mcu/PD_VMON: U6 pad ? at (83.00, 104.85) not connected
+  /HV_CURR_ADC: U6 pad ? at (83.00, 109.15) not connected
+  /HV_CURR_ADC: R91 pad ? at (91.25, 180.00) not connected
+  /01_power_mcu/SDA: U7 pad ? at (83.96, 71.75) not connected
+  /HV_SENSE_ADC: U6 pad ? at (82.50, 109.15) not connected
+  /02_drive_transformer/DRV_nFAULT: U2 pad ? at (86.22, 136.68) not connected
+  /04_sense_safety/RELAY_COIL_POS: D3 pad ? at (68.90, 119.00) not connected
+  /01_power_mcu/EFUSE_ILM: R73 pad ? at (95.17, 97.00) not connected
+  /01_power_mcu/EFUSE_OVLO: U9 pad ? at (91.90, 92.22) not connected
+  /01_power_mcu/OTP_NTC: NTC1 pad ? at (72.17, 74.00) not connected
+  /01_power_mcu/USB_DP: U7 pad ? at (80.75, 73.96) not connected
+  /01_power_mcu/V5V: U7 pad ? at (81.25, 73.96) not connected
+  Net-(R8-Pad2): R9 pad ? at (128.00, 191.25) not connected
+
+============================================================
+FAILED NET HISTORIES
+============================================================
+
+/01_power_mcu/V5V:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5014 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_succeeded
+
+Net-(R8-Pad2):
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_succeeded
+
+/01_power_mcu/OTP_NTC:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 2640 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_succeeded
+
+/01_power_mcu/CC2:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 15 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_failed
+
+/01_power_mcu/EFUSE_ILM:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_succeeded
+
+/01_power_mcu/CC1:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 19 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_failed
+
+/01_power_mcu/SCL:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5018 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_failed
+
+/01_power_mcu/EFUSE_OVLO:
+  [0] blocked_by
+  [0] Re-route FAILED: all rip-up attempts failed
+         Blocked by: BULK_EN
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_succeeded
+
+/01_power_mcu/USB_DP:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 2 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_succeeded
+JSON_SUMMARY: {"routed_single": ["Net-(U4-IN-)", "/01_power_mcu/V18", "/02_drive_transformer/DRV_CPL", "Net-(C63-Pad1)", "/01_power_mcu/USB_DN", "/01_power_mcu/EFUSE_DVDT", "/02_drive_transformer/DRV_IPROPI", "/02_drive_transformer/DRV_IMODE", "/INTERLOCK_OK", "/02_drive_transformer/DRV_CPH", "/01_power_mcu/EN_DRV", "/02_drive_transformer/DRV_VCP", "/01_power_mcu/GATE", "3V3", "/01_power_mcu/IFB", "/01_power_mcu/ISENP"], "failed_single": ["/01_power_mcu/V5V", "Net-(R8-Pad2)", "/01_power_mcu/OTP_NTC", "/01_power_mcu/CC2", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/CC1", "/01_power_mcu/SCL"], "open_single": ["/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/USB_DP"], "failed_multipoint": [{"net_name": "/01_power_mcu/PD_VMON", "failed_pads": [{"component_ref": "U6", "pad_number": "?", "x": 83.0, "y": 104.85}]}, {"net_name": "/HV_CURR_ADC", "failed_pads": [{"component_ref": "U6", "pad_number": "?", "x": 83.0, "y": 109.15}, {"component_ref": "R91", "pad_number": "?", "x": 91.25, "y": 180.0}]}, {"net_name": "/01_power_mcu/SDA", "failed_pads": [{"component_ref": "U7", "pad_number": "?", "x": 83.9625, "y": 71.75}]}, {"net_name": "/HV_SENSE_ADC", "failed_pads": [{"component_ref": "U6", "pad_number": "?", "x": 82.5, "y": 109.15}]}, {"net_name": "/02_drive_transformer/DRV_nFAULT", "failed_pads": [{"component_ref": "U2", "pad_number": "?", "x": 86.225, "y": 136.675}]}, {"net_name": "/04_sense_safety/RELAY_COIL_POS", "failed_pads": [{"component_ref": "D3", "pad_number": "?", "x": 68.9, "y": 119.0}]}, {"net_name": "/01_power_mcu/EFUSE_ILM", "failed_pads": [{"component_ref": "R73", "pad_number": "?", "x": 95.175, "y": 97.0}]}, {"net_name": "/01_power_mcu/EFUSE_OVLO", "failed_pads": [{"component_ref": "U9", "pad_number": "?", "x": 91.9, "y": 92.225}]}, {"net_name": "/01_power_mcu/OTP_NTC", "failed_pads": [{"component_ref": "NTC1", "pad_number": "?", "x": 72.175, "y": 74.0}]}, {"net_name": "/01_power_mcu/USB_DP", "failed_pads": [{"component_ref": "U7", "pad_number": "?", "x": 80.75, "y": 73.9625}]}, {"net_name": "/01_power_mcu/V5V", "failed_pads": [{"component_ref": "U7", "pad_number": "?", "x": 81.25, "y": 73.9625}]}, {"net_name": "Net-(R8-Pad2)", "failed_pads": [{"component_ref": "R9", "pad_number": "?", "x": 128.0, "y": 191.25}]}], "multipoint_nets": 12, "multipoint_pads_connected": 55, "multipoint_pads_total": 62, "multipoint_edges_routed": 18, "multipoint_edges_failed": 8, "ripup_success_pairs": [], "rerouted_pairs": [], "single_ended_target_swaps": [], "layer_swaps": 0, "successful": 16, "failed": 13, "total_time": 0.9, "total_iterations": 1237957, "total_vias": 59, "cleanup_disconnected": [], "min_clearance_used": 0.2, "design_rules": {"escalation_policy": "off", "fab_tier": "auto", "board_floors": {"clearance": 0.2, "track_width": 0.15, "via_diameter": 0.45, "via_drill": 0.3, "hole_to_hole": 0.25, "annular": 0.1, "board_edge": 0.5}, "count": 0, "nets": [], "narrowed": [], "min_delivered": {}, "fab_tier_escalations": 0, "fab_tier_contexts": [], "fab_tier_target": "advanced", "unsupported_rules": []}, "plane_fragility": {"source": "kicad_refill", "islands": 14, "refill_status": "ok", "why": "the KiCad refill succeeded", "machine_dependent": false}, "rescue": {"attempted": 19, "recovered": ["/01_power_mcu/EN_DRV", "/01_power_mcu/GATE", "/01_power_mcu/IFB", "/01_power_mcu/ISENP", "/01_power_mcu/USB_DN", "/01_power_mcu/V18"], "improved": ["/01_power_mcu/EFUSE_ILM", "/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/OTP_NTC", "/01_power_mcu/USB_DP", "/01_power_mcu/V5V", "Net-(R8-Pad2)"], "unchanged": ["/01_power_mcu/CC1", "/01_power_mcu/CC2", "/01_power_mcu/PD_VMON", "/01_power_mcu/SCL", "/01_power_mcu/SDA", "/HV_CURR_ADC", "/HV_SENSE_ADC"], "pads_reconnected": 2, "widths": {"/01_power_mcu/EFUSE_ILM": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 11, "rescue_by_width": {"0.25": 11}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/EFUSE_OVLO": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 44, "rescue_by_width": {"0.25": 44}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/EN_DRV": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 26, "rescue_by_width": {"0.25": 26}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/GATE": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 84, "rescue_by_width": {"0.25": 84}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/IFB": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 22, "rescue_by_width": {"0.25": 22}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/ISENP": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 23, "rescue_by_width": {"0.25": 23}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/OTP_NTC": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 20, "rescue_by_width": {"0.25": 20}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/USB_DN": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 82, "rescue_by_width": {"0.25": 82}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/USB_DP": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 9, "rescue_by_width": {"0.25": 9}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/V18": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 26, "rescue_by_width": {"0.25": 26}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/V5V": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 11, "rescue_by_width": {"0.25": 11}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "Net-(R8-Pad2)": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 11, "rescue_by_width": {"0.25": 11}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}}, "time": 6.17}, "preexisting_rips": {"/02_drive_transformer/DRV_nFAULT": "rerouted PARTIAL (pads still disconnected; original corridor taken -- reconciliation retries it) [was blocking '/02_drive_transformer/DRV_IPROPI']", "/DRV_IN1": "rerouted [was blocking '/INTERLOCK_OK']", "/DRV_IN2": "rerouted [was blocking '/DRV_IN1']", "/DRV_nSLEEP": "rerouted [was blocking '/DRV_IN2']", "/04_sense_safety/RELAY_COIL_POS": "rerouted PARTIAL (pads still disconnected; original corridor taken -- reconciliation retries it) [was blocking '/DRV_SLEEP_CMD']", "BULK_CMD": "rerouted [was blocking '/DRV_IN1']", "BULK_EN": "original copper restored [was blocking '/01_power_mcu/EFUSE_OVLO']", "/DRV_SLEEP_CMD": "rerouted [was blocking 'BULK_CMD']"}, "stacked_copper": [{"category": "stacked-copper", "net": "GND", "layer": "B.Cu", "x": 33.7, "y": 127.9, "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)", "size": 1.2727922061357886}, {"category": "stacked-copper", "net": "GND", "layer": "F.Cu", "x": 67.7, "y": 78.2, "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)", "size": 0.04999999999999716}, {"category": "stacked-copper", "net": "GND", "layer": "F.Cu", "x": 83.95, "y": 72.25, "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)", "size": 0.012999999999991019}], "oracle_check": "disabled", "ripped_open": ["/02_drive_transformer/DRV_nFAULT", "/04_sense_safety/RELAY_COIL_POS"], "ripped_open_uncounted": ["/02_drive_transformer/DRV_nFAULT", "/04_sense_safety/RELAY_COIL_POS"], "ripped_open_note": "ripped_open nets are OUTSIDE this run's --nets scope, so they move neither failed_single nor open_single. Those listed in ripped_open_uncounted are additionally not in either scoped term: if they are also outside the multipoint pad deficit, the run's open-net verdict is understated by that many.", "blockers": [{"net": "/01_power_mcu/PD_VMON", "stage": "phase3", "blocked_by": [{"net": "3V3", "blocked_count": 1, "unique_cells": 1, "track_cells": 1, "via_cells": 0, "near_target_cells": 1, "near_source_cells": 0}]}, {"net": "/HV_CURR_ADC", "stage": "phase3", "blocked_by": [{"net": "GND", "blocked_count": 1, "unique_cells": 1, "track_cells": 1, "via_cells": 0, "near_target_cells": 1, "near_source_cells": 0}]}, {"net": "/01_power_mcu/SDA", "stage": "phase3", "blocked_by": [{"net": "GND", "blocked_count": 1, "unique_cells": 1, "track_cells": 1, "via_cells": 0, "near_target_cells": 1, "near_source_cells": 0}]}, {"net": "/HV_SENSE_ADC", "stage": "phase3", "blocked_by": [{"net": "GND", "blocked_count": 1, "unique_cells": 1, "track_cells": 1, "via_cells": 0, "near_target_cells": 1, "near_source_cells": 0}]}, {"net": "/01_power_mcu/EFUSE_OVLO", "stage": "single_ended", "blocked_by": [{"net": "BULK_EN", "blocked_count": 3, "unique_cells": 3, "track_cells": 3, "via_cells": 0, "near_target_cells": 0, "near_source_cells": 3}]}], "boxed_in": [{"verdict": "boxed_in_static", "iterations": 5014, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/V5V"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "Net-(R8-Pad2)"}, {"verdict": "boxed_in_static", "iterations": 2640, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/OTP_NTC"}, {"verdict": "boxed_in_static", "iterations": 15, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/CC2"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/EFUSE_ILM"}, {"verdict": "boxed_in_static", "iterations": 19, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/CC1"}, {"verdict": "boxed_in_static", "iterations": 5018, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/SCL"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/EFUSE_OVLO"}, {"verdict": "boxed_in_static", "iterations": 2, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/USB_DP"}], "pad_pairs_connected": 69, "pad_pairs_total": 85, "pad_pairs_open": [{"net": "/01_power_mcu/CC1", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/CC2", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/EFUSE_ILM", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/EFUSE_OVLO", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "partial"}, {"net": "/01_power_mcu/OTP_NTC", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/PD_VMON", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "partial"}, {"net": "/01_power_mcu/SCL", "pairs_connected": 5, "pairs_total": 6, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/SDA", "pairs_connected": 5, "pairs_total": 6, "outcome": "open", "open_subtype": "partial"}, {"net": "/01_power_mcu/USB_DP", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "partial"}, {"net": "/01_power_mcu/V5V", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/02_drive_transformer/DRV_nFAULT", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "partial"}, {"net": "/04_sense_safety/RELAY_COIL_POS", "pairs_connected": 4, "pairs_total": 5, "outcome": "open", "open_subtype": "partial"}, {"net": "/HV_CURR_ADC", "pairs_connected": 1, "pairs_total": 3, "outcome": "open", "open_subtype": "partial"}, {"net": "/HV_SENSE_ADC", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "partial"}, {"net": "Net-(R8-Pad2)", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}], "scope": "run", "env_knobs": {}}
+
+Writing output to /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb...
+Removed 426 dead-end input segment(s) from the output
+Removed 12 stale input via(s) from the output
+Successfully wrote /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb
+  In-run DRC floors (#650): lowered 2 value(s) in lv-trial-routed.kicad_pro to the routed floors so the in-run audit grades what ships
+      rules.min_hole_clearance: 0.25 -> 0.2 mm
+      kicad_routing_tools.fab_floor_origin: recorded
+
+Plane finalize (#562): all zone nets complete (fill-aware) -- skipping engine/cleanup legs, oracle verifies
+  KiCad-oracle recheck: deterministic exact-fill link source (pcbnew refill)
+  KiCad-oracle recheck: source union -- 1 exact link(s) dropped (KiCad does not demand them), 0 kicad-cli link(s) added (unseen by the exact source)
+  KiCad-oracle recheck: KiCad reports all processed nets complete
+  [finalize timing] oracle leg: 1.8s
+JSON_ORACLE: {"available": true, "reason": "ok", "why": "the oracle ran", "rounds": 0, "links_routed": 0, "links_failed": 0, "remaining": 0, "collapsed_duplicate_links": 0, "remaining_links": [], "cross_board": 0, "removed_segments": [], "removed_vias": []}
+
+Final reconciliation: retrying 15 incomplete/custody net(s) against the finished board: /01_power_mcu/V5V, Net-(R8-Pad2), /01_power_mcu/OTP_NTC, /01_power_mcu/CC2, /01_power_mcu/EFUSE_ILM, /01_power_mcu/CC1, /01_power_mcu/SCL, /01_power_mcu/PD_VMON, /HV_CURR_ADC, /01_power_mcu/SDA, /HV_SENSE_ADC, /02_drive_transformer/DRV_nFAULT, /04_sense_safety/RELAY_COIL_POS, /01_power_mcu/EFUSE_OVLO, /01_power_mcu/USB_DP
+Loading /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb...
+Using 2 routing layers: ['F.Cu', 'B.Cu']
+  Layer costs: F.Cu=1.0x, B.Cu=3.0x
+Auto-detected 1 BGA exclusion zone(s):
+  U5: (66.9, 76.7) to (69.1, 79.3), edge_tol=0.71mm
+Same-net pad via clearance 0.2mm (from flag, #581): vias stay off same-net pads
+
+Using MPS ordering strategy...
+MPS: Using segment intersection method (no nets on BGA chips)
+MPS: 15 nets with 5 crossing conflicts detected
+MPS Round 1: 11 units: /01_power_mcu/EFUSE_OVLO, /01_power_mcu/V5V, Net-(R8-Pad2), /02_drive_transformer/DRV_nFAULT, /01_power_mcu/PD_VMON, /01_power_mcu/CC2, /01_power_mcu/OTP_NTC, /01_power_mcu/CC1, /HV_CURR_ADC, /01_power_mcu/SDA, /04_sense_safety/RELAY_COIL_POS
+MPS Round 2: 4 units: /01_power_mcu/EFUSE_ILM, /01_power_mcu/USB_DP, /01_power_mcu/SCL, /HV_SENSE_ADC
+
+Routing 15 single-ended net(s)...
+============================================================
+Building base obstacle map...
+Copper-to-hole clearance 0.25mm (from the floor the board ORIGINALLY declared, which a later step's writeback relaxed in the project, above the 0.2mm fab floor)
+Base obstacle map built in 0.18s
+Found 110 unrouted nets in PCB for stub proximity
+Pre-computing net obstacle cache...
+Net obstacle cache built in 0.23s (110 nets)
+Plane fragility: exact-fill geometry (14 filled island(s) from KiCad refill)
+Plane fragility field: 184347 cells near the edges of 1 pour(s) (KICAD_PLANE_FRAGILITY_COST=2.0mm-equiv, DYNAMIC #466 (=0 via KICAD_PLANE_FRAGILITY_DYNAMIC reverts))
+History congestion (#590) armed: +0.1mm-equiv per contest, cap 0.5, escalate 0.0, rip weight 1.0 (radius +0.25mm), frontier weight 0.25
+
+[1/15] Routing /01_power_mcu/EFUSE_OVLO (id=128)
+backward stuck (1 < 5000), forward=5000
+  backward cell (919, 922, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5001 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion. For fine-pitch parts try a finer grid and/or smaller clearance/track, e.g. --grid-step 0.05 scoped to just the failing nets via --nets (board-global it is ~14M cells/layer and may exhaust memory) --clearance 0.15 --track-width 0.15 (current: grid 0.1, clearance 0.2, track 0.25 mm)
+  Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets 'BULK_EN' '/01_power_mcu/GATE' '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[2/15 (1 failed)] Routing /01_power_mcu/V5V (id=98)
+backward stuck (12 < 5000), forward=5000
+  backward cell (812, 740, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(1 pad)
+No route found after 5012 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5012 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Hint: the blocking copper belongs to 4 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/EN_DRV' '/01_power_mcu/GATE' '/01_power_mcu/IFB' '/01_power_mcu/ISENP' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[3/15 (2 failed)] Routing Net-(R8-Pad2) (id=82)
+backward stuck (1 < 5000), forward=5000
+  backward cell (1280, 1912, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+
+[4/15 (3 failed)] Routing /02_drive_transformer/DRV_nFAULT (id=11)
+backward stuck (26 < 5000), forward=5000
+  backward cell (862, 1367, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: 3V3(1 pad)
+No route found after 5026 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5026 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Hint: the blocking copper belongs to 6 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/02_drive_transformer/DRV_IMODE' '/02_drive_transformer/DRV_CPH' '3V3' '/DRV_nSLEEP' '/02_drive_transformer/DRV_VCP' '/02_drive_transformer/DRV_IPROPI' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[5/15 (4 failed)] Routing /01_power_mcu/PD_VMON (id=17)
+backward stuck (13 < 5000), forward=5000
+  backward cell (830, 1048, layer=0): ok, 6/8 neighbors blocked
+    Blocking obstacles: 3V3(1 track), unconnected-(U6-AIN3-Pad7)(1 pad)
+No route found after 5013 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5013 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Retry with --rip-existing-nets '/01_power_mcu/GATE' '3V3' '/DRV_IN2' '/INTERLOCK_OK' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[6/15 (5 failed)] Routing /01_power_mcu/CC2 (id=52)
+Both directions stuck (forward=1, backward=12 < 5000)
+  forward cell (862, 584, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/VBUS_RAW(2 pad)
+  backward cell (800, 722, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/IFB(2 track, 1 pad)
+No route found after 13 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 13 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Retry with --rip-existing-nets '/01_power_mcu/IFB' '/01_power_mcu/USB_DP' '/01_power_mcu/USB_DN' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[7/15 (6 failed)] Routing /01_power_mcu/OTP_NTC (id=123)
+  SUCCESS: 14 segments, 2 vias, 52827 iterations, length=20.06mm (stubs=1.89mm) (0.03s)
+    stub-debris trim: 0 unused stub segment(s), 2 dangling via(s) freed
+
+[8/15 (6 failed)] Routing /01_power_mcu/CC1 (id=48)
+Both directions stuck (forward=1, backward=7 < 5000)
+  forward cell (892, 584, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(1 track, 1 pad)
+  backward cell (800, 728, layer=0): ok, 5/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(4 track, 1 pad)
+No route found after 8 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  Forward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: /01_power_mcu/USB_DN (J3); pre-existing tracks: /01_power_mcu/USB_DN
+  Via-in-pad decline blamed PRE-EXISTING net(s) '/01_power_mcu/IFB', '/01_power_mcu/USB_DN' - not rippable this run; retry with --rip-existing-nets to authorize
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 8 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Retry with --rip-existing-nets '/01_power_mcu/USB_DN' '/01_power_mcu/USB_DP' '/01_power_mcu/IFB' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[9/15 (7 failed)] Routing /HV_CURR_ADC (id=16)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Multi-point net Phase 1: routing longest MST edge (pads 0 and 2, length=79.10mm)
+  Phase 1 edge (pads 0,2) failed after 5001 iterations - trying next MST edge
+  Multi-point net Phase 1: retrying with next MST edge (2/2) (pads 2 and 1, length=6.95mm)
+  Phase 1 edge (pads 2,1) failed after 5001 iterations
+  Phase 1 exhausted from the pads; deferring 2 edge(s) to Phase 3's island-copper sources (base component: 1 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 10002 iterations, length=6.45mm (stubs=6.45mm) (0.03s)
+
+[10/15 (7 failed)] Routing /01_power_mcu/SDA (id=19)
+  Detected multi-point net with 4 pads (Phase 1: main route only)
+  Existing copper joins 4 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 2 and 3, length=65.01mm)
+  Phase 1 edge (pads 2,3) failed after 5017 iterations
+  Phase 1 exhausted from the pads; deferring 1 edge(s) to Phase 3's island-copper sources (base component: 3 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 5017 iterations, length=143.21mm (stubs=143.21mm) (0.04s)
+
+[11/15 (7 failed)] Routing /04_sense_safety/RELAY_COIL_POS (id=74)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Existing copper joins 3 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 2 and 1, length=35.20mm)
+  Phase 1 edge (pads 2,1) failed after 160000 iterations
+  Phase 1 exhausted from the pads; deferring 1 edge(s) to Phase 3's island-copper sources (base component: 2 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 160000 iterations, length=138.74mm (stubs=138.74mm) (0.05s)
+
+[12/15 (7 failed)] Routing /01_power_mcu/EFUSE_ILM (id=131)
+backward stuck (1 < 5000), forward=5000
+  backward cell (901, 922, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (1 iterations, 8 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U9), unconnected-(U9-ITIMER-Pad10) (U9); pre-existing tracks: GND
+  Via-in-pad decline blamed PRE-EXISTING net(s) 'GND' - not rippable this run; retry with --rip-existing-nets to authorize
+  ROUTE FAILED - no rippable blockers found
+  Hint: the blocking copper belongs to 1 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[13/15 (8 failed)] Routing /01_power_mcu/USB_DP (id=49)
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.475mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 84844 (base 50000)
+Route found in 94844 iterations, path length: 353
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+
+[14/15 (9 failed)] Routing /01_power_mcu/SCL (id=20)
+backward stuck (18 < 5000), forward=5000
+  backward cell (840, 712, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: unconnected-(U7-FLIP-Pad6)(1 pad)
+No route found after 5018 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (18 iterations, 22 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U7), /01_power_mcu/SDA (U7), unconnected-(U7-FLIP-Pad6) (U7)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5018 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+
+[15/15 (10 failed)] Routing /HV_SENSE_ADC (id=15)
+backward stuck (13 < 5000), forward=5000
+  backward cell (825, 1092, layer=0): ok, 6/8 neighbors blocked
+    Blocking obstacles: GND(1 track, 1 pad), /HV_CURR_ADC(1 pad)
+No route found after 5013 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  Backward direction failed fastest (13 iterations, 32 blocked cells)
+  No previously-routed nets blocking
+  Static blockers: pads: GND (U6), /HV_CURR_ADC (U6)
+  Via-in-pad decline blamed PRE-EXISTING net(s) 'GND' - not rippable this run; retry with --rip-existing-nets to authorize
+  ROUTE FAILED - no rippable blockers found
+
+Sync pcb_data: 1109 -> 1095 (kept stubs) -> 1109 (after adding 14)
+
+============================================================
+Multi-point Phase 3: Routing 4 tap connections
+============================================================
+Phase 3 order (boxed-in risk first): /01_power_mcu/SDA, /HV_CURR_ADC, /04_sense_safety/RELAY_COIL_POS
+
+/01_power_mcu/SDA (net 19):
+  Seeding tap sources from the base island's existing copper (1267 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/4] Routing MST edge: pad 2 -> pad 3 (length=65.01mm) target=(83.96, 71.75)
+      backward stuck (13 < 5000), forward=5000
+        backward cell (840, 718, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: GND(5 track, 1 pad)
+      Failed to route MST edge after 5013 iterations (0.01s)
+    Fallback: attempting orphaned pad 3 directly from connected copper
+    [2/4] (1 failed) Routing MST edge: pad 2 -> pad 3 (length=65.01mm) target=(83.96, 71.75)
+      backward stuck (13 < 5000), forward=5000
+        backward cell (840, 718, layer=0): ok, 3/8 neighbors blocked
+          Blocking obstacles: GND(5 track, 1 pad)
+      Failed to route MST edge after 5013 iterations (0.01s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 0 total segments, 0 total vias
+  NOT CONNECTED (so far): /01_power_mcu/SDA - U7 pad 4 at (83.96, 71.75) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.04s, 15043 iterations
+
+/HV_CURR_ADC (net 16):
+  Seeding tap sources from the base island's existing copper (60 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 2 remaining MST edges (longest first)
+    [1/4] (1 failed) Routing MST edge: pad 1 -> pad 2 (length=6.95mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+    Fallback: attempting orphaned pad 2 directly from connected copper
+    [2/4] (2 failed) Routing MST edge: pad 1 -> pad 2 (length=6.95mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+    Fallback: attempting orphaned pad 0 directly from connected copper
+    [2/4] (2 failed) Routing MST edge: pad 1 -> pad 0 (length=84.15mm) target=(83.00, 109.15)
+      Routed in 142551 iterations (0.02s)
+    [3/4] (2 failed) Routing MST edge: pad 0 -> pad 2 (length=79.10mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+  Warning: 1 pad(s) not connected (2 MST edge(s) failed)
+  Phase 3 routing complete: 1 edges, 76 total segments, 4 total vias
+  NOT CONNECTED (so far): /HV_CURR_ADC - R91 pad 2 at (91.25, 180.00) - may still be recovered; final verdict in the end-of-run summary
+  Added 76 tap segments, 4 tap vias
+  Net total time: 0.08s, 167556 iterations
+
+/04_sense_safety/RELAY_COIL_POS (net 74):
+  Seeding tap sources from the base island's existing copper (1267 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [3/4] (3 failed) Routing MST edge: pad 2 -> pad 1 (length=35.20mm) target=(68.90, 119.00)
+      Probe: forward=5000, backward=5000 iters, trying forward with full iterations...  [x2]
+      dynamic iterations (#529): search extended to 100000 (base 50000)
+      No route found after 100000 iterations (forward), trying backward...
+      No route found after 5000 iterations (forward), trying backward...
+      Failed to route MST edge after 160000 iterations (0.06s)
+    Fallback: attempting orphaned pad 1 directly from connected copper
+    [4/4] (4 failed) Routing MST edge: pad 2 -> pad 1 (length=35.20mm) target=(68.90, 119.00)
+      Probe: forward=5000, backward=5000 iters, trying forward with full iterations...  [x2]
+      dynamic iterations (#529): search extended to 100000 (base 50000)
+      No route found after 100000 iterations (forward), trying backward...
+      No route found after 5000 iterations (forward), trying backward...
+      Failed to route MST edge after 160000 iterations (0.05s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 0 total segments, 0 total vias
+  NOT CONNECTED (so far): /04_sense_safety/RELAY_COIL_POS - D3 pad 1 at (68.90, 119.00) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.13s, 520000 iterations
+
+Per-net fine-parameter rescue (#331/#371): 14 candidate net(s)
+  Rescuing /01_power_mcu/CC1 (failed, 2 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (122 < 5000), forward=5000
+  backward cell (3202, 2910, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(2 track)
+No route found after 5122 iterations (both directions)
+backward stuck (122 < 5000), forward=5000
+  backward cell (3202, 2910, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(2 track)
+No route found after 5122 iterations (both directions)
+    rescue failed (0.4s)
+  Rescuing /01_power_mcu/CC2 (failed, 2 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (168 < 5000), forward=5000
+  backward cell (3202, 2890, layer=0): ok, 0/8 neighbors blocked
+No route found after 5168 iterations (both directions)
+backward stuck (168 < 5000), forward=5000
+  backward cell (3202, 2890, layer=0): ok, 0/8 neighbors blocked
+No route found after 5168 iterations (both directions)
+    rescue failed (0.3s)
+  Rescuing /01_power_mcu/EFUSE_ILM (failed, 2 disconnected parts)
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+backward stuck (11 < 5000), forward=5000
+  backward cell (3604, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3604, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5011 iterations (both directions)
+    rescue failed (0.2s)
+  Rescuing /01_power_mcu/EFUSE_OVLO (failed, 2 disconnected parts)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/PD_VMON (failed, 2 disconnected parts)
+backward stuck (443 < 5000), forward=5000
+  backward cell (3320, 4194, layer=0): ok, 0/8 neighbors blocked
+No route found after 5443 iterations (both directions)
+backward stuck (443 < 5000), forward=5000
+  backward cell (3320, 4194, layer=0): ok, 0/8 neighbors blocked
+No route found after 5443 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/SCL (failed, 2 disconnected parts)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 1360985 (base 1000000)
+Route found in 1370985 iterations, path length: 637
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.300mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 1360985 (base 1000000)
+Route found in 1370985 iterations, path length: 637
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.300mm < floor half-width) -- rejecting the route rather than shipping a short
+    rescue failed (0.7s)
+  Rescuing /01_power_mcu/SDA (partial, 2 disconnected parts)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 1396746 (base 1000000)
+Route found in 1406746 iterations, path length: 625
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (31 segs, 2 vias, 1406746 iters)
+    fully reconnected (2 -> 1 parts, 0.4s)
+  Rescuing /01_power_mcu/USB_DP (failed, 2 disconnected parts)
+    bare-ball escape: U7.19 dogbone (9 seg(s), 1 via(s)) (#666)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+dynamic iterations (#529): search extended to 2231591 (base 1000000)
+Route found in 2241591 iterations, path length: 1134
+    rescued a gap: grid 0.025, clearance 0.2, track 0.25 (60 segs, 3 vias, 2241591 iters)
+    fully reconnected (2 -> 1 parts, 0.6s)
+  Rescuing /01_power_mcu/V5V (failed, 2 disconnected parts)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (128 < 5000), forward=5000
+  backward cell (3250, 2958, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(2 track)
+No route found after 5128 iterations (both directions)
+backward stuck (128 < 5000), forward=5000
+  backward cell (3250, 2958, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(2 track)
+No route found after 5128 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /02_drive_transformer/DRV_nFAULT (failed, 2 disconnected parts)
+Warning: U2 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U2 --escape-method underpad --allow-via-in-pad
+Warning: U2 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U2 --escape-method underpad --allow-via-in-pad
+backward stuck (1023 < 5000), forward=5000
+  backward cell (3449, 5467, layer=0): ok, 0/8 neighbors blocked
+No route found after 6023 iterations (both directions)
+backward stuck (1023 < 5000), forward=5000
+  backward cell (3449, 5467, layer=0): ok, 0/8 neighbors blocked
+No route found after 6023 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /04_sense_safety/RELAY_COIL_POS (partial, 2 disconnected parts)
+    bare-ball escape: D3.1 dogbone (9 seg(s), 1 via(s)) (#666)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 222020 iterations, path length: 476
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.325mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 222020 iterations, path length: 476
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.325mm < floor half-width) -- rejecting the route rather than shipping a short
+    improved (2 -> 2 parts, 0.2s)
+  Rescuing /HV_CURR_ADC (partial, 2 disconnected parts)
+backward stuck (1 < 5000), forward=5000
+  backward cell (3650, 7200, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (1 < 5000), forward=5000
+  backward cell (3650, 7200, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /HV_SENSE_ADC (failed, 2 disconnected parts)
+    endpoint cell blocked for R7.2 -- seeded 11 free on-pad cell(s)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 348157 iterations, path length: 1603
+    rescued a gap: grid 0.05, clearance 0.2, track 0.25 (41 segs, 3 vias, 348157 iters)
+    fully reconnected (2 -> 1 parts, 0.4s)
+  Rescuing Net-(R8-Pad2) (failed, 2 disconnected parts)
+backward stuck (1 < 5000), forward=5000
+  backward cell (5120, 7650, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (1 < 5000), forward=5000
+  backward cell (5120, 7650, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+    rescue failed (0.2s)
+Rescue pass: 3 recovered, 1 improved, 10 unchanged (4.1s)
+Cycle prune: removed 12 redundant loop segment(s) across 4 net(s)
+Dead-end sweep: trimmed 1 dead-end segment(s) and 0 unsupported via(s)
+Octolinear smoothing: collapsed 25 staircase span(s) on 4 net(s), -5.53 mm of copper (#536)
+Merged 18 collinear joint(s) on 4 net(s): -18 redundant segment(s) (#811)
+Stripped 2 stale input segment(s) of ripped/re-routed nets not on the final board (#220)
+Stripping 2 stale input via(s) of ripped/re-routed nets not on the final board
+
+WARNING: 3 stacked-copper finding(s) on the write model (same-net duplicates KiCad will not flag):
+  GND B.Cu: 2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)
+  GND F.Cu: 2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)
+  GND F.Cu: 2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)
+
+============================================================
+Routing complete
+============================================================
+  Single-ended:  4/15 routed (9 FAILED)
+  Multi-point:   15/17 pads connected (2 FAILED)
+  Total vias:    16
+  Total time:    0.50s
+  Iterations:    362,796
+  Fragility refresh (#466): 1 windows, 0.01s total
+  History congestion (#590): 0 contest + 2 rip + 7 blocked-frontier event(s) over 1260 cell(s), peak 0.03mm-equiv (inc 0.1mm, cap 0.5, escalate 0.0, rip weight 1.0, frontier weight 0.25), 0.00s of field upkeep
+
+Failed single-ended nets:
+  /01_power_mcu/EFUSE_OVLO
+  /01_power_mcu/V5V
+  Net-(R8-Pad2)
+  /02_drive_transformer/DRV_nFAULT
+  /01_power_mcu/PD_VMON
+  /01_power_mcu/CC2
+  /01_power_mcu/CC1
+  /01_power_mcu/EFUSE_ILM
+  /01_power_mcu/SCL
+
+Failed multi-point connections:
+  /HV_CURR_ADC: R91 pad ? at (91.25, 180.00) not connected
+  /04_sense_safety/RELAY_COIL_POS: D3 pad ? at (68.90, 119.00) not connected
+
+============================================================
+FAILED NET HISTORIES
+============================================================
+
+/01_power_mcu/EFUSE_OVLO:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: BULK_EN, /01_power_mcu/GATE, /01_power_mcu/EFUSE_DVDT
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets 'BULK_EN' '/01_power_mcu/GATE' '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/V5V:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5012 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/EN_DRV, /01_power_mcu/GATE, /01_power_mcu/IFB (+1 more)
+         Hint: the blocking copper belongs to 4 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/EN_DRV' '/01_power_mcu/GATE' '/01_power_mcu/IFB' '/01_power_mcu/ISENP' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+Net-(R8-Pad2):
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_failed
+
+/02_drive_transformer/DRV_nFAULT:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5026 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /02_drive_transformer/DRV_IMODE, /02_drive_transformer/DRV_CPH, 3V3 (+3 more)
+         Hint: the blocking copper belongs to 6 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/02_drive_transformer/DRV_IMODE' '/02_drive_transformer/DRV_CPH' '3V3' '/DRV_nSLEEP' '/02_drive_transformer/DRV_VCP' '/02_drive_transformer/DRV_IPROPI' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/PD_VMON:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5013 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/GATE, 3V3, /DRV_IN2 (+1 more)
+         Hint: the blocking copper belongs to 4 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/GATE' '3V3' '/DRV_IN2' '/INTERLOCK_OK' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/CC2:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 13 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/IFB, /01_power_mcu/USB_DP, /01_power_mcu/USB_DN
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/IFB' '/01_power_mcu/USB_DP' '/01_power_mcu/USB_DN' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/CC1:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 8 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/USB_DN, /01_power_mcu/USB_DP, /01_power_mcu/IFB
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/USB_DN' '/01_power_mcu/USB_DP' '/01_power_mcu/IFB' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/EFUSE_ILM:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/EFUSE_DVDT
+         Hint: the blocking copper belongs to 1 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/SCL:
+  [0] blocked_by
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5018 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_failed
+JSON_SUMMARY: {"routed_single": ["/01_power_mcu/OTP_NTC", "/01_power_mcu/SDA", "/01_power_mcu/USB_DP", "/HV_SENSE_ADC"], "failed_single": ["/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/V5V", "Net-(R8-Pad2)", "/02_drive_transformer/DRV_nFAULT", "/01_power_mcu/PD_VMON", "/01_power_mcu/CC2", "/01_power_mcu/CC1", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/SCL"], "open_single": [], "failed_multipoint": [{"net_name": "/HV_CURR_ADC", "failed_pads": [{"component_ref": "R91", "pad_number": "?", "x": 91.25, "y": 180.0}]}, {"net_name": "/04_sense_safety/RELAY_COIL_POS", "failed_pads": [{"component_ref": "D3", "pad_number": "?", "x": 68.9, "y": 119.0}]}], "multipoint_nets": 3, "multipoint_pads_connected": 15, "multipoint_pads_total": 17, "multipoint_edges_routed": 1, "multipoint_edges_failed": 4, "ripup_success_pairs": [], "rerouted_pairs": [], "single_ended_target_swaps": [], "layer_swaps": 0, "successful": 4, "failed": 11, "total_time": 0.5, "total_iterations": 362796, "total_vias": 16, "cleanup_disconnected": [], "min_clearance_used": 0.2, "design_rules": {"escalation_policy": "off", "fab_tier": "auto", "board_floors": {"clearance": 0.2, "track_width": 0.15, "via_diameter": 0.45, "via_drill": 0.3, "hole_to_hole": 0.25, "annular": 0.1, "board_edge": 0.5}, "count": 0, "nets": [], "narrowed": [], "min_delivered": {}, "fab_tier_escalations": 0, "fab_tier_contexts": [], "fab_tier_target": "advanced", "unsupported_rules": []}, "plane_fragility": {"source": "kicad_refill", "islands": 14, "refill_status": "ok", "why": "the KiCad refill succeeded (memo hit)", "machine_dependent": false}, "rescue": {"attempted": 14, "recovered": ["/01_power_mcu/SDA", "/01_power_mcu/USB_DP", "/HV_SENSE_ADC"], "improved": ["/04_sense_safety/RELAY_COIL_POS"], "unchanged": ["/01_power_mcu/CC1", "/01_power_mcu/CC2", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/PD_VMON", "/01_power_mcu/SCL", "/01_power_mcu/V5V", "/02_drive_transformer/DRV_nFAULT", "/HV_CURR_ADC", "Net-(R8-Pad2)"], "pads_reconnected": 1, "widths": {"/01_power_mcu/SDA": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 31, "rescue_by_width": {"0.25": 31}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/01_power_mcu/USB_DP": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 69, "rescue_by_width": {"0.25": 69}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/04_sense_safety/RELAY_COIL_POS": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 9, "rescue_by_width": {"0.25": 9}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}, "/HV_SENSE_ADC": {"requested_mm": 0.25, "delivered_mm": 0.25, "rescue_min_mm": 0.25, "rescue_max_mm": 0.25, "rescue_segments_emitted": 41, "rescue_by_width": {"0.25": 41}, "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."}}, "time": 4.14}, "stacked_copper": [{"category": "stacked-copper", "net": "GND", "layer": "B.Cu", "x": 33.7, "y": 127.9, "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)", "size": 1.2727922061357886}, {"category": "stacked-copper", "net": "GND", "layer": "F.Cu", "x": 67.7, "y": 78.2, "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)", "size": 0.04999999999999716}, {"category": "stacked-copper", "net": "GND", "layer": "F.Cu", "x": 83.95, "y": 72.25, "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)", "size": 0.012999999999991019}], "oracle_check": "skipped", "blockers": [{"net": "/01_power_mcu/EFUSE_OVLO", "stage": "preexisting", "blocked_by": [{"net": "BULK_EN", "preexisting": true}, {"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "/01_power_mcu/EFUSE_DVDT", "preexisting": true}]}, {"net": "/01_power_mcu/V5V", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/EN_DRV", "preexisting": true}, {"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "/01_power_mcu/IFB", "preexisting": true}, {"net": "/01_power_mcu/ISENP", "preexisting": true}]}, {"net": "/02_drive_transformer/DRV_nFAULT", "stage": "preexisting", "blocked_by": [{"net": "/02_drive_transformer/DRV_IMODE", "preexisting": true}, {"net": "/02_drive_transformer/DRV_CPH", "preexisting": true}, {"net": "3V3", "preexisting": true}, {"net": "/DRV_nSLEEP", "preexisting": true}, {"net": "/02_drive_transformer/DRV_VCP", "preexisting": true}, {"net": "/02_drive_transformer/DRV_IPROPI", "preexisting": true}]}, {"net": "/01_power_mcu/PD_VMON", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "3V3", "preexisting": true}, {"net": "/DRV_IN2", "preexisting": true}, {"net": "/INTERLOCK_OK", "preexisting": true}]}, {"net": "/01_power_mcu/CC2", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/IFB", "preexisting": true}, {"net": "/01_power_mcu/USB_DP", "preexisting": true}, {"net": "/01_power_mcu/USB_DN", "preexisting": true}]}, {"net": "/01_power_mcu/CC1", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/USB_DN", "preexisting": true}, {"net": "/01_power_mcu/USB_DP", "preexisting": true}, {"net": "/01_power_mcu/IFB", "preexisting": true}]}, {"net": "/01_power_mcu/EFUSE_ILM", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/EFUSE_DVDT", "preexisting": true}]}], "boxed_in": [{"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/EFUSE_OVLO"}, {"verdict": "boxed_in_static", "iterations": 5012, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/V5V"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "Net-(R8-Pad2)"}, {"verdict": "boxed_in_static", "iterations": 5026, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/02_drive_transformer/DRV_nFAULT"}, {"verdict": "boxed_in_static", "iterations": 5013, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/PD_VMON"}, {"verdict": "boxed_in_static", "iterations": 13, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/CC2"}, {"verdict": "boxed_in_static", "iterations": 8, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/CC1"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/EFUSE_ILM"}, {"verdict": "boxed_in_static", "iterations": 5018, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/SCL"}], "pad_pairs_connected": 25, "pad_pairs_total": 36, "pad_pairs_open": [{"net": "/01_power_mcu/CC1", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/CC2", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/EFUSE_ILM", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/EFUSE_OVLO", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/PD_VMON", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/SCL", "pairs_connected": 5, "pairs_total": 6, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/V5V", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/02_drive_transformer/DRV_nFAULT", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/04_sense_safety/RELAY_COIL_POS", "pairs_connected": 4, "pairs_total": 5, "outcome": "open", "open_subtype": "partial"}, {"net": "/HV_CURR_ADC", "pairs_connected": 2, "pairs_total": 3, "outcome": "open", "open_subtype": "partial"}, {"net": "Net-(R8-Pad2)", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}], "scope": "reconciliation-subset", "board_scoped_keys": ["stacked_copper", "min_clearance_used"], "env_knobs": {}}
+
+Writing output to /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb...
+Removed 98 dead-end input segment(s) from the output
+Removed 2 stale input via(s) from the output
+Successfully wrote /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb
+  Reconciliation progress-loop: lap 1 recovered 4 with 11 still failed -- one more lap on the updated board
+Loading /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb...
+Using 2 routing layers: ['F.Cu', 'B.Cu']
+  Layer costs: F.Cu=1.0x, B.Cu=3.0x
+Auto-detected 1 BGA exclusion zone(s):
+  U5: (66.9, 76.7) to (69.1, 79.3), edge_tol=0.71mm
+Same-net pad via clearance 0.2mm (from flag, #581): vias stay off same-net pads
+
+Skipping 4 already-routed net(s): Already fully connected
+
+Using MPS ordering strategy...
+MPS: Using segment intersection method (no nets on BGA chips)
+MPS: 11 nets with 2 crossing conflicts detected
+MPS Round 1: 9 units: /01_power_mcu/EFUSE_OVLO, /01_power_mcu/V5V, Net-(R8-Pad2), /02_drive_transformer/DRV_nFAULT, /01_power_mcu/PD_VMON, /01_power_mcu/CC2, /01_power_mcu/CC1, /HV_CURR_ADC, /04_sense_safety/RELAY_COIL_POS
+MPS Round 2: 2 units: /01_power_mcu/EFUSE_ILM, /01_power_mcu/SCL
+
+Routing 11 single-ended net(s)...
+============================================================
+Building base obstacle map...
+Base obstacle map built in 0.17s
+Found 110 unrouted nets in PCB for stub proximity
+Pre-computing net obstacle cache...
+Net obstacle cache built in 0.22s (110 nets)
+Plane fragility: exact-fill geometry (14 filled island(s) from KiCad refill)
+Plane fragility field: 192438 cells near the edges of 1 pour(s) (KICAD_PLANE_FRAGILITY_COST=2.0mm-equiv, DYNAMIC #466 (=0 via KICAD_PLANE_FRAGILITY_DYNAMIC reverts))
+History congestion (#590) armed: +0.1mm-equiv per contest, cap 0.5, escalate 0.0, rip weight 1.0 (radius +0.25mm), frontier weight 0.25
+
+[1/11] Routing /01_power_mcu/EFUSE_OVLO (id=128)
+backward stuck (1 < 5000), forward=5000
+  backward cell (919, 922, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5001 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion. For fine-pitch parts try a finer grid and/or smaller clearance/track, e.g. --grid-step 0.05 scoped to just the failing nets via --nets (board-global it is ~14M cells/layer and may exhaust memory) --clearance 0.15 --track-width 0.15 (current: grid 0.1, clearance 0.2, track 0.25 mm)
+  Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets 'BULK_EN' '/01_power_mcu/GATE' '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[2/11 (1 failed)] Routing /01_power_mcu/V5V (id=98)
+backward stuck (8 < 5000), forward=5000
+  backward cell (812, 740, layer=0): ok, 5/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(2 track, 1 pad)
+No route found after 5008 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5008 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Hint: the blocking copper belongs to 4 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/GATE' '/01_power_mcu/USB_DP' '/01_power_mcu/IFB' '/01_power_mcu/EN_DRV' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[3/11 (2 failed)] Routing Net-(R8-Pad2) (id=82)
+backward stuck (1 < 5000), forward=5000
+  backward cell (1280, 1912, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+
+[4/11 (3 failed)] Routing /02_drive_transformer/DRV_nFAULT (id=11)
+backward stuck (26 < 5000), forward=5000
+  backward cell (862, 1367, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: 3V3(1 pad)
+No route found after 5026 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5026 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Hint: the blocking copper belongs to 6 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/02_drive_transformer/DRV_IMODE' '/02_drive_transformer/DRV_CPH' '3V3' '/DRV_nSLEEP' '/02_drive_transformer/DRV_VCP' '/02_drive_transformer/DRV_IPROPI' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+[5/11 (4 failed)] Routing /01_power_mcu/PD_VMON (id=17)
+backward stuck (13 < 5000), forward=5000
+  backward cell (830, 1048, layer=0): ok, 6/8 neighbors blocked
+    Blocking obstacles: 3V3(1 track), unconnected-(U6-AIN3-Pad7)(1 pad)
+No route found after 5013 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5013 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Retry with --rip-existing-nets '/01_power_mcu/GATE' '3V3' '/HV_SENSE_ADC' '/INTERLOCK_OK' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[6/11 (5 failed)] Routing /01_power_mcu/CC2 (id=52)
+Both directions stuck (forward=1, backward=12 < 5000)
+  forward cell (862, 584, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/VBUS_RAW(2 pad)
+  backward cell (800, 722, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/IFB(2 track, 1 pad)
+No route found after 13 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 13 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Retry with --rip-existing-nets '/01_power_mcu/IFB' '/01_power_mcu/USB_DP' '/01_power_mcu/USB_DN' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[7/11 (6 failed)] Routing /01_power_mcu/CC1 (id=48)
+Both directions stuck (forward=1, backward=7 < 5000)
+  forward cell (892, 584, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(1 track, 1 pad)
+  backward cell (800, 728, layer=0): ok, 5/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(4 track, 1 pad)
+No route found after 8 iterations (both directions)
+  FAILED: Could not find route (0.04s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 8 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Retry with --rip-existing-nets '/01_power_mcu/IFB' '/01_power_mcu/USB_DN' '/01_power_mcu/USB_DP' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[8/11 (7 failed)] Routing /HV_CURR_ADC (id=16)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Existing copper joins 3 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 1 and 2, length=6.95mm)
+  Phase 1 edge (pads 1,2) failed after 5001 iterations
+  Phase 1 exhausted from the pads; deferring 1 edge(s) to Phase 3's island-copper sources (base component: 2 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 5001 iterations, length=101.15mm (stubs=101.15mm) (0.03s)
+
+[9/11 (7 failed)] Routing /04_sense_safety/RELAY_COIL_POS (id=74)
+  Detected multi-point net with 3 pads (Phase 1: main route only)
+  Existing copper joins 3 terminals into 2 group(s)
+  Multi-point net Phase 1: routing longest MST edge (pads 2 and 1, length=33.70mm)
+  Phase 1 edge (pads 2,1) failed after 110000 iterations
+  Phase 1 exhausted from the pads; deferring 1 edge(s) to Phase 3's island-copper sources (base component: 2 terminal(s))
+  SUCCESS: 0 segments, 0 vias, 110000 iterations, length=139.89mm (stubs=139.89mm) (0.04s)
+
+[10/11 (7 failed)] Routing /01_power_mcu/EFUSE_ILM (id=131)
+backward stuck (1 < 5000), forward=5000
+  backward cell (901, 922, layer=0): ok, 8/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5001 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Retry with --rip-existing-nets '/01_power_mcu/GATE' '/01_power_mcu/EFUSE_OVLO' '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.  [rationale as above]
+
+[11/11 (8 failed)] Routing /01_power_mcu/SCL (id=20)
+backward stuck (15 < 5000), forward=5000
+  backward cell (840, 712, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: unconnected-(U7-FLIP-Pad6)(1 pad)
+No route found after 5015 iterations (both directions)
+  FAILED: Could not find route (0.03s)
+  ROUTE FAILED - no rippable blockers found
+  Hint: search exhausted after only 5015 iterations with no rippable blockers - the start/target pads are boxed in by static obstacles (neighboring pads + clearance), not by congestion.  [rationale as above]
+  Hint: the blocking copper belongs to 2 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/SDA' '3V3' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+
+Sync pcb_data: 1147 -> 1147 (kept stubs) -> 1147 (after adding 0)
+
+============================================================
+Multi-point Phase 3: Routing 2 tap connections
+============================================================
+
+/HV_CURR_ADC (net 16):
+  Seeding tap sources from the base island's existing copper (890 cell(s) across 1 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/2] Routing MST edge: pad 1 -> pad 2 (length=6.95mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+    Fallback: attempting orphaned pad 2 directly from connected copper
+    [2/2] (1 failed) Routing MST edge: pad 1 -> pad 2 (length=6.95mm) target=(91.25, 180.00)
+      backward stuck (1 < 5000), forward=5000
+        backward cell (912, 1800, layer=0): ok, 8/8 neighbors blocked
+      Failed to route MST edge after 5001 iterations (0.01s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 0 total segments, 0 total vias
+  NOT CONNECTED (so far): /HV_CURR_ADC - R91 pad 2 at (91.25, 180.00) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.04s, 15003 iterations
+
+/04_sense_safety/RELAY_COIL_POS (net 74):
+  Seeding tap sources from the base island's existing copper (1278 cell(s) across 2 island(s))
+  Multi-point net Phase 3: routing 1 remaining MST edges (longest first)
+    [1/2] (1 failed) Routing MST edge: pad 2 -> pad 1 (length=33.70mm) target=(69.50, 119.90)
+      Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+      No route found after 50000 iterations (forward), trying backward...
+      Failed to route MST edge after 110000 iterations (0.03s)
+    Fallback: attempting orphaned pad 1 directly from connected copper
+    [2/2] (2 failed) Routing MST edge: pad 2 -> pad 1 (length=33.70mm) target=(69.50, 119.90)
+      Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+      No route found after 50000 iterations (forward), trying backward...
+      Failed to route MST edge after 110000 iterations (0.04s)
+  Warning: 1 pad(s) not connected (1 MST edge(s) failed)
+  Phase 3 routing complete: 0 edges, 0 total segments, 0 total vias
+  NOT CONNECTED (so far): /04_sense_safety/RELAY_COIL_POS - ? pad  at (69.50, 119.90) - may still be recovered; final verdict in the end-of-run summary
+  Net total time: 0.09s, 330000 iterations
+
+Per-net fine-parameter rescue (#331/#371): 11 candidate net(s)
+  Rescuing /01_power_mcu/CC1 (failed, 2 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (122 < 5000), forward=5000
+  backward cell (3202, 2910, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(2 track)
+No route found after 5122 iterations (both directions)
+backward stuck (122 < 5000), forward=5000
+  backward cell (3202, 2910, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DN(2 track)
+No route found after 5122 iterations (both directions)
+    rescue failed (0.4s)
+  Rescuing /01_power_mcu/CC2 (failed, 2 disconnected parts)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+BGA Grid Analysis for J3:
+  Pitch: 0.50 x 4.18 mm
+  Grid: 3 rows x 14 columns
+  Center: (88.00, 56.01)
+  Boundary: X[83.43, 92.57], Y[51.51, 60.51]
+  Under-pad: WARNING via 0.60mm is large for 0.50mm pitch (track 0.25, clearance 0.20); expect drops. Try via <= -0.40mm.
+  Dog-bone: 0/1 inner balls got a gap via site (1 via-in-pad fallback)
+  Dog-bone escape: 0/1 signals escaped, 0 vias, 8 plane balls skipped, 3 already-fanned skipped, 1 failed
+  Dog-bone: 0 single-ended run(s) started at a gap via (0 gap sites assigned)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (168 < 5000), forward=5000
+  backward cell (3202, 2890, layer=0): ok, 0/8 neighbors blocked
+No route found after 5168 iterations (both directions)
+backward stuck (168 < 5000), forward=5000
+  backward cell (3202, 2890, layer=0): ok, 0/8 neighbors blocked
+No route found after 5168 iterations (both directions)
+    rescue failed (0.3s)
+  Rescuing /01_power_mcu/EFUSE_ILM (failed, 2 disconnected parts)
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+Warning: U9 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U9 --escape-method underpad --allow-via-in-pad
+backward stuck (11 < 5000), forward=5000
+  backward cell (3604, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3604, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: unconnected-(U9-ITIMER-Pad10)(2 pad), GND(1 track, 1 pad)
+No route found after 5011 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/EFUSE_OVLO (failed, 2 disconnected parts)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+backward stuck (11 < 5000), forward=5000
+  backward cell (3676, 3689, layer=0): ok, 7/8 neighbors blocked
+    Blocking obstacles: BULK_EN(1 track, 2 pad), unconnected-(U9-AUXOFF-Pad3)(1 pad)
+No route found after 5011 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/PD_VMON (failed, 2 disconnected parts)
+backward stuck (443 < 5000), forward=5000
+  backward cell (3320, 4194, layer=0): ok, 0/8 neighbors blocked
+No route found after 5443 iterations (both directions)
+backward stuck (443 < 5000), forward=5000
+  backward cell (3320, 4194, layer=0): ok, 0/8 neighbors blocked
+No route found after 5443 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/SCL (failed, 2 disconnected parts)
+backward stuck (179 < 5000), forward=5000
+  backward cell (3358, 2850, layer=0): ok, 0/8 neighbors blocked
+No route found after 5179 iterations (both directions)
+backward stuck (179 < 5000), forward=5000
+  backward cell (3358, 2850, layer=0): ok, 0/8 neighbors blocked
+No route found after 5179 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /01_power_mcu/V5V (failed, 2 disconnected parts)
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+Warning: U7 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U7 --escape-method underpad --allow-via-in-pad
+backward stuck (128 < 5000), forward=5000
+  backward cell (3250, 2958, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(2 track)
+No route found after 5128 iterations (both directions)
+backward stuck (128 < 5000), forward=5000
+  backward cell (3250, 2958, layer=0): ok, 3/8 neighbors blocked
+    Blocking obstacles: /01_power_mcu/USB_DP(2 track)
+No route found after 5128 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /02_drive_transformer/DRV_nFAULT (failed, 2 disconnected parts)
+Warning: U2 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U2 --escape-method underpad --allow-via-in-pad
+Warning: U2 doesn't appear to be a BGA
+  For a perimeter/2-row connector or staggered package, try: qfn_fanout.py --component U2 --escape-method underpad --allow-via-in-pad
+backward stuck (1023 < 5000), forward=5000
+  backward cell (3449, 5467, layer=0): ok, 0/8 neighbors blocked
+No route found after 6023 iterations (both directions)
+backward stuck (1023 < 5000), forward=5000
+  backward cell (3449, 5467, layer=0): ok, 0/8 neighbors blocked
+No route found after 6023 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing /04_sense_safety/RELAY_COIL_POS (partial, 2 disconnected parts)
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 197371 iterations, path length: 474
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.325mm < floor half-width) -- rejecting the route rather than shipping a short
+Probe: forward=5000, backward=5000 iters, trying forward with full iterations...
+Route found in 197371 iterations, path length: 474
+  terminal copper on F.Cu would OVERLAP a foreign track/via (edge dist 0.325mm < floor half-width) -- rejecting the route rather than shipping a short
+    rescue failed (0.2s)
+  Rescuing /HV_CURR_ADC (partial, 2 disconnected parts)
+backward stuck (1 < 5000), forward=5000
+  backward cell (3650, 7200, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (1 < 5000), forward=5000
+  backward cell (3650, 7200, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+    rescue failed (0.1s)
+  Rescuing Net-(R8-Pad2) (failed, 2 disconnected parts)
+backward stuck (1 < 5000), forward=5000
+  backward cell (5120, 7650, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+backward stuck (1 < 5000), forward=5000
+  backward cell (5120, 7650, layer=0): ok, 8/8 neighbors blocked
+No route found after 5001 iterations (both directions)
+    rescue failed (0.2s)
+Rescue pass: 0 recovered, 0 improved, 11 unchanged (2.0s)
+
+WARNING: 3 stacked-copper finding(s) on the write model (same-net duplicates KiCad will not flag):
+  GND B.Cu: 2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)
+  GND F.Cu: 2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)
+  GND F.Cu: 2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)
+
+============================================================
+Routing complete
+============================================================
+  Single-ended:  0/11 routed (9 FAILED)
+  Multi-point:   8/10 pads connected (2 FAILED)
+  Total vias:    0
+  Total time:    0.37s
+  Iterations:    150,087
+  History congestion (#590): 0 contest + 0 rip + 2 blocked-frontier event(s) over 1521 cell(s), peak 0.03mm-equiv (inc 0.1mm, cap 0.5, escalate 0.0, rip weight 1.0, frontier weight 0.25), 0.00s of field upkeep
+
+Failed single-ended nets:
+  /01_power_mcu/EFUSE_OVLO
+  /01_power_mcu/V5V
+  Net-(R8-Pad2)
+  /02_drive_transformer/DRV_nFAULT
+  /01_power_mcu/PD_VMON
+  /01_power_mcu/CC2
+  /01_power_mcu/CC1
+  /01_power_mcu/EFUSE_ILM
+  /01_power_mcu/SCL
+
+Failed multi-point connections:
+  /HV_CURR_ADC: R91 pad ? at (91.25, 180.00) not connected
+  /04_sense_safety/RELAY_COIL_POS: D3 pad ? at (68.90, 119.00) not connected
+
+============================================================
+FAILED NET HISTORIES
+============================================================
+
+/01_power_mcu/EFUSE_OVLO:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: BULK_EN, /01_power_mcu/GATE, /01_power_mcu/EFUSE_DVDT
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets 'BULK_EN' '/01_power_mcu/GATE' '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/V5V:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5008 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/GATE, /01_power_mcu/USB_DP, /01_power_mcu/IFB (+1 more)
+         Hint: the blocking copper belongs to 4 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/GATE' '/01_power_mcu/USB_DP' '/01_power_mcu/IFB' '/01_power_mcu/EN_DRV' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+Net-(R8-Pad2):
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] rescue_failed
+
+/02_drive_transformer/DRV_nFAULT:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5026 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /02_drive_transformer/DRV_IMODE, /02_drive_transformer/DRV_CPH, 3V3 (+3 more)
+         Hint: the blocking copper belongs to 6 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/02_drive_transformer/DRV_IMODE' '/02_drive_transformer/DRV_CPH' '3V3' '/DRV_nSLEEP' '/02_drive_transformer/DRV_VCP' '/02_drive_transformer/DRV_IPROPI' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/PD_VMON:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5013 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/GATE, 3V3, /HV_SENSE_ADC (+1 more)
+         Hint: the blocking copper belongs to 4 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/GATE' '3V3' '/HV_SENSE_ADC' '/INTERLOCK_OK' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/CC2:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 13 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/IFB, /01_power_mcu/USB_DP, /01_power_mcu/USB_DN
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/IFB' '/01_power_mcu/USB_DP' '/01_power_mcu/USB_DN' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/CC1:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 8 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/IFB, /01_power_mcu/USB_DN, /01_power_mcu/USB_DP
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/IFB' '/01_power_mcu/USB_DN' '/01_power_mcu/USB_DP' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/EFUSE_ILM:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5001 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/GATE, /01_power_mcu/EFUSE_OVLO, /01_power_mcu/EFUSE_DVDT
+         Hint: the blocking copper belongs to 3 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/GATE' '/01_power_mcu/EFUSE_OVLO' '/01_power_mcu/EFUSE_DVDT' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+
+/01_power_mcu/SCL:
+  [0] Re-route FAILED: no rippable blockers found
+  [0] Boxed in at this geometry after 5015 iteration(s) (grid 0.1, clearance 0.2, track 0.25 mm)
+  [0] Blocked by pre-existing copper: /01_power_mcu/SDA, 3V3
+         Hint: the blocking copper belongs to 2 pre-existing net(s) committed by an earlier run/step, which this run is not allowed to rip. Retry with --rip-existing-nets '/01_power_mcu/SDA' '3V3' to rip and re-route them in this run (issue #103) -- the decisive blocker may be any of them, so start with the full set (each ripped net is re-routed and the run reports honestly if one cannot be), then bisect if you want a minimal rip.
+  [0] rescue_failed
+JSON_SUMMARY: {"routed_single": [], "failed_single": ["/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/V5V", "Net-(R8-Pad2)", "/02_drive_transformer/DRV_nFAULT", "/01_power_mcu/PD_VMON", "/01_power_mcu/CC2", "/01_power_mcu/CC1", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/SCL"], "open_single": [], "failed_multipoint": [{"net_name": "/HV_CURR_ADC", "failed_pads": [{"component_ref": "R91", "pad_number": "?", "x": 91.25, "y": 180.0}]}, {"net_name": "/04_sense_safety/RELAY_COIL_POS", "failed_pads": [{"component_ref": "D3", "pad_number": "?", "x": 68.9, "y": 119.0}]}], "multipoint_nets": 2, "multipoint_pads_connected": 8, "multipoint_pads_total": 10, "multipoint_edges_routed": 0, "multipoint_edges_failed": 2, "ripup_success_pairs": [], "rerouted_pairs": [], "single_ended_target_swaps": [], "layer_swaps": 0, "successful": 0, "failed": 11, "total_time": 0.37, "total_iterations": 150087, "total_vias": 0, "cleanup_disconnected": [], "min_clearance_used": 0.2, "design_rules": {"escalation_policy": "off", "fab_tier": "auto", "board_floors": {"clearance": 0.2, "track_width": 0.15, "via_diameter": 0.45, "via_drill": 0.3, "hole_to_hole": 0.25, "annular": 0.1, "board_edge": 0.5}, "count": 0, "nets": [], "narrowed": [], "min_delivered": {}, "fab_tier_escalations": 0, "fab_tier_contexts": [], "fab_tier_target": "advanced", "unsupported_rules": []}, "plane_fragility": {"source": "kicad_refill", "islands": 14, "refill_status": "ok", "why": "the KiCad refill succeeded", "machine_dependent": false}, "rescue": {"attempted": 11, "recovered": [], "improved": [], "unchanged": ["/01_power_mcu/CC1", "/01_power_mcu/CC2", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/PD_VMON", "/01_power_mcu/SCL", "/01_power_mcu/V5V", "/02_drive_transformer/DRV_nFAULT", "/04_sense_safety/RELAY_COIL_POS", "/HV_CURR_ADC", "Net-(R8-Pad2)"], "pads_reconnected": 0, "widths": {}, "time": 1.99}, "stacked_copper": [{"category": "stacked-copper", "net": "GND", "layer": "B.Cu", "x": 33.7, "y": 127.9, "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)", "size": 1.2727922061357886}, {"category": "stacked-copper", "net": "GND", "layer": "F.Cu", "x": 67.7, "y": 78.2, "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)", "size": 0.04999999999999716}, {"category": "stacked-copper", "net": "GND", "layer": "F.Cu", "x": 83.95, "y": 72.25, "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)", "size": 0.012999999999991019}], "oracle_check": "skipped", "blockers": [{"net": "/01_power_mcu/EFUSE_OVLO", "stage": "preexisting", "blocked_by": [{"net": "BULK_EN", "preexisting": true}, {"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "/01_power_mcu/EFUSE_DVDT", "preexisting": true}]}, {"net": "/01_power_mcu/V5V", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "/01_power_mcu/USB_DP", "preexisting": true}, {"net": "/01_power_mcu/IFB", "preexisting": true}, {"net": "/01_power_mcu/EN_DRV", "preexisting": true}]}, {"net": "/02_drive_transformer/DRV_nFAULT", "stage": "preexisting", "blocked_by": [{"net": "/02_drive_transformer/DRV_IMODE", "preexisting": true}, {"net": "/02_drive_transformer/DRV_CPH", "preexisting": true}, {"net": "3V3", "preexisting": true}, {"net": "/DRV_nSLEEP", "preexisting": true}, {"net": "/02_drive_transformer/DRV_VCP", "preexisting": true}, {"net": "/02_drive_transformer/DRV_IPROPI", "preexisting": true}]}, {"net": "/01_power_mcu/PD_VMON", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "3V3", "preexisting": true}, {"net": "/HV_SENSE_ADC", "preexisting": true}, {"net": "/INTERLOCK_OK", "preexisting": true}]}, {"net": "/01_power_mcu/CC2", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/IFB", "preexisting": true}, {"net": "/01_power_mcu/USB_DP", "preexisting": true}, {"net": "/01_power_mcu/USB_DN", "preexisting": true}]}, {"net": "/01_power_mcu/CC1", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/IFB", "preexisting": true}, {"net": "/01_power_mcu/USB_DN", "preexisting": true}, {"net": "/01_power_mcu/USB_DP", "preexisting": true}]}, {"net": "/01_power_mcu/EFUSE_ILM", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/GATE", "preexisting": true}, {"net": "/01_power_mcu/EFUSE_OVLO", "preexisting": true}, {"net": "/01_power_mcu/EFUSE_DVDT", "preexisting": true}]}, {"net": "/01_power_mcu/SCL", "stage": "preexisting", "blocked_by": [{"net": "/01_power_mcu/SDA", "preexisting": true}, {"net": "3V3", "preexisting": true}]}], "boxed_in": [{"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/EFUSE_OVLO"}, {"verdict": "boxed_in_static", "iterations": 5008, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/V5V"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "Net-(R8-Pad2)"}, {"verdict": "boxed_in_static", "iterations": 5026, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/02_drive_transformer/DRV_nFAULT"}, {"verdict": "boxed_in_static", "iterations": 5013, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/PD_VMON"}, {"verdict": "boxed_in_static", "iterations": 13, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/CC2"}, {"verdict": "boxed_in_static", "iterations": 8, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/CC1"}, {"verdict": "boxed_in_static", "iterations": 5001, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/EFUSE_ILM"}, {"verdict": "boxed_in_static", "iterations": 5015, "geometry": {"grid_step": 0.1, "clearance": 0.2, "track_width": 0.25, "via_diameter": null}, "net": "/01_power_mcu/SCL"}], "pad_pairs_connected": 14, "pad_pairs_total": 25, "pad_pairs_open": [{"net": "/01_power_mcu/CC1", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/CC2", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/EFUSE_ILM", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/EFUSE_OVLO", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/PD_VMON", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/SCL", "pairs_connected": 5, "pairs_total": 6, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/01_power_mcu/V5V", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/02_drive_transformer/DRV_nFAULT", "pairs_connected": 1, "pairs_total": 2, "outcome": "open", "open_subtype": "unrouted"}, {"net": "/04_sense_safety/RELAY_COIL_POS", "pairs_connected": 4, "pairs_total": 5, "outcome": "open", "open_subtype": "partial"}, {"net": "/HV_CURR_ADC", "pairs_connected": 2, "pairs_total": 3, "outcome": "open", "open_subtype": "partial"}, {"net": "Net-(R8-Pad2)", "pairs_connected": 0, "pairs_total": 1, "outcome": "open", "open_subtype": "unrouted"}], "scope": "reconciliation-subset", "board_scoped_keys": ["stacked_copper", "min_clearance_used"], "env_knobs": {}}
+
+Writing output to /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb...
+Successfully wrote /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-trial-routed.kicad_pcb
+Note: the JSON_SUMMARY above covers only the reconciliation subset (it carries scope="reconciliation-subset"). The run's tally is the final re-grade of the shipped board (JSON_REGRADE, folded into JSON_SUMMARY_MIN and --json-out). Never scrape the LAST JSON_SUMMARY of a route log.
+  Strict collapse (#1063, end of run): removed 79 redundant segment(s) and 1 via(s) they freed on 24 net(s)
+
+  FAB NOTE (route): 3 via(s) in a pad or paste opening [C81.2 F.Paste (pad), D5.2 F.Paste (pad), R90.2 F.Paste (pad)] -- 0 stamped (capping yes) (filling yes), 3 already filled+capped. via-in-pad requires IPC-4761 Type VII (filled + capped + plated); state it on the fab drawing or solder wicks into the barrel.
+VIA_IN_PAD_JSON: {"count": 3, "sites": ["C81.2 F.Paste (pad)", "D5.2 F.Paste (pad)", "R90.2 F.Paste (pad)"], "stamped": 0, "restored": 0, "protected": 3, "unstampable": 0, "site_created": 0, "unprotected": [], "note": "via-in-pad requires IPC-4761 Type VII (filled + capped + plated); state it on the fab drawing or solder wicks into the barrel"}
+JSON_REGRADE: {"board": "file", "graded_nets": 38, "seconds": 0.18, "routed_single": ["Net-(U4-IN-)", "/01_power_mcu/V18", "/02_drive_transformer/DRV_CPL", "Net-(C63-Pad1)", "/01_power_mcu/USB_DN", "/01_power_mcu/OTP_NTC", "/01_power_mcu/EFUSE_DVDT", "/02_drive_transformer/DRV_IPROPI", "/02_drive_transformer/DRV_IMODE", "/INTERLOCK_OK", "/01_power_mcu/SDA", "/02_drive_transformer/DRV_CPH", "/01_power_mcu/EN_DRV", "/01_power_mcu/USB_DP", "/02_drive_transformer/DRV_VCP", "/01_power_mcu/GATE", "3V3", "/01_power_mcu/IFB", "/01_power_mcu/ISENP", "/HV_SENSE_ADC"], "failed_single": ["/01_power_mcu/CC1", "/01_power_mcu/CC2", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/PD_VMON", "/01_power_mcu/SCL", "/01_power_mcu/V5V", "/02_drive_transformer/DRV_nFAULT", "Net-(R8-Pad2)"], "open_single": [], "failed_multipoint": [{"net_name": "/04_sense_safety/RELAY_COIL_POS", "failed_pads": [{"x": 68.9, "y": 119.0, "component_ref": "D3", "pad_number": "?"}]}, {"net_name": "/HV_CURR_ADC", "failed_pads": [{"x": 91.25, "y": 180.0, "component_ref": "R91", "pad_number": "?"}]}], "multipoint_pads_total": 66, "multipoint_pads_connected": 64, "successful": 20, "failed": 9, "unowned_broken": [], "recovered": ["/01_power_mcu/OTP_NTC", "/01_power_mcu/SDA", "/01_power_mcu/USB_DP", "/HV_SENSE_ADC"]}
+
+============================================================
+Run complete -- whole run, re-graded on the written board (38 net(s), 0.2s)
+============================================================
+  Single-ended:  20/29 routed (8 FAILED)
+  Multi-point:   64/66 pads connected (2 FAILED)
+  Broken outside the routing scope: /02_drive_transformer/DRV_nFAULT, /04_sense_safety/RELAY_COIL_POS
+  Recovered after a summary reported them failing: 4
+  route summary written to /home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/layout/routing-trials/lv-router-result.json
+
+IMPROVEMENT GATE: this run broke 2 previously-connected net(s) [/02_drive_transformer/DRV_nFAULT, /04_sense_safety/RELAY_COIL_POS], worsened 0, connected 20 -- ACCEPTED
+  broken by this run: /02_drive_transformer/DRV_nFAULT, /04_sense_safety/RELAY_COIL_POS
+  connected by this run: /01_power_mcu/EFUSE_DVDT, /01_power_mcu/EN_DRV, /01_power_mcu/GATE, /01_power_mcu/IFB, /01_power_mcu/ISENP, /01_power_mcu/OTP_NTC, /01_power_mcu/SDA, /01_power_mcu/USB_DN, /01_power_mcu/USB_DP, /01_power_mcu/V18, /02_drive_transformer/DRV_CPH, /02_drive_transformer/DRV_CPL, /02_drive_transformer/DRV_IMODE, /02_drive_transformer/DRV_IPROPI, /02_drive_transformer/DRV_VCP, /HV_SENSE_ADC, /INTERLOCK_OK, 3V3, Net-(C63-Pad1), Net-(U4-IN-)
+  disconnected pads: 149 -> 121 over 110 multi-pad net(s)
+  shipped (the run connected at least as many nets as it broke)
+JSON_IMPROVEMENT_GATE: {"lost": ["/02_drive_transformer/DRV_nFAULT", "/04_sense_safety/RELAY_COIL_POS"], "gained": ["/01_power_mcu/EFUSE_DVDT", "/01_power_mcu/EN_DRV", "/01_power_mcu/GATE", "/01_power_mcu/IFB", "/01_power_mcu/ISENP", "/01_power_mcu/OTP_NTC", "/01_power_mcu/SDA", "/01_power_mcu/USB_DN", "/01_power_mcu/USB_DP", "/01_power_mcu/V18", "/02_drive_transformer/DRV_CPH", "/02_drive_transformer/DRV_CPL", "/02_drive_transformer/DRV_IMODE", "/02_drive_transformer/DRV_IPROPI", "/02_drive_transformer/DRV_VCP", "/HV_SENSE_ADC", "/INTERLOCK_OK", "3V3", "Net-(C63-Pad1)", "Net-(U4-IN-)"], "worsened": [], "disconnected_pads_before": 149, "disconnected_pads_after": 121, "nets_compared": 110, "verdict": "accept"}
+JSON_SUMMARY_MIN: {"escalations": 0, "failed": 9, "failed_single": ["/01_power_mcu/CC1", "/01_power_mcu/CC2", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/PD_VMON", "/01_power_mcu/SCL", "/01_power_mcu/V5V", "/02_drive_transformer/DRV_nFAULT", "Net-(R8-Pad2)"], "main_loop_time_s": 1.77, "min_clearance_used": 0.2, "multipoint_deficit": 2, "open_single": [], "pad_pairs_open": {"count": 11, "nets": ["/01_power_mcu/CC1", "/01_power_mcu/CC2", "/01_power_mcu/EFUSE_ILM", "/01_power_mcu/EFUSE_OVLO", "/01_power_mcu/PD_VMON", "/01_power_mcu/SCL", "/01_power_mcu/V5V", "/02_drive_transformer/DRV_nFAULT", "/04_sense_safety/RELAY_COIL_POS", "/HV_CURR_ADC", "Net-(R8-Pad2)"]}, "regraded_nets": 38, "routed": 20, "scope": "merged", "terminal_restores_broken": [], "vias": 75}
+  --write-fill: wrote 14 filled_polygon block(s); the deliverable no longer reads phantom plane opens until refilled
+EXIT=0

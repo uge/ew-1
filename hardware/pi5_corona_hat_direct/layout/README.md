@@ -1,39 +1,28 @@
-# Compact two-layer PCB placement — F-layout-2
+# Compact two-layer layout — N-layout-9
 
-Open `../pi5_corona_hv.kicad_pro` and its PCB editor. This is native KiCad 10, with all 152 schematic footprints, net assignments, procurement fields and schematic paths preserved. MP1 is a separate board-only DNP mechanical reference. C63/R64 retain their schematic DNP flags. Routing remains incomplete; this is not a fabrication release.
+Open `../pi5_corona_hv.kicad_pro` in KiCad 10. Circuit revision J includes S5 and S6 on the normally-open series interlock chain. All 168 schematic footprints are present, plus the board-only DNP Pi model MP1. C63/R64 retain their DNP flags. Routing is partial: 191 unconnected items remain, so this is not a fabrication release.
 
-## Dimensions and Pi orientation
+## Dimensions and placement
 
-The main carrier is **296 × 155 mm**, reduced from 340 × 180 mm: **25.0% less rectangular board area**. The 30 × 20 mm optical daughterboard and 12 × 5 mm neck make the PCB envelope **296 × 180 mm**, reduced from 340 × 205 mm. The Pi projects beyond the top edge, so the assembled envelope including the Pi is approximately 296 × 229 mm; the reduced PCB envelope is not the full enclosure envelope.
+The carrier is **196 × 148 mm**, spanning x50–246, y51–199 mm. The overall envelope including the five tabs is **231 × 148 mm**.
+- **Width Boundary (196 mm):** The left edge x50 mm is constrained by invariant Raspberry Pi 5 socket J2 at (54.23, 106.63) mm and mounting holes H1/H2 at x55.5 mm. The right edge x246 mm is strictly constrained by the custom design rule `Highest voltage to board edge: min 10 mm` applied to J60 at (233.5, 84) mm (pad radius 2.25 mm requires edge >= 245.75 mm) and R20 Pad 1 at (234.75, 63) mm.
+- **Height Boundary (148 mm):** The top edge y51 mm is constrained by Pi mounting hole H2 at y53.5 mm, USB-C receptacle J3 at y54.675 mm (mouth flush with edge), and top carrier mounting holes H3/H6 at y55 mm. The bottom edge y199 mm accommodates the 5 break-away tabs (S3–S6 perimeter interlocks, J51 illumination spanning y120–198 mm), bottom carrier mounting holes H4/H5 at y194 mm, HV Return terminal J61 at y196 mm, and return current shunt R90 at y192 mm.
 
-J2 is now on **F.Cu**, rotated 90 degrees. MP1's official Pi STEP model is inverted 180 degrees around X with its body outboard above the carrier's top edge. The model anchor is (50,3) mm, offset (0,0,13.306) mm, unit scale. The component face of the Pi PCB is 12 mm above the carrier front face. The Pi GPIO pins point down into the upward-facing socket. The tall USB/Ethernet bodies project outboard, rather than intersecting the carrier substrate. A 24 × 10 mm top-edge notch at x = 117–141, y = 50–60 mm clears the remaining USB housing corner. The exact solid-model check finds zero Pi-to-carrier substrate intersections.
+## Ballast compaction and reverse E-field hazard elimination (N-layout-9)
 
-All 40 GPIO XY positions are checked against the official STEP pin grid: pin 1 (58.37,54.23), pin 2 (58.37,56.77), pin 40 (106.63,56.77) mm. Carrier holes H1/H2 at (53.5,55.5) and (111.5,55.5) mm align with the Pi's GPIO-side mounting holes. The other two Pi holes at y = 6.5 mm are outboard and need enclosure/standoff support. H3–H7 are carrier supports, not additional aligned Pi holes. This is an extended carrier, not a standard HAT outline.
+In Revision M-layout-8, the 10-resistor ballast string R20–R29 looped across the top of the carrier from x228 down to x152 mm at y63 and y78 mm. At x152 mm, R24/R25 carried ~14.5 kV directly above Stage 2 pump bleeders (~4.5 kV) at y87 mm across an inverted 9 mm gap, generating an inverted 10.5 kV potential gradient (> 1.15 kV/mm E-field stress).
 
-The 12 mm spacing is a model assumption, not a guaranteed socket engagement or mechanical tolerance specification. Cooler, cables and enclosure are excluded from the fit check. The official model and its supplied MIT license are kept in `ionic_thrust_hv.3dshapes`; source: [Raspberry Pi product portal](https://pip.raspberrypi.com/categories/892-raspberry-pi-5).
+Revision N-layout-9 compacts the ballast string pitch to 15.5 mm (0.4 mm copper gap between adjacent pads on the same net, 15.0 mm row-to-row spacing satisfying the 10.0 mm `/HV_RAW` clearance rule):
+- **Compacted Ballast Coordinates:**
+  - Row 1 (y63.0 mm, rot 180°): R20 (228.0), R21 (212.5), R22 (197.0), R23 (181.5), R24 (166.0) mm.
+  - Row 2 (y78.0 mm, rot 0°): R25 (166.0), R26 (181.5), R27 (197.0), R28 (212.5), R29 (228.0) mm.
+  - HV Output J60: (233.5, 84.0) mm, rot 0°.
+- **Hazard Relief:** The minimum X coordinate of the ballast string moves from 145.25 mm to **159.25 mm (+14.0 mm)**. The entire Stage 2 pump bleeder network (x <= 155 mm) is 100% vacated. Euclidean clearance from R25 to Stage 2 bleeders increases from 9.0 mm to **16.7 mm (almost doubled)**. Peak inverted E-field stress is reduced from 1.17 kV/mm to **0.42 kV/mm (a 64% reduction)**.
+- **MST Optimization:** HV Minimum Spanning Tree length drops from 1081.99 mm to **1053.99 mm (-28.00 mm)**. All-net MST drops from 3904.79 mm to **3876.79 mm (-28.00 mm)**.
+- **DRC Verification:** Native KiCad 10 DRC confirms **0 violations**, **0 schematic parity errors**, and exactly 191 unconnected items remaining from partial routing.
 
-## Layers and HV spacing
+## Parallel-actuation microswitch replacement
 
-Only **F.Cu and B.Cu** are enabled; nominal thickness remains 1.6 mm. Components and J2 are on the front. The logic GND pour is on B.Cu, limited to x = 52–121 mm. A rule area blocks copper fills on both sides beneath the transformer/HV region, x = 122–345 mm. Individual tracks and pads remain routable. No internal layers or former internal-layer zones remain. HV_RETURN stays distinct from logic GND.
+S3–S6 use DEALON TK-0013-R, C19724218, populated on all four break-off boards. Footprint origins are (39, 137.6), (39, 153.6), (39, 169.6), (39, 185.6) mm, all rotation 0°. All COM/NO neck conductors are retained, NC unused, DNP unchanged.
 
-Multiplier column pitch is reduced from 36 to 30 mm, diode pair spacing from 18 to 16 mm, and capacitor-row separation from 71 to 54 mm. Ballast pitch is 17 mm instead of 21 mm; divider pitch is 16 mm instead of 21 mm. The divider remains a straight string with the high-voltage end adjacent to the final multiplier stage; it is not folded back next to the low-voltage end. All twelve three-resistor bleeders remain intact. No capacitances, part values or power-path connections change.
-
-HV netclasses are now assigned to the 56 relevant nets, rather than left unassigned. Custom rules enforce **4 mm stage clearance**, **10 mm highest-voltage clearance**, and **10 mm highest-voltage copper-to-board-edge setback**. These are initial layout guards, not a certification of 15 kV creepage/insulation. Final requirements depend on working and transient voltages, PCB material, pollution, altitude, enclosure and any validated encapsulation. Reference: [TI high-voltage spacing guidance](https://www.ti.com/lit/pdf/slup419). No reduction is justified by assuming solder mask or unqualified conformal coating provides HV insulation.
-
-Four explicit pair rules distinguish voltage across a rated part from its common-mode voltage: R30's own pins, R163's own pins, the adjacent R51/R163 series nodes, and C111's own pins use the 4 mm stage guard. These are not blanket exemptions for the HV output net. The Bourns package has 4.7 mm pad-edge spacing and a 3 kV working rating; divider/bleeder voltage sharing must still be validated. The selected 6 kV capacitor has 8.25 mm pad-edge spacing; its lead-area creepage and encapsulation remain review items. No exceptions suppress J60 or T1 clearance failures.
-
-The break-off sensor retains U8, J51, C80 and C81. J50 stays on the carrier. Only GND, 3V3, SDA and SCL may cross the neck; neck traces and the cutting process are not yet implemented.
-
-## Checks and remaining work
-
-Schematic parity is zero, every schematic pin's PCB net matches, and there are no courtyard overlaps. DRC reports **280 unconnected items** and **five remaining violations**:
-
-- J60: 3.08 mm between output and return versus the 10 mm guard, reported on both copper layers. The existing terminal is unsuitable for 15 kV; select a rated termination and footprint.
-- T1: 3.2 mm secondary pad spacing versus the 4 mm guard, reported on both layers. Verify the transformer drawing and insulation before deciding its final footprint/spacing.
-- D3: its placed silkscreen was moved to F.Fab to avoid pad overlap, so it differs from the library copy.
-
-These are retained review blockers, not waived errors. Earlier checks also identified a USB-C pad-to-NPTH spacing concern; verify its manufacturer geometry and fabrication requirements even though it is not reported by the current two-layer DRC. Complete routing, creepage review, transformer/bridge current and thermal checks, relay supply/interlock review, and physical mechanical measurements before fabrication. The capacitor budget and procurement BOM are unchanged.
-
-Review `../exports/compact-pcb-layout.pdf`, `.svg`, `.png`, `compact-pi5-assembly.png`, `compact-pcb-drc.json`, and `compact-pcb-validation.json`. The substrate fit check is recorded in `compact-pi5-substrate-fit.json`; it does not validate all component, cooler or enclosure collisions. Enable **Show DNP footprints** in KiCad's 3D Viewer to display MP1; STEP exports include it unless `--no-dnp` is passed.
-
-`create_initial_board.py` uses the PCB API only and preserves project settings. Re-running it rebuilds the board and discards later routing. `add_pi5_mechanical.py` updates only the socket pose and MP1. Both retain MP1 as DNP, locked, padless and excluded from BOM/placement files. `check_pi5_compact_fit.py` runs in FreeCADCmd and checks the Pi model against the carrier substrate. The original four-layer placement is retained under `revisions/F-layout-1/`. No fabrication package is emitted.
+Previous revisions are preserved under `revisions/M-layout-8/`, `revisions/L-layout-7/`, `revisions/K-layout-6/`, `revisions/J-layout-5/`, and `revisions/H-layout-3/`.

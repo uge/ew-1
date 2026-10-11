@@ -1,0 +1,53 @@
+{
+  "revision": "H",
+  "pcb_revision": "H-layout-3",
+  "kicad_version": "10.0.6",
+  "changed_refs": [
+    "D10",
+    "D11",
+    "D12",
+    "D13",
+    "D14",
+    "D15",
+    "D16",
+    "D17",
+    "D18",
+    "D19",
+    "D20",
+    "D21"
+  ],
+  "mpn": "2CL75",
+  "manufacturer": "SUNMATE Elec",
+  "lcsc": "C424512",
+  "stock_checked": "2026-10-03",
+  "stock_snapshot": 1006,
+  "schematic_nets_and_pin_connections_unchanged": true,
+  "pcb_pad_centers_polarity_and_orientations_unchanged": true,
+  "existing_tracks_preserved": 8,
+  "erc_violations": 0,
+  "pcb_schematic_parity_issues": 0,
+  "drc_violations": 13,
+  "drc_new_violations": 0,
+  "unconnected_items": 296,
+  "schematic_dnp": [
+    "C63",
+    "R64"
+  ],
+  "board_only_dnp": "MP1",
+  "body_mm": [
+    3,
+    12
+  ],
+  "lead_diameter_mm": 0.6,
+  "lead_pitch_mm": 26,
+  "drill_mm": 0.9,
+  "pad_size_mm": 1.8,
+  "model": "Project-authored approximate VRML; not manufacturer mechanical model",
+  "holds": [
+    "Startup surge and repetitive diode charging-pulse verification",
+    "Recovery test-current conditions and Qrr unspecified",
+    "Formed lead tolerances",
+    "Complete routing and existing DRC holds"
+  ],
+  "production_release": false
+}

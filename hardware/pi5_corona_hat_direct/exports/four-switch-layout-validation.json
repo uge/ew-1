@@ -1,0 +1,55 @@
+{
+  "revision": "J",
+  "layout_revision": "K-layout-6",
+  "kicad_version": "10.0.6",
+  "erc_violations": 0,
+  "drc_violations": 0,
+  "schematic_parity_issues": 0,
+  "unconnected_items": 192,
+  "footprints_from_schematic": 168,
+  "copper_layers": 2,
+  "board_thickness_mm": 1.6,
+  "main_board_mm": [
+    216,
+    148
+  ],
+  "overall_mm": [
+    251,
+    148
+  ],
+  "mini_board_count": 5,
+  "mini_board_dimensions_mm": [
+    30,
+    14
+  ],
+  "switch_refs": [
+    "S3",
+    "S4",
+    "S5",
+    "S6"
+  ],
+  "switch_neck_conductors_complete": true,
+  "schematic_dnp": [
+    "C63",
+    "R64"
+  ],
+  "board_only_dnp": [
+    "MP1"
+  ],
+  "connectivity_checks": 10,
+  "via_count": 74,
+  "routing_complete": false,
+  "production_release": false,
+  "carrier_area_reduction_percent": 21.36,
+  "all_net_mst_reduction_percent": 7.56,
+  "hv_mst_reduction_percent": 18.77,
+  "holds": [
+    "Complete routing, including illumination 3V3 neck",
+    "Break-off manufacturing and wire strain relief",
+    "Relay/regulator pickup and fault qualification",
+    "Arc pulse and ADC injection qualification",
+    "Transformer unwound terminals and resonant operation",
+    "HV insulation and complete-stack discharge qualification",
+    "USB-PD inrush and transitions"
+  ]
+}

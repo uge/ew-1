@@ -1,17 +1,48 @@
 {
-  "revision": "F",
+  "revision": "K",
   "kicad_version": "10.0.6",
-  "parts": 152,
-  "catalog_assigned": 149,
+  "parts": 168,
+  "catalog_assigned": 134,
   "unassigned": [
-    "TP50",
     "T1",
-    "J60"
+    "TP50",
+    "C111",
+    "C105",
+    "C106",
+    "C110",
+    "C103",
+    "C109",
+    "C102",
+    "C100",
+    "C104",
+    "C107",
+    "C108",
+    "C101",
+    "J61",
+    "J69",
+    "R27",
+    "J66",
+    "R28",
+    "J65",
+    "J64",
+    "R20",
+    "J67",
+    "R22",
+    "J63",
+    "R23",
+    "J60",
+    "R25",
+    "R29",
+    "R24",
+    "R26",
+    "J68",
+    "R21",
+    "J62"
   ],
   "unique_annotation": true,
   "netlist_annotation_warning": false,
   "erc_violations": 0,
-  "pin_net_groups_preserved_after_mosfet_pad_mapping": true,
+  "audit_net_assertions_passed": true,
   "dnp_refs": [
     "C63",
     "R64"
@@ -19,20 +50,9 @@
   "pin_pad_mismatches": [
 
   ],
-  "jlcpcb_bom_part_quantity": 146,
-  "jlcpcb_bom_rows": 58,
+  "jlcpcb_bom_part_quantity": 132,
+  "jlcpcb_bom_rows": 48,
   "catalog_checked": "2026-10-02 / 2026-10-03",
   "stock_not_reserved": true,
-  "production_release": false,
-  "grounded_pd_exposed_pad": true,
-  "konnect_symbol_overlaps": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "manual_visual_review": "Six sheets; catalog fields hidden. Q1 fields moved clear of symbol and rail text.",
-  "native_footprint_exports_parse": true
+  "production_release": false
 }

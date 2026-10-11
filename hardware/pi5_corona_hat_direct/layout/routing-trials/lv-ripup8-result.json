@@ -1,0 +1,752 @@
+{
+ "routed_single": [
+  "Net-(U4-IN-)",
+  "/01_power_mcu/V5V",
+  "/01_power_mcu/V18",
+  "/02_drive_transformer/DRV_CPL",
+  "Net-(C63-Pad1)",
+  "/01_power_mcu/USB_DN",
+  "/01_power_mcu/OTP_NTC",
+  "/01_power_mcu/EFUSE_DVDT",
+  "/01_power_mcu/PD_VMON",
+  "/02_drive_transformer/PRI_A",
+  "/INTERLOCK_OK",
+  "/01_power_mcu/VBUS_IN",
+  "/02_drive_transformer/DRV_CPH",
+  "/01_power_mcu/EFUSE_ILM",
+  "/01_power_mcu/IFB",
+  "/02_drive_transformer/DRV_VCP",
+  "/01_power_mcu/ISENP",
+  "/04_sense_safety/HV_SENSE_RAW",
+  "/01_power_mcu/EN_DRV",
+  "/01_power_mcu/USB_DP",
+  "/02_drive_transformer/HV_BRIDGE",
+  "/01_power_mcu/VIN_PD"
+ ],
+ "failed_single": [
+  "/01_power_mcu/CC1",
+  "/01_power_mcu/CC2",
+  "/01_power_mcu/EFUSE_OVLO",
+  "/01_power_mcu/GATE",
+  "/01_power_mcu/SCL",
+  "/01_power_mcu/VBUS_RAW",
+  "/02_drive_transformer/DRV_A",
+  "/02_drive_transformer/DRV_IMODE",
+  "/02_drive_transformer/DRV_IPROPI",
+  "/HV_SENSE_ADC",
+  "/VIN_PROTECTED",
+  "Net-(R8-Pad2)"
+ ],
+ "open_single": [],
+ "failed_multipoint": [
+  {
+   "net_name": "/01_power_mcu/SDA",
+   "failed_pads": [
+    {
+     "x": 83.9625,
+     "y": 71.75,
+     "component_ref": "U7",
+     "pad_number": "?"
+    }
+   ]
+  },
+  {
+   "net_name": "/02_drive_transformer/DRV_B",
+   "failed_pads": [
+    {
+     "x": 110.0,
+     "y": 181.05,
+     "component_ref": "C63",
+     "pad_number": "?"
+    },
+    {
+     "x": 91.775,
+     "y": 138.625,
+     "component_ref": "U2",
+     "pad_number": "?"
+    }
+   ]
+  },
+  {
+   "net_name": "/HV_CURR_ADC",
+   "failed_pads": [
+    {
+     "x": 83.0,
+     "y": 109.15,
+     "component_ref": "U6",
+     "pad_number": "?"
+    },
+    {
+     "x": 91.25,
+     "y": 180.0,
+     "component_ref": "R91",
+     "pad_number": "?"
+    }
+   ]
+  },
+  {
+   "net_name": "3V3",
+   "failed_pads": [
+    {
+     "x": 86.225,
+     "y": 137.325,
+     "component_ref": "U2",
+     "pad_number": "?"
+    }
+   ]
+  }
+ ],
+ "multipoint_nets": 4,
+ "multipoint_pads_connected": 88,
+ "multipoint_pads_total": 94,
+ "multipoint_edges_routed": 0,
+ "multipoint_edges_failed": 6,
+ "ripup_success_pairs": [],
+ "rerouted_pairs": [],
+ "single_ended_target_swaps": [],
+ "layer_swaps": 0,
+ "successful": 22,
+ "failed": 16,
+ "total_time": 2.44,
+ "total_iterations": 1300498,
+ "total_vias": 71,
+ "cleanup_disconnected": [],
+ "min_clearance_used": 0.2,
+ "design_rules": {
+  "escalation_policy": "off",
+  "fab_tier": "auto",
+  "board_floors": {
+   "clearance": 0.2,
+   "track_width": 0.15,
+   "via_diameter": 0.45,
+   "via_drill": 0.3,
+   "hole_to_hole": 0.25,
+   "annular": 0.1,
+   "board_edge": 0.5
+  },
+  "count": 0,
+  "nets": [],
+  "narrowed": [],
+  "min_delivered": {},
+  "fab_tier_escalations": 0,
+  "fab_tier_contexts": [],
+  "fab_tier_target": "advanced",
+  "unsupported_rules": []
+ },
+ "plane_fragility": {
+  "source": "kicad_refill",
+  "islands": 14,
+  "refill_status": "ok",
+  "why": "the KiCad refill succeeded",
+  "machine_dependent": false
+ },
+ "rescue": {
+  "attempted": 16,
+  "recovered": [],
+  "improved": [],
+  "unchanged": [
+   "/01_power_mcu/CC1",
+   "/01_power_mcu/CC2",
+   "/01_power_mcu/EFUSE_OVLO",
+   "/01_power_mcu/GATE",
+   "/01_power_mcu/SCL",
+   "/01_power_mcu/SDA",
+   "/01_power_mcu/VBUS_RAW",
+   "/02_drive_transformer/DRV_A",
+   "/02_drive_transformer/DRV_B",
+   "/02_drive_transformer/DRV_IMODE",
+   "/02_drive_transformer/DRV_IPROPI",
+   "/HV_CURR_ADC",
+   "/HV_SENSE_ADC",
+   "/VIN_PROTECTED",
+   "3V3",
+   "Net-(R8-Pad2)"
+  ],
+  "pads_reconnected": 0,
+  "widths": {},
+  "time": 3.98
+ },
+ "stacked_copper": [
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "B.Cu",
+   "x": 33.7,
+   "y": 127.9,
+   "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)",
+   "size": 1.2727922061357886
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 67.7,
+   "y": 78.2,
+   "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)",
+   "size": 0.04999999999999716
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 83.95,
+   "y": 72.25,
+   "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)",
+   "size": 0.012999999999991019
+  }
+ ],
+ "oracle_check": "disabled",
+ "blockers": [
+  {
+   "net": "/02_drive_transformer/DRV_IPROPI",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/DRV_IN1",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/DRV_nFAULT",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/DRV_VCP",
+     "preexisting": true
+    },
+    {
+     "net": "3V3",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/02_drive_transformer/DRV_B",
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "GND",
+     "blocked_count": 1,
+     "unique_cells": 1,
+     "track_cells": 1,
+     "via_cells": 0,
+     "near_target_cells": 1,
+     "near_source_cells": 0
+    }
+   ]
+  },
+  {
+   "net": "/HV_CURR_ADC",
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "GND",
+     "blocked_count": 1,
+     "unique_cells": 1,
+     "track_cells": 1,
+     "via_cells": 0,
+     "near_target_cells": 1,
+     "near_source_cells": 0
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/SDA",
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/USB_DP",
+     "blocked_count": 1,
+     "unique_cells": 1,
+     "track_cells": 1,
+     "via_cells": 0,
+     "near_target_cells": 1,
+     "near_source_cells": 0
+    }
+   ]
+  },
+  {
+   "net": "/HV_SENSE_ADC",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "Net-(C63-Pad1)",
+     "preexisting": true
+    },
+    {
+     "net": "Net-(U4-IN-)",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/EFUSE_OVLO",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/GATE",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/VIN_PD",
+     "preexisting": true
+    },
+    {
+     "net": "BULK_EN",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/EFUSE_ILM",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "Net-(R8-Pad2)",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/02_drive_transformer/PRI_A",
+     "preexisting": true
+    },
+    {
+     "net": "/HV_RETURN",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/02_drive_transformer/DRV_IMODE",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/02_drive_transformer/DRV_nFAULT",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/DRV_VCP",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/DRV_CPH",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/DRV_CPL",
+     "preexisting": true
+    },
+    {
+     "net": "3V3",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/CC2",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/USB_DN",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/IFB",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/VBUS_RAW",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/USB_DP",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/CC1",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/USB_DN",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/IFB",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/02_drive_transformer/DRV_A",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/02_drive_transformer/DRV_nFAULT",
+     "preexisting": true
+    },
+    {
+     "net": "3V3",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/DRV_CPH",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/VIN_PROTECTED",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/VIN_PD",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/EFUSE_ILM",
+     "preexisting": true
+    },
+    {
+     "net": "BULK_EN",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/VBUS_RAW",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/EFUSE_OVLO",
+     "preexisting": true
+    },
+    {
+     "net": "/02_drive_transformer/HV_BRIDGE",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/EFUSE_DVDT",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/SCL",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/USB_DP",
+     "preexisting": true
+    },
+    {
+     "net": "/01_power_mcu/ISENP",
+     "preexisting": true
+    },
+    {
+     "net": "3V3",
+     "preexisting": true
+    },
+    {
+     "net": "/INTERLOCK_OK",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/VBUS_RAW",
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/VBUS_IN",
+     "blocked_count": 240,
+     "unique_cells": 240,
+     "track_cells": 240,
+     "via_cells": 0,
+     "near_target_cells": 35,
+     "near_source_cells": 0
+    }
+   ]
+  }
+ ],
+ "boxed_in": [
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 1544,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "Net-(R8-Pad2)"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5051,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/02_drive_transformer/DRV_IPROPI"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5049,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/02_drive_transformer/DRV_IMODE"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 35,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/01_power_mcu/CC2"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 40,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/01_power_mcu/CC1"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5018,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/01_power_mcu/SCL"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5005,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/01_power_mcu/EFUSE_OVLO"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 0,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/01_power_mcu/VBUS_RAW"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5085,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/02_drive_transformer/DRV_A"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 3244,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/01_power_mcu/GATE"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5032,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/VIN_PROTECTED"
+  },
+  {
+   "verdict": "boxed_in_static",
+   "iterations": 5014,
+   "geometry": {
+    "grid_step": 0.1,
+    "clearance": 0.2,
+    "track_width": 0.2,
+    "via_diameter": null
+   },
+   "net": "/HV_SENSE_ADC"
+  }
+ ],
+ "pad_pairs_connected": 99,
+ "pad_pairs_total": 117,
+ "pad_pairs_open": [
+  {
+   "net": "/01_power_mcu/CC1",
+   "pairs_connected": 0,
+   "pairs_total": 1,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/01_power_mcu/CC2",
+   "pairs_connected": 0,
+   "pairs_total": 1,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/01_power_mcu/EFUSE_OVLO",
+   "pairs_connected": 1,
+   "pairs_total": 2,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/01_power_mcu/GATE",
+   "pairs_connected": 1,
+   "pairs_total": 2,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/01_power_mcu/SCL",
+   "pairs_connected": 5,
+   "pairs_total": 6,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/01_power_mcu/SDA",
+   "pairs_connected": 5,
+   "pairs_total": 6,
+   "outcome": "open",
+   "open_subtype": "partial"
+  },
+  {
+   "net": "/01_power_mcu/VBUS_RAW",
+   "pairs_connected": 5,
+   "pairs_total": 6,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/02_drive_transformer/DRV_A",
+   "pairs_connected": 2,
+   "pairs_total": 3,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/02_drive_transformer/DRV_B",
+   "pairs_connected": 2,
+   "pairs_total": 4,
+   "outcome": "open",
+   "open_subtype": "partial"
+  },
+  {
+   "net": "/02_drive_transformer/DRV_IMODE",
+   "pairs_connected": 0,
+   "pairs_total": 1,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/02_drive_transformer/DRV_IPROPI",
+   "pairs_connected": 0,
+   "pairs_total": 1,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/HV_CURR_ADC",
+   "pairs_connected": 1,
+   "pairs_total": 3,
+   "outcome": "open",
+   "open_subtype": "partial"
+  },
+  {
+   "net": "/HV_SENSE_ADC",
+   "pairs_connected": 1,
+   "pairs_total": 2,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/VIN_PROTECTED",
+   "pairs_connected": 2,
+   "pairs_total": 3,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "3V3",
+   "pairs_connected": 19,
+   "pairs_total": 20,
+   "outcome": "open",
+   "open_subtype": "partial"
+  },
+  {
+   "net": "Net-(R8-Pad2)",
+   "pairs_connected": 0,
+   "pairs_total": 1,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  }
+ ],
+ "scope": "merged",
+ "board_scoped_keys": [
+  "stacked_copper",
+  "min_clearance_used"
+ ],
+ "env_knobs": {},
+ "finalize_excluded_nets": [
+  "GND"
+ ],
+ "regrade": {
+  "board": "file",
+  "graded_nets": 40,
+  "seconds": 0.14,
+  "unowned_broken": [],
+  "recovered": [
+   "/01_power_mcu/VBUS_IN"
+  ]
+ },
+ "via_in_pad": {
+  "count": 3,
+  "sites": [
+   "C81.2 F.Paste (pad)",
+   "D5.2 F.Paste (pad)",
+   "R90.2 F.Paste (pad)"
+  ],
+  "stamped": 0,
+  "restored": 0,
+  "protected": 3,
+  "unstampable": 0,
+  "site_created": 0,
+  "unprotected": [],
+  "note": "via-in-pad requires IPC-4761 Type VII (filled + capped + plated); state it on the fab drawing or solder wicks into the barrel"
+ }
+}

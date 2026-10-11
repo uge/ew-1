@@ -1,30 +1,61 @@
 {
  "routed_single": [
-  "/01_power_mcu/SDA",
-  "/01_power_mcu/SCL",
+  "GND",
   "/02_drive_transformer/DRV_nFAULT",
-  "/01_power_mcu/BULK_EN",
   "/DRV_nSLEEP",
+  "BULK_EN",
+  "/DRV_SLEEP_CMD",
+  "BULK_CMD",
+  "COIL_3V",
+  "/04_sense_safety/RELAY_COIL_POS",
   "/DRV_IN1",
   "/DRV_IN2"
  ],
- "failed_single": [],
+ "failed_single": [
+  "/01_power_mcu/SCL",
+  "/04_sense_safety/LID_2",
+  "/04_sense_safety/LID_3",
+  "/04_sense_safety/LID_INT"
+ ],
  "open_single": [],
- "failed_multipoint": [],
- "multipoint_nets": 1,
- "multipoint_pads_connected": 26,
- "multipoint_pads_total": 26,
- "multipoint_edges_routed": 2,
- "multipoint_edges_failed": 0,
+ "failed_multipoint": [
+  {
+   "net_name": "/01_power_mcu/SDA",
+   "failed_pads": [
+    {
+     "x": 83.9625,
+     "y": 71.75,
+     "component_ref": "U7",
+     "pad_number": "?"
+    }
+   ]
+  },
+  {
+   "net_name": "3V3",
+   "failed_pads": [
+    {
+     "x": 86.225,
+     "y": 137.325,
+     "component_ref": "U2",
+     "pad_number": "?"
+    }
+   ]
+  }
+ ],
+ "multipoint_nets": 2,
+ "multipoint_pads_connected": 137,
+ "multipoint_pads_total": 139,
+ "multipoint_edges_routed": 0,
+ "multipoint_edges_failed": 2,
  "ripup_success_pairs": [],
  "rerouted_pairs": [],
  "single_ended_target_swaps": [],
  "layer_swaps": 0,
- "successful": 7,
- "failed": 0,
- "total_time": 0.16999999999999998,
- "total_iterations": 451311,
- "total_vias": 25,
+ "successful": 10,
+ "failed": 6,
+ "total_time": 0.52,
+ "total_iterations": 1158772,
+ "total_vias": 77,
  "cleanup_disconnected": [],
  "min_clearance_used": 0.2,
  "design_rules": {
@@ -50,50 +81,318 @@
  },
  "plane_fragility": {
   "source": "kicad_refill",
-  "islands": 16,
+  "islands": 15,
   "refill_status": "ok",
-  "why": "the KiCad refill succeeded",
+  "why": "the KiCad refill succeeded (memo hit)",
   "machine_dependent": false
  },
+ "rescue": {
+  "attempted": 6,
+  "recovered": [],
+  "improved": [],
+  "unchanged": [
+   "/01_power_mcu/SCL",
+   "/01_power_mcu/SDA",
+   "/04_sense_safety/LID_2",
+   "/04_sense_safety/LID_3",
+   "/04_sense_safety/LID_INT",
+   "3V3"
+  ],
+  "pads_reconnected": 0,
+  "widths": {},
+  "time": 2.36
+ },
+ "stacked_copper": [
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "B.Cu",
+   "x": 33.7,
+   "y": 127.9,
+   "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)",
+   "size": 1.2727922061357886
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 67.7,
+   "y": 78.2,
+   "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)",
+   "size": 0.04999999999999716
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 83.95,
+   "y": 72.25,
+   "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)",
+   "size": 0.012999999999991019
+  }
+ ],
  "oracle_check": "disabled",
- "pad_pairs_connected": 23,
- "pad_pairs_total": 23,
- "power_trace_ampacity": [
+ "blockers": [
+  {
+   "net": "3V3",
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "/DRV_IN2",
+     "blocked_count": 776,
+     "unique_cells": 776,
+     "track_cells": 776,
+     "via_cells": 0,
+     "near_target_cells": 5,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/01_power_mcu/SDA",
+     "blocked_count": 762,
+     "unique_cells": 762,
+     "track_cells": 762,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/DRV_SLEEP_CMD",
+     "blocked_count": 492,
+     "unique_cells": 492,
+     "track_cells": 492,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "BULK_CMD",
+     "blocked_count": 338,
+     "unique_cells": 338,
+     "track_cells": 338,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/DRV_IN1",
+     "blocked_count": 281,
+     "unique_cells": 281,
+     "track_cells": 281,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "BULK_EN",
+     "blocked_count": 188,
+     "unique_cells": 188,
+     "track_cells": 188,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/DRV_nSLEEP",
+     "blocked_count": 165,
+     "unique_cells": 165,
+     "track_cells": 165,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/02_drive_transformer/DRV_nFAULT",
+     "blocked_count": 91,
+     "unique_cells": 91,
+     "track_cells": 91,
+     "via_cells": 0,
+     "near_target_cells": 66,
+     "near_source_cells": 0
+    }
+   ]
+  },
   {
    "net": "/01_power_mcu/SCL",
-   "bottleneck_width_mm": 0.2,
-   "bottleneck_layer": "B.Cu",
-   "copper_oz": 1.0,
-   "max_current_a": 0.74,
-   "max_current_ipc2152_a": 0.74,
-   "temp_rise_c": 10.0,
-   "trace_length_mm": 194.3
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "/01_power_mcu/SDA",
+     "blocked_count": 1342,
+     "unique_cells": 1342,
+     "track_cells": 1342,
+     "via_cells": 0,
+     "near_target_cells": 76,
+     "near_source_cells": 0
+    },
+    {
+     "net": "BULK_CMD",
+     "blocked_count": 768,
+     "unique_cells": 768,
+     "track_cells": 768,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/DRV_IN1",
+     "blocked_count": 753,
+     "unique_cells": 753,
+     "track_cells": 753,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "/DRV_SLEEP_CMD",
+     "blocked_count": 407,
+     "unique_cells": 407,
+     "track_cells": 407,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    },
+    {
+     "net": "BULK_EN",
+     "blocked_count": 283,
+     "unique_cells": 283,
+     "track_cells": 283,
+     "via_cells": 0,
+     "near_target_cells": 0,
+     "near_source_cells": 0
+    }
+   ]
+  },
+  {
+   "net": "/01_power_mcu/SDA",
+   "stage": "phase3",
+   "blocked_by": [
+    {
+     "net": "GND",
+     "blocked_count": 1,
+     "unique_cells": 1,
+     "track_cells": 1,
+     "via_cells": 0,
+     "near_target_cells": 1,
+     "near_source_cells": 0
+    }
+   ]
+  },
+  {
+   "net": "/04_sense_safety/LID_INT",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "COIL_3V",
+     "preexisting": true
+    },
+    {
+     "net": "3V3",
+     "preexisting": true
+    },
+    {
+     "net": "/04_sense_safety/LID_2",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/04_sense_safety/LID_2",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/04_sense_safety/LID_INT",
+     "preexisting": true
+    },
+    {
+     "net": "/04_sense_safety/LID_3",
+     "preexisting": true
+    }
+   ]
+  },
+  {
+   "net": "/04_sense_safety/LID_3",
+   "stage": "preexisting",
+   "blocked_by": [
+    {
+     "net": "/04_sense_safety/LID_2",
+     "preexisting": true
+    },
+    {
+     "net": "/04_sense_safety/RELAY_COIL_POS",
+     "preexisting": true
+    }
+   ]
+  }
+ ],
+ "pad_pairs_connected": 150,
+ "pad_pairs_total": 156,
+ "pad_pairs_open": [
+  {
+   "net": "/01_power_mcu/SCL",
+   "pairs_connected": 5,
+   "pairs_total": 6,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/01_power_mcu/SDA",
+   "pairs_connected": 5,
+   "pairs_total": 6,
+   "outcome": "open",
+   "open_subtype": "partial"
+  },
+  {
+   "net": "/04_sense_safety/LID_2",
+   "pairs_connected": 4,
+   "pairs_total": 5,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/04_sense_safety/LID_3",
+   "pairs_connected": 4,
+   "pairs_total": 5,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "/04_sense_safety/LID_INT",
+   "pairs_connected": 4,
+   "pairs_total": 5,
+   "outcome": "open",
+   "open_subtype": "unrouted"
+  },
+  {
+   "net": "3V3",
+   "pairs_connected": 19,
+   "pairs_total": 20,
+   "outcome": "open",
+   "open_subtype": "partial"
   }
  ],
  "scope": "merged",
  "board_scoped_keys": [
-  "power_trace_ampacity",
+  "stacked_copper",
   "min_clearance_used"
  ],
  "env_knobs": {},
- "blockers": [],
- "finalize_excluded_nets": [
-  "GND"
- ],
- "pad_pairs_open": [],
  "regrade": {
   "board": "file",
-  "graded_nets": 12,
-  "seconds": 0.19,
+  "graded_nets": 16,
+  "seconds": 0.21,
   "unowned_broken": [],
   "recovered": [
-   "/01_power_mcu/SCL"
+   "GND"
   ]
  },
  "via_in_pad": {
-  "count": 0,
-  "sites": [],
-  "stamped": 0,
+  "count": 3,
+  "sites": [
+   "C81.2 F.Paste (pad)",
+   "D5.2 F.Paste (pad)",
+   "R90.2 F.Paste (pad)"
+  ],
+  "stamped": 3,
   "restored": 0,
   "protected": 0,
   "unstampable": 0,

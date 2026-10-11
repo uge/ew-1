@@ -1,0 +1,141 @@
+{
+ "routed_single": [
+  "BULK_EN"
+ ],
+ "failed_single": [],
+ "open_single": [],
+ "failed_multipoint": [],
+ "multipoint_nets": 0,
+ "multipoint_pads_connected": 7,
+ "multipoint_pads_total": 7,
+ "multipoint_edges_routed": 0,
+ "multipoint_edges_failed": 0,
+ "ripup_success_pairs": [],
+ "rerouted_pairs": [],
+ "single_ended_target_swaps": [],
+ "layer_swaps": 0,
+ "successful": 1,
+ "failed": 0,
+ "total_time": 0.22999999999999998,
+ "total_iterations": 10257,
+ "total_vias": 0,
+ "cleanup_disconnected": [],
+ "min_clearance_used": 0.2,
+ "design_rules": {
+  "escalation_policy": "off",
+  "fab_tier": "auto",
+  "board_floors": {
+   "clearance": 0.2,
+   "track_width": 0.15,
+   "via_diameter": 0.45,
+   "via_drill": 0.3,
+   "hole_to_hole": 0.25,
+   "annular": 0.1,
+   "board_edge": 0.5
+  },
+  "count": 0,
+  "nets": [],
+  "narrowed": [],
+  "min_delivered": {},
+  "fab_tier_escalations": 0,
+  "fab_tier_contexts": [],
+  "fab_tier_target": "advanced",
+  "unsupported_rules": []
+ },
+ "plane_fragility": {
+  "source": "kicad_refill",
+  "islands": 14,
+  "refill_status": "ok",
+  "why": "the KiCad refill succeeded",
+  "machine_dependent": false
+ },
+ "rescue": {
+  "attempted": 1,
+  "recovered": [
+   "/01_power_mcu/EFUSE_OVLO"
+  ],
+  "improved": [],
+  "unchanged": [],
+  "pads_reconnected": 0,
+  "widths": {
+   "/01_power_mcu/EFUSE_OVLO": {
+    "requested_mm": 0.2,
+    "delivered_mm": 0.2,
+    "rescue_min_mm": 0.2,
+    "rescue_max_mm": 0.2,
+    "rescue_segments_emitted": 3,
+    "rescue_by_width": {
+     "0.2": 3
+    },
+    "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."
+   }
+  },
+  "time": 0.11
+ },
+ "stacked_copper": [
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "B.Cu",
+   "x": 33.7,
+   "y": 127.9,
+   "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)",
+   "size": 1.2727922061357886
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 67.7,
+   "y": 78.2,
+   "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)",
+   "size": 0.04999999999999716
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 83.95,
+   "y": 72.25,
+   "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)",
+   "size": 0.012999999999991019
+  }
+ ],
+ "oracle_check": "disabled",
+ "pad_pairs_connected": 5,
+ "pad_pairs_total": 5,
+ "scope": "merged",
+ "board_scoped_keys": [
+  "stacked_copper",
+  "min_clearance_used"
+ ],
+ "env_knobs": {},
+ "finalize_excluded_nets": [
+  "GND"
+ ],
+ "pad_pairs_open": [],
+ "regrade": {
+  "board": "file",
+  "graded_nets": 2,
+  "seconds": 0.13,
+  "unowned_broken": [],
+  "recovered": [
+   "/01_power_mcu/EFUSE_OVLO"
+  ]
+ },
+ "via_in_pad": {
+  "count": 3,
+  "sites": [
+   "C81.2 F.Paste (pad)",
+   "D5.2 F.Paste (pad)",
+   "R90.2 F.Paste (pad)"
+  ],
+  "stamped": 0,
+  "restored": 0,
+  "protected": 3,
+  "unstampable": 0,
+  "site_created": 0,
+  "unprotected": [],
+  "note": "via-in-pad requires IPC-4761 Type VII (filled + capped + plated); state it on the fab drawing or solder wicks into the barrel"
+ }
+}

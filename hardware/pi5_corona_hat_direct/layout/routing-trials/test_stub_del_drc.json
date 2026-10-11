@@ -1,0 +1,77 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-04T21:53:31",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "test_stub_del.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [3V3] of J50 on F.Cu",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 145.5
+                    },
+                    "uuid": "3430bb23-2443-4290-8cf5-eaaedc877dc2"
+                },
+                {
+                    "description": "Track [3V3] on F.Cu, length 3.7000 mm",
+                    "pos": {
+                        "x": 80.1,
+                        "y": 146.0
+                    },
+                    "uuid": "645fd6b1-cfb7-4918-9e5d-ff71a24fad5f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [3V3] on F.Cu, length 3.7000 mm",
+                    "pos": {
+                        "x": 80.1,
+                        "y": 146.0
+                    },
+                    "uuid": "645fd6b1-cfb7-4918-9e5d-ff71a24fad5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}

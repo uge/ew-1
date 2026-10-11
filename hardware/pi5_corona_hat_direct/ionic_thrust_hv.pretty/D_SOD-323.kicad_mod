@@ -1,21 +1,128 @@
-(footprint "ionic_thrust_hv:D_SOD-323"
-  (version 20240108)
-  (generator "Antigravity")
-  (layer "F.Cu")
-  (descr "SOD-323 SMD Diode (1N4148WS)")
-  (tags "diode sod-323")
-  (attr smd)
-  (fp_text reference "REF**" (at 0 -1.8) (layer "F.SilkS")
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_text value "1N4148WS" (at 0 1.8) (layer "F.Fab")
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_line (start -0.85 -0.65) (end 0.85 -0.65) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
-  (fp_line (start 0.85 -0.65) (end 0.85 0.65) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
-  (fp_line (start 0.85 0.65) (end -0.85 0.65) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
-  (fp_line (start -0.85 0.65) (end -0.85 -0.65) (stroke (width 0.15) (type solid)) (layer "F.SilkS"))
-  (fp_line (start -0.4 -0.65) (end -0.4 0.65) (stroke (width 0.25) (type solid)) (layer "F.SilkS"))
-  (pad "1" smd rect (at -1.1 0) (size 0.8 0.6) (layers "F.Cu" "F.Paste" "F.Mask"))
-  (pad "2" smd rect (at 1.1 0) (size 0.8 0.6) (layers "F.Cu" "F.Paste" "F.Mask"))
+(footprint "D_SOD-323"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SOD-323 SMD Diode (1N4148WS)")
+	(tags "diode sod-323")
+	(property "Reference" "REF**"
+		(at 0 -1.8 0)
+		(layer "F.Fab")
+		(uuid "97274da6-70f1-4be4-b9dc-1972782428cb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "1N4148WS"
+		(at 0 1.8 0)
+		(layer "F.Fab")
+		(uuid "f892569e-c171-4644-93c9-b842a34da4b0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7136f055-ecb1-4055-bdd3-d9af53e6adeb")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7c0f293c-51ba-43bc-83fb-a8417dc68540")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.85 -0.65)
+		(end 0.85 -0.65)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "820e3cc8-35cd-490c-9b6e-2ac4409b267c")
+	)
+	(fp_line
+		(start -0.85 0.65)
+		(end -0.85 -0.65)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "15f010ec-0e09-447e-9759-ad9daf9df611")
+	)
+	(fp_line
+		(start -0.4 -0.65)
+		(end -0.4 0.65)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ab4999e6-810d-402f-a862-43557e3bd69a")
+	)
+	(fp_line
+		(start 0.85 -0.65)
+		(end 0.85 0.65)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2a5c78eb-fb14-4aeb-87c8-194acc4133e0")
+	)
+	(fp_line
+		(start 0.85 0.65)
+		(end -0.85 0.65)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "186cbdcd-17c0-43e2-a7a2-eecee172631e")
+	)
+	(pad "1" smd rect
+		(at -1.1 0)
+		(size 0.8 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7f49b092-c445-44cf-8d7d-09a867effd99")
+	)
+	(pad "2" smd rect
+		(at 1.1 0)
+		(size 0.8 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ec726482-6e04-49a7-b994-334fb215562d")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/D_SOD-323.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

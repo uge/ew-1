@@ -1,0 +1,59 @@
+{
+  "circuit": "6-Stage Cockcroft-Walton Multiplier",
+  "project": "Pi 5 Corona HAT Direct (pi5_corona_hv)",
+  "simulation_engine": "ngspice-45.2",
+  "drive_frequency_kHz": 68.0,
+  "drive_secondary_vpk": 1250.0,
+  "diodes": "12x Sunmate 2CL75 (16 kV, 5 mA)",
+  "capacitors": "12x Vishay S102M59Z5UU83L0R (1.0 nF, 6.0 kV)",
+  "bleeders": "24x Bourns CHV2512-JW-107ELF (100 M\u03a9, 3.0 kV)",
+  "ballast": "10x Bourns CHV2512-FX-1005ELF (10 M\u03a9, 3.0 kV, 100 M\u03a9 total)",
+  "divider": "10x Bourns CHV2512-JW-107ELF (100 M\u03a9, 3.0 kV, 1000 M\u03a9 total)",
+  "results": {
+    "open_circuit": {
+      "v_raw_kV": 14.64342,
+      "v_out_kV": 13.31226,
+      "stage_voltages_kV": [
+        2.453541,
+        4.899224,
+        7.3393109999999995,
+        9.775558,
+        12.20953,
+        14.64342
+      ],
+      "stage_delta_kV": 2.44057
+    },
+    "corona_operating_point_50uA": {
+      "i_corona_uA": 50.0,
+      "v_raw_kV": 14.53,
+      "v_out_kV": 8.67,
+      "v_ballast_drop_kV": 5.0,
+      "electrode_gap_cm": 2.0,
+      "average_electric_field_kV_cm": 4.33,
+      "corona_inception_field_kV_cm": 3.0,
+      "field_margin_over_inception": 1.44,
+      "power_delivered_W": 0.433
+    },
+    "ripple": {
+      "v_raw_pp_V": 29.38352,
+      "v_out_pp_V": 26.71252,
+      "v_out_ripple_pct": 0.3082857570528862
+    },
+    "safety_bleed_down": {
+      "time_to_safe_50V_s": 0.5345152,
+      "v_at_0_5s_V": 71.72505,
+      "v_at_1_0s_V": 0.3849572
+    },
+    "component_stress_margins": {
+      "diode_piv_V": 2474.981,
+      "diode_rating_V": 16000.0,
+      "diode_margin_pct": 84.53136875,
+      "capacitor_max_voltage_V": 2440.57,
+      "capacitor_rating_V": 6000.0,
+      "capacitor_margin_pct": 59.32383333333333,
+      "bleeder_max_voltage_V": 1220.285,
+      "bleeder_rating_V": 3000.0,
+      "bleeder_margin_pct": 59.32383333333333
+    }
+  }
+}

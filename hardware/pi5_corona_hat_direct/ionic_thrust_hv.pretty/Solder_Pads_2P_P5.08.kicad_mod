@@ -1,2 +1,81 @@
-(footprint "Solder_Pads_2P_P5.08" (version 20260101) (generator "pcbnew") (layer "F.Cu") (descr "Plated solder-wire termination; no purchased connector or certified voltage rating") (attr through_hole) (property "Reference" "J**" (at 0 -3.05 0) (layer "F.SilkS") (effects (font (size 0.9 0.9) (thickness 0.15)))) (property "Value" "Solder_Pads_2P_P5.08" (at 0 3.05 0) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15)))) (fp_rect (start -1.75 -1.75) (end 6.83 1.75) (stroke (width 0.05) (type default)) (layer "F.CrtYd")) (pad "1" thru_hole circle (at 0.0 0) (size 2.5 2.5) (drill 1.0) (layers "*.Cu" "*.Mask"))
-(pad "2" thru_hole circle (at 5.08 0) (size 2.5 2.5) (drill 1.0) (layers "*.Cu" "*.Mask")))
+(footprint "Solder_Pads_2P_P5.08"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Plated solder-wire termination; no purchased connector or certified voltage rating")
+	(property "Reference" "J**"
+		(at 0 -3.05 0)
+		(layer "F.SilkS")
+		(uuid "51336a58-4572-4f32-b9f8-6a03b4a20336")
+		(effects
+			(font
+				(size 0.9 0.9)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Solder_Pads_2P_P5.08"
+		(at 0 3.05 0)
+		(layer "F.Fab")
+		(uuid "f919c640-d7cd-4cdd-96f4-4834e5bd2d3d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "18794b2b-f175-48e6-9e4a-92add979f02c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "296ad6b1-4619-41ad-8e88-59e03d23e693")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.75 -1.75)
+		(end 6.83 1.75)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "4c472e74-812d-4d0c-a41a-8ffa3cfecb46")
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 2.5 2.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "38c371fe-6466-455f-af97-929b7787cb69")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0)
+		(size 2.5 2.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e9975ef7-ffc2-440c-906d-9814c53e14eb")
+	)
+	(embedded_fonts no)
+)

@@ -11,7 +11,11 @@ import FreeCAD as App
 root = Path(__file__).resolve().parents[1]
 shape = Part.Shape()
 shape.read(str(root/'ionic_thrust_hv.3dshapes/Raspberry_Pi_5_official.step'))
-pcb = Part.makeBox(281,150,1.6,App.Vector(50,-200,0))
+pieces=[Part.makeBox(196,148,1.6,App.Vector(50,-199,0))]
+for top in [120,136,152,168,184]:
+    pieces += [Part.makeBox(30,14,1.6,App.Vector(15,-(top+14),0)),
+               Part.makeBox(5,6,1.6,App.Vector(45,-(top+10),0))]
+pcb=Part.makeCompound(pieces)
 
 candidates=[]
 collisions=[]
@@ -21,7 +25,7 @@ for index,solid in enumerate(shape.Solids):
     xmin,xmax=3+box.YMin,3+box.YMax
     ymin,ymax=115-box.XMax,115-box.XMin  # PCB drawing Y, downward
     zmin,zmax=14.906-box.ZMax,14.906-box.ZMin
-    if xmax<=50 or xmin>=331 or ymax<=50 or ymin>=200 or zmax<=0 or zmin>=1.6:
+    if xmax<=15 or xmin>=246 or ymax<=51 or ymin>=199 or zmax<=0 or zmin>=1.6:
         continue
     candidates.append({'solid':index,'native_bounds':[
         box.XMin,box.XMax,box.YMin,box.YMax,box.ZMin,box.ZMax],
@@ -33,7 +37,7 @@ for index,solid in enumerate(shape.Solids):
     volume=posed.common(pcb).Volume
     if volume>1e-6: collisions.append({'solid':index,'volume_mm3':volume})
 report={'pi_solids':len(shape.Solids),'bbox_candidates':candidates,
-        'substrate_collisions':collisions,'carrier_dimensions_mm':[281,150,1.6],
+        'substrate_collisions':collisions,'carrier_dimensions_mm':[196,148,1.6], 'overall_dimensions_mm':[231,148], 'side_mini_boards':True, 'mini_board_count':5, 'mini_board_dimensions_mm':[30,14], 'layout_revision':'M-layout-8',
         'pi_native_rotation_deg':[180,0,90],
         'pi_assembly_translation_mm':[3,-115,14.906],
         'carrier_usb_relief_mm':None,

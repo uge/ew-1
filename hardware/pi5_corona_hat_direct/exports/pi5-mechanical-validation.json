@@ -1,5 +1,5 @@
 {
-  "revision": "F-layout-2",
+  "revision": "M-layout-8",
   "board_only_dnp": [
     "MP1"
   ],
@@ -23,8 +23,40 @@
   "outboard_pi_support_required": true,
   "pi_substrate_collisions": 0,
   "substrate_fit_report": "compact-pi5-substrate-fit.json",
-  "usb_relief_notch_mm": [
-    24,
-    10
-  ]
+  "usb_relief_notch_mm": null,
+  "MP1_footprint_rotation_deg": 90,
+  "MP1_effective_model_rotation_deg": [
+    180,
+    0,
+    90
+  ],
+  "side_breakoff_boards": true,
+  "pose_unchanged_since_fit_report": true,
+  "layout_revision": "M-layout-8",
+  "main_board_mm": [
+    196,
+    148
+  ],
+  "overall_mm": [
+    231,
+    148
+  ],
+  "drc_violations": 0,
+  "unconnected_items": 191,
+  "schematic_parity_issues": 0,
+  "routing_complete": false,
+  "via_count": 82,
+  "usb_c": {
+    "reference": "J3",
+    "position_mm": [
+      88,
+      54.675
+    ],
+    "rotation_degrees": 180,
+    "mouth_edge_y_mm": 51,
+    "faces": "negative Y, outward at top edge"
+  },
+  "ground_zone_connection_override": "J2 pad 6 solid connection; remaining pads retain thermal relief",
+  "switch_part": "TK-0013-R / C19724218",
+  "switch_actuation": "parallel to PCB"
 }

@@ -769,7 +769,7 @@
   ],
   "text_variables": {
     "PROJECT_NAME": "Raspberry Pi 5 HAT USB-C PD Corona Supply",
-    "REVISION": "C",
+    "REVISION": "H",
     "TARGET_CURRENT": "150 uA",
     "TARGET_VOLTAGE": "15 kV DC"
   },

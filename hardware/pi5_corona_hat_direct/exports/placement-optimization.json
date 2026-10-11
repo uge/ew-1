@@ -1,0 +1,137 @@
+{
+  "revision": "N-layout-9",
+  "before": {
+    "hv_minimum_spanning_tree_length_mm": 1081.99,
+    "hv_straight_tree_crossings": 1,
+    "diode_positions": {
+      "D21": [
+        228.0,
+        125.0,
+        90.0
+      ],
+      "D18": [
+        200.0,
+        125.0,
+        -90.0
+      ],
+      "D19": [
+        208.0,
+        125.0,
+        90.0
+      ],
+      "D20": [
+        216.0,
+        125.0,
+        -90.0
+      ],
+      "D16": [
+        184.0,
+        125.0,
+        -90.0
+      ],
+      "D12": [
+        152.0,
+        125.0,
+        -90.0
+      ],
+      "D13": [
+        160.0,
+        125.0,
+        90.0
+      ],
+      "D10": [
+        136.0,
+        125.0,
+        -90.0
+      ],
+      "D11": [
+        144.0,
+        125.0,
+        90.0
+      ],
+      "D14": [
+        168.0,
+        125.0,
+        -90.0
+      ],
+      "D17": [
+        192.0,
+        125.0,
+        90.0
+      ],
+      "D15": [
+        176.0,
+        125.0,
+        90.0
+      ]
+    }
+  },
+  "after": {
+    "hv_minimum_spanning_tree_length_mm": 1053.99,
+    "hv_straight_tree_crossings": 1,
+    "diode_positions": {
+      "D21": [
+        228.0,
+        125.0,
+        90.0
+      ],
+      "D18": [
+        200.0,
+        125.0,
+        -90.0
+      ],
+      "D19": [
+        208.0,
+        125.0,
+        90.0
+      ],
+      "D20": [
+        216.0,
+        125.0,
+        -90.0
+      ],
+      "D16": [
+        184.0,
+        125.0,
+        -90.0
+      ],
+      "D12": [
+        152.0,
+        125.0,
+        -90.0
+      ],
+      "D13": [
+        160.0,
+        125.0,
+        90.0
+      ],
+      "D10": [
+        136.0,
+        125.0,
+        -90.0
+      ],
+      "D11": [
+        144.0,
+        125.0,
+        90.0
+      ],
+      "D14": [
+        168.0,
+        125.0,
+        -90.0
+      ],
+      "D17": [
+        192.0,
+        125.0,
+        90.0
+      ],
+      "D15": [
+        176.0,
+        125.0,
+        90.0
+      ]
+    }
+  },
+  "all_pad_net_assignments_preserved": true,
+  "method": "Euclidean per-net minimum spanning trees across HV footprints; strict segment crossings between different nets. Excludes trace clearance, obstacle avoidance and vias. Not completed routing."
+}

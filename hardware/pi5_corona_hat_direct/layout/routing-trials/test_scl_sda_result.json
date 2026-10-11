@@ -1,0 +1,200 @@
+{
+ "routed_single": [
+  "/01_power_mcu/SCL"
+ ],
+ "failed_single": [],
+ "open_single": [],
+ "failed_multipoint": [
+  {
+   "net_name": "/01_power_mcu/SDA",
+   "failed_pads": [
+    {
+     "x": 30.6375,
+     "y": 129.35,
+     "component_ref": "U8",
+     "pad_number": "?"
+    },
+    {
+     "x": 29.5,
+     "y": 126.0,
+     "component_ref": "J51",
+     "pad_number": "?"
+    },
+    {
+     "x": 68.325,
+     "y": 76.975,
+     "component_ref": "U5",
+     "pad_number": "?"
+    },
+    {
+     "x": 83.9625,
+     "y": 71.75,
+     "component_ref": "U7",
+     "pad_number": "?"
+    },
+    {
+     "x": 57.0,
+     "y": 144.5,
+     "component_ref": "J50",
+     "pad_number": "?"
+    }
+   ]
+  }
+ ],
+ "multipoint_nets": 1,
+ "multipoint_pads_connected": 12,
+ "multipoint_pads_total": 17,
+ "multipoint_edges_routed": 1,
+ "multipoint_edges_failed": 5,
+ "ripup_success_pairs": [],
+ "rerouted_pairs": [],
+ "single_ended_target_swaps": [],
+ "layer_swaps": 0,
+ "successful": 1,
+ "failed": 0,
+ "total_time": 0.5700000000000001,
+ "total_iterations": 10648,
+ "total_vias": 4,
+ "cleanup_disconnected": [],
+ "min_clearance_used": 0.2,
+ "design_rules": {
+  "escalation_policy": "off",
+  "fab_tier": "auto",
+  "board_floors": {
+   "clearance": 0.2,
+   "track_width": 0.15,
+   "via_diameter": 0.45,
+   "via_drill": 0.3,
+   "hole_to_hole": 0.25,
+   "annular": 0.1,
+   "board_edge": 0.5
+  },
+  "count": 0,
+  "nets": [],
+  "narrowed": [],
+  "min_delivered": {},
+  "fab_tier_escalations": 0,
+  "fab_tier_contexts": [],
+  "fab_tier_target": "advanced",
+  "unsupported_rules": []
+ },
+ "plane_fragility": {
+  "source": "kicad_refill",
+  "islands": 13,
+  "refill_status": "ok",
+  "why": "the KiCad refill succeeded",
+  "machine_dependent": false
+ },
+ "rescue": {
+  "attempted": 1,
+  "recovered": [
+   "/01_power_mcu/SCL"
+  ],
+  "improved": [],
+  "unchanged": [],
+  "pads_reconnected": 0,
+  "widths": {
+   "/01_power_mcu/SCL": {
+    "requested_mm": 0.2,
+    "delivered_mm": 0.2,
+    "rescue_min_mm": 0.2,
+    "rescue_max_mm": 0.2,
+    "rescue_segments_emitted": 68,
+    "rescue_by_width": {
+     "0.2": 68
+    },
+    "scope": "THIS RESCUE ONLY -- not the net. Counts are as EMITTED, before cycle-prune drops redundant loop segments, so the board can carry fewer. For the net's whole width profile, measure the board."
+   }
+  },
+  "time": 0.26
+ },
+ "preexisting_rips": {
+  "/01_power_mcu/SDA": "rerouted PARTIAL (pads still disconnected; original corridor taken -- reconciliation retries it) [was blocking '/01_power_mcu/SCL']"
+ },
+ "stacked_copper": [
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "B.Cu",
+   "x": 33.7,
+   "y": 127.9,
+   "detail": "2 duplicate segments stacked on (33.700, 127.900)-(34.600, 128.800)",
+   "size": 1.2727922061357886
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 67.7,
+   "y": 78.2,
+   "detail": "2 duplicate segments stacked on (67.700, 78.200)-(67.700, 78.250)",
+   "size": 0.04999999999999716
+  },
+  {
+   "category": "stacked-copper",
+   "net": "GND",
+   "layer": "F.Cu",
+   "x": 83.95,
+   "y": 72.25,
+   "detail": "2 duplicate segments stacked on (83.950, 72.250)-(83.963, 72.250)",
+   "size": 0.012999999999991019
+  }
+ ],
+ "oracle_check": "disabled",
+ "ripped_open": [
+  "/01_power_mcu/SDA"
+ ],
+ "ripped_open_uncounted": [
+  "/01_power_mcu/SDA"
+ ],
+ "ripped_open_note": "ripped_open nets are OUTSIDE this run's --nets scope, so they move neither failed_single nor open_single. Those listed in ripped_open_uncounted are additionally not in either scoped term: if they are also outside the multipoint pad deficit, the run's open-net verdict is understated by that many.",
+ "pad_pairs_connected": 3,
+ "pad_pairs_total": 8,
+ "pad_pairs_open": [
+  {
+   "net": "/01_power_mcu/SDA",
+   "pairs_connected": 1,
+   "pairs_total": 6,
+   "outcome": "open",
+   "open_subtype": "collision_refused"
+  }
+ ],
+ "scope": "merged",
+ "board_scoped_keys": [
+  "stacked_copper",
+  "min_clearance_used"
+ ],
+ "env_knobs": {},
+ "blockers": [],
+ "boxed_in": [],
+ "finalize_excluded_nets": [
+  "GND"
+ ],
+ "coverage_gate_nets": [
+  "/01_power_mcu/SDA"
+ ],
+ "regrade": {
+  "board": "file",
+  "graded_nets": 3,
+  "seconds": 0.13,
+  "unowned_broken": [],
+  "recovered": [
+   "/01_power_mcu/SCL"
+  ]
+ },
+ "via_in_pad": {
+  "count": 3,
+  "sites": [
+   "C81.2 F.Paste (pad)",
+   "D5.2 F.Paste (pad)",
+   "R90.2 F.Paste (pad)"
+  ],
+  "stamped": 0,
+  "restored": 0,
+  "protected": 3,
+  "unstampable": 0,
+  "site_created": 0,
+  "unprotected": [],
+  "note": "via-in-pad requires IPC-4761 Type VII (filled + capped + plated); state it on the fab drawing or solder wicks into the barrel"
+ }
+}

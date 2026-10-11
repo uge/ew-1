@@ -1,0 +1,175 @@
+(footprint "Sunmate_2CL75_D3_L12_P26"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Sunmate 2CL75 C424512: 3 x 12 mm body, 0.6 mm leads; formed to 26 mm pitch. Pad 1 cathode/band, pad 2 anode. Verify formed-lead tolerances before fabrication.")
+	(tags "Sunmate 2CL75 16kV axial 100ns")
+	(property "Reference" "D**"
+		(at 0 -3 0)
+		(layer "F.SilkS")
+		(uuid "cd271686-3a15-4053-a782-b8341d04b0cb")
+		(effects
+			(font
+				(size 0.9 0.9)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "2CL75"
+		(at 0 3 0)
+		(layer "F.Fab")
+		(uuid "36255d37-2fd8-4532-bb6e-0bdca01f7b4d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "18fc5764-8397-43e1-b9d3-b09656f78d72")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "76ec33b3-7bb3-46b5-a3a8-ce9ce4871d8a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -11.85 0)
+		(end -6.15 0)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a06f53e7-b052-4534-b1d7-4fdbba6fcf3a")
+	)
+	(fp_line
+		(start -5.15 -1.65)
+		(end -5.15 1.65)
+		(stroke
+			(width 0.3)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "e4428f4f-d477-438a-8a1c-5211f223dfde")
+	)
+	(fp_line
+		(start 6.15 0)
+		(end 11.85 0)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4755b836-dd9e-4239-b633-3cf140fc6d61")
+	)
+	(fp_rect
+		(start -6.15 -1.65)
+		(end 6.15 1.65)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "937107d0-b9cd-4b8d-8cbc-e89e54444647")
+	)
+	(fp_rect
+		(start -14 -2)
+		(end 14 2)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "d16631c8-f2d1-4581-ab41-8f8b8be27310")
+	)
+	(fp_line
+		(start -13 0)
+		(end -6 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "5828f189-89e5-4c30-b89e-e74dbffa6ab7")
+	)
+	(fp_line
+		(start -5 -1.5)
+		(end -5 1.5)
+		(stroke
+			(width 0.4)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "42fa5c28-c7ef-41e0-89f8-ba68f15c1beb")
+	)
+	(fp_line
+		(start 6 0)
+		(end 13 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "803cdd56-e5b4-4bfc-aa04-e9ce31f3f838")
+	)
+	(fp_rect
+		(start -6 -1.5)
+		(end 6 1.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "8f991896-24f6-4bf4-b7bb-08b0cc866802")
+	)
+	(pad "1" thru_hole rect
+		(at -13 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "277e1c4f-da66-454f-9c2d-7a94b4ac8082")
+	)
+	(pad "2" thru_hole circle
+		(at 13 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9cf70dcb-af83-44f7-82db-a3fe73cd18d8")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/Sunmate_2CL75_D3_L12_P26.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

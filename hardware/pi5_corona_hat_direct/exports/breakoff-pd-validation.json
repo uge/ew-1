@@ -1,5 +1,5 @@
 {
-  "revision": "F",
+  "revision": "I",
   "kicad_version": "10.0.6",
   "schematic_sheets": 6,
   "erc_violations": 0,
@@ -27,10 +27,10 @@
         "maximum_uF": 5.170000000000001
       },
       "C73": {
-        "value": "1.8uF 50V 10%",
-        "nominal_uF": 1.8,
+        "value": "1uF 50V X7R 10%",
+        "nominal_uF": 1.0,
         "positive_tolerance_percent": 10.0,
-        "maximum_uF": 1.9800000000000002
+        "maximum_uF": 1.1
       },
       "C17": {
         "value": "1uF 50V 10%",
@@ -131,10 +131,14 @@
       "C62"
     ],
     "parasitic_allowance_uF": 0.3,
-    "attachment_maximum_uF": 9.98242,
-    "post_contract_maximum_uF": 98.22662,
-    "selected_C73_tolerance_percent": 5,
-    "budget_C73_tolerance_percent": 10
+    "attachment_maximum_uF": 9.102420000000002,
+    "post_contract_maximum_uF": 97.34662,
+    "selected_C73_tolerance_percent": 10,
+    "budget_C73_tolerance_percent": 10,
+    "pi_only_caps_excluded": [
+      "C82",
+      "C83"
+    ]
   },
   "konnect_symbol_overlaps": [
     0,
@@ -145,5 +149,6 @@
     0
   ],
   "pcb_breakoff_neck_implemented": false,
-  "bulk_enable_firmware_implemented": false
+  "bulk_enable_firmware_implemented": false,
+  "historical_checks_notice": "Legacy topology assertions in this report predate the interlock redesign; current electrical verification is audit-validation.json and layout/validation/check_audit_nets.rb."
 }

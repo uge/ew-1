@@ -1,0 +1,43 @@
+(version 1)
+# Initial layout guards, not a certification of creepage or insulation.
+(rule "HV_STAGE copper clearance"
+ (condition "A.NetName == '/03_multiplier/CW_P1' || A.NetName == '/03_multiplier/CW_P2' || A.NetName == '/03_multiplier/CW_P3' || A.NetName == '/03_multiplier/CW_P4' || A.NetName == '/03_multiplier/CW_P5' || A.NetName == '/03_multiplier/CW_S1' || A.NetName == '/03_multiplier/CW_S2' || A.NetName == '/03_multiplier/CW_S3' || A.NetName == '/03_multiplier/CW_S4' || A.NetName == '/03_multiplier/CW_S5' || A.NetName == '/SEC_A' || A.NetName == 'Net-(D20-K)' || A.NetName == 'Net-(R20-Pad2)' || A.NetName == 'Net-(R21-Pad2)' || A.NetName == 'Net-(R22-Pad2)' || A.NetName == 'Net-(R23-Pad2)' || A.NetName == 'Net-(R24-Pad2)' || A.NetName == 'Net-(R25-Pad2)' || A.NetName == 'Net-(R26-Pad2)' || A.NetName == 'Net-(R27-Pad2)' || A.NetName == 'Net-(R28-Pad2)' || A.NetName == 'Net-(R30-Pad2)' || A.NetName == 'Net-(R31-Pad2)' || A.NetName == 'Net-(R32-Pad2)' || A.NetName == 'Net-(R33-Pad2)' || A.NetName == 'Net-(R34-Pad2)' || A.NetName == 'Net-(R35-Pad2)' || A.NetName == 'Net-(R36-Pad2)' || A.NetName == 'Net-(R37-Pad2)' || A.NetName == 'Net-(R38-Pad2)' || A.NetName == 'Net-(R140-Pad2)' || A.NetName == 'Net-(R141-Pad1)' || A.NetName == 'Net-(R142-Pad2)' || A.NetName == 'Net-(R143-Pad1)' || A.NetName == 'Net-(R144-Pad2)' || A.NetName == 'Net-(R145-Pad1)' || A.NetName == 'Net-(R146-Pad2)' || A.NetName == 'Net-(R147-Pad1)' || A.NetName == 'Net-(R148-Pad2)' || A.NetName == 'Net-(R149-Pad1)' || A.NetName == 'Net-(R150-Pad2)' || A.NetName == 'Net-(R151-Pad1)' || A.NetName == 'Net-(R152-Pad2)' || A.NetName == 'Net-(R153-Pad1)' || A.NetName == 'Net-(R154-Pad2)' || A.NetName == 'Net-(R155-Pad1)' || A.NetName == 'Net-(R156-Pad2)' || A.NetName == 'Net-(R157-Pad1)' || A.NetName == 'Net-(R158-Pad2)' || A.NetName == 'Net-(R159-Pad1)' || A.NetName == 'Net-(R160-Pad2)' || A.NetName == 'Net-(R161-Pad1)' || A.NetName == 'Net-(R162-Pad2)' || A.NetName == 'Net-(R163-Pad1)'")
+ (constraint clearance (min 4mm))
+)
+(rule "HV_OUT copper clearance"
+ (condition "(A.NetName == '/04_sense_safety/HV_OUT' || A.NetName == '/HV_RAW') && B.NetName != '/04_sense_safety/HV_OUT' && B.NetName != '/HV_RAW'")
+ (constraint clearance (min 10mm))
+)
+(rule "HV_RAW to HV_OUT clearance"
+ (condition "(A.NetName == '/04_sense_safety/HV_OUT' && B.NetName == '/HV_RAW') || (A.NetName == '/HV_RAW' && B.NetName == '/04_sense_safety/HV_OUT')")
+ (constraint clearance (min 4mm))
+)
+
+(rule "Highest voltage to board edge"
+ (condition "A.NetName == '/04_sense_safety/HV_OUT' || A.NetName == '/HV_RAW'")
+ (constraint edge_clearance (min 10mm)))
+# Package/series-node rules use the voltage across the part, not its common-mode voltage.
+(rule "R30 divider drop within rated 3kV resistor"
+ (condition "(A.memberOfFootprint('R30') && B.memberOfFootprint('R30')) || (A.NetName == '/04_sense_safety/HV_OUT' && B.NetName == 'Net-(R30-Pad2)') || (A.NetName == 'Net-(R30-Pad2)' && B.NetName == '/04_sense_safety/HV_OUT')")
+ (constraint clearance (min 4mm)))
+(rule "R163 bleeder drop within rated 3kV resistor"
+ (condition "(A.memberOfFootprint('R163') && B.memberOfFootprint('R163')) || (A.NetName == '/HV_RAW' && B.NetName == 'Net-(R163-Pad1)') || (A.NetName == 'Net-(R163-Pad1)' && B.NetName == '/HV_RAW')")
+ (constraint clearance (min 4mm)))
+(rule "Adjacent bleeder nodes separated by one rated resistor"
+ (condition "(A.memberOfFootprint('R51') && B.memberOfFootprint('R163')) || (A.memberOfFootprint('R163') && B.memberOfFootprint('R51'))")
+ (constraint clearance (min 4mm)))
+(rule "C111 rated 6kV capacitor pin spacing"
+ (condition "(A.memberOfFootprint('C111') && B.memberOfFootprint('C111')) || (A.NetName == '/HV_RAW' && B.NetName == '/03_multiplier/CW_S5') || (A.NetName == '/03_multiplier/CW_S5' && B.NetName == '/HV_RAW')")
+ (constraint clearance (min 4mm)))
+
+(rule "D21 rated 16kV diode drop"
+ (condition "(A.memberOfFootprint('D21') && B.memberOfFootprint('D21')) || (A.NetName == '/HV_RAW' && B.NetName == 'Net-(D20-K)') || (A.NetName == 'Net-(D20-K)' && B.NetName == '/HV_RAW')")
+ (constraint clearance (min 4mm)))
+(rule "R20 ballast drop within rated 3kV resistor"
+ (condition "(A.memberOfFootprint('R20') && B.memberOfFootprint('R20')) || (A.NetName == '/HV_RAW' && B.NetName == 'Net-(R20-Pad2)') || (A.NetName == 'Net-(R20-Pad2)' && B.NetName == '/HV_RAW')")
+ (constraint clearance (min 4mm)))
+
+(rule "HV_OUT to ballast intermediate clearance"
+ (condition "((A.NetName == '/HV_RAW' || A.NetName == '/04_sense_safety/HV_OUT') && (B.NetName == 'Net-(R20-Pad2)' || B.NetName == 'Net-(R21-Pad2)' || B.NetName == 'Net-(R22-Pad2)' || B.NetName == 'Net-(R23-Pad2)' || B.NetName == 'Net-(R24-Pad2)' || B.NetName == 'Net-(R25-Pad2)' || B.NetName == 'Net-(R26-Pad2)' || B.NetName == 'Net-(R27-Pad2)' || B.NetName == 'Net-(R28-Pad2)')) || ((B.NetName == '/HV_RAW' || B.NetName == '/04_sense_safety/HV_OUT') && (A.NetName == 'Net-(R20-Pad2)' || A.NetName == 'Net-(R21-Pad2)' || A.NetName == 'Net-(R22-Pad2)' || A.NetName == 'Net-(R23-Pad2)' || A.NetName == 'Net-(R24-Pad2)' || A.NetName == 'Net-(R25-Pad2)' || A.NetName == 'Net-(R26-Pad2)' || A.NetName == 'Net-(R27-Pad2)' || A.NetName == 'Net-(R28-Pad2)'))")
+ (constraint clearance (min 4mm))
+)

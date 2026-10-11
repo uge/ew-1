@@ -1,0 +1,251 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-04T04:09:06",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "tmp_sda_test.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [Net-(R8-Pad2)] on F.Cu, length 4.5000 mm",
+                    "pos": {
+                        "x": 132.5,
+                        "y": 191.25
+                    },
+                    "uuid": "1cf64e5a-8026-43e7-9769-5a87ac8a2295"
+                },
+                {
+                    "description": "Track [/04_sense_safety/HV_SENSE_RAW] on F.Cu, length 2.3688 mm",
+                    "pos": {
+                        "x": 130.25,
+                        "y": 190.3
+                    },
+                    "uuid": "d62e477a-b803-4235-8557-99d5bf6ea254"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/01_power_mcu/VBUS_RAW] on B.Cu, length 11.0000 mm",
+                    "pos": {
+                        "x": 89.3,
+                        "y": 100.0
+                    },
+                    "uuid": "8e28170b-2228-4e46-8560-f26b19d59548"
+                },
+                {
+                    "description": "Track [/01_power_mcu/SCL] on B.Cu, length 15.1000 mm",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 108.0
+                    },
+                    "uuid": "a5960777-1fde-4573-a3c5-4e8ebef1bfca"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Items shorting two nets (nets /01_power_mcu/SDA and /01_power_mcu/SCL)",
+            "items": [
+                {
+                    "description": "Track [/01_power_mcu/SDA] on F.Cu, length 1.1314 mm",
+                    "pos": {
+                        "x": 84.8,
+                        "y": 71.35
+                    },
+                    "uuid": "6ed044da-639f-4d9b-89f3-fd97e8c33804"
+                },
+                {
+                    "description": "Track [/01_power_mcu/SCL] on F.Cu, length 0.8370 mm",
+                    "pos": {
+                        "x": 83.963,
+                        "y": 71.25
+                    },
+                    "uuid": "9f915673-19a6-4e87-b9c9-c9583aa42050"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets /01_power_mcu/SDA and /01_power_mcu/SCL)",
+            "items": [
+                {
+                    "description": "Track [/01_power_mcu/SDA] on F.Cu, length 1.1314 mm",
+                    "pos": {
+                        "x": 84.8,
+                        "y": 71.35
+                    },
+                    "uuid": "6ed044da-639f-4d9b-89f3-fd97e8c33804"
+                },
+                {
+                    "description": "Track [/01_power_mcu/SCL] on F.Cu, length 1.0500 mm",
+                    "pos": {
+                        "x": 84.8,
+                        "y": 71.25
+                    },
+                    "uuid": "e24bcf02-f32e-4dff-8ed5-c4414130b03c"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets /01_power_mcu/SDA and /01_power_mcu/V18)",
+            "items": [
+                {
+                    "description": "Track [/01_power_mcu/SDA] on F.Cu, length 6.0500 mm",
+                    "pos": {
+                        "x": 85.6,
+                        "y": 69.15
+                    },
+                    "uuid": "0a9e9da7-6aca-4f7f-b3bd-c395a6bf9218"
+                },
+                {
+                    "description": "Track [/01_power_mcu/V18] on F.Cu, length 0.7782 mm",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 70.037
+                    },
+                    "uuid": "d39553d7-f1ba-4d28-8423-ba5333a1cc8c"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1962 mm)",
+            "items": [
+                {
+                    "description": "Track [/HV_SENSE_ADC] on F.Cu, length 0.2828 mm",
+                    "pos": {
+                        "x": 82.5,
+                        "y": 109.9
+                    },
+                    "uuid": "08cb2d2c-f733-4190-8290-b6c7e5f5cddd"
+                },
+                {
+                    "description": "Pad 5 [/HV_CURR_ADC] of U6 on F.Cu",
+                    "pos": {
+                        "x": 83.0,
+                        "y": 109.15
+                    },
+                    "uuid": "d3f9aea7-6901-4236-9b69-68614d5ae830"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1250 mm)",
+            "items": [
+                {
+                    "description": "Via [/HV_SENSE_ADC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 86.2,
+                        "y": 111.1
+                    },
+                    "uuid": "526b5b95-82c0-4f19-ae43-b4f773c547dd"
+                },
+                {
+                    "description": "Pad 1 [/01_power_mcu/GATE] of R12 on F.Cu",
+                    "pos": {
+                        "x": 86.175,
+                        "y": 112.0
+                    },
+                    "uuid": "d5026f12-7ac1-426d-b6e6-ab878df276a0"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /01_power_mcu/SDA and /01_power_mcu/SCL)",
+            "items": [
+                {
+                    "description": "Track [/01_power_mcu/SDA] on F.Cu, length 0.5657 mm",
+                    "pos": {
+                        "x": 84.4,
+                        "y": 71.75
+                    },
+                    "uuid": "80007325-2082-4efe-9a58-ec6823f042c2"
+                },
+                {
+                    "description": "Track [/01_power_mcu/SCL] on F.Cu, length 1.0500 mm",
+                    "pos": {
+                        "x": 84.8,
+                        "y": 71.25
+                    },
+                    "uuid": "e24bcf02-f32e-4dff-8ed5-c4414130b03c"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.0901 mm",
+                    "pos": {
+                        "x": 92.35,
+                        "y": 135.375
+                    },
+                    "uuid": "eedbd7f7-66f1-43b2-9258-34ae54e03013"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [/01_power_mcu/VBUS_IN] on F.Cu, length 1.0750 mm",
+                    "pos": {
+                        "x": 79.475,
+                        "y": 67.0
+                    },
+                    "uuid": "bdf944bb-c73f-48c0-9b4c-8d0eb9a5866f"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}
