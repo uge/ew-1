@@ -7,6 +7,7 @@ and rotation offsets (where KiCad library orientation differs from JLCPCB/EasyED
 
 import csv
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -31,9 +32,22 @@ CENTROID_OVERRIDES = {
 
 
 def generate_cpl():
+    pcb_file = BASE_DIR / "pi5_corona_hv.kicad_pcb"
     bom_file = BASE_DIR / "exports" / "jlcpcb-bom.csv"
     raw_pos_file = BASE_DIR / "exports" / "pi5_corona_hv_cpl.csv"
     out_cpl_file = BASE_DIR / "exports" / "jlcpcb-cpl.csv"
+
+    # Always re-export raw position file strictly in MILLIMETERS
+    subprocess.run(
+        [
+            "kicad-cli", "pcb", "export", "pos",
+            "--units", "mm",
+            "--format", "csv",
+            "--output", str(raw_pos_file),
+            str(pcb_file)
+        ],
+        check=True
+    )
 
     with open(bom_file, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -54,10 +68,8 @@ def generate_cpl():
     cpl_rows = []
     for des in bom_parts.keys():
         pos = raw_pos[des]
-        val = pos["Val"].strip('"')
-        pkg = pos["Package"].strip('"')
         
-        # Centroid position
+        # Centroid position in millimeters
         if des in CENTROID_OVERRIDES:
             bx, by = CENTROID_OVERRIDES[des]
             px = bx
@@ -66,21 +78,22 @@ def generate_cpl():
             px = float(pos["PosX"])
             py = float(pos["PosY"])
 
-        # Rotation
+        # Rotation: normalize to [0.0, 360.0)
         pr = float(pos["Rot"])
         if des in ROTATION_OFFSETS:
-            pr = (pr + ROTATION_OFFSETS[des]) % 360.0
+            pr += ROTATION_OFFSETS[des]
+        pr = pr % 360.0
+        if pr < 0.0:
+            pr += 360.0
 
         layer = "Top" if pos["Side"].lower() == "top" else "Bottom"
 
         cpl_rows.append({
             "Designator": des,
-            "Val": val,
-            "Package": pkg,
             "Mid X": f"{px:.4f}",
             "Mid Y": f"{py:.4f}",
-            "Rotation": f"{pr:.1f}",
             "Layer": layer,
+            "Rotation": f"{pr:.1f}",
         })
 
     def sort_key(r):
@@ -94,7 +107,7 @@ def generate_cpl():
     with open(out_cpl_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=["Designator", "Val", "Package", "Mid X", "Mid Y", "Rotation", "Layer"]
+            fieldnames=["Designator", "Mid X", "Mid Y", "Layer", "Rotation"]
         )
         writer.writeheader()
         writer.writerows(cpl_rows)
