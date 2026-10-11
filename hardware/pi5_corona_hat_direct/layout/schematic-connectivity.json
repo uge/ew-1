@@ -78,80 +78,28 @@
     },
     {
       "ref": "C18",
-      "value": "100nF 10%",
+      "value": "1uF 16V 10%",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/eadbe6f4-2abc-4675-81f7-984adf77948c",
       "properties": {
-        "LCSC": "C14663",
-        "JLCPCB Part #": "C14663",
-        "Manufacturer": "YAGEO",
-        "MPN": "CC0603KRX7R9BB104",
+        "LCSC": "C15849",
+        "JLCPCB Part #": "C15849",
+        "Manufacturer": "SAMSUNG",
+        "MPN": "CL10A105KA8NNNC",
         "JLCPCB Library": "Basic",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C14663",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C15849",
         "Catalog Checked": "2026-10-02",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C14663",
+        "LCSC Part": "C15849",
         "Sheetname": "01_power_mcu",
         "Sheetfile": "01_power_mcu.kicad_sch",
         "ki_keywords": "capacitor cap",
         "ki_fp_filters": "C_*",
         "Footprint": "Capacitor_SMD:C_0603_1608Metric",
         "Datasheet": "https://jlcpcb.com/partdetail/C14663",
-        "Description": "Unpolarized capacitor, small symbol"
-      }
-    },
-    {
-      "ref": "C19",
-      "value": "1uF 16V 10%",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/8b78c2a0-9975-4f9c-a94a-4426fbc0e344",
-      "properties": {
-        "LCSC": "C5199872",
-        "JLCPCB Part #": "C5199872",
-        "Manufacturer": "Samsung Electro-Mechanics",
-        "MPN": "CL10B105KB8NQNC",
-        "JLCPCB Library": "Extended",
-        "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C5199872",
-        "Catalog Checked": "2026-10-02",
-        "Assembly Process": "smtWeld",
-        "LCSC Part": "C5199872",
-        "Sheetname": "01_power_mcu",
-        "Sheetfile": "01_power_mcu.kicad_sch",
-        "ki_keywords": "capacitor cap",
-        "ki_fp_filters": "C_*",
-        "Footprint": "Capacitor_SMD:C_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C5199872",
-        "Description": "Unpolarized capacitor, small symbol"
-      }
-    },
-    {
-      "ref": "C20",
-      "value": "100nF 10%",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/154464fc-3f38-4753-a3b4-72cc88f9f2b6",
-      "properties": {
-        "LCSC": "C14663",
-        "JLCPCB Part #": "C14663",
-        "Manufacturer": "YAGEO",
-        "MPN": "CC0603KRX7R9BB104",
-        "JLCPCB Library": "Basic",
-        "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C14663",
-        "Catalog Checked": "2026-10-02",
-        "Assembly Process": "smtWeld",
-        "LCSC Part": "C14663",
-        "Sheetname": "01_power_mcu",
-        "Sheetfile": "01_power_mcu.kicad_sch",
-        "ki_keywords": "capacitor cap",
-        "ki_fp_filters": "C_*",
-        "Footprint": "Capacitor_SMD:C_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
-        "Description": "Unpolarized capacitor, small symbol"
+        "Description": "Capacitor, 1uF 16V 10% 0603 X5R for HUSB238A VDD bypass"
       }
     },
     {
@@ -440,27 +388,26 @@
     },
     {
       "ref": "Q1",
-      "value": "AO4262E 60V",
+      "value": "AO4407A",
       "footprint": "Package_SO:SO-8_3.9x4.9mm_P1.27mm",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/06a0131b-f1c3-4c31-9616-fc70c33a72fb",
       "properties": {
-        "LCSC": "C431178",
-        "JLCPCB Part #": "C431178",
+        "LCSC": "C16072",
+        "JLCPCB Part #": "C16072",
         "Manufacturer": "Alpha & Omega Semicon",
-        "MPN": "AO4262E",
-        "JLCPCB Library": "Extended",
+        "MPN": "AO4407A",
+        "JLCPCB Library": "Basic",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "AO4262E: G=4, D=5/6/7/8 on VBUS_IN, S=1/2/3 on VIN_PD. Native symbol corrected; no functional net change.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C431178",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "AO4407A P-MOSFET: S=1/2/3 on VBUS_IN, G=4 on GATE, D=5/6/7/8 on VIN_PD.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C16072",
+        "Catalog Checked": "2026-10-10",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C431178",
+        "LCSC Part": "C16072",
         "Sheetname": "01_power_mcu",
         "Sheetfile": "01_power_mcu.kicad_sch",
-        "ki_keywords": "transistor NMOS N-MOS N-MOSFET",
         "Footprint": "Package_SO:SO-8_3.9x4.9mm_P1.27mm",
-        "Datasheet": "https://jlcpcb.com/partdetail/C431178",
-        "Description": "N-MOSFET transistor, gate/drain/source"
+        "Datasheet": "https://jlcpcb.com/partdetail/C16072",
+        "Description": "P-MOSFET transistor, -30V, -12A, SO-8"
       }
     },
     {
@@ -517,7 +464,7 @@
     },
     {
       "ref": "R12",
-      "value": "100k",
+      "value": "100k 1%",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/2d65ce2e-712a-420b-bc16-09faedef7afd",
       "properties": {
@@ -538,7 +485,7 @@
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
         "Datasheet": "https://jlcpcb.com/partdetail/C25803",
-        "Description": "Resistor"
+        "Description": "Resistor, 100k 1% 0603 gate pull-up for P-MOSFET"
       }
     },
     {
@@ -569,28 +516,80 @@
     },
     {
       "ref": "R14",
-      "value": "6.2k",
+      "value": "47k 1%",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/436cf7f5-c2bc-4182-9b73-f900d4256869",
       "properties": {
-        "LCSC": "C4260",
-        "JLCPCB Part #": "C4260",
+        "LCSC": "C25816",
+        "JLCPCB Part #": "C25816",
         "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
-        "MPN": "0603WAF6201T5E",
+        "MPN": "0603WAF4702T5E",
         "JLCPCB Library": "Basic",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C4260",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25816",
         "Catalog Checked": "2026-10-02",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C4260",
+        "LCSC Part": "C25816",
         "Sheetname": "01_power_mcu",
         "Sheetfile": "01_power_mcu.kicad_sch",
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
         "Datasheet": "https://jlcpcb.com/partdetail/C4260",
-        "Description": "Resistor"
+        "Description": "Resistor, 47k 1% 0603 gate pull-down series resistor for P-MOSFET"
+      }
+    },
+    {
+      "ref": "R15",
+      "value": "1M 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/8b78c2a0-9975-4f9c-a94a-4426fbc0e344",
+      "properties": {
+        "LCSC": "C22935",
+        "JLCPCB Part #": "C22935",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1004T5E",
+        "JLCPCB Library": "Extended",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C22935",
+        "Catalog Checked": "2026-10-02",
+        "Assembly Process": "smtWeld",
+        "LCSC Part": "C22935",
+        "Sheetname": "01_power_mcu",
+        "Sheetfile": "01_power_mcu.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C5199872",
+        "Description": "Resistor, 1M 1% 0603 for HUSB238A ADDR (sets address 0x42)"
+      }
+    },
+    {
+      "ref": "R16",
+      "value": "1M 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/154464fc-3f38-4753-a3b4-72cc88f9f2b6",
+      "properties": {
+        "LCSC": "C22935",
+        "JLCPCB Part #": "C22935",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1004T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C22935",
+        "Catalog Checked": "2026-10-02",
+        "Assembly Process": "smtWeld",
+        "LCSC Part": "C22935",
+        "Sheetname": "01_power_mcu",
+        "Sheetfile": "01_power_mcu.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
+        "Description": "Resistor, 1M 1% 0603 for HUSB238A DEBUG_N pulldown"
       }
     },
     {
@@ -751,26 +750,26 @@
     },
     {
       "ref": "U7",
-      "value": "AP33772S",
-      "footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm",
+      "value": "HUSB238A-BB001-QN16R",
+      "footprint": "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/45bed891-6b2c-4ccd-b433-046c9ecf22ab",
       "properties": {
-        "LCSC": "C24374260",
-        "JLCPCB Part #": "C24374260",
-        "Manufacturer": "Diodes Incorporated",
-        "MPN": "AP33772SDKZ-13-FA01",
+        "LCSC": "C24833806",
+        "JLCPCB Part #": "C24833806",
+        "Manufacturer": "Hynetek(慧能泰)",
+        "MPN": "HUSB238A-BB001-QN16R",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "FA01 firmware ordering variant; verify against host driver and required startup profile. Stock snapshot only.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C24374260",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C24833806",
+        "Catalog Checked": "2026-10-10",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C24374260",
+        "LCSC Part": "C24833806",
         "Sheetname": "01_power_mcu",
         "Sheetfile": "01_power_mcu.kicad_sch",
-        "Footprint": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm",
-        "Datasheet": "https://jlcpcb.com/partdetail/C24374260",
-        "Description": ""
+        "Footprint": "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm",
+        "Datasheet": "https://www.lcsc.com/datasheet/C24833806.pdf",
+        "Description": "USB PD Sink Controller with PPS support, QFN-16"
       }
     },
     {
@@ -1417,19 +1416,19 @@
     },
     {
       "ref": "C82",
-      "value": "2.2uF 16V X7R",
+      "value": "2.2uF 50V X5R",
       "footprint": "Capacitor_SMD:C_0805_2012Metric",
       "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/8079e2a5-4d9d-4d8b-a82f-89413f9e9cb8",
       "properties": {
-        "LCSC": "C380348",
-        "LCSC Part": "C380348",
-        "JLCPCB Part #": "C380348",
-        "Manufacturer": "CCTC",
-        "MPN": "TCC0805X7R225K160FT",
+        "LCSC": "C377773",
+        "LCSC Part": "C377773",
+        "JLCPCB Part #": "C377773",
+        "Manufacturer": "Samsung Electro-Mechanics",
+        "MPN": "CL21A225KBQNNNE",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "2.2uF16V X7R10%,Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C380348",
-        "JLCPCB Library": "Extended",
+        "Procurement Notes": "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C377773",
+        "JLCPCB Library": "Basic",
         "Assembly Process": "smtWeld",
         "Catalog Checked": "2026-10-03",
         "Sheetname": "04_sense_safety",
@@ -1437,25 +1436,25 @@
         "ki_keywords": "cap capacitor",
         "ki_fp_filters": "C_*",
         "Footprint": "Capacitor_SMD:C_0805_2012Metric",
-        "Datasheet": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf",
+        "Datasheet": "https://jlcpcb.com/partdetail/C377773",
         "Description": ""
       }
     },
     {
       "ref": "C83",
-      "value": "2.2uF 16V X7R",
+      "value": "2.2uF 50V X5R",
       "footprint": "Capacitor_SMD:C_0805_2012Metric",
       "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/df7f3873-fef5-4264-9c90-1e088e99001a",
       "properties": {
-        "LCSC": "C380348",
-        "LCSC Part": "C380348",
-        "JLCPCB Part #": "C380348",
-        "Manufacturer": "CCTC",
-        "MPN": "TCC0805X7R225K160FT",
+        "LCSC": "C377773",
+        "LCSC Part": "C377773",
+        "JLCPCB Part #": "C377773",
+        "Manufacturer": "Samsung Electro-Mechanics",
+        "MPN": "CL21A225KBQNNNE",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "2.2uF16V X7R10%,coil regulator output; preserve >=0.5uF effective capacitance at3V.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C380348",
-        "JLCPCB Library": "Extended",
+        "Procurement Notes": "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Coil regulator output; preserve >=0.5uF effective capacitance at 3V.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C377773",
+        "JLCPCB Library": "Basic",
         "Assembly Process": "smtWeld",
         "Catalog Checked": "2026-10-03",
         "Sheetname": "04_sense_safety",
@@ -1463,7 +1462,7 @@
         "ki_keywords": "cap capacitor",
         "ki_fp_filters": "C_*",
         "Footprint": "Capacitor_SMD:C_0805_2012Metric",
-        "Datasheet": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf",
+        "Datasheet": "https://jlcpcb.com/partdetail/C377773",
         "Description": ""
       }
     },
@@ -2616,11 +2615,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/a30e43ed-40fc-4b94-83aa-88de200e860f",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2631,7 +2630,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2641,11 +2640,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/feab9a70-39c7-4454-bfeb-aeefc25fbbbb",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2656,7 +2655,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2666,11 +2665,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/7af066a1-bb5c-4801-9944-1ea0e8359985",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2681,7 +2680,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2691,11 +2690,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/3de4cf56-e344-4348-8475-a484d64b1338",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2706,7 +2705,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2716,11 +2715,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/a5a27c5d-9a49-4cda-89bd-3c886e53c5da",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2731,7 +2730,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2741,11 +2740,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/184f746f-560d-4574-aa39-90d6ce09ad27",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2756,7 +2755,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2766,11 +2765,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/25ce6673-bd9f-48f5-bc07-7af576111d03",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2781,7 +2780,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2791,11 +2790,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/b209d357-8dda-431f-96e6-846d0c3f171c",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2806,7 +2805,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2816,11 +2815,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/ccd06dae-635a-4c44-9870-c59581cfdc11",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2831,7 +2830,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2841,11 +2840,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/3f3a61f8-d677-4cd6-965d-6c57f0ec1246",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2856,7 +2855,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2866,11 +2865,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/2a575ec0-4d20-4f08-8a28-ab560a6a6d8b",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2881,7 +2880,7 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
@@ -2891,11 +2890,11 @@
       "footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/148c9e7e-b389-475c-bd1b-75f5d461faf2",
       "properties": {
-        "LCSC Part": "C1620009",
-        "LCSC": "C1620009",
-        "JLCPCB Part #": "C1620009",
-        "Manufacturer": "Vishay Intertech",
-        "MPN": "S102M59Z5UU83L0R",
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "Generic / STE / JEC",
+        "MPN": "CT81-6KV-Y5P-102K",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules.",
@@ -2906,331 +2905,307 @@
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Pre-ordered RLCs",
         "Footprint": "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6",
-        "Datasheet": "https://jlcpcb.com/partdetail/C1620009",
+        "Datasheet": "https://www.lcsc.com/datasheet/CT81.pdf",
         "Description": ""
       }
     },
     {
       "ref": "D10",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/789d9ddb-591f-41df-affb-55772e2bfcdf",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D11",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/cb8b6217-e532-462f-b5df-1622799aee13",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D12",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/6d966632-5308-43b4-8273-9ece59bf12bd",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D13",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/e6dd9759-951f-4ff9-ba27-19221a26738a",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D14",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/e886637e-0555-46e8-890b-25cf037195f5",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D15",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/68e6645a-fc71-4efa-8020-fcc3a7ccdc49",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D16",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/6de9f55b-df7b-4c45-8d3e-1848e4656a70",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D17",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/7066be34-ae2a-44ad-8892-7f70f05060e9",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D18",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/7b95fc6a-03ed-400f-b1a2-5c7f7f6bde49",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D19",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/da38909a-f8b9-4fea-97f3-498623f42d30",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D20",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/2eface1f-f198-4f37-8fd8-065933ae57a5",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
     {
       "ref": "D21",
-      "value": "2CL75",
-      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+      "value": "HVM12",
+      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/f25acb2a-e4a3-40c5-9c5e-bd9150857ab3",
       "properties": {
-        "LCSC Part": "C424512",
-        "MPN": "2CL75",
-        "LCSC": "C424512",
-        "JLCPCB Part #": "C424512",
-        "Manufacturer": "SUNMATE Elec",
+        "LCSC Part": "C7436450",
+        "MPN": "HVM12",
+        "LCSC": "C7436450",
+        "JLCPCB Part #": "C7436450",
+        "Manufacturer": "YFW",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
-        "Catalog Checked": "2026-10-03",
+        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "manualWeld",
-        "Reverse Recovery": "100 ns max at 25 C",
-        "Junction Capacitance": "1 pF at 0 V, 1 MHz",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
-        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
         "Description": ""
       }
     },
@@ -3254,7 +3229,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3278,7 +3253,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3302,7 +3277,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3326,7 +3301,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3350,7 +3325,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3374,7 +3349,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3398,7 +3373,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3422,7 +3397,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3446,7 +3421,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3470,7 +3445,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3494,7 +3469,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3518,7 +3493,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3542,7 +3517,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3566,7 +3541,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3590,7 +3565,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3614,7 +3589,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3638,7 +3613,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3662,7 +3637,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3686,7 +3661,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3710,7 +3685,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3734,7 +3709,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3758,7 +3733,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3782,7 +3757,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3806,7 +3781,7 @@
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2089706",
+        "Datasheet": "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf",
         "Description": ""
       }
     },
@@ -3916,6 +3891,20 @@
   "nets": [
     {
       "code": 1,
+      "name": "/01_power_mcu/ADDR",
+      "nodes": [
+        [
+          "R15",
+          "1"
+        ],
+        [
+          "U7",
+          "8"
+        ]
+      ]
+    },
+    {
+      "code": 2,
       "name": "/01_power_mcu/CC1",
       "nodes": [
         [
@@ -3924,12 +3913,12 @@
         ],
         [
           "U7",
-          "17"
+          "3"
         ]
       ]
     },
     {
-      "code": 2,
+      "code": 3,
       "name": "/01_power_mcu/CC2",
       "nodes": [
         [
@@ -3938,12 +3927,26 @@
         ],
         [
           "U7",
-          "16"
+          "4"
         ]
       ]
     },
     {
-      "code": 3,
+      "code": 4,
+      "name": "/01_power_mcu/DEBUG_N",
+      "nodes": [
+        [
+          "R16",
+          "1"
+        ],
+        [
+          "U7",
+          "6"
+        ]
+      ]
+    },
+    {
+      "code": 5,
       "name": "/01_power_mcu/EFUSE_DVDT",
       "nodes": [
         [
@@ -3957,7 +3960,7 @@
       ]
     },
     {
-      "code": 4,
+      "code": 6,
       "name": "/01_power_mcu/EFUSE_ILM",
       "nodes": [
         [
@@ -3971,7 +3974,7 @@
       ]
     },
     {
-      "code": 5,
+      "code": 7,
       "name": "/01_power_mcu/EFUSE_OVLO",
       "nodes": [
         [
@@ -3989,43 +3992,11 @@
       ]
     },
     {
-      "code": 6,
+      "code": 8,
       "name": "/01_power_mcu/EN_DRV",
       "nodes": [
         [
           "R14",
-          "1"
-        ],
-        [
-          "U7",
-          "23"
-        ]
-      ]
-    },
-    {
-      "code": 7,
-      "name": "/01_power_mcu/GATE",
-      "nodes": [
-        [
-          "Q1",
-          "4"
-        ],
-        [
-          "R12",
-          "1"
-        ],
-        [
-          "R14",
-          "2"
-        ]
-      ]
-    },
-    {
-      "code": 8,
-      "name": "/01_power_mcu/IFB",
-      "nodes": [
-        [
-          "C20",
           "1"
         ],
         [
@@ -4036,6 +4007,24 @@
     },
     {
       "code": 9,
+      "name": "/01_power_mcu/GATE",
+      "nodes": [
+        [
+          "Q1",
+          "4"
+        ],
+        [
+          "R12",
+          "2"
+        ],
+        [
+          "R14",
+          "2"
+        ]
+      ]
+    },
+    {
+      "code": 10,
       "name": "/01_power_mcu/ISENP",
       "nodes": [
         [
@@ -4045,24 +4034,6 @@
         [
           "R13",
           "1"
-        ],
-        [
-          "U7",
-          "1"
-        ]
-      ]
-    },
-    {
-      "code": 10,
-      "name": "/01_power_mcu/OTP_NTC",
-      "nodes": [
-        [
-          "NTC1",
-          "1"
-        ],
-        [
-          "U7",
-          "13"
         ]
       ]
     },
@@ -4106,7 +4077,7 @@
         ],
         [
           "U7",
-          "5"
+          "10"
         ]
       ]
     },
@@ -4132,7 +4103,7 @@
         ],
         [
           "U7",
-          "4"
+          "9"
         ]
       ]
     },
@@ -4150,7 +4121,7 @@
         ],
         [
           "U7",
-          "18"
+          "2"
         ]
       ]
     },
@@ -4168,40 +4139,12 @@
         ],
         [
           "U7",
-          "19"
+          "1"
         ]
       ]
     },
     {
       "code": 16,
-      "name": "/01_power_mcu/V5V",
-      "nodes": [
-        [
-          "C19",
-          "1"
-        ],
-        [
-          "U7",
-          "20"
-        ]
-      ]
-    },
-    {
-      "code": 17,
-      "name": "/01_power_mcu/V18",
-      "nodes": [
-        [
-          "C18",
-          "1"
-        ],
-        [
-          "U7",
-          "12"
-        ]
-      ]
-    },
-    {
-      "code": 18,
       "name": "/01_power_mcu/VBUS_IN",
       "nodes": [
         [
@@ -4214,19 +4157,19 @@
         ],
         [
           "Q1",
-          "5"
+          "1"
         ],
         [
           "Q1",
-          "6"
+          "2"
         ],
         [
           "Q1",
-          "7"
+          "3"
         ],
         [
-          "Q1",
-          "8"
+          "R12",
+          "1"
         ],
         [
           "R13",
@@ -4234,12 +4177,12 @@
         ],
         [
           "U7",
-          "24"
+          "16"
         ]
       ]
     },
     {
-      "code": 19,
+      "code": 17,
       "name": "/01_power_mcu/VBUS_RAW",
       "nodes": [
         [
@@ -4273,7 +4216,7 @@
       ]
     },
     {
-      "code": 20,
+      "code": 18,
       "name": "/01_power_mcu/VIN_PD",
       "nodes": [
         [
@@ -4282,23 +4225,23 @@
         ],
         [
           "Q1",
-          "1"
+          "5"
         ],
         [
           "Q1",
-          "2"
+          "6"
         ],
         [
           "Q1",
-          "3"
+          "7"
+        ],
+        [
+          "Q1",
+          "8"
         ],
         [
           "R71",
           "1"
-        ],
-        [
-          "U7",
-          "22"
         ],
         [
           "U9",
@@ -4307,7 +4250,7 @@
       ]
     },
     {
-      "code": 21,
+      "code": 19,
       "name": "/02_drive_transformer/DRV_A",
       "nodes": [
         [
@@ -4329,7 +4272,7 @@
       ]
     },
     {
-      "code": 22,
+      "code": 20,
       "name": "/02_drive_transformer/DRV_B",
       "nodes": [
         [
@@ -4355,7 +4298,7 @@
       ]
     },
     {
-      "code": 23,
+      "code": 21,
       "name": "/02_drive_transformer/DRV_CPH",
       "nodes": [
         [
@@ -4369,7 +4312,7 @@
       ]
     },
     {
-      "code": 24,
+      "code": 22,
       "name": "/02_drive_transformer/DRV_CPL",
       "nodes": [
         [
@@ -4383,7 +4326,7 @@
       ]
     },
     {
-      "code": 25,
+      "code": 23,
       "name": "/02_drive_transformer/DRV_IMODE",
       "nodes": [
         [
@@ -4397,7 +4340,7 @@
       ]
     },
     {
-      "code": 26,
+      "code": 24,
       "name": "/02_drive_transformer/DRV_IPROPI",
       "nodes": [
         [
@@ -4411,7 +4354,7 @@
       ]
     },
     {
-      "code": 27,
+      "code": 25,
       "name": "/02_drive_transformer/DRV_VCP",
       "nodes": [
         [
@@ -4425,7 +4368,7 @@
       ]
     },
     {
-      "code": 28,
+      "code": 26,
       "name": "/02_drive_transformer/DRV_nFAULT",
       "nodes": [
         [
@@ -4443,7 +4386,7 @@
       ]
     },
     {
-      "code": 29,
+      "code": 27,
       "name": "/02_drive_transformer/HV_BRIDGE",
       "nodes": [
         [
@@ -4489,7 +4432,7 @@
       ]
     },
     {
-      "code": 30,
+      "code": 28,
       "name": "/02_drive_transformer/PRI_A",
       "nodes": [
         [
@@ -4507,7 +4450,7 @@
       ]
     },
     {
-      "code": 31,
+      "code": 29,
       "name": "/03_multiplier/CW_P1",
       "nodes": [
         [
@@ -4537,7 +4480,7 @@
       ]
     },
     {
-      "code": 32,
+      "code": 30,
       "name": "/03_multiplier/CW_P2",
       "nodes": [
         [
@@ -4567,7 +4510,7 @@
       ]
     },
     {
-      "code": 33,
+      "code": 31,
       "name": "/03_multiplier/CW_P3",
       "nodes": [
         [
@@ -4597,7 +4540,7 @@
       ]
     },
     {
-      "code": 34,
+      "code": 32,
       "name": "/03_multiplier/CW_P4",
       "nodes": [
         [
@@ -4627,7 +4570,7 @@
       ]
     },
     {
-      "code": 35,
+      "code": 33,
       "name": "/03_multiplier/CW_P5",
       "nodes": [
         [
@@ -4657,7 +4600,7 @@
       ]
     },
     {
-      "code": 36,
+      "code": 34,
       "name": "/03_multiplier/CW_S1",
       "nodes": [
         [
@@ -4687,7 +4630,7 @@
       ]
     },
     {
-      "code": 37,
+      "code": 35,
       "name": "/03_multiplier/CW_S2",
       "nodes": [
         [
@@ -4717,7 +4660,7 @@
       ]
     },
     {
-      "code": 38,
+      "code": 36,
       "name": "/03_multiplier/CW_S3",
       "nodes": [
         [
@@ -4747,7 +4690,7 @@
       ]
     },
     {
-      "code": 39,
+      "code": 37,
       "name": "/03_multiplier/CW_S4",
       "nodes": [
         [
@@ -4777,7 +4720,7 @@
       ]
     },
     {
-      "code": 40,
+      "code": 38,
       "name": "/03_multiplier/CW_S5",
       "nodes": [
         [
@@ -4807,7 +4750,7 @@
       ]
     },
     {
-      "code": 41,
+      "code": 39,
       "name": "/04_sense_safety/HV_OUT",
       "nodes": [
         [
@@ -4825,7 +4768,7 @@
       ]
     },
     {
-      "code": 42,
+      "code": 40,
       "name": "/04_sense_safety/HV_SENSE_RAW",
       "nodes": [
         [
@@ -4847,7 +4790,7 @@
       ]
     },
     {
-      "code": 43,
+      "code": 41,
       "name": "/04_sense_safety/INTERLOCK_LOOP_1",
       "nodes": [
         [
@@ -4861,7 +4804,7 @@
       ]
     },
     {
-      "code": 44,
+      "code": 42,
       "name": "/04_sense_safety/INTERLOCK_LOOP_2",
       "nodes": [
         [
@@ -4875,7 +4818,7 @@
       ]
     },
     {
-      "code": 45,
+      "code": 43,
       "name": "/04_sense_safety/INTERLOCK_LOOP_3",
       "nodes": [
         [
@@ -4889,7 +4832,7 @@
       ]
     },
     {
-      "code": 46,
+      "code": 44,
       "name": "/04_sense_safety/RELAY_COIL_POS",
       "nodes": [
         [
@@ -4911,7 +4854,7 @@
       ]
     },
     {
-      "code": 47,
+      "code": 45,
       "name": "/04_sense_safety/S3_1",
       "nodes": [
         [
@@ -4925,7 +4868,7 @@
       ]
     },
     {
-      "code": 48,
+      "code": 46,
       "name": "/04_sense_safety/S3_2",
       "nodes": [
         [
@@ -4939,7 +4882,7 @@
       ]
     },
     {
-      "code": 49,
+      "code": 47,
       "name": "/04_sense_safety/S4_1",
       "nodes": [
         [
@@ -4953,7 +4896,7 @@
       ]
     },
     {
-      "code": 50,
+      "code": 48,
       "name": "/04_sense_safety/S4_2",
       "nodes": [
         [
@@ -4967,7 +4910,7 @@
       ]
     },
     {
-      "code": 51,
+      "code": 49,
       "name": "/04_sense_safety/S5_1",
       "nodes": [
         [
@@ -4981,7 +4924,7 @@
       ]
     },
     {
-      "code": 52,
+      "code": 50,
       "name": "/04_sense_safety/S5_2",
       "nodes": [
         [
@@ -4995,7 +4938,7 @@
       ]
     },
     {
-      "code": 53,
+      "code": 51,
       "name": "/04_sense_safety/S6_1",
       "nodes": [
         [
@@ -5009,7 +4952,7 @@
       ]
     },
     {
-      "code": 54,
+      "code": 52,
       "name": "/04_sense_safety/S6_2",
       "nodes": [
         [
@@ -5023,7 +4966,7 @@
       ]
     },
     {
-      "code": 55,
+      "code": 53,
       "name": "/05_illumination/TSL_3V3",
       "nodes": [
         [
@@ -5045,7 +4988,7 @@
       ]
     },
     {
-      "code": 56,
+      "code": 54,
       "name": "/05_illumination/TSL_GND",
       "nodes": [
         [
@@ -5067,7 +5010,7 @@
       ]
     },
     {
-      "code": 57,
+      "code": 55,
       "name": "/05_illumination/TSL_SCL",
       "nodes": [
         [
@@ -5081,7 +5024,7 @@
       ]
     },
     {
-      "code": 58,
+      "code": 56,
       "name": "/05_illumination/TSL_SDA",
       "nodes": [
         [
@@ -5095,7 +5038,7 @@
       ]
     },
     {
-      "code": 59,
+      "code": 57,
       "name": "/DRV_IN1",
       "nodes": [
         [
@@ -5109,7 +5052,7 @@
       ]
     },
     {
-      "code": 60,
+      "code": 58,
       "name": "/DRV_IN2",
       "nodes": [
         [
@@ -5123,7 +5066,7 @@
       ]
     },
     {
-      "code": 61,
+      "code": 59,
       "name": "/DRV_SLEEP_CMD",
       "nodes": [
         [
@@ -5137,7 +5080,7 @@
       ]
     },
     {
-      "code": 62,
+      "code": 60,
       "name": "/DRV_nSLEEP",
       "nodes": [
         [
@@ -5155,7 +5098,7 @@
       ]
     },
     {
-      "code": 63,
+      "code": 61,
       "name": "/HV_CURR_ADC",
       "nodes": [
         [
@@ -5177,7 +5120,7 @@
       ]
     },
     {
-      "code": 64,
+      "code": 62,
       "name": "/HV_RAW",
       "nodes": [
         [
@@ -5199,7 +5142,7 @@
       ]
     },
     {
-      "code": 65,
+      "code": 63,
       "name": "/HV_RETURN",
       "nodes": [
         [
@@ -5241,7 +5184,7 @@
       ]
     },
     {
-      "code": 66,
+      "code": 64,
       "name": "/HV_SENSE_ADC",
       "nodes": [
         [
@@ -5259,7 +5202,7 @@
       ]
     },
     {
-      "code": 67,
+      "code": 65,
       "name": "/INTERLOCK_OK",
       "nodes": [
         [
@@ -5273,7 +5216,7 @@
       ]
     },
     {
-      "code": 68,
+      "code": 66,
       "name": "/SEC_A",
       "nodes": [
         [
@@ -5295,7 +5238,7 @@
       ]
     },
     {
-      "code": 69,
+      "code": 67,
       "name": "/VIN_PROTECTED",
       "nodes": [
         [
@@ -5317,7 +5260,7 @@
       ]
     },
     {
-      "code": 70,
+      "code": 68,
       "name": "3V3",
       "nodes": [
         [
@@ -5327,6 +5270,10 @@
         [
           "C16",
           "2"
+        ],
+        [
+          "C18",
+          "1"
         ],
         [
           "C82",
@@ -5387,11 +5334,15 @@
         [
           "U6",
           "8"
+        ],
+        [
+          "U7",
+          "5"
         ]
       ]
     },
     {
-      "code": 71,
+      "code": 69,
       "name": "BULK_CMD",
       "nodes": [
         [
@@ -5405,7 +5356,7 @@
       ]
     },
     {
-      "code": 72,
+      "code": 70,
       "name": "BULK_EN",
       "nodes": [
         [
@@ -5423,7 +5374,7 @@
       ]
     },
     {
-      "code": 73,
+      "code": 71,
       "name": "COIL_3V",
       "nodes": [
         [
@@ -5441,7 +5392,7 @@
       ]
     },
     {
-      "code": 74,
+      "code": 72,
       "name": "GND",
       "nodes": [
         [
@@ -5474,14 +5425,6 @@
         ],
         [
           "C18",
-          "2"
-        ],
-        [
-          "C19",
-          "2"
-        ],
-        [
-          "C20",
           "2"
         ],
         [
@@ -5617,7 +5560,11 @@
           "2"
         ],
         [
-          "R12",
+          "R15",
+          "2"
+        ],
+        [
+          "R16",
           "2"
         ],
         [
@@ -5702,11 +5649,15 @@
         ],
         [
           "U7",
-          "25"
+          "12"
         ],
         [
           "U7",
-          "3"
+          "14"
+        ],
+        [
+          "U7",
+          "17"
         ],
         [
           "U9",
@@ -5715,7 +5666,7 @@
       ]
     },
     {
-      "code": 75,
+      "code": 73,
       "name": "Net-(C63-Pad1)",
       "nodes": [
         [
@@ -5729,7 +5680,7 @@
       ]
     },
     {
-      "code": 76,
+      "code": 74,
       "name": "Net-(D20-K)",
       "nodes": [
         [
@@ -5751,7 +5702,7 @@
       ]
     },
     {
-      "code": 77,
+      "code": 75,
       "name": "Net-(R8-Pad2)",
       "nodes": [
         [
@@ -5765,7 +5716,7 @@
       ]
     },
     {
-      "code": 78,
+      "code": 76,
       "name": "Net-(R20-Pad2)",
       "nodes": [
         [
@@ -5779,7 +5730,7 @@
       ]
     },
     {
-      "code": 79,
+      "code": 77,
       "name": "Net-(R21-Pad2)",
       "nodes": [
         [
@@ -5793,7 +5744,7 @@
       ]
     },
     {
-      "code": 80,
+      "code": 78,
       "name": "Net-(R22-Pad2)",
       "nodes": [
         [
@@ -5807,7 +5758,7 @@
       ]
     },
     {
-      "code": 81,
+      "code": 79,
       "name": "Net-(R23-Pad2)",
       "nodes": [
         [
@@ -5821,7 +5772,7 @@
       ]
     },
     {
-      "code": 82,
+      "code": 80,
       "name": "Net-(R24-Pad2)",
       "nodes": [
         [
@@ -5835,7 +5786,7 @@
       ]
     },
     {
-      "code": 83,
+      "code": 81,
       "name": "Net-(R25-Pad2)",
       "nodes": [
         [
@@ -5849,7 +5800,7 @@
       ]
     },
     {
-      "code": 84,
+      "code": 82,
       "name": "Net-(R26-Pad2)",
       "nodes": [
         [
@@ -5863,7 +5814,7 @@
       ]
     },
     {
-      "code": 85,
+      "code": 83,
       "name": "Net-(R27-Pad2)",
       "nodes": [
         [
@@ -5877,7 +5828,7 @@
       ]
     },
     {
-      "code": 86,
+      "code": 84,
       "name": "Net-(R28-Pad2)",
       "nodes": [
         [
@@ -5891,7 +5842,7 @@
       ]
     },
     {
-      "code": 87,
+      "code": 85,
       "name": "Net-(R30-Pad2)",
       "nodes": [
         [
@@ -5905,7 +5856,7 @@
       ]
     },
     {
-      "code": 88,
+      "code": 86,
       "name": "Net-(R31-Pad2)",
       "nodes": [
         [
@@ -5919,7 +5870,7 @@
       ]
     },
     {
-      "code": 89,
+      "code": 87,
       "name": "Net-(R32-Pad2)",
       "nodes": [
         [
@@ -5933,7 +5884,7 @@
       ]
     },
     {
-      "code": 90,
+      "code": 88,
       "name": "Net-(R33-Pad2)",
       "nodes": [
         [
@@ -5947,7 +5898,7 @@
       ]
     },
     {
-      "code": 91,
+      "code": 89,
       "name": "Net-(R34-Pad2)",
       "nodes": [
         [
@@ -5961,7 +5912,7 @@
       ]
     },
     {
-      "code": 92,
+      "code": 90,
       "name": "Net-(R35-Pad2)",
       "nodes": [
         [
@@ -5975,7 +5926,7 @@
       ]
     },
     {
-      "code": 93,
+      "code": 91,
       "name": "Net-(R36-Pad2)",
       "nodes": [
         [
@@ -5989,7 +5940,7 @@
       ]
     },
     {
-      "code": 94,
+      "code": 92,
       "name": "Net-(R37-Pad2)",
       "nodes": [
         [
@@ -6003,7 +5954,7 @@
       ]
     },
     {
-      "code": 95,
+      "code": 93,
       "name": "Net-(R38-Pad2)",
       "nodes": [
         [
@@ -6017,7 +5968,7 @@
       ]
     },
     {
-      "code": 96,
+      "code": 94,
       "name": "Net-(R140-Pad2)",
       "nodes": [
         [
@@ -6031,7 +5982,7 @@
       ]
     },
     {
-      "code": 97,
+      "code": 95,
       "name": "Net-(R142-Pad2)",
       "nodes": [
         [
@@ -6045,7 +5996,7 @@
       ]
     },
     {
-      "code": 98,
+      "code": 96,
       "name": "Net-(R144-Pad2)",
       "nodes": [
         [
@@ -6059,7 +6010,7 @@
       ]
     },
     {
-      "code": 99,
+      "code": 97,
       "name": "Net-(R146-Pad2)",
       "nodes": [
         [
@@ -6073,7 +6024,7 @@
       ]
     },
     {
-      "code": 100,
+      "code": 98,
       "name": "Net-(R148-Pad2)",
       "nodes": [
         [
@@ -6087,7 +6038,7 @@
       ]
     },
     {
-      "code": 101,
+      "code": 99,
       "name": "Net-(R150-Pad2)",
       "nodes": [
         [
@@ -6101,7 +6052,7 @@
       ]
     },
     {
-      "code": 102,
+      "code": 100,
       "name": "Net-(R152-Pad2)",
       "nodes": [
         [
@@ -6115,7 +6066,7 @@
       ]
     },
     {
-      "code": 103,
+      "code": 101,
       "name": "Net-(R154-Pad2)",
       "nodes": [
         [
@@ -6129,7 +6080,7 @@
       ]
     },
     {
-      "code": 104,
+      "code": 102,
       "name": "Net-(R156-Pad2)",
       "nodes": [
         [
@@ -6143,7 +6094,7 @@
       ]
     },
     {
-      "code": 105,
+      "code": 103,
       "name": "Net-(R158-Pad2)",
       "nodes": [
         [
@@ -6157,7 +6108,7 @@
       ]
     },
     {
-      "code": 106,
+      "code": 104,
       "name": "Net-(R160-Pad2)",
       "nodes": [
         [
@@ -6171,7 +6122,7 @@
       ]
     },
     {
-      "code": 107,
+      "code": 105,
       "name": "Net-(R162-Pad2)",
       "nodes": [
         [
@@ -6185,7 +6136,7 @@
       ]
     },
     {
-      "code": 108,
+      "code": 106,
       "name": "Net-(U4-IN-)",
       "nodes": [
         [
@@ -6203,7 +6154,7 @@
       ]
     },
     {
-      "code": 109,
+      "code": 107,
       "name": "unconnected-(J2-Pin_2-Pad2)",
       "nodes": [
         [
@@ -6213,7 +6164,7 @@
       ]
     },
     {
-      "code": 110,
+      "code": 108,
       "name": "unconnected-(J2-Pin_4-Pad4)",
       "nodes": [
         [
@@ -6223,7 +6174,7 @@
       ]
     },
     {
-      "code": 111,
+      "code": 109,
       "name": "unconnected-(J2-Pin_7-Pad7)",
       "nodes": [
         [
@@ -6233,7 +6184,7 @@
       ]
     },
     {
-      "code": 112,
+      "code": 110,
       "name": "unconnected-(J2-Pin_8-Pad8)",
       "nodes": [
         [
@@ -6243,7 +6194,7 @@
       ]
     },
     {
-      "code": 113,
+      "code": 111,
       "name": "unconnected-(J2-Pin_10-Pad10)",
       "nodes": [
         [
@@ -6253,7 +6204,7 @@
       ]
     },
     {
-      "code": 114,
+      "code": 112,
       "name": "unconnected-(J2-Pin_11-Pad11)",
       "nodes": [
         [
@@ -6263,7 +6214,7 @@
       ]
     },
     {
-      "code": 115,
+      "code": 113,
       "name": "unconnected-(J2-Pin_13-Pad13)",
       "nodes": [
         [
@@ -6273,7 +6224,7 @@
       ]
     },
     {
-      "code": 116,
+      "code": 114,
       "name": "unconnected-(J2-Pin_15-Pad15)",
       "nodes": [
         [
@@ -6283,7 +6234,7 @@
       ]
     },
     {
-      "code": 117,
+      "code": 115,
       "name": "unconnected-(J2-Pin_17-Pad17)",
       "nodes": [
         [
@@ -6293,7 +6244,7 @@
       ]
     },
     {
-      "code": 118,
+      "code": 116,
       "name": "unconnected-(J2-Pin_19-Pad19)",
       "nodes": [
         [
@@ -6303,7 +6254,7 @@
       ]
     },
     {
-      "code": 119,
+      "code": 117,
       "name": "unconnected-(J2-Pin_21-Pad21)",
       "nodes": [
         [
@@ -6313,7 +6264,7 @@
       ]
     },
     {
-      "code": 120,
+      "code": 118,
       "name": "unconnected-(J2-Pin_23-Pad23)",
       "nodes": [
         [
@@ -6323,7 +6274,7 @@
       ]
     },
     {
-      "code": 121,
+      "code": 119,
       "name": "unconnected-(J2-Pin_24-Pad24)",
       "nodes": [
         [
@@ -6333,7 +6284,7 @@
       ]
     },
     {
-      "code": 122,
+      "code": 120,
       "name": "unconnected-(J2-Pin_26-Pad26)",
       "nodes": [
         [
@@ -6343,7 +6294,7 @@
       ]
     },
     {
-      "code": 123,
+      "code": 121,
       "name": "unconnected-(J2-Pin_27-Pad27)",
       "nodes": [
         [
@@ -6353,7 +6304,7 @@
       ]
     },
     {
-      "code": 124,
+      "code": 122,
       "name": "unconnected-(J2-Pin_28-Pad28)",
       "nodes": [
         [
@@ -6363,7 +6314,7 @@
       ]
     },
     {
-      "code": 125,
+      "code": 123,
       "name": "unconnected-(J2-Pin_29-Pad29)",
       "nodes": [
         [
@@ -6373,7 +6324,7 @@
       ]
     },
     {
-      "code": 126,
+      "code": 124,
       "name": "unconnected-(J2-Pin_31-Pad31)",
       "nodes": [
         [
@@ -6383,7 +6334,7 @@
       ]
     },
     {
-      "code": 127,
+      "code": 125,
       "name": "unconnected-(J2-Pin_32-Pad32)",
       "nodes": [
         [
@@ -6393,7 +6344,7 @@
       ]
     },
     {
-      "code": 128,
+      "code": 126,
       "name": "unconnected-(J2-Pin_33-Pad33)",
       "nodes": [
         [
@@ -6403,7 +6354,7 @@
       ]
     },
     {
-      "code": 129,
+      "code": 127,
       "name": "unconnected-(J2-Pin_36-Pad36)",
       "nodes": [
         [
@@ -6413,7 +6364,7 @@
       ]
     },
     {
-      "code": 130,
+      "code": 128,
       "name": "unconnected-(J2-Pin_37-Pad37)",
       "nodes": [
         [
@@ -6423,7 +6374,7 @@
       ]
     },
     {
-      "code": 131,
+      "code": 129,
       "name": "unconnected-(J2-Pin_38-Pad38)",
       "nodes": [
         [
@@ -6433,7 +6384,7 @@
       ]
     },
     {
-      "code": 132,
+      "code": 130,
       "name": "unconnected-(J2-Pin_40-Pad40)",
       "nodes": [
         [
@@ -6443,7 +6394,7 @@
       ]
     },
     {
-      "code": 133,
+      "code": 131,
       "name": "unconnected-(J3-SBU1-PadA8)",
       "nodes": [
         [
@@ -6453,7 +6404,7 @@
       ]
     },
     {
-      "code": 134,
+      "code": 132,
       "name": "unconnected-(J3-SBU2-PadB8)",
       "nodes": [
         [
@@ -6463,7 +6414,7 @@
       ]
     },
     {
-      "code": 135,
+      "code": 133,
       "name": "unconnected-(K1-NC1-Pad2)",
       "nodes": [
         [
@@ -6473,7 +6424,7 @@
       ]
     },
     {
-      "code": 136,
+      "code": 134,
       "name": "unconnected-(K1-NC2-Pad7)",
       "nodes": [
         [
@@ -6483,7 +6434,17 @@
       ]
     },
     {
-      "code": 137,
+      "code": 135,
+      "name": "unconnected-(NTC1-Pad1)",
+      "nodes": [
+        [
+          "NTC1",
+          "1"
+        ]
+      ]
+    },
+    {
+      "code": 136,
       "name": "unconnected-(S3-NC-Pad3)",
       "nodes": [
         [
@@ -6493,7 +6454,7 @@
       ]
     },
     {
-      "code": 138,
+      "code": 137,
       "name": "unconnected-(S4-NC-Pad3)",
       "nodes": [
         [
@@ -6503,7 +6464,7 @@
       ]
     },
     {
-      "code": 139,
+      "code": 138,
       "name": "unconnected-(S5-NC-Pad3)",
       "nodes": [
         [
@@ -6513,7 +6474,7 @@
       ]
     },
     {
-      "code": 140,
+      "code": 139,
       "name": "unconnected-(S6-NC-Pad3)",
       "nodes": [
         [
@@ -6523,7 +6484,7 @@
       ]
     },
     {
-      "code": 141,
+      "code": 140,
       "name": "unconnected-(T1-FB_A-Pad2)",
       "nodes": [
         [
@@ -6533,7 +6494,7 @@
       ]
     },
     {
-      "code": 142,
+      "code": 141,
       "name": "unconnected-(T1-FB_B-Pad4)",
       "nodes": [
         [
@@ -6543,7 +6504,7 @@
       ]
     },
     {
-      "code": 143,
+      "code": 142,
       "name": "unconnected-(T1-PRI_CT-Pad3)",
       "nodes": [
         [
@@ -6553,7 +6514,7 @@
       ]
     },
     {
-      "code": 144,
+      "code": 143,
       "name": "unconnected-(U6-AIN3-Pad7)",
       "nodes": [
         [
@@ -6563,7 +6524,7 @@
       ]
     },
     {
-      "code": 145,
+      "code": 144,
       "name": "unconnected-(U6-ALERT{slash}RDY-Pad2)",
       "nodes": [
         [
@@ -6573,18 +6534,8 @@
       ]
     },
     {
-      "code": 146,
-      "name": "unconnected-(U7-FLIP-Pad6)",
-      "nodes": [
-        [
-          "U7",
-          "6"
-        ]
-      ]
-    },
-    {
-      "code": 147,
-      "name": "unconnected-(U7-GPIO-Pad7)",
+      "code": 145,
+      "name": "unconnected-(U7-EN_HVDCP-Pad7)",
       "nodes": [
         [
           "U7",
@@ -6593,68 +6544,18 @@
       ]
     },
     {
-      "code": 148,
-      "name": "unconnected-(U7-INT-Pad9)",
+      "code": 146,
+      "name": "unconnected-(U7-FAULT-Pad13)",
       "nodes": [
         [
           "U7",
-          "9"
+          "13"
         ]
       ]
     },
     {
-      "code": 149,
-      "name": "unconnected-(U7-LED-Pad8)",
-      "nodes": [
-        [
-          "U7",
-          "8"
-        ]
-      ]
-    },
-    {
-      "code": 150,
-      "name": "unconnected-(U7-NC-Pad2)",
-      "nodes": [
-        [
-          "U7",
-          "2"
-        ]
-      ]
-    },
-    {
-      "code": 151,
-      "name": "unconnected-(U7-NC-Pad10)",
-      "nodes": [
-        [
-          "U7",
-          "10"
-        ]
-      ]
-    },
-    {
-      "code": 152,
-      "name": "unconnected-(U7-NC-Pad14)",
-      "nodes": [
-        [
-          "U7",
-          "14"
-        ]
-      ]
-    },
-    {
-      "code": 153,
-      "name": "unconnected-(U7-NC-Pad21)",
-      "nodes": [
-        [
-          "U7",
-          "21"
-        ]
-      ]
-    },
-    {
-      "code": 154,
-      "name": "unconnected-(U7-VSEL-Pad11)",
+      "code": 147,
+      "name": "unconnected-(U7-INT_N-Pad11)",
       "nodes": [
         [
           "U7",
@@ -6663,7 +6564,7 @@
       ]
     },
     {
-      "code": 155,
+      "code": 148,
       "name": "unconnected-(U8-INT-Pad2)",
       "nodes": [
         [
@@ -6673,7 +6574,7 @@
       ]
     },
     {
-      "code": 156,
+      "code": 149,
       "name": "unconnected-(U8-NC-Pad4)",
       "nodes": [
         [
@@ -6683,7 +6584,7 @@
       ]
     },
     {
-      "code": 157,
+      "code": 150,
       "name": "unconnected-(U9-AUXOFF-Pad3)",
       "nodes": [
         [
@@ -6693,7 +6594,7 @@
       ]
     },
     {
-      "code": 158,
+      "code": 151,
       "name": "unconnected-(U9-FLT-Pad4)",
       "nodes": [
         [
@@ -6703,7 +6604,7 @@
       ]
     },
     {
-      "code": 159,
+      "code": 152,
       "name": "unconnected-(U9-ITIMER-Pad10)",
       "nodes": [
         [
@@ -6713,7 +6614,7 @@
       ]
     },
     {
-      "code": 160,
+      "code": 153,
       "name": "unconnected-(U10-NC-Pad4)",
       "nodes": [
         [

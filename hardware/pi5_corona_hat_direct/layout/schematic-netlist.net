@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/uge/Development/ew-1/hardware/pi5_corona_hat_direct/pi5_corona_hv.kicad_sch")
-		(date "2026-10-04T19:56:26")
+		(date "2026-10-10T21:55:28")
 		(tool "Eeschema 10.0.6-10.0.6~ubuntu26.04.1")
 		(textvar
 			(name "PROJECT_NAME") "Raspberry Pi 5 HAT USB-C PD Corona Supply")
@@ -211,7 +211,7 @@
 			(title_block
 				(title "03 6-Stage Positive Cockcroft-Walton Multiplier & Bleeders")
 				(company "Antigravity Engineering")
-				(rev "K")
+				(rev "G")
 				(date "2026-10-03")
 				(source "03_multiplier.kicad_sch")
 				(comment
@@ -659,19 +659,19 @@
 		)
 		(comp
 			(ref "C18")
-			(value "100nF 10%")
+			(value "1uF 16V 10%")
 			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(datasheet "https://jlcpcb.com/partdetail/C14663")
-			(description "Unpolarized capacitor, small symbol")
+			(description "Capacitor, 1uF 16V 10% 0603 X5R for HUSB238A VDD bypass")
 			(fields
 				(field
-					(name "LCSC") "C14663")
+					(name "LCSC") "C15849")
 				(field
-					(name "JLCPCB Part #") "C14663")
+					(name "JLCPCB Part #") "C15849")
 				(field
-					(name "Manufacturer") "YAGEO")
+					(name "Manufacturer") "SAMSUNG")
 				(field
-					(name "MPN") "CC0603KRX7R9BB104")
+					(name "MPN") "CL10A105KA8NNNC")
 				(field
 					(name "JLCPCB Library") "Basic")
 				(field
@@ -680,19 +680,19 @@
 					(name "Procurement Notes")
 				)
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C14663")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C15849")
 				(field
 					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "smtWeld")
 				(field
-					(name "LCSC Part") "C14663")
+					(name "LCSC Part") "C15849")
 				(field
 					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet") "https://jlcpcb.com/partdetail/C14663")
 				(field
-					(name "Description") "Unpolarized capacitor, small symbol")
+					(name "Description") "Capacitor, 1uF 16V 10% 0603 X5R for HUSB238A VDD bypass")
 			)
 			(libsource
 				(lib "Device")
@@ -701,19 +701,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C14663")
+				(value "C15849")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C14663")
+				(value "C15849")
 			)
 			(property
 				(name "Manufacturer")
-				(value "YAGEO")
+				(value "SAMSUNG")
 			)
 			(property
 				(name "MPN")
-				(value "CC0603KRX7R9BB104")
+				(value "CL10A105KA8NNNC")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -729,7 +729,7 @@
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C14663")
+				(value "https://jlcpcb.com/partdetail/C15849")
 			)
 			(property
 				(name "Catalog Checked")
@@ -741,7 +741,7 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C14663")
+				(value "C15849")
 			)
 			(property
 				(name "Sheetname")
@@ -764,248 +764,6 @@
 				(tstamps "/1709378f-a8a2-4798-b42d-99352f87d149/")
 			)
 			(tstamps "eadbe6f4-2abc-4675-81f7-984adf77948c")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C19")
-			(value "1uF 16V 10%")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C5199872")
-			(description "Unpolarized capacitor, small symbol")
-			(fields
-				(field
-					(name "LCSC") "C5199872")
-				(field
-					(name "JLCPCB Part #") "C5199872")
-				(field
-					(name "Manufacturer") "Samsung Electro-Mechanics")
-				(field
-					(name "MPN") "CL10B105KB8NQNC")
-				(field
-					(name "JLCPCB Library") "Extended")
-				(field
-					(name "Procurement Status") "CATALOG_MATCH")
-				(field
-					(name "Procurement Notes")
-				)
-				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C5199872")
-				(field
-					(name "Catalog Checked") "2026-10-02")
-				(field
-					(name "Assembly Process") "smtWeld")
-				(field
-					(name "LCSC Part") "C5199872")
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C5199872")
-				(field
-					(name "Description") "Unpolarized capacitor, small symbol")
-			)
-			(libsource
-				(lib "Device")
-				(part "C_Small")
-				(description "Unpolarized capacitor, small symbol")
-			)
-			(property
-				(name "LCSC")
-				(value "C5199872")
-			)
-			(property
-				(name "JLCPCB Part #")
-				(value "C5199872")
-			)
-			(property
-				(name "Manufacturer")
-				(value "Samsung Electro-Mechanics")
-			)
-			(property
-				(name "MPN")
-				(value "CL10B105KB8NQNC")
-			)
-			(property
-				(name "JLCPCB Library")
-				(value "Extended")
-			)
-			(property
-				(name "Procurement Status")
-				(value "CATALOG_MATCH")
-			)
-			(property
-				(name "Procurement Notes")
-				(value "")
-			)
-			(property
-				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C5199872")
-			)
-			(property
-				(name "Catalog Checked")
-				(value "2026-10-02")
-			)
-			(property
-				(name "Assembly Process")
-				(value "smtWeld")
-			)
-			(property
-				(name "LCSC Part")
-				(value "C5199872")
-			)
-			(property
-				(name "Sheetname")
-				(value "01_power_mcu")
-			)
-			(property
-				(name "Sheetfile")
-				(value "01_power_mcu.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "capacitor cap")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/01_power_mcu/")
-				(tstamps "/1709378f-a8a2-4798-b42d-99352f87d149/")
-			)
-			(tstamps "8b78c2a0-9975-4f9c-a94a-4426fbc0e344")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C20")
-			(value "100nF 10%")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C14663")
-			(description "Unpolarized capacitor, small symbol")
-			(fields
-				(field
-					(name "LCSC") "C14663")
-				(field
-					(name "JLCPCB Part #") "C14663")
-				(field
-					(name "Manufacturer") "YAGEO")
-				(field
-					(name "MPN") "CC0603KRX7R9BB104")
-				(field
-					(name "JLCPCB Library") "Basic")
-				(field
-					(name "Procurement Status") "CATALOG_MATCH")
-				(field
-					(name "Procurement Notes")
-				)
-				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C14663")
-				(field
-					(name "Catalog Checked") "2026-10-02")
-				(field
-					(name "Assembly Process") "smtWeld")
-				(field
-					(name "LCSC Part") "C14663")
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C14663")
-				(field
-					(name "Description") "Unpolarized capacitor, small symbol")
-			)
-			(libsource
-				(lib "Device")
-				(part "C_Small")
-				(description "Unpolarized capacitor, small symbol")
-			)
-			(property
-				(name "LCSC")
-				(value "C14663")
-			)
-			(property
-				(name "JLCPCB Part #")
-				(value "C14663")
-			)
-			(property
-				(name "Manufacturer")
-				(value "YAGEO")
-			)
-			(property
-				(name "MPN")
-				(value "CC0603KRX7R9BB104")
-			)
-			(property
-				(name "JLCPCB Library")
-				(value "Basic")
-			)
-			(property
-				(name "Procurement Status")
-				(value "CATALOG_MATCH")
-			)
-			(property
-				(name "Procurement Notes")
-				(value "")
-			)
-			(property
-				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C14663")
-			)
-			(property
-				(name "Catalog Checked")
-				(value "2026-10-02")
-			)
-			(property
-				(name "Assembly Process")
-				(value "smtWeld")
-			)
-			(property
-				(name "LCSC Part")
-				(value "C14663")
-			)
-			(property
-				(name "Sheetname")
-				(value "01_power_mcu")
-			)
-			(property
-				(name "Sheetfile")
-				(value "01_power_mcu.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "capacitor cap")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/01_power_mcu/")
-				(tstamps "/1709378f-a8a2-4798-b42d-99352f87d149/")
-			)
-			(tstamps "154464fc-3f38-4753-a3b4-72cc88f9f2b6")
 			(units
 				(unit
 					(name "A")
@@ -2507,52 +2265,52 @@
 		)
 		(comp
 			(ref "Q1")
-			(value "AO4262E 60V")
+			(value "AO4407A")
 			(footprint "Package_SO:SO-8_3.9x4.9mm_P1.27mm")
-			(datasheet "https://jlcpcb.com/partdetail/C431178")
-			(description "N-MOSFET transistor, gate/drain/source")
+			(datasheet "https://jlcpcb.com/partdetail/C16072")
+			(description "P-MOSFET transistor, -30V, -12A, SO-8")
 			(fields
 				(field
-					(name "LCSC") "C431178")
+					(name "LCSC") "C16072")
 				(field
-					(name "JLCPCB Part #") "C431178")
+					(name "JLCPCB Part #") "C16072")
 				(field
 					(name "Manufacturer") "Alpha & Omega Semicon")
 				(field
-					(name "MPN") "AO4262E")
+					(name "MPN") "AO4407A")
 				(field
-					(name "JLCPCB Library") "Extended")
+					(name "JLCPCB Library") "Basic")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "AO4262E: G=4, D=5/6/7/8 on VBUS_IN, S=1/2/3 on VIN_PD. Native symbol corrected; no functional net change.")
+					(name "Procurement Notes") "AO4407A P-MOSFET: S=1/2/3 on VBUS_IN, G=4 on GATE, D=5/6/7/8 on VIN_PD.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C431178")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C16072")
 				(field
-					(name "Catalog Checked") "2026-10-02")
+					(name "Catalog Checked") "2026-10-10")
 				(field
 					(name "Assembly Process") "smtWeld")
 				(field
-					(name "LCSC Part") "C431178")
+					(name "LCSC Part") "C16072")
 				(field
 					(name "Footprint") "Package_SO:SO-8_3.9x4.9mm_P1.27mm")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C431178")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C16072")
 				(field
-					(name "Description") "N-MOSFET transistor, gate/drain/source")
+					(name "Description") "P-MOSFET transistor, -30V, -12A, SO-8")
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "AO4262E")
-				(description "N-MOSFET transistor, gate/drain/source")
+				(part "AO4407A")
+				(description "P-MOSFET transistor, -30V, -12A, SO-8")
 			)
 			(property
 				(name "LCSC")
-				(value "C431178")
+				(value "C16072")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C431178")
+				(value "C16072")
 			)
 			(property
 				(name "Manufacturer")
@@ -2560,11 +2318,11 @@
 			)
 			(property
 				(name "MPN")
-				(value "AO4262E")
+				(value "AO4407A")
 			)
 			(property
 				(name "JLCPCB Library")
-				(value "Extended")
+				(value "Basic")
 			)
 			(property
 				(name "Procurement Status")
@@ -2572,15 +2330,15 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "AO4262E: G=4, D=5/6/7/8 on VBUS_IN, S=1/2/3 on VIN_PD. Native symbol corrected; no functional net change.")
+				(value "AO4407A P-MOSFET: S=1/2/3 on VBUS_IN, G=4 on GATE, D=5/6/7/8 on VIN_PD.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C431178")
+				(value "https://jlcpcb.com/partdetail/C16072")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-02")
+				(value "2026-10-10")
 			)
 			(property
 				(name "Assembly Process")
@@ -2588,7 +2346,7 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C431178")
+				(value "C16072")
 			)
 			(property
 				(name "Sheetname")
@@ -2597,10 +2355,6 @@
 			(property
 				(name "Sheetfile")
 				(value "01_power_mcu.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "transistor NMOS N-MOS N-MOSFET")
 			)
 			(sheetpath
 				(names "/01_power_mcu/")
@@ -2615,6 +2369,15 @@
 							(num "4")
 						)
 						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
 							(num "5")
 						)
 						(pin
@@ -2625,15 +2388,6 @@
 						)
 						(pin
 							(num "8")
-						)
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-						(pin
-							(num "3")
 						)
 					)
 				)
@@ -2883,10 +2637,10 @@
 		)
 		(comp
 			(ref "R12")
-			(value "100k")
+			(value "100k 1%")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(datasheet "https://jlcpcb.com/partdetail/C25803")
-			(description "Resistor")
+			(description "Resistor, 100k 1% 0603 gate pull-up for P-MOSFET")
 			(fields
 				(field
 					(name "LCSC") "C25803")
@@ -2916,7 +2670,7 @@
 				(field
 					(name "Datasheet") "https://jlcpcb.com/partdetail/C25803")
 				(field
-					(name "Description") "Resistor")
+					(name "Description") "Resistor, 100k 1% 0603 gate pull-up for P-MOSFET")
 			)
 			(libsource
 				(lib "Device")
@@ -3125,19 +2879,19 @@
 		)
 		(comp
 			(ref "R14")
-			(value "6.2k")
+			(value "47k 1%")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(datasheet "https://jlcpcb.com/partdetail/C4260")
-			(description "Resistor")
+			(description "Resistor, 47k 1% 0603 gate pull-down series resistor for P-MOSFET")
 			(fields
 				(field
-					(name "LCSC") "C4260")
+					(name "LCSC") "C25816")
 				(field
-					(name "JLCPCB Part #") "C4260")
+					(name "JLCPCB Part #") "C25816")
 				(field
 					(name "Manufacturer") "UNI-ROYAL(Uniroyal Elec)")
 				(field
-					(name "MPN") "0603WAF6201T5E")
+					(name "MPN") "0603WAF4702T5E")
 				(field
 					(name "JLCPCB Library") "Basic")
 				(field
@@ -3146,19 +2900,19 @@
 					(name "Procurement Notes")
 				)
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C4260")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C25816")
 				(field
 					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "smtWeld")
 				(field
-					(name "LCSC Part") "C4260")
+					(name "LCSC Part") "C25816")
 				(field
 					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
 				(field
 					(name "Datasheet") "https://jlcpcb.com/partdetail/C4260")
 				(field
-					(name "Description") "Resistor")
+					(name "Description") "Resistor, 47k 1% 0603 gate pull-down series resistor for P-MOSFET")
 			)
 			(libsource
 				(lib "Device")
@@ -3167,11 +2921,11 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C4260")
+				(value "C25816")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C4260")
+				(value "C25816")
 			)
 			(property
 				(name "Manufacturer")
@@ -3179,7 +2933,7 @@
 			)
 			(property
 				(name "MPN")
-				(value "0603WAF6201T5E")
+				(value "0603WAF4702T5E")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -3195,7 +2949,7 @@
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C4260")
+				(value "https://jlcpcb.com/partdetail/C25816")
 			)
 			(property
 				(name "Catalog Checked")
@@ -3207,7 +2961,7 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C4260")
+				(value "C25816")
 			)
 			(property
 				(name "Sheetname")
@@ -3230,6 +2984,248 @@
 				(tstamps "/1709378f-a8a2-4798-b42d-99352f87d149/")
 			)
 			(tstamps "436cf7f5-c2bc-4182-9b73-f900d4256869")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R15")
+			(value "1M 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(datasheet "https://jlcpcb.com/partdetail/C5199872")
+			(description "Resistor, 1M 1% 0603 for HUSB238A ADDR (sets address 0x42)")
+			(fields
+				(field
+					(name "LCSC") "C22935")
+				(field
+					(name "JLCPCB Part #") "C22935")
+				(field
+					(name "Manufacturer") "UNI-ROYAL(Uniroyal Elec)")
+				(field
+					(name "MPN") "0603WAF1004T5E")
+				(field
+					(name "JLCPCB Library") "Extended")
+				(field
+					(name "Procurement Status") "CATALOG_MATCH")
+				(field
+					(name "Procurement Notes")
+				)
+				(field
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C22935")
+				(field
+					(name "Catalog Checked") "2026-10-02")
+				(field
+					(name "Assembly Process") "smtWeld")
+				(field
+					(name "LCSC Part") "C22935")
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C5199872")
+				(field
+					(name "Description") "Resistor, 1M 1% 0603 for HUSB238A ADDR (sets address 0x42)")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "LCSC")
+				(value "C22935")
+			)
+			(property
+				(name "JLCPCB Part #")
+				(value "C22935")
+			)
+			(property
+				(name "Manufacturer")
+				(value "UNI-ROYAL(Uniroyal Elec)")
+			)
+			(property
+				(name "MPN")
+				(value "0603WAF1004T5E")
+			)
+			(property
+				(name "JLCPCB Library")
+				(value "Extended")
+			)
+			(property
+				(name "Procurement Status")
+				(value "CATALOG_MATCH")
+			)
+			(property
+				(name "Procurement Notes")
+				(value "")
+			)
+			(property
+				(name "Catalog URL")
+				(value "https://jlcpcb.com/partdetail/C22935")
+			)
+			(property
+				(name "Catalog Checked")
+				(value "2026-10-02")
+			)
+			(property
+				(name "Assembly Process")
+				(value "smtWeld")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C22935")
+			)
+			(property
+				(name "Sheetname")
+				(value "01_power_mcu")
+			)
+			(property
+				(name "Sheetfile")
+				(value "01_power_mcu.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/01_power_mcu/")
+				(tstamps "/1709378f-a8a2-4798-b42d-99352f87d149/")
+			)
+			(tstamps "8b78c2a0-9975-4f9c-a94a-4426fbc0e344")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R16")
+			(value "1M 1%")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(datasheet "https://jlcpcb.com/partdetail/C14663")
+			(description "Resistor, 1M 1% 0603 for HUSB238A DEBUG_N pulldown")
+			(fields
+				(field
+					(name "LCSC") "C22935")
+				(field
+					(name "JLCPCB Part #") "C22935")
+				(field
+					(name "Manufacturer") "UNI-ROYAL(Uniroyal Elec)")
+				(field
+					(name "MPN") "0603WAF1004T5E")
+				(field
+					(name "JLCPCB Library") "Basic")
+				(field
+					(name "Procurement Status") "CATALOG_MATCH")
+				(field
+					(name "Procurement Notes")
+				)
+				(field
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C22935")
+				(field
+					(name "Catalog Checked") "2026-10-02")
+				(field
+					(name "Assembly Process") "smtWeld")
+				(field
+					(name "LCSC Part") "C22935")
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C14663")
+				(field
+					(name "Description") "Resistor, 1M 1% 0603 for HUSB238A DEBUG_N pulldown")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "LCSC")
+				(value "C22935")
+			)
+			(property
+				(name "JLCPCB Part #")
+				(value "C22935")
+			)
+			(property
+				(name "Manufacturer")
+				(value "UNI-ROYAL(Uniroyal Elec)")
+			)
+			(property
+				(name "MPN")
+				(value "0603WAF1004T5E")
+			)
+			(property
+				(name "JLCPCB Library")
+				(value "Basic")
+			)
+			(property
+				(name "Procurement Status")
+				(value "CATALOG_MATCH")
+			)
+			(property
+				(name "Procurement Notes")
+				(value "")
+			)
+			(property
+				(name "Catalog URL")
+				(value "https://jlcpcb.com/partdetail/C22935")
+			)
+			(property
+				(name "Catalog Checked")
+				(value "2026-10-02")
+			)
+			(property
+				(name "Assembly Process")
+				(value "smtWeld")
+			)
+			(property
+				(name "LCSC Part")
+				(value "C22935")
+			)
+			(property
+				(name "Sheetname")
+				(value "01_power_mcu")
+			)
+			(property
+				(name "Sheetfile")
+				(value "01_power_mcu.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/01_power_mcu/")
+				(tstamps "/1709378f-a8a2-4798-b42d-99352f87d149/")
+			)
+			(tstamps "154464fc-3f38-4753-a3b4-72cc88f9f2b6")
 			(units
 				(unit
 					(name "A")
@@ -4013,60 +4009,60 @@
 		)
 		(comp
 			(ref "U7")
-			(value "AP33772S")
-			(footprint "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm")
-			(datasheet "https://jlcpcb.com/partdetail/C24374260")
+			(value "HUSB238A-BB001-QN16R")
+			(footprint "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm")
+			(datasheet "https://www.lcsc.com/datasheet/C24833806.pdf")
+			(description "USB PD Sink Controller with PPS support, QFN-16")
 			(fields
 				(field
-					(name "LCSC") "C24374260")
+					(name "LCSC") "C24833806")
 				(field
-					(name "JLCPCB Part #") "C24374260")
+					(name "JLCPCB Part #") "C24833806")
 				(field
-					(name "Manufacturer") "Diodes Incorporated")
+					(name "Manufacturer") "Hynetek(慧能泰)")
 				(field
-					(name "MPN") "AP33772SDKZ-13-FA01")
+					(name "MPN") "HUSB238A-BB001-QN16R")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "FA01 firmware ordering variant; verify against host driver and required startup profile. Stock snapshot only.")
+					(name "Procurement Notes") "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C24374260")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C24833806")
 				(field
-					(name "Catalog Checked") "2026-10-02")
+					(name "Catalog Checked") "2026-10-10")
 				(field
 					(name "Assembly Process") "smtWeld")
 				(field
-					(name "LCSC Part") "C24374260")
+					(name "LCSC Part") "C24833806")
 				(field
-					(name "Footprint") "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm")
+					(name "Footprint") "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C24374260")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C24833806.pdf")
 				(field
-					(name "Description")
-				)
+					(name "Description") "USB PD Sink Controller with PPS support, QFN-16")
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "AP33772S_PD24")
-				(description "")
+				(part "HUSB238A-BB001-QN16R")
+				(description "USB PD Sink Controller with PPS support, QFN-16")
 			)
 			(property
 				(name "LCSC")
-				(value "C24374260")
+				(value "C24833806")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C24374260")
+				(value "C24833806")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Diodes Incorporated")
+				(value "Hynetek(慧能泰)")
 			)
 			(property
 				(name "MPN")
-				(value "AP33772SDKZ-13-FA01")
+				(value "HUSB238A-BB001-QN16R")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -4078,15 +4074,15 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "FA01 firmware ordering variant; verify against host driver and required startup profile. Stock snapshot only.")
+				(value "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C24374260")
+				(value "https://jlcpcb.com/partdetail/C24833806")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-02")
+				(value "2026-10-10")
 			)
 			(property
 				(name "Assembly Process")
@@ -4094,7 +4090,7 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C24374260")
+				(value "C24833806")
 			)
 			(property
 				(name "Sheetname")
@@ -4114,52 +4110,13 @@
 					(name "A")
 					(pins
 						(pin
-							(num "1")
+							(num "14")
 						)
 						(pin
-							(num "2")
-						)
-						(pin
-							(num "25")
-						)
-						(pin
-							(num "3")
-						)
-						(pin
-							(num "4")
-						)
-						(pin
-							(num "5")
-						)
-						(pin
-							(num "11")
-						)
-						(pin
-							(num "13")
-						)
-						(pin
-							(num "15")
-						)
-						(pin
-							(num "16")
+							(num "12")
 						)
 						(pin
 							(num "17")
-						)
-						(pin
-							(num "18")
-						)
-						(pin
-							(num "19")
-						)
-						(pin
-							(num "6")
-						)
-						(pin
-							(num "7")
-						)
-						(pin
-							(num "8")
 						)
 						(pin
 							(num "9")
@@ -4168,25 +4125,40 @@
 							(num "10")
 						)
 						(pin
-							(num "12")
+							(num "4")
 						)
 						(pin
-							(num "14")
+							(num "3")
 						)
 						(pin
-							(num "20")
+							(num "2")
 						)
 						(pin
-							(num "21")
+							(num "1")
 						)
 						(pin
-							(num "22")
+							(num "13")
 						)
 						(pin
-							(num "23")
+							(num "11")
 						)
 						(pin
-							(num "24")
+							(num "7")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
 						)
 					)
 				)
@@ -7278,28 +7250,28 @@
 		)
 		(comp
 			(ref "C82")
-			(value "2.2uF 16V X7R")
+			(value "2.2uF 50V X5R")
 			(footprint "Capacitor_SMD:C_0805_2012Metric")
-			(datasheet "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf")
+			(datasheet "https://jlcpcb.com/partdetail/C377773")
 			(fields
 				(field
-					(name "LCSC") "C380348")
+					(name "LCSC") "C377773")
 				(field
-					(name "LCSC Part") "C380348")
+					(name "LCSC Part") "C377773")
 				(field
-					(name "JLCPCB Part #") "C380348")
+					(name "JLCPCB Part #") "C377773")
 				(field
-					(name "Manufacturer") "CCTC")
+					(name "Manufacturer") "Samsung Electro-Mechanics")
 				(field
-					(name "MPN") "TCC0805X7R225K160FT")
+					(name "MPN") "CL21A225KBQNNNE")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "2.2uF16V X7R10%,Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.")
+					(name "Procurement Notes") "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C380348")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C377773")
 				(field
-					(name "JLCPCB Library") "Extended")
+					(name "JLCPCB Library") "Basic")
 				(field
 					(name "Assembly Process") "smtWeld")
 				(field
@@ -7307,7 +7279,7 @@
 				(field
 					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
 				(field
-					(name "Datasheet") "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C377773")
 				(field
 					(name "Description")
 				)
@@ -7319,23 +7291,23 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C380348")
+				(value "C377773")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C380348")
+				(value "C377773")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C380348")
+				(value "C377773")
 			)
 			(property
 				(name "Manufacturer")
-				(value "CCTC")
+				(value "Samsung Electro-Mechanics")
 			)
 			(property
 				(name "MPN")
-				(value "TCC0805X7R225K160FT")
+				(value "CL21A225KBQNNNE")
 			)
 			(property
 				(name "Procurement Status")
@@ -7343,15 +7315,15 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "2.2uF16V X7R10%,Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.")
+				(value "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Pi rail only; no USB-PD capacitance increase. Verify effective capacitance >=0.5uF on COIL_3V.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C380348")
+				(value "https://jlcpcb.com/partdetail/C377773")
 			)
 			(property
 				(name "JLCPCB Library")
-				(value "Extended")
+				(value "Basic")
 			)
 			(property
 				(name "Assembly Process")
@@ -7398,28 +7370,28 @@
 		)
 		(comp
 			(ref "C83")
-			(value "2.2uF 16V X7R")
+			(value "2.2uF 50V X5R")
 			(footprint "Capacitor_SMD:C_0805_2012Metric")
-			(datasheet "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf")
+			(datasheet "https://jlcpcb.com/partdetail/C377773")
 			(fields
 				(field
-					(name "LCSC") "C380348")
+					(name "LCSC") "C377773")
 				(field
-					(name "LCSC Part") "C380348")
+					(name "LCSC Part") "C377773")
 				(field
-					(name "JLCPCB Part #") "C380348")
+					(name "JLCPCB Part #") "C377773")
 				(field
-					(name "Manufacturer") "CCTC")
+					(name "Manufacturer") "Samsung Electro-Mechanics")
 				(field
-					(name "MPN") "TCC0805X7R225K160FT")
+					(name "MPN") "CL21A225KBQNNNE")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "2.2uF16V X7R10%,coil regulator output; preserve >=0.5uF effective capacitance at3V.")
+					(name "Procurement Notes") "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Coil regulator output; preserve >=0.5uF effective capacitance at 3V.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/C380348")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C377773")
 				(field
-					(name "JLCPCB Library") "Extended")
+					(name "JLCPCB Library") "Basic")
 				(field
 					(name "Assembly Process") "smtWeld")
 				(field
@@ -7427,7 +7399,7 @@
 				(field
 					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
 				(field
-					(name "Datasheet") "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_CCTC-TCC0805X7R225K160FT_C380348.pdf")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C377773")
 				(field
 					(name "Description")
 				)
@@ -7439,23 +7411,23 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C380348")
+				(value "C377773")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C380348")
+				(value "C377773")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C380348")
+				(value "C377773")
 			)
 			(property
 				(name "Manufacturer")
-				(value "CCTC")
+				(value "Samsung Electro-Mechanics")
 			)
 			(property
 				(name "MPN")
-				(value "TCC0805X7R225K160FT")
+				(value "CL21A225KBQNNNE")
 			)
 			(property
 				(name "Procurement Status")
@@ -7463,15 +7435,15 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "2.2uF16V X7R10%,coil regulator output; preserve >=0.5uF effective capacitance at3V.")
+				(value "Samsung 2.2uF 50V X5R 10% 0805, JLCPCB Basic Library part. Coil regulator output; preserve >=0.5uF effective capacitance at 3V.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/C380348")
+				(value "https://jlcpcb.com/partdetail/C377773")
 			)
 			(property
 				(name "JLCPCB Library")
-				(value "Extended")
+				(value "Basic")
 			)
 			(property
 				(name "Assembly Process")
@@ -12983,18 +12955,21 @@
 			(ref "C100")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13010,7 +12985,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13022,23 +12997,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13099,18 +13074,21 @@
 			(ref "C101")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13126,7 +13104,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13138,23 +13116,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13215,18 +13193,21 @@
 			(ref "C102")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13242,7 +13223,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13254,23 +13235,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13331,18 +13312,21 @@
 			(ref "C103")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13358,7 +13342,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13370,23 +13354,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13447,18 +13431,21 @@
 			(ref "C104")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13474,7 +13461,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13486,23 +13473,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13563,18 +13550,21 @@
 			(ref "C105")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13590,7 +13580,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13602,23 +13592,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13679,18 +13669,21 @@
 			(ref "C106")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13706,7 +13699,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13718,23 +13711,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13795,18 +13788,21 @@
 			(ref "C107")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13822,7 +13818,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13834,23 +13830,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -13911,18 +13907,21 @@
 			(ref "C108")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -13938,7 +13937,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -13950,23 +13949,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14027,18 +14026,21 @@
 			(ref "C109")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -14054,7 +14056,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -14066,23 +14068,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14143,18 +14145,21 @@
 			(ref "C110")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -14170,7 +14175,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -14182,23 +14187,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14259,18 +14264,21 @@
 			(ref "C111")
 			(value "1nF 6kV")
 			(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
-			(datasheet "https://jlcpcb.com/partdetail/C1620009")
+			(datasheet "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 				(field
-					(name "LCSC") "C1620009")
+					(name "LCSC")
+				)
 				(field
-					(name "JLCPCB Part #") "C1620009")
+					(name "JLCPCB Part #")
+				)
 				(field
-					(name "Manufacturer") "Vishay Intertech")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
@@ -14286,7 +14294,7 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C1620009")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
@@ -14298,23 +14306,23 @@
 			)
 			(property
 				(name "LCSC Part")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "LCSC")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C1620009")
+				(value "")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Vishay Intertech")
+				(value "Generic / STE / JEC")
 			)
 			(property
 				(name "MPN")
-				(value "S102M59Z5UU83L0R")
+				(value "CT81-6KV-Y5P-102K")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14373,68 +14381,64 @@
 		)
 		(comp
 			(ref "D10")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14446,27 +14450,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -14501,68 +14497,64 @@
 		)
 		(comp
 			(ref "D11")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14574,27 +14566,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -14629,68 +14613,64 @@
 		)
 		(comp
 			(ref "D12")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14702,27 +14682,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -14757,68 +14729,64 @@
 		)
 		(comp
 			(ref "D13")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14830,27 +14798,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -14885,68 +14845,64 @@
 		)
 		(comp
 			(ref "D14")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -14958,27 +14914,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15013,68 +14961,64 @@
 		)
 		(comp
 			(ref "D15")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15086,27 +15030,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15141,68 +15077,64 @@
 		)
 		(comp
 			(ref "D16")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15214,27 +15146,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15269,68 +15193,64 @@
 		)
 		(comp
 			(ref "D17")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15342,27 +15262,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15397,68 +15309,64 @@
 		)
 		(comp
 			(ref "D18")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15470,27 +15378,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15525,68 +15425,64 @@
 		)
 		(comp
 			(ref "D19")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15598,27 +15494,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15653,68 +15541,64 @@
 		)
 		(comp
 			(ref "D20")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15726,27 +15610,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15781,68 +15657,64 @@
 		)
 		(comp
 			(ref "D21")
-			(value "2CL75")
-			(footprint "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-			(datasheet "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+			(value "HVM12")
+			(footprint "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+			(datasheet "https://jlcpcb.com/partdetail/C7436450")
 			(fields
 				(field
-					(name "LCSC Part") "C424512")
+					(name "LCSC Part") "C7436450")
 				(field
-					(name "MPN") "2CL75")
+					(name "MPN") "HVM12")
 				(field
-					(name "LCSC") "C424512")
+					(name "LCSC") "C7436450")
 				(field
-					(name "JLCPCB Part #") "C424512")
+					(name "JLCPCB Part #") "C7436450")
 				(field
-					(name "Manufacturer") "SUNMATE Elec")
+					(name "Manufacturer") "YFW")
 				(field
 					(name "JLCPCB Library") "Extended")
 				(field
 					(name "Procurement Status") "CATALOG_MATCH")
 				(field
-					(name "Procurement Notes") "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+					(name "Procurement Notes") "12kV HVM12, DO-722; THT/manual assembly.")
 				(field
-					(name "Catalog URL") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Catalog URL") "https://jlcpcb.com/partdetail/C7436450")
 				(field
-					(name "Catalog Checked") "2026-10-03")
+					(name "Catalog Checked") "2026-10-02")
 				(field
 					(name "Assembly Process") "manualWeld")
 				(field
-					(name "Reverse Recovery") "100 ns max at 25 C")
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
 				(field
-					(name "Junction Capacitance") "1 pF at 0 V, 1 MHz")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C7436450")
 				(field
 					(name "Description")
 				)
 			)
 			(libsource
 				(lib "ionic_thrust_hv")
-				(part "Sunmate_2CL75")
+				(part "HVM12")
 				(description "")
 			)
 			(property
 				(name "LCSC Part")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "MPN")
-				(value "2CL75")
+				(value "HVM12")
 			)
 			(property
 				(name "LCSC")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "JLCPCB Part #")
-				(value "C424512")
+				(value "C7436450")
 			)
 			(property
 				(name "Manufacturer")
-				(value "SUNMATE Elec")
+				(value "YFW")
 			)
 			(property
 				(name "JLCPCB Library")
@@ -15854,27 +15726,19 @@
 			)
 			(property
 				(name "Procurement Notes")
-				(value "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.")
+				(value "12kV HVM12, DO-722; THT/manual assembly.")
 			)
 			(property
 				(name "Catalog URL")
-				(value "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512")
+				(value "https://jlcpcb.com/partdetail/C7436450")
 			)
 			(property
 				(name "Catalog Checked")
-				(value "2026-10-03")
+				(value "2026-10-02")
 			)
 			(property
 				(name "Assembly Process")
 				(value "manualWeld")
-			)
-			(property
-				(name "Reverse Recovery")
-				(value "100 ns max at 25 C")
-			)
-			(property
-				(name "Junction Capacitance")
-				(value "1 pF at 0 V, 1 MHz")
 			)
 			(property
 				(name "Sheetname")
@@ -15911,7 +15775,7 @@
 			(ref "R140")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -15938,7 +15802,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16023,7 +15887,7 @@
 			(ref "R141")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16050,7 +15914,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16135,7 +15999,7 @@
 			(ref "R142")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16162,7 +16026,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16247,7 +16111,7 @@
 			(ref "R143")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16274,7 +16138,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16359,7 +16223,7 @@
 			(ref "R144")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16386,7 +16250,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16471,7 +16335,7 @@
 			(ref "R145")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16498,7 +16362,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16583,7 +16447,7 @@
 			(ref "R146")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16610,7 +16474,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16695,7 +16559,7 @@
 			(ref "R147")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16722,7 +16586,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16807,7 +16671,7 @@
 			(ref "R148")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16834,7 +16698,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -16919,7 +16783,7 @@
 			(ref "R149")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -16946,7 +16810,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17031,7 +16895,7 @@
 			(ref "R150")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17058,7 +16922,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17143,7 +17007,7 @@
 			(ref "R151")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17170,7 +17034,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17255,7 +17119,7 @@
 			(ref "R152")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17282,7 +17146,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17367,7 +17231,7 @@
 			(ref "R153")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17394,7 +17258,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17479,7 +17343,7 @@
 			(ref "R154")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17506,7 +17370,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17591,7 +17455,7 @@
 			(ref "R155")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17618,7 +17482,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17703,7 +17567,7 @@
 			(ref "R156")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17730,7 +17594,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17815,7 +17679,7 @@
 			(ref "R157")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17842,7 +17706,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -17927,7 +17791,7 @@
 			(ref "R158")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -17954,7 +17818,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -18039,7 +17903,7 @@
 			(ref "R159")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -18066,7 +17930,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -18151,7 +18015,7 @@
 			(ref "R160")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -18178,7 +18042,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -18263,7 +18127,7 @@
 			(ref "R161")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -18290,7 +18154,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -18375,7 +18239,7 @@
 			(ref "R162")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -18402,7 +18266,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -18487,7 +18351,7 @@
 			(ref "R163")
 			(value "100M 3kV")
 			(footprint "Resistor_SMD:R_2512_6332Metric")
-			(datasheet "https://jlcpcb.com/partdetail/C2089706")
+			(datasheet "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 			(fields
 				(field
 					(name "LCSC Part") "C2089706")
@@ -18514,7 +18378,7 @@
 				(field
 					(name "Footprint") "Resistor_SMD:R_2512_6332Metric")
 				(field
-					(name "Datasheet") "https://jlcpcb.com/partdetail/C2089706")
+					(name "Datasheet") "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf")
 				(field
 					(name "Description")
 				)
@@ -19782,21 +19646,30 @@
 		)
 		(libpart
 			(lib "ionic_thrust_hv")
-			(part "AO4262E")
-			(description "N-MOSFET transistor, gate/drain/source")
+			(part "AO4407A")
+			(description "P-MOSFET transistor, -30V, -12A, SO-8")
+			(docs "https://jlcpcb.com/partdetail/C16072")
 			(fields
 				(field
 					(name "Reference") "Q")
 				(field
-					(name "Value") "Q_NMOS_GDS")
+					(name "Value") "AO4407A")
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Package_SO:SO-8_3.9x4.9mm_P1.27mm")
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://jlcpcb.com/partdetail/C16072")
 				(field
-					(name "Description") "N-MOSFET transistor, gate/drain/source")
+					(name "Description") "P-MOSFET transistor, -30V, -12A, SO-8")
+				(field
+					(name "LCSC") "C16072")
+				(field
+					(name "LCSC Part") "C16072")
+				(field
+					(name "JLCPCB Part #") "C16072")
+				(field
+					(name "Manufacturer") "Alpha & Omega Semicon")
+				(field
+					(name "MPN") "AO4407A")
 			)
 			(pins
 				(pin
@@ -19838,152 +19711,6 @@
 					(num "8")
 					(name "D")
 					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "ionic_thrust_hv")
-			(part "AP33772S_PD24")
-			(docs "https://www.diodes.com/datasheet/download/AP33772S.pdf")
-			(fields
-				(field
-					(name "Reference") "U")
-				(field
-					(name "Value") "AP33772S")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet") "https://www.diodes.com/datasheet/download/AP33772S.pdf")
-				(field
-					(name "Description")
-				)
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "ISENP")
-					(type "input")
-				)
-				(pin
-					(num "2")
-					(name "NC")
-					(type "no_connect")
-				)
-				(pin
-					(num "3")
-					(name "GND")
-					(type "power_in")
-				)
-				(pin
-					(num "4")
-					(name "SDA")
-					(type "bidirectional")
-				)
-				(pin
-					(num "5")
-					(name "SCL")
-					(type "input")
-				)
-				(pin
-					(num "6")
-					(name "FLIP")
-					(type "output")
-				)
-				(pin
-					(num "7")
-					(name "GPIO")
-					(type "bidirectional")
-				)
-				(pin
-					(num "8")
-					(name "LED")
-					(type "output")
-				)
-				(pin
-					(num "9")
-					(name "INT")
-					(type "output")
-				)
-				(pin
-					(num "10")
-					(name "NC")
-					(type "no_connect")
-				)
-				(pin
-					(num "11")
-					(name "VSEL")
-					(type "input")
-				)
-				(pin
-					(num "12")
-					(name "V18")
-					(type "power_out")
-				)
-				(pin
-					(num "13")
-					(name "OTP")
-					(type "passive")
-				)
-				(pin
-					(num "14")
-					(name "NC")
-					(type "no_connect")
-				)
-				(pin
-					(num "15")
-					(name "IFB")
-					(type "passive")
-				)
-				(pin
-					(num "16")
-					(name "CC2")
-					(type "bidirectional")
-				)
-				(pin
-					(num "17")
-					(name "CC1")
-					(type "bidirectional")
-				)
-				(pin
-					(num "18")
-					(name "DN")
-					(type "bidirectional")
-				)
-				(pin
-					(num "19")
-					(name "DP")
-					(type "bidirectional")
-				)
-				(pin
-					(num "20")
-					(name "V5V")
-					(type "power_out")
-				)
-				(pin
-					(num "21")
-					(name "NC")
-					(type "no_connect")
-				)
-				(pin
-					(num "22")
-					(name "VOUT")
-					(type "input")
-				)
-				(pin
-					(num "23")
-					(name "PWR_EN")
-					(type "output")
-				)
-				(pin
-					(num "24")
-					(name "VCC")
-					(type "power_in")
-				)
-				(pin
-					(num "25")
-					(name "GND")
-					(type "power_in")
 				)
 			)
 		)
@@ -20479,6 +20206,157 @@
 		)
 		(libpart
 			(lib "ionic_thrust_hv")
+			(part "HUSB238A-BB001-QN16R")
+			(description "USB PD Sink Controller with PPS support, QFN-16")
+			(docs "https://www.lcsc.com/datasheet/C24833806.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "HUSB238A-BB001-QN16R")
+				(field
+					(name "Footprint") "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C24833806.pdf")
+				(field
+					(name "Description") "USB PD Sink Controller with PPS support, QFN-16")
+				(field
+					(name "LCSC") "C24833806")
+				(field
+					(name "LCSC Part") "C24833806")
+				(field
+					(name "JLCPCB Part #") "C24833806")
+				(field
+					(name "Manufacturer") "Hynetek(慧能泰)")
+				(field
+					(name "MPN") "HUSB238A-BB001-QN16R")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "DP")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "DN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "CC1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "CC2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "DBG_N")
+					(type "output")
+				)
+				(pin
+					(num "7")
+					(name "EN_HVDCP")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "ADDR")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "11")
+					(name "INT_N")
+					(type "open_collector")
+				)
+				(pin
+					(num "12")
+					(name "EN_N")
+					(type "input")
+				)
+				(pin
+					(num "13")
+					(name "FAULT")
+					(type "output")
+				)
+				(pin
+					(num "14")
+					(name "FLGIN")
+					(type "input")
+				)
+				(pin
+					(num "15")
+					(name "GATE")
+					(type "open_collector")
+				)
+				(pin
+					(num "16")
+					(name "VBUS")
+					(type "power_in")
+				)
+				(pin
+					(num "17")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "ionic_thrust_hv")
+			(part "HVM12")
+			(docs "https://www.lcsc.com/datasheet/C7436450.pdf")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "HVM12")
+				(field
+					(name "Footprint") "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD")
+				(field
+					(name "Datasheet") "https://www.lcsc.com/datasheet/C7436450.pdf")
+				(field
+					(name "Description")
+				)
+				(field
+					(name "Manufacturer") "YFW(佑风微)")
+				(field
+					(name "MPN") "HVM12")
+				(field
+					(name "LCSC Part") "C7436450")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "ionic_thrust_hv")
 			(part "Pi5_HAT_Header")
 			(description "Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)")
 			(footprints
@@ -20744,7 +20622,7 @@
 		(libpart
 			(lib "ionic_thrust_hv")
 			(part "S102M59Z5UU83L0R")
-			(docs "https://www.lcsc.com/datasheet/C1620009.pdf")
+			(docs "https://www.lcsc.com/datasheet/CT81.pdf")
 			(fields
 				(field
 					(name "Reference") "U")
@@ -20753,16 +20631,17 @@
 				(field
 					(name "Footprint") "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6")
 				(field
-					(name "Datasheet") "https://www.lcsc.com/datasheet/C1620009.pdf")
+					(name "Datasheet") "https://www.lcsc.com/datasheet/CT81.pdf")
 				(field
 					(name "Description")
 				)
 				(field
-					(name "Manufacturer") "VISHAY(威世)")
+					(name "Manufacturer") "Generic / STE / JEC")
 				(field
-					(name "MPN") "S102M59Z5UU83L0R")
+					(name "MPN") "CT81-6KV-Y5P-102K")
 				(field
-					(name "LCSC Part") "C1620009")
+					(name "LCSC Part")
+				)
 			)
 			(pins
 				(pin
@@ -20803,42 +20682,6 @@
 				(pin
 					(num "2")
 					(name "NO")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "ionic_thrust_hv")
-			(part "Sunmate_2CL75")
-			(docs "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590163692374827008")
-			(fields
-				(field
-					(name "Reference") "D")
-				(field
-					(name "Value") "2CL75")
-				(field
-					(name "Footprint") "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26")
-				(field
-					(name "Datasheet") "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590163692374827008")
-				(field
-					(name "Description")
-				)
-				(field
-					(name "Manufacturer") "SUNMATE Elec")
-				(field
-					(name "MPN") "2CL75")
-				(field
-					(name "LCSC Part") "C424512")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "K")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "A")
 					(type "passive")
 				)
 			)
@@ -21102,6 +20945,22 @@
 	(nets
 		(net
 			(code "1")
+			(name "/01_power_mcu/ADDR")
+			(class "Default")
+			(node
+				(ref "R15")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "8")
+				(pinfunction "ADDR_8")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "2")
 			(name "/01_power_mcu/CC1")
 			(class "Default")
 			(node
@@ -21112,13 +20971,13 @@
 			)
 			(node
 				(ref "U7")
-				(pin "17")
-				(pinfunction "CC1_17")
+				(pin "3")
+				(pinfunction "CC1_3")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "2")
+			(code "3")
 			(name "/01_power_mcu/CC2")
 			(class "Default")
 			(node
@@ -21129,13 +20988,29 @@
 			)
 			(node
 				(ref "U7")
-				(pin "16")
-				(pinfunction "CC2_16")
+				(pin "4")
+				(pinfunction "CC2_4")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "3")
+			(code "4")
+			(name "/01_power_mcu/DEBUG_N")
+			(class "Default")
+			(node
+				(ref "R16")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "6")
+				(pinfunction "DBG_N_6")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "5")
 			(name "/01_power_mcu/EFUSE_DVDT")
 			(class "Default")
 			(node
@@ -21151,7 +21026,7 @@
 			)
 		)
 		(net
-			(code "4")
+			(code "6")
 			(name "/01_power_mcu/EFUSE_ILM")
 			(class "Default")
 			(node
@@ -21167,7 +21042,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "7")
 			(name "/01_power_mcu/EFUSE_OVLO")
 			(class "Default")
 			(node
@@ -21188,7 +21063,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "8")
 			(name "/01_power_mcu/EN_DRV")
 			(class "Default")
 			(node
@@ -21198,13 +21073,13 @@
 			)
 			(node
 				(ref "U7")
-				(pin "23")
-				(pinfunction "PWR_EN_23")
-				(pintype "output")
+				(pin "15")
+				(pinfunction "GATE_15")
+				(pintype "open_collector")
 			)
 		)
 		(net
-			(code "7")
+			(code "9")
 			(name "/01_power_mcu/GATE")
 			(class "Default")
 			(node
@@ -21215,7 +21090,7 @@
 			)
 			(node
 				(ref "R12")
-				(pin "1")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
@@ -21225,23 +21100,7 @@
 			)
 		)
 		(net
-			(code "8")
-			(name "/01_power_mcu/IFB")
-			(class "Default")
-			(node
-				(ref "C20")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "15")
-				(pinfunction "IFB_15")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "9")
+			(code "10")
 			(name "/01_power_mcu/ISENP")
 			(class "Default")
 			(node
@@ -21252,28 +21111,6 @@
 			(node
 				(ref "R13")
 				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "1")
-				(pinfunction "ISENP_1")
-				(pintype "input")
-			)
-		)
-		(net
-			(code "10")
-			(name "/01_power_mcu/OTP_NTC")
-			(class "Default")
-			(node
-				(ref "NTC1")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "13")
-				(pinfunction "OTP_13")
 				(pintype "passive")
 			)
 		)
@@ -21328,8 +21165,8 @@
 			)
 			(node
 				(ref "U7")
-				(pin "5")
-				(pinfunction "SCL_5")
+				(pin "10")
+				(pinfunction "SCL_10")
 				(pintype "input")
 			)
 		)
@@ -21363,8 +21200,8 @@
 			)
 			(node
 				(ref "U7")
-				(pin "4")
-				(pinfunction "SDA_4")
+				(pin "9")
+				(pinfunction "SDA_9")
 				(pintype "bidirectional")
 			)
 		)
@@ -21386,8 +21223,8 @@
 			)
 			(node
 				(ref "U7")
-				(pin "18")
-				(pinfunction "DN_18")
+				(pin "2")
+				(pinfunction "DN_2")
 				(pintype "bidirectional")
 			)
 		)
@@ -21409,45 +21246,13 @@
 			)
 			(node
 				(ref "U7")
-				(pin "19")
-				(pinfunction "DP_19")
+				(pin "1")
+				(pinfunction "DP_1")
 				(pintype "bidirectional")
 			)
 		)
 		(net
 			(code "16")
-			(name "/01_power_mcu/V5V")
-			(class "Default")
-			(node
-				(ref "C19")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "20")
-				(pinfunction "V5V_20")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "17")
-			(name "/01_power_mcu/V18")
-			(class "Default")
-			(node
-				(ref "C18")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "12")
-				(pinfunction "V18_12")
-				(pintype "power_out")
-			)
-		)
-		(net
-			(code "18")
 			(name "/01_power_mcu/VBUS_IN")
 			(class "Default")
 			(node
@@ -21462,26 +21267,25 @@
 			)
 			(node
 				(ref "Q1")
-				(pin "5")
-				(pinfunction "D_5")
+				(pin "1")
+				(pinfunction "S_1")
 				(pintype "passive")
 			)
 			(node
 				(ref "Q1")
-				(pin "6")
-				(pinfunction "D_6")
+				(pin "2")
+				(pinfunction "S_2")
 				(pintype "passive")
 			)
 			(node
 				(ref "Q1")
-				(pin "7")
-				(pinfunction "D_7")
+				(pin "3")
+				(pinfunction "S_3")
 				(pintype "passive")
 			)
 			(node
-				(ref "Q1")
-				(pin "8")
-				(pinfunction "D_8")
+				(ref "R12")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -21491,13 +21295,13 @@
 			)
 			(node
 				(ref "U7")
-				(pin "24")
-				(pinfunction "VCC_24")
+				(pin "16")
+				(pinfunction "VBUS_16")
 				(pintype "power_in")
 			)
 		)
 		(net
-			(code "19")
+			(code "17")
 			(name "/01_power_mcu/VBUS_RAW")
 			(class "Default")
 			(node
@@ -21541,7 +21345,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "18")
 			(name "/01_power_mcu/VIN_PD")
 			(class "Default")
 			(node
@@ -21551,32 +21355,32 @@
 			)
 			(node
 				(ref "Q1")
-				(pin "1")
-				(pinfunction "S_1")
+				(pin "5")
+				(pinfunction "D_5")
 				(pintype "passive")
 			)
 			(node
 				(ref "Q1")
-				(pin "2")
-				(pinfunction "S_2")
+				(pin "6")
+				(pinfunction "D_6")
 				(pintype "passive")
 			)
 			(node
 				(ref "Q1")
-				(pin "3")
-				(pinfunction "S_3")
+				(pin "7")
+				(pinfunction "D_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "8")
+				(pinfunction "D_8")
 				(pintype "passive")
 			)
 			(node
 				(ref "R71")
 				(pin "1")
 				(pintype "passive")
-			)
-			(node
-				(ref "U7")
-				(pin "22")
-				(pinfunction "VOUT_22")
-				(pintype "input")
 			)
 			(node
 				(ref "U9")
@@ -21586,7 +21390,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "19")
 			(name "/02_drive_transformer/DRV_A")
 			(class "Default")
 			(node
@@ -21615,7 +21419,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "20")
 			(name "/02_drive_transformer/DRV_B")
 			(class "Default")
 			(node
@@ -21649,7 +21453,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "21")
 			(name "/02_drive_transformer/DRV_CPH")
 			(class "Default")
 			(node
@@ -21665,7 +21469,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "22")
 			(name "/02_drive_transformer/DRV_CPL")
 			(class "Default")
 			(node
@@ -21681,7 +21485,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "23")
 			(name "/02_drive_transformer/DRV_IMODE")
 			(class "Default")
 			(node
@@ -21697,7 +21501,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "24")
 			(name "/02_drive_transformer/DRV_IPROPI")
 			(class "Default")
 			(node
@@ -21713,7 +21517,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "25")
 			(name "/02_drive_transformer/DRV_VCP")
 			(class "Default")
 			(node
@@ -21729,7 +21533,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "26")
 			(name "/02_drive_transformer/DRV_nFAULT")
 			(class "Default")
 			(node
@@ -21751,7 +21555,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "27")
 			(name "/02_drive_transformer/HV_BRIDGE")
 			(class "Default")
 			(node
@@ -21811,7 +21615,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "28")
 			(name "/02_drive_transformer/PRI_A")
 			(class "Default")
 			(node
@@ -21833,7 +21637,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "29")
 			(name "/03_multiplier/CW_P1")
 			(class "Default")
 			(node
@@ -21874,7 +21678,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "30")
 			(name "/03_multiplier/CW_P2")
 			(class "Default")
 			(node
@@ -21915,7 +21719,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "31")
 			(name "/03_multiplier/CW_P3")
 			(class "Default")
 			(node
@@ -21956,7 +21760,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "32")
 			(name "/03_multiplier/CW_P4")
 			(class "Default")
 			(node
@@ -21997,7 +21801,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "33")
 			(name "/03_multiplier/CW_P5")
 			(class "Default")
 			(node
@@ -22038,7 +21842,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "34")
 			(name "/03_multiplier/CW_S1")
 			(class "Default")
 			(node
@@ -22079,7 +21883,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "35")
 			(name "/03_multiplier/CW_S2")
 			(class "Default")
 			(node
@@ -22120,7 +21924,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "36")
 			(name "/03_multiplier/CW_S3")
 			(class "Default")
 			(node
@@ -22161,7 +21965,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "37")
 			(name "/03_multiplier/CW_S4")
 			(class "Default")
 			(node
@@ -22202,7 +22006,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "38")
 			(name "/03_multiplier/CW_S5")
 			(class "Default")
 			(node
@@ -22243,7 +22047,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "39")
 			(name "/04_sense_safety/HV_OUT")
 			(class "Default")
 			(node
@@ -22266,7 +22070,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "40")
 			(name "/04_sense_safety/HV_SENSE_RAW")
 			(class "Default")
 			(node
@@ -22295,7 +22099,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "41")
 			(name "/04_sense_safety/INTERLOCK_LOOP_1")
 			(class "Default")
 			(node
@@ -22312,7 +22116,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "42")
 			(name "/04_sense_safety/INTERLOCK_LOOP_2")
 			(class "Default")
 			(node
@@ -22329,7 +22133,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "43")
 			(name "/04_sense_safety/INTERLOCK_LOOP_3")
 			(class "Default")
 			(node
@@ -22346,7 +22150,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "44")
 			(name "/04_sense_safety/RELAY_COIL_POS")
 			(class "Default")
 			(node
@@ -22375,7 +22179,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "45")
 			(name "/04_sense_safety/S3_1")
 			(class "Default")
 			(node
@@ -22392,7 +22196,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "46")
 			(name "/04_sense_safety/S3_2")
 			(class "Default")
 			(node
@@ -22409,7 +22213,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "47")
 			(name "/04_sense_safety/S4_1")
 			(class "Default")
 			(node
@@ -22426,7 +22230,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "48")
 			(name "/04_sense_safety/S4_2")
 			(class "Default")
 			(node
@@ -22443,7 +22247,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "49")
 			(name "/04_sense_safety/S5_1")
 			(class "Default")
 			(node
@@ -22460,7 +22264,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "50")
 			(name "/04_sense_safety/S5_2")
 			(class "Default")
 			(node
@@ -22477,7 +22281,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "51")
 			(name "/04_sense_safety/S6_1")
 			(class "Default")
 			(node
@@ -22494,7 +22298,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "52")
 			(name "/04_sense_safety/S6_2")
 			(class "Default")
 			(node
@@ -22511,7 +22315,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "53")
 			(name "/05_illumination/TSL_3V3")
 			(class "Default")
 			(node
@@ -22538,7 +22342,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "54")
 			(name "/05_illumination/TSL_GND")
 			(class "Default")
 			(node
@@ -22565,7 +22369,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "55")
 			(name "/05_illumination/TSL_SCL")
 			(class "Default")
 			(node
@@ -22582,7 +22386,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "56")
 			(name "/05_illumination/TSL_SDA")
 			(class "Default")
 			(node
@@ -22599,7 +22403,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "57")
 			(name "/DRV_IN1")
 			(class "Default")
 			(node
@@ -22616,7 +22420,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "58")
 			(name "/DRV_IN2")
 			(class "Default")
 			(node
@@ -22633,7 +22437,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "59")
 			(name "/DRV_SLEEP_CMD")
 			(class "Default")
 			(node
@@ -22650,7 +22454,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "60")
 			(name "/DRV_nSLEEP")
 			(class "Default")
 			(node
@@ -22672,7 +22476,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "61")
 			(name "/HV_CURR_ADC")
 			(class "Default")
 			(node
@@ -22701,7 +22505,7 @@
 			)
 		)
 		(net
-			(code "64")
+			(code "62")
 			(name "/HV_RAW")
 			(class "Default")
 			(node
@@ -22730,7 +22534,7 @@
 			)
 		)
 		(net
-			(code "65")
+			(code "63")
 			(name "/HV_RETURN")
 			(class "Default")
 			(node
@@ -22789,7 +22593,7 @@
 			)
 		)
 		(net
-			(code "66")
+			(code "64")
 			(name "/HV_SENSE_ADC")
 			(class "Default")
 			(node
@@ -22812,7 +22616,7 @@
 			)
 		)
 		(net
-			(code "67")
+			(code "65")
 			(name "/INTERLOCK_OK")
 			(class "Default")
 			(node
@@ -22829,7 +22633,7 @@
 			)
 		)
 		(net
-			(code "68")
+			(code "66")
 			(name "/SEC_A")
 			(class "Default")
 			(node
@@ -22858,7 +22662,7 @@
 			)
 		)
 		(net
-			(code "69")
+			(code "67")
 			(name "/VIN_PROTECTED")
 			(class "Default")
 			(node
@@ -22885,7 +22689,7 @@
 			)
 		)
 		(net
-			(code "70")
+			(code "68")
 			(name "3V3")
 			(class "Default")
 			(node
@@ -22898,6 +22702,11 @@
 				(ref "C16")
 				(pin "2")
 				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C18")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -22988,9 +22797,15 @@
 				(pinfunction "VDD_8")
 				(pintype "power_in")
 			)
+			(node
+				(ref "U7")
+				(pin "5")
+				(pinfunction "VDD_5")
+				(pintype "power_in")
+			)
 		)
 		(net
-			(code "71")
+			(code "69")
 			(name "BULK_CMD")
 			(class "Default")
 			(node
@@ -23007,7 +22822,7 @@
 			)
 		)
 		(net
-			(code "72")
+			(code "70")
 			(name "BULK_EN")
 			(class "Default")
 			(node
@@ -23029,7 +22844,7 @@
 			)
 		)
 		(net
-			(code "73")
+			(code "71")
 			(name "COIL_3V")
 			(class "Default")
 			(node
@@ -23051,7 +22866,7 @@
 			)
 		)
 		(net
-			(code "74")
+			(code "72")
 			(name "GND")
 			(class "Default")
 			(node
@@ -23095,16 +22910,6 @@
 			)
 			(node
 				(ref "C18")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C19")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C20")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -23296,7 +23101,12 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R12")
+				(ref "R15")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R16")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -23415,14 +23225,20 @@
 			)
 			(node
 				(ref "U7")
-				(pin "25")
-				(pinfunction "GND_25")
-				(pintype "power_in")
+				(pin "12")
+				(pinfunction "EN_N_12")
+				(pintype "input")
 			)
 			(node
 				(ref "U7")
-				(pin "3")
-				(pinfunction "GND_3")
+				(pin "14")
+				(pinfunction "FLGIN_14")
+				(pintype "input")
+			)
+			(node
+				(ref "U7")
+				(pin "17")
+				(pinfunction "GND_17")
 				(pintype "power_in")
 			)
 			(node
@@ -23433,7 +23249,7 @@
 			)
 		)
 		(net
-			(code "75")
+			(code "73")
 			(name "Net-(C63-Pad1)")
 			(class "Default")
 			(node
@@ -23448,7 +23264,7 @@
 			)
 		)
 		(net
-			(code "76")
+			(code "74")
 			(name "Net-(D20-K)")
 			(class "Default")
 			(node
@@ -23477,7 +23293,7 @@
 			)
 		)
 		(net
-			(code "77")
+			(code "75")
 			(name "Net-(R8-Pad2)")
 			(class "Default")
 			(node
@@ -23494,7 +23310,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "76")
 			(name "Net-(R20-Pad2)")
 			(class "Default")
 			(node
@@ -23511,7 +23327,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "77")
 			(name "Net-(R21-Pad2)")
 			(class "Default")
 			(node
@@ -23528,7 +23344,7 @@
 			)
 		)
 		(net
-			(code "80")
+			(code "78")
 			(name "Net-(R22-Pad2)")
 			(class "Default")
 			(node
@@ -23545,7 +23361,7 @@
 			)
 		)
 		(net
-			(code "81")
+			(code "79")
 			(name "Net-(R23-Pad2)")
 			(class "Default")
 			(node
@@ -23562,7 +23378,7 @@
 			)
 		)
 		(net
-			(code "82")
+			(code "80")
 			(name "Net-(R24-Pad2)")
 			(class "Default")
 			(node
@@ -23579,7 +23395,7 @@
 			)
 		)
 		(net
-			(code "83")
+			(code "81")
 			(name "Net-(R25-Pad2)")
 			(class "Default")
 			(node
@@ -23596,7 +23412,7 @@
 			)
 		)
 		(net
-			(code "84")
+			(code "82")
 			(name "Net-(R26-Pad2)")
 			(class "Default")
 			(node
@@ -23613,7 +23429,7 @@
 			)
 		)
 		(net
-			(code "85")
+			(code "83")
 			(name "Net-(R27-Pad2)")
 			(class "Default")
 			(node
@@ -23630,7 +23446,7 @@
 			)
 		)
 		(net
-			(code "86")
+			(code "84")
 			(name "Net-(R28-Pad2)")
 			(class "Default")
 			(node
@@ -23647,7 +23463,7 @@
 			)
 		)
 		(net
-			(code "87")
+			(code "85")
 			(name "Net-(R30-Pad2)")
 			(class "Default")
 			(node
@@ -23664,7 +23480,7 @@
 			)
 		)
 		(net
-			(code "88")
+			(code "86")
 			(name "Net-(R31-Pad2)")
 			(class "Default")
 			(node
@@ -23681,7 +23497,7 @@
 			)
 		)
 		(net
-			(code "89")
+			(code "87")
 			(name "Net-(R32-Pad2)")
 			(class "Default")
 			(node
@@ -23698,7 +23514,7 @@
 			)
 		)
 		(net
-			(code "90")
+			(code "88")
 			(name "Net-(R33-Pad2)")
 			(class "Default")
 			(node
@@ -23715,7 +23531,7 @@
 			)
 		)
 		(net
-			(code "91")
+			(code "89")
 			(name "Net-(R34-Pad2)")
 			(class "Default")
 			(node
@@ -23732,7 +23548,7 @@
 			)
 		)
 		(net
-			(code "92")
+			(code "90")
 			(name "Net-(R35-Pad2)")
 			(class "Default")
 			(node
@@ -23749,7 +23565,7 @@
 			)
 		)
 		(net
-			(code "93")
+			(code "91")
 			(name "Net-(R36-Pad2)")
 			(class "Default")
 			(node
@@ -23766,7 +23582,7 @@
 			)
 		)
 		(net
-			(code "94")
+			(code "92")
 			(name "Net-(R37-Pad2)")
 			(class "Default")
 			(node
@@ -23783,7 +23599,7 @@
 			)
 		)
 		(net
-			(code "95")
+			(code "93")
 			(name "Net-(R38-Pad2)")
 			(class "Default")
 			(node
@@ -23800,7 +23616,7 @@
 			)
 		)
 		(net
-			(code "96")
+			(code "94")
 			(name "Net-(R140-Pad2)")
 			(class "Default")
 			(node
@@ -23817,7 +23633,7 @@
 			)
 		)
 		(net
-			(code "97")
+			(code "95")
 			(name "Net-(R142-Pad2)")
 			(class "Default")
 			(node
@@ -23834,7 +23650,7 @@
 			)
 		)
 		(net
-			(code "98")
+			(code "96")
 			(name "Net-(R144-Pad2)")
 			(class "Default")
 			(node
@@ -23851,7 +23667,7 @@
 			)
 		)
 		(net
-			(code "99")
+			(code "97")
 			(name "Net-(R146-Pad2)")
 			(class "Default")
 			(node
@@ -23868,7 +23684,7 @@
 			)
 		)
 		(net
-			(code "100")
+			(code "98")
 			(name "Net-(R148-Pad2)")
 			(class "Default")
 			(node
@@ -23885,7 +23701,7 @@
 			)
 		)
 		(net
-			(code "101")
+			(code "99")
 			(name "Net-(R150-Pad2)")
 			(class "Default")
 			(node
@@ -23902,7 +23718,7 @@
 			)
 		)
 		(net
-			(code "102")
+			(code "100")
 			(name "Net-(R152-Pad2)")
 			(class "Default")
 			(node
@@ -23919,7 +23735,7 @@
 			)
 		)
 		(net
-			(code "103")
+			(code "101")
 			(name "Net-(R154-Pad2)")
 			(class "Default")
 			(node
@@ -23936,7 +23752,7 @@
 			)
 		)
 		(net
-			(code "104")
+			(code "102")
 			(name "Net-(R156-Pad2)")
 			(class "Default")
 			(node
@@ -23953,7 +23769,7 @@
 			)
 		)
 		(net
-			(code "105")
+			(code "103")
 			(name "Net-(R158-Pad2)")
 			(class "Default")
 			(node
@@ -23970,7 +23786,7 @@
 			)
 		)
 		(net
-			(code "106")
+			(code "104")
 			(name "Net-(R160-Pad2)")
 			(class "Default")
 			(node
@@ -23987,7 +23803,7 @@
 			)
 		)
 		(net
-			(code "107")
+			(code "105")
 			(name "Net-(R162-Pad2)")
 			(class "Default")
 			(node
@@ -24004,7 +23820,7 @@
 			)
 		)
 		(net
-			(code "108")
+			(code "106")
 			(name "Net-(U4-IN-)")
 			(class "Default")
 			(node
@@ -24027,7 +23843,7 @@
 			)
 		)
 		(net
-			(code "109")
+			(code "107")
 			(name "unconnected-(J2-Pin_2-Pad2)")
 			(class "Default")
 			(node
@@ -24038,7 +23854,7 @@
 			)
 		)
 		(net
-			(code "110")
+			(code "108")
 			(name "unconnected-(J2-Pin_4-Pad4)")
 			(class "Default")
 			(node
@@ -24049,7 +23865,7 @@
 			)
 		)
 		(net
-			(code "111")
+			(code "109")
 			(name "unconnected-(J2-Pin_7-Pad7)")
 			(class "Default")
 			(node
@@ -24060,7 +23876,7 @@
 			)
 		)
 		(net
-			(code "112")
+			(code "110")
 			(name "unconnected-(J2-Pin_8-Pad8)")
 			(class "Default")
 			(node
@@ -24071,7 +23887,7 @@
 			)
 		)
 		(net
-			(code "113")
+			(code "111")
 			(name "unconnected-(J2-Pin_10-Pad10)")
 			(class "Default")
 			(node
@@ -24082,7 +23898,7 @@
 			)
 		)
 		(net
-			(code "114")
+			(code "112")
 			(name "unconnected-(J2-Pin_11-Pad11)")
 			(class "Default")
 			(node
@@ -24093,7 +23909,7 @@
 			)
 		)
 		(net
-			(code "115")
+			(code "113")
 			(name "unconnected-(J2-Pin_13-Pad13)")
 			(class "Default")
 			(node
@@ -24104,7 +23920,7 @@
 			)
 		)
 		(net
-			(code "116")
+			(code "114")
 			(name "unconnected-(J2-Pin_15-Pad15)")
 			(class "Default")
 			(node
@@ -24115,7 +23931,7 @@
 			)
 		)
 		(net
-			(code "117")
+			(code "115")
 			(name "unconnected-(J2-Pin_17-Pad17)")
 			(class "Default")
 			(node
@@ -24126,7 +23942,7 @@
 			)
 		)
 		(net
-			(code "118")
+			(code "116")
 			(name "unconnected-(J2-Pin_19-Pad19)")
 			(class "Default")
 			(node
@@ -24137,7 +23953,7 @@
 			)
 		)
 		(net
-			(code "119")
+			(code "117")
 			(name "unconnected-(J2-Pin_21-Pad21)")
 			(class "Default")
 			(node
@@ -24148,7 +23964,7 @@
 			)
 		)
 		(net
-			(code "120")
+			(code "118")
 			(name "unconnected-(J2-Pin_23-Pad23)")
 			(class "Default")
 			(node
@@ -24159,7 +23975,7 @@
 			)
 		)
 		(net
-			(code "121")
+			(code "119")
 			(name "unconnected-(J2-Pin_24-Pad24)")
 			(class "Default")
 			(node
@@ -24170,7 +23986,7 @@
 			)
 		)
 		(net
-			(code "122")
+			(code "120")
 			(name "unconnected-(J2-Pin_26-Pad26)")
 			(class "Default")
 			(node
@@ -24181,7 +23997,7 @@
 			)
 		)
 		(net
-			(code "123")
+			(code "121")
 			(name "unconnected-(J2-Pin_27-Pad27)")
 			(class "Default")
 			(node
@@ -24192,7 +24008,7 @@
 			)
 		)
 		(net
-			(code "124")
+			(code "122")
 			(name "unconnected-(J2-Pin_28-Pad28)")
 			(class "Default")
 			(node
@@ -24203,7 +24019,7 @@
 			)
 		)
 		(net
-			(code "125")
+			(code "123")
 			(name "unconnected-(J2-Pin_29-Pad29)")
 			(class "Default")
 			(node
@@ -24214,7 +24030,7 @@
 			)
 		)
 		(net
-			(code "126")
+			(code "124")
 			(name "unconnected-(J2-Pin_31-Pad31)")
 			(class "Default")
 			(node
@@ -24225,7 +24041,7 @@
 			)
 		)
 		(net
-			(code "127")
+			(code "125")
 			(name "unconnected-(J2-Pin_32-Pad32)")
 			(class "Default")
 			(node
@@ -24236,7 +24052,7 @@
 			)
 		)
 		(net
-			(code "128")
+			(code "126")
 			(name "unconnected-(J2-Pin_33-Pad33)")
 			(class "Default")
 			(node
@@ -24247,7 +24063,7 @@
 			)
 		)
 		(net
-			(code "129")
+			(code "127")
 			(name "unconnected-(J2-Pin_36-Pad36)")
 			(class "Default")
 			(node
@@ -24258,7 +24074,7 @@
 			)
 		)
 		(net
-			(code "130")
+			(code "128")
 			(name "unconnected-(J2-Pin_37-Pad37)")
 			(class "Default")
 			(node
@@ -24269,7 +24085,7 @@
 			)
 		)
 		(net
-			(code "131")
+			(code "129")
 			(name "unconnected-(J2-Pin_38-Pad38)")
 			(class "Default")
 			(node
@@ -24280,7 +24096,7 @@
 			)
 		)
 		(net
-			(code "132")
+			(code "130")
 			(name "unconnected-(J2-Pin_40-Pad40)")
 			(class "Default")
 			(node
@@ -24291,7 +24107,7 @@
 			)
 		)
 		(net
-			(code "133")
+			(code "131")
 			(name "unconnected-(J3-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -24302,7 +24118,7 @@
 			)
 		)
 		(net
-			(code "134")
+			(code "132")
 			(name "unconnected-(J3-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -24313,7 +24129,7 @@
 			)
 		)
 		(net
-			(code "135")
+			(code "133")
 			(name "unconnected-(K1-NC1-Pad2)")
 			(class "Default")
 			(node
@@ -24324,7 +24140,7 @@
 			)
 		)
 		(net
-			(code "136")
+			(code "134")
 			(name "unconnected-(K1-NC2-Pad7)")
 			(class "Default")
 			(node
@@ -24335,7 +24151,17 @@
 			)
 		)
 		(net
-			(code "137")
+			(code "135")
+			(name "unconnected-(NTC1-Pad1)")
+			(class "Default")
+			(node
+				(ref "NTC1")
+				(pin "1")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "136")
 			(name "unconnected-(S3-NC-Pad3)")
 			(class "Default")
 			(node
@@ -24346,7 +24172,7 @@
 			)
 		)
 		(net
-			(code "138")
+			(code "137")
 			(name "unconnected-(S4-NC-Pad3)")
 			(class "Default")
 			(node
@@ -24357,7 +24183,7 @@
 			)
 		)
 		(net
-			(code "139")
+			(code "138")
 			(name "unconnected-(S5-NC-Pad3)")
 			(class "Default")
 			(node
@@ -24368,7 +24194,7 @@
 			)
 		)
 		(net
-			(code "140")
+			(code "139")
 			(name "unconnected-(S6-NC-Pad3)")
 			(class "Default")
 			(node
@@ -24379,7 +24205,7 @@
 			)
 		)
 		(net
-			(code "141")
+			(code "140")
 			(name "unconnected-(T1-FB_A-Pad2)")
 			(class "Default")
 			(node
@@ -24390,7 +24216,7 @@
 			)
 		)
 		(net
-			(code "142")
+			(code "141")
 			(name "unconnected-(T1-FB_B-Pad4)")
 			(class "Default")
 			(node
@@ -24401,7 +24227,7 @@
 			)
 		)
 		(net
-			(code "143")
+			(code "142")
 			(name "unconnected-(T1-PRI_CT-Pad3)")
 			(class "Default")
 			(node
@@ -24412,7 +24238,7 @@
 			)
 		)
 		(net
-			(code "144")
+			(code "143")
 			(name "unconnected-(U6-AIN3-Pad7)")
 			(class "Default")
 			(node
@@ -24423,7 +24249,7 @@
 			)
 		)
 		(net
-			(code "145")
+			(code "144")
 			(name "unconnected-(U6-ALERT{slash}RDY-Pad2)")
 			(class "Default")
 			(node
@@ -24434,106 +24260,40 @@
 			)
 		)
 		(net
-			(code "146")
-			(name "unconnected-(U7-FLIP-Pad6)")
+			(code "145")
+			(name "unconnected-(U7-EN_HVDCP-Pad7)")
 			(class "Default")
 			(node
 				(ref "U7")
-				(pin "6")
-				(pinfunction "FLIP_6")
+				(pin "7")
+				(pinfunction "EN_HVDCP_7")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "146")
+			(name "unconnected-(U7-FAULT-Pad13)")
+			(class "Default")
+			(node
+				(ref "U7")
+				(pin "13")
+				(pinfunction "FAULT_13")
 				(pintype "output+no_connect")
 			)
 		)
 		(net
 			(code "147")
-			(name "unconnected-(U7-GPIO-Pad7)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "7")
-				(pinfunction "GPIO_7")
-				(pintype "bidirectional+no_connect")
-			)
-		)
-		(net
-			(code "148")
-			(name "unconnected-(U7-INT-Pad9)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "9")
-				(pinfunction "INT_9")
-				(pintype "output+no_connect")
-			)
-		)
-		(net
-			(code "149")
-			(name "unconnected-(U7-LED-Pad8)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "8")
-				(pinfunction "LED_8")
-				(pintype "output+no_connect")
-			)
-		)
-		(net
-			(code "150")
-			(name "unconnected-(U7-NC-Pad2)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "2")
-				(pinfunction "NC_2")
-				(pintype "no_connect")
-			)
-		)
-		(net
-			(code "151")
-			(name "unconnected-(U7-NC-Pad10)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "10")
-				(pinfunction "NC_10")
-				(pintype "no_connect")
-			)
-		)
-		(net
-			(code "152")
-			(name "unconnected-(U7-NC-Pad14)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "14")
-				(pinfunction "NC_14")
-				(pintype "no_connect")
-			)
-		)
-		(net
-			(code "153")
-			(name "unconnected-(U7-NC-Pad21)")
-			(class "Default")
-			(node
-				(ref "U7")
-				(pin "21")
-				(pinfunction "NC_21")
-				(pintype "no_connect")
-			)
-		)
-		(net
-			(code "154")
-			(name "unconnected-(U7-VSEL-Pad11)")
+			(name "unconnected-(U7-INT_N-Pad11)")
 			(class "Default")
 			(node
 				(ref "U7")
 				(pin "11")
-				(pinfunction "VSEL_11")
-				(pintype "input+no_connect")
+				(pinfunction "INT_N_11")
+				(pintype "open_collector+no_connect")
 			)
 		)
 		(net
-			(code "155")
+			(code "148")
 			(name "unconnected-(U8-INT-Pad2)")
 			(class "Default")
 			(node
@@ -24544,7 +24304,7 @@
 			)
 		)
 		(net
-			(code "156")
+			(code "149")
 			(name "unconnected-(U8-NC-Pad4)")
 			(class "Default")
 			(node
@@ -24555,7 +24315,7 @@
 			)
 		)
 		(net
-			(code "157")
+			(code "150")
 			(name "unconnected-(U9-AUXOFF-Pad3)")
 			(class "Default")
 			(node
@@ -24566,7 +24326,7 @@
 			)
 		)
 		(net
-			(code "158")
+			(code "151")
 			(name "unconnected-(U9-FLT-Pad4)")
 			(class "Default")
 			(node
@@ -24577,7 +24337,7 @@
 			)
 		)
 		(net
-			(code "159")
+			(code "152")
 			(name "unconnected-(U9-ITIMER-Pad10)")
 			(class "Default")
 			(node
@@ -24588,7 +24348,7 @@
 			)
 		)
 		(net
-			(code "160")
+			(code "153")
 			(name "unconnected-(U10-NC-Pad4)")
 			(class "Default")
 			(node

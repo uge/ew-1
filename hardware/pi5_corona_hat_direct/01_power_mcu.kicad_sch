@@ -3928,7 +3928,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ionic_thrust_hv:AO4262E"
+		(symbol "ionic_thrust_hv:AO4407A"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -3939,7 +3939,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "Q"
-				(at 5.08 1.905 0)
+				(at 5.08 1.27 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3949,8 +3949,8 @@
 					(justify left)
 				)
 			)
-			(property "Value" "Q_NMOS_GDS"
-				(at 5.08 0 0)
+			(property "Value" "AO4407A"
+				(at 5.08 -1.27 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3960,8 +3960,8 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" ""
-				(at 5.08 2.54 0)
+			(property "Footprint" "Package_SO:SO-8_3.9x4.9mm_P1.27mm"
+				(at 5.08 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3969,9 +3969,10 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://jlcpcb.com/partdetail/C16072"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3982,7 +3983,7 @@
 					)
 				)
 			)
-			(property "Description" "N-MOSFET transistor, gate/drain/source"
+			(property "Description" "P-MOSFET transistor, -30V, -12A, SO-8"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3993,18 +3994,62 @@
 					)
 				)
 			)
-			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET"
+			(property "LCSC" "C16072"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.016 1.016)
 					)
 				)
 			)
-			(symbol "AO4262E_0_1"
+			(property "LCSC Part" "C16072"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "JLCPCB Part #" "C16072"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Manufacturer" "Alpha & Omega Semicon"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "MPN" "AO4407A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(symbol "AO4407A_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -4019,7 +4064,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.254 0) (xy -2.54 0)
+						(xy 0.762 -1.27) (xy 0.762 -1.905) (xy 2.54 -1.905) (xy 2.54 -5.08)
 					)
 					(stroke
 						(width 0)
@@ -4031,43 +4076,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+						(xy 0.762 1.27) (xy 0.762 1.905) (xy 2.54 1.905) (xy 2.54 5.08)
 					)
 					(stroke
 						(width 0)
@@ -4079,7 +4088,31 @@
 				)
 				(polyline
 					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+						(xy 0.762 0) (xy 2.54 0) (xy 2.54 1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.254 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 2.032 -0.381) (xy 2.032 0.381) (xy 1.27 0)
 					)
 					(stroke
 						(width 0)
@@ -4087,94 +4120,13 @@
 					)
 					(fill
 						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.921 0.381) (xy 3.683 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
 					)
 				)
 			)
-			(symbol "AO4262E_1_1"
+			(symbol "AO4407A_1_1"
 				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
+					(at 2.54 5.08 270)
+					(length 0)
 					(name "S"
 						(effects
 							(font
@@ -4191,8 +4143,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
+					(at 2.54 5.08 270)
+					(length 0)
 					(hide yes)
 					(name "S"
 						(effects
@@ -4210,8 +4162,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
+					(at 2.54 5.08 270)
+					(length 0)
 					(hide yes)
 					(name "S"
 						(effects
@@ -4247,8 +4199,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
+					(at 2.54 -5.08 90)
+					(length 0)
 					(name "D"
 						(effects
 							(font
@@ -4265,8 +4217,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
+					(at 2.54 -5.08 90)
+					(length 0)
 					(hide yes)
 					(name "D"
 						(effects
@@ -4284,8 +4236,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
+					(at 2.54 -5.08 90)
+					(length 0)
 					(hide yes)
 					(name "D"
 						(effects
@@ -4303,8 +4255,8 @@
 					)
 				)
 				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
+					(at 2.54 -5.08 90)
+					(length 0)
 					(hide yes)
 					(name "D"
 						(effects
@@ -4324,7 +4276,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ionic_thrust_hv:AP33772S_PD24"
+		(symbol "ionic_thrust_hv:HUSB238A-BB001-QN16R"
 			(pin_names
 				(offset 1.016)
 			)
@@ -4343,7 +4295,7 @@
 					)
 				)
 			)
-			(property "Value" "AP33772S"
+			(property "Value" "HUSB238A-BB001-QN16R"
 				(at 0 -17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4353,7 +4305,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4364,7 +4316,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.diodes.com/datasheet/download/AP33772S.pdf"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C24833806.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4375,7 +4327,7 @@
 					)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "USB PD Sink Controller with PPS support, QFN-16"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4386,7 +4338,62 @@
 					)
 				)
 			)
-			(symbol "AP33772S_PD24_0_1"
+			(property "LCSC" "C24833806"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "LCSC Part" "C24833806"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "JLCPCB Part #" "C24833806"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Manufacturer" "Hynetek(慧能泰)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "MPN" "HUSB238A-BB001-QN16R"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(symbol "HUSB238A-BB001-QN16R_0_1"
 				(rectangle
 					(start -8.89 -15.24)
 					(end 8.89 17.78)
@@ -4401,14 +4408,14 @@
 				(pin input line
 					(at -11.43 15.24 0)
 					(length 2.54)
-					(name "ISENP"
+					(name "FLGIN"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4416,17 +4423,17 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin input line
 					(at -11.43 12.7 0)
 					(length 2.54)
-					(name "NC"
+					(name "EN_N"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
+					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4444,7 +4451,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "17"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4462,7 +4469,7 @@
 							)
 						)
 					)
-					(number "4"
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4480,187 +4487,7 @@
 							)
 						)
 					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 11.43 15.24 180)
-					(length 2.54)
-					(name "FLIP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 11.43 12.7 180)
-					(length 2.54)
-					(name "GPIO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 11.43 10.16 180)
-					(length 2.54)
-					(name "LED"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 11.43 7.62 180)
-					(length 2.54)
-					(name "INT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 11.43 5.08 180)
-					(length 2.54)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 2.54 0)
-					(length 2.54)
-					(name "VSEL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 11.43 2.54 180)
-					(length 2.54)
-					(name "V18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -11.43 0 0)
-					(length 2.54)
-					(name "OTP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 11.43 0 180)
-					(length 2.54)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -11.43 -2.54 0)
-					(length 2.54)
-					(name "IFB"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4678,7 +4505,7 @@
 							)
 						)
 					)
-					(number "16"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4696,7 +4523,7 @@
 							)
 						)
 					)
-					(number "17"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4714,7 +4541,7 @@
 							)
 						)
 					)
-					(number "18"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4732,61 +4559,7 @@
 							)
 						)
 					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 11.43 -2.54 180)
-					(length 2.54)
-					(name "V5V"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 11.43 -5.08 180)
-					(length 2.54)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -7.62 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4795,16 +4568,124 @@
 					)
 				)
 				(pin output line
-					(at 11.43 -10.16 180)
+					(at 11.43 5.08 180)
 					(length 2.54)
-					(name "PWR_EN"
+					(name "FAULT"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "23"
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 11.43 2.54 180)
+					(length 2.54)
+					(name "INT_N"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 11.43 0 180)
+					(length 2.54)
+					(name "EN_HVDCP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 11.43 -2.54 180)
+					(length 2.54)
+					(name "DBG_N"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 11.43 -5.08 180)
+					(length 2.54)
+					(name "ADDR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 11.43 -7.62 180)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 11.43 -10.16 180)
+					(length 2.54)
+					(name "GATE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4815,33 +4696,14 @@
 				(pin power_in line
 					(at 11.43 -12.7 180)
 					(length 2.54)
-					(name "VCC"
+					(name "VBUS"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -11.43 10.16 0)
-					(length 2.54)
-					(hide yes)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "25"
+					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -12504,14 +12366,6 @@
 		(uuid "fe99cefa-f43f-4e13-9718-a00fe2da0f44")
 	)
 	(no_connect
-		(at 147.32 71.12)
-		(uuid "07194b52-8bb6-4812-9462-a1085e0344d7")
-	)
-	(no_connect
-		(at 147.32 76.2)
-		(uuid "0d94dd07-438c-4c63-87c6-a45337d70d1a")
-	)
-	(no_connect
 		(at 314.96 88.9)
 		(uuid "10cd3353-da30-4335-ae90-cd95161dff5b")
 	)
@@ -12552,10 +12406,6 @@
 		(uuid "41716cb2-ffc9-49a6-ab21-488729b7048f")
 	)
 	(no_connect
-		(at 124.46 81.28)
-		(uuid "44fe55a1-3ef3-404e-b07e-77bdf63e9226")
-	)
-	(no_connect
 		(at 327.66 53.34)
 		(uuid "52b5d0f1-1dd3-4d1b-87df-a3a9eecf4b0d")
 	)
@@ -12592,10 +12442,6 @@
 		(uuid "a57a34a2-ff27-4366-9500-68466b7ca077")
 	)
 	(no_connect
-		(at 147.32 73.66)
-		(uuid "a90a280c-8f93-4bf2-8127-0ad9491445d0")
-	)
-	(no_connect
 		(at 314.96 78.74)
 		(uuid "a947262e-4665-4971-88ac-dd775967f208")
 	)
@@ -12630,10 +12476,6 @@
 	(no_connect
 		(at 327.66 83.82)
 		(uuid "e384576d-6bb3-41ef-83aa-8aa43665e15b")
-	)
-	(no_connect
-		(at 147.32 68.58)
-		(uuid "e9c005ae-a3bb-45a7-9d4e-9a720717d053")
 	)
 	(no_connect
 		(at 368.3 212.09)
@@ -12799,16 +12641,6 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 86.36) (xy 121.92 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "15762d7f-4812-4003-aa46-22bdd9b5c815")
-	)
-	(wire
-		(pts
 			(xy 91.44 41.91) (xy 91.44 36.83)
 		)
 		(stroke
@@ -12816,16 +12648,6 @@
 			(type default)
 		)
 		(uuid "166f8b25-14e6-4f6d-900d-cc364e360a55")
-	)
-	(wire
-		(pts
-			(xy 124.46 68.58) (xy 121.92 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "179b2ad0-893b-4e68-89c1-2e4f8603fe8c")
 	)
 	(wire
 		(pts
@@ -12939,16 +12761,6 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 81.28) (xy 149.86 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33775866-5b23-48e4-97f2-c2e7c279e151")
-	)
-	(wire
-		(pts
 			(xy 218.44 161.29) (xy 218.44 158.75)
 		)
 		(stroke
@@ -13036,16 +12848,6 @@
 			(type default)
 		)
 		(uuid "444bf903-ea04-4a59-9ba3-5f1cf45e8ffb")
-	)
-	(wire
-		(pts
-			(xy 160.02 132.08) (xy 160.02 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4856e46f-efc4-4bf5-b161-1451293c6498")
 	)
 	(wire
 		(pts
@@ -13229,16 +13031,6 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 86.36) (xy 149.86 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70efe81e-3af9-4863-8539-45d32b7faeb6")
-	)
-	(wire
-		(pts
 			(xy 215.9 71.12) (xy 215.9 68.58)
 		)
 		(stroke
@@ -13339,16 +13131,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 137.16) (xy 134.62 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b8f27e2-743a-4494-932c-429757a7a9c6")
-	)
-	(wire
-		(pts
 			(xy 299.72 53.34) (xy 314.96 53.34)
 		)
 		(stroke
@@ -13406,16 +13188,6 @@
 			(type default)
 		)
 		(uuid "9140029a-de09-4f55-a4ff-d25ab3cd6716")
-	)
-	(wire
-		(pts
-			(xy 160.02 137.16) (xy 160.02 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "937c1f87-7150-42b4-9c06-0697eeb6671b")
 	)
 	(wire
 		(pts
@@ -13526,16 +13298,6 @@
 			(type default)
 		)
 		(uuid "a76e86c6-c094-4682-a8c3-b4cc91c1e652")
-	)
-	(wire
-		(pts
-			(xy 193.04 160.02) (xy 193.04 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a79357d9-2ad7-4258-9626-14a9ae90398f")
 	)
 	(wire
 		(pts
@@ -13729,16 +13491,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 132.08) (xy 134.62 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4c48a1c-50de-42a9-98b1-45c2e9bf6f44")
-	)
-	(wire
-		(pts
 			(xy 294.64 220.98) (xy 279.4 220.98)
 		)
 		(stroke
@@ -13846,16 +13598,6 @@
 			(type default)
 		)
 		(uuid "e05fa65e-1b2d-47d9-8e06-b99d10904979")
-	)
-	(wire
-		(pts
-			(xy 124.46 83.82) (xy 121.92 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e517141f-79d4-456a-8d4c-731bf956ee51")
 	)
 	(wire
 		(pts
@@ -14107,16 +13849,6 @@
 		)
 		(uuid "709df1f2-6965-46c2-a358-5ae901a4b31a")
 	)
-	(label "IFB"
-		(at 121.92 86.36 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "71369598-3d61-4d77-b4bc-1b1a260b06f9")
-	)
 	(label "USB_DP"
 		(at 58.42 80.01 0)
 		(effects
@@ -14136,16 +13868,6 @@
 			(justify right bottom)
 		)
 		(uuid "763371a5-cc79-45f8-8497-d5d288ed6f16")
-	)
-	(label "ISENP"
-		(at 121.92 68.58 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7b120a25-f02a-4045-ab71-3ead402152ff")
 	)
 	(label "EFUSE_OVLO"
 		(at 50.8 219.71 0)
@@ -14207,16 +13929,6 @@
 		)
 		(uuid "a3f2d316-7ad6-48ef-9d6e-77dcb5d997c7")
 	)
-	(label "OTP_NTC"
-		(at 121.92 83.82 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a4b2405e-399a-4a55-886b-f4942a9c1762")
-	)
 	(label "SCL"
 		(at 299.72 55.88 180)
 		(effects
@@ -14226,16 +13938,6 @@
 			(justify right bottom)
 		)
 		(uuid "ab1b97aa-688c-42a1-bb89-75cef4481941")
-	)
-	(label "IFB"
-		(at 160.02 129.54 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b21cc44b-eeb8-409d-b86b-1504b123ac5e")
 	)
 	(label "EFUSE_DVDT"
 		(at 190.5 233.68 0)
@@ -14258,7 +13960,7 @@
 		(uuid "bd8e4b7d-4139-4d5c-84f0-7598fb37176b")
 	)
 	(label "GATE"
-		(at 218.44 128.27 0)
+		(at 218.44 140.97 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14266,16 +13968,6 @@
 			(justify left bottom)
 		)
 		(uuid "c4d39b38-6db1-4e35-a1c8-89e1dbaa20d6")
-	)
-	(label "OTP_NTC"
-		(at 193.04 157.48 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c82421bd-c3a5-4cc5-9aaa-b9a046f97376")
 	)
 	(label "USB_DP"
 		(at 58.42 77.47 0)
@@ -14887,7 +14579,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:AO4262E")
+		(lib_id "ionic_thrust_hv:AO4407A")
 		(at 213.36 76.2 0)
 		(unit 1)
 		(body_style 1)
@@ -14907,7 +14599,7 @@
 				)
 			)
 		)
-		(property "Value" "AO4262E 60V"
+		(property "Value" "AO4407A"
 			(at 233.68 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14928,7 +14620,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C431178"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C16072"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -14939,7 +14631,7 @@
 				)
 			)
 		)
-		(property "Description" "N-MOSFET transistor, gate/drain/source"
+		(property "Description" "P-MOSFET transistor, -30V, -12A, SO-8"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -14950,7 +14642,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C431178"
+		(property "LCSC" "C16072"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -14961,7 +14653,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C431178"
+		(property "JLCPCB Part #" "C16072"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -14983,7 +14675,7 @@
 				)
 			)
 		)
-		(property "MPN" "AO4262E"
+		(property "MPN" "AO4407A"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -14994,7 +14686,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15016,7 +14708,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "AO4262E: G=4, D=5/6/7/8 on VBUS_IN, S=1/2/3 on VIN_PD. Native symbol corrected; no functional net change."
+		(property "Procurement Notes" "AO4407A P-MOSFET: S=1/2/3 on VBUS_IN, G=4 on GATE, D=5/6/7/8 on VIN_PD."
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15027,7 +14719,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C431178"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C16072"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15038,7 +14730,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-10"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15060,7 +14752,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C431178"
+		(property "LCSC Part" "C16072"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15071,30 +14763,14 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "aaff225f-8441-440e-ac0f-b6b2b9ebe57e")
-		)
-		(pin "2"
-			(uuid "5ce8344a-1e2f-4cbc-935f-8713b2f75250")
-		)
-		(pin "3"
-			(uuid "63c42fd1-5d83-4007-8bff-a4d7382e327b")
-		)
-		(pin "4"
-			(uuid "7f6a7032-c637-409e-934c-24f894eb3fed")
-		)
-		(pin "5"
-			(uuid "eab1a780-ea2e-4b64-9c23-a0ab223c71d0")
-		)
-		(pin "6"
-			(uuid "74b9457c-37d6-4a12-a9a8-9926756adf51")
-		)
-		(pin "7"
-			(uuid "65111992-1eb4-465d-bceb-15deb1d50409")
-		)
-		(pin "8"
-			(uuid "6eb6541e-089d-4b2d-9dd1-d921ce8435f6")
-		)
+		(pin "1" (uuid "aaff225f-8441-440e-ac0f-b6b2b9ebe57e"))
+		(pin "2" (uuid "5ce8344a-1e2f-4cbc-935f-8713b2f75250"))
+		(pin "3" (uuid "63c42fd1-5d83-4007-8bff-a4d7382e327b"))
+		(pin "4" (uuid "7f6a7032-c637-409e-934c-24f894eb3fed"))
+		(pin "5" (uuid "eab1a780-ea2e-4b64-9c23-a0ab223c71d0"))
+		(pin "6" (uuid "74b9457c-37d6-4a12-a9a8-9926756adf51"))
+		(pin "7" (uuid "65111992-1eb4-465d-bceb-15deb1d50409"))
+		(pin "8" (uuid "6eb6541e-089d-4b2d-9dd1-d921ce8435f6"))
 		(instances
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
@@ -15736,7 +15412,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "Device:R")
 		(at 160.02 134.62 0)
 		(unit 1)
 		(body_style 1)
@@ -15746,7 +15422,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "154464fc-3f38-4753-a3b4-72cc88f9f2b6")
-		(property "Reference" "C20"
+		(property "Reference" "R16"
 			(at 167.64 132.715 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15756,7 +15432,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF 10%"
+		(property "Value" "1M 1%"
 			(at 167.64 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15766,7 +15442,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15788,7 +15464,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "Resistor, 1M 1% 0603 for HUSB238A DEBUG_N pulldown"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15799,7 +15475,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C22935"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15810,7 +15486,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C14663"
+		(property "JLCPCB Part #" "C22935"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15821,7 +15497,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15832,7 +15508,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "0603WAF1004T5E"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15876,7 +15552,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C14663"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C22935"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15909,7 +15585,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C14663"
+		(property "LCSC Part" "C22935"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15929,7 +15605,7 @@
 		(instances
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "C20")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -17138,7 +16814,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "100k 1%"
 			(at 226.06 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17170,7 +16846,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, 100k 1% 0603 gate pull-up for P-MOSFET"
 			(at 218.44 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18071,7 +17747,7 @@
 				)
 			)
 		)
-		(property "Value" "6.2k"
+		(property "Value" "47k 1%"
 			(at 200.66 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18103,7 +17779,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, 47k 1% 0603 gate pull-down series resistor for P-MOSFET"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18114,7 +17790,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4260"
+		(property "LCSC" "C25816"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18125,7 +17801,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C4260"
+		(property "JLCPCB Part #" "C25816"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18147,7 +17823,7 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF6201T5E"
+		(property "MPN" "0603WAF4702T5E"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18191,7 +17867,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C4260"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25816"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18224,7 +17900,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C4260"
+		(property "LCSC Part" "C25816"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18603,7 +18279,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:AP33772S_PD24")
+		(lib_id "ionic_thrust_hv:HUSB238A-BB001-QN16R")
 		(at 135.89 83.82 0)
 		(unit 1)
 		(body_style 1)
@@ -18623,7 +18299,7 @@
 				)
 			)
 		)
-		(property "Value" "AP33772S"
+		(property "Value" "HUSB238A-BB001-QN16R"
 			(at 135.89 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18633,7 +18309,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm"
+		(property "Footprint" "ionic_thrust_hv:QFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18644,7 +18320,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C50341643"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C24833806.pdf"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18655,7 +18331,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "USB PD Sink Controller with PPS support, QFN-16"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18666,7 +18342,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C50341643"
+		(property "LCSC" "C24833806"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18677,7 +18353,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C50341643"
+		(property "JLCPCB Part #" "C24833806"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18688,7 +18364,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Diodes Incorporated"
+		(property "Manufacturer" "Hynetek(慧能泰)"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18699,7 +18375,7 @@
 				)
 			)
 		)
-		(property "MPN" "AP33772SDKZ-13-FA02"
+		(property "MPN" "HUSB238A-BB001-QN16R"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18732,7 +18408,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "FA02 firmware ordering variant in QFN-24 (4x4mm). Verify against host driver and required startup profile."
+		(property "Procurement Notes" "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support."
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18743,7 +18419,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C50341643"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C24833806"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18754,7 +18430,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-10"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18776,7 +18452,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C50341643"
+		(property "LCSC Part" "C24833806"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18787,81 +18463,23 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "6a444100-93fe-4124-aaa5-8487c5b41151")
-		)
-		(pin "2"
-			(uuid "5fabc4a5-1c1e-42d1-994b-e95d738e88b2")
-		)
-		(pin "3"
-			(uuid "41e5ba64-2b8c-4970-806e-43289849b1ec")
-		)
-		(pin "4"
-			(uuid "953ee0f7-0000-4a84-a121-7d297c13f6cb")
-		)
-		(pin "5"
-			(uuid "f7d4b44e-2141-45b0-b8f9-6084ccff72d8")
-		)
-		(pin "6"
-			(uuid "333409cb-da10-478b-9ba4-947ca3f1d4d7")
-		)
-		(pin "7"
-			(uuid "435b29c6-b198-474d-945f-dd61e7c33563")
-		)
-		(pin "8"
-			(uuid "42c65c6d-0230-48e4-b704-c1d368427a00")
-		)
-		(pin "9"
-			(uuid "66392f3f-7220-44bb-86df-6a5fff787a02")
-		)
-		(pin "10"
-			(uuid "033238be-74ad-45d9-b1bf-73888cab35ea")
-		)
-		(pin "11"
-			(uuid "e4a5f885-0af4-42c5-92ea-05b7be5890c1")
-		)
-		(pin "12"
-			(uuid "b0b4aa71-8a71-41bc-98ea-6c30acea6816")
-		)
-		(pin "13"
-			(uuid "b6a456d3-4027-4bfe-a7ad-a114a7590871")
-		)
-		(pin "14"
-			(uuid "989781c6-e2f0-44f3-9a98-ed0f7c3ac5bd")
-		)
-		(pin "15"
-			(uuid "e25536a0-4e12-4ebe-8b8a-e3d2b5eb65bb")
-		)
-		(pin "16"
-			(uuid "98e10b8a-0b48-421d-95e4-27ab1917a71a")
-		)
-		(pin "17"
-			(uuid "da99f667-e807-4f95-901f-14164802322d")
-		)
-		(pin "18"
-			(uuid "3123f90c-3e64-4217-9437-e571d485ebe8")
-		)
-		(pin "19"
-			(uuid "4295e323-b05d-4cd8-a7de-a7512e63e92b")
-		)
-		(pin "20"
-			(uuid "dfb97564-b623-4196-8891-9c523a60a512")
-		)
-		(pin "21"
-			(uuid "cfbe9511-6a3d-4f74-adc0-56ef98cf0182")
-		)
-		(pin "22"
-			(uuid "6c929f12-95fc-488c-9ff5-cc9810f2d0e3")
-		)
-		(pin "23"
-			(uuid "2b2ca7e6-6e2c-4153-807d-b226bba5d355")
-		)
-		(pin "24"
-			(uuid "992ed211-59a1-4bcd-b98d-b3f92c93e628")
-		)
-		(pin "25"
-			(uuid "563ca711-6401-483c-9f7b-bdcfe1e8b565")
-		)
+		(pin "1" (uuid "6a444100-93fe-4124-aaa5-8487c5b41151"))
+		(pin "2" (uuid "5fabc4a5-1c1e-42d1-994b-e95d738e88b2"))
+		(pin "3" (uuid "41e5ba64-2b8c-4970-806e-43289849b1ec"))
+		(pin "4" (uuid "953ee0f7-0000-4a84-a121-7d297c13f6cb"))
+		(pin "5" (uuid "f7d4b44e-2141-45b0-b8f9-6084ccff72d8"))
+		(pin "6" (uuid "333409cb-da10-478b-9ba4-947ca3f1d4d7"))
+		(pin "7" (uuid "435b29c6-b198-474d-945f-dd61e7c33563"))
+		(pin "8" (uuid "42c65c6d-0230-48e4-b704-c1d368427a00"))
+		(pin "9" (uuid "66392f3f-7220-44bb-86df-6a5fff787a02"))
+		(pin "10" (uuid "033238be-74ad-45d9-b1bf-73888cab35ea"))
+		(pin "11" (uuid "e4a5f885-0af4-42c5-92ea-05b7be5890c1"))
+		(pin "12" (uuid "b0b4aa71-8a71-41bc-98ea-6c30acea6816"))
+		(pin "13" (uuid "b6a456d3-4027-4bfe-a7ad-a114a7590871"))
+		(pin "14" (uuid "989781c6-e2f0-44f3-9a98-ed0f7c3ac5bd"))
+		(pin "15" (uuid "e25536a0-4e12-4ebe-8b8a-e3d2b5eb65bb"))
+		(pin "16" (uuid "98e10b8a-0b48-421d-95e4-27ab1917a71a"))
+		(pin "17" (uuid "563ca711-6401-483c-9f7b-bdcfe1e8b565"))
 		(instances
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
@@ -20082,7 +19700,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:VIN_PD")
+		(lib_id "ionic_thrust_hv:3V3")
 		(at 149.86 91.44 0)
 		(unit 1)
 		(body_style 1)
@@ -20103,7 +19721,7 @@
 				)
 			)
 		)
-		(property "Value" "VIN_PD"
+		(property "Value" "3V3"
 			(at 151.13 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20814,7 +20432,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:V18")
+		(lib_id "ionic_thrust_hv:3V3")
 		(at 109.22 129.54 0)
 		(unit 1)
 		(body_style 1)
@@ -20835,7 +20453,7 @@
 				)
 			)
 		)
-		(property "Value" "V18"
+		(property "Value" "3V3"
 			(at 110.49 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21747,7 +21365,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
+		(lib_id "Device:R")
 		(at 134.62 134.62 0)
 		(unit 1)
 		(body_style 1)
@@ -21757,7 +21375,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8b78c2a0-9975-4f9c-a94a-4426fbc0e344")
-		(property "Reference" "C19"
+		(property "Reference" "R15"
 			(at 142.24 132.715 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21767,7 +21385,7 @@
 				)
 			)
 		)
-		(property "Value" "1uF 16V 10%"
+		(property "Value" "1M 1%"
 			(at 142.24 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21777,7 +21395,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21799,7 +21417,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "Resistor, 1M 1% 0603 for HUSB238A ADDR (sets address 0x42)"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21810,7 +21428,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C5199872"
+		(property "LCSC" "C22935"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21821,7 +21439,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C5199872"
+		(property "JLCPCB Part #" "C22935"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21832,7 +21450,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Samsung Electro-Mechanics"
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21843,7 +21461,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10B105KB8NQNC"
+		(property "MPN" "0603WAF1004T5E"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21887,7 +21505,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C5199872"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C22935"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21920,7 +21538,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C5199872"
+		(property "LCSC Part" "C22935"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21940,7 +21558,7 @@
 		(instances
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "C19")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -22536,82 +22154,6 @@
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
 					(reference "#PWR72")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ionic_thrust_hv:V5V")
-		(at 134.62 129.54 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a38f4c39-1d04-46d5-ab04-cd74b21857a0")
-		(property "Reference" "#PWR1014"
-			(at 134.62 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "V5V"
-			(at 135.89 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 134.62 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 134.62 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dfb29866-944e-4007-b35c-29e0ce0bd3e2")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "#PWR1014")
 					(unit 1)
 				)
 			)
@@ -24017,82 +23559,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:V5V")
-		(at 149.86 86.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d0ca00b4-54d5-42a5-bbd9-c9a9b3626fb0")
-		(property "Reference" "#PWR1013"
-			(at 149.86 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "V5V"
-			(at 151.13 85.09 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 149.86 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 149.86 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "22d88b8b-4067-4059-9421-610e311dd0f6")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "#PWR1013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 152.4 220.98 0)
 		(unit 1)
@@ -24647,84 +24113,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 218.44 140.97 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "da85e135-fc59-4940-85d2-ef425672519d")
-		(property "Reference" "#PWR015"
-			(at 218.44 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 218.44 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 218.44 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 218.44 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 218.44 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "df1e103b-04ec-4820-9285-f73af3f4aaea")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "ionic_thrust_hv:3V3")
 		(at 276.86 149.86 0)
 		(unit 1)
@@ -24869,82 +24257,6 @@
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
 					(reference "#PWR4101")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ionic_thrust_hv:V18")
-		(at 149.86 81.28 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e198dce9-3ef3-40ad-b023-2ce0ef9d1fed")
-		(property "Reference" "#PWR1011"
-			(at 149.86 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "V18"
-			(at 151.13 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 149.86 81.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 149.86 81.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "42b0d482-69d9-4e86-92d0-376756769913")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "#PWR1011")
 					(unit 1)
 				)
 			)
@@ -25549,7 +24861,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF 10%"
+		(property "Value" "1uF 16V 10%"
 			(at 116.84 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25581,7 +24893,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "Capacitor, 1uF 16V 10% 0603 X5R for HUSB238A VDD bypass"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25592,7 +24904,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" "C15849"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25603,7 +24915,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C14663"
+		(property "JLCPCB Part #" "C15849"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25614,7 +24926,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "SAMSUNG"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25625,7 +24937,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0603KRX7R9BB104"
+		(property "MPN" "CL10A105KA8NNNC"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25669,7 +24981,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C14663"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C15849"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25702,7 +25014,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C14663"
+		(property "LCSC Part" "C15849"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -26389,5 +25701,233 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:VBUS_IN")
+		(at 218.44 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fbb4b716-dc06-4495-9de5-d44b6761d505")
+		(property "Reference" "#PWR1015"
+			(at 218.44 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBUS_IN"
+			(at 219.71 127.00000000000001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 218.44 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 218.44 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d404abe3-0c61-49a5-9446-3b22ec72c1da")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
+					(reference "#PWR1015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(no_connect
+		(at 147.32 78.74)
+		(uuid "e4be82ce-25bd-44e6-bad2-160029f7d6ac")
+	)
+	(no_connect
+		(at 147.32 81.28)
+		(uuid "bc6fd351-218a-472f-b05a-9e49dc7d8c8a")
+	)
+	(no_connect
+		(at 147.32 83.82)
+		(uuid "3fcdf1fa-ade4-4894-8fe3-4381a63d5c82")
+	)
+	(no_connect
+		(at 193.04 160.02)
+		(uuid "9dca2ea2-4048-4db8-a5e2-f6b38f345f86")
+	)
+	(wire
+		(pts
+			(xy 124.46 68.58) (xy 109.22 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc3b3d66-c0f7-4a6e-84af-7201cc070586")
+	)
+	(wire
+		(pts
+			(xy 124.46 71.12) (xy 109.22 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f76e5522-d9ef-4164-bee8-30a16e3299f5")
+	)
+	(wire
+		(pts
+			(xy 109.22 68.58) (xy 109.22 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0c89077-023f-4113-975c-827c82b3910f")
+	)
+	(wire
+		(pts
+			(xy 147.32 86.36) (xy 149.86 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd15a309-c780-4b39-b269-bd5fe7770554")
+	)
+	(wire
+		(pts
+			(xy 147.32 88.9) (xy 149.86 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09f18d3f-ac43-4257-ae40-9209b84d2d77")
+	)
+	(wire
+		(pts
+			(xy 134.62 130.81) (xy 134.62 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69fc94e4-b84b-4fb6-a2e7-6b2aee4aa9db")
+	)
+	(wire
+		(pts
+			(xy 134.62 138.43) (xy 134.62 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e04ea0f2-f33d-4b9a-bcf5-3cc79dce3339")
+	)
+	(wire
+		(pts
+			(xy 160.02 130.81) (xy 160.02 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81ad896a-d49e-4790-95ca-cea42634308d")
+	)
+	(wire
+		(pts
+			(xy 160.02 138.43) (xy 160.02 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34526b39-4958-4f01-bff4-1b567f77e039")
+	)
+	(label "DEBUG_N"
+		(at 149.86 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "53e8cba8-3712-48f4-a945-cb0646e65c64")
+	)
+	(label "ADDR"
+		(at 149.86 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "39592e59-dcdd-4640-9431-17ca19c741c0")
+	)
+	(label "ADDR"
+		(at 134.62 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1428bb06-735a-4ee3-a120-3f246de991dc")
+	)
+	(label "DEBUG_N"
+		(at 160.02 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b08e4e7-fc52-4867-a5c9-14067664bd73")
+	)
+	(junction
+		(at 109.22 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2fe5130-79ac-44ff-9b9e-d874e4c9fcfc")
 	)
 )

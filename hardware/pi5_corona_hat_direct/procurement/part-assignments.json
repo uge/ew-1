@@ -51,16 +51,16 @@
       "source": "https://jlcpcb.com/partdetail/C2894897"
     },
     "01_power_mcu/U7": {
-      "lcsc": "C50341643",
-      "manufacturer": "Diodes Incorporated",
-      "mpn": "AP33772SDKZ-13-FA02",
+      "lcsc": "C24833806",
+      "manufacturer": "Hynetek(\u6167\u80fd\u6cf0)",
+      "mpn": "HUSB238A-BB001-QN16R",
       "status": "CATALOG_MATCH",
-      "notes": "FA02 firmware ordering variant in QFN-24 (4x4mm). Verify against host driver and required startup profile.",
+      "notes": "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support.",
       "footprint": null,
-      "stock": 1000,
+      "stock": 2731,
       "class": "Extended",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C50341643"
+      "source": "https://jlcpcb.com/partdetail/C24833806"
     },
     "01_power_mcu/F1": {
       "lcsc": "C5358568",
@@ -75,30 +75,18 @@
       "source": "https://jlcpcb.com/partdetail/C5358568"
     },
     "01_power_mcu/Q1": {
-      "lcsc": "C431178",
+      "lcsc": "C16072",
       "manufacturer": "Alpha & Omega Semicon",
-      "mpn": "AO4262E",
+      "mpn": "AO4407A",
       "status": "CATALOG_MATCH",
-      "notes": "AO4262E: G=4, D=5/6/7/8 on VBUS_IN, S=1/2/3 on VIN_PD. Native symbol corrected; no functional net change.",
+      "notes": "P-MOSFET: G=4, S=1/2/3 on VBUS_IN, D=5/6/7/8 on VIN_PD. Driven by HUSB238A GATE pin.",
       "footprint": null,
-      "stock": 27681,
-      "class": "Extended",
+      "stock": 25000,
+      "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C431178"
+      "source": "https://jlcpcb.com/partdetail/C16072"
     },
     "01_power_mcu/C17": {
-      "lcsc": "C5199872",
-      "manufacturer": "Samsung Electro-Mechanics",
-      "mpn": "CL10B105KB8NQNC",
-      "status": "CATALOG_MATCH",
-      "notes": "",
-      "footprint": null,
-      "stock": 2633183,
-      "class": "Extended",
-      "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C5199872"
-    },
-    "01_power_mcu/C19": {
       "lcsc": "C5199872",
       "manufacturer": "Samsung Electro-Mechanics",
       "mpn": "CL10B105KB8NQNC",
@@ -139,9 +127,9 @@
       "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
       "mpn": "0603WAF1003T5E",
       "status": "CATALOG_MATCH",
-      "notes": "",
+      "notes": "100k 1% 0603 gate pullup resistor between GATE and VBUS_IN.",
       "footprint": null,
-      "stock": 22123082,
+      "stock": 1000000,
       "class": "Basic",
       "assembly": "smtWeld",
       "source": "https://jlcpcb.com/partdetail/C25803"
@@ -159,16 +147,16 @@
       "source": "https://jlcpcb.com/partdetail/C393074"
     },
     "01_power_mcu/R14": {
-      "lcsc": "C4260",
+      "lcsc": "C25816",
       "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
-      "mpn": "0603WAF6201T5E",
+      "mpn": "0603WAF4702T5E",
       "status": "CATALOG_MATCH",
-      "notes": "",
+      "notes": "47k 1% 0603 series gate resistor between GATE and EN_DRV.",
       "footprint": null,
-      "stock": 984786,
+      "stock": 1000000,
       "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C4260"
+      "source": "https://jlcpcb.com/partdetail/C25816"
     },
     "01_power_mcu/C21": {
       "lcsc": "C126618",
@@ -315,28 +303,16 @@
       "source": "https://jlcpcb.com/partdetail/C14663"
     },
     "01_power_mcu/C18": {
-      "lcsc": "C14663",
-      "manufacturer": "YAGEO",
-      "mpn": "CC0603KRX7R9BB104",
+      "lcsc": "C15849",
+      "manufacturer": "SAMSUNG",
+      "mpn": "CL10A105KA8NNNC",
       "status": "CATALOG_MATCH",
-      "notes": "",
+      "notes": "1uF 16V 0603 X5R ceramic bypass for HUSB238A VDD.",
       "footprint": null,
-      "stock": 58124227,
+      "stock": 100000,
       "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C14663"
-    },
-    "01_power_mcu/C20": {
-      "lcsc": "C14663",
-      "manufacturer": "YAGEO",
-      "mpn": "CC0603KRX7R9BB104",
-      "status": "CATALOG_MATCH",
-      "notes": "",
-      "footprint": null,
-      "stock": 58124227,
-      "class": "Basic",
-      "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C14663"
+      "source": "https://jlcpcb.com/partdetail/C15849"
     },
     "01_power_mcu/C71": {
       "lcsc": "C14663",
@@ -1941,6 +1917,30 @@
       "class": "PCB feature",
       "assembly": "Hand-soldered wire",
       "source": "Native PCB feature; no purchased component"
+    },
+    "01_power_mcu/R15": {
+      "lcsc": "C22935",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1004T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "1M 1% 0603 resistor on HUSB238A ADDR to set I2C address 0x42.",
+      "footprint": null,
+      "stock": 1000000,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C22935"
+    },
+    "01_power_mcu/R16": {
+      "lcsc": "C22935",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1004T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "1M 1% 0603 pulldown resistor on HUSB238A DEBUG_N pin.",
+      "footprint": null,
+      "stock": 1000000,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C22935"
     }
   },
   "last_updated": "2026-10-03"
