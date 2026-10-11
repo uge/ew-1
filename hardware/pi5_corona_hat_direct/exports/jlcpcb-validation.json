@@ -1,8 +1,8 @@
 {
   "revision": "K",
   "kicad_version": "10.0.6",
-  "parts": 168,
-  "catalog_assigned": 134,
+  "parts": 156,
+  "catalog_assigned": 122,
   "unassigned": [
     "T1",
     "TP50",
@@ -50,7 +50,7 @@
   "pin_pad_mismatches": [
 
   ],
-  "jlcpcb_bom_part_quantity": 132,
+  "jlcpcb_bom_part_quantity": 120,
   "jlcpcb_bom_rows": 48,
   "catalog_checked": "2026-10-02 / 2026-10-03",
   "stock_not_reserved": true,

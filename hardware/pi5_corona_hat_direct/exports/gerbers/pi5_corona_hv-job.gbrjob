@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "10.0.6-10.0.6~ubuntu26.04.1"
     },
-    "CreationDate": "2026-10-10T17:02:30-07:00"
+    "CreationDate": "2026-10-10T17:35:08-07:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -72,11 +72,6 @@
       "Path": "pi5_corona_hv-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
-    },
-    {
-      "Path": "pi5_corona_hv-User_Drawings.gbr",
-      "FileFunction": "Other,User",
-      "FilePolarity": "Positive"
     },
     {
       "Path": "pi5_corona_hv-Edge_Cuts.gm1",
