@@ -1,0 +1,27 @@
+{
+  "kicad_version": "10.0.7",
+  "board_sha256": "1a8e27a0e72847be7f948ef193133d734925c06f5d357224663e471f2a7120fe",
+  "drills": [
+    "pi5_corona_hv-NPTH.drl",
+    "pi5_corona_hv-PTH.drl"
+  ],
+  "files": {
+    "pi5_corona_hv-B_Cu.gbl": "27cf918edce02aafe3a8785d658e4374e0d59991adf013ec8215ac21275fbe81",
+    "pi5_corona_hv-B_Mask.gbs": "0a50adfae02aff7138261cf2151fb403e6c90224434e6e838be956813074df39",
+    "pi5_corona_hv-B_Paste.gbp": "ac75e1e109a2b91bd22737b5632da33fbcb2c220aab74229e05f2d0277ca6775",
+    "pi5_corona_hv-B_Silkscreen.gbo": "5106397f88b16beb1b061330e1c4ded984143a13d895c5298738e10b917b8b94",
+    "pi5_corona_hv-Edge_Cuts.gm1": "fa4cd587187d3877b0882a1917284c7c073024e2286f3e1f4cf1d947b2decaf2",
+    "pi5_corona_hv-F_Cu.gtl": "0117f5a833a2c765d7b2e8a833f434d6af05dcf991758f18153c97207e8b0871",
+    "pi5_corona_hv-F_Mask.gts": "52078ea6eef20fda134132178a56372dc3da6a0d6a04d1d38b2f83e4b86ce6ed",
+    "pi5_corona_hv-F_Paste.gtp": "86762e6bf3dfe92afcb1c8893df81686876197f093919331d7d8c9d85402747a",
+    "pi5_corona_hv-F_Silkscreen.gto": "de6640e0aa2c05f7013b82d3405979bd05b693c9ca069bacd18e2103d763e5b1",
+    "pi5_corona_hv-NPTH.drl": "02b4be7420fbda69a2cf3f1e6cea151767685a334d7c02a7a93caac9fc19e626",
+    "pi5_corona_hv-PTH.drl": "8d1ae5012c97c6a8ee456baf7e98a142c364ac0bb365da63b2b3e42a2c7893ec",
+    "pi5_corona_hv-job.gbrjob": "063bd653c870779df7cca44b3927e0c346849c99875f976ec05a13bfb95a0e6b"
+  },
+  "status": "ARCHIVE_INTEGRITY_VERIFIED_INSULATION_RELEASE_HOLD",
+  "archives": {
+    "jlcpcb-gerbers.zip": "a099179f89bb0f6382a8287e6743b0af687587987e91f8680717c2a78deb7f24",
+    "pi5_corona_hv_gerbers.zip": "a099179f89bb0f6382a8287e6743b0af687587987e91f8680717c2a78deb7f24"
+  }
+}

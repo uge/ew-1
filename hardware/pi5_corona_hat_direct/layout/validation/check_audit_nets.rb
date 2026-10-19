@@ -35,7 +35,7 @@ checks={
  'limited interlock feedback'=>[%w[R92.2 J2.16]],
  'coil and regulator grounds'=>[%w[K1.8 U10.2 J2.6]],
  'correct transformer primary'=>[%w[T1.1 C11.2],%w[T1.5 U2.10]],
- 'correct transformer secondary and guards'=>[%w[T1.8 T1.7],%w[T1.9 T1.10 R90.1 D5.1],%w[T1.6 R90.2 D5.2]],
+ 'correct transformer secondary and guards'=>[%w[T1.8 T1.7],%w[T1.9 T1.10 T1.6 R90.2 D5.2],%w[J61.1 R90.1 D5.1]],
  'return surge clamp and ADC protection'=>[%w[D5.1 R91.1],%w[R91.2 D4.3]]
 }
 checks.each do |name,groups|

@@ -2811,7 +2811,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ionic_thrust_hv:HVM12"
+		(symbol "ionic_thrust_hv:2CL75"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2827,7 +2827,7 @@
 					)
 				)
 			)
-			(property "Value" "HVM12"
+			(property "Value" "2CL75"
 				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2837,7 +2837,7 @@
 					)
 				)
 			)
-			(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+			(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2848,7 +2848,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/C7436450.pdf"
+			(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2870,7 +2870,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "YFW(佑风微)"
+			(property "Manufacturer" "SUNMATE Elec"
 				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2881,7 +2881,7 @@
 					)
 				)
 			)
-			(property "MPN" "HVM12"
+			(property "MPN" "2CL75"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2892,7 +2892,7 @@
 					)
 				)
 			)
-			(property "LCSC Part" "C7436450"
+			(property "LCSC Part" "C424512"
 				(at 0 -17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2914,7 +2914,7 @@
 					)
 				)
 			)
-			(symbol "HVM12_0_1"
+			(symbol "2CL75_0_1"
 				(polyline
 					(pts
 						(xy -1.27 1.78) (xy -1.27 -1.78)
@@ -6509,8 +6509,8 @@
 		(uuid "f6d8393f-e323-438b-b382-c2b0d69ee7b5")
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HV_RETURN")
-		(at 358.14 172.72 180)
+		(lib_id "ionic_thrust_hv:GND")
+		(at 358.14 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6530,7 +6530,7 @@
 				)
 			)
 		)
-		(property "Value" "HV_RETURN"
+		(property "Value" "GND"
 			(at 370.84 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7191,8 +7191,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HV_RETURN")
-		(at 248.92 172.72 180)
+		(lib_id "ionic_thrust_hv:GND")
+		(at 248.92 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7212,7 +7212,7 @@
 				)
 			)
 		)
-		(property "Value" "HV_RETURN"
+		(property "Value" "GND"
 			(at 236.22 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7342,8 +7342,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HV_RETURN")
-		(at 165.1 172.72 180)
+		(lib_id "ionic_thrust_hv:GND")
+		(at 165.1 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7363,7 +7363,7 @@
 				)
 			)
 		)
-		(property "Value" "HV_RETURN"
+		(property "Value" "GND"
 			(at 177.8 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7768,7 +7768,7 @@
 				(justify left)
 			)
 		)
-		(pin "HV_RETURN" output
+		(pin "GND" bidirectional
 			(at 254 172.72 180)
 			(uuid "6388616b-4b80-4f92-81a2-f8ce3f1d4894")
 			(effects
@@ -7788,7 +7788,7 @@
 				(justify right)
 			)
 		)
-		(pin "HV_RETURN" output
+		(pin "GND" bidirectional
 			(at 353.06 172.72 0)
 			(uuid "70b2381a-7b81-41b0-9a57-eb87215d0ca9")
 			(effects
@@ -8191,7 +8191,7 @@
 				(justify right)
 			)
 		)
-		(pin "HV_RETURN" output
+		(pin "GND" bidirectional
 			(at 160.02 172.72 0)
 			(uuid "700bfd4a-6081-4482-8bb7-005f941f2101")
 			(effects

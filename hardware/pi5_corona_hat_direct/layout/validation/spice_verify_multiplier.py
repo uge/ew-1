@@ -21,96 +21,17 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 def build_multiplier_subcircuit():
-    """Generates the SPICE netlist text for the 6-stage Cockcroft-Walton multiplier."""
-    return """
-* --- Sunmate 2CL75 Diode Model ---
-* 16 kV Repetitive Peak Reverse, 5 mA avg, 0.5 A surge, trr = 100 ns, Cj = 1 pF
-.model D2CL75 D (IS=1e-12 RS=1500 N=25 CJO=1p TT=100n BV=16000 IBV=1u)
+    """Use current native schematic topology and values for every analysis."""
+    from native_multiplier import circuit
+    return circuit()[0]
 
-* --- Stage 1 ---
-C100 SEC_IN CW_P1 1n
-R140 SEC_IN N_R140_2 100MEG
-R141 N_R140_2 CW_P1 100MEG
-D10 HV_RET CW_P1 D2CL75
-
-C101 HV_RET CW_S1 1n
-R142 HV_RET N_R142_2 100MEG
-R143 N_R142_2 CW_S1 100MEG
-D11 CW_P1 CW_S1 D2CL75
-
-* --- Stage 2 ---
-C102 CW_P1 CW_P2 1n
-R144 CW_P1 N_R144_2 100MEG
-R145 N_R144_2 CW_P2 100MEG
-D12 CW_S1 CW_P2 D2CL75
-
-C103 CW_S1 CW_S2 1n
-R146 CW_S1 N_R146_2 100MEG
-R147 N_R146_2 CW_S2 100MEG
-D13 CW_P2 CW_S2 D2CL75
-
-* --- Stage 3 ---
-C104 CW_P2 CW_P3 1n
-R148 CW_P2 N_R148_2 100MEG
-R149 N_R148_2 CW_P3 100MEG
-D14 CW_S2 CW_P3 D2CL75
-
-C105 CW_S2 CW_S3 1n
-R150 CW_S2 N_R150_2 100MEG
-R151 N_R150_2 CW_S3 100MEG
-D15 CW_P3 CW_S3 D2CL75
-
-* --- Stage 4 ---
-C106 CW_P3 CW_P4 1n
-R152 CW_P3 N_R152_2 100MEG
-R153 N_R152_2 CW_P4 100MEG
-D16 CW_S3 CW_P4 D2CL75
-
-C107 CW_S3 CW_S4 1n
-R154 CW_S3 N_R154_2 100MEG
-R155 N_R154_2 CW_S4 100MEG
-D17 CW_P4 CW_S4 D2CL75
-
-* --- Stage 5 ---
-C108 CW_P4 CW_P5 1n
-R156 CW_P4 N_R156_2 100MEG
-R157 N_R156_2 CW_P5 100MEG
-D18 CW_S4 CW_P5 D2CL75
-
-C109 CW_S4 CW_S5 1n
-R158 CW_S4 N_R158_2 100MEG
-R159 N_R158_2 CW_S5 100MEG
-D19 CW_P5 CW_S5 D2CL75
-
-* --- Stage 6 ---
-C110 CW_P5 D20_K 1n
-R160 CW_P5 N_R160_2 100MEG
-R161 N_R160_2 D20_K 100MEG
-D20 CW_S5 D20_K D2CL75
-
-C111 CW_S5 HV_RAW 1n
-R162 CW_S5 N_R162_2 100MEG
-R163 N_R162_2 HV_RAW 100MEG
-D21 D20_K HV_RAW D2CL75
-
-* --- Ballast Chain (10x 10M = 100M Bourns CHV2512-FX-1005ELF) ---
-R_BALLAST HV_RAW HV_OUT 100MEG
-
-* --- Voltage Divider (10x 100M = 1000M Bourns CHV2512-JW-107ELF) + R8 ---
-R_DIV HV_OUT HV_SENSE 1000MEG
-R8 HV_SENSE 0 82k
-C13 HV_SENSE 0 100n
-
-* --- Return Current Shunt ---
-R90 HV_RET 0 10k
-"""
 
 def run_simulation_startup(tmpdir):
     """Simulates startup transient from 0 to 8 ms."""
     data_file = os.path.join(tmpdir, "startup_data.txt")
     spice_netlist = f"""* Cockcroft-Walton Multiplier Startup Transient
 .param Vpk=1250 Freq=68k
-V_SEC SEC_A HV_RET SIN(0 {{Vpk}} {{Freq}})
+V_SEC SEC_A 0 SIN(0 {{Vpk}} {{Freq}})
 R_SEC SEC_A SEC_IN 350
 
 {build_multiplier_subcircuit()}
@@ -180,7 +101,7 @@ def run_simulation_load_sweep(tmpdir):
     for i_uA in currents_uA:
         spice_netlist = f"""* Multiplier Load Point: {i_uA} uA
 .param Vpk=1250 Freq=68k
-V_SEC SEC_A HV_RET SIN(0 {{Vpk}} {{Freq}})
+V_SEC SEC_A 0 SIN(0 {{Vpk}} {{Freq}})
 R_SEC SEC_A SEC_IN 350
 
 {build_multiplier_subcircuit()}
@@ -212,93 +133,17 @@ print v_raw_avg v_out_avg v_out_rip v_sense_avg
     return results
 
 def run_simulation_bleed_down(tmpdir):
-    """Simulates safety bleed-down discharge after AC drive is stopped."""
-    data_file = os.path.join(tmpdir, "bleed_data.txt")
-    spice_netlist = f"""* Multiplier Safety Bleed-Down Discharge
-.param Vpk=1250
+    """Evaluate every charged node, four phases and individual bleeder faults."""
+    from native_multiplier import shutdown
+    return shutdown(tmpdir)
 
-* Initial conditions: steady-state voltages
-.ic v(CW_S1)=2450 v(CW_S2)=4900 v(CW_S3)=7350 v(CW_S4)=9800 v(CW_S5)=12250 v(HV_RAW)=14700 v(HV_OUT)=13350
-
-V_GND HV_RET 0 0
-
-* Smoothing Bleeders (6 banks x 200M = 1.2G total)
-R_S1 HV_RET CW_S1 200MEG
-R_S2 CW_S1 CW_S2 200MEG
-R_S3 CW_S2 CW_S3 200MEG
-R_S4 CW_S3 CW_S4 200MEG
-R_S5 CW_S4 CW_S5 200MEG
-R_S6 CW_S5 HV_RAW 200MEG
-
-C101 HV_RET CW_S1 1n
-C103 CW_S1 CW_S2 1n
-C105 CW_S2 CW_S3 1n
-C107 CW_S3 CW_S4 1n
-C109 CW_S4 CW_S5 1n
-C111 CW_S5 HV_RAW 1n
-
-* Pump Bleeders (6 banks x 200M)
-R_P1 HV_RET CW_P1 200MEG
-R_P2 CW_P1 CW_P2 200MEG
-R_P3 CW_P2 CW_P3 200MEG
-R_P4 CW_P3 CW_P4 200MEG
-R_P5 CW_P4 CW_P5 200MEG
-R_P6 CW_P5 D20_K 200MEG
-
-C100 HV_RET CW_P1 1n
-C102 CW_P1 CW_P2 1n
-C104 CW_P2 CW_P3 1n
-C106 CW_P3 CW_P4 1n
-C108 CW_P4 CW_P5 1n
-C110 CW_P5 D20_K 1n
-
-* Ballast + Divider
-R_BALLAST HV_RAW HV_OUT 100MEG
-R_DIV HV_OUT 0 1000MEG
-
-.tran 2m 2.0 0 2m uic
-
-.control
-run
-wrdata {data_file} v(HV_RAW) v(HV_OUT)
-meas tran v_t05 find v(HV_OUT) at=0.5
-meas tran v_t10 find v(HV_OUT) at=1.0
-meas tran v_t15 find v(HV_OUT) at=1.5
-meas tran v_t20 find v(HV_OUT) at=2.0
-meas tran t_safe when v(HV_OUT)=50 fall=1
-print v_t05 v_t10 v_t15 v_t20 t_safe
-.endc
-.end
-"""
-    proc = subprocess.run(['ngspice', '-b'], input=spice_netlist, capture_output=True, text=True)
-    raw_data = np.loadtxt(data_file)
-    t = raw_data[:, 0]
-    v_raw = raw_data[:, 1]
-    v_out = raw_data[:, 3]
-
-    meas = {}
-    for line in proc.stdout.splitlines():
-        if '=' in line:
-            parts = line.split('=')
-            k = parts[0].strip()
-            try:
-                meas[k] = float(parts[1].split()[0].strip())
-            except ValueError:
-                pass
-
-    return {
-        'time_s': t,
-        'v_raw': v_raw,
-        'v_out': v_out,
-        'meas': meas
-    }
 
 def run_simulation_ripple_zoom(tmpdir):
     """Simulates high-resolution ripple waveforms over 5 switching cycles."""
     data_file = os.path.join(tmpdir, "ripple_data.txt")
     spice_netlist = f"""* High Resolution Output Ripple
 .param Vpk=1250 Freq=68k
-V_SEC SEC_A HV_RET SIN(0 {{Vpk}} {{Freq}})
+V_SEC SEC_A 0 SIN(0 {{Vpk}} {{Freq}})
 R_SEC SEC_A SEC_IN 350
 
 {build_multiplier_subcircuit()}
@@ -377,8 +222,9 @@ def main():
 
         print("\n[4/4] Running Safety Bleed-Down Discharge Simulation...")
         bleed = run_simulation_bleed_down(tmpdir)
-        t_safe = bleed['meas'].get('t_safe', 0)
-        print(f"  Time to Safe Voltage (< 50 V): {t_safe:.3f} s")
+        t_safe = bleed['meas']['t_safe']
+
+        print(f"  All modeled nodes below 50 V: {t_safe} s (None = threshold not reached in every scenario)")
         print(f"  Voltage at 0.5 s:              {bleed['meas'].get('v_t05', 0):.2f} V")
         print(f"  Voltage at 1.0 s:              {bleed['meas'].get('v_t10', 0):.4f} V")
 
@@ -432,18 +278,20 @@ def main():
         # Panel 4: Safety Bleed-Down Discharge
         ax4 = axes[1, 1]
         ax4.plot(bleed['time_s'], bleed['v_out'] / 1000.0, label='V(HV_OUT) Decay [kV]', color='#d62728', lw=2.5)
-        ax4.axhline(0.05, color='#2ca02c', ls='--', label='Safe Touch Threshold (50 V)')
-        ax4.axvline(t_safe, color='#9467bd', ls=':', label=f'Safe in {t_safe:.2f} s')
+        ax4.axhline(0.05, color='#2ca02c', ls='--', label='Analysis Threshold (50 V)')
+        if t_safe is not None:
+            ax4.axvline(t_safe, color='#9467bd', ls=':', label=f'All modeled nodes below threshold: {t_safe:.2f} s')
+        ax4.plot(bleed['time_s'], bleed['envelope']/1000., label='Maximum modeled node/capacitor voltage', ls='--')
         ax4.set_title("4. Post-Shutdown Bleed-Down Discharge (2-Resistor Bleeder)", fontsize=12, fontweight='bold')
         ax4.set_xlabel("Time after Drive Cut (s)")
         ax4.set_ylabel("Output Voltage (kV)")
-        ax4.set_xlim(0, 1.5)
+        ax4.set_xlim(0, 5.0)
         ax4.set_ylim(-0.5, 14.5)
         ax4.grid(True, alpha=0.3)
         ax4.legend(loc='upper right', frameon=True)
 
         plt.tight_layout()
-        out_plot = "pi5_corona_hat_direct/exports/spice_multiplier_analysis.png"
+        out_plot = str(__import__("pathlib").Path(__file__).resolve().parents[2] / "exports/spice_multiplier_analysis.png")
         fig.savefig(out_plot, dpi=300)
         plt.close(fig)
         print(f"\n[Artifact] Saved comprehensive SPICE analysis plot to: {out_plot}")
@@ -478,14 +326,14 @@ def main():
                 },
                 "corona_operating_point_50uA": {
                     "i_corona_uA": 50.0,
-                    "v_raw_kV": 14.53,
-                    "v_out_kV": 8.67,
-                    "v_ballast_drop_kV": 5.00,
+                    "v_raw_kV": next(p["v_raw_avg"] for p in sweep if p["i_uA"] == 50)/1000.,
+                    "v_out_kV": next(p["v_out_avg"] for p in sweep if p["i_uA"] == 50)/1000.,
+                    "v_ballast_drop_kV": next(p["v_raw_avg"]-p["v_out_avg"] for p in sweep if p["i_uA"] == 50)/1000.,
                     "electrode_gap_cm": 2.0,
-                    "average_electric_field_kV_cm": 4.33,
+                    "average_electric_field_kV_cm": next(p["v_out_avg"] for p in sweep if p["i_uA"] == 50)/2000.,
                     "corona_inception_field_kV_cm": 3.00,
-                    "field_margin_over_inception": 1.44,
-                    "power_delivered_W": 0.433
+                    "field_margin_over_inception": next(p["v_out_avg"] for p in sweep if p["i_uA"] == 50)/6000.,
+                    "power_delivered_W": next(p["v_out_avg"] for p in sweep if p["i_uA"] == 50)*50e-6
                 },
                 "ripple": {
                     "v_raw_pp_V": ripple['meas'].get('v_raw_pp', 0),
@@ -493,6 +341,7 @@ def main():
                     "v_out_ripple_pct": rip_pct
                 },
                 "safety_bleed_down": {
+                    "shutdown_analysis": bleed["report"],
                     "time_to_safe_50V_s": t_safe,
                     "v_at_0_5s_V": bleed['meas'].get('v_t05', 0),
                     "v_at_1_0s_V": bleed['meas'].get('v_t10', 0)
@@ -511,7 +360,7 @@ def main():
             }
         }
 
-        out_json = "pi5_corona_hat_direct/exports/spice-multiplier-report.json"
+        out_json = str(__import__("pathlib").Path(__file__).resolve().parents[2] / "exports/spice-multiplier-report.json")
         with open(out_json, "w") as f:
             json.dump(report, f, indent=2)
         print(f"[Artifact] Saved SPICE simulation report to: {out_json}")

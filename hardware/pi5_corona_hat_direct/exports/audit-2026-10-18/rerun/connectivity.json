@@ -1,0 +1,64 @@
+{
+  "independent GPIO inputs and commands": {
+    "pass": true,
+    "failures": []
+  },
+  "relay bulk command contacts": {
+    "pass": true,
+    "failures": []
+  },
+  "relay sleep command contacts": {
+    "pass": true,
+    "failures": []
+  },
+  "coil regulation": {
+    "pass": true,
+    "failures": []
+  },
+  "series mechanical interlocks": {
+    "pass": true,
+    "failures": []
+  },
+  "detachable switch boards": {
+    "pass": true,
+    "failures": []
+  },
+  "detachable optical sensor": {
+    "pass": true,
+    "failures": []
+  },
+  "host qwiic connector": {
+    "pass": true,
+    "failures": []
+  },
+  "limited interlock feedback": {
+    "pass": true,
+    "failures": []
+  },
+  "coil and regulator grounds": {
+    "pass": true,
+    "failures": []
+  },
+  "correct transformer primary": {
+    "pass": true,
+    "failures": []
+  },
+  "correct transformer secondary and guards": {
+    "pass": false,
+    "failures": [
+      {
+        "T1.9": "GND",
+        "T1.10": "GND",
+        "R90.1": "/HV_RETURN",
+        "D5.1": "/HV_RETURN"
+      }
+    ]
+  },
+  "return surge clamp and ADC protection": {
+    "pass": true,
+    "failures": []
+  },
+  "unused center tap": {
+    "pass": true
+  }
+}

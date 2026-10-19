@@ -1,0 +1,21 @@
+{
+  "jlcpcb-gerbers.zip": {
+    "crc_pass": true,
+    "drills": [
+      "pi5_corona_hv-NPTH.drl",
+      "pi5_corona_hv-PTH.drl"
+    ],
+    "payload_hashes_match_manifest": true,
+    "archive_hash_matches_manifest": true
+  },
+  "pi5_corona_hv_gerbers.zip": {
+    "crc_pass": true,
+    "drills": [
+      "pi5_corona_hv-NPTH.drl",
+      "pi5_corona_hv-PTH.drl"
+    ],
+    "payload_hashes_match_manifest": true,
+    "archive_hash_matches_manifest": true
+  },
+  "source_board_matches_manifest": true
+}

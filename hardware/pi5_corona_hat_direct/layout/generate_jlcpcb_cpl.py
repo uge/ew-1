@@ -54,6 +54,11 @@ CENTROID_OVERRIDES = {
     "C70": (98.0000, 104.0000),
     # J3: USB-C receptacle origin is at front edge (88.0, 54.675). True package center is at (88.0000, 56.1730).
     "J3": (88.0000, 56.1730),
+    # S3-S6: DEALON TK-0013-R origin is Pad 2 at (39.0, Y). Switch body (Y: +2.7 to +8.9 mm) center is at Y + 5.80 mm.
+    "S3": (39.0000, 82.8000),
+    "S4": (39.0000, 98.8000),
+    "S5": (39.0000, 114.8000),
+    "S6": (39.0000, 130.8000),
 }
 
 

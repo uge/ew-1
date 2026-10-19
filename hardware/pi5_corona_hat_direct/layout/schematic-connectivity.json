@@ -98,7 +98,7 @@
         "ki_keywords": "capacitor cap",
         "ki_fp_filters": "C_*",
         "Footprint": "Capacitor_SMD:C_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
+        "Datasheet": "https://jlcpcb.com/partdetail/C15849",
         "Description": "Capacitor, 1uF 16V 10% 0603 X5R for HUSB238A VDD bypass"
       }
     },
@@ -260,14 +260,14 @@
     },
     {
       "ref": "F1",
-      "value": "1A 30V PTC",
+      "value": "2A 24V PTC",
       "footprint": "Fuse:Fuse_1206_3216Metric",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/68e48b96-3708-41a8-9ca1-304cfe8fb23e",
       "properties": {
-        "LCSC": "C5358568",
-        "JLCPCB Part #": "C5358568",
-        "Manufacturer": "BHFUSE",
-        "MPN": "BSMD1206-100-30V",
+        "LCSC": "C42396578",
+        "JLCPCB Part #": "C42396578",
+        "Manufacturer": "LUTE",
+        "MPN": "1206L200/24NR",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "",
@@ -280,8 +280,8 @@
         "ki_keywords": "resettable fuse PTC PPTC polyfuse polyswitch",
         "ki_fp_filters": "*polyfuse* *PTC*",
         "Footprint": "Fuse:Fuse_1206_3216Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C5358568",
-        "Description": "Resettable fuse, polymeric positive temperature coefficient"
+        "Datasheet": "https://jlcpcb.com/partdetail/C42396578",
+        "Description": "Resettable fuse, polymeric positive temperature coefficient, 2A 24V 1206"
       }
     },
     {
@@ -313,26 +313,26 @@
     {
       "ref": "J3",
       "value": "USB-C PD INPUT",
-      "footprint": "Connector_USB:USB_C_Receptacle_HCTL_HC-TYPE-C-16P-01A",
+      "footprint": "ionic_thrust_hv:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/211bab2f-074c-49d7-ac7d-44e0ea23b584",
       "properties": {
-        "LCSC": "C2894897",
-        "JLCPCB Part #": "C2894897",
-        "Manufacturer": "HCTL",
-        "MPN": "HC-TYPE-C-16P-01A",
+        "LCSC": "C165948",
+        "JLCPCB Part #": "C165948",
+        "Manufacturer": "Korean Hroparts Elec",
+        "MPN": "TYPE-C-31-M-12",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C2894897",
-        "Catalog Checked": "2026-10-02",
+        "Catalog URL": "https://jlcpcb.com/partdetail/Korean_Hroparts_Elec-TYPE_C_31_M_12/C165948",
+        "Catalog Checked": "2026-10-11",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C2894897",
+        "LCSC Part": "C165948",
         "Sheetname": "01_power_mcu",
         "Sheetfile": "01_power_mcu.kicad_sch",
         "ki_keywords": "usb universal serial bus type-C USB2.0",
         "ki_fp_filters": "USB*C*Receptacle*",
-        "Footprint": "Connector_USB:USB_C_Receptacle_HCTL_HC-TYPE-C-16P-01A",
-        "Datasheet": "https://jlcpcb.com/partdetail/C2894897",
+        "Footprint": "ionic_thrust_hv:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+        "Datasheet": "https://jlcpcb.com/partdetail/Korean_Hroparts_Elec-TYPE_C_31_M_12/C165948",
         "Description": "USB 2.0-only 16P Type-C Receptacle connector"
       }
     },
@@ -361,32 +361,6 @@
       }
     },
     {
-      "ref": "NTC1",
-      "value": "10k NTC",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/d904e905-390a-40aa-b3f8-f32b86a2d7f6",
-      "properties": {
-        "LCSC": "C13564",
-        "JLCPCB Part #": "C13564",
-        "Manufacturer": "Murata Electronics",
-        "MPN": "NCP18XH103F03RB",
-        "JLCPCB Library": "Extended",
-        "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "Murata 10k / 1%, B25/50=3380K; configure AP33772S NTC lookup/thresholds for this curve before operation.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C13564",
-        "Catalog Checked": "2026-10-02",
-        "Assembly Process": "smtWeld",
-        "LCSC Part": "C13564",
-        "Sheetname": "01_power_mcu",
-        "Sheetfile": "01_power_mcu.kicad_sch",
-        "ki_keywords": "thermistor NTC resistor sensor RTD",
-        "ki_fp_filters": "R_* RV_*",
-        "Footprint": "Resistor_SMD:R_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C13564",
-        "Description": "Temperature dependent resistor, negative temperature coefficient"
-      }
-    },
-    {
       "ref": "Q1",
       "value": "AO4407A",
       "footprint": "Package_SO:SO-8_3.9x4.9mm_P1.27mm",
@@ -400,7 +374,7 @@
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "AO4407A P-MOSFET: S=1/2/3 on VBUS_IN, G=4 on GATE, D=5/6/7/8 on VIN_PD.",
         "Catalog URL": "https://jlcpcb.com/partdetail/C16072",
-        "Catalog Checked": "2026-10-10",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "smtWeld",
         "LCSC Part": "C16072",
         "Sheetname": "01_power_mcu",
@@ -536,7 +510,7 @@
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C4260",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25816",
         "Description": "Resistor, 47k 1% 0603 gate pull-down series resistor for P-MOSFET"
       }
     },
@@ -550,7 +524,7 @@
         "JLCPCB Part #": "C22935",
         "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
         "MPN": "0603WAF1004T5E",
-        "JLCPCB Library": "Extended",
+        "JLCPCB Library": "Basic",
         "Procurement Status": "CATALOG_MATCH",
         "Procurement Notes": "",
         "Catalog URL": "https://jlcpcb.com/partdetail/C22935",
@@ -562,7 +536,7 @@
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C5199872",
+        "Datasheet": "https://jlcpcb.com/partdetail/C22935",
         "Description": "Resistor, 1M 1% 0603 for HUSB238A ADDR (sets address 0x42)"
       }
     },
@@ -588,7 +562,7 @@
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
+        "Datasheet": "https://jlcpcb.com/partdetail/C22935",
         "Description": "Resistor, 1M 1% 0603 for HUSB238A DEBUG_N pulldown"
       }
     },
@@ -672,27 +646,27 @@
     },
     {
       "ref": "R73",
-      "value": "3.32k 1%",
+      "value": "1.2k 1%",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "path": "/1709378f-a8a2-4798-b42d-99352f87d149/76b827ef-2a1d-4b1e-87e8-84ef85bb9646",
       "properties": {
-        "LCSC": "C863430",
-        "JLCPCB Part #": "C863430",
-        "Manufacturer": "YAGEO",
-        "MPN": "RT0603FRD073K32L",
-        "JLCPCB Library": "Extended",
+        "LCSC": "C22765",
+        "JLCPCB Part #": "C22765",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1201T5E",
+        "JLCPCB Library": "Basic",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C863430",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "1.2k 1% 0603 sets U9 TPS259470 eFuse current limit to 2.78A typ (2.53A min), above U2 2.20A IPROPI limit.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C22765",
+        "Catalog Checked": "2026-10-18",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C863430",
+        "LCSC Part": "C22765",
         "Sheetname": "01_power_mcu",
         "Sheetfile": "01_power_mcu.kicad_sch",
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C863430",
+        "Datasheet": "https://jlcpcb.com/partdetail/C22765",
         "Description": ""
       }
     },
@@ -760,9 +734,9 @@
         "MPN": "HUSB238A-BB001-QN16R",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support.",
+        "Procurement Notes": "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). VDD powered by 3V3; default 5V startup, I2C programmable (0x42) from 5V to 20V with PPS support.",
         "Catalog URL": "https://jlcpcb.com/partdetail/C24833806",
-        "Catalog Checked": "2026-10-10",
+        "Catalog Checked": "2026-10-02",
         "Assembly Process": "smtWeld",
         "LCSC Part": "C24833806",
         "Sheetname": "01_power_mcu",
@@ -824,7 +798,7 @@
     },
     {
       "ref": "C11",
-      "value": "120nF 100V",
+      "value": "120nF 630V",
       "footprint": "ionic_thrust_hv:Film_KYET_18x10mm_P15mm",
       "path": "/6db4da9a-2f77-41fb-a28d-f514a0b2daea/b92f5369-9ab2-4114-bdd2-69a1c2baa14b",
       "properties": {
@@ -1187,27 +1161,27 @@
     },
     {
       "ref": "R61",
-      "value": "3.3k 1%",
+      "value": "1.5k 1%",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "path": "/6db4da9a-2f77-41fb-a28d-f514a0b2daea/db88156e-cfa7-4b75-a348-15d8fc5cc678",
       "properties": {
-        "LCSC": "C22978",
-        "JLCPCB Part #": "C22978",
+        "LCSC": "C22843",
+        "JLCPCB Part #": "C22843",
         "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
-        "MPN": "0603WAF3301T5E",
+        "MPN": "0603WAF1501T5E",
         "JLCPCB Library": "Basic",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C22978",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "1.5k 1% 0603 sets U2 DRV8876 IPROPI trip threshold to 2.20A, above primary magnetizing current and below U9 eFuse 2.78A limit.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C22843",
+        "Catalog Checked": "2026-10-18",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C22978",
+        "LCSC Part": "C22843",
         "Sheetname": "02_drive_transformer",
         "Sheetfile": "02_drive_transformer.kicad_sch",
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_0603_1608Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C22978",
+        "Datasheet": "https://jlcpcb.com/partdetail/C22843",
         "Description": ""
       }
     },
@@ -2462,7 +2436,7 @@
     },
     {
       "ref": "S3",
-      "value": "LID_SW_1",
+      "value": "TK-0013-R",
       "footprint": "ionic_thrust_hv:SW_TK-0013-R",
       "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/176038bc-c3ea-4e7e-bce5-de3e780e0905",
       "properties": {
@@ -2487,7 +2461,7 @@
     },
     {
       "ref": "S4",
-      "value": "LID_SW_2",
+      "value": "TK-0013-R",
       "footprint": "ionic_thrust_hv:SW_TK-0013-R",
       "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/dc3c5f5d-9d7d-4783-a0ae-4f7d465f8d9e",
       "properties": {
@@ -2512,7 +2486,7 @@
     },
     {
       "ref": "S5",
-      "value": "LID_SW_3",
+      "value": "TK-0013-R",
       "footprint": "ionic_thrust_hv:SW_TK-0013-R",
       "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/e3018a89-fae9-428b-8a02-f36969153c1e",
       "properties": {
@@ -2537,7 +2511,7 @@
     },
     {
       "ref": "S6",
-      "value": "LID_SW_4",
+      "value": "TK-0013-R",
       "footprint": "ionic_thrust_hv:SW_TK-0013-R",
       "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/a44e8d51-1282-4bc6-a44b-4c03a45c18da",
       "properties": {
@@ -2911,301 +2885,301 @@
     },
     {
       "ref": "D10",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/789d9ddb-591f-41df-affb-55772e2bfcdf",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D11",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/cb8b6217-e532-462f-b5df-1622799aee13",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D12",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/6d966632-5308-43b4-8273-9ece59bf12bd",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D13",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/e6dd9759-951f-4ff9-ba27-19221a26738a",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D14",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/e886637e-0555-46e8-890b-25cf037195f5",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D15",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/68e6645a-fc71-4efa-8020-fcc3a7ccdc49",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D16",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/6de9f55b-df7b-4c45-8d3e-1848e4656a70",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D17",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/7066be34-ae2a-44ad-8892-7f70f05060e9",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D18",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/7b95fc6a-03ed-400f-b1a2-5c7f7f6bde49",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D19",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/da38909a-f8b9-4fea-97f3-498623f42d30",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D20",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/2eface1f-f198-4f37-8fd8-065933ae57a5",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
     {
       "ref": "D21",
-      "value": "HVM12",
-      "footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
+      "value": "2CL75",
+      "footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
       "path": "/0f7ec210-7bd8-4430-9989-4c86a2c79963/f25acb2a-e4a3-40c5-9c5e-bd9150857ab3",
       "properties": {
-        "LCSC Part": "C7436450",
-        "MPN": "HVM12",
-        "LCSC": "C7436450",
-        "JLCPCB Part #": "C7436450",
-        "Manufacturer": "YFW",
+        "LCSC Part": "C424512",
+        "MPN": "2CL75",
+        "LCSC": "C424512",
+        "JLCPCB Part #": "C424512",
+        "Manufacturer": "SUNMATE Elec",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "12kV HVM12, DO-722; THT/manual assembly.",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C7436450",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
+        "Catalog Checked": "2026-10-03",
         "Assembly Process": "manualWeld",
         "Sheetname": "03_multiplier",
         "Sheetfile": "03_multiplier.kicad_sch",
         "ki_keywords": "Diodes - Fast Recovery Rectifiers",
-        "Footprint": "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD",
-        "Datasheet": "https://jlcpcb.com/partdetail/C7436450",
+        "Footprint": "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26",
+        "Datasheet": "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512",
         "Description": ""
       }
     },
@@ -5146,23 +5120,11 @@
       "name": "/HV_RETURN",
       "nodes": [
         [
-          "C101",
-          "1"
-        ],
-        [
-          "D10",
-          "2"
-        ],
-        [
           "D5",
           "1"
         ],
         [
           "J61",
-          "1"
-        ],
-        [
-          "R142",
           "1"
         ],
         [
@@ -5172,14 +5134,6 @@
         [
           "R91",
           "1"
-        ],
-        [
-          "T1",
-          "10"
-        ],
-        [
-          "T1",
-          "9"
         ]
       ]
     },
@@ -5400,6 +5354,10 @@
           "2"
         ],
         [
+          "C101",
+          "1"
+        ],
+        [
           "C12",
           "2"
         ],
@@ -5466,6 +5424,10 @@
         [
           "D1",
           "1"
+        ],
+        [
+          "D10",
+          "2"
         ],
         [
           "D3",
@@ -5552,12 +5514,12 @@
           "8"
         ],
         [
-          "NTC1",
+          "R11",
           "2"
         ],
         [
-          "R11",
-          "2"
+          "R142",
+          "1"
         ],
         [
           "R15",
@@ -5605,7 +5567,15 @@
         ],
         [
           "T1",
+          "10"
+        ],
+        [
+          "T1",
           "6"
+        ],
+        [
+          "T1",
+          "9"
         ],
         [
           "U10",
@@ -6435,16 +6405,6 @@
     },
     {
       "code": 135,
-      "name": "unconnected-(NTC1-Pad1)",
-      "nodes": [
-        [
-          "NTC1",
-          "1"
-        ]
-      ]
-    },
-    {
-      "code": 136,
       "name": "unconnected-(S3-NC-Pad3)",
       "nodes": [
         [
@@ -6454,7 +6414,7 @@
       ]
     },
     {
-      "code": 137,
+      "code": 136,
       "name": "unconnected-(S4-NC-Pad3)",
       "nodes": [
         [
@@ -6464,7 +6424,7 @@
       ]
     },
     {
-      "code": 138,
+      "code": 137,
       "name": "unconnected-(S5-NC-Pad3)",
       "nodes": [
         [
@@ -6474,7 +6434,7 @@
       ]
     },
     {
-      "code": 139,
+      "code": 138,
       "name": "unconnected-(S6-NC-Pad3)",
       "nodes": [
         [
@@ -6484,7 +6444,7 @@
       ]
     },
     {
-      "code": 140,
+      "code": 139,
       "name": "unconnected-(T1-FB_A-Pad2)",
       "nodes": [
         [
@@ -6494,7 +6454,7 @@
       ]
     },
     {
-      "code": 141,
+      "code": 140,
       "name": "unconnected-(T1-FB_B-Pad4)",
       "nodes": [
         [
@@ -6504,7 +6464,7 @@
       ]
     },
     {
-      "code": 142,
+      "code": 141,
       "name": "unconnected-(T1-PRI_CT-Pad3)",
       "nodes": [
         [
@@ -6514,7 +6474,7 @@
       ]
     },
     {
-      "code": 143,
+      "code": 142,
       "name": "unconnected-(U6-AIN3-Pad7)",
       "nodes": [
         [
@@ -6524,7 +6484,7 @@
       ]
     },
     {
-      "code": 144,
+      "code": 143,
       "name": "unconnected-(U6-ALERT{slash}RDY-Pad2)",
       "nodes": [
         [
@@ -6534,7 +6494,7 @@
       ]
     },
     {
-      "code": 145,
+      "code": 144,
       "name": "unconnected-(U7-EN_HVDCP-Pad7)",
       "nodes": [
         [
@@ -6544,7 +6504,7 @@
       ]
     },
     {
-      "code": 146,
+      "code": 145,
       "name": "unconnected-(U7-FAULT-Pad13)",
       "nodes": [
         [
@@ -6554,7 +6514,7 @@
       ]
     },
     {
-      "code": 147,
+      "code": 146,
       "name": "unconnected-(U7-INT_N-Pad11)",
       "nodes": [
         [
@@ -6564,7 +6524,7 @@
       ]
     },
     {
-      "code": 148,
+      "code": 147,
       "name": "unconnected-(U8-INT-Pad2)",
       "nodes": [
         [
@@ -6574,7 +6534,7 @@
       ]
     },
     {
-      "code": 149,
+      "code": 148,
       "name": "unconnected-(U8-NC-Pad4)",
       "nodes": [
         [
@@ -6584,7 +6544,7 @@
       ]
     },
     {
-      "code": 150,
+      "code": 149,
       "name": "unconnected-(U9-AUXOFF-Pad3)",
       "nodes": [
         [
@@ -6594,7 +6554,7 @@
       ]
     },
     {
-      "code": 151,
+      "code": 150,
       "name": "unconnected-(U9-FLT-Pad4)",
       "nodes": [
         [
@@ -6604,7 +6564,7 @@
       ]
     },
     {
-      "code": 152,
+      "code": 151,
       "name": "unconnected-(U9-ITIMER-Pad10)",
       "nodes": [
         [
@@ -6614,7 +6574,7 @@
       ]
     },
     {
-      "code": 153,
+      "code": 152,
       "name": "unconnected-(U10-NC-Pad4)",
       "nodes": [
         [

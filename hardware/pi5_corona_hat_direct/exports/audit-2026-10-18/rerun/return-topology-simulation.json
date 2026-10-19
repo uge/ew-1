@@ -1,0 +1,66 @@
+{
+  "assumptions": [
+    "Native passive network, ideal 1250 V peak / 68 kHz source with 350 ohm series resistance",
+    "Ideal DC external current sink between J60 and J61",
+    "Steady normal operation only; ADC and TVS omitted, no arc/protection qualification",
+    "Former topology reconstructed only for comparison, not a proposed circuit change"
+  ],
+  "results": [
+    {
+      "topology": "current_grounded_generator",
+      "external_load_uA": 0,
+      "return_voltage_V": 0.0,
+      "inferred_shunt_current_uA": 0.0,
+      "output_to_ground_V": 13317.708880518572
+    },
+    {
+      "topology": "current_grounded_generator",
+      "external_load_uA": 10,
+      "return_voltage_V": 0.1,
+      "inferred_shunt_current_uA": 10.0,
+      "output_to_ground_V": 12386.87283645055
+    },
+    {
+      "topology": "current_grounded_generator",
+      "external_load_uA": 50,
+      "return_voltage_V": 0.5,
+      "inferred_shunt_current_uA": 50.0,
+      "output_to_ground_V": 8667.427668536147
+    },
+    {
+      "topology": "current_grounded_generator",
+      "external_load_uA": 100,
+      "return_voltage_V": 1.0,
+      "inferred_shunt_current_uA": 100.0,
+      "output_to_ground_V": 4022.8325270005116
+    },
+    {
+      "topology": "former_common_return",
+      "external_load_uA": 0,
+      "return_voltage_V": -0.13315802892388343,
+      "inferred_shunt_current_uA": -13.315802892388342,
+      "output_to_ground_V": 13317.609451981954
+    },
+    {
+      "topology": "former_common_return",
+      "external_load_uA": 10,
+      "return_voltage_V": -0.1238511083661497,
+      "inferred_shunt_current_uA": -12.385110836614968,
+      "output_to_ground_V": 12386.790066018557
+    },
+    {
+      "topology": "former_common_return",
+      "external_load_uA": 50,
+      "return_voltage_V": -0.0866620689725347,
+      "inferred_shunt_current_uA": -8.666206897253469,
+      "output_to_ground_V": 8667.377339952342
+    },
+    {
+      "topology": "former_common_return",
+      "external_load_uA": 100,
+      "return_voltage_V": -0.04022205043330085,
+      "inferred_shunt_current_uA": -4.022205043330085,
+      "output_to_ground_V": 4022.7400847940676
+    }
+  ]
+}

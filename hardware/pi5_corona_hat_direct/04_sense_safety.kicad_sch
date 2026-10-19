@@ -10193,7 +10193,7 @@
 				)
 			)
 		)
-		(property "Value" "LID_SW_1"
+		(property "Value" "TK-0013-R"
 			(at 215.9 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15896,6 +15896,82 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 180.34 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a1ce4d94-99a8-441c-8713-d593ec7127da")
+		(property "Reference" "#FLG22"
+			(at 180.34 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 180.34 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 180.34 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3b138678-14dc-4eb5-80ee-fb5a825f7306")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6837c0a3-1ca9-42aa-89d0-96358f3e428b"
+					(reference "#FLG22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Zener")
 		(at 25.4 193.04 270)
 		(unit 1)
@@ -16317,7 +16393,7 @@
 				)
 			)
 		)
-		(property "Value" "LID_SW_4"
+		(property "Value" "TK-0013-R"
 			(at 284.48 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20075,7 +20151,7 @@
 				)
 			)
 		)
-		(property "Value" "LID_SW_2"
+		(property "Value" "TK-0013-R"
 			(at 238.76 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20479,7 +20555,7 @@
 				)
 			)
 		)
-		(property "Value" "LID_SW_3"
+		(property "Value" "TK-0013-R"
 			(at 261.62 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)

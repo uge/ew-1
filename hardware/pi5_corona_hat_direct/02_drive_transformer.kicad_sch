@@ -7732,7 +7732,7 @@
 		)
 		(uuid "601cf138-239f-49ac-a75c-75fcf8ec84db")
 	)
-	(text "Unwound terminals: 6 GND guard, 7 SEC_A guard, 10 HV_RETURN guard."
+	(text "Unwound terminals: 6 GND guard, 7 SEC_A guard, 10 GND guard."
 		(exclude_from_sim no)
 		(at 269.24 179.07 0)
 		(effects
@@ -7765,7 +7765,7 @@
 		)
 		(uuid "89fc7bf6-bf7b-4f0f-8d8a-bffa5b65f8b9")
 	)
-	(text "PMODE = 3V3: PWM mode. R61 sets ~1.0 A trip; R62 selects cycle-by-cycle / latched OCP."
+	(text "PMODE = 3V3: PWM mode. R61 sets 2.20 A trip; R62 selects cycle-by-cycle / latched OCP."
 		(exclude_from_sim no)
 		(at 20.32 236.22 0)
 		(effects
@@ -7820,12 +7820,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4db39151-8a1b-4460-b2c7-37292dbae548")
-	)
-	(junction
-		(at 350.52 195.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "739dc7aa-80fe-471a-8a9f-c44462e54498")
 	)
 	(junction
 		(at 162.56 205.74)
@@ -8459,16 +8453,6 @@
 	)
 	(wire
 		(pts
-			(xy 350.52 203.2) (xy 350.52 195.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d64d13de-407d-4181-9dd6-9b9cfe662131")
-	)
-	(wire
-		(pts
 			(xy 330.2 60.96) (xy 342.9 60.96)
 		)
 		(stroke
@@ -8882,8 +8866,8 @@
 		)
 		(uuid "b658c230-42f5-42fd-93d9-f5ac422689bb")
 	)
-	(hierarchical_label "HV_RETURN"
-		(shape output)
+	(hierarchical_label "GND"
+		(shape bidirectional)
 		(at 381 195.58 0)
 		(effects
 			(font
@@ -11680,8 +11664,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HV_RETURN")
-		(at 365.76 203.2 180)
+		(lib_id "ionic_thrust_hv:GND")
+		(at 365.76 203.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11701,7 +11685,7 @@
 				)
 			)
 		)
-		(property "Value" "HV_RETURN"
+		(property "Value" "GND"
 			(at 365.76 208.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11831,8 +11815,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HV_RETURN")
-		(at 345.44 200.66 180)
+		(lib_id "ionic_thrust_hv:GND")
+		(at 345.44 200.66 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11852,7 +11836,7 @@
 				)
 			)
 		)
-		(property "Value" "HV_RETURN"
+		(property "Value" "GND"
 			(at 345.44 196.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12635,82 +12619,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 350.52 203.2 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a1ce4d94-99a8-441c-8713-d593ec7127da")
-		(property "Reference" "#FLG22"
-			(at 350.52 200.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 350.52 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 350.52 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 350.52 203.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 350.52 203.2 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3b138678-14dc-4eb5-80ee-fb5a825f7306")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "#FLG22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "ionic_thrust_hv:GND")
 		(at 330.2 80.01 0)
 		(unit 1)
@@ -13236,7 +13144,7 @@
 				)
 			)
 		)
-		(property "Value" "120nF 100V"
+		(property "Value" "120nF 630V"
 			(at 254 188.595 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14714,7 +14622,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3k 1%"
+		(property "Value" "1.5k 1%"
 			(at 121.285 201.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14736,7 +14644,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C22978"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C22843"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14757,7 +14665,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C22978"
+		(property "LCSC" "C22843"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14768,7 +14676,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C22978"
+		(property "JLCPCB Part #" "C22843"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14790,7 +14698,7 @@
 				)
 			)
 		)
-		(property "MPN" "0603WAF3301T5E"
+		(property "MPN" "0603WAF1501T5E"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14823,7 +14731,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" ""
+		(property "Procurement Notes" "1.5k 1% 0603 sets U2 DRV8876 IPROPI trip threshold to 2.20A, above primary magnetizing current and below U9 eFuse 2.78A limit."
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14834,7 +14742,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C22978"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C22843"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14845,7 +14753,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-18"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14867,7 +14775,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C22978"
+		(property "LCSC Part" "C22843"
 			(at 116.84 200.66 0)
 			(hide yes)
 			(show_name no)

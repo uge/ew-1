@@ -16,6 +16,9 @@
 (rule "Highest voltage to board edge"
  (condition "A.NetName == '/04_sense_safety/HV_OUT' || A.NetName == '/HV_RAW'")
  (constraint edge_clearance (min 10mm)))
+(rule "HV to mounting hole clearance"
+ (condition "(A.NetName == '/04_sense_safety/HV_OUT' || A.NetName == '/HV_RAW' || A.NetName == '/SEC_A') && B.Pad_Type == 'NPTH, mechanical'")
+ (constraint hole_clearance (min 10mm)))
 # Package/series-node rules use the voltage across the part, not its common-mode voltage.
 (rule "R30 divider drop within rated 3kV resistor"
  (condition "(A.memberOfFootprint('R30') && B.memberOfFootprint('R30')) || (A.NetName == '/04_sense_safety/HV_OUT' && B.NetName == 'Net-(R30-Pad2)') || (A.NetName == 'Net-(R30-Pad2)' && B.NetName == '/04_sense_safety/HV_OUT')")

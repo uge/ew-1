@@ -13259,16 +13259,7 @@
 		)
 		(uuid "a41cc034-32c0-42c7-b6c2-2e9fc5548ec7")
 	)
-	(wire
-		(pts
-			(xy 193.04 167.64) (xy 193.04 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a482e300-228c-42c2-a115-938dc062c41e")
-	)
+
 	(wire
 		(pts
 			(xy 368.3 217.17) (xy 383.54 217.17)
@@ -14730,7 +14721,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-10"
+		(property "Catalog Checked" "2026-10-02"
 			(at 213.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15453,7 +15444,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C14663"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C22935"
 			(at 160.02 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17768,7 +17759,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C4260"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25816"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -18408,7 +18399,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). I2C mode address 0x42 with PPS support."
+		(property "Procurement Notes" "HUSB238A-BB001-QN16R in QFN-16 (3x3mm). VDD powered by 3V3; default 5V startup, I2C programmable (0x42) from 5V to 20V with PPS support."
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -18430,7 +18421,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-10"
+		(property "Catalog Checked" "2026-10-02"
 			(at 135.89 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -19764,7 +19755,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3747e053-57ca-4e9e-a065-81bd6e3c2dff")
+			(uuid "2da29206-b6f2-4eb6-b110-8bd7129c76aa")
 		)
 		(instances
 			(project "pi5_corona_hv"
@@ -19872,7 +19863,7 @@
 				)
 			)
 		)
-		(property "Value" "1A 30V PTC"
+		(property "Value" "2A 24V PTC"
 			(at 87.63 50.165 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19893,7 +19884,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C5358568"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C42396578"
 			(at 80.01 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19904,7 +19895,7 @@
 				)
 			)
 		)
-		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient, 2A 24V 1206"
 			(at 80.01 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19915,7 +19906,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C5358568"
+		(property "LCSC" "C42396578"
 			(at 80.01 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19926,7 +19917,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C5358568"
+		(property "JLCPCB Part #" "C42396578"
 			(at 80.01 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19937,7 +19928,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "BHFUSE"
+		(property "Manufacturer" "LUTE"
 			(at 80.01 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -19948,7 +19939,7 @@
 				)
 			)
 		)
-		(property "MPN" "BSMD1206-100-30V"
+		(property "MPN" "1206L200/24NR"
 			(at 80.01 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -20529,7 +20520,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.32k 1%"
+		(property "Value" "1.2k 1%"
 			(at 156.845 242.57 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20552,7 +20543,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C863430"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C22765"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20573,7 +20564,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C863430"
+		(property "LCSC" "C22765"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20584,7 +20575,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C863430"
+		(property "JLCPCB Part #" "C22765"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20595,7 +20586,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20606,7 +20597,7 @@
 				)
 			)
 		)
-		(property "MPN" "RT0603FRD073K32L"
+		(property "MPN" "0603WAF1201T5E"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20617,7 +20608,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20639,7 +20630,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" ""
+		(property "Procurement Notes" "1.2k 1% 0603 sets U9 TPS259470 eFuse current limit to 2.78A typ (2.53A min), above U2 2.20A IPROPI limit."
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20650,7 +20641,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C863430"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C22765"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20661,7 +20652,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-18"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -20683,7 +20674,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C863430"
+		(property "LCSC Part" "C22765"
 			(at 152.4 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -21406,7 +21397,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C5199872"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C22935"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -21472,7 +21463,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Library" "Extended"
+		(property "JLCPCB Library" "Basic"
 			(at 134.62 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -22159,84 +22150,7 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 193.04 170.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a4760d11-d28a-492c-83a7-2e035613e725")
-		(property "Reference" "#PWR016"
-			(at 193.04 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 193.04 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5e185754-96d7-4c30-8dab-d3e153ca3f4a")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
+
 	(symbol
 		(lib_id "power:GND")
 		(at 40.64 102.87 0)
@@ -23836,206 +23750,7 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Device:Thermistor_NTC")
-		(at 193.04 163.83 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d904e905-390a-40aa-b3f8-f32b86a2d7f6")
-		(property "Reference" "NTC1"
-			(at 200.66 161.925 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k NTC"
-			(at 200.66 165.735 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C13564"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Temperature dependent resistor, negative temperature coefficient"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C13564"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "JLCPCB Part #" "C13564"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Manufacturer" "Murata Electronics"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "MPN" "NCP18XH103F03RB"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "JLCPCB Library" "Extended"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Procurement Status" "CATALOG_MATCH"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Procurement Notes" "Murata 10k / 1%, B25/50=3380K; configure AP33772S NTC lookup/thresholds for this curve before operation."
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C13564"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Catalog Checked" "2026-10-02"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Assembly Process" "smtWeld"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "LCSC Part" "C13564"
-			(at 193.04 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6c9badfa-52b8-452c-bd7a-03a8fb2f4a0f")
-		)
-		(pin "2"
-			(uuid "32d0f292-041e-433a-b02e-36eb903f2b5f")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
-					(reference "NTC1")
-					(unit 1)
-				)
-			)
-		)
-	)
+
 	(symbol
 		(lib_id "ionic_thrust_hv:VBUS_IN")
 		(at 80.01 78.74 0)
@@ -24882,7 +24597,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C14663"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C15849"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25789,10 +25504,6 @@
 	(no_connect
 		(at 147.32 83.82)
 		(uuid "3fcdf1fa-ade4-4894-8fe3-4381a63d5c82")
-	)
-	(no_connect
-		(at 193.04 160.02)
-		(uuid "9dca2ea2-4048-4db8-a5e2-f6b38f345f86")
 	)
 	(wire
 		(pts

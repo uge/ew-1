@@ -3186,7 +3186,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ionic_thrust_hv:HVM12"
+		(symbol "ionic_thrust_hv:2CL75"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3202,7 +3202,7 @@
 					)
 				)
 			)
-			(property "Value" "HVM12"
+			(property "Value" "2CL75"
 				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3212,7 +3212,7 @@
 					)
 				)
 			)
-			(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+			(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3223,7 +3223,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.lcsc.com/datasheet/C7436450.pdf"
+			(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3245,7 +3245,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "YFW(佑风微)"
+			(property "Manufacturer" "SUNMATE Elec"
 				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3256,7 +3256,7 @@
 					)
 				)
 			)
-			(property "MPN" "HVM12"
+			(property "MPN" "2CL75"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3267,7 +3267,7 @@
 					)
 				)
 			)
-			(property "LCSC Part" "C7436450"
+			(property "LCSC Part" "C424512"
 				(at 0 -17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3289,7 +3289,7 @@
 					)
 				)
 			)
-			(symbol "HVM12_0_1"
+			(symbol "2CL75_0_1"
 				(polyline
 					(pts
 						(xy -1.27 1.78) (xy -1.27 -1.78)
@@ -5859,7 +5859,7 @@
 		)
 		(uuid "5e2ac360-5c72-45b0-81a5-6dbe99a037f1")
 	)
-	(text "2. BLEEDERS: 12 banks x 3 series 100M / 3kV 2512; each bank is 300M. Verify <50V discharge on assembled hardware."
+	(text "2. BLEEDERS: 12 banks x 2 series 100M / 3kV 2512 (R140-R163); each bank is 200M. Verify <50V discharge on assembled hardware."
 		(exclude_from_sim no)
 		(at 38.1 232.41 0)
 		(effects
@@ -7366,8 +7366,8 @@
 		)
 		(uuid "f540b0df-7fb0-4fea-acd5-470a1a6827c6")
 	)
-	(hierarchical_label "HV_RETURN"
-		(shape output)
+	(hierarchical_label "GND"
+		(shape bidirectional)
 		(at 375.92 203.2 0)
 		(effects
 			(font
@@ -7388,8 +7388,8 @@
 		)
 		(uuid "88b5a202-178e-4151-9e6c-3c092d7da3c1")
 	)
-	(hierarchical_label "HV_RETURN"
-		(shape input)
+	(hierarchical_label "GND"
+		(shape bidirectional)
 		(at 45.72 172.72 180)
 		(effects
 			(font
@@ -8605,7 +8605,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 317.5 129.54 270)
 		(unit 1)
 		(body_style 1)
@@ -8625,7 +8625,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 325.12 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8635,7 +8635,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8646,7 +8646,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8667,7 +8667,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 317.5 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -8678,7 +8678,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 317.5 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -8689,7 +8689,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8700,7 +8700,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8711,7 +8711,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8744,7 +8744,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8755,7 +8755,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -8766,7 +8766,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 317.5 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11043,7 +11043,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 187.96 129.54 90)
 		(unit 1)
 		(body_style 1)
@@ -11063,7 +11063,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 195.58 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11073,7 +11073,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11084,7 +11084,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11105,7 +11105,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 187.96 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -11116,7 +11116,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 187.96 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -11127,7 +11127,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11138,7 +11138,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11149,7 +11149,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11182,7 +11182,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11193,7 +11193,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11204,7 +11204,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11242,7 +11242,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 124.46 129.54 270)
 		(unit 1)
 		(body_style 1)
@@ -11262,7 +11262,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 132.08 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11272,7 +11272,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11283,7 +11283,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11304,7 +11304,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 124.46 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -11315,7 +11315,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 124.46 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -11326,7 +11326,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11337,7 +11337,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11348,7 +11348,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11381,7 +11381,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11392,7 +11392,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11403,7 +11403,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 124.46 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11441,7 +11441,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 220.98 129.54 270)
 		(unit 1)
 		(body_style 1)
@@ -11461,7 +11461,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 228.6 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11471,7 +11471,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11482,7 +11482,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11503,7 +11503,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 220.98 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -11514,7 +11514,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 220.98 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -11525,7 +11525,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11536,7 +11536,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11547,7 +11547,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11580,7 +11580,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11591,7 +11591,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11602,7 +11602,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 220.98 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11640,7 +11640,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 236.22 129.54 90)
 		(unit 1)
 		(body_style 1)
@@ -11660,7 +11660,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 243.84 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11670,7 +11670,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11681,7 +11681,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11702,7 +11702,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 236.22 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -11713,7 +11713,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 236.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -11724,7 +11724,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11735,7 +11735,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11746,7 +11746,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11779,7 +11779,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11790,7 +11790,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11801,7 +11801,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 236.22 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11839,7 +11839,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 76.2 129.54 270)
 		(unit 1)
 		(body_style 1)
@@ -11859,7 +11859,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 83.82 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11869,7 +11869,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11880,7 +11880,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11901,7 +11901,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 76.2 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -11912,7 +11912,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 76.2 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -11923,7 +11923,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11934,7 +11934,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11945,7 +11945,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11978,7 +11978,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -11989,7 +11989,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12000,7 +12000,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 76.2 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12436,7 +12436,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 269.24 129.54 270)
 		(unit 1)
 		(body_style 1)
@@ -12456,7 +12456,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 276.86 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12466,7 +12466,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12477,7 +12477,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12498,7 +12498,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 269.24 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -12509,7 +12509,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 269.24 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -12520,7 +12520,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12531,7 +12531,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12542,7 +12542,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12575,7 +12575,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12586,7 +12586,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12597,7 +12597,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 269.24 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -12834,8 +12834,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HV_RETURN")
-		(at 219.71 208.28 180)
+		(lib_id "ionic_thrust_hv:GND")
+		(at 219.71 208.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12855,7 +12855,7 @@
 				)
 			)
 		)
-		(property "Value" "HV_RETURN"
+		(property "Value" "GND"
 			(at 232.41 209.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14617,7 +14617,7 @@
 		(uuid "c9428bc3-d122-4a6a-ab3b-75374e57a2ab")
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 91.44 129.54 90)
 		(unit 1)
 		(body_style 1)
@@ -14637,7 +14637,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 99.06 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14647,7 +14647,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14658,7 +14658,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14679,7 +14679,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 91.44 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -14690,7 +14690,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 91.44 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -14701,7 +14701,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14712,7 +14712,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14723,7 +14723,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14756,7 +14756,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14767,7 +14767,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -14778,7 +14778,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 91.44 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15091,7 +15091,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 284.48 129.54 90)
 		(unit 1)
 		(body_style 1)
@@ -15111,7 +15111,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 292.1 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15121,7 +15121,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15132,7 +15132,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15153,7 +15153,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 284.48 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -15164,7 +15164,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 284.48 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15175,7 +15175,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15186,7 +15186,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15197,7 +15197,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15230,7 +15230,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15241,7 +15241,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15252,7 +15252,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 284.48 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15509,7 +15509,7 @@
 		(uuid "e4eff348-6b48-434b-b021-c472c57205ad")
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 139.7 129.54 90)
 		(unit 1)
 		(body_style 1)
@@ -15529,7 +15529,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 147.32 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15539,7 +15539,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15550,7 +15550,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15571,7 +15571,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 139.7 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -15582,7 +15582,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 139.7 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15593,7 +15593,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15604,7 +15604,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15615,7 +15615,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15648,7 +15648,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15659,7 +15659,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15670,7 +15670,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 139.7 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15708,7 +15708,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 172.72 129.54 270)
 		(unit 1)
 		(body_style 1)
@@ -15728,7 +15728,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 180.34 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15738,7 +15738,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15749,7 +15749,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15770,7 +15770,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 172.72 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -15781,7 +15781,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 172.72 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -15792,7 +15792,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15803,7 +15803,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15814,7 +15814,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15847,7 +15847,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15858,7 +15858,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -15869,7 +15869,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 172.72 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16305,7 +16305,7 @@
 		)
 	)
 	(symbol
-		(lib_id "ionic_thrust_hv:HVM12")
+		(lib_id "ionic_thrust_hv:2CL75")
 		(at 332.74 129.54 90)
 		(unit 1)
 		(body_style 1)
@@ -16325,7 +16325,7 @@
 				)
 			)
 		)
-		(property "Value" "HVM12"
+		(property "Value" "2CL75"
 			(at 340.36 131.445 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16335,7 +16335,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:DO-722_BD7.5-L22.0-P26.00-D1.2-RD"
+		(property "Footprint" "ionic_thrust_hv:Sunmate_2CL75_D3_L12_P26"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16346,7 +16346,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16367,7 +16367,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C7436450"
+		(property "LCSC Part" "C424512"
 			(at 332.74 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -16378,7 +16378,7 @@
 				)
 			)
 		)
-		(property "MPN" "HVM12"
+		(property "MPN" "2CL75"
 			(at 332.74 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -16389,7 +16389,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C7436450"
+		(property "LCSC" "C424512"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16400,7 +16400,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C7436450"
+		(property "JLCPCB Part #" "C424512"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16411,7 +16411,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YFW"
+		(property "Manufacturer" "SUNMATE Elec"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16444,7 +16444,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "12kV HVM12, DO-722; THT/manual assembly."
+		(property "Procurement Notes" "16 kV, 5 mA average, 0.5 A surge; trr max 100 ns at 25 C; Cj 1 pF at 0 V / 1 MHz. 3 x 12 mm axial body, 0.6 mm leads, mounted at 26 mm pitch. Validate startup and repetitive charging-pulse currents before release."
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16455,7 +16455,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C7436450"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/SUNMATEElec-2CL75/C424512"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -16466,7 +16466,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-03"
 			(at 332.74 129.54 0)
 			(hide yes)
 			(show_name no)

@@ -1,0 +1,29 @@
+# Correctness and safety review — 2026-10-18
+
+Scope: current working-tree `pi5_corona_hat_direct` schematic, PCB, verification scripts and manufacturing archives. Existing user changes were preserved. Disposition: **hold fabrication release**. This review does not establish physical high-voltage safety.
+
+## Follow-up after analysis corrections
+
+The insulation checker and shutdown model were corrected and both manufacturing ZIPs regenerated after the original findings below. Current outputs are `exports/voltage_audit_report.json`, `exports/shutdown-report.json` and `exports/manufacturing-archive-validation.json`; original code line references below describe the pre-fix implementation.
+
+**Bleeder-open fault clarification:** The approximately 1.225 kV residual after 5 s is a simulated single-fault result, not normal operation with intact bleeders. Each case deliberately interrupts one bleeder bank, representing an open resistor, cracked solder joint, broken trace/pad, or missing component. With every bleeder intact, all checked nodes and capacitor voltages fall below the 50 V analysis threshold within approximately 0.93 s under the modeled conditions. The effectively open secondary is a separate shutdown assumption; it does not itself imply component failure, and its applicability depends on actual transformer/bridge behavior. These model results do not certify an enclosure-opening delay.
+
+## Findings
+
+1. **High — insulation verification cannot support the stated safety verdict.** `layout/validation/map_board_voltages.py:393–445` compares elevated nets only against nets at or below 50 V, omitting elevated-stage-to-stage pairs. Distances use sampled feature coordinates rather than complete copper boundaries; track widths are not deducted. Same-component pairs receive automatic `PASS_COMPONENT`, and the transformer corridor can receive `PASS_BREAKOUT` despite failing the script's own nominal coated-distance calculation. Lines 534–542 hard-code board edges and measure feature coordinates. `AUDIT.md` nevertheless claims zero arcing/breakdown risk and production readiness. Correct pair coverage and copper geometry, review every exception, and qualify the insulation system before making those claims. Passing native DRC only proves compliance with enabled project rules.
+
+2. **High — shutdown/discharge evidence is incomplete.** `layout/validation/spice_verify_multiplier.py:215–271` constructs a separate shutdown circuit with no multiplier diodes, no transformer/bridge shutdown model, and no pump-node initial voltages. It measures only HV_OUT; pump nodes start uncharged despite representing an energized multiplier. The reported 0.535 s therefore does not verify discharge of every stored-energy node in the assembled supply, or single-fault behavior. Generate the model from current connectivity, initialize all storage nodes consistently, include the actual shutdown path and external load capacitance, and measure residual voltage on all accessible/storage nodes. Verify discharge experimentally before assigning an enclosure access delay.
+
+3. **Medium — required return-topology regression fails.** Fresh native netlist puts T1.9/T1.10, C101.1, D10.2 and R142.1 on GND; J61.1/R90.1/D5.1/R91.1 remain on /HV_RETURN. `layout/validation/check_audit_nets.rb:38` requires these transformer pins on /HV_RETURN and fails. The load return can still flow through R90, so this is not evidence that all load sensing is bypassed. However, multiplier internal currents now have a different return path from the simulation. Decide and document the intended sensing coverage and arc-current path, then update both analysis and assertions to that approved topology.
+
+4. **Medium — simulation and design instructions disagree with the assembled circuit.** The native netlist has 24 bleeder resistors, two 100 MΩ parts per bank; `AGENTS.md` and the multiplier sheet note require three parts/300 MΩ per bank. Separately, the multiplier simulation's R8 is 82 kΩ directly to ground (`spice_verify_multiplier.py:115–118`), whereas the circuit uses R8+R9 = 164 kΩ. The separate sense-buffer model uses the correct 164 kΩ. At a given HV_OUT, the multiplier model predicts roughly half the actual sense voltage. Reconcile the intended bleeder architecture and share one native-derived circuit model across analyses. Do not treat the contradictory notes as proof that a third resistor exists.
+
+5. **High — manufacturing archives contain duplicate drill definitions.** Both `exports/jlcpcb-gerbers.zip` and `exports/pi5_corona_hv_gerbers.zip` contain the mixed-plating `pi5_corona_hv.drl` together with separate PTH and NPTH drill files. This gives fabrication overlapping hole definitions and ambiguous plating input. Regenerate archives from a clean staging directory with one consistent drill-file set and inspect the manufacturer's preview.
+
+## Verification and limits
+
+- KiCad CLI 10.0.7: fresh ERC reports zero violations; fresh DRC with all severities, schematic parity and zone refill reports zero violations, zero unconnected items and zero parity issues. No board save was requested.
+- Fresh XML netlist exported and inspected; required Ruby assertions executed against a temporary native-derived manifest, reproducing finding 3.
+- Both archive member lists inspected directly. Scripts and existing simulation reports inspected; simulations were not rerun because the identified model discrepancies would persist.
+- Temporary evidence: `/tmp/ew-review-drc.json`, `/tmp/ew-review-erc.json`, `/tmp/ew-review-net.xml`, `/tmp/ew-review-manifest.json`.
+- Enclosure, actual switch contact mapping/load rating, transformer terminal qualification, repetitive diode currents, material/coating properties, environmental conditions and physical HV behavior remain unverified. No claim of compliance with a specific insulation standard is made here.

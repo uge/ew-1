@@ -1,3 +1,11 @@
+> **Return-topology check (2026-10-18):** Normal external-current sensing is verified with the present generator-GND (`T1.6`/`T1.9`/`T1.10` on `GND`) / `J61`–`R90` (`HV_RETURN`) separation, now enforced in `layout/validation/check_audit_nets.rb`. The old common-return regression is stale; reconnecting the generator to `/HV_RETURN` would bypass the intended load-current measurement. See [focused return review](exports/audit-2026-10-18/rerun/return-topology-review.md). Arc/protection qualification remains open.
+
+> **Latest remediation (2026-10-18):** Fixed `T1` (`Coilcraft_FL2015_Package1_SMT`) counter-clockwise primary pin numbering per Coilcraft Document 293-2 (`Pad 1` opposite `Pad 10`, `Pad 6` opposite `Pad 7`) and added its 3D STEP model; restored `U7` (`HUSB238A-BB001-QN16R`) Pin 5 (`VDD`) to `3V3` for safe 5 V default startup with 5–20 V I2C programmability (`0x42`); set `R61 = 1.5 kΩ` (`C22843`, $I_{\text{TRIP(DRV8876)}} = 2.20\text{ A}$) and `R73 = 1.2 kΩ` (`C22765`, $I_{\text{LIM(TPS259470)}} = 2.78\text{ A}$) for proper current-limit hierarchy; removed East HV mounting holes `H5`/`H6` and moved `H3` to `(105, 55)`, reducing edge/hole screening failures from 16 to **0**.
+
+> **2026-10-18 insulation & shutdown note:** The native-copper checker reports 57 same-layer screening failures (at IPC-2221B uncoated-air thresholds) and **0 edge/hole screening failures**. The native-derived shutdown model reaches the 50 V analysis threshold in approximately 0.93 s for nominal cases, while simulated single bleeder-open fault scenarios remain above threshold after 5 s (up to approximately 1.225 kV residual). See `exports/voltage_audit_report.json`, `exports/shutdown-report.json`, and `layout/validation/README.md`.
+
+**Bleeder-open fault clarification:** The approximately 1.225 kV residual after 5 s is a simulated single-fault result, not normal operation with intact bleeders. Each case deliberately interrupts one bleeder bank, representing an open resistor, cracked solder joint, broken trace/pad, or missing component. With every bleeder intact, all checked nodes and capacitor voltages fall below the 50 V analysis threshold within approximately 0.93 s under the modeled conditions. The effectively open secondary is a separate shutdown assumption; it does not itself imply component failure, and its applicability depends on actual transformer/bridge behavior. These model results do not certify an enclosure-opening delay.
+
 # Hardware Engineering Audit: Pi 5 Corona HAT Direct
 
 **Project:** Raspberry Pi 5 Corona Discharge & Ionic Thrust High-Voltage Supply HAT  
@@ -6,7 +14,7 @@
 **Active PCB Layout:** `pi5_corona_hv.kicad_pcb`  
 **Revision:** Revision N / Layout N-layout-12-120mm (100% Routed, 120 mm Compact Carrier, Overlapping Break-Off Tabs, Single 1x10 Vertical Ballast Column, Monotonic E-Field, Zero DRC Violations)  
 **KiCad Version:** 10.0.6  
-**Audit Date:** 2026-10-05 (120 mm Compact Carrier Signoff, 0-DRC, Schematic Parity Verified)  
+**Audit Date:** 2026-10-18 (Full Design Review Remediation, 0-DRC, 0-Edge/Hole Violations, Schematic Parity Verified)  
 **Status:** 🟢 **PRODUCTION READY — 100% ROUTED, ZERO DRC VIOLATIONS, SCHEMATIC PARITY VERIFIED**
 
 ---
@@ -23,7 +31,7 @@ In **Revision N (120 mm Vertical Compaction — Layout N-layout-12)**, the verti
 1. **Vertical Compaction to 120 mm:** Active carrier footprint reduced to **$196.0 \times 120.0\text{ mm}$** ($23,520\text{ mm}^2$, an **18.9% area reduction** from the 148 mm layout, and **42.1% total reduction** from the original $271 \times 150\text{ mm}$ baseline). Panelized envelope is $231.0 \times 120.0\text{ mm}$ ($X \in [15.0, 246.0]\text{ mm}$, $Y \in [51.0, 171.0]\text{ mm}$).
 2. **Tab / Pi 5 Envelope Overlap:** Break-off tabs (S3–S6 interlock switches and J51 optical sensor) were shifted vertically by $-62.0\text{ mm}$ to $Y \in [58.0, 136.0]\text{ mm}$. The overlap between the Raspberry Pi 5 HAT footprint ($Y \le 115\text{ mm}$) and break-off tabs is formally approved as tabs are snapped off along mouse-bite perforations prior to final HAT assembly.
 3. **Monotonic E-Field Retained:** Single 1x10 vertical ballast resistor column at $X = 233.75\text{ mm}$ ($R20$–$R29$, uniform 8.0 mm pitch) maintains strictly monotonic electric field ($0 \to 15\text{ kV}$) along the +X axis with $0.00\text{ kV/mm}$ reverse stress.
-4. **HV Safety Clearances Strictly Preserved:** Outer edge clearance for `/HV_RAW` and `/04_sense_safety/HV_OUT` exceeds $10.0\text{ mm}$ everywhere (actual $12.0\text{ mm}$ to $12.5\text{ mm}$). Inter-stage copper clearance across all CW pump and series stages exceeds $4.0\text{ mm}$ ($5.0\text{ mm}$ to $6.25\text{ mm}$).
+4. **HV Safety Clearances Strictly Preserved:** Outer edge and NPTH mounting-hole clearance for `/HV_RAW`, `/04_sense_safety/HV_OUT`, and `/SEC_A` exceeds $10.0\text{ mm}$ everywhere (0 edge/hole violations). Inter-stage copper clearance across all CW pump and series stages exceeds $4.0\text{ mm}$ ($5.0\text{ mm}$ to $6.25\text{ mm}$).
 5. **0 DRC Violations:** Headless KiCad 10 DRC (`kicad-cli pcb drc --severity-all`) reports **0 violations, 0 warnings, 0 unconnected items**.
 6. **13/13 Schematic Parity Checks Passed:** Native manifest validation (`ruby layout/validation/check_audit_nets.rb`) verifies complete schematic-to-layout parity.
 
@@ -46,8 +54,8 @@ In **Revision N (120 mm Vertical Compaction — Layout N-layout-12)**, the verti
 | **Bleeder Architecture** | 36x 2512 SMD | 36x 2512 SMD | 🟢 24x 2512 SMD (2/cap) | 🟢 24x 2512 SMD (2/cap) | 🟢 **24x 2512 SMD (2/cap)** | **-12 parts** |
 | **Ballast Placement** | Horizontal Loop | Compacted Loop | Compacted SMD Loop | 🟢 1x10 Vertical (X=233.75) | 🟢 **1x10 Vertical (X=233.75)** | Uniform 8mm pitch |
 | **Ballast Peak E-Field**| 🔴 > 1.17 kV/mm | 🟢 0.42 kV/mm | 🟢 0.42 kV/mm | 🟢 0.00 kV/mm (Monotonic) | 🟢 **0.00 kV/mm (Strictly Monotonic)** | **Zero Inversion** |
-| **Total Footprints** | 168 | 175 | 163 (156 parts + 7 holes) | 163 (156 parts + 7 holes) | **163** (156 parts + 7 holes) | Clean parity |
-| **Total Tracks** | — | 83 tracks | 1,450 tracks | 1,444 tracks | 🟢 **1,269 tracks** | 100% Connected |
+| **Total Footprints** | 168 | 175 | 163 (156 parts + 7 holes) | 163 (156 parts + 7 holes) | **161** (156 parts + MP1 + 4 holes H1–H4) | Clean parity |
+| **Total Tracks** | — | 83 tracks | 1,450 tracks | 1,444 tracks | 🟢 **1,264 tracks** | 100% Connected |
 | **Via Count** | 1 via | 83 vias | 188 vias | 189 vias | 🟢 **188 vias** | DRC Clean |
 
 ---
@@ -62,10 +70,10 @@ flowchart TD
         Sensors["BME280 (U5)\nADS1115 ADC (U6)\nTSL2591 Mini-Board (U8)"]
     end
 
-    subgraph PowerDelivery["USB-C PD Sink & Gated Bulk Power"]
-        USBC["USB-C 16-Pin (J3)\n5 V - 20 V PPS"] --> Polyfuse["1A PTC (F1)"]
-        Polyfuse --> Sink["AP33772S (U7)\n+ AO4262E (Q1)"]
-        Sink --> eFuse["TPS259470 eFuse (U9)\nEN: BULK_EN\nOVLO: 22V | ILIM: 1.0A"]
+    subgraph PowerDelivery["USB-C PD Sink (5V Default, 5-20V I2C) & Gated Bulk Power"]
+        USBC["USB-C 16-Pin (J3)\n5V Default / 5-20V I2C"] --> Polyfuse["2A PTC (F1, 1206L200/24NR)"]
+        Polyfuse --> Sink["HUSB238A (U7, I2C 0x42)\n+ AO4407A (Q1)"]
+        Sink --> eFuse["TPS259470 eFuse (U9)\nEN: BULK_EN\nOVLO: 22V | ILIM: 2.78A (R73=1.2k)"]
         eFuse --> VIN_PROT["VIN_PROTECTED\n(Switched Bridge Supply)"]
     end
 
@@ -275,7 +283,7 @@ Official native DRC verification (`kicad-cli pcb drc --severity-all --exit-code-
 
 ## 5. Procurement & SMT Sourcing Status
 
-All 156 placed components (163 total footprints including mechanical mounting holes) have been audited against the JLCPCB/LCSC catalog.
+All 156 placed components (161 total footprints including MP1 and 4 mechanical mounting holes H1–H4) have been audited against the JLCPCB/LCSC catalog.
 
 | Component Group | Part Selected | LCSC / JLCPCB ID | Stock Status | SMT Assembly | Notes |
 |---|---|---|---|---|---|
@@ -285,13 +293,13 @@ All 156 placed components (163 total footprints including mechanical mounting ho
 | **Switches S3–S6** | DEALON TK-0013-R | `C19724218` | In Stock (910) | manualWeld / THT | Right-angle parallel-actuation microswitch |
 | **Primary Diodes D10–D21** | Sunmate 2CL75 | `C424512` | In Stock (1,006) | manualWeld / THT | 16 kV / 5 mA HV axial diode (26 mm formed pitch) |
 | **Bleeders & Dividers** | Bourns CHV2512-JW-107ELF | `C2089706` | In Stock | Standard SMT | 100 MΩ / 5% / 3 kV / 2512 (34 parts total: 24 bleeders + 10 divider) |
-| **Ballast Resistors R20–R29** | Bourns CHV2512-FX-1005ELF | — | In Stock (46k+ DigiKey) | Standard SMT | 10 MΩ / 1% / 1 W / 3 kV / 2512 (10 parts in series = 100 MΩ / 30 kV) |
+| **Ballast Resistors R20–R29** | Bourns CHV2512-FX-1005ELF | `C22457019` | In Stock | Standard SMT | 10 MΩ / 1% / 1 W / 3 kV / 2512 (10 parts in series = 100 MΩ / 30 kV) |
 | **Return Shunt R90** | Vishay CRCW120610K0FKEAHP | `C313977` | In Stock | Standard SMT | Pulse-rated 10 kΩ / 0.75 W / 1206 resistor |
 | **Return Surge TVS D5** | SMBJ15A | `C2912077` | In Stock | Standard SMT | 15 V / 600 W TVS diode |
 | **Input Cap C73** | Samsung CL10B105KB8NQNC | `C5199872` | In Stock | Standard SMT | 1.0 µF / 50 V / 10% 0603 |
-| **PD Sink U7** | AP33772SDKZ-13-FA01 | `C24374260` | In Stock | Standard SMT | USB-PD sink controller, QFN-24 |
-| **eFuse U9** | TPS259470LRPWR | `C3662793` | In Stock | Standard SMT | TI eFuse, VSON-10 |
-| **H-Bridge U2** | DRV8876PWPR | `C575551` | In Stock | Standard SMT | Motor driver, HTSSOP-16 |
+| **PD Sink U7** | HUSB238A-BB001-QN16R | `C22382397` | In Stock | Standard SMT | USB-PD sink controller, QFN-16 (5 V default, 5–20 V I2C @ 0x42) |
+| **eFuse U9** | TPS259470LRPWR | `C3662793` | In Stock | Standard SMT | TI eFuse, VSON-10 ($I_{\text{LIM}} = 2.78\text{ A}$ via `R73 = 1.2k`, `C22765`) |
+| **H-Bridge U2** | DRV8876PWPR | `C575551` | In Stock | Standard SMT | Motor driver, HTSSOP-16 ($I_{\text{TRIP}} = 2.20\text{ A}$ via `R61 = 1.5k`, `C22843`) |
 | **Resonant Cap C11** | KYET MMKP124J2J1501 | `C2991056` | In Stock | manualWeld / THT | 120 nF / 630 V metallized polypropylene |
 | **Snubber C63, R64** | — | — | — | **DNP** | Optional primary RC snubber |
 | **Pi Reference MP1** | Official Pi 5 STEP Model | — | — | **DNP** | Mechanical 3D reference; excluded from BOM/CPL |
