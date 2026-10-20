@@ -1,0 +1,1061 @@
+{
+  "layout_revision": "N-layout-13-LV",
+  "date": "2026-10-19",
+  "board_sha256": "0dad4d928a12d49086a5be2dc42a985f44d6c42bf0193c805c74597dea0febed",
+  "backup": "revisions/N-layout-12-before-LV-optimization/",
+  "placement_method": "Functional grouping, then bounded translation/rotation search using per-net Euclidean minimum spanning trees; power nets weighted twice. Courtyard/pad checks and native DRC guard acceptance. Local improvement, not a claimed global optimum. Ground excluded from the reported tree metric because it uses a plane. This measures placement, not actual routed length.",
+  "before": {
+    "lv_pad_tree_mm": 1927.549,
+    "per_net_mm": {
+      "/01_power_mcu/VIN_PD": 73.777,
+      "/02_drive_transformer/HV_BRIDGE": 85.267,
+      "/02_drive_transformer/DRV_A": 49.539,
+      "3V3": 207.019,
+      "/02_drive_transformer/DRV_nFAULT": 14.786,
+      "/01_power_mcu/VBUS_IN": 28.279,
+      "/VIN_PROTECTED": 62.221,
+      "/HV_SENSE_ADC": 69.203,
+      "/HV_CURR_ADC": 63.714,
+      "/01_power_mcu/PD_VMON": 11.764,
+      "/01_power_mcu/SDA": 102.665,
+      "/01_power_mcu/SCL": 105.612,
+      "/02_drive_transformer/DRV_B": 90.259,
+      "/02_drive_transformer/DRV_IPROPI": 9.826,
+      "/01_power_mcu/EFUSE_DVDT": 37.06,
+      "/DRV_IN1": 59.706,
+      "/DRV_IN2": 88.821,
+      "/DRV_nSLEEP": 81.217,
+      "/02_drive_transformer/DRV_IMODE": 84.725,
+      "/02_drive_transformer/DRV_VCP": 11.81,
+      "/02_drive_transformer/DRV_CPH": 11.713,
+      "/02_drive_transformer/DRV_CPL": 12.605,
+      "/01_power_mcu/ADDR": 6.746,
+      "/01_power_mcu/VBUS_RAW": 57.246,
+      "/01_power_mcu/CC1": 8.017,
+      "/01_power_mcu/USB_DP": 9.017,
+      "/01_power_mcu/USB_DN": 9.017,
+      "/01_power_mcu/CC2": 8.748,
+      "/01_power_mcu/GATE": 9.906,
+      "COIL_3V": 52.504,
+      "/04_sense_safety/INTERLOCK_LOOP_3": 8.0,
+      "/04_sense_safety/RELAY_COIL_POS": 73.945,
+      "BULK_CMD": 29.492,
+      "BULK_EN": 73.172,
+      "/DRV_SLEEP_CMD": 28.1,
+      "/04_sense_safety/INTERLOCK_LOOP_2": 8.0,
+      "/INTERLOCK_OK": 40.562,
+      "/04_sense_safety/INTERLOCK_LOOP_1": 8.0,
+      "/01_power_mcu/DEBUG_N": 5.652,
+      "/HV_RETURN": 38.032,
+      "/01_power_mcu/EN_DRV": 2.513,
+      "/01_power_mcu/ISENP": 6.885,
+      "/01_power_mcu/EFUSE_OVLO": 42.376,
+      "/01_power_mcu/EFUSE_ILM": 40.028
+    },
+    "drc_violations": 55,
+    "unconnected_items": 144
+  },
+  "after": {
+    "lv_pad_tree_mm": 1269.254,
+    "per_net_mm": {
+      "/01_power_mcu/VIN_PD": 21.066,
+      "/02_drive_transformer/HV_BRIDGE": 60.543,
+      "/02_drive_transformer/DRV_A": 50.7,
+      "3V3": 188.651,
+      "/02_drive_transformer/DRV_nFAULT": 7.318,
+      "/01_power_mcu/VBUS_IN": 23.443,
+      "/VIN_PROTECTED": 15.598,
+      "/HV_SENSE_ADC": 65.744,
+      "/HV_CURR_ADC": 59.016,
+      "/01_power_mcu/PD_VMON": 6.33,
+      "/01_power_mcu/SDA": 64.847,
+      "/01_power_mcu/SCL": 64.844,
+      "/02_drive_transformer/DRV_B": 79.645,
+      "/02_drive_transformer/DRV_IPROPI": 2.4,
+      "/01_power_mcu/EFUSE_DVDT": 3.7,
+      "/DRV_IN1": 43.311,
+      "/DRV_IN2": 70.167,
+      "/DRV_nSLEEP": 58.326,
+      "/02_drive_transformer/DRV_IMODE": 2.377,
+      "/02_drive_transformer/DRV_VCP": 3.392,
+      "/02_drive_transformer/DRV_CPH": 3.227,
+      "/02_drive_transformer/DRV_CPL": 3.376,
+      "/01_power_mcu/ADDR": 2.028,
+      "/01_power_mcu/VBUS_RAW": 49.943,
+      "/01_power_mcu/CC1": 5.101,
+      "/01_power_mcu/USB_DP": 4.816,
+      "/01_power_mcu/USB_DN": 5.31,
+      "/01_power_mcu/CC2": 5.459,
+      "/01_power_mcu/GATE": 9.491,
+      "COIL_3V": 26.437,
+      "/04_sense_safety/INTERLOCK_LOOP_3": 8.0,
+      "/04_sense_safety/RELAY_COIL_POS": 36.207,
+      "BULK_CMD": 22.039,
+      "BULK_EN": 70.607,
+      "/DRV_SLEEP_CMD": 30.631,
+      "/04_sense_safety/INTERLOCK_LOOP_2": 8.0,
+      "/INTERLOCK_OK": 20.244,
+      "/04_sense_safety/INTERLOCK_LOOP_1": 8.0,
+      "/01_power_mcu/DEBUG_N": 3.964,
+      "/HV_RETURN": 38.032,
+      "/01_power_mcu/EN_DRV": 5.295,
+      "/01_power_mcu/ISENP": 4.666,
+      "/01_power_mcu/EFUSE_OVLO": 5.025,
+      "/01_power_mcu/EFUSE_ILM": 1.937
+    },
+    "drc_violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity_errors": 0,
+    "erc_violations": 0
+  },
+  "placement_tree_reduction_percent": 34.15,
+  "placement_changes": {
+    "C71": {
+      "before": [
+        77.7,
+        148.8,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        79.0,
+        143.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R63": {
+      "before": [
+        82.5,
+        135.85,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        84.0,
+        124.5,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C17": {
+      "before": [
+        74.2,
+        137.4,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        72.0,
+        150.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "C70": {
+      "before": [
+        97.0,
+        104.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        88.0,
+        149.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "TP50": {
+      "before": [
+        82.5,
+        133.199999,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        80.5,
+        124.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "C82": {
+      "before": [
+        67.4,
+        118.1,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        72.5,
+        89.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "U6": {
+      "before": [
+        82.0,
+        107.0,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        81.0,
+        112.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R61": {
+      "before": [
+        82.5,
+        139.5,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        84.0,
+        128.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C72": {
+      "before": [
+        80.0,
+        91.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        79.0,
+        135.5,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "U2": {
+      "before": [
+        90.1,
+        147.5,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        90.0,
+        127.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "R15": {
+      "before": [
+        73.2,
+        141.4,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        68.7,
+        142.4,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "R12": {
+      "before": [
+        67.6,
+        150.9,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        67.099999,
+        150.9,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "C83": {
+      "before": [
+        69.0,
+        112.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        76.0,
+        81.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R5": {
+      "before": [
+        83.5,
+        126.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        86.0,
+        120.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C62": {
+      "before": [
+        94.5,
+        134.8,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        96.0,
+        125.8,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "D50": {
+      "before": [
+        74.4,
+        132.4,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        88.0,
+        144.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "K1": {
+      "before": [
+        78.2,
+        62.9,
+        -90.0,
+        0,
+        false
+      ],
+      "after": [
+        76.2,
+        64.4,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "C16": {
+      "before": [
+        84.3,
+        71.2,
+        -90.0,
+        0,
+        false
+      ],
+      "after": [
+        84.0,
+        112.0,
+        -90.0,
+        0,
+        false
+      ]
+    },
+    "C60": {
+      "before": [
+        74.544888,
+        127.5,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        91.0,
+        139.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "R70": {
+      "before": [
+        85.0,
+        91.0,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        79.0,
+        132.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "R60": {
+      "before": [
+        97.0,
+        157.0,
+        -90.0,
+        0,
+        false
+      ],
+      "after": [
+        99.0,
+        152.0,
+        -90.0,
+        0,
+        false
+      ]
+    },
+    "R92": {
+      "before": [
+        82.0,
+        120.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        73.0,
+        76.0,
+        -90.0,
+        0,
+        false
+      ]
+    },
+    "C10": {
+      "before": [
+        95.5,
+        124.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        93.5,
+        134.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R16": {
+      "before": [
+        63.7,
+        136.7,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        64.7,
+        139.7,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C21": {
+      "before": [
+        68.1,
+        158.8,
+        -90.0,
+        0,
+        false
+      ],
+      "after": [
+        69.0,
+        159.0,
+        -90.0,
+        0,
+        false
+      ]
+    },
+    "U5": {
+      "before": [
+        87.2,
+        71.3,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        69.0,
+        108.5,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "R62": {
+      "before": [
+        64.9,
+        67.2,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        86.5,
+        131.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C61": {
+      "before": [
+        97.0,
+        136.5,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        96.5,
+        129.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "C22": {
+      "before": [
+        96.0,
+        83.0,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        83.0,
+        148.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C12": {
+      "before": [
+        96.0,
+        128.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        98.0,
+        132.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "U7": {
+      "before": [
+        66.4,
+        143.4,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        64.4,
+        143.4,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R11": {
+      "before": [
+        89.5,
+        113.2,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        77.0,
+        113.0,
+        180.0,
+        0,
+        false
+      ]
+    },
+    "C18": {
+      "before": [
+        79.3,
+        75.0,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        70.0,
+        148.0,
+        -90.0,
+        0,
+        false
+      ]
+    },
+    "D51": {
+      "before": [
+        96.5,
+        118.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        97.0,
+        118.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "R71": {
+      "before": [
+        95.0,
+        92.0,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        83.0,
+        137.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R72": {
+      "before": [
+        91.0,
+        97.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        84.0,
+        134.5,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "U9": {
+      "before": [
+        70.3,
+        127.4,
+        180.0,
+        0,
+        false
+      ],
+      "after": [
+        80.0,
+        139.0,
+        -90.0,
+        0,
+        false
+      ]
+    },
+    "R13": {
+      "before": [
+        66.8375,
+        154.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        64.3375,
+        154.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "R10": {
+      "before": [
+        89.5,
+        111.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        77.0,
+        111.0,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "D3": {
+      "before": [
+        84.8,
+        63.2,
+        -90.0,
+        0,
+        false
+      ],
+      "after": [
+        82.8,
+        59.7,
+        0.0,
+        0,
+        false
+      ]
+    },
+    "U10": {
+      "before": [
+        64.7,
+        95.0,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        73.0,
+        82.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "C15": {
+      "before": [
+        90.2,
+        71.2,
+        90.0,
+        0,
+        false
+      ],
+      "after": [
+        71.0,
+        101.0,
+        90.0,
+        0,
+        false
+      ]
+    },
+    "R73": {
+      "before": [
+        96.0,
+        97.0,
+        0.0,
+        0,
+        false
+      ],
+      "after": [
+        81.0,
+        142.5,
+        -90.0,
+        0,
+        false
+      ]
+    }
+  },
+  "pad_nets_packages_dnp_preserved": true,
+  "fixed_connectors_mechanics_hv_placement_preserved": true,
+  "hv_track_geometry_preserved": true,
+  "custom_rules_and_project_settings_preserved": true,
+  "power_width_targets_mm": {
+    "USB-PD_and_bridge_supply_trunks": 1.5,
+    "bridge_output_trunks": 1.0,
+    "3V3_trunks": 0.6,
+    "coil_supply": 0.5
+  },
+  "width_notes": "Pin escapes and clearance-limited branches are locally narrower. 460 routed segments were widened against actual neighboring copper. Widths alone do not qualify current capacity without copper weight, stackup and thermal conditions.",
+  "power_widths_actual_length_by_width_mm": {
+    "/01_power_mcu/VIN_PD": {
+      "0.276": 1.29,
+      "0.309": 0.43,
+      "0.678": 0.43,
+      "1.281": 0.401,
+      "1.362": 0.3,
+      "1.5": 24.086
+    },
+    "/02_drive_transformer/HV_BRIDGE": {
+      "0.375": 2.471,
+      "0.376": 1.0,
+      "0.47": 0.5,
+      "0.972": 0.4,
+      "0.976": 0.424,
+      "0.981": 0.424,
+      "1.005": 0.4,
+      "1.022": 0.524,
+      "1.027": 0.241,
+      "1.042": 0.471,
+      "1.078": 0.424,
+      "1.087": 0.389,
+      "1.093": 0.389,
+      "1.105": 0.849,
+      "1.109": 0.849,
+      "1.118": 0.849,
+      "1.171": 0.46,
+      "1.188": 0.5,
+      "1.227": 0.424,
+      "1.24": 0.389,
+      "1.337": 0.849,
+      "1.427": 0.424,
+      "1.435": 0.424,
+      "1.5": 73.864
+    },
+    "/02_drive_transformer/DRV_A": {
+      "0.476": 0.453,
+      "0.582": 0.935,
+      "0.729": 0.453,
+      "0.749": 0.453,
+      "0.849": 0.453,
+      "1.0": 57.615
+    },
+    "3V3": {
+      "0.2": 2.369,
+      "0.222": 0.296,
+      "0.225": 0.744,
+      "0.226": 1.766,
+      "0.23": 0.283,
+      "0.245": 0.53,
+      "0.271": 0.541,
+      "0.272": 0.1,
+      "0.275": 0.9,
+      "0.276": 0.724,
+      "0.278": 0.896,
+      "0.287": 0.06,
+      "0.291": 0.483,
+      "0.305": 0.437,
+      "0.309": 0.424,
+      "0.313": 0.801,
+      "0.315": 0.025,
+      "0.316": 0.495,
+      "0.318": 0.283,
+      "0.325": 1.374,
+      "0.326": 4.133,
+      "0.328": 0.777,
+      "0.332": 0.325,
+      "0.335": 0.437,
+      "0.344": 0.424,
+      "0.35": 0.424,
+      "0.353": 0.424,
+      "0.355": 0.377,
+      "0.357": 0.495,
+      "0.364": 0.377,
+      "0.371": 0.3,
+      "0.372": 1.983,
+      "0.375": 0.325,
+      "0.376": 1.168,
+      "0.377": 0.06,
+      "0.384": 0.471,
+      "0.389": 0.424,
+      "0.396": 0.424,
+      "0.408": 0.5,
+      "0.425": 1.882,
+      "0.426": 0.2,
+      "0.427": 0.283,
+      "0.428": 1.89,
+      "0.454": 0.283,
+      "0.471": 0.421,
+      "0.475": 1.485,
+      "0.495": 0.325,
+      "0.502": 0.354,
+      "0.503": 0.5,
+      "0.51": 0.424,
+      "0.522": 0.392,
+      "0.525": 0.496,
+      "0.528": 0.707,
+      "0.534": 0.683,
+      "0.538": 0.146,
+      "0.571": 0.283,
+      "0.572": 3.714,
+      "0.575": 0.06,
+      "0.594": 0.392,
+      "0.598": 0.424,
+      "0.6": 210.69
+    },
+    "/01_power_mcu/VBUS_IN": {
+      "0.207": 0.406,
+      "0.237": 0.406,
+      "0.319": 0.406,
+      "0.326": 0.035,
+      "0.376": 0.05,
+      "0.45": 0.406,
+      "0.453": 0.035,
+      "0.475": 0.035,
+      "0.507": 0.05,
+      "0.523": 0.035,
+      "0.526": 0.025,
+      "0.574": 0.479,
+      "0.576": 0.035,
+      "0.582": 0.025,
+      "0.596": 0.071,
+      "0.6": 0.175,
+      "0.626": 0.025,
+      "0.667": 0.489,
+      "1.325": 0.479,
+      "1.5": 30.337
+    },
+    "/VIN_PROTECTED": {
+      "0.2": 1.07,
+      "0.276": 0.867,
+      "0.353": 0.4,
+      "0.572": 0.495,
+      "0.598": 0.389,
+      "0.745": 0.389,
+      "1.174": 0.389,
+      "1.271": 0.495,
+      "1.5": 11.444
+    },
+    "/02_drive_transformer/DRV_B": {
+      "0.201": 0.487,
+      "0.207": 0.448,
+      "0.215": 0.935,
+      "0.226": 1.95,
+      "0.228": 0.648,
+      "0.248": 0.487,
+      "0.328": 0.283,
+      "0.334": 0.283,
+      "0.353": 0.424,
+      "0.372": 0.882,
+      "0.376": 0.6,
+      "0.386": 0.407,
+      "0.402": 0.475,
+      "0.43": 0.424,
+      "0.434": 0.448,
+      "0.496": 0.475,
+      "0.564": 0.424,
+      "0.61": 0.448,
+      "0.628": 0.487,
+      "0.669": 0.824,
+      "0.673": 0.407,
+      "0.809": 0.475,
+      "0.975": 0.424,
+      "1.0": 84.21
+    },
+    "/01_power_mcu/VBUS_RAW": {
+      "0.2": 0.467,
+      "0.21": 1.0,
+      "0.221": 2.0,
+      "0.237": 0.354,
+      "0.255": 3.498,
+      "0.257": 0.5,
+      "0.276": 0.283,
+      "0.285": 0.467,
+      "0.397": 0.955,
+      "0.435": 0.367,
+      "0.437": 0.733,
+      "0.446": 0.46,
+      "0.476": 0.9,
+      "0.495": 0.441,
+      "0.535": 0.495,
+      "0.536": 2.4,
+      "0.541": 0.4,
+      "0.555": 0.354,
+      "0.556": 0.354,
+      "0.561": 0.5,
+      "0.565": 0.1,
+      "0.572": 6.792,
+      "0.576": 0.527,
+      "0.594": 0.707,
+      "0.627": 0.354,
+      "0.637": 0.377,
+      "0.64": 0.707,
+      "0.644": 0.433,
+      "0.659": 0.46,
+      "0.661": 0.283,
+      "0.723": 0.6,
+      "0.75": 1.999,
+      "0.771": 4.083,
+      "0.772": 0.971,
+      "0.782": 0.962,
+      "0.796": 0.453,
+      "0.832": 0.453,
+      "0.833": 0.463,
+      "0.85": 0.453,
+      "0.876": 0.483,
+      "0.914": 0.483,
+      "0.922": 0.1,
+      "0.927": 0.849,
+      "0.938": 0.483,
+      "0.939": 0.354,
+      "0.944": 0.465,
+      "0.959": 0.481,
+      "1.004": 0.486,
+      "1.005": 0.481,
+      "1.075": 0.35,
+      "1.076": 0.35,
+      "1.079": 0.962,
+      "1.08": 0.424,
+      "1.105": 0.377,
+      "1.121": 0.1,
+      "1.132": 0.377,
+      "1.2": 0.453,
+      "1.242": 0.481,
+      "1.257": 0.433,
+      "1.264": 0.483,
+      "1.271": 0.481,
+      "1.319": 0.1,
+      "1.325": 0.483,
+      "1.331": 0.377,
+      "1.372": 2.9,
+      "1.378": 0.465,
+      "1.381": 0.377,
+      "1.426": 0.283,
+      "1.465": 0.481,
+      "1.493": 0.424,
+      "1.5": 59.936
+    },
+    "COIL_3V": {
+      "0.5": 32.842
+    },
+    "/01_power_mcu/ISENP": {
+      "1.5": 4.977
+    }
+  },
+  "audit_connectivity_checks_passed": 13,
+  "manufacturing_exports_regenerated": false,
+  "qualification": "Native ERC/DRC and routing pass. Existing HV insulation and component qualifications in layout/validation/README.md remain separate; no fabrication-release claim."
+}

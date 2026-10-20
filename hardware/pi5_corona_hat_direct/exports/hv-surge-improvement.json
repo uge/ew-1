@@ -1,0 +1,429 @@
+{
+  "revision": "N-layout-14-surge",
+  "board_sha256": "514a3b9bd48edaffefe2acf6069208b72faed529fda885efa41289606a0d7739",
+  "baseline_revision": "N-layout-13-LV",
+  "backup": "revisions/N-layout-13-before-surge-path",
+  "moved_footprints": {
+    "D5": [
+      132.5,
+      158.0,
+      90.0
+    ],
+    "R90": [
+      132.5,
+      162.95,
+      180.0
+    ]
+  },
+  "paths": {
+    "J61_to_D5": {
+      "before": {
+        "length_mm": 33.85,
+        "layer_changes": 3,
+        "straight_line_mm": 19.948,
+        "nodes": [
+          [
+            0,
+            126.0,
+            156.0
+          ],
+          [
+            2,
+            126.0,
+            156.0
+          ],
+          [
+            2,
+            128.5,
+            156.0
+          ],
+          [
+            2,
+            128.5,
+            166.0
+          ],
+          [
+            0,
+            128.5,
+            166.0
+          ],
+          [
+            0,
+            128.5,
+            169.5
+          ],
+          [
+            2,
+            128.5,
+            169.5
+          ],
+          [
+            2,
+            111.0,
+            169.5
+          ],
+          [
+            2,
+            111.0,
+            169.15
+          ],
+          [
+            0,
+            111.0,
+            169.15
+          ]
+        ]
+      },
+      "after": {
+        "length_mm": 8.219,
+        "layer_changes": 0,
+        "straight_line_mm": 7.7118,
+        "nodes": [
+          [
+            0,
+            126.0,
+            156.0
+          ],
+          [
+            0,
+            128.35,
+            156.0
+          ],
+          [
+            0,
+            132.5,
+            160.15
+          ]
+        ]
+      },
+      "length_reduction_percent": 75.72
+    },
+    "J61_to_R90": {
+      "before": {
+        "length_mm": 40.5375,
+        "layer_changes": 3,
+        "straight_line_mm": 24.4195,
+        "nodes": [
+          [
+            0,
+            126.0,
+            156.0
+          ],
+          [
+            2,
+            126.0,
+            156.0
+          ],
+          [
+            2,
+            128.5,
+            156.0
+          ],
+          [
+            2,
+            128.5,
+            166.0
+          ],
+          [
+            0,
+            128.5,
+            166.0
+          ],
+          [
+            0,
+            128.5,
+            169.5
+          ],
+          [
+            2,
+            128.5,
+            169.5
+          ],
+          [
+            2,
+            111.0,
+            169.5
+          ],
+          [
+            2,
+            105.0,
+            169.5
+          ],
+          [
+            2,
+            105.0,
+            168.463
+          ],
+          [
+            0,
+            105.0,
+            168.463
+          ],
+          [
+            0,
+            105.0,
+            168.4625
+          ]
+        ]
+      },
+      "after": {
+        "length_mm": 11.6248,
+        "layer_changes": 0,
+        "straight_line_mm": 10.569,
+        "nodes": [
+          [
+            0,
+            126.0,
+            156.0
+          ],
+          [
+            0,
+            128.35,
+            156.0
+          ],
+          [
+            0,
+            132.5,
+            160.15
+          ],
+          [
+            0,
+            133.9625,
+            161.6125
+          ],
+          [
+            0,
+            133.9625,
+            162.95
+          ]
+        ]
+      },
+      "length_reduction_percent": 71.32
+    },
+    "J61_to_R91": {
+      "before": {
+        "length_mm": 53.9142,
+        "layer_changes": 3,
+        "straight_line_mm": 35.6546,
+        "nodes": [
+          [
+            0,
+            126.0,
+            156.0
+          ],
+          [
+            2,
+            126.0,
+            156.0
+          ],
+          [
+            2,
+            128.5,
+            156.0
+          ],
+          [
+            2,
+            128.5,
+            166.0
+          ],
+          [
+            0,
+            128.5,
+            166.0
+          ],
+          [
+            0,
+            128.5,
+            169.5
+          ],
+          [
+            2,
+            128.5,
+            169.5
+          ],
+          [
+            2,
+            111.0,
+            169.5
+          ],
+          [
+            2,
+            105.0,
+            169.5
+          ],
+          [
+            2,
+            93.0,
+            169.5
+          ],
+          [
+            2,
+            92.5,
+            170.0
+          ],
+          [
+            2,
+            92.0,
+            170.0
+          ],
+          [
+            0,
+            92.0,
+            170.0
+          ],
+          [
+            0,
+            92.5,
+            169.5
+          ],
+          [
+            0,
+            93.0,
+            169.5
+          ]
+        ]
+      },
+      "after": {
+        "length_mm": 63.4265,
+        "layer_changes": 2,
+        "straight_line_mm": 35.6546,
+        "nodes": [
+          [
+            0,
+            126.0,
+            156.0
+          ],
+          [
+            0,
+            128.35,
+            156.0
+          ],
+          [
+            0,
+            132.5,
+            160.15
+          ],
+          [
+            0,
+            133.9625,
+            161.6125
+          ],
+          [
+            0,
+            133.9625,
+            162.95
+          ],
+          [
+            0,
+            134.9,
+            162.95
+          ],
+          [
+            2,
+            134.9,
+            162.95
+          ],
+          [
+            2,
+            134.9,
+            165.0
+          ],
+          [
+            2,
+            119.0,
+            165.0
+          ],
+          [
+            2,
+            119.0,
+            169.5
+          ],
+          [
+            2,
+            93.0,
+            169.5
+          ],
+          [
+            2,
+            92.5,
+            170.0
+          ],
+          [
+            2,
+            92.0,
+            170.0
+          ],
+          [
+            0,
+            92.0,
+            170.0
+          ],
+          [
+            0,
+            92.5,
+            169.5
+          ],
+          [
+            0,
+            93.0,
+            169.5
+          ]
+        ]
+      },
+      "length_reduction_percent": -17.64
+    }
+  },
+  "incoming_clamp_width_mm": 1.5,
+  "shunt_branch_width_mm": 0.8,
+  "generator_ground_trunk_width_mm": 1.5,
+  "parallel_ground_vias": [
+    {
+      "position": [
+        127.5,
+        150.5
+      ],
+      "diameter_mm": 0.8,
+      "drill_mm": 0.4
+    },
+    {
+      "position": [
+        128.5,
+        150.5
+      ],
+      "diameter_mm": 0.8,
+      "drill_mm": 0.4
+    }
+  ],
+  "sense_pickoff": "Separate branch from R90.1; R91 remains in the LV section. Longer sense routing is a tradeoff, not a measured noise improvement.",
+  "validation": {
+    "drc_violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity_issues": 0,
+    "erc_violations": 0,
+    "audit_connectivity_checks_passed": 13,
+    "pad_nets_packages_dnp_preserved": true,
+    "all_other_footprint_poses_preserved": true,
+    "hv_net_track_geometry_preserved": true,
+    "project_settings_and_custom_rules_preserved_byte_for_byte": true
+  },
+  "nearest_return_to_hv_copper_mm": 7.41252,
+  "legacy_insulation_screening": {
+    "before": {
+      "critical_violations": 51,
+      "caution_points": 146,
+      "edge_failures": 11,
+      "absolute_min_surface_clearance_mm": 4.452432121669835
+    },
+    "after": {
+      "critical_violations": 51,
+      "caution_points": 146,
+      "edge_failures": 11,
+      "absolute_min_surface_clearance_mm": 4.318978926086566
+    }
+  },
+  "limitations": [
+    "No arc-energy, clamp overshoot, loop inductance, surge current or survival simulation/measurement was performed.",
+    "Existing insulation screening failures remain; not a fabrication-release qualification.",
+    "Manufacturing Gerbers/BOM/CPL archives were not regenerated."
+  ]
+}
