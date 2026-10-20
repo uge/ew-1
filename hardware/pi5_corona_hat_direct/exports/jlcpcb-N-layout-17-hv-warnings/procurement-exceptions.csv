@@ -1,0 +1,13 @@
+Designator,MPN,LCSC Part #,DNP,Procurement Status,Catalog Stock,Notes
+T1,FL2015-4LD,"",No,EXTERNAL_SOURCE,,No exact FL2015-4LD JLCPCB catalog match found. Coilcraft sourcing/consignment or manual fit; do not substitute a PFL2015 inductor.
+TP50,"","",No,PCB_FEATURE,,Copper test pad; no purchased or placed component.
+J61,"","",No,PCB_FEATURE,,"Separate single solder-wire termination, far from J60. HV_RETURN is isolated from logic ground."
+J69,"","",No,PCB_FEATURE,,"J69: pin 1 COM, pin 2 NO; matching mini/host solder-pad pair for four-switch interlock."
+J66,"","",No,PCB_FEATURE,,"J66: pin 1 COM, pin 2 NO; matching mini/host solder-pad pair for four-switch interlock."
+J65,"","",No,PCB_FEATURE,,"S4_HOST: pin 1 COM, pin 2 NO. Paired solderable plated holes; connect the matching host/mini pair with two wires after cutting its two-net neck. NC stays unused."
+J64,"","",No,PCB_FEATURE,,"S3_HOST: pin 1 COM, pin 2 NO. Paired solderable plated holes; connect the matching host/mini pair with two wires after cutting its two-net neck. NC stays unused."
+J67,"","",No,PCB_FEATURE,,"J67: pin 1 COM, pin 2 NO; matching mini/host solder-pad pair for four-switch interlock."
+J63,"","",No,PCB_FEATURE,,"S4_MINI: pin 1 COM, pin 2 NO. Paired solderable plated holes; connect the matching host/mini pair with two wires after cutting its two-net neck. NC stays unused."
+J60,"","",No,PCB_FEATURE,,"Single isolated solder-wire termination. External wire insulation, strain relief and enclosure must be validated for 15 kV; no generic low-voltage pin header."
+J68,"","",No,PCB_FEATURE,,"J68: pin 1 COM, pin 2 NO; matching mini/host solder-pad pair for four-switch interlock."
+J62,"","",No,PCB_FEATURE,,"S3_MINI: pin 1 COM, pin 2 NO. Paired solderable plated holes; connect the matching host/mini pair with two wires after cutting its two-net neck. NC stays unused."

@@ -7,7 +7,7 @@
 	(title_block
 		(title "02 Isolated AC Generation & Resonance Tank")
 		(date "2026-10-03")
-		(rev "K")
+		(rev "N-layout-17-hv-warnings")
 		(company "Antigravity Engineering")
 	)
 	(lib_symbols
@@ -9358,7 +9358,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C224015"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/hongjiacheng-SMBJ22A/C49066946"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9379,7 +9379,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C224015"
+		(property "LCSC" "C49066946"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9390,7 +9390,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C224015"
+		(property "JLCPCB Part #" "C49066946"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9401,7 +9401,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Littelfuse"
+		(property "Manufacturer" "hongjiacheng"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9445,7 +9445,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" ""
+		(property "Procurement Notes" "User-selected hongjiacheng SMBJ22A:22V standoff,35.5V clamp,16.9A,600W10/1000us,unidirectional SMB. Pad1 cathode and original nets/footprint retained. Manufacturer datasheet/pulse qualification remains open."
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9456,7 +9456,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C224015"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C49066946"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9467,7 +9467,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9489,7 +9489,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C224015"
+		(property "LCSC Part" "C49066946"
 			(at 185.42 64.77 0)
 			(hide yes)
 			(show_name no)

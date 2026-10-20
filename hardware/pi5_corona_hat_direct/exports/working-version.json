@@ -1,0 +1,29 @@
+{
+  "role": "canonical working design",
+  "revision": "N-layout-17-hv-warnings",
+  "project": "hardware/pi5_corona_hat_direct/pi5_corona_hv.kicad_pro",
+  "kicad_version": "10.0.7",
+  "production_release": false,
+  "native_checks": {
+    "erc_violations": 0,
+    "drc_violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity_issues": 0,
+    "connectivity_audits_passed": 13
+  },
+  "source_sha256": {
+    "03_multiplier.kicad_sch": "ef964927cbc9cfbbcbd8c87dc3121af946b2bb315e26087d12373e5d94deae9a",
+    "05_illumination.kicad_sch": "70a3d85af3e313976ebdab7cc831fc946e60e2c4145a3a11836f8e82539320b0",
+    "01_power_mcu.kicad_sch": "1e0aa99d220377d1772253588b8a61f137980b62dece94de36ec4e5160719aab",
+    "pi5_corona_hv.kicad_sch": "6bb0386bf581fa425e85c3537e06586499028c764076f97bad414ba16f404229",
+    "02_drive_transformer.kicad_sch": "efa02d3e491b41d6fa73deca56de73475e728d1954701895433be7678b72c692",
+    "04_sense_safety.kicad_sch": "8e336dd7aa1f73ee18ddc8c84ddb53ef09c879fd89d932357462eb6c9fe2464c",
+    "pi5_corona_hv.kicad_pcb": "a36866aa21bf3e31dbd1b0842cc35f07536400add0be71c294e265a4f240e880",
+    "pi5_corona_hv.kicad_pro": "5d3b275a805fd84b9bbe082695aa0eee5055c88c46e2728e2ea05343e61b4bcd",
+    "pi5_corona_hv.kicad_dru": "2e6ccb2c91806d9965b90497d7a4288d3f3a909b70f9e9b47d26bbf7ba80121b"
+  },
+  "matching_bom_components": 141,
+  "matching_bom_rows": 51,
+  "package": "exports/jlcpcb-N-layout-17-hv-warnings-package.zip",
+  "release_holds": "See AUDIT.md"
+}

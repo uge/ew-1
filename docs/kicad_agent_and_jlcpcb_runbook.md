@@ -1,3 +1,5 @@
+> Historical reference. The current working design and commands are in [the project guide](../hardware/pi5_corona_hat_direct/README.md). Older paths and release claims below are superseded.
+
 # KiCad 10 and JLCPCB runbook
 
 The active project is `hardware/pi5_corona_hat_direct/pi5_corona_hv.kicad_pro`: a Raspberry Pi 5 HAT with programmable USB-C PD input, DRV8876 bridge protection, BME280, ADS1115 and a TSL2591 break-off illumination board. Earlier ESP32 projects and their component mappings are historical and must not be used for procurement.

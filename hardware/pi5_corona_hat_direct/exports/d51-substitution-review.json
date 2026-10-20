@@ -1,0 +1,38 @@
+{
+  "revision": "N-layout-16-d51",
+  "ref": "D51",
+  "old_lcsc": "C224015",
+  "lcsc": "C49066946",
+  "manufacturer": "hongjiacheng",
+  "mpn": "SMBJ22A",
+  "stock": 10063,
+  "available_order_qty": 10035,
+  "footprint": "Diode_SMD:D_SMB",
+  "polarity": "unidirectional; original cathode pad1 and all nets preserved",
+  "ratings": {
+    "Operating Temperature": "-55\u2103~+150\u2103",
+    "Type": "TVS",
+    "Junction Capacitance": "-",
+    "Peak Pulse Power Dissipation (Ppp)": "600W@10/1000us",
+    "Number of Channels": "1",
+    "level of protection": "IEC 61000-4-2",
+    "Clamping Voltage": "35.5V",
+    "Polarity": "Unidirectional",
+    "Voltage - Breakdown": "26.9V",
+    "Peak Pulse Current (Ipp)": "16.9A",
+    "Reverse Stand-Off Voltage (Vrwm)": "22V",
+    "Reverse Leakage Current (Ir)": "5uA"
+  },
+  "board_geometry_unchanged": true,
+  "board_sha256": "ee3b94ed0bb32a5df444edacc3f53ed5f984804c688ced5986bea56f37856b3c",
+  "manufacturer_datasheet_verified": false,
+  "notes": "JLCPCB signed datasheet link expired; catalog ratings verified. No new arc/pulse qualification claimed. Prior D51 stock hold superseded; R14/C18 catalog mismatches and HV holds remain.",
+  "native_checks": {
+    "erc": 0,
+    "drc": 0,
+    "open_connections": 0,
+    "schematic_parity": 0,
+    "audit_checks_passed": 13,
+    "native_connectivity_unchanged": true
+  }
+}

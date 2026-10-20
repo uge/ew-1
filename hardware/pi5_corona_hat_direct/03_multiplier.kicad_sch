@@ -7,7 +7,7 @@
 	(title_block
 		(title "03 6-Stage Positive Cockcroft-Walton Multiplier & Bleeders")
 		(date "2026-10-03")
-		(rev "G")
+		(rev "N-layout-17-hv-warnings")
 		(company "Antigravity Engineering")
 	)
 	(lib_symbols
@@ -7839,7 +7839,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7850,7 +7850,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7871,7 +7871,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 325.12 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -7882,7 +7882,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7893,7 +7893,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7904,7 +7904,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7915,7 +7915,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7948,7 +7948,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7959,7 +7959,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7970,7 +7970,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 325.12 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8038,7 +8038,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8049,7 +8049,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8070,7 +8070,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 180.34 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -8081,7 +8081,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8092,7 +8092,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8103,7 +8103,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8114,7 +8114,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8147,7 +8147,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8158,7 +8158,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8169,7 +8169,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 180.34 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -8237,7 +8237,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8248,7 +8248,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8269,7 +8269,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 228.6 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -8280,7 +8280,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8291,7 +8291,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8302,7 +8302,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8313,7 +8313,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8346,7 +8346,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8357,7 +8357,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8368,7 +8368,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 228.6 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8436,7 +8436,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8447,7 +8447,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8468,7 +8468,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 325.12 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -8479,7 +8479,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8490,7 +8490,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8501,7 +8501,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8512,7 +8512,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8545,7 +8545,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8556,7 +8556,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8567,7 +8567,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 325.12 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -9242,7 +9242,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9253,7 +9253,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9274,7 +9274,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 132.08 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -9285,7 +9285,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9296,7 +9296,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9307,7 +9307,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9318,7 +9318,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9351,7 +9351,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9362,7 +9362,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9373,7 +9373,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 132.08 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9441,7 +9441,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9452,7 +9452,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9473,7 +9473,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 276.86 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -9484,7 +9484,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9495,7 +9495,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9506,7 +9506,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9517,7 +9517,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9550,7 +9550,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9561,7 +9561,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -9572,7 +9572,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 276.86 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -12068,7 +12068,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12079,7 +12079,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12100,7 +12100,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 132.08 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -12111,7 +12111,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12122,7 +12122,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12133,7 +12133,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12144,7 +12144,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12177,7 +12177,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12188,7 +12188,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -12199,7 +12199,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 132.08 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14020,7 +14020,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14031,7 +14031,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14052,7 +14052,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 83.82 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -14063,7 +14063,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14074,7 +14074,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14085,7 +14085,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14096,7 +14096,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14129,7 +14129,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14140,7 +14140,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14151,7 +14151,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 83.82 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14229,7 +14229,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14240,7 +14240,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14261,7 +14261,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 180.34 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -14272,7 +14272,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14283,7 +14283,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14294,7 +14294,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14305,7 +14305,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14338,7 +14338,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14349,7 +14349,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14360,7 +14360,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 180.34 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14428,7 +14428,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14439,7 +14439,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14460,7 +14460,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 228.6 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -14471,7 +14471,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14482,7 +14482,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14493,7 +14493,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14504,7 +14504,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14537,7 +14537,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14548,7 +14548,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14559,7 +14559,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 228.6 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -14846,7 +14846,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14857,7 +14857,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14878,7 +14878,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 276.86 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -14889,7 +14889,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14900,7 +14900,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14911,7 +14911,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14922,7 +14922,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14955,7 +14955,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14966,7 +14966,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -14977,7 +14977,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 276.86 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -17141,7 +17141,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+		(property "Footprint" "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17152,7 +17152,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17173,7 +17173,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 83.82 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -17184,7 +17184,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17195,7 +17195,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17206,7 +17206,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17217,7 +17217,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17250,7 +17250,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17261,7 +17261,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -17272,7 +17272,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 83.82 172.72 0)
 			(hide yes)
 			(show_name no)

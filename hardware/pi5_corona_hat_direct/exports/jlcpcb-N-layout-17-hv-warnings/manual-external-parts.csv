@@ -1,0 +1,2 @@
+Comment,Designator,Footprint,LCSC Part #,Manufacturer,MPN,Quantity,DNP,Procurement Status,Catalog Stock,JLCPCB Library,Assembly Process,Source,Notes
+FL2015-4LD,T1,ionic_thrust_hv:Coilcraft_FL2015_Package1_SMT,,Coilcraft,FL2015-4LD,1,No,EXTERNAL_SOURCE,,Unknown,,https://www.coilcraft.com/en-us/products/transformers/power-transformers/ccfl-transformers/fl/fl2015-4l/,No exact FL2015-4LD JLCPCB catalog match found. Coilcraft sourcing/consignment or manual fit; do not substitute a PFL2015 inductor.

@@ -1,1 +1,0 @@
-H-layout-3 PCB and placement snapshot before the I-layout-4 side-board and HV placement changes. Used by layout/check_placement_metrics.py. Relative 3D/library paths belong to the active project directory; this is not a standalone project.

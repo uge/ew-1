@@ -9,7 +9,7 @@
 	(paper "A4")
 	(title_block
 		(title "Pi 5 Corona Supply — Compact two-layer placement")
-		(rev "N-layout-14-surge")
+		(rev "N-layout-17-hv-warnings")
 		(comment 1 "Short surface HV return clamp path; surge energy qualification remains separate")
 	)
 	(layers
@@ -19,8 +19,8 @@
 		(11 "B.Adhes" user "B.Adhesive")
 		(13 "F.Paste" user)
 		(15 "B.Paste" user)
-		(5 "F.SilkS" user "F.Silkscreen")
-		(7 "B.SilkS" user "B.Silkscreen")
+		(5 "F.SilkS" user "F.SilkS")
+		(7 "B.SilkS" user "B.SilkS")
 		(1 "F.Mask" user)
 		(3 "B.Mask" user)
 		(17 "Dwgs.User" user "User.Drawings")
@@ -1549,7 +1549,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "07123611-155f-4b9a-81c9-09f86de56d4c")
 		(at 152 126)
@@ -1576,7 +1576,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1598,7 +1598,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1610,7 +1610,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1622,7 +1622,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1634,7 +1634,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1646,7 +1646,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1682,7 +1682,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1694,7 +1694,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1706,7 +1706,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -1770,8 +1770,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -1780,8 +1780,8 @@
 			(uuid "89271f54-67a6-4d02-a425-32415f970108")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -1790,8 +1790,8 @@
 			(uuid "539cfcf8-9e4b-4168-9ca7-558428b88fc4")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -1800,8 +1800,8 @@
 			(uuid "c3ca46a4-04f9-4565-af59-8d907cfd5c34")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -1809,20 +1809,10 @@
 			(layer "F.SilkS")
 			(uuid "586b4da9-1deb-4b7f-9bc3-beffd34ee135")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "c649842e-7ccc-41e0-ab08-3603c460e74e")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -1831,8 +1821,8 @@
 			(uuid "ce03f7f7-ad66-47e1-a87e-7a14417b0e50")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -1841,8 +1831,8 @@
 			(uuid "09700bb8-4d88-41ba-91a6-c2b13f77388d")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -1851,8 +1841,8 @@
 			(uuid "38bfd8bf-46a4-4cdd-b3f1-165e8acf9aa3")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -1912,18 +1902,10 @@
 			(uuid "83d1ae53-d00c-4a01-b869-dab83acbb885")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "09c2861c-86cd-4e57-a04e-fd0ab5091518")
@@ -5661,7 +5643,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -5695,7 +5677,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5707,7 +5689,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5719,7 +5701,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5731,7 +5713,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5743,7 +5725,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5767,7 +5749,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5779,7 +5761,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5791,7 +5773,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5803,7 +5785,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8119,7 +8101,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "1805b737-1124-4c82-8071-d753a2fc2cb0")
 		(at 193.25 76)
@@ -8146,7 +8128,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -8168,7 +8150,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -8180,7 +8162,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8192,7 +8174,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8204,7 +8186,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8216,7 +8198,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8252,7 +8234,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8264,7 +8246,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8276,7 +8258,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -8340,8 +8322,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -8350,8 +8332,8 @@
 			(uuid "b548672f-dc90-499f-911d-06dcce964e2e")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -8360,8 +8342,8 @@
 			(uuid "c52815c9-b055-4ff7-a3fa-515815f948a1")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -8370,8 +8352,8 @@
 			(uuid "b53d8dfb-5c98-480e-81aa-c1c89f093f59")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -8379,20 +8361,10 @@
 			(layer "F.SilkS")
 			(uuid "ff6eb9f8-a28a-4556-9661-84b58cd9592a")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "16a75b8b-5117-4912-94d2-1586c244ba7e")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -8401,8 +8373,8 @@
 			(uuid "85ce5af3-3050-4d60-b49b-6865da82254a")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -8411,8 +8383,8 @@
 			(uuid "f2d80736-74aa-4d2b-9b22-17ee9a4c1bcc")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -8421,8 +8393,8 @@
 			(uuid "4f386ce1-1e5d-4cec-a944-04b5fdf509e4")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -8482,18 +8454,10 @@
 			(uuid "ae61b15c-3c1f-44a7-8cd4-7e5fb2d2075d")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Resistor_SMD:R_2512_6332Metric"
 		(layer "F.Cu")
 		(uuid "194705db-489a-4a72-9211-46bb3ba9d40c")
@@ -15046,7 +15010,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15080,7 +15044,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15092,7 +15056,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15104,7 +15068,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15116,7 +15080,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15128,7 +15092,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15152,7 +15116,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15164,7 +15128,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15176,7 +15140,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15188,7 +15152,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -15984,7 +15948,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "432bf4c5-a822-4df7-9194-b88bd3a0a928")
 		(at 136 126)
@@ -16011,7 +15975,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -16033,7 +15997,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -16045,7 +16009,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16057,7 +16021,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16069,7 +16033,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16081,7 +16045,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16117,7 +16081,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16129,7 +16093,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16141,7 +16105,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16205,8 +16169,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -16215,8 +16179,8 @@
 			(uuid "96e9206b-9f9b-4874-95ed-32753ca93104")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -16225,8 +16189,8 @@
 			(uuid "d02711c2-cc48-426f-97aa-f5a6ae4241d1")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -16235,8 +16199,8 @@
 			(uuid "0747e2d0-ee4d-43a8-9114-3713822e7ad3")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -16244,20 +16208,10 @@
 			(layer "F.SilkS")
 			(uuid "11e8a38a-e8b5-409e-bb9a-16e306ffb5bb")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "8de98db0-1113-49a3-ad1b-38c13a80b707")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -16266,8 +16220,8 @@
 			(uuid "542e5bc0-0175-4a52-9f95-9057fa64bb0c")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -16276,8 +16230,8 @@
 			(uuid "ff0e86d9-a9aa-49ce-abc8-836fdee131b4")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -16286,8 +16240,8 @@
 			(uuid "4ab7f191-406c-4722-86f4-dc98a6778be6")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -16347,18 +16301,10 @@
 			(uuid "6f469d45-9534-4bae-925d-6a4f90cc203c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "ionic_thrust_hv:SW_TK-0013-R"
 		(layer "F.Cu")
 		(uuid "43e37c61-bd67-4bb5-9c3d-c439ff5fb495")
@@ -17987,7 +17933,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "51805fb4-af40-4aa6-96a2-d0ea58346f24")
 		(at 145.25 76)
@@ -18014,7 +17960,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -18036,7 +17982,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -18048,7 +17994,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18060,7 +18006,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18072,7 +18018,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18084,7 +18030,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18120,7 +18066,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18132,7 +18078,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18144,7 +18090,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -18208,8 +18154,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -18218,8 +18164,8 @@
 			(uuid "3465fd63-45af-4a29-addc-e32c8829ac15")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -18228,8 +18174,8 @@
 			(uuid "c5be1c00-d6f9-4668-966b-cd8714c2fee2")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -18238,8 +18184,8 @@
 			(uuid "1ff317e3-978b-4b36-aedb-d01e470b625b")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -18247,20 +18193,10 @@
 			(layer "F.SilkS")
 			(uuid "26a54b3a-bf6f-4e2f-8ef8-19c9022db81a")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "e3beed7f-1e88-403b-b9c2-e33599cbbaa5")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -18269,8 +18205,8 @@
 			(uuid "6757c595-2f81-4b4d-a323-007cab5acc68")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -18279,8 +18215,8 @@
 			(uuid "9000253e-66b4-4f29-8449-ba9f27651a77")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -18289,8 +18225,8 @@
 			(uuid "b6288117-10d9-49ec-9587-bcbc1bc45cd1")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -18350,18 +18286,10 @@
 			(uuid "ef54514b-fbcd-490b-9464-88b9c548179e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "ionic_thrust_hv:Mousebite_5x0.5mm_P0.8mm"
 		(layer "F.Cu")
 		(uuid "53270717-7d7d-4254-aa7d-007b348bd6b7")
@@ -24083,7 +24011,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "6cee701e-34bf-43ad-a183-1317b6b3e9d4")
 		(at 184 126)
@@ -24110,7 +24038,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -24132,7 +24060,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -24144,7 +24072,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24156,7 +24084,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24168,7 +24096,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24180,7 +24108,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24216,7 +24144,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24228,7 +24156,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24240,7 +24168,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -24304,8 +24232,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -24314,8 +24242,8 @@
 			(uuid "72978d29-f3fd-4df3-bd2f-50b7c6127113")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -24324,8 +24252,8 @@
 			(uuid "47dd47bb-4bb1-4d4f-be65-baf12ba79bb4")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -24334,8 +24262,8 @@
 			(uuid "b0738974-56c4-47c7-b87f-79ff84899e26")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -24343,20 +24271,10 @@
 			(layer "F.SilkS")
 			(uuid "6733bc7e-9df0-45c1-9c0f-bb3d534d686b")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "44c8db40-7616-4ff2-9a8c-c10f51b75628")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -24365,8 +24283,8 @@
 			(uuid "1bf635f0-4ea4-47e7-8ace-019613361051")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -24375,8 +24293,8 @@
 			(uuid "ee1e0802-8dee-414c-aa2e-e5d8a4a0f517")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -24385,8 +24303,8 @@
 			(uuid "3956f8a6-5d67-4d33-8476-f28552ae4d00")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -24446,18 +24364,10 @@
 			(uuid "de715b1e-aa29-4cc3-9c28-38134448363a")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "6e982d98-a09c-4986-8fe3-a3927d2caadd")
@@ -25396,7 +25306,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "710f2497-1504-4528-8769-f3f803d8cc0c")
 		(at 168 126)
@@ -25423,7 +25333,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25445,7 +25355,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25457,7 +25367,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25469,7 +25379,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25481,7 +25391,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25493,7 +25403,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25529,7 +25439,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25541,7 +25451,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25553,7 +25463,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -25617,8 +25527,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -25627,8 +25537,8 @@
 			(uuid "194c755f-33d2-46dd-9095-f436cfe6364c")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -25637,8 +25547,8 @@
 			(uuid "9d3ace94-9b41-48c0-b7e0-f23ff9d407e6")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -25647,8 +25557,8 @@
 			(uuid "a8e6e322-0c00-49ba-8d09-48ce46d36a3f")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -25656,20 +25566,10 @@
 			(layer "F.SilkS")
 			(uuid "c02b3935-b5e7-4def-b401-f968177e808c")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "18ba2a8c-628e-4eae-b72a-41dc8dc9a26d")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -25678,8 +25578,8 @@
 			(uuid "883ee9a7-89c4-4006-aa95-f71c22038565")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -25688,8 +25588,8 @@
 			(uuid "5364e38d-f637-4c5c-8f32-a6d959b51a4e")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -25698,8 +25598,8 @@
 			(uuid "083affc4-7840-4f3d-a6bd-f1dfc1371ac3")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -25759,18 +25659,10 @@
 			(uuid "ffd37a0d-9fd8-4945-a374-9f0d536d504e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "ionic_thrust_hv:Solder_Pads_2P_P5.08"
 		(layer "F.Cu")
 		(uuid "753f6237-24c0-4bee-a81a-8e6d948902fd")
@@ -26315,7 +26207,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "765c09f3-69e3-4a7a-8fc0-8eac6e05f3f2")
 		(at 209.25 76)
@@ -26342,7 +26234,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -26364,7 +26256,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -26376,7 +26268,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26388,7 +26280,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26400,7 +26292,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26412,7 +26304,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26448,7 +26340,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26460,7 +26352,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26472,7 +26364,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26536,8 +26428,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -26546,8 +26438,8 @@
 			(uuid "08cc1046-12fa-46ef-ae9d-c80cb616aeff")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -26556,8 +26448,8 @@
 			(uuid "42020f2b-2a72-48fc-90e2-d9dcabd2cfdb")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -26566,8 +26458,8 @@
 			(uuid "61274e00-39e0-48d9-8764-f3b76626aa31")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -26575,20 +26467,10 @@
 			(layer "F.SilkS")
 			(uuid "548dbef1-6856-4c8f-921e-ada6c710b44a")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "e727a134-72e2-48d4-ad3e-dc0a51b4c16a")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -26597,8 +26479,8 @@
 			(uuid "f0c2f5da-45f7-4418-b092-94e304827623")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -26607,8 +26489,8 @@
 			(uuid "c4575eab-1375-4810-aabf-cd1ae74c595a")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -26617,8 +26499,8 @@
 			(uuid "bc401b67-a17b-423e-831e-68087d606a17")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -26678,18 +26560,10 @@
 			(uuid "6e032740-cb4b-43f1-957b-0d517fc2139b")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Resistor_SMD:R_2512_6332Metric"
 		(layer "F.Cu")
 		(uuid "766289b6-0b7e-45b1-a989-b3cbcf5bd4b6")
@@ -26994,7 +26868,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "77e63907-2607-4247-81e4-45ee27d97909")
 		(at 161.25 76)
@@ -27021,7 +26895,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27043,7 +26917,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27055,7 +26929,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27067,7 +26941,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27079,7 +26953,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27091,7 +26965,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27127,7 +27001,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27139,7 +27013,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27151,7 +27025,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -27215,8 +27089,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -27225,8 +27099,8 @@
 			(uuid "27855e2a-d439-4f03-8a00-1522693ceb7a")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -27235,8 +27109,8 @@
 			(uuid "19129c67-55ae-4a64-ab74-ab527f09b04d")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -27245,8 +27119,8 @@
 			(uuid "c1a94ecb-08f1-4916-801c-1b89d3acd497")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -27254,20 +27128,10 @@
 			(layer "F.SilkS")
 			(uuid "deaa1d3e-afc5-4345-b219-44a3ef53bdff")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "0b36bb2f-ebdb-41ba-8b95-f9b5c1cd07a3")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -27276,8 +27140,8 @@
 			(uuid "8a044062-8056-4978-b98a-ac8b6b1b0df2")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -27286,8 +27150,8 @@
 			(uuid "f9b7a5c4-27b7-44d9-896f-91482c437370")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -27296,8 +27160,8 @@
 			(uuid "ecac3010-e50b-4df5-9868-91dcd6523122")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -27357,18 +27221,10 @@
 			(uuid "4a7f97ee-2109-4862-bc19-766f355646ed")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Resistor_SMD:R_2512_6332Metric"
 		(layer "F.Cu")
 		(uuid "793fa680-3cea-436f-9439-59644e922d3e")
@@ -28948,7 +28804,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -28982,7 +28838,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -28994,7 +28850,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29006,7 +28862,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29018,7 +28874,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29030,7 +28886,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29054,7 +28910,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29066,7 +28922,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29078,7 +28934,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29090,7 +28946,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29252,7 +29108,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -29286,7 +29142,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29298,7 +29154,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29310,7 +29166,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29322,7 +29178,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29334,7 +29190,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29358,7 +29214,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29370,7 +29226,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29382,7 +29238,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29394,7 +29250,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29767,7 +29623,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "80bcedd9-4585-478c-a8f1-79709698670c")
 		(at 200 126)
@@ -29794,7 +29650,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29816,7 +29672,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29828,7 +29684,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29840,7 +29696,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29852,7 +29708,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29864,7 +29720,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29900,7 +29756,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29912,7 +29768,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29924,7 +29780,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -29988,8 +29844,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -29998,8 +29854,8 @@
 			(uuid "c44db696-cdd0-401c-af21-d6111235eb6d")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -30008,8 +29864,8 @@
 			(uuid "b5c55d6f-c7ac-453b-ac13-c03b6c8db2f8")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -30018,8 +29874,8 @@
 			(uuid "35076209-c986-47f3-b0d0-403ec02c4f61")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -30027,20 +29883,10 @@
 			(layer "F.SilkS")
 			(uuid "94640c3b-f41d-459d-94a7-f708e6ff41a4")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "436356cf-e8d8-43dd-82d2-6d84113971f0")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -30049,8 +29895,8 @@
 			(uuid "7e525d38-4c95-4e1c-b530-b867f52d4371")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -30059,8 +29905,8 @@
 			(uuid "586b600c-d5a3-498e-b552-1692ec1a6bd3")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -30069,8 +29915,8 @@
 			(uuid "b4340c4f-b453-4e19-8b8e-ee72789dc321")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -30130,18 +29976,10 @@
 			(uuid "198d5a6f-8cd7-4d93-b1fa-a4bb9b6c3638")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "MountingHole_2.7mm_M2.5"
 		(layer "F.Cu")
 		(uuid "8143af0d-ef55-4f01-956e-5983a208b5a7")
@@ -34250,7 +34088,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "8f5a9a74-b684-4304-b603-8ff77135aea2")
 		(at 177.25 76)
@@ -34277,7 +34115,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -34299,7 +34137,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -34311,7 +34149,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34323,7 +34161,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34335,7 +34173,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34347,7 +34185,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34383,7 +34221,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34395,7 +34233,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34407,7 +34245,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -34471,8 +34309,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -34481,8 +34319,8 @@
 			(uuid "02fe8fff-2fd5-40c1-9466-af13e7acd53c")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -34491,8 +34329,8 @@
 			(uuid "0f03aaed-78f3-487d-b56f-a642da065b42")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -34501,8 +34339,8 @@
 			(uuid "ac9a4f72-5f9a-40a6-b86e-a388e0f66cec")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -34510,20 +34348,10 @@
 			(layer "F.SilkS")
 			(uuid "5dc66c62-a4fe-4bda-a581-2fb038bf54ac")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "cd02206b-fafe-49de-83b2-dd773a58fa69")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34532,8 +34360,8 @@
 			(uuid "0f9a9bea-9ca7-4268-8b2a-21626181a012")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34542,8 +34370,8 @@
 			(uuid "cf19acb6-92b0-4d3a-ab1c-9744f8436895")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34552,8 +34380,8 @@
 			(uuid "333b872d-554a-467b-a4ec-f309bf1a8d15")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34613,18 +34441,10 @@
 			(uuid "016ab01c-4737-4af2-800d-988d44526322")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "90a7082c-fdb2-47d0-b6c8-8b7683ab3929")
@@ -36000,7 +35820,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -36034,7 +35854,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36046,7 +35866,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36058,7 +35878,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36070,7 +35890,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36082,7 +35902,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36106,7 +35926,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36118,7 +35938,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36130,7 +35950,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -36142,7 +35962,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38302,7 +38122,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -38336,7 +38156,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38348,7 +38168,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38360,7 +38180,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38372,7 +38192,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38384,7 +38204,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38408,7 +38228,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38420,7 +38240,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38432,7 +38252,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -38444,7 +38264,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41266,7 +41086,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C224015"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/hongjiacheng-SMBJ22A/C49066946"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -41292,7 +41112,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C224015"
+		(property "LCSC" "C49066946"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41304,7 +41124,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C224015"
+		(property "JLCPCB Part #" "C49066946"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41316,7 +41136,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Littelfuse"
+		(property "Manufacturer" "hongjiacheng"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41364,7 +41184,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" ""
+		(property "Procurement Notes" "User-selected hongjiacheng SMBJ22A:22V standoff,35.5V clamp,16.9A,600W10/1000us,unidirectional SMB. Pad1 cathode and original nets/footprint retained. Manufacturer datasheet/pulse qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41376,7 +41196,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C224015"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C49066946"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41388,7 +41208,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -41412,7 +41232,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C224015"
+		(property "LCSC Part" "C49066946"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43501,7 +43321,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -43535,7 +43355,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43547,7 +43367,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43559,7 +43379,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43571,7 +43391,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43583,7 +43403,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43607,7 +43427,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43619,7 +43439,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43631,7 +43451,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -43643,7 +43463,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48358,7 +48178,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -48392,7 +48212,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48404,7 +48224,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48416,7 +48236,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48428,7 +48248,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48440,7 +48260,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48464,7 +48284,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48476,7 +48296,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48488,7 +48308,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -48500,7 +48320,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51512,7 +51332,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "e84b14e5-f284-4cd9-a4cc-21a62024ba26")
 		(at 216 126)
@@ -51539,7 +51359,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -51561,7 +51381,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -51573,7 +51393,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51585,7 +51405,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51597,7 +51417,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51609,7 +51429,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51645,7 +51465,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51657,7 +51477,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51669,7 +51489,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -51733,8 +51553,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -51743,8 +51563,8 @@
 			(uuid "1de8e3aa-eb43-4b40-81f5-800981a8b673")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -51753,8 +51573,8 @@
 			(uuid "8fe703a7-57a8-4035-af17-97d727058172")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -51763,8 +51583,8 @@
 			(uuid "9fff630a-3580-4f72-b33e-6c2d65b383d5")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -51772,20 +51592,10 @@
 			(layer "F.SilkS")
 			(uuid "582019f3-fee3-487d-821c-ed29f47ea677")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "b5c37e1c-629e-4d2d-900f-5ad5acd66c2d")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -51794,8 +51604,8 @@
 			(uuid "68ef86d3-4254-4c0b-a2fd-15d1f2f46b2c")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -51804,8 +51614,8 @@
 			(uuid "4d6b3a07-df79-4ef6-a06f-8833e0b31fc9")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -51814,8 +51624,8 @@
 			(uuid "f15c95f5-9df6-4b58-8f1b-e632ed9606e3")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -51875,18 +51685,10 @@
 			(uuid "cd48e661-5d60-4eec-b829-8eda7a7dba08")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "ionic_thrust_hv:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR"
 		(layer "F.Cu")
 		(uuid "e9c1207d-9b61-49e2-8dec-2e434ce9bcff")
@@ -54836,7 +54638,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -54870,7 +54672,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54882,7 +54684,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54894,7 +54696,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54906,7 +54708,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54918,7 +54720,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54942,7 +54744,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54954,7 +54756,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54966,7 +54768,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -54978,7 +54780,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55111,7 +54913,7 @@
 			)
 		)
 	)
-	(footprint "ionic_thrust_hv:CAP-TH_L15.0-W4.0-P10.00-D0.6"
+	(footprint "ionic_thrust_hv:STE_A12B1D102K_P10.0mm"
 		(layer "F.Cu")
 		(uuid "f318269d-ee12-44b7-bb1d-4053c4839136")
 		(at 129.25 76)
@@ -55138,7 +54940,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/CT81.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_STE-Songtian-Elec-A12B1D102KN0B0S0N0_C249245.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -55160,7 +54962,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C249245"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -55172,7 +54974,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55184,7 +54986,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55196,7 +54998,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Generic / STE / JEC"
+		(property "Manufacturer" "STE(Songtian Elec)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55208,7 +55010,7 @@
 				)
 			)
 		)
-		(property "MPN" "CT81-6KV-Y5P-102K"
+		(property "MPN" "A12B1D102KN0B0S0N0"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55244,7 +55046,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "1nF 6kV / 20%, 10mm pitch; THT/manual assembly. Keep high-voltage spacing rules."
+		(property "Procurement Notes" "Accepted 1nF 6kV Y5P 10%; 10mm pitch, catalog body 11x4.5mm; manual/THT assembly. HV pulse, bias and height qualification remains open."
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55256,7 +55058,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C1620009"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C249245"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55268,7 +55070,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -55332,8 +55134,8 @@
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -7.49 -2.03)
-			(end -7.49 1.9)
+			(start -7.49 -2.5)
+			(end -7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -55342,8 +55144,8 @@
 			(uuid "e3256255-1fb9-41b2-bf7d-d5704772fe54")
 		)
 		(fp_line
-			(start -7.49 1.9)
-			(end 7.49 1.9)
+			(start -7.49 2.5)
+			(end 7.49 2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -55352,8 +55154,8 @@
 			(uuid "d0ca451c-ff29-4745-a8b8-4fb26f649734")
 		)
 		(fp_line
-			(start 7.49 -2.03)
-			(end -7.49 -2.03)
+			(start 7.49 -2.5)
+			(end -7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -55362,8 +55164,8 @@
 			(uuid "c8ffcfe1-ed53-4bd7-85a9-c80dfb870e98")
 		)
 		(fp_line
-			(start 7.49 1.9)
-			(end 7.49 -2.03)
+			(start 7.49 2.5)
+			(end 7.49 -2.5)
 			(stroke
 				(width 0.25)
 				(type solid)
@@ -55371,20 +55173,10 @@
 			(layer "F.SilkS")
 			(uuid "9a8920f6-3f29-48f1-bedf-94c4c0e20370")
 		)
-		(fp_circle
-			(center -7.5 2)
-			(end -7.47 2)
-			(stroke
-				(width 0.06)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "93f0a953-71fc-4ccb-907e-73748e4a5691")
-		)
+
 		(fp_line
-			(start -7.5 -2)
-			(end 7.5 -2)
+			(start -7.5 -2.75)
+			(end 7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -55393,8 +55185,8 @@
 			(uuid "951514ea-a301-4507-a41d-1c0d9744d94c")
 		)
 		(fp_line
-			(start -7.5 2)
-			(end -7.5 -2)
+			(start -7.5 2.75)
+			(end -7.5 -2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -55403,8 +55195,8 @@
 			(uuid "57eae61d-d36f-49be-814e-eca9358ad13c")
 		)
 		(fp_line
-			(start 7.5 -2)
-			(end 7.5 2)
+			(start 7.5 -2.75)
+			(end 7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -55413,8 +55205,8 @@
 			(uuid "333df395-38cc-4f24-b6ce-7bb67ed8512a")
 		)
 		(fp_line
-			(start 7.5 2)
-			(end -7.5 2)
+			(start 7.5 2.75)
+			(end -7.5 2.75)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -55474,18 +55266,10 @@
 			(uuid "ad68d2f4-5b4a-41de-902f-9658e347e5e8")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/ionic_thrust_hv.3dshapes/CAP-TH_L15.0-W4.0-P10.00-D0.6.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
+
+
+	(fp_rect (start -6.5 -2.25) (end 6.5 2.25) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+)
 	(footprint "Resistor_SMD:R_2512_6332Metric"
 		(layer "F.Cu")
 		(uuid "f3a38969-e38d-4c05-acd1-e436b167fb69")
@@ -56233,7 +56017,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -56267,7 +56051,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56279,7 +56063,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56291,7 +56075,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56303,7 +56087,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56315,7 +56099,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56339,7 +56123,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56351,7 +56135,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56363,7 +56147,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -56375,7 +56159,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -57902,28 +57686,8 @@
 			)
 		)
 	)
-	(gr_text "HV MULTIPLIER / NO POURS"
-		(at 180 118 0)
-		(layer "F.SilkS")
-		(uuid "26626b8b-b5e4-4cde-b2fb-7e614dc88ae5")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.18)
-			)
-		)
-	)
-	(gr_text "2 LAYERS / PLACEMENT STUDY"
-		(at 180 132 0)
-		(layer "F.SilkS")
-		(uuid "5c8d9a28-343d-423b-a927-6cb61ee331aa")
-		(effects
-			(font
-				(size 0.8 0.8)
-				(thickness 0.18)
-			)
-		)
-	)
+
+
 	(gr_text "HV OUT"
 		(at 233.75 56.5 0)
 		(layer "F.SilkS")
@@ -82852,4 +82616,17 @@
 		)
 	)
 	(embedded_fonts no)
+
+(gr_text "DANGER HIGH VOLTAGE" (at 180 116.8) (layer "F.SilkS") (uuid "585ca595-2b0e-4527-9ed4-d7815e029f61") (effects (font (size 4.0 4.0) (thickness 0.75) (bold yes))))
+(gr_text "DO NOT TOUCH - STORED CHARGE" (at 180 120.6) (layer "F.SilkS") (uuid "1ffec50f-25ec-484d-9a32-ecbe25a262b8") (effects (font (size 1.6 1.6) (thickness 0.32) (bold yes))))
+(gr_poly (pts (xy 131.5 113.5) (xy 127.4 121.5) (xy 135.6 121.5)) (stroke (width 0.65) (type solid)) (fill none) (layer "F.SilkS") (uuid "1a0ee09c-f348-4d4c-be58-6a6c5c283e93"))
+(gr_poly (pts (xy 132.05 115.15) (xy 130.15 118.1) (xy 131.3 118.1) (xy 130.85 120.35) (xy 133.05 117.1) (xy 131.75 117.1)) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS") (uuid "dcba5257-bd63-4a56-84ed-7c7fb897c39e"))
+(gr_poly (pts (xy 225 113.5) (xy 220.9 121.5) (xy 229.1 121.5)) (stroke (width 0.65) (type solid)) (fill none) (layer "F.SilkS") (uuid "162b4a07-5f7d-482d-b712-c29336fbde71"))
+(gr_poly (pts (xy 225.55 115.15) (xy 223.65 118.1) (xy 224.8 118.1) (xy 224.35 120.35) (xy 226.55 117.1) (xy 225.25 117.1)) (stroke (width 0.1) (type solid)) (fill solid) (layer "F.SilkS") (uuid "fcb7b899-df6c-4f10-84aa-fd08779079d9"))
+(gr_text "DANGER HIGH VOLTAGE" (at 180 116.8) (layer "B.SilkS") (uuid "a2a9da8b-6d2f-4364-b38e-857e9f55b35d") (effects (font (size 4.0 4.0) (thickness 0.75) (bold yes)) (justify mirror)))
+(gr_text "DO NOT TOUCH - STORED CHARGE" (at 180 120.6) (layer "B.SilkS") (uuid "b8c3a9d4-2f1d-4b3b-9c7b-4ea7d9b627bf") (effects (font (size 1.6 1.6) (thickness 0.32) (bold yes)) (justify mirror)))
+(gr_poly (pts (xy 131.5 113.5) (xy 127.4 121.5) (xy 135.6 121.5)) (stroke (width 0.65) (type solid)) (fill none) (layer "B.SilkS") (uuid "8b7b9508-4f05-4650-b80e-41e7448f2bf6"))
+(gr_poly (pts (xy 132.05 115.15) (xy 130.15 118.1) (xy 131.3 118.1) (xy 130.85 120.35) (xy 133.05 117.1) (xy 131.75 117.1)) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.SilkS") (uuid "0cd27f81-e8f3-4cd5-9df1-db2c467ce099"))
+(gr_poly (pts (xy 225 113.5) (xy 220.9 121.5) (xy 229.1 121.5)) (stroke (width 0.65) (type solid)) (fill none) (layer "B.SilkS") (uuid "374f3519-c631-431f-914a-c823f0f7dbe3"))
+(gr_poly (pts (xy 225.55 115.15) (xy 223.65 118.1) (xy 224.8 118.1) (xy 224.35 120.35) (xy 226.55 117.1) (xy 225.25 117.1)) (stroke (width 0.1) (type solid)) (fill solid) (layer "B.SilkS") (uuid "baa19407-7cd4-4d1f-aa62-5fd704964fd8"))
 )

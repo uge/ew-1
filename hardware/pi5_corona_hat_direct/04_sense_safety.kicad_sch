@@ -7,7 +7,7 @@
 	(title_block
 		(title "04 Ballast, Divider, Sensing & Hardware Interlock")
 		(date "2026-10-03")
-		(rev "K")
+		(rev "N-layout-17-hv-warnings")
 		(company "Antigravity Engineering")
 	)
 	(lib_symbols
@@ -10767,7 +10767,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10788,7 +10788,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 236.22 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -10799,7 +10799,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10810,7 +10810,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10821,7 +10821,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10832,7 +10832,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10854,7 +10854,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10865,7 +10865,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10876,7 +10876,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10887,7 +10887,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 236.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11165,7 +11165,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11186,7 +11186,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 261.62 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -11197,7 +11197,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11208,7 +11208,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11219,7 +11219,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11230,7 +11230,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11252,7 +11252,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11263,7 +11263,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11274,7 +11274,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -11285,7 +11285,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 261.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12113,7 +12113,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12134,7 +12134,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 58.42 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -12145,7 +12145,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12156,7 +12156,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12167,7 +12167,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12178,7 +12178,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12200,7 +12200,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12211,7 +12211,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12222,7 +12222,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12233,7 +12233,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 58.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12511,7 +12511,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12532,7 +12532,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 109.22 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -12543,7 +12543,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12554,7 +12554,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12565,7 +12565,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12576,7 +12576,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12598,7 +12598,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12609,7 +12609,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12620,7 +12620,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -12631,7 +12631,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 109.22 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13457,7 +13457,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13478,7 +13478,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 134.62 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -13489,7 +13489,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13500,7 +13500,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13511,7 +13511,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13522,7 +13522,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13544,7 +13544,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13555,7 +13555,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13566,7 +13566,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13577,7 +13577,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 134.62 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14754,7 +14754,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14775,7 +14775,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 185.42 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -14786,7 +14786,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14797,7 +14797,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14808,7 +14808,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14819,7 +14819,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14841,7 +14841,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14852,7 +14852,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14863,7 +14863,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -14874,7 +14874,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 185.42 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16891,7 +16891,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16912,7 +16912,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 287.02 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -16923,7 +16923,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16934,7 +16934,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16945,7 +16945,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16956,7 +16956,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16978,7 +16978,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16989,7 +16989,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17000,7 +17000,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17011,7 +17011,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 287.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17801,7 +17801,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17822,7 +17822,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 160.02 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -17833,7 +17833,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17844,7 +17844,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17855,7 +17855,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17866,7 +17866,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17888,7 +17888,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17899,7 +17899,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17910,7 +17910,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -17921,7 +17921,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 160.02 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18275,7 +18275,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18296,7 +18296,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 210.82 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -18307,7 +18307,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18318,7 +18318,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18329,7 +18329,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18340,7 +18340,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18362,7 +18362,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18373,7 +18373,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18384,7 +18384,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -18395,7 +18395,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 210.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19774,7 +19774,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/CHV.pdf"
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/CHV.pdf"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19795,7 +19795,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" ""
+		(property "LCSC Part" "C2095568"
 			(at 83.82 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -19806,7 +19806,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2095568"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19817,7 +19817,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" ""
+		(property "JLCPCB Part #" "C2095568"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19828,7 +19828,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
+		(property "Manufacturer" "BOURNS"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19839,7 +19839,7 @@
 				)
 			)
 		)
-		(property "MPN" "CHV2512-FX-1005ELF"
+		(property "MPN" "CHV2512-JW-106ELF"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19861,7 +19861,7 @@
 				)
 			)
 		)
-		(property "Procurement Status" "EXTERNAL_SOURCE"
+		(property "Procurement Status" "CATALOG_MATCH"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19872,7 +19872,7 @@
 				)
 			)
 		)
-		(property "Procurement Notes" "Bourns 10M / 1%, 1W, 3kV continuous. DigiKey/Mouser global sourcing / consignment for automated SMT."
+		(property "Procurement Notes" "User accepted 10M ohm 5%, 1W, 3kV CHV2512; TCR200ppm/C. 10-part ballast95-105Mohm at initial tolerance; see stock-substitution-review.md."
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19883,7 +19883,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://www.digikey.com/en/products/detail/bourns-inc/CHV2512-FX-1005ELF/16892550"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C2095568"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -19894,7 +19894,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-04"
+		(property "Catalog Checked" "2026-10-19"
 			(at 83.82 53.34 0)
 			(hide yes)
 			(show_name no)

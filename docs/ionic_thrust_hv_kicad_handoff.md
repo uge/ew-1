@@ -1,3 +1,5 @@
+> Historical reference. The current working design and commands are in [the project guide](../hardware/pi5_corona_hat_direct/README.md). Older paths and release claims below are superseded.
+
 # Raspberry Pi 5 Corona HAT hardware handoff
 
 This document describes the current KiCad 10 design draft in `hardware/pi5_corona_hat_direct/`. It supersedes the older ESP32/12 V handoff. The schematic now uses a Raspberry Pi 5 40-pin HAT interface, USB-C PD input, a programmable PD sink, voltage monitoring, and a low-light sensor. The PD input and high-side switch are not yet fabrication-ready; resolve the validation items below first.

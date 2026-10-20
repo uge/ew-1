@@ -1,0 +1,53 @@
+{
+  "revision": "N-layout-17-hv-warnings",
+  "board_sha256": "a36866aa21bf3e31dbd1b0842cc35f07536400add0be71c294e265a4f240e880",
+  "layers": [
+    "F.SilkS",
+    "B.SilkS"
+  ],
+  "main_text": {
+    "text": "DANGER HIGH VOLTAGE",
+    "center_mm": [
+      180,
+      116.8
+    ],
+    "font_size_mm": 4,
+    "stroke_mm": 0.75,
+    "bold": true
+  },
+  "secondary_text": {
+    "text": "DO NOT TOUCH - STORED CHARGE",
+    "center_mm": [
+      180,
+      120.6
+    ],
+    "font_size_mm": 1.6,
+    "stroke_mm": 0.32,
+    "bold": true
+  },
+  "symbols": {
+    "type": "vector lightning bolt inside outlined triangle",
+    "count_per_side": 2,
+    "triangle_centers_x_mm": [
+      131.5,
+      225
+    ],
+    "triangle_y_range_mm": [
+      113.5,
+      121.5
+    ],
+    "outline_stroke_mm": 0.65
+  },
+  "back_text_mirrored_for_underside_readability": true,
+  "removed_obsolete_labels": [
+    "HV MULTIPLIER / NO POURS",
+    "2 LAYERS / PLACEMENT STUDY"
+  ],
+  "copper_pads_drills_footprints_nets_zones_unchanged": true,
+  "project_and_rules_unchanged": true,
+  "native_drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "front_and_back_previews_visually_checked": true,
+  "release_status": "Existing HV qualification holds remain; silkscreen warning adds no insulation protection."
+}

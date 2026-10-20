@@ -6,6 +6,8 @@ and rotation offsets (where KiCad library orientation differs from JLCPCB/EasyED
 """
 
 import csv
+import math
+import pcbnew
 import re
 import subprocess
 import sys
@@ -41,29 +43,28 @@ ROTATION_OFFSETS = {
     "D55": 180.0, # 90 + 180 = 270.0 deg
 }
 
-# Centroid overrides (Mid X, Mid Y) in board coordinates (mm)
-# KiCad CPL uses (PosX, -PosY)
-CENTROID_OVERRIDES = {
-    # J2: KiCad origin is Pin 1 at (54.23, 106.63). True geometric midpoint is (55.5000, 82.5000).
-    "J2": (55.5000, 82.5000),
-    # C11: KiCad origin is Pin 1 at (110.0, 131.0). True geometric midpoint is (117.5000, 131.0000).
-    "C11": (117.5000, 131.0000),
-    # C60: KiCad origin is Pin 1 at (97.0, 147.0). True geometric midpoint is (98.0000, 147.0000).
-    "C60": (98.0000, 147.0000),
-    # C70: KiCad origin is Pin 1 at (97.0, 104.0). True geometric midpoint is (98.0000, 104.0000).
-    "C70": (98.0000, 104.0000),
-    # J3: USB-C receptacle origin is at front edge (88.0, 54.675). True package center is at (88.0000, 56.1730).
-    "J3": (88.0000, 56.1730),
-    # S3-S6: DEALON TK-0013-R origin is Pad 2 at (39.0, Y). Switch body (Y: +2.7 to +8.9 mm) center is at Y + 5.80 mm.
-    "S3": (39.0000, 82.8000),
-    "S4": (39.0000, 98.8000),
-    "S5": (39.0000, 114.8000),
-    "S6": (39.0000, 130.8000),
-}
+# Derive centroids from the current board; never store absolute placement overrides.
+def current_centroids(board):
+    result = {}
+    for fp in board.GetFootprints():
+        ref = fp.GetReference()
+        if ref in {"J2", "C11", "C60", "C70"}:
+            pads = [p for p in fp.Pads() if p.GetNumber().isdigit()]
+            result[ref] = tuple(sum(p.GetPosition()[i] for p in pads) / len(pads) / 1e6 for i in (0, 1))
+        elif ref == "J3":
+            # Receptacle F.Fab body is centered on its footprint origin.
+            result[ref] = (fp.GetPosition().x / 1e6, fp.GetPosition().y / 1e6)
+        elif ref in {"S3", "S4", "S5", "S6"}:
+            # Manufacturer body spans local y=2.7..8.9; origin is pad 2.
+            angle = math.radians(fp.GetOrientationDegrees())
+            result[ref] = (fp.GetPosition().x / 1e6 + 5.8 * math.sin(angle),
+                           fp.GetPosition().y / 1e6 + 5.8 * math.cos(angle))
+    return result
 
 
 def generate_cpl():
     pcb_file = BASE_DIR / "pi5_corona_hv.kicad_pcb"
+    centroids = current_centroids(pcbnew.LoadBoard(str(pcb_file)))
     bom_file = BASE_DIR / "exports" / "jlcpcb-bom.csv"
     raw_pos_file = BASE_DIR / "exports" / "pi5_corona_hv_cpl.csv"
     out_cpl_file = BASE_DIR / "exports" / "jlcpcb-cpl.csv"
@@ -74,11 +75,15 @@ def generate_cpl():
             "kicad-cli", "pcb", "export", "pos",
             "--units", "mm",
             "--format", "csv",
+            "--exclude-dnp",
             "--output", str(raw_pos_file),
             str(pcb_file)
         ],
         check=True
     )
+
+    # Keep native CSV data with repository-standard line endings.
+    raw_pos_file.write_text(raw_pos_file.read_text())
 
     with open(bom_file, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -101,8 +106,8 @@ def generate_cpl():
         pos = raw_pos[des]
         
         # Centroid position in millimeters
-        if des in CENTROID_OVERRIDES:
-            bx, by = CENTROID_OVERRIDES[des]
+        if des in centroids:
+            bx, by = centroids[des]
             px = bx
             py = -by
         else:
@@ -138,7 +143,8 @@ def generate_cpl():
     with open(out_cpl_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=["Designator", "Mid X", "Mid Y", "Layer", "Rotation"]
+            fieldnames=["Designator", "Mid X", "Mid Y", "Layer", "Rotation"],
+            lineterminator="\n"
         )
         writer.writeheader()
         writer.writerows(cpl_rows)

@@ -1,1 +1,0 @@
-(fp_lib_table (version 7) (lib (name "ionic_thrust_hv") (type "KiCad") (uri "${KIPRJMOD}/../../ionic_thrust_hv.pretty") (options "") (descr "Project footprints")))

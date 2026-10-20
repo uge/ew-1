@@ -30,7 +30,7 @@ def regenerate():
                 raise RuntimeError(f'Unexpected plating header: {filename}')
         paths=sorted(p for p in stage.iterdir() if p.is_file())
         manifest={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
-        for name in ['jlcpcb-gerbers.zip','pi5_corona_hv_gerbers.zip']:
+        for name in ['jlcpcb-gerbers.zip']:
             dest=ROOT/'exports'/name
             temporary=dest.with_suffix('.zip.tmp')
             with zipfile.ZipFile(temporary,'w',zipfile.ZIP_DEFLATED) as archive:
@@ -46,7 +46,7 @@ def regenerate():
         report=dict(kicad_version=version,board_sha256=hashlib.sha256(board.read_bytes()).hexdigest(),
             drills=drills,files=manifest,status='ARCHIVE_INTEGRITY_VERIFIED_INSULATION_RELEASE_HOLD',
             archives={n:hashlib.sha256((ROOT/'exports'/n).read_bytes()).hexdigest()
-                      for n in ['jlcpcb-gerbers.zip','pi5_corona_hv_gerbers.zip']})
+                      for n in ['jlcpcb-gerbers.zip']})
         (ROOT/'exports/manufacturing-archive-validation.json').write_text(json.dumps(report,indent=2)+'\n')
         print(json.dumps(report,indent=2))
 

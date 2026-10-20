@@ -7,7 +7,7 @@
 	(title_block
 		(title "05 Illumination Break-off Mini Board")
 		(date "2026-10-03")
-		(rev "K")
+		(rev "N-layout-17-hv-warnings")
 		(company "Antigravity Engineering")
 	)
 	(lib_symbols
