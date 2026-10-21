@@ -148,16 +148,17 @@
       "source": "https://jlcpcb.com/partdetail/C393074"
     },
     "01_power_mcu/R14": {
-      "lcsc": "C25816",
+      "lcsc": "C25819",
       "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
       "mpn": "0603WAF4702T5E",
       "status": "CATALOG_MATCH",
-      "notes": "47k 1% 0603 series gate resistor between GATE and EN_DRV.",
+      "notes": "47k 1% 0603 series gate resistor between GATE and EN_DRV. Corrected 2026-10-21: former C25816 is 0603WAF3833T5E (383 kOhm).",
       "footprint": null,
-      "stock": 1000000,
+      "stock": 2543020,
       "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C25816"
+      "source": "https://jlcpcb.com/partdetail/C25819",
+      "checked_date": "2026-10-21"
     },
     "01_power_mcu/C21": {
       "lcsc": "C126618",
@@ -294,15 +295,16 @@
     },
     "01_power_mcu/C18": {
       "lcsc": "C15849",
-      "manufacturer": "SAMSUNG",
-      "mpn": "CL10A105KA8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "mpn": "CL10A105KB8NNNC",
       "status": "CATALOG_MATCH",
-      "notes": "1uF 16V 0603 X5R ceramic bypass for HUSB238A VDD.",
+      "notes": "1uF 50V X5R 0603 bypass for HUSB238A VDD (3V3). Corrected 2026-10-21: MPN aligned to C15849 (CL10A105KB8NNNC, 50 V, Basic).",
       "footprint": null,
-      "stock": 100000,
+      "stock": 8129560,
       "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C15849"
+      "source": "https://jlcpcb.com/partdetail/C15849",
+      "checked_date": "2026-10-21"
     },
     "01_power_mcu/C71": {
       "lcsc": "C14663",
@@ -500,16 +502,17 @@
       "source": "https://jlcpcb.com/partdetail/C162289"
     },
     "02_drive_transformer/R60": {
-      "lcsc": "C54315",
+      "lcsc": "C270956",
       "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
-      "mpn": "25121WF1001T4E",
+      "mpn": "25121WF1002T4E",
       "status": "CATALOG_MATCH",
-      "notes": "",
+      "notes": "10 kOhm bleeder per AUDIT_TO_FIX L2. Stock from local jlcpcb-tools DB snapshot 2026-09-13; re-check before ordering.",
       "footprint": null,
-      "stock": 87498,
+      "stock": 15827,
       "class": "Extended",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C54315"
+      "source": "https://jlcpcb.com/partdetail/C270956",
+      "checked_date": "2026-10-21"
     },
     "02_drive_transformer/D52": {
       "lcsc": "C16237",
@@ -1956,7 +1959,249 @@
       "class": "Basic",
       "assembly": "smtWeld",
       "source": "https://jlcpcb.com/partdetail/C22935"
+    },
+    "04_sense_safety/U11": {
+      "lcsc": "C2869832",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TLV7031DBVR",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2). Stock from local jlcpcb-tools parts DB snapshot 2026-09-13; re-check before ordering.",
+      "footprint": null,
+      "stock": 44965,
+      "class": "Extended",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C2869832",
+      "checked_date": "2026-10-20"
+    },
+    "04_sense_safety/C91": {
+      "lcsc": "C14663",
+      "manufacturer": "YAGEO",
+      "mpn": "CC0603KRX7R9BB104",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 58124227,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C14663"
+    },
+    "04_sense_safety/R100": {
+      "lcsc": "C705784",
+      "manufacturer": "YAGEO",
+      "mpn": "RT0603BRD0756K2L",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 9905,
+      "class": "Extended",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C705784"
+    },
+    "04_sense_safety/R101": {
+      "lcsc": "C23254",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF8202T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 1317994,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C23254"
+    },
+    "04_sense_safety/R102": {
+      "lcsc": "C25803",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1003T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 22123082,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25803"
+    },
+    "04_sense_safety/R103": {
+      "lcsc": "C25803",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1003T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 22123082,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25803"
+    },
+    "04_sense_safety/C90": {
+      "lcsc": "C14663",
+      "manufacturer": "YAGEO",
+      "mpn": "CC0603KRX7R9BB104",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 58124227,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C14663"
+    },
+    "04_sense_safety/D90": {
+      "lcsc": "C2128",
+      "manufacturer": "Jiangsu Changjing Electronics Technology Co., Ltd.",
+      "mpn": "1N4148WS",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 2445156,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C2128"
+    },
+    "04_sense_safety/R104": {
+      "lcsc": "C25804",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1002T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 23027280,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25804"
+    },
+    "04_sense_safety/D91": {
+      "lcsc": "C2128",
+      "manufacturer": "Jiangsu Changjing Electronics Technology Co., Ltd.",
+      "mpn": "1N4148WS",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 2445156,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C2128"
+    },
+    "04_sense_safety/Q2": {
+      "lcsc": "C20917",
+      "manufacturer": "Alpha & Omega Semicon",
+      "mpn": "AO3400A",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2). Stock from local jlcpcb-tools parts DB snapshot 2026-09-13; re-check before ordering.",
+      "footprint": null,
+      "stock": 887816,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C20917",
+      "checked_date": "2026-10-20"
+    },
+    "04_sense_safety/R106": {
+      "lcsc": "C21190",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1001T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 21621023,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C21190"
+    },
+    "04_sense_safety/R105": {
+      "lcsc": "C21190",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1001T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Hardware HV overvoltage trip (AUDIT_TO_FIX H2).",
+      "footprint": null,
+      "stock": 21621023,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C21190"
+    },
+    "01_power_mcu/R107": {
+      "lcsc": "C25804",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1002T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Firmware fault/bridge telemetry (AUDIT_TO_FIX M1).",
+      "footprint": null,
+      "stock": 23027280,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25804"
+    },
+    "02_drive_transformer/R108": {
+      "lcsc": "C25803",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1003T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Firmware fault/bridge telemetry (AUDIT_TO_FIX M1).",
+      "footprint": null,
+      "stock": 22123082,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25803"
+    },
+    "02_drive_transformer/R109": {
+      "lcsc": "C25804",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1002T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "Firmware fault/bridge telemetry (AUDIT_TO_FIX M1).",
+      "footprint": null,
+      "stock": 23027280,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25804"
+    },
+    "02_drive_transformer/C92": {
+      "lcsc": "C14663",
+      "manufacturer": "YAGEO",
+      "mpn": "CC0603KRX7R9BB104",
+      "status": "CATALOG_MATCH",
+      "notes": "Firmware fault/bridge telemetry (AUDIT_TO_FIX M1).",
+      "footprint": null,
+      "stock": 58124227,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C14663"
+    },
+    "01_power_mcu/TP51": {
+      "lcsc": "",
+      "manufacturer": "",
+      "mpn": "",
+      "status": "PCB_FEATURE",
+      "notes": "Kelvin sense copper pad across R13 (AUDIT_TO_FIX M2); no purchased or placed component.",
+      "footprint": null,
+      "stock": null,
+      "class": "Unknown",
+      "assembly": "",
+      "source": ""
+    },
+    "01_power_mcu/TP52": {
+      "lcsc": "",
+      "manufacturer": "",
+      "mpn": "",
+      "status": "PCB_FEATURE",
+      "notes": "Kelvin sense copper pad across R13 (AUDIT_TO_FIX M2); no purchased or placed component.",
+      "footprint": null,
+      "stock": null,
+      "class": "Unknown",
+      "assembly": "",
+      "source": ""
+    },
+    "04_sense_safety/R110": {
+      "lcsc": "C25804",
+      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+      "mpn": "0603WAF1002T5E",
+      "status": "CATALOG_MATCH",
+      "notes": "U4 IN+ fault-current limiter (AUDIT_TO_FIX M3).",
+      "footprint": null,
+      "stock": 23027280,
+      "class": "Basic",
+      "assembly": "smtWeld",
+      "source": "https://jlcpcb.com/partdetail/C25804"
     }
   },
-  "last_updated": "2026-10-03"
+  "last_updated": "2026-10-20"
 }

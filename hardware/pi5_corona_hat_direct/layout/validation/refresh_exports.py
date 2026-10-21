@@ -47,7 +47,7 @@ def refresh():
                    kicad_version=version, production_release=False,
                    native_checks=dict(erc_violations=0, drc_violations=0,
                                       unconnected_items=0, schematic_parity_issues=0,
-                                      connectivity_audits_passed=13),
+                                      connectivity_audits_passed=17),
                    source_sha256={path.name: value for path, value in before.items()},
                    matching_bom_components=report['jlcpcb_bom_part_quantity'],
                    matching_bom_rows=report['jlcpcb_bom_rows'],

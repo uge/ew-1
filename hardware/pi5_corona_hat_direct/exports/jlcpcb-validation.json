@@ -1,9 +1,11 @@
 {
   "revision": "N-layout-17-hv-warnings",
   "kicad_version": "10.0.7",
-  "parts": 155,
-  "catalog_assigned": 143,
+  "parts": 175,
+  "catalog_assigned": 161,
   "unassigned": [
+    "TP51",
+    "TP52",
     "T1",
     "TP50",
     "J61",
@@ -28,12 +30,14 @@
   "pin_pad_mismatches": [
 
   ],
-  "jlcpcb_bom_part_quantity": 141,
-  "jlcpcb_bom_rows": 51,
+  "jlcpcb_bom_part_quantity": 159,
+  "jlcpcb_bom_rows": 53,
   "catalog_checked": [
     "2026-10-03",
     "2026-10-18",
-    "2026-10-19"
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21"
   ],
   "stock_not_reserved": true,
   "production_release": false

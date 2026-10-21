@@ -184,6 +184,42 @@ def voltage_difference(a, b):
     return max(abs(a[0] - b[1]), abs(a[1] - b[0]))
 
 
+# Phase-coherent model (opt-in, --coherent). Every pump-column node is driven through
+# series capacitors by the same SEC_A waveform, so it is DC + k*s with s in [-VS, VS]
+# and k=1; smoothing-column, ballast and divider nodes are DC (k=0). Pair differences
+# are evaluated over the shared s instead of combining independent extremes.
+VS = 1250.
+COHERENT = False
+
+
+def coherent_terms(net, worst_case=True):
+    if net == '/SEC_A':
+        return (0., 1.)
+    if 'CW_P' in net:
+        n = int(net.split('CW_P')[1][0]); return ((2 * n - 1) * VS, 1.)
+    if net == 'Net-(D20-K)':
+        return (11 * VS, 1.)
+    if 'CW_S' in net:
+        n = int(net.split('CW_S')[1][0]); return (2 * n * VS, 0.)
+    pump_mid = {'Net-(R140-Pad2)': 0.5 * VS}
+    for stage, ref in enumerate([144, 148, 152, 156, 160], 2):
+        pump_mid[f'Net-(R{ref}-Pad2)'] = (2 * stage - 2) * VS
+    if net in pump_mid:
+        return (pump_mid[net], 1.)
+    smooth_mid = {f'Net-(R{ref}-Pad2)': (2 * i + 1) * VS for i, ref in enumerate([142, 146, 150, 154, 158, 162])}
+    if net in smooth_mid:
+        return (smooth_mid[net], 0.)
+    lo, hi = voltage_bounds(net, worst_case)
+    return (hi, 0.) if lo == hi else (hi, 0.)
+
+
+def pair_difference(a, b, worst_case=True):
+    if not COHERENT:
+        return voltage_difference(voltage_bounds(a, worst_case), voltage_bounds(b, worst_case))
+    (da, ka), (db, kb) = coherent_terms(a, worst_case), coherent_terms(b, worst_case)
+    return abs(da - db) + abs(ka - kb) * VS
+
+
 # ==============================================================================
 # 3. Functional Board Regions
 # ==============================================================================
@@ -293,8 +329,7 @@ def analyze_board(pcb_path: str, worst_case=True, min_hv=500., max_lv=50.):
         names = sorted(nets)
         for i, a in enumerate(names):
             for b in names[i + 1:]:
-                av, bv = voltage_bounds(a, worst_case), voltage_bounds(b, worst_case)
-                dv = voltage_difference(av, bv)
+                dv = pair_difference(a, b, worst_case)
                 if dv < min_hv:
                     continue
                 ga, gb = nets[a], nets[b]
@@ -323,7 +358,7 @@ def analyze_board(pcb_path: str, worst_case=True, min_hv=500., max_lv=50.):
         for b, gb in copper[pcbnew.B_Cu].items():
             if a == b:
                 continue
-            dv = voltage_difference(voltage_bounds(a, worst_case), voltage_bounds(b, worst_case))
+            dv = pair_difference(a, b, worst_case)
             if dv < min_hv:
                 continue
             d = ga.distance(gb)
@@ -501,6 +536,7 @@ def main():
     parser.add_argument("--loaded", action="store_true", help="Evaluate ballast under full corona load instead of worst-case open circuit")
     parser.add_argument("--min-hv", type=float, default=500.0, help="Minimum voltage threshold for HV classification (default: 500V)")
     parser.add_argument("--max-lv", type=float, default=50.0, help="Maximum voltage threshold for LV classification (default: 50V)")
+    parser.add_argument("--coherent", action="store_true", help="Use the phase-coherent CW node model instead of independent envelopes")
     parser.add_argument("--no-plot", action="store_true", help="Skip graphical map generation")
     parser.add_argument("--json", action="store_true", help="Output full report as JSON to stdout")
 
@@ -510,6 +546,8 @@ def main():
         sys.stderr.write(f"Error: PCB file not found: {args.pcb}\n")
         sys.exit(1)
 
+    global COHERENT
+    COHERENT = args.coherent
     worst_case = not args.loaded
     data = analyze_board(args.pcb, worst_case=worst_case, min_hv=args.min_hv, max_lv=args.max_lv)
 
@@ -555,11 +593,11 @@ def main():
         print(f"• Voltage Heatmap: {vmap}")
         print(f"• Arcing Risk Map: {amap}")
 
-    report_json_path = os.path.join(args.output_dir, "voltage_audit_report.json")
+    report_json_path = os.path.join(args.output_dir, "voltage_audit_report_coherent.json" if COHERENT else "voltage_audit_report.json")
     json_payload = {
         "pcb": args.pcb,
         "verdict": "REVIEW_REQUIRED",
-        "model": "Native copper polygons, 1 um outward geometry tolerance; independent voltage envelopes",
+        "model": "Native copper polygons, 1 um outward geometry tolerance; " + ("phase-coherent CW node model (DC + k*SEC_A)" if COHERENT else "independent voltage envelopes"),
         "limitations": ["Legacy 0.00305/0.005 mm per volt screening coefficients, not standards compliance", "No package or breakout exemptions", "Voltage envelopes assume 15 kV maximum and 1250 V peak secondary", "Unknown nets conservatively treated as 0 V; review voltage assignments", "No creepage/material/coating/environment or transient qualification"],
         "edge_failures": sum(e['status'] == 'FAIL' for e in data['edge_audit']),
         "worst_case_open_circuit": worst_case,

@@ -22,8 +22,21 @@ actual outlines and NPTH holes, with 1 µm outward geometry tolerance. Phase env
 conservatively combine independent endpoints. No package/breakout gets an automatic
 pass. Legacy 0.00305/0.005 mm-per-volt coefficients are screening thresholds, not
 certification. Opposite-layer distances do not certify material withstand.
-The current result is in `exports/voltage_audit_report.json`: 51 critical pairs,
-146 cautions and 11 edge-screening failures. These remain release holds.
+Add `--coherent` to evaluate the phase-coherent Cockcroft-Walton model. In it, every
+pump-column node is DC + k·SEC_A with k=1, and smoothing, ballast and divider nodes are
+DC. Pair differences then use the shared secondary phase instead of independent
+extremes. The SPICE phase snapshots support this: P-node differences stay at 2.45 kV
+at every phase.
+
+Current results (2026-10-21):
+- `exports/voltage_audit_report.json` (independent envelopes): 37 critical, 159
+  caution, 0 edge failures. Most criticals are pad gaps inside single rated parts,
+  scored at envelope voltages.
+- `exports/voltage_audit_report_coherent.json`: 0 critical, 136 caution, 0 edge
+  failures; minimum margin +0.7% (CW_S5–HV_RAW).
+
+Both use the legacy 0.00305 mm/V coated-board coefficient. That is screening, not
+qualification.
 
 Additional simulation tools require ngspice and the scientific Python packages:
 

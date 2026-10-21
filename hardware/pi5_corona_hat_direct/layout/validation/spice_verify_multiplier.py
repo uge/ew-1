@@ -306,9 +306,9 @@ def main():
             "drive_frequency_kHz": 68.0,
             "drive_secondary_vpk": 1250.0,
             "diodes": "12x Sunmate 2CL75 (16 kV, 5 mA)",
-            "capacitors": "12x Vishay S102M59Z5UU83L0R (1.0 nF, 6.0 kV)",
+            "capacitors": "12x STE A12B1D102KN0B0S0N0 / C249245 (1.0 nF, 6.0 kV, Y5P, 10%)",
             "bleeders": "24x Bourns CHV2512-JW-107ELF (100 MΩ, 3.0 kV)",
-            "ballast": "10x Bourns CHV2512-FX-1005ELF (10 MΩ, 3.0 kV, 100 MΩ total)",
+            "ballast": "10x Bourns CHV2512-JW-106ELF / C2095568 (10 MΩ, 5%, 3.0 kV, 100 MΩ total)",
             "divider": "10x Bourns CHV2512-JW-107ELF (100 MΩ, 3.0 kV, 1000 MΩ total)",
             "results": {
                 "open_circuit": {

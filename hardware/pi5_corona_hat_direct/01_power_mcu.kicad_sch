@@ -12106,6 +12106,129 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(rectangle
 		(start 15.24 118.11)
@@ -12366,20 +12489,12 @@
 		(uuid "fe99cefa-f43f-4e13-9718-a00fe2da0f44")
 	)
 	(no_connect
-		(at 314.96 88.9)
-		(uuid "10cd3353-da30-4335-ae90-cd95161dff5b")
-	)
-	(no_connect
 		(at 314.96 66.04)
 		(uuid "1743d563-f7ce-4254-a33a-2e0d4134d70c")
 	)
 	(no_connect
 		(at 314.96 63.5)
 		(uuid "1ea30785-d409-481e-8290-5f8d6cba778c")
-	)
-	(no_connect
-		(at 114.3 212.09)
-		(uuid "299e4a88-8620-44d7-ba48-7e8152b954b8")
 	)
 	(no_connect
 		(at 314.96 71.12)
@@ -12430,10 +12545,6 @@
 		(uuid "8402daf7-267e-4dc8-9ec1-d092982b6639")
 	)
 	(no_connect
-		(at 314.96 86.36)
-		(uuid "8539b216-11a9-45a3-b0fd-0d2b128864f5")
-	)
-	(no_connect
 		(at 314.96 76.2)
 		(uuid "a39c4d72-0c39-4e94-aa1f-5e26d40a8177")
 	)
@@ -12458,20 +12569,12 @@
 		(uuid "c3c0108a-0ac0-4710-ae2f-2f20a65188d8")
 	)
 	(no_connect
-		(at 347.98 222.25)
-		(uuid "caa0a0a9-ab93-41a1-bef7-fd3291195c7d")
-	)
-	(no_connect
 		(at 327.66 96.52)
 		(uuid "cbb5f42e-b8e9-4eea-bbb2-f04ddbddfe8f")
 	)
 	(no_connect
 		(at 55.88 87.63)
 		(uuid "d36e2960-cc69-4285-a30a-be07606e5e05")
-	)
-	(no_connect
-		(at 314.96 96.52)
-		(uuid "de5ac013-0558-4848-bf38-1a7eafa585f7")
 	)
 	(no_connect
 		(at 327.66 83.82)
@@ -17759,7 +17862,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25816"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17781,7 +17884,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25816"
+		(property "LCSC" "C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17792,7 +17895,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C25816"
+		(property "JLCPCB Part #" "C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17858,7 +17961,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25816"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17869,7 +17972,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-21"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17891,7 +17994,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C25816"
+		(property "LCSC Part" "C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -24576,7 +24679,7 @@
 				)
 			)
 		)
-		(property "Value" "1uF 16V 10%"
+		(property "Value" "1uF 50V 10%"
 			(at 116.84 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24641,7 +24744,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "SAMSUNG"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -24652,7 +24755,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10A105KA8NNNC"
+		(property "MPN" "CL10A105KB8NNNC"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -24707,7 +24810,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-21"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -25640,5 +25743,684 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a2fe5130-79ac-44ff-9b9e-d874e4c9fcfc")
+	)
+	(wire
+		(pts
+			(xy 314.960 96.520) (xy 309.880 96.520)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f13ce4e-7796-42be-a5fd-511225bf78a3")
+	)
+	(global_label "HV_OV_TRIP_GPIO"
+		(shape bidirectional)
+		(at 309.880 96.520 180)
+		(effects (font (size 1.016 1.016)) (justify right))
+		(uuid "228910d1-9981-489f-8ebe-a30c1637d8c2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 309.880 96.520 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+	)
+	(wire
+		(pts
+			(xy 114.300 212.090) (xy 116.840 212.090)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "550dfd14-a37f-425b-b7e2-299d75ff01b7")
+	)
+	(label "EFUSE_FLT"
+		(at 116.840 212.090 0)
+		(effects (font (size 1.016 1.016)) (justify left bottom))
+		(uuid "9322b970-77eb-41e2-96b1-159c5e82361f")
+	)
+	(wire
+		(pts
+			(xy 347.980 222.250) (xy 345.440 222.250)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "142e11c4-7cfa-42bc-9b4f-22e8a76e6616")
+	)
+	(global_label "BRIDGE_VMON"
+		(shape bidirectional)
+		(at 345.440 222.250 180)
+		(effects (font (size 1.016 1.016)) (justify right))
+		(uuid "138dcca9-e91d-449d-b15e-adc396e4ea96")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 345.440 222.250 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+	)
+	(wire
+		(pts
+			(xy 314.960 86.360) (xy 312.420 86.360)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e82695c1-fec5-423a-965e-8dd17afdf4ac")
+	)
+	(global_label "DRV_nFAULT"
+		(shape bidirectional)
+		(at 312.420 86.360 180)
+		(effects (font (size 1.016 1.016)) (justify right))
+		(uuid "5a7ffa20-3285-466e-93fa-6b2540d5c415")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 312.420 86.360 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+	)
+	(wire
+		(pts
+			(xy 314.960 88.900) (xy 312.420 88.900)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "907d4608-b0c2-4164-9eca-8e311e6e138a")
+	)
+	(label "EFUSE_FLT"
+		(at 312.420 88.900 180)
+		(effects (font (size 1.016 1.016)) (justify right bottom))
+		(uuid "3cfbb60e-f0a1-4a80-8a99-9161c3b16772")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 60.960 274.320 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "044e8096-5592-495b-97e8-52020beb1720")
+		(property "Reference" "R107"
+			(at 60.960 271.120 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "10k"
+			(at 60.960 277.520 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Description" ""
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "LCSC Part" "C25804"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "LCSC" "C25804"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "JLCPCB Part #" "C25804"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "JLCPCB Library" "Basic"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Procurement Status" "CATALOG_MATCH"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Procurement Notes" "Pull-up for U9 FLT open-drain output to GPIO6."
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25804"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Catalog Checked" "2026-10-20"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Assembly Process" "smtWeld"
+			(at 60.960 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(pin "1"
+			(uuid "5a8e3c32-0f53-42a4-b84c-7f18ecf33c0e")
+		)
+		(pin "2"
+			(uuid "74181b55-8da9-4e6f-b3dc-4e20147f19c0")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
+					(reference "R107")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 60.960 270.510) (xy 60.960 267.970)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb814f97-d28c-4227-9286-d6af7d2f8018")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:3V3")
+		(at 60.960 267.970 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "84708138-09aa-4293-a6b8-fc2b9c381aae")
+		(property "Reference" "#PWR4916"
+			(at 60.960 267.970 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "3V3"
+			(at 60.960 271.170 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" ""
+			(at 60.960 267.970 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" ""
+			(at 60.960 267.970 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Description" ""
+			(at 60.960 267.970 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(pin "1"
+			(uuid "45ef65f6-9bb0-4b4c-b29e-5c655eb2836d")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
+					(reference "#PWR4916")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 60.960 278.130) (xy 60.960 280.670)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f93f1ec6-b8d2-4250-b658-0a5addea2a7a")
+	)
+	(label "EFUSE_FLT"
+		(at 60.960 280.670 270)
+		(effects (font (size 1.016 1.016)) (justify right bottom))
+		(uuid "24109b26-1ce0-4bc4-81ae-199d89978999")
+	)
+	(text "Firmware visibility (AUDIT_TO_FIX M1): DRV_nFAULT (global) -> GPIO5 (J2.29), U9 FLT -> GPIO6 (J2.31, R107 pull-up),\nHV_BRIDGE / 11 (R108/R109/C92 on sheet 02) -> ADS1115 AIN3 via global BRIDGE_VMON."
+		(exclude_from_sim no)
+		(at 50.8 264.16 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "5130305d-c0ec-4228-822a-ddfd0829c18b")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 142.240 274.320 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "79d669f8-0df0-4db6-b1d6-8ff4895bb05a")
+		(property "Reference" "TP51"
+			(at 142.240 271.120 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "ISENP KELVIN"
+			(at 142.240 277.520 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Description" "Kelvin test pad across R13 5 mOhm input shunt"
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "LCSC Part" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "LCSC" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "JLCPCB Part #" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Manufacturer" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "MPN" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "JLCPCB Library" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Procurement Status" "PCB_FEATURE"
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Procurement Notes" "Copper test pad; no purchased or placed component."
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Catalog URL" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Catalog Checked" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Assembly Process" ""
+			(at 142.240 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(pin "1"
+			(uuid "0aa98c9e-c91d-49a7-899d-28775a34a367")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
+					(reference "TP51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 142.240 274.320) (xy 142.240 276.860)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d08d0c8-d8cc-48a7-9fce-def9c6c2982d")
+	)
+	(label "ISENP"
+		(at 142.240 276.860 270)
+		(effects (font (size 1.016 1.016)) (justify right bottom))
+		(uuid "dd513773-5996-46a2-aa0f-be2aadf45ba4")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 160.020 274.320 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "013ab52f-0974-4f1a-bcdd-d68865f89075")
+		(property "Reference" "TP52"
+			(at 160.020 271.120 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "VBUS_IN KELVIN"
+			(at 160.020 277.520 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Description" "Kelvin test pad across R13 5 mOhm input shunt"
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "LCSC Part" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "LCSC" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "JLCPCB Part #" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Manufacturer" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "MPN" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "JLCPCB Library" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Procurement Status" "PCB_FEATURE"
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Procurement Notes" "Copper test pad; no purchased or placed component."
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Catalog URL" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Catalog Checked" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Assembly Process" ""
+			(at 160.020 274.320 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(pin "1"
+			(uuid "8a76e907-7c96-440a-8fd7-7206bc97bda3")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
+					(reference "TP52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 160.020 274.320) (xy 160.020 276.860)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71136c92-dc74-4dc7-bce9-f451c7bb006e")
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:VBUS_IN")
+		(at 160.020 276.860 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "41d59c3c-f042-4591-8175-2090e0ea295b")
+		(property "Reference" "#PWR4920"
+			(at 160.020 276.860 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Value" "VBUS_IN"
+			(at 160.020 280.060 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Footprint" ""
+			(at 160.020 276.860 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.27 1.27)))
+		)
+		(property "Datasheet" ""
+			(at 160.020 276.860 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(property "Description" ""
+			(at 160.020 276.860 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects (font (size 1.016 1.016)))
+		)
+		(pin "1"
+			(uuid "7e8d0186-f899-4f32-9de8-7dbbbf60e54f")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/1709378f-a8a2-4798-b42d-99352f87d149"
+					(reference "#PWR4920")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "R13 Kelvin sense pads (AUDIT_TO_FIX M2): I = V(TP51-TP52) / 5 mOhm; 15 mV at 3 A."
+		(exclude_from_sim no)
+		(at 137.16 266.7 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "489be2e5-8182-4304-8600-04863bcce208")
 	)
 )

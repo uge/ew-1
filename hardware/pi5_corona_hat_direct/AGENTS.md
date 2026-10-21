@@ -32,8 +32,8 @@ SMBJ22A / C49066946, unidirectional SMB; cathode pad 1, existing nets/pose.
 T1 Coilcraft FL2015-4LD remains externally sourced. J60/J61 and J62–J69 are
 solder-wire copper terminations, not purchased generic connectors. C63/R64
 are schematic DNP. MP1 is board-only, DNP, locked, padless, excluded from BOM/POS.
-Current matching BOM has 141 components / 51 rows. R14/C18 mismatches in AUDIT.md
-remain unresolved; do not silently report them as fixed.
+Current matching BOM has 159 components / 53 rows. R14 is C25819 (0603WAF4702T5E, 47 kΩ;
+never C25816, which is 383 kΩ). C18 is C15849 / CL10A105KB8NNNC (1 µF 50 V X5R).
 
 R30–R39 and R140–R163 use Bourns CHV2512-JW-107ELF / C2089706,
 100 MΩ / 5% / 3 kV / 2512. Preserve ten divider parts and two parts per
@@ -58,8 +58,28 @@ U7 HUSB238A pin 5 is Pi 3V3: default 5 V USB attach, 5–20 V programmable at
 I²C 0x42. R73 1.2 kΩ / C22765 sets eFuse 2.78 A, above U2 current limit
 2.20 A from R61 1.5 kΩ / C22843. K1 G6K-2F-Y DC3 is regulated at 3 V via
 U10 TPS7A0230. No bridge/USB power on its coil or logic contacts. K1 contacts
-3/4 gate BULK_CMD/BULK_EN; 6/5 gate DRV_SLEEP_CMD/DRV_nSLEEP. GPIO23 via
-R92 senses the switched coil feed, not proven contact state; keep GPIO24 separate.
+3/4 gate BULK_CMD/BULK_EN; 6/5 gate DRV_SLEEP_CMD/DRV_nSLEEP_RLY, then R105 1 kΩ
+to DRV_nSLEEP. GPIO23 via R92 senses the switched coil feed, not proven contact
+state; keep GPIO24 separate.
+
+Hardware HV overvoltage trip (independent of firmware): U11 TLV7031DBVR / C2869832
+compares HV_SENSE_BUF (U4 output, not the ADC node) × R101/(R100+R101) =
+82k/(56.2k 0.1%+82k) against OV_REF = 3V3 × R103/(R102+R103) = 1.65 V; trip is
+16.96 kV nominal HV_OUT. D90 + R104 latch the trip; D91 clears it only while
+DRV_SLEEP_CMD is low. Q2 AO3400A / C20917 pulls DRV_nSLEEP low; R105 limits GPIO
+current. R106 reports the latched trip on GPIO26 (J2.37, HV_OV_TRIP_GPIO).
+The input is filtered by the 164 kΩ·C13 divider pole (~16 ms), so it limits
+steady-state overvoltage, not fast overshoot. Recalculate the trip point if the
+HV divider, R100–R103 or the 3V3 rail changes; never bypass Q2/R105.
+
+U4 IN+ is fed through R110 10 kΩ from HV_SENSE_RAW (C13/R8/R39 node) to limit arc-transient
+current into the op-amp input; no external clamp, to avoid leakage error on the 1 GΩ divider.
+
+Firmware telemetry: DRV_nFAULT (global label; R63 pull-up, TP50) → GPIO5 (J2.29).
+U9 FLT → EFUSE_FLT, R107 10 kΩ pull-up → GPIO6 (J2.31). HV_BRIDGE/11 via R108 100 kΩ /
+R109 10 kΩ / C92 100 nF (sheet 02, where the sheet-local HV_BRIDGE symbol lives) →
+global BRIDGE_VMON → ADS1115 AIN3; 35.5 V D51 clamp reads 3.23 V. C72 (DVDT) sits
+left of U9 at (76.3,141.5)/180° to free U9's left-side escapes.
 
 T1 manufacturer SMT Package 1 numbering is counterclockwise: primary 1/5,
 unused CT 3, unused feedback 2/4, secondary 8/9. Guards 6/GND, 7/SEC_A,
@@ -90,11 +110,19 @@ H1/H2 at (55.5,111.5)/(55.5,53.5), H3 (105,55), H4 (55,166);
 H5/H6 are omitted. Preserve break-off board outlines and neck topology.
 
 Preserve custom HV rules: 4 mm stage spacing, 10 mm highest-voltage clearance,
-10 mm highest-voltage edge/NPTH setback. Narrow rated-part/series-node exceptions
+10 mm highest-voltage edge/NPTH setback, and the voltage-tiered "HV stage N mm to LV"
+rules (≤2.5 kV 4 mm, ≤5 kV 6 mm, ≤7.5 kV 8 mm, >7.5 kV 10 mm to any non-HV net).
+Add any new HV node to the tier matching its peak voltage. Narrow rated-part/series-node exceptions
 are not universal HV exemptions. No pours on either side in HV; LV GND pour
 x52–101, both-layer HV no-pour region from x102. Native DRC is not HV certification.
-Preserve 16 mm cell pitch, 8 mm inner/12 mm final diode offsets, bleeder stagger
-8 mm and 11.75 mm R30-to-R31 spacing. Recalculate insulation/fit after compaction.
+Preserve 16 mm cell pitch, 8 mm inner/12 mm final diode offsets and 11.75 mm
+R30-to-R31 spacing. Diodes D10–D21 are staggered vertically: even refs at y=95.75, odd
+refs at y=102.25 (±3.25 mm), D21 at x=223.4, so adjacent stage pads are ≥7.63 mm apart
+(IPC-2221 B4 at 2.5 kV). The S-bleeder row R142/R143/R150/R151/R158/R159 is at y=147.4.
+The warning band sits between the lowered diode pads and the S caps (DANGER text 55%,
+second line 75%, triangles 70% of the original size); C101–C111 references are below the caps. Pumping-column bleeders R140–R161 form one row at y=63 on an
+8 mm pitch (adjacent pads share a net); keep every HV_STAGE pad ≥10 mm from Edge.Cuts
+(enforced by the "HV_STAGE to board edge" rule). Recalculate insulation/fit after compaction.
 
 Keep D5 (132.5,158)/90°, R90 (132.5,162.95)/180°, J61 (126,156).
 J61→D5 is 8.219 mm and J61→R90 11.625 mm on F.Cu without vias.
@@ -109,7 +137,7 @@ for underside viewing. Preserve the open warning band and reference clearance.
 
 # Validation and saves
 
-Use layout/validation/refresh_exports.py for native netlist, 13 connectivity audits,
+Use layout/validation/refresh_exports.py for native netlist, 17 connectivity audits,
 ERC, DRC/parity, BOM/CPL and Gerbers/package. Zero DRC violations with opens is
 still a hold. Review AUDIT.md before any release claim. The pcbnew legacy save API
 can overwrite project settings: preserve/restore .kicad_pro and custom rules around

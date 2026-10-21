@@ -130,10 +130,10 @@
   {
     "reference": "C72",
     "board_centroid_mm": [
-      79.0,
-      135.5
+      76.3,
+      141.5
     ],
-    "rotation": 90.0
+    "rotation": 180.0
   },
   {
     "reference": "C73",
@@ -172,6 +172,30 @@
     "board_centroid_mm": [
       76.0,
       81.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "C90",
+    "board_centroid_mm": [
+      78.5,
+      167.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "C91",
+    "board_centroid_mm": [
+      79.0,
+      161.5
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "C92",
+    "board_centroid_mm": [
+      99.0,
+      108.0
     ],
     "rotation": 90.0
   },
@@ -307,7 +331,7 @@
     "reference": "D10",
     "board_centroid_mm": [
       136.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -315,7 +339,7 @@
     "reference": "D11",
     "board_centroid_mm": [
       144.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -323,7 +347,7 @@
     "reference": "D12",
     "board_centroid_mm": [
       152.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -331,7 +355,7 @@
     "reference": "D13",
     "board_centroid_mm": [
       160.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -339,7 +363,7 @@
     "reference": "D14",
     "board_centroid_mm": [
       168.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -347,7 +371,7 @@
     "reference": "D15",
     "board_centroid_mm": [
       176.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -355,7 +379,7 @@
     "reference": "D16",
     "board_centroid_mm": [
       184.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -363,7 +387,7 @@
     "reference": "D17",
     "board_centroid_mm": [
       192.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -371,7 +395,7 @@
     "reference": "D18",
     "board_centroid_mm": [
       200.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -379,7 +403,7 @@
     "reference": "D19",
     "board_centroid_mm": [
       208.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -387,15 +411,15 @@
     "reference": "D20",
     "board_centroid_mm": [
       216.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
   {
     "reference": "D21",
     "board_centroid_mm": [
-      224.0,
-      99.0
+      223.4,
+      102.25
     ],
     "rotation": 90.0
   },
@@ -446,6 +470,22 @@
       156.0
     ],
     "rotation": 270.0
+  },
+  {
+    "reference": "D90",
+    "board_centroid_mm": [
+      82.0,
+      167.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "D91",
+    "board_centroid_mm": [
+      89.0,
+      167.0
+    ],
+    "rotation": 90.0
   },
   {
     "reference": "F1",
@@ -502,6 +542,14 @@
       154.6
     ],
     "rotation": 270.0
+  },
+  {
+    "reference": "Q2",
+    "board_centroid_mm": [
+      62.5,
+      161.0
+    ],
+    "rotation": 180.0
   },
   {
     "reference": "R5",
@@ -840,18 +888,106 @@
     "rotation": 270.0
   },
   {
+    "reference": "R100",
+    "board_centroid_mm": [
+      82.5,
+      162.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R101",
+    "board_centroid_mm": [
+      86.0,
+      162.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R102",
+    "board_centroid_mm": [
+      89.5,
+      162.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R103",
+    "board_centroid_mm": [
+      75.0,
+      167.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R104",
+    "board_centroid_mm": [
+      85.5,
+      167.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R105",
+    "board_centroid_mm": [
+      80.7,
+      88.0
+    ],
+    "rotation": 270.0
+  },
+  {
+    "reference": "R106",
+    "board_centroid_mm": [
+      62.5,
+      166.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R107",
+    "board_centroid_mm": [
+      76.55,
+      138.95
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R108",
+    "board_centroid_mm": [
+      94.0,
+      108.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R109",
+    "board_centroid_mm": [
+      96.5,
+      108.0
+    ],
+    "rotation": 90.0
+  },
+  {
+    "reference": "R110",
+    "board_centroid_mm": [
+      128.9,
+      165.6
+    ],
+    "rotation": 180.0
+  },
+  {
     "reference": "R140",
     "board_centroid_mm": [
       124.25,
-      56.0
+      63.0
     ],
     "rotation": 0.0
   },
   {
     "reference": "R141",
     "board_centroid_mm": [
-      134.25,
-      56.0
+      132.25,
+      63.0
     ],
     "rotation": 0.0
   },
@@ -859,7 +995,7 @@
     "reference": "R142",
     "board_centroid_mm": [
       131.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -867,7 +1003,7 @@
     "reference": "R143",
     "board_centroid_mm": [
       141.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -875,15 +1011,15 @@
     "reference": "R144",
     "board_centroid_mm": [
       140.25,
-      64.0
+      63.0
     ],
     "rotation": 0.0
   },
   {
     "reference": "R145",
     "board_centroid_mm": [
-      150.25,
-      64.0
+      148.25,
+      63.0
     ],
     "rotation": 0.0
   },
@@ -907,15 +1043,15 @@
     "reference": "R148",
     "board_centroid_mm": [
       156.25,
-      56.0
+      63.0
     ],
     "rotation": 0.0
   },
   {
     "reference": "R149",
     "board_centroid_mm": [
-      166.25,
-      56.0
+      164.25,
+      63.0
     ],
     "rotation": 0.0
   },
@@ -923,7 +1059,7 @@
     "reference": "R150",
     "board_centroid_mm": [
       163.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -931,7 +1067,7 @@
     "reference": "R151",
     "board_centroid_mm": [
       173.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -939,15 +1075,15 @@
     "reference": "R152",
     "board_centroid_mm": [
       172.25,
-      64.0
+      63.0
     ],
     "rotation": 0.0
   },
   {
     "reference": "R153",
     "board_centroid_mm": [
-      182.25,
-      64.0
+      180.25,
+      63.0
     ],
     "rotation": 0.0
   },
@@ -971,15 +1107,15 @@
     "reference": "R156",
     "board_centroid_mm": [
       188.25,
-      56.0
+      63.0
     ],
     "rotation": 0.0
   },
   {
     "reference": "R157",
     "board_centroid_mm": [
-      198.25,
-      56.0
+      196.25,
+      63.0
     ],
     "rotation": 0.0
   },
@@ -987,7 +1123,7 @@
     "reference": "R158",
     "board_centroid_mm": [
       195.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -995,7 +1131,7 @@
     "reference": "R159",
     "board_centroid_mm": [
       205.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -1003,15 +1139,15 @@
     "reference": "R160",
     "board_centroid_mm": [
       204.25,
-      64.0
+      63.0
     ],
     "rotation": 0.0
   },
   {
     "reference": "R161",
     "board_centroid_mm": [
-      214.25,
-      64.0
+      212.25,
+      63.0
     ],
     "rotation": 0.0
   },
@@ -1126,5 +1262,13 @@
       82.0
     ],
     "rotation": 270.0
+  },
+  {
+    "reference": "U11",
+    "board_centroid_mm": [
+      75.0,
+      162.5
+    ],
+    "rotation": 0.0
   }
 ]

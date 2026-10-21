@@ -5,25 +5,36 @@ C249245 capacitors and 5% C2095568 ballast resistors, D51 C49066946, and large
 high-voltage warning graphics on both sides. It is not a qualified production release.
 
 Native KiCad 10 ERC, DRC, open-connection and schematic-parity counts are zero;
-all 13 connectivity audits pass. Current machine-readable reports are
+all 17 connectivity audits pass. Current machine-readable reports are
 `exports/erc.json`, `exports/jlcpcb-drc.json` and `exports/jlcpcb-validation.json`.
 `exports/manufacturing-archive-validation.json` binds verified Gerber payloads to
 the current board hash. `exports/working-version.json` identifies the promoted design.
 
+Design-review fixes from 2026-10-20/21 are recorded in [AUDIT_TO_FIX.md](AUDIT_TO_FIX.md):
+- bleeder edge clearance and voltage-tiered HV rules
+- the hardware 17 kV overvoltage trip
+- firmware fault and bridge telemetry
+- R13 Kelvin pads, the U4 input resistor, J60 edge margin, R60 at 10 kΩ, and SOD-323 courtyards
+
+The hardware trip still needs bench characterization.
+
 ## Open qualification and procurement issues
 
-- HV insulation screening still finds critical proximity/edge cases. The current
-  `exports/voltage_audit_report.json` contains the full geometry-screening result.
+- HV insulation screening (2026-10-21), using the 0.00305 mm/V screening coefficient:
+  - Phase-coherent model (`exports/voltage_audit_report_coherent.json`): 0 critical,
+    0 edge failures. Achieved by staggering the CW diodes ±3.25 mm and other
+    re-placement; see AUDIT_TO_FIX.md.
+  - Independent-envelope model (`exports/voltage_audit_report.json`): 37 critical, of
+    which most are pad gaps inside single rated parts.
   Legacy screening coefficients are not standards compliance or certification.
 - Arc energy, repetitive charging pulses, shutdown faults, material/environment,
   transformer operating conditions and external HV wiring need qualification.
 - The selected capacitors match the 10 mm pitch; height, lead tolerances and
   voltage-bias/pulse behavior remain unqualified. The old generic 3D model was removed.
-- R14 currently assigns C25816 to specified MPN 0603WAF4702T5E; catalog evidence
-  resolves that ID to a different resistance. Exact-MPN candidate is C25819.
-- C18 currently assigns C15849 to specified MPN CL10A105KA8NNNC; catalog evidence
-  resolves that ID to another MPN. Exact-MPN candidate is C5673.
-- The user has not requested either R14/C18 correction; neither is represented as fixed.
+- R14/C18 catalog mismatches were corrected on 2026-10-21 at the user's request:
+  - R14 now uses C25819, which is exactly 0603WAF4702T5E (47 kΩ). The former C25816
+    is a 383 kΩ part and would have left Q1 under-driven.
+  - C18 keeps C15849, with its MPN corrected to CL10A105KB8NNNC (1 µF, 50 V, X5R).
 - T1 remains externally sourced. Four-switch contact mapping/load ratings and Pi
   standoff/connector/enclosure assumptions remain to be confirmed physically.
 

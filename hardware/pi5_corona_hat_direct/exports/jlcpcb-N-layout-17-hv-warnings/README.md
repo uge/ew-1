@@ -7,7 +7,7 @@ Front/back previews and silkscreen validation are included.
 Canonical working-design exports generated with KiCad 10.0.7.
 Upload gerbers.zip for the two-layer, 1.6 mm PCB. It contains copper, mask,
 silkscreen, paste, outline, and separate metric PTH/NPTH drill files.
-Upload bom.csv and cpl.csv for assembly: 141 components / 51 BOM rows.
+Upload bom.csv and cpl.csv for assembly: 159 components / 53 BOM rows.
 CPL coordinates use mm, X right and Y up from KiCad absolute origin;
 negative Y values are intentional. Rotations are counterclockwise with existing
 JLC library offsets. Review placement/orientation in the JLCPCB assembly preview.
