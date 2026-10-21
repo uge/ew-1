@@ -13,7 +13,7 @@ From the repository root, with KiCad 10, Ruby and `/usr/bin/python3`/pcbnew inst
 ```
 
 This checks KiCad version, exports a fresh native netlist, refreshes connectivity,
-runs the 13 net audits and native ERC/DRC including parity, exports procurement
+runs the 17 net audits and native ERC/DRC including parity, exports procurement
 BOMs/CPL and fresh Gerbers with separate PTH/NPTH drills, then validates and
 packages the current JLCPCB files. It never saves or reroutes the native design.
 The final package manifest identifies its source PCB by SHA-256.

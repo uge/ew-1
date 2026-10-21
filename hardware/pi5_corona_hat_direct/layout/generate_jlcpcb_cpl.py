@@ -34,6 +34,8 @@ ROTATION_OFFSETS = {
     "U8": 270.0,  # 0 + 270 = 270.0 deg
     # TPS7A0230 SOT-23-5: KiCad standard footprint inverted 180 deg vs EasyEDA
     "U10": 180.0, # 90 + 180 = 270.0 deg
+    # AO3400A SOT-23: KiCad standard footprint inverted 180 deg vs EasyEDA (verify in JLCPCB preview)
+    "Q2": 180.0,  # 0 + 180 = 180.0 deg
     # Omron G6K-2F-Y DPDT Relay: KiCad vertical (rot 180) -> EasyEDA horizontal (rot 90)
     "K1": 270.0,  # 180 + 270 = 450 = 90.0 deg
     # SS36 SMC Schottky diodes: KiCad cathode pin 1 is left, EasyEDA C16237 pin 1 is right (180 deg flip)

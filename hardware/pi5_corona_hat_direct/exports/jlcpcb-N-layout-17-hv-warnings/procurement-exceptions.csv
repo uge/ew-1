@@ -1,4 +1,6 @@
 Designator,MPN,LCSC Part #,DNP,Procurement Status,Catalog Stock,Notes
+TP51,"","",No,PCB_FEATURE,,Kelvin sense copper pad across R13 (AUDIT_TO_FIX M2); no purchased or placed component.
+TP52,"","",No,PCB_FEATURE,,Kelvin sense copper pad across R13 (AUDIT_TO_FIX M2); no purchased or placed component.
 T1,FL2015-4LD,"",No,EXTERNAL_SOURCE,,No exact FL2015-4LD JLCPCB catalog match found. Coilcraft sourcing/consignment or manual fit; do not substitute a PFL2015 inductor.
 TP50,"","",No,PCB_FEATURE,,Copper test pad; no purchased or placed component.
 J61,"","",No,PCB_FEATURE,,"Separate single solder-wire termination, far from J60. HV_RETURN is isolated from logic ground."

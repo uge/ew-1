@@ -23,7 +23,7 @@ conservatively combine independent endpoints. No package/breakout gets an automa
 pass. Legacy 0.00305/0.005 mm-per-volt coefficients are screening thresholds, not
 certification. Opposite-layer distances do not certify material withstand.
 The current result is in `exports/voltage_audit_report.json`: 51 critical pairs,
-146 cautions and 11 edge-screening failures. These remain release holds.
+145 cautions and 0 edge-screening failures. These remain release holds.
 
 Additional simulation tools require ngspice and the scientific Python packages:
 

@@ -671,6 +671,84 @@
       }
     },
     {
+      "ref": "R107",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/044e8096-5592-495b-97e8-52020beb1720",
+      "properties": {
+        "LCSC Part": "C25804",
+        "LCSC": "C25804",
+        "JLCPCB Part #": "C25804",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1002T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "Pull-up for U9 FLT open-drain output to GPIO6.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25804",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "01_power_mcu",
+        "Sheetfile": "01_power_mcu.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25804",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "TP51",
+      "value": "ISENP KELVIN",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/79d669f8-0df0-4db6-b1d6-8ff4895bb05a",
+      "properties": {
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "",
+        "MPN": "",
+        "JLCPCB Library": "",
+        "Procurement Status": "PCB_FEATURE",
+        "Procurement Notes": "Copper test pad; no purchased or placed component.",
+        "Catalog URL": "",
+        "Catalog Checked": "",
+        "Assembly Process": "",
+        "Sheetname": "01_power_mcu",
+        "Sheetfile": "01_power_mcu.kicad_sch",
+        "ki_keywords": "test point tp",
+        "ki_fp_filters": "Pin* Test*",
+        "Footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+        "Datasheet": "",
+        "Description": "Kelvin test pad across R13 5 mOhm input shunt"
+      }
+    },
+    {
+      "ref": "TP52",
+      "value": "VBUS_IN KELVIN",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "path": "/1709378f-a8a2-4798-b42d-99352f87d149/013ab52f-0974-4f1a-bcdd-d68865f89075",
+      "properties": {
+        "LCSC Part": "",
+        "LCSC": "",
+        "JLCPCB Part #": "",
+        "Manufacturer": "",
+        "MPN": "",
+        "JLCPCB Library": "",
+        "Procurement Status": "PCB_FEATURE",
+        "Procurement Notes": "Copper test pad; no purchased or placed component.",
+        "Catalog URL": "",
+        "Catalog Checked": "",
+        "Assembly Process": "",
+        "Sheetname": "01_power_mcu",
+        "Sheetfile": "01_power_mcu.kicad_sch",
+        "ki_keywords": "test point tp",
+        "ki_fp_filters": "Pin* Test*",
+        "Footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+        "Datasheet": "",
+        "Description": "Kelvin test pad across R13 5 mOhm input shunt"
+      }
+    },
+    {
       "ref": "U5",
       "value": "BME280",
       "footprint": "Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering",
@@ -952,6 +1030,32 @@
       }
     },
     {
+      "ref": "C92",
+      "value": "100nF",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "path": "/6db4da9a-2f77-41fb-a28d-f514a0b2daea/16418944-3c15-4931-9068-aeefa1977bab",
+      "properties": {
+        "LCSC Part": "C14663",
+        "LCSC": "C14663",
+        "JLCPCB Part #": "C14663",
+        "Manufacturer": "YAGEO",
+        "MPN": "CC0603KRX7R9BB104",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "HV_BRIDGE monitor filter.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C14663",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "02_drive_transformer",
+        "Sheetfile": "02_drive_transformer.kicad_sch",
+        "ki_keywords": "cap capacitor",
+        "ki_fp_filters": "C_*",
+        "Footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
+        "Description": ""
+      }
+    },
+    {
       "ref": "D50",
       "value": "VSSA310S-M3",
       "footprint": "Diode_SMD:D_SMA",
@@ -1135,27 +1239,27 @@
     },
     {
       "ref": "R60",
-      "value": "1k 1W",
+      "value": "10k 1W",
       "footprint": "Resistor_SMD:R_2512_6332Metric",
       "path": "/6db4da9a-2f77-41fb-a28d-f514a0b2daea/d17e9b28-a92a-4791-a69f-75030161b4d3",
       "properties": {
-        "LCSC": "C54315",
-        "JLCPCB Part #": "C54315",
+        "LCSC": "C270956",
+        "JLCPCB Part #": "C270956",
         "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
-        "MPN": "25121WF1001T4E",
+        "MPN": "25121WF1002T4E",
         "JLCPCB Library": "Extended",
         "Procurement Status": "CATALOG_MATCH",
-        "Procurement Notes": "",
-        "Catalog URL": "https://jlcpcb.com/partdetail/C54315",
-        "Catalog Checked": "2026-10-02",
+        "Procurement Notes": "HV_BRIDGE reservoir bleeder; 10 kOhm per AUDIT_TO_FIX L2 (tau ~0.45 s, 40 mW at 20 V).",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C270956",
+        "Catalog Checked": "2026-10-21",
         "Assembly Process": "smtWeld",
-        "LCSC Part": "C54315",
+        "LCSC Part": "C270956",
         "Sheetname": "02_drive_transformer",
         "Sheetfile": "02_drive_transformer.kicad_sch",
         "ki_keywords": "R res resistor",
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
-        "Datasheet": "https://jlcpcb.com/partdetail/C54315",
+        "Datasheet": "https://jlcpcb.com/partdetail/C270956",
         "Description": ""
       }
     },
@@ -1261,6 +1365,58 @@
         "ki_fp_filters": "R_*",
         "Footprint": "Resistor_SMD:R_2512_6332Metric",
         "Datasheet": "https://jlcpcb.com/partdetail/C35218",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R108",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/6db4da9a-2f77-41fb-a28d-f514a0b2daea/0b54ff20-549e-4f74-a92e-3a322d4cb4f5",
+      "properties": {
+        "LCSC Part": "C25803",
+        "LCSC": "C25803",
+        "JLCPCB Part #": "C25803",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1003T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "HV_BRIDGE monitor divider top; AIN3 = HV_BRIDGE/11.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25803",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "02_drive_transformer",
+        "Sheetfile": "02_drive_transformer.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25803",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R109",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/6db4da9a-2f77-41fb-a28d-f514a0b2daea/765abe5b-b14c-4b22-8db1-fdc7c106f6d0",
+      "properties": {
+        "LCSC Part": "C25804",
+        "LCSC": "C25804",
+        "JLCPCB Part #": "C25804",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1002T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "HV_BRIDGE monitor divider bottom.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25804",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "02_drive_transformer",
+        "Sheetfile": "02_drive_transformer.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25804",
         "Description": ""
       }
     },
@@ -1441,6 +1597,56 @@
       }
     },
     {
+      "ref": "C90",
+      "value": "100nF",
+      "footprint": "ionic_thrust_hv:C0603",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/a5272459-f6a7-4829-9816-edf46fffb2fd",
+      "properties": {
+        "LCSC Part": "C14663",
+        "LCSC": "C14663",
+        "JLCPCB Part #": "C14663",
+        "Manufacturer": "YAGEO",
+        "MPN": "CC0603KRX7R9BB104",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C14663",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Multilayer Ceramic Capacitors MLCC - SMD/SMT",
+        "Footprint": "ionic_thrust_hv:C0603",
+        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "C91",
+      "value": "100nF",
+      "footprint": "ionic_thrust_hv:C0603",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/c3298dc7-bfb9-4b4b-9271-f7e0a1300ff6",
+      "properties": {
+        "LCSC Part": "C14663",
+        "LCSC": "C14663",
+        "JLCPCB Part #": "C14663",
+        "Manufacturer": "YAGEO",
+        "MPN": "CC0603KRX7R9BB104",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C14663",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Multilayer Ceramic Capacitors MLCC - SMD/SMT",
+        "Footprint": "ionic_thrust_hv:C0603",
+        "Datasheet": "https://jlcpcb.com/partdetail/C14663",
+        "Description": ""
+      }
+    },
+    {
       "ref": "D1",
       "value": "BAT54S",
       "footprint": "ionic_thrust_hv:SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
@@ -1537,6 +1743,54 @@
         "ki_fp_filters": "TO-???* *_Diode_* *SingleDiode* D_*",
         "Footprint": "Diode_SMD:D_SMB",
         "Datasheet": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2312121437_LRC-SMBJ15A_C2912077.pdf",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "D90",
+      "value": "1N4148WS",
+      "footprint": "ionic_thrust_hv:D_SOD-323",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/a16ef7dc-6e9f-4bc2-a07d-c76d70920829",
+      "properties": {
+        "LCSC Part": "C2128",
+        "LCSC": "C2128",
+        "JLCPCB Part #": "C2128",
+        "Manufacturer": "Jiangsu Changjing Electronics Technology Co., Ltd.",
+        "MPN": "1N4148WS",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "OV latch feedback.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C2128",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "Footprint": "ionic_thrust_hv:D_SOD-323",
+        "Datasheet": "https://jlcpcb.com/partdetail/C2128",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "D91",
+      "value": "1N4148WS",
+      "footprint": "ionic_thrust_hv:D_SOD-323",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/fa236ea5-0bd7-4660-98c0-dd00254e9462",
+      "properties": {
+        "LCSC Part": "C2128",
+        "LCSC": "C2128",
+        "JLCPCB Part #": "C2128",
+        "Manufacturer": "Jiangsu Changjing Electronics Technology Co., Ltd.",
+        "MPN": "1N4148WS",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "OV latch reset when DRV_SLEEP_CMD is low.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C2128",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "Footprint": "ionic_thrust_hv:D_SOD-323",
+        "Datasheet": "https://jlcpcb.com/partdetail/C2128",
         "Description": ""
       }
     },
@@ -1801,6 +2055,31 @@
         "Sheetfile": "04_sense_safety.kicad_sch",
         "Footprint": "Relay_SMD:Relay_DPDT_Omron_G6K-2F-Y",
         "Datasheet": "https://www.lcsc.com/datasheet/lcsc_datasheet_2211282300_Omron-Electronics-G6K-2F-Y-DC3_C93168.pdf",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "Q2",
+      "value": "AO3400A",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/1e78d928-8a1e-467b-b2e1-3b6e4b561998",
+      "properties": {
+        "LCSC Part": "C20917",
+        "LCSC": "C20917",
+        "JLCPCB Part #": "C20917",
+        "Manufacturer": "Alpha & Omega Semicon",
+        "MPN": "AO3400A",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "Pulls DRV_nSLEEP low on HV overvoltage trip.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C20917",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "transistor NMOS N-MOS N-MOSFET",
+        "Footprint": "Package_TO_SOT_SMD:SOT-23",
+        "Datasheet": "https://jlcpcb.com/partdetail/C20917",
         "Description": ""
       }
     },
@@ -2435,6 +2714,210 @@
       }
     },
     {
+      "ref": "R100",
+      "value": "56.2k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/60d16b11-8c0a-4acc-b2e6-c0f1fedaa877",
+      "properties": {
+        "LCSC Part": "C705784",
+        "LCSC": "C705784",
+        "JLCPCB Part #": "C705784",
+        "Manufacturer": "YAGEO",
+        "MPN": "RT0603BRD0756K2L",
+        "JLCPCB Library": "Extended",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "OV trip sense scaling; trip = 1.65 V / 0.5933 = 2.781 V buffered (16.96 kV).",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C705784",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C705784",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R101",
+      "value": "82k",
+      "footprint": "ionic_thrust_hv:R0603",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/0f5282f8-eb65-4163-ad4f-a477e567c69c",
+      "properties": {
+        "LCSC Part": "C23254",
+        "LCSC": "C23254",
+        "JLCPCB Part #": "C23254",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF8202T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C23254",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Resistors",
+        "Footprint": "ionic_thrust_hv:R0603",
+        "Datasheet": "https://jlcpcb.com/partdetail/C23254",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R102",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/29ba5361-1616-465c-9e73-6e4e83c2fa56",
+      "properties": {
+        "LCSC Part": "C25803",
+        "LCSC": "C25803",
+        "JLCPCB Part #": "C25803",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1003T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25803",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25803",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R103",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/11647ce0-3ddb-4c68-9d3b-ca0ba5e3205a",
+      "properties": {
+        "LCSC Part": "C25803",
+        "LCSC": "C25803",
+        "JLCPCB Part #": "C25803",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1003T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25803",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25803",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R104",
+      "value": "10k",
+      "footprint": "ionic_thrust_hv:R0603",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/9140dafc-2370-45be-8927-0bfc4a9442ae",
+      "properties": {
+        "LCSC Part": "C25804",
+        "LCSC": "C25804",
+        "JLCPCB Part #": "C25804",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1002T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25804",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Resistors",
+        "Footprint": "ionic_thrust_hv:R0603",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25804",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R105",
+      "value": "1k",
+      "footprint": "ionic_thrust_hv:R0603",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/62ddfc2e-fab4-40c7-87c3-004eaf839d8e",
+      "properties": {
+        "LCSC Part": "C21190",
+        "LCSC": "C21190",
+        "JLCPCB Part #": "C21190",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1001T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "Isolates relay-gated DRV_SLEEP_CMD from the OV trip pull-down Q2.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C21190",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Resistors",
+        "Footprint": "ionic_thrust_hv:R0603",
+        "Datasheet": "https://jlcpcb.com/partdetail/C21190",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R106",
+      "value": "1k",
+      "footprint": "ionic_thrust_hv:R0603",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/7c37fcb4-1a3a-4eb7-b9f2-70582194bf02",
+      "properties": {
+        "LCSC Part": "C21190",
+        "LCSC": "C21190",
+        "JLCPCB Part #": "C21190",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1001T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C21190",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Resistors",
+        "Footprint": "ionic_thrust_hv:R0603",
+        "Datasheet": "https://jlcpcb.com/partdetail/C21190",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "R110",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/fdce6c3d-c923-447c-be0f-fb74e45dbd2e",
+      "properties": {
+        "LCSC Part": "C25804",
+        "LCSC": "C25804",
+        "JLCPCB Part #": "C25804",
+        "Manufacturer": "UNI-ROYAL(Uniroyal Elec)",
+        "MPN": "0603WAF1002T5E",
+        "JLCPCB Library": "Basic",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "Limits fault current into U4 IN+ to <10 mA (AUDIT_TO_FIX M3); no leakage clamp added to keep the 1 GOhm divider accurate.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C25804",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "R res resistor",
+        "ki_fp_filters": "R_*",
+        "Footprint": "Resistor_SMD:R_0603_1608Metric",
+        "Datasheet": "https://jlcpcb.com/partdetail/C25804",
+        "Description": ""
+      }
+    },
+    {
       "ref": "S3",
       "value": "TK-0013-R",
       "footprint": "ionic_thrust_hv:SW_TK-0013-R",
@@ -2580,6 +3063,31 @@
         "Sheetfile": "04_sense_safety.kicad_sch",
         "Footprint": "Package_TO_SOT_SMD:SOT-23-5",
         "Datasheet": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2302282000_Texas-Instruments-TPS7A0230PDBVR_C3747031.pdf",
+        "Description": ""
+      }
+    },
+    {
+      "ref": "U11",
+      "value": "TLV7031DBVR",
+      "footprint": "ionic_thrust_hv:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR",
+      "path": "/6837c0a3-1ca9-42aa-89d0-96358f3e428b/9c135038-5e41-42ea-a55a-3f46d37d8e1d",
+      "properties": {
+        "LCSC Part": "C2869832",
+        "LCSC": "C2869832",
+        "JLCPCB Part #": "C2869832",
+        "Manufacturer": "Texas Instruments",
+        "MPN": "TLV7031DBVR",
+        "JLCPCB Library": "Extended",
+        "Procurement Status": "CATALOG_MATCH",
+        "Procurement Notes": "Hardware HV overvoltage trip comparator; push-pull output, DBV pinout 1 OUT 2 V- 3 IN+ 4 IN- 5 VCC.",
+        "Catalog URL": "https://jlcpcb.com/partdetail/C2869832",
+        "Catalog Checked": "2026-10-20",
+        "Assembly Process": "smtWeld",
+        "Sheetname": "04_sense_safety",
+        "Sheetfile": "04_sense_safety.kicad_sch",
+        "ki_keywords": "Operational Amplifier",
+        "Footprint": "ionic_thrust_hv:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR",
+        "Datasheet": "https://jlcpcb.com/partdetail/C2869832",
         "Description": ""
       }
     },
@@ -3935,6 +4443,24 @@
     },
     {
       "code": 6,
+      "name": "/01_power_mcu/EFUSE_FLT",
+      "nodes": [
+        [
+          "J2",
+          "31"
+        ],
+        [
+          "R107",
+          "2"
+        ],
+        [
+          "U9",
+          "4"
+        ]
+      ]
+    },
+    {
+      "code": 7,
       "name": "/01_power_mcu/EFUSE_ILM",
       "nodes": [
         [
@@ -3948,7 +4474,7 @@
       ]
     },
     {
-      "code": 7,
+      "code": 8,
       "name": "/01_power_mcu/EFUSE_OVLO",
       "nodes": [
         [
@@ -3966,7 +4492,7 @@
       ]
     },
     {
-      "code": 8,
+      "code": 9,
       "name": "/01_power_mcu/EN_DRV",
       "nodes": [
         [
@@ -3980,7 +4506,7 @@
       ]
     },
     {
-      "code": 9,
+      "code": 10,
       "name": "/01_power_mcu/GATE",
       "nodes": [
         [
@@ -3998,7 +4524,7 @@
       ]
     },
     {
-      "code": 10,
+      "code": 11,
       "name": "/01_power_mcu/ISENP",
       "nodes": [
         [
@@ -4008,11 +4534,15 @@
         [
           "R13",
           "1"
+        ],
+        [
+          "TP51",
+          "1"
         ]
       ]
     },
     {
-      "code": 11,
+      "code": 12,
       "name": "/01_power_mcu/PD_VMON",
       "nodes": [
         [
@@ -4030,7 +4560,7 @@
       ]
     },
     {
-      "code": 12,
+      "code": 13,
       "name": "/01_power_mcu/SCL",
       "nodes": [
         [
@@ -4056,7 +4586,7 @@
       ]
     },
     {
-      "code": 13,
+      "code": 14,
       "name": "/01_power_mcu/SDA",
       "nodes": [
         [
@@ -4082,7 +4612,7 @@
       ]
     },
     {
-      "code": 14,
+      "code": 15,
       "name": "/01_power_mcu/USB_DN",
       "nodes": [
         [
@@ -4100,7 +4630,7 @@
       ]
     },
     {
-      "code": 15,
+      "code": 16,
       "name": "/01_power_mcu/USB_DP",
       "nodes": [
         [
@@ -4118,7 +4648,7 @@
       ]
     },
     {
-      "code": 16,
+      "code": 17,
       "name": "/01_power_mcu/VBUS_IN",
       "nodes": [
         [
@@ -4150,13 +4680,17 @@
           "2"
         ],
         [
+          "TP52",
+          "1"
+        ],
+        [
           "U7",
           "16"
         ]
       ]
     },
     {
-      "code": 17,
+      "code": 18,
       "name": "/01_power_mcu/VBUS_RAW",
       "nodes": [
         [
@@ -4190,7 +4724,7 @@
       ]
     },
     {
-      "code": 18,
+      "code": 19,
       "name": "/01_power_mcu/VIN_PD",
       "nodes": [
         [
@@ -4224,7 +4758,7 @@
       ]
     },
     {
-      "code": 19,
+      "code": 20,
       "name": "/02_drive_transformer/DRV_A",
       "nodes": [
         [
@@ -4246,7 +4780,7 @@
       ]
     },
     {
-      "code": 20,
+      "code": 21,
       "name": "/02_drive_transformer/DRV_B",
       "nodes": [
         [
@@ -4272,7 +4806,7 @@
       ]
     },
     {
-      "code": 21,
+      "code": 22,
       "name": "/02_drive_transformer/DRV_CPH",
       "nodes": [
         [
@@ -4286,7 +4820,7 @@
       ]
     },
     {
-      "code": 22,
+      "code": 23,
       "name": "/02_drive_transformer/DRV_CPL",
       "nodes": [
         [
@@ -4300,7 +4834,7 @@
       ]
     },
     {
-      "code": 23,
+      "code": 24,
       "name": "/02_drive_transformer/DRV_IMODE",
       "nodes": [
         [
@@ -4314,7 +4848,7 @@
       ]
     },
     {
-      "code": 24,
+      "code": 25,
       "name": "/02_drive_transformer/DRV_IPROPI",
       "nodes": [
         [
@@ -4328,7 +4862,7 @@
       ]
     },
     {
-      "code": 25,
+      "code": 26,
       "name": "/02_drive_transformer/DRV_VCP",
       "nodes": [
         [
@@ -4338,24 +4872,6 @@
         [
           "U2",
           "12"
-        ]
-      ]
-    },
-    {
-      "code": 26,
-      "name": "/02_drive_transformer/DRV_nFAULT",
-      "nodes": [
-        [
-          "R63",
-          "2"
-        ],
-        [
-          "TP50",
-          "1"
-        ],
-        [
-          "U2",
-          "4"
         ]
       ]
     },
@@ -4393,6 +4909,10 @@
         ],
         [
           "D54",
+          "1"
+        ],
+        [
+          "R108",
           "1"
         ],
         [
@@ -4725,6 +5245,20 @@
     },
     {
       "code": 39,
+      "name": "/04_sense_safety/DRV_nSLEEP_RLY",
+      "nodes": [
+        [
+          "K1",
+          "5"
+        ],
+        [
+          "R105",
+          "1"
+        ]
+      ]
+    },
+    {
+      "code": 40,
       "name": "/04_sense_safety/HV_OUT",
       "nodes": [
         [
@@ -4742,11 +5276,73 @@
       ]
     },
     {
-      "code": 40,
+      "code": 41,
+      "name": "/04_sense_safety/HV_OV_TRIP",
+      "nodes": [
+        [
+          "D90",
+          "2"
+        ],
+        [
+          "Q2",
+          "1"
+        ],
+        [
+          "R106",
+          "1"
+        ],
+        [
+          "U11",
+          "1"
+        ]
+      ]
+    },
+    {
+      "code": 42,
+      "name": "/04_sense_safety/HV_SENSE_BUF",
+      "nodes": [
+        [
+          "R100",
+          "1"
+        ],
+        [
+          "R7",
+          "1"
+        ],
+        [
+          "U4",
+          "1"
+        ],
+        [
+          "U4",
+          "4"
+        ]
+      ]
+    },
+    {
+      "code": 43,
+      "name": "/04_sense_safety/HV_SENSE_IN",
+      "nodes": [
+        [
+          "R110",
+          "2"
+        ],
+        [
+          "U4",
+          "3"
+        ]
+      ]
+    },
+    {
+      "code": 44,
       "name": "/04_sense_safety/HV_SENSE_RAW",
       "nodes": [
         [
           "C13",
+          "1"
+        ],
+        [
+          "R110",
           "1"
         ],
         [
@@ -4756,15 +5352,11 @@
         [
           "R8",
           "1"
-        ],
-        [
-          "U4",
-          "3"
         ]
       ]
     },
     {
-      "code": 41,
+      "code": 45,
       "name": "/04_sense_safety/INTERLOCK_LOOP_1",
       "nodes": [
         [
@@ -4778,7 +5370,7 @@
       ]
     },
     {
-      "code": 42,
+      "code": 46,
       "name": "/04_sense_safety/INTERLOCK_LOOP_2",
       "nodes": [
         [
@@ -4792,7 +5384,7 @@
       ]
     },
     {
-      "code": 43,
+      "code": 47,
       "name": "/04_sense_safety/INTERLOCK_LOOP_3",
       "nodes": [
         [
@@ -4806,7 +5398,69 @@
       ]
     },
     {
-      "code": 44,
+      "code": 48,
+      "name": "/04_sense_safety/OV_LATCH",
+      "nodes": [
+        [
+          "D90",
+          "1"
+        ],
+        [
+          "R104",
+          "1"
+        ]
+      ]
+    },
+    {
+      "code": 49,
+      "name": "/04_sense_safety/OV_REF",
+      "nodes": [
+        [
+          "C90",
+          "1"
+        ],
+        [
+          "R102",
+          "2"
+        ],
+        [
+          "R103",
+          "1"
+        ],
+        [
+          "U11",
+          "4"
+        ]
+      ]
+    },
+    {
+      "code": 50,
+      "name": "/04_sense_safety/OV_SENSE",
+      "nodes": [
+        [
+          "D91",
+          "2"
+        ],
+        [
+          "R100",
+          "2"
+        ],
+        [
+          "R101",
+          "1"
+        ],
+        [
+          "R104",
+          "2"
+        ],
+        [
+          "U11",
+          "3"
+        ]
+      ]
+    },
+    {
+      "code": 51,
       "name": "/04_sense_safety/RELAY_COIL_POS",
       "nodes": [
         [
@@ -4828,7 +5482,7 @@
       ]
     },
     {
-      "code": 45,
+      "code": 52,
       "name": "/04_sense_safety/S3_1",
       "nodes": [
         [
@@ -4842,7 +5496,7 @@
       ]
     },
     {
-      "code": 46,
+      "code": 53,
       "name": "/04_sense_safety/S3_2",
       "nodes": [
         [
@@ -4856,7 +5510,7 @@
       ]
     },
     {
-      "code": 47,
+      "code": 54,
       "name": "/04_sense_safety/S4_1",
       "nodes": [
         [
@@ -4870,7 +5524,7 @@
       ]
     },
     {
-      "code": 48,
+      "code": 55,
       "name": "/04_sense_safety/S4_2",
       "nodes": [
         [
@@ -4884,7 +5538,7 @@
       ]
     },
     {
-      "code": 49,
+      "code": 56,
       "name": "/04_sense_safety/S5_1",
       "nodes": [
         [
@@ -4898,7 +5552,7 @@
       ]
     },
     {
-      "code": 50,
+      "code": 57,
       "name": "/04_sense_safety/S5_2",
       "nodes": [
         [
@@ -4912,7 +5566,7 @@
       ]
     },
     {
-      "code": 51,
+      "code": 58,
       "name": "/04_sense_safety/S6_1",
       "nodes": [
         [
@@ -4926,7 +5580,7 @@
       ]
     },
     {
-      "code": 52,
+      "code": 59,
       "name": "/04_sense_safety/S6_2",
       "nodes": [
         [
@@ -4940,7 +5594,7 @@
       ]
     },
     {
-      "code": 53,
+      "code": 60,
       "name": "/05_illumination/TSL_3V3",
       "nodes": [
         [
@@ -4962,7 +5616,7 @@
       ]
     },
     {
-      "code": 54,
+      "code": 61,
       "name": "/05_illumination/TSL_GND",
       "nodes": [
         [
@@ -4984,7 +5638,7 @@
       ]
     },
     {
-      "code": 55,
+      "code": 62,
       "name": "/05_illumination/TSL_SCL",
       "nodes": [
         [
@@ -4998,7 +5652,7 @@
       ]
     },
     {
-      "code": 56,
+      "code": 63,
       "name": "/05_illumination/TSL_SDA",
       "nodes": [
         [
@@ -5012,7 +5666,7 @@
       ]
     },
     {
-      "code": 57,
+      "code": 64,
       "name": "/DRV_IN1",
       "nodes": [
         [
@@ -5026,7 +5680,7 @@
       ]
     },
     {
-      "code": 58,
+      "code": 65,
       "name": "/DRV_IN2",
       "nodes": [
         [
@@ -5040,9 +5694,13 @@
       ]
     },
     {
-      "code": 59,
+      "code": 66,
       "name": "/DRV_SLEEP_CMD",
       "nodes": [
+        [
+          "D91",
+          "1"
+        ],
         [
           "J2",
           "18"
@@ -5054,12 +5712,16 @@
       ]
     },
     {
-      "code": 60,
+      "code": 67,
       "name": "/DRV_nSLEEP",
       "nodes": [
         [
-          "K1",
-          "5"
+          "Q2",
+          "3"
+        ],
+        [
+          "R105",
+          "2"
         ],
         [
           "R5",
@@ -5072,7 +5734,7 @@
       ]
     },
     {
-      "code": 61,
+      "code": 68,
       "name": "/HV_CURR_ADC",
       "nodes": [
         [
@@ -5094,7 +5756,7 @@
       ]
     },
     {
-      "code": 62,
+      "code": 69,
       "name": "/HV_RAW",
       "nodes": [
         [
@@ -5116,7 +5778,7 @@
       ]
     },
     {
-      "code": 63,
+      "code": 70,
       "name": "/HV_RETURN",
       "nodes": [
         [
@@ -5138,7 +5800,7 @@
       ]
     },
     {
-      "code": 64,
+      "code": 71,
       "name": "/HV_SENSE_ADC",
       "nodes": [
         [
@@ -5156,7 +5818,7 @@
       ]
     },
     {
-      "code": 65,
+      "code": 72,
       "name": "/INTERLOCK_OK",
       "nodes": [
         [
@@ -5170,7 +5832,7 @@
       ]
     },
     {
-      "code": 66,
+      "code": 73,
       "name": "/SEC_A",
       "nodes": [
         [
@@ -5192,7 +5854,7 @@
       ]
     },
     {
-      "code": 67,
+      "code": 74,
       "name": "/VIN_PROTECTED",
       "nodes": [
         [
@@ -5214,7 +5876,7 @@
       ]
     },
     {
-      "code": 68,
+      "code": 75,
       "name": "3V3",
       "nodes": [
         [
@@ -5234,6 +5896,10 @@
           "1"
         ],
         [
+          "C91",
+          "1"
+        ],
+        [
           "D1",
           "2"
         ],
@@ -5250,6 +5916,14 @@
           "2"
         ],
         [
+          "R102",
+          "1"
+        ],
+        [
+          "R107",
+          "1"
+        ],
+        [
           "R63",
           "1"
         ],
@@ -5260,6 +5934,10 @@
         [
           "U10",
           "3"
+        ],
+        [
+          "U11",
+          "5"
         ],
         [
           "U2",
@@ -5296,7 +5974,29 @@
       ]
     },
     {
-      "code": 69,
+      "code": 76,
+      "name": "BRIDGE_VMON",
+      "nodes": [
+        [
+          "C92",
+          "1"
+        ],
+        [
+          "R108",
+          "2"
+        ],
+        [
+          "R109",
+          "1"
+        ],
+        [
+          "U6",
+          "7"
+        ]
+      ]
+    },
+    {
+      "code": 77,
       "name": "BULK_CMD",
       "nodes": [
         [
@@ -5310,7 +6010,7 @@
       ]
     },
     {
-      "code": 70,
+      "code": 78,
       "name": "BULK_EN",
       "nodes": [
         [
@@ -5328,7 +6028,7 @@
       ]
     },
     {
-      "code": 71,
+      "code": 79,
       "name": "COIL_3V",
       "nodes": [
         [
@@ -5346,7 +6046,29 @@
       ]
     },
     {
-      "code": 72,
+      "code": 80,
+      "name": "DRV_nFAULT",
+      "nodes": [
+        [
+          "J2",
+          "29"
+        ],
+        [
+          "R63",
+          "2"
+        ],
+        [
+          "TP50",
+          "1"
+        ],
+        [
+          "U2",
+          "4"
+        ]
+      ]
+    },
+    {
+      "code": 81,
       "name": "GND",
       "nodes": [
         [
@@ -5419,6 +6141,18 @@
         ],
         [
           "C83",
+          "2"
+        ],
+        [
+          "C90",
+          "2"
+        ],
+        [
+          "C91",
+          "2"
+        ],
+        [
+          "C92",
           "2"
         ],
         [
@@ -5514,6 +6248,22 @@
           "8"
         ],
         [
+          "Q2",
+          "2"
+        ],
+        [
+          "R101",
+          "2"
+        ],
+        [
+          "R103",
+          "2"
+        ],
+        [
+          "R109",
+          "2"
+        ],
+        [
           "R11",
           "2"
         ],
@@ -5582,6 +6332,10 @@
           "2"
         ],
         [
+          "U11",
+          "2"
+        ],
+        [
           "U2",
           "15"
         ],
@@ -5636,7 +6390,21 @@
       ]
     },
     {
-      "code": 73,
+      "code": 82,
+      "name": "HV_OV_TRIP_GPIO",
+      "nodes": [
+        [
+          "J2",
+          "37"
+        ],
+        [
+          "R106",
+          "2"
+        ]
+      ]
+    },
+    {
+      "code": 83,
       "name": "Net-(C63-Pad1)",
       "nodes": [
         [
@@ -5650,7 +6418,7 @@
       ]
     },
     {
-      "code": 74,
+      "code": 84,
       "name": "Net-(D20-K)",
       "nodes": [
         [
@@ -5672,7 +6440,7 @@
       ]
     },
     {
-      "code": 75,
+      "code": 85,
       "name": "Net-(R8-Pad2)",
       "nodes": [
         [
@@ -5686,7 +6454,7 @@
       ]
     },
     {
-      "code": 76,
+      "code": 86,
       "name": "Net-(R20-Pad2)",
       "nodes": [
         [
@@ -5700,7 +6468,7 @@
       ]
     },
     {
-      "code": 77,
+      "code": 87,
       "name": "Net-(R21-Pad2)",
       "nodes": [
         [
@@ -5714,7 +6482,7 @@
       ]
     },
     {
-      "code": 78,
+      "code": 88,
       "name": "Net-(R22-Pad2)",
       "nodes": [
         [
@@ -5728,7 +6496,7 @@
       ]
     },
     {
-      "code": 79,
+      "code": 89,
       "name": "Net-(R23-Pad2)",
       "nodes": [
         [
@@ -5742,7 +6510,7 @@
       ]
     },
     {
-      "code": 80,
+      "code": 90,
       "name": "Net-(R24-Pad2)",
       "nodes": [
         [
@@ -5756,7 +6524,7 @@
       ]
     },
     {
-      "code": 81,
+      "code": 91,
       "name": "Net-(R25-Pad2)",
       "nodes": [
         [
@@ -5770,7 +6538,7 @@
       ]
     },
     {
-      "code": 82,
+      "code": 92,
       "name": "Net-(R26-Pad2)",
       "nodes": [
         [
@@ -5784,7 +6552,7 @@
       ]
     },
     {
-      "code": 83,
+      "code": 93,
       "name": "Net-(R27-Pad2)",
       "nodes": [
         [
@@ -5798,7 +6566,7 @@
       ]
     },
     {
-      "code": 84,
+      "code": 94,
       "name": "Net-(R28-Pad2)",
       "nodes": [
         [
@@ -5812,7 +6580,7 @@
       ]
     },
     {
-      "code": 85,
+      "code": 95,
       "name": "Net-(R30-Pad2)",
       "nodes": [
         [
@@ -5826,7 +6594,7 @@
       ]
     },
     {
-      "code": 86,
+      "code": 96,
       "name": "Net-(R31-Pad2)",
       "nodes": [
         [
@@ -5840,7 +6608,7 @@
       ]
     },
     {
-      "code": 87,
+      "code": 97,
       "name": "Net-(R32-Pad2)",
       "nodes": [
         [
@@ -5854,7 +6622,7 @@
       ]
     },
     {
-      "code": 88,
+      "code": 98,
       "name": "Net-(R33-Pad2)",
       "nodes": [
         [
@@ -5868,7 +6636,7 @@
       ]
     },
     {
-      "code": 89,
+      "code": 99,
       "name": "Net-(R34-Pad2)",
       "nodes": [
         [
@@ -5882,7 +6650,7 @@
       ]
     },
     {
-      "code": 90,
+      "code": 100,
       "name": "Net-(R35-Pad2)",
       "nodes": [
         [
@@ -5896,7 +6664,7 @@
       ]
     },
     {
-      "code": 91,
+      "code": 101,
       "name": "Net-(R36-Pad2)",
       "nodes": [
         [
@@ -5910,7 +6678,7 @@
       ]
     },
     {
-      "code": 92,
+      "code": 102,
       "name": "Net-(R37-Pad2)",
       "nodes": [
         [
@@ -5924,7 +6692,7 @@
       ]
     },
     {
-      "code": 93,
+      "code": 103,
       "name": "Net-(R38-Pad2)",
       "nodes": [
         [
@@ -5938,7 +6706,7 @@
       ]
     },
     {
-      "code": 94,
+      "code": 104,
       "name": "Net-(R140-Pad2)",
       "nodes": [
         [
@@ -5952,7 +6720,7 @@
       ]
     },
     {
-      "code": 95,
+      "code": 105,
       "name": "Net-(R142-Pad2)",
       "nodes": [
         [
@@ -5966,7 +6734,7 @@
       ]
     },
     {
-      "code": 96,
+      "code": 106,
       "name": "Net-(R144-Pad2)",
       "nodes": [
         [
@@ -5980,7 +6748,7 @@
       ]
     },
     {
-      "code": 97,
+      "code": 107,
       "name": "Net-(R146-Pad2)",
       "nodes": [
         [
@@ -5994,7 +6762,7 @@
       ]
     },
     {
-      "code": 98,
+      "code": 108,
       "name": "Net-(R148-Pad2)",
       "nodes": [
         [
@@ -6008,7 +6776,7 @@
       ]
     },
     {
-      "code": 99,
+      "code": 109,
       "name": "Net-(R150-Pad2)",
       "nodes": [
         [
@@ -6022,7 +6790,7 @@
       ]
     },
     {
-      "code": 100,
+      "code": 110,
       "name": "Net-(R152-Pad2)",
       "nodes": [
         [
@@ -6036,7 +6804,7 @@
       ]
     },
     {
-      "code": 101,
+      "code": 111,
       "name": "Net-(R154-Pad2)",
       "nodes": [
         [
@@ -6050,7 +6818,7 @@
       ]
     },
     {
-      "code": 102,
+      "code": 112,
       "name": "Net-(R156-Pad2)",
       "nodes": [
         [
@@ -6064,7 +6832,7 @@
       ]
     },
     {
-      "code": 103,
+      "code": 113,
       "name": "Net-(R158-Pad2)",
       "nodes": [
         [
@@ -6078,7 +6846,7 @@
       ]
     },
     {
-      "code": 104,
+      "code": 114,
       "name": "Net-(R160-Pad2)",
       "nodes": [
         [
@@ -6092,7 +6860,7 @@
       ]
     },
     {
-      "code": 105,
+      "code": 115,
       "name": "Net-(R162-Pad2)",
       "nodes": [
         [
@@ -6106,25 +6874,7 @@
       ]
     },
     {
-      "code": 106,
-      "name": "Net-(U4-IN-)",
-      "nodes": [
-        [
-          "R7",
-          "1"
-        ],
-        [
-          "U4",
-          "1"
-        ],
-        [
-          "U4",
-          "4"
-        ]
-      ]
-    },
-    {
-      "code": 107,
+      "code": 116,
       "name": "unconnected-(J2-Pin_2-Pad2)",
       "nodes": [
         [
@@ -6134,7 +6884,7 @@
       ]
     },
     {
-      "code": 108,
+      "code": 117,
       "name": "unconnected-(J2-Pin_4-Pad4)",
       "nodes": [
         [
@@ -6144,7 +6894,7 @@
       ]
     },
     {
-      "code": 109,
+      "code": 118,
       "name": "unconnected-(J2-Pin_7-Pad7)",
       "nodes": [
         [
@@ -6154,7 +6904,7 @@
       ]
     },
     {
-      "code": 110,
+      "code": 119,
       "name": "unconnected-(J2-Pin_8-Pad8)",
       "nodes": [
         [
@@ -6164,7 +6914,7 @@
       ]
     },
     {
-      "code": 111,
+      "code": 120,
       "name": "unconnected-(J2-Pin_10-Pad10)",
       "nodes": [
         [
@@ -6174,7 +6924,7 @@
       ]
     },
     {
-      "code": 112,
+      "code": 121,
       "name": "unconnected-(J2-Pin_11-Pad11)",
       "nodes": [
         [
@@ -6184,7 +6934,7 @@
       ]
     },
     {
-      "code": 113,
+      "code": 122,
       "name": "unconnected-(J2-Pin_13-Pad13)",
       "nodes": [
         [
@@ -6194,7 +6944,7 @@
       ]
     },
     {
-      "code": 114,
+      "code": 123,
       "name": "unconnected-(J2-Pin_15-Pad15)",
       "nodes": [
         [
@@ -6204,7 +6954,7 @@
       ]
     },
     {
-      "code": 115,
+      "code": 124,
       "name": "unconnected-(J2-Pin_17-Pad17)",
       "nodes": [
         [
@@ -6214,7 +6964,7 @@
       ]
     },
     {
-      "code": 116,
+      "code": 125,
       "name": "unconnected-(J2-Pin_19-Pad19)",
       "nodes": [
         [
@@ -6224,7 +6974,7 @@
       ]
     },
     {
-      "code": 117,
+      "code": 126,
       "name": "unconnected-(J2-Pin_21-Pad21)",
       "nodes": [
         [
@@ -6234,7 +6984,7 @@
       ]
     },
     {
-      "code": 118,
+      "code": 127,
       "name": "unconnected-(J2-Pin_23-Pad23)",
       "nodes": [
         [
@@ -6244,7 +6994,7 @@
       ]
     },
     {
-      "code": 119,
+      "code": 128,
       "name": "unconnected-(J2-Pin_24-Pad24)",
       "nodes": [
         [
@@ -6254,7 +7004,7 @@
       ]
     },
     {
-      "code": 120,
+      "code": 129,
       "name": "unconnected-(J2-Pin_26-Pad26)",
       "nodes": [
         [
@@ -6264,7 +7014,7 @@
       ]
     },
     {
-      "code": 121,
+      "code": 130,
       "name": "unconnected-(J2-Pin_27-Pad27)",
       "nodes": [
         [
@@ -6274,7 +7024,7 @@
       ]
     },
     {
-      "code": 122,
+      "code": 131,
       "name": "unconnected-(J2-Pin_28-Pad28)",
       "nodes": [
         [
@@ -6284,27 +7034,7 @@
       ]
     },
     {
-      "code": 123,
-      "name": "unconnected-(J2-Pin_29-Pad29)",
-      "nodes": [
-        [
-          "J2",
-          "29"
-        ]
-      ]
-    },
-    {
-      "code": 124,
-      "name": "unconnected-(J2-Pin_31-Pad31)",
-      "nodes": [
-        [
-          "J2",
-          "31"
-        ]
-      ]
-    },
-    {
-      "code": 125,
+      "code": 132,
       "name": "unconnected-(J2-Pin_32-Pad32)",
       "nodes": [
         [
@@ -6314,7 +7044,7 @@
       ]
     },
     {
-      "code": 126,
+      "code": 133,
       "name": "unconnected-(J2-Pin_33-Pad33)",
       "nodes": [
         [
@@ -6324,7 +7054,7 @@
       ]
     },
     {
-      "code": 127,
+      "code": 134,
       "name": "unconnected-(J2-Pin_36-Pad36)",
       "nodes": [
         [
@@ -6334,17 +7064,7 @@
       ]
     },
     {
-      "code": 128,
-      "name": "unconnected-(J2-Pin_37-Pad37)",
-      "nodes": [
-        [
-          "J2",
-          "37"
-        ]
-      ]
-    },
-    {
-      "code": 129,
+      "code": 135,
       "name": "unconnected-(J2-Pin_38-Pad38)",
       "nodes": [
         [
@@ -6354,7 +7074,7 @@
       ]
     },
     {
-      "code": 130,
+      "code": 136,
       "name": "unconnected-(J2-Pin_40-Pad40)",
       "nodes": [
         [
@@ -6364,7 +7084,7 @@
       ]
     },
     {
-      "code": 131,
+      "code": 137,
       "name": "unconnected-(J3-SBU1-PadA8)",
       "nodes": [
         [
@@ -6374,7 +7094,7 @@
       ]
     },
     {
-      "code": 132,
+      "code": 138,
       "name": "unconnected-(J3-SBU2-PadB8)",
       "nodes": [
         [
@@ -6384,7 +7104,7 @@
       ]
     },
     {
-      "code": 133,
+      "code": 139,
       "name": "unconnected-(K1-NC1-Pad2)",
       "nodes": [
         [
@@ -6394,7 +7114,7 @@
       ]
     },
     {
-      "code": 134,
+      "code": 140,
       "name": "unconnected-(K1-NC2-Pad7)",
       "nodes": [
         [
@@ -6404,7 +7124,7 @@
       ]
     },
     {
-      "code": 135,
+      "code": 141,
       "name": "unconnected-(S3-NC-Pad3)",
       "nodes": [
         [
@@ -6414,7 +7134,7 @@
       ]
     },
     {
-      "code": 136,
+      "code": 142,
       "name": "unconnected-(S4-NC-Pad3)",
       "nodes": [
         [
@@ -6424,7 +7144,7 @@
       ]
     },
     {
-      "code": 137,
+      "code": 143,
       "name": "unconnected-(S5-NC-Pad3)",
       "nodes": [
         [
@@ -6434,7 +7154,7 @@
       ]
     },
     {
-      "code": 138,
+      "code": 144,
       "name": "unconnected-(S6-NC-Pad3)",
       "nodes": [
         [
@@ -6444,7 +7164,7 @@
       ]
     },
     {
-      "code": 139,
+      "code": 145,
       "name": "unconnected-(T1-FB_A-Pad2)",
       "nodes": [
         [
@@ -6454,7 +7174,7 @@
       ]
     },
     {
-      "code": 140,
+      "code": 146,
       "name": "unconnected-(T1-FB_B-Pad4)",
       "nodes": [
         [
@@ -6464,7 +7184,7 @@
       ]
     },
     {
-      "code": 141,
+      "code": 147,
       "name": "unconnected-(T1-PRI_CT-Pad3)",
       "nodes": [
         [
@@ -6474,17 +7194,7 @@
       ]
     },
     {
-      "code": 142,
-      "name": "unconnected-(U6-AIN3-Pad7)",
-      "nodes": [
-        [
-          "U6",
-          "7"
-        ]
-      ]
-    },
-    {
-      "code": 143,
+      "code": 148,
       "name": "unconnected-(U6-ALERT{slash}RDY-Pad2)",
       "nodes": [
         [
@@ -6494,7 +7204,7 @@
       ]
     },
     {
-      "code": 144,
+      "code": 149,
       "name": "unconnected-(U7-EN_HVDCP-Pad7)",
       "nodes": [
         [
@@ -6504,7 +7214,7 @@
       ]
     },
     {
-      "code": 145,
+      "code": 150,
       "name": "unconnected-(U7-FAULT-Pad13)",
       "nodes": [
         [
@@ -6514,7 +7224,7 @@
       ]
     },
     {
-      "code": 146,
+      "code": 151,
       "name": "unconnected-(U7-INT_N-Pad11)",
       "nodes": [
         [
@@ -6524,7 +7234,7 @@
       ]
     },
     {
-      "code": 147,
+      "code": 152,
       "name": "unconnected-(U8-INT-Pad2)",
       "nodes": [
         [
@@ -6534,7 +7244,7 @@
       ]
     },
     {
-      "code": 148,
+      "code": 153,
       "name": "unconnected-(U8-NC-Pad4)",
       "nodes": [
         [
@@ -6544,7 +7254,7 @@
       ]
     },
     {
-      "code": 149,
+      "code": 154,
       "name": "unconnected-(U9-AUXOFF-Pad3)",
       "nodes": [
         [
@@ -6554,17 +7264,7 @@
       ]
     },
     {
-      "code": 150,
-      "name": "unconnected-(U9-FLT-Pad4)",
-      "nodes": [
-        [
-          "U9",
-          "4"
-        ]
-      ]
-    },
-    {
-      "code": 151,
+      "code": 155,
       "name": "unconnected-(U9-ITIMER-Pad10)",
       "nodes": [
         [
@@ -6574,7 +7274,7 @@
       ]
     },
     {
-      "code": 152,
+      "code": 156,
       "name": "unconnected-(U10-NC-Pad4)",
       "nodes": [
         [

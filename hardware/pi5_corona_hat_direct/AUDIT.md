@@ -5,10 +5,18 @@ C249245 capacitors and 5% C2095568 ballast resistors, D51 C49066946, and large
 high-voltage warning graphics on both sides. It is not a qualified production release.
 
 Native KiCad 10 ERC, DRC, open-connection and schematic-parity counts are zero;
-all 13 connectivity audits pass. Current machine-readable reports are
+all 17 connectivity audits pass. Current machine-readable reports are
 `exports/erc.json`, `exports/jlcpcb-drc.json` and `exports/jlcpcb-validation.json`.
 `exports/manufacturing-archive-validation.json` binds verified Gerber payloads to
 the current board hash. `exports/working-version.json` identifies the promoted design.
+
+Design-review fixes from 2026-10-20/21 are recorded in [AUDIT_TO_FIX.md](AUDIT_TO_FIX.md):
+- bleeder edge clearance and voltage-tiered HV rules
+- the hardware 17 kV overvoltage trip
+- firmware fault and bridge telemetry
+- R13 Kelvin pads, the U4 input resistor, J60 edge margin, R60 at 10 kΩ, and SOD-323 courtyards
+
+The hardware trip still needs bench characterization.
 
 ## Open qualification and procurement issues
 

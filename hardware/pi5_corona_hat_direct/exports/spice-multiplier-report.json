@@ -5,9 +5,9 @@
   "drive_frequency_kHz": 68.0,
   "drive_secondary_vpk": 1250.0,
   "diodes": "12x Sunmate 2CL75 (16 kV, 5 mA)",
-  "capacitors": "12x Vishay S102M59Z5UU83L0R (1.0 nF, 6.0 kV)",
+  "capacitors": "12x STE A12B1D102KN0B0S0N0 / C249245 (1.0 nF, 6.0 kV, Y5P, 10%)",
   "bleeders": "24x Bourns CHV2512-JW-107ELF (100 M\u03a9, 3.0 kV)",
-  "ballast": "10x Bourns CHV2512-FX-1005ELF (10 M\u03a9, 3.0 kV, 100 M\u03a9 total)",
+  "ballast": "10x Bourns CHV2512-JW-106ELF / C2095568 (10 M\u03a9, 5%, 3.0 kV, 100 M\u03a9 total)",
   "divider": "10x Bourns CHV2512-JW-107ELF (100 M\u03a9, 3.0 kV, 1000 M\u03a9 total)",
   "results": {
     "open_circuit": {
@@ -41,7 +41,7 @@
     },
     "safety_bleed_down": {
       "shutdown_analysis": {
-        "netlist_sha256": "314f33318a9640986ceb849006c51c9c8f3f908885094dba321f5475c843026f",
+        "netlist_sha256": "d7e2ede309dd8705df7169e291cf504a97cd745bdff2f9c4a5ec914f0120bbe2",
         "external_capacitance_pf": 100.0,
         "secondary_vpk": 1250,
         "frequency_hz": 68000,
