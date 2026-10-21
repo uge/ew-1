@@ -148,16 +148,17 @@
       "source": "https://jlcpcb.com/partdetail/C393074"
     },
     "01_power_mcu/R14": {
-      "lcsc": "C25816",
+      "lcsc": "C25819",
       "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
       "mpn": "0603WAF4702T5E",
       "status": "CATALOG_MATCH",
-      "notes": "47k 1% 0603 series gate resistor between GATE and EN_DRV.",
+      "notes": "47k 1% 0603 series gate resistor between GATE and EN_DRV. Corrected 2026-10-21: former C25816 is 0603WAF3833T5E (383 kOhm).",
       "footprint": null,
-      "stock": 1000000,
+      "stock": 2543020,
       "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C25816"
+      "source": "https://jlcpcb.com/partdetail/C25819",
+      "checked_date": "2026-10-21"
     },
     "01_power_mcu/C21": {
       "lcsc": "C126618",
@@ -294,15 +295,16 @@
     },
     "01_power_mcu/C18": {
       "lcsc": "C15849",
-      "manufacturer": "SAMSUNG",
-      "mpn": "CL10A105KA8NNNC",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "mpn": "CL10A105KB8NNNC",
       "status": "CATALOG_MATCH",
-      "notes": "1uF 16V 0603 X5R ceramic bypass for HUSB238A VDD.",
+      "notes": "1uF 50V X5R 0603 bypass for HUSB238A VDD (3V3). Corrected 2026-10-21: MPN aligned to C15849 (CL10A105KB8NNNC, 50 V, Basic).",
       "footprint": null,
-      "stock": 100000,
+      "stock": 8129560,
       "class": "Basic",
       "assembly": "smtWeld",
-      "source": "https://jlcpcb.com/partdetail/C15849"
+      "source": "https://jlcpcb.com/partdetail/C15849",
+      "checked_date": "2026-10-21"
     },
     "01_power_mcu/C71": {
       "lcsc": "C14663",

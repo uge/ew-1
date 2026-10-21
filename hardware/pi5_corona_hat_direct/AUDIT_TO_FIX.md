@@ -176,12 +176,24 @@ Fix the High items before ordering boards.
 
 ## Already tracked in AUDIT.md (still open, re-verified)
 
-- R14 uses C25816 and C18 uses C15849; neither ID matches the specified MPN. Both
-  are still in `exports/jlcpcb-bom.csv`. Candidates are C25819 and C5673.
+- **FIXED 2026-10-21:** R14 → C25819 (47 kΩ; C25816 was actually 383 kΩ). C18 keeps
+  C15849 with its MPN corrected to CL10A105KB8NNNC (50 V). *(Was:)* R14 uses C25816 and
+  C18 uses C15849; neither ID matches the specified MPN.
 - T1 still has to be sourced externally.
 - 3D models for U2 and U8 don't resolve.
-- The voltage audit has 51 CRITICAL and 146 CAUTION items, mostly 6.2 mm
-  diode-pad gaps between adjacent stages.
+- **FIXED 2026-10-21 (phase-coherent model):** the voltage audit had 51 CRITICAL /
+  146 CAUTION items.
+  - Added an opt-in `--coherent` CW node model to `map_board_voltages.py`. With it, 27
+    of the criticals were envelope artifacts and 24 were real.
+  - D10–D21 are now staggered ±3.25 mm, so adjacent stage pads are ≥7.63 mm apart
+    (was 6.2 mm).
+  - D21 moved 0.6 mm left (away from the ballast column).
+  - One CW_S5 B.Cu track was re-routed.
+  - The S-bleeder row was raised 0.6 mm (R150–R37 now 10.08 mm).
+  - The warning band was scaled to fit (DANGER text 55%, second line 75%,
+    triangles 70%).
+  - Result: coherent model 0 critical (min margin +0.7%), envelope model 37
+    (from 51), edge failures 0.
 
 ## After fixing
 

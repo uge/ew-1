@@ -32,8 +32,8 @@ SMBJ22A / C49066946, unidirectional SMB; cathode pad 1, existing nets/pose.
 T1 Coilcraft FL2015-4LD remains externally sourced. J60/J61 and J62–J69 are
 solder-wire copper terminations, not purchased generic connectors. C63/R64
 are schematic DNP. MP1 is board-only, DNP, locked, padless, excluded from BOM/POS.
-Current matching BOM has 159 components / 53 rows. R14/C18 mismatches in AUDIT.md
-remain unresolved; do not silently report them as fixed.
+Current matching BOM has 159 components / 53 rows. R14 is C25819 (0603WAF4702T5E, 47 kΩ;
+never C25816, which is 383 kΩ). C18 is C15849 / CL10A105KB8NNNC (1 µF 50 V X5R).
 
 R30–R39 and R140–R163 use Bourns CHV2512-JW-107ELF / C2089706,
 100 MΩ / 5% / 3 kV / 2512. Preserve ten divider parts and two parts per
@@ -116,7 +116,11 @@ Add any new HV node to the tier matching its peak voltage. Narrow rated-part/ser
 are not universal HV exemptions. No pours on either side in HV; LV GND pour
 x52–101, both-layer HV no-pour region from x102. Native DRC is not HV certification.
 Preserve 16 mm cell pitch, 8 mm inner/12 mm final diode offsets and 11.75 mm
-R30-to-R31 spacing. Pumping-column bleeders R140–R161 form one row at y=63 on an
+R30-to-R31 spacing. Diodes D10–D21 are staggered vertically: even refs at y=95.75, odd
+refs at y=102.25 (±3.25 mm), D21 at x=223.4, so adjacent stage pads are ≥7.63 mm apart
+(IPC-2221 B4 at 2.5 kV). The S-bleeder row R142/R143/R150/R151/R158/R159 is at y=147.4.
+The warning band sits between the lowered diode pads and the S caps (DANGER text 55%,
+second line 75%, triangles 70% of the original size); C101–C111 references are below the caps. Pumping-column bleeders R140–R161 form one row at y=63 on an
 8 mm pitch (adjacent pads share a net); keep every HV_STAGE pad ≥10 mm from Edge.Cuts
 (enforced by the "HV_STAGE to board edge" rule). Recalculate insulation/fit after compaction.
 

@@ -14,11 +14,11 @@
   "source_sha256": {
     "03_multiplier.kicad_sch": "ef964927cbc9cfbbcbd8c87dc3121af946b2bb315e26087d12373e5d94deae9a",
     "05_illumination.kicad_sch": "70a3d85af3e313976ebdab7cc831fc946e60e2c4145a3a11836f8e82539320b0",
-    "01_power_mcu.kicad_sch": "612cf7b749fa97f2ba804183debb5e6ed49337fd76834a1eb4f3a50284ee16a4",
+    "01_power_mcu.kicad_sch": "c26009434e64370b55780eb80acf9e002003f7f7fb58d05df6f48e91cf21af91",
     "pi5_corona_hv.kicad_sch": "6bb0386bf581fa425e85c3537e06586499028c764076f97bad414ba16f404229",
     "02_drive_transformer.kicad_sch": "bbb9cd2d10dac52e3b2d39aa46219105e9be06c6fd248e731fcf65673f0cf297",
     "04_sense_safety.kicad_sch": "929e0ef4e7af01ceac0584a8f8ca348a54a0ca09631afe9bd6612d565154761d",
-    "pi5_corona_hv.kicad_pcb": "c43a7087d8a969b673718164e927ab1e2ebca36c6c5806bcf35a54916d545f07",
+    "pi5_corona_hv.kicad_pcb": "21e3032cb506ae56866b7f136c72eadefd6d59aa8992610b66987f66b1e79b2b",
     "pi5_corona_hv.kicad_pro": "5d3b275a805fd84b9bbe082695aa0eee5055c88c46e2728e2ea05343e61b4bcd",
     "pi5_corona_hv.kicad_dru": "3843d4f7d541418f3bfa68d90433285d3552b9a750c29eaa19f832ff0256b208"
   },

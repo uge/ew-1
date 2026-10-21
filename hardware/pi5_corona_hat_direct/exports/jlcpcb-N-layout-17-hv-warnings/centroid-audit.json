@@ -331,7 +331,7 @@
     "reference": "D10",
     "board_centroid_mm": [
       136.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -339,7 +339,7 @@
     "reference": "D11",
     "board_centroid_mm": [
       144.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -347,7 +347,7 @@
     "reference": "D12",
     "board_centroid_mm": [
       152.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -355,7 +355,7 @@
     "reference": "D13",
     "board_centroid_mm": [
       160.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -363,7 +363,7 @@
     "reference": "D14",
     "board_centroid_mm": [
       168.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -371,7 +371,7 @@
     "reference": "D15",
     "board_centroid_mm": [
       176.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -379,7 +379,7 @@
     "reference": "D16",
     "board_centroid_mm": [
       184.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -387,7 +387,7 @@
     "reference": "D17",
     "board_centroid_mm": [
       192.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -395,7 +395,7 @@
     "reference": "D18",
     "board_centroid_mm": [
       200.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
@@ -403,7 +403,7 @@
     "reference": "D19",
     "board_centroid_mm": [
       208.0,
-      99.0
+      102.25
     ],
     "rotation": 90.0
   },
@@ -411,15 +411,15 @@
     "reference": "D20",
     "board_centroid_mm": [
       216.0,
-      99.0
+      95.75
     ],
     "rotation": 270.0
   },
   {
     "reference": "D21",
     "board_centroid_mm": [
-      224.0,
-      99.0
+      223.4,
+      102.25
     ],
     "rotation": 90.0
   },
@@ -995,7 +995,7 @@
     "reference": "R142",
     "board_centroid_mm": [
       131.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -1003,7 +1003,7 @@
     "reference": "R143",
     "board_centroid_mm": [
       141.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -1059,7 +1059,7 @@
     "reference": "R150",
     "board_centroid_mm": [
       163.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -1067,7 +1067,7 @@
     "reference": "R151",
     "board_centroid_mm": [
       173.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -1123,7 +1123,7 @@
     "reference": "R158",
     "board_centroid_mm": [
       195.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },
@@ -1131,7 +1131,7 @@
     "reference": "R159",
     "board_centroid_mm": [
       205.0,
-      148.0
+      147.4
     ],
     "rotation": 0.0
   },

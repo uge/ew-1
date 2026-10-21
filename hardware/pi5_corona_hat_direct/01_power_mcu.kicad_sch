@@ -17862,7 +17862,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25816"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17884,7 +17884,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25816"
+		(property "LCSC" "C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17895,7 +17895,7 @@
 				)
 			)
 		)
-		(property "JLCPCB Part #" "C25816"
+		(property "JLCPCB Part #" "C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17961,7 +17961,7 @@
 				)
 			)
 		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25816"
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17972,7 +17972,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-21"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -17994,7 +17994,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C25816"
+		(property "LCSC Part" "C25819"
 			(at 193.04 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -24679,7 +24679,7 @@
 				)
 			)
 		)
-		(property "Value" "1uF 16V 10%"
+		(property "Value" "1uF 50V 10%"
 			(at 116.84 136.525 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24744,7 +24744,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "SAMSUNG"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -24755,7 +24755,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL10A105KA8NNNC"
+		(property "MPN" "CL10A105KB8NNNC"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -24810,7 +24810,7 @@
 				)
 			)
 		)
-		(property "Catalog Checked" "2026-10-02"
+		(property "Catalog Checked" "2026-10-21"
 			(at 109.22 134.62 0)
 			(hide yes)
 			(show_name no)
