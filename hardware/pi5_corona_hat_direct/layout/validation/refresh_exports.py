@@ -4,9 +4,25 @@ from pathlib import Path
 import hashlib
 import json
 import subprocess
+import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def get_python():
+    candidates = [
+        '/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3',
+        '/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3',
+        sys.executable,
+        '/usr/bin/python3',
+    ]
+    for c in candidates:
+        if Path(c).exists():
+            res = subprocess.run([c, '-c', 'import pcbnew'], capture_output=True)
+            if res.returncode == 0:
+                return c
+    return sys.executable
 
 
 def run(*args):
@@ -36,9 +52,10 @@ def refresh():
     run('kicad-cli', 'pcb', 'drc', '--schematic-parity', '--format', 'json',
         '--exit-code-violations', '--output', exports / 'jlcpcb-drc.json', board)
     run('ruby', ROOT / 'layout/export_procurement.rb')
-    run('/usr/bin/python3', ROOT / 'layout/generate_jlcpcb_cpl.py')
-    run('/usr/bin/python3', ROOT / 'layout/validation/regenerate_manufacturing.py')
-    run('/usr/bin/python3', ROOT / 'layout/validation/package_jlcpcb.py')
+    py = get_python()
+    run(py, ROOT / 'layout/generate_jlcpcb_cpl.py')
+    run(py, ROOT / 'layout/validation/regenerate_manufacturing.py')
+    run(py, ROOT / 'layout/validation/package_jlcpcb.py')
     if any(digest(path) != value for path, value in before.items()):
         raise RuntimeError('Export unexpectedly altered native design sources')
     report = json.loads((exports / 'jlcpcb-validation.json').read_text())

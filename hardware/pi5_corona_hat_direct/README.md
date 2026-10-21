@@ -17,12 +17,10 @@ are present in the native PCB. DNP parts are C63/R64; MP1 is a DNP mechanical re
 | D51 | hongjiacheng SMBJ22A / C49066946 |
 | T1 | Coilcraft FL2015-4LD; external sourcing required |
 
-Use [the current JLCPCB package](exports/jlcpcb-N-layout-17-hv-warnings-package.zip)
-for Gerbers/drills, BOM and CPL: 159 components across 53 matching BOM rows.
-`exports/jlcpcb-bom.csv`, `jlcpcb-cpl.csv` and `jlcpcb-gerbers.zip` are the
-corresponding standalone upload files. Only T1 remains a purchased-component
-external-source exception. The complete procurement BOM includes DNP parts and
-PCB-only features; the matching BOM/CPL excludes them.
+Use the current JLCPCB deliverables for Gerbers/drills, BOM and CPL: 159 components
+across 53 matching BOM rows. `exports/jlcpcb-bom.csv`, `exports/jlcpcb-cpl.csv` and
+`exports/jlcpcb-gerbers.zip` are the upload files. Only T1 remains a purchased-component
+external-source exception. DNP parts and PCB-only features are excluded.
 
 [Front](renders/hv-warning-front.png) and [back](renders/hv-warning-back.png)
 previews show current markings. These are diagnostic layer previews, not 3D assembly

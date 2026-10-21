@@ -1,9 +1,14 @@
 require_relative 'kicad_sexp'
 require 'csv'
+module Enumerable
+  def tally
+    each_with_object(Hash.new(0)) { |item, hash| hash[item] += 1 }
+  end unless method_defined?(:tally)
+end
 raise 'Audit connectivity regression failed' unless system('ruby',File.join(__dir__,'validation/check_audit_nets.rb'))
 b=File.expand_path('..',__dir__)+'/';m=JSON.parse(File.read(b+'procurement/part-assignments.json'))['parts']
 rows=[];fps=[];refs=[];dnp=[];padissues=[]
-Dir[b+'*.kicad_sch'].each{|f|s=Sch.new(f);s.comps.each{|n|r=s.ref(n);refs<<r;next if r.start_with?('#');fields=n.children('property').to_h{|p|[p.v,p.v(2)]};a=m[File.basename(f,'.kicad_sch')+'/'+r] || raise(r);raise "Catalog mismatch #{r}" unless fields['LCSC']==a['lcsc'] && fields['MPN']==a['mpn'];foot=fields['Footprint'];lib,fn=foot.split(':');path= lib=='ionic_thrust_hv' ? b+'ionic_thrust_hv.pretty/'+fn+'.kicad_mod' : '/usr/share/kicad/footprints/'+lib+'.pretty/'+fn+'.kicad_mod';raise "No footprint #{r} #{path}" unless File.exist?(path);fp=Sch.new(path);pads=fp.root.children('pad').map{|p|p.v}.reject(&:empty?).uniq;ls=s.root.child('lib_symbols').children('symbol').find{|x|x.v==n.child('lib_id').v};pins=ls.children('symbol').flat_map{|u|u.children('pin').map{|p|p.child('number').v}}.uniq;missing=pins-pads;extra=pads-pins-['MP'];padissues<<{ref:r,missing_pads:missing,extra_pads:extra} unless missing.empty?&&extra.empty?;dnp<<r if n.child('dnp').v=='yes';rows<<[fields['Value'],r,foot,fields['LCSC'],fields['Manufacturer'],fields['MPN'],1,n.child('dnp').v=='yes' ? 'Yes' : 'No',a['status'],a['stock'],a['class'],a['assembly'],a['source'],a['notes']];fps<<path}}
+Dir[b+'*.kicad_sch'].each{|f|s=Sch.new(f);s.comps.each{|n|r=s.ref(n);refs<<r;next if r.start_with?('#');fields=n.children('property').to_h{|p|[p.v,p.v(2)]};a=m[File.basename(f,'.kicad_sch')+'/'+r] || raise(r);raise "Catalog mismatch #{r}" unless fields['LCSC']==a['lcsc'] && fields['MPN']==a['mpn'];foot=fields['Footprint'];lib,fn=foot.split(':');path= lib=='ionic_thrust_hv' ? b+'ionic_thrust_hv.pretty/'+fn+'.kicad_mod' : ['/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints','/usr/share/kicad/footprints','/Library/Application Support/kicad/footprints'].map{|d|"#{d}/#{lib}.pretty/#{fn}.kicad_mod"}.find{|p|File.exist?(p)};raise "No footprint #{r} #{foot}" unless path&&File.exist?(path);fp=Sch.new(path);pads=fp.root.children('pad').map{|p|p.v}.reject(&:empty?).uniq;ls=s.root.child('lib_symbols').children('symbol').find{|x|x.v==n.child('lib_id').v};pins=ls.children('symbol').flat_map{|u|u.children('pin').map{|p|p.child('number').v}}.uniq;missing=pins-pads;extra=pads-pins-['MP'];padissues<<{ref:r,missing_pads:missing,extra_pads:extra} unless missing.empty?&&extra.empty?;dnp<<r if n.child('dnp').v=='yes';rows<<[fields['Value'],r,foot,fields['LCSC'],fields['Manufacturer'],fields['MPN'],1,n.child('dnp').v=='yes' ? 'Yes' : 'No',a['status'],a['stock'],a['class'],a['assembly'],a['source'],a['notes']];fps<<path}}
 raise 'Duplicate annotation' unless refs.uniq.length==refs.length
 raise 'DNP changed' unless dnp.sort==%w[C63 R64]
 # Pin/pad mismatch is a fabrication hold, never silently approved.
