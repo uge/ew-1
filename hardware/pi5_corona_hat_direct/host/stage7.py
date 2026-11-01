@@ -5,6 +5,7 @@
   stage7.py burst FREQ_HZ [SECS]   7.2  one single-ended burst (IN1 PWM 50%, IN2 = 0)
   stage7.py sweep F1,F2,...        7.3  1 s bursts, >= 10 s apart, stops at AIN0 >= TARGET
   stage7.py decay SECS             7.5  log AIN0 only (no drive)
+  stage7.py comp  FREQ_HZ [SECS] [--vbus 9]   7.4/7.6 (--vbus 9: user override 2026-11-01, option A)
   stage7.py comp  FREQ_HZ [SECS]   7.4  ONE complementary burst: IN1 = ch2 normal, IN2 = ch3 INVERSED
                                    (approved 2026-11-01; stop restores ch3 polarity normal and checks GPIO19 low)
 
@@ -20,6 +21,8 @@ import csv, os, subprocess, sys, time
 from smbus2 import SMBus
 import gpiod
 from gpiod.line import Direction, Bias
+sys.path.insert(0, "/home/uge")
+import husb238a
 
 PWMCHIP = "/sys/class/pwm/pwmchip0"
 CH = 2                       # GPIO18 = PWM0_CHAN2 = DRV_IN1
@@ -101,6 +104,7 @@ class Rig:
                     config={tuple(lines): gpiod.LineSettings(direction=Direction.INPUT, bias=Bias.AS_IS)})
         self.b = SMBus(1); self.t0 = time.monotonic(); self.rows = []; self.events = []; self.stoplog = []
         self.last = {"vb": 0.0, "br": 0.0, "a1": 0.0}; self.n = 0; self.base3 = None; self.h3 = []
+        self.vb_band = (4.5, 5.6); self.br_band = (4.0, 5.6); self.br_bulk = (4.4, 5.4)
     def gp(self): return {n: self.req.get_value(l).value for l, n in lines.items()}
     def t(self): return time.monotonic() - self.t0
     def ev(self, m): self.events.append((round(self.t(), 3), m)); print(f"  [{self.t():7.3f}s] {m}", flush=True)
@@ -129,8 +133,8 @@ class Rig:
         if live and g["nFAULT"] == 0: why.append("DRV_nFAULT low")
         if need_intlk and g["INTLK"] == 0: why.append("interlock opened")
         if self.last["a1"] > AIN1_ABORT: why.append(f"AIN1 {self.last['a1']:.3f} V (return current)")
-        if self.n > 3 and not 4.5 <= self.last["vb"] <= 5.6: why.append(f"VBUS {self.last['vb']:.2f}")
-        if bridge_on and self.n > 6 and not 4.0 <= self.last["br"] <= 5.6: why.append(f"bridge {self.last['br']:.2f}")
+        if self.n > 3 and not self.vb_band[0] <= self.last["vb"] <= self.vb_band[1]: why.append(f"VBUS {self.last['vb']:.2f}")
+        if bridge_on and self.n > 6 and not self.br_band[0] <= self.last["br"] <= self.br_band[1]: why.append(f"bridge {self.last['br']:.2f}")
         if g19 == 1 and not allow_in2: why.append("GPIO19 (IN2) high")
         if self.base3 and self.med3() - self.base3 > 0.020: why.append(f"3V3 +{(self.med3()-self.base3)*1000:.0f} mA")
         return "; ".join(why)
@@ -191,7 +195,7 @@ def run_burst(rig, freq, secs, dry, phase_tag="burst", comp=False):
             a0, g, g19 = rig.sample("bulk")
             why = rig.checks(a0, g, g19, live=True, bridge_on=False)
             if why: return why, a0, rig.t()
-        if not 4.4 <= rig.last["br"] <= 5.4: return f"bridge {rig.last['br']:.2f} V not ~4.9", 0.0, rig.t()
+        if not rig.br_bulk[0] <= rig.last["br"] <= rig.br_bulk[1]: return f"bridge {rig.last['br']:.2f} V not in {rig.br_bulk}", 0.0, rig.t()
         if lev(18) or lev(19): return "GPIO18/19 not low before wake", 0.0, rig.t()
         gpio(24, 1); rig.ev("GPIO24 high (driver awake)"); time.sleep(0.003)
         if rig.gp()["nFAULT"] == 0: return "nFAULT low after wake", 0.0, rig.t()
@@ -221,15 +225,26 @@ def log_decay(rig, secs):
 def main():
     if len(sys.argv) < 2 or sys.argv[1] not in ("dry", "burst", "sweep", "decay", "comp"):
         print(__doc__); return 2
+    vbus9 = "--vbus" in sys.argv and sys.argv[sys.argv.index("--vbus") + 1] == "9"
+    if "--vbus" in sys.argv:
+        i = sys.argv.index("--vbus"); del sys.argv[i:i + 2]
     mode = sys.argv[1]
+    if vbus9 and mode not in ("burst", "comp"): print("--vbus 9 only for burst/comp"); return 2
     gpio(24, 0); gpio(25, 0)
-    rig = Rig(mode); abort = None
+    rig = Rig(mode + ("_9V" if vbus9 else "")); abort = None
+    pd = husb238a.HUSB238A(allow_write=True)
     try:
         if mode == "decay":
             secs = float(sys.argv[2]) if len(sys.argv) > 2 else 60.0
             t_stop = rig.t(); log_decay(rig, secs); decay_report(rig.rows, t_stop)
             return 0
         if not rig.pre(need_intlk=(mode != "dry")): return 2
+        if vbus9:
+            rig.ev("request 9 V (GPIO25 low) - user override of option-1 5 V limit")
+            rig.ev(f"request 9 V AMS={pd.request_fixed(9, max_volts=9)}"); time.sleep(1.0)
+            vb = ads(rig.b, 2) * 118 / 18
+            if not 8.5 <= vb <= 9.6: raise RuntimeError(f"VBUS {vb:.2f} V not at 9 V after request")
+            rig.ev(f"VBUS {vb:.2f} V"); rig.vb_band = (8.5, 9.6); rig.br_band = (8.0, 9.4); rig.br_bulk = (8.0, 9.4)
         if mode in ("dry", "burst", "comp"):
             freq = int(float(sys.argv[2])); secs = min(float(sys.argv[3]) if len(sys.argv) > 3 else 1.0, BURST_MAX)
             abort, peak, t_stop = run_burst(rig, freq, secs, dry=(mode == "dry"), comp=(mode == "comp"))
@@ -255,6 +270,11 @@ def main():
         abort = f"exception {type(e).__name__}: {e}"
     finally:
         safe_stop(rig.stoplog, rig.t0)
+        if vbus9:
+            time.sleep(4.0)  # GPIO25 already low (step-down rule); let the bridge bleed
+            try: rig.ev(f"request 5 V AMS={pd.request_fixed(5, max_volts=5)}")
+            except Exception as e: rig.ev(f"request 5 V FAILED {e}")
+            time.sleep(1.0); rig.ev(f"VBUS after return {ads(rig.b, 2) * 118 / 18:.2f} V")
         rig.finish(abort)
     return 1 if abort else 0
 

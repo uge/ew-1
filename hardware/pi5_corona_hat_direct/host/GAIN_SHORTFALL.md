@@ -1,5 +1,16 @@
 # Findings note: HV gain shortfall (stage 7 bring-up)
 
+> **⚠️ SUPERSEDED IN PART, 2026-11-01 12:51.** Repeating complementary drive at
+> 5 V / 32 kHz gave **≥ 3.05 kV** (aborted at 175 ms), against 0.36 kV in the
+> 12:36 run with identical settings. At 9 V it reached **≥ 4.4 kV** before the
+> filtered readout caught up (see BRINGUP.md 12:51).
+>
+> The "0.36 kV best / ~1.5 kV at 20 V" conclusions below are **not valid**. The
+> low complementary result was most likely an uncontrolled IN1/IN2 phase between
+> separately enabled RP1 PWM channels. The single-ended measurements (no second
+> channel) and the frequency-response shape (26/32 kHz peaks, not 68 kHz) still
+> stand.
+
 **Date:** 2026-11-01. **Board:** N-layout-17-hv-warnings, bench host ew-1.
 **Status:** measured findings plus working hypotheses. Nothing here has been
 verified with a scope or an HV probe yet.

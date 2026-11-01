@@ -621,3 +621,72 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - H3: 2CL75 VF ≤ 43 V threshold.
   - Next: scope/IPROPI measurements, a sweep below 20 kHz, and a re-model.
   - Bring-up CSVs from stages 5–7 copied to `host/data/`.
+- **2026-11-01 12:51 — ⚠️ HV EXCEEDED THE APPROVED 2 kV LIMIT (two aborts, no
+  damage observed).** Option A, user-confirmed 9 V override.
+  `stage7.py comp 32000 1.0` (5 V reference) then `--vbus 9`. CSVs
+  `data/stage7_comp_20261101_125126.csv`,
+  `data/stage7_comp_9V_20261101_125144.csv`.
+  - **5 V reference** (identical settings to the 12:36 run, which gave
+    58.6 mV ≈ 0.36 kV):
+    - AIN0 ramped 5 → 482 mV in 91 ms (≈ 2.9 kV);
+    - **aborted at 175 ms on AIN0 0.5005 V (≈ 3.05 kV)**;
+    - AIN1 peak 14.9 mV (≈ 1.5 µA) at the start; bridge dipped to 4.78 V.
+  - **9 V** (request 9 V AMS True, VBUS 8.97 V, bridge 8.74 V):
+    - AIN0 ramped at about 25 mV/ms (≈ 0.16 kV/ms);
+    - **aborted at 23 ms on AIN0 0.531 V (≈ 3.24 kV)**;
+    - **AIN0 kept rising after the safe-stop, to 0.716 V (≈ 4.37 kV) at
+      +57 ms**. That is the 164 kΩ·C13 ≈ 16 ms sense-filter lag. The true
+      HV_OUT at stop was **≥ 4.4 kV and possibly ~5–6 kV** (lag ≈ slope × τ);
+    - AIN1 peak 25.6 mV (≈ 2.6 µA).
+  - Both runs: nFAULT 1, EFUSE_FLT 1, OV trip 0 (hardware trip at 16.96 kV
+    not reached). Safe-stop OK; post-stop ch3 normal/disabled, GPIO18/19 = 0.
+    The 9 V run returned to 5 V (AMS True). HV decayed 4.37 → 1.13 kV in
+    0.36 s, and AIN0 was 1.3 mV at +2 s.
+  - **Findings:**
+    1. **Complementary output is not repeatable.** At 5 V, 32 kHz, the same
+       settings gave 0.36 kV at 12:36 and ≥ 3 kV at 12:51. Most likely
+       cause: RP1 PWM ch2/ch3 are enabled separately, so the **phase between
+       IN1 and IN2 is uncontrolled run to run**. Misaligned phase gives
+       brake/coast overlap and much lower drive.
+    2. **The software cutoff cannot hold a kV limit against fast ramps.**
+       With the 16 ms sense filter, a 0.16 kV/ms ramp overshoots by about
+       2.5 kV.
+    3. **GAIN_SHORTFALL.md conclusions are invalidated.** Properly phased
+       complementary drive at 5 V reaches ≥ 3 kV.
+  - **Stopped. No further drive** until the drive phase is controlled and
+    the overshoot is addressed: soft-start duty ramp, short bursts,
+    predictive cutoff, hardware OV trip verified. Board idle: 5 V contract,
+    GPIO18/19/24/25 low, AIN0 0.4 mV at 12:53.
+- **2026-11-01 12:58–13:01**: user raised the HV limit to **6 kV** and asked for a slower
+  ramp. Wrote `host/stage7_ramp.py`:
+  - IN1 = ch2 normal at D·T, IN2 = ch3 inversed at (1−D)·T;
+  - duty steps +0.005 every 20 ms, only while the HV slope is < 20 V/ms;
+  - predictive abort at AIN0 or AIN0 + slope × 16 ms ≥ 0.984 V (6.0 kV);
+  - target/hold, and every stage7.py abort.
+- **12:58 phase diagnostic** (driver asleep; `host/pwm_phase_diag.py`):
+  - at **1 kHz**, ch3 normal is in phase (IN1 ≠ IN2 4–5%) and ch3 inversed is
+    complementary (97%);
+  - at **32 kHz** both read random (34–63%). The ch2/ch3 phase is set by the
+    ~5–15 µs gap between the sysfs enable writes, so it's random from run to
+    run. That explains 0.36 kV (12:36) vs ≥ 3 kV (12:51).
+  - The retry-align approach failed (30/30 tries ≤ 8%), so alignment is now
+    advisory. The slew-limited ramp is gain-agnostic.
+- **2026-11-01 13:00**: **slow ramp at a 5 V bridge, 32 kHz: PASSED, no
+  abort.** CSV `data/stage7_ramp_ramp_5V_20261101_130025.csv`.
+  - Duty 0.02 → **0.27** over 1.18 s; **5.0 kV target reached**, then held
+    0.5 s at a fixed duty.
+  - **Peak 5.31 kV** (AIN0 0.871 V): it crept 0.31 kV above target during
+    the hold.
+  - **Max slope 0.021 kV/ms**, against 0.16 kV/ms in the 12:51 step start.
+    Post-stop readout max 5.26 kV, so **no lag overshoot**; the predictive
+    6 kV abort was not needed.
+  - Bridge min 4.77 V. AIN1 ≤ 2.4 mV. nFAULT/EFUSE_FLT 1, OV trip 0. HV
+    decayed to 9 V-equivalent (1.5 mV) within 5 s.
+  - **Milestones:** 1 kV at +54 ms (duty 0.03), 2 kV at +104 ms (0.04),
+    3 kV at +152 ms (0.05), 4 kV at +231 ms (0.065), 5 kV at +1.18 s (0.27).
+    The gain is high at small duty: the first ~4 kV ran at the 17–21 V/ms
+    slew limit right from the D0 = 0.02 start. Use a lower D0 / smaller step
+    next.
+  - **Next:** make the hold regulate (back the duty off above target), fix
+    the phase (one RP1 register write for both enables, or PIO), and only
+    then consider 9 V.
