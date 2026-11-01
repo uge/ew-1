@@ -24,8 +24,12 @@ Limits (user-approved 2026-11-01): abort when AIN0 or the PREDICTED AIN0 (a0 + s
 reaches 6.0 kV (0.984 V); stop ramping at --target-kv (default 5.0) and hold; duty only
 increases while the HV slope is below SLEW (20 V/ms). Plus every stage7.py abort.
 Safe-stop: GPIO24 low -> PWM disable -> polarity normal -> GPIO25 low. --vbus 9 returns to 5 V.
+
+Library use (2026-11-01, dashboard/): run(mode, ...) is the whole align/ramp procedure; main() only parses
+the CLI, takes the shared HV-owner lock (hv_lock(), /run/lock/ew1-hv.lock) and calls run(). run() adds an
+optional per-sample callback and an external stop Event; with neither, it behaves exactly as before.
 """
-import csv, os, subprocess, sys, time
+import csv, fcntl, os, subprocess, sys, time
 from smbus2 import SMBus
 import gpiod
 from gpiod.line import Direction, Bias
@@ -102,41 +106,79 @@ def safe_stop(log):
             except OSError as e: log(f"pwm{ch} stop error {e}")
     gpio(25, 0); log("safe-stop: GPIO24 low -> PWM off/normal -> GPIO25 low")
 
-def main():
-    args = sys.argv[1:]
-    if not args or args[0] not in ("align", "ramp"): print(__doc__); return 2
-    mode = args[0]
-    def opt(name, default, cast=float):
-        return cast(args[args.index(name) + 1]) if name in args else default
-    freq = int(opt("--freq", 32000 if mode == "ramp" else (float(args[1]) if len(args) > 1 and not args[1].startswith("--") else 32000)))
-    vbus = int(opt("--vbus", 5, int)); target_kv = opt("--target-kv", 5.0); max_d = min(opt("--max-duty", 0.5), 0.5)
-    hold = opt("--hold", 0.5)
-    if vbus not in (5, 9): print("--vbus must be 5 or 9"); return 2
-    abort_kv = opt("--abort-kv", ABORT_KV); expect_trip = "--expect-trip" in args
-    ain1_max = opt("--ain1-max", 0.10)        # V on AIN1 (100 uA/V); 0.5 V = 50 uA corona design point
-    if ain1_max > 0.6: print("ain1-max capped at 0.6 V (60 uA)"); return 2
-    if abort_kv > 19.0: print("abort-kv capped at 19.0"); return 2
-    if target_kv >= abort_kv: print("target must be below the abort"); return 2
+CSV_HEADER = ["t_s", "phase", "duty", "ain0_V", "pred_V", "slope_kV_per_ms", "vbus_V", "bridge_V", "ain1_V",
+              "nFAULT", "EFUSE_FLT", "INTLK", "OVTRIP"]
+LOCK_PATH = "/run/lock/ew1-hv.lock"     # shared with the dashboard: one HV-driving owner at a time
+
+class HVLockBusy(RuntimeError):
+    pass
+
+def hv_lock(path=LOCK_PATH):
+    """Take the exclusive HV-owner lock (non-blocking flock). Keep the returned file open while
+    driving; closing it (or process death) releases it. Raises HVLockBusy if another owner holds it."""
+    f = open(path, "a+")
+    try:
+        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        try: f.seek(0); who = f.read().strip()
+        except OSError: who = "?"
+        f.close(); raise HVLockBusy(f"HV lock {path} held by: {who or '?'}")
+    f.seek(0); f.truncate(); f.write(f"{os.getpid()} {os.path.basename(sys.argv[0])} {time.strftime('%H:%M:%S')}\n"); f.flush()
+    return f
+
+def check_args(mode, vbus, target_kv, abort_kv, ain1_max):
+    """The CLI's argument limits; returns an error string or None."""
+    if mode not in ("align", "ramp"): return "mode must be align or ramp"
+    if vbus not in (5, 9): return "--vbus must be 5 or 9"
+    if ain1_max > 0.6: return "ain1-max capped at 0.6 V (60 uA)"
+    if abort_kv > 19.0: return "abort-kv capped at 19.0"
+    if target_kv >= abort_kv: return "target must be below the abort"
+    return None
+
+def _print(m): print(m, flush=True)
+
+def run(mode, freq=32000, vbus=5, target_kv=5.0, max_d=0.5, hold=0.5, abort_kv=ABORT_KV, expect_trip=False,
+        ain1_max=0.10, out_dir="/home/uge", on_sample=None, stop=None, out=_print):
+    """One align or ramp run, exactly as the CLI does it (the CLI is a thin wrapper around this).
+    on_sample(row, extra): called with every CSV row as it is taken (extra = {"i3v3": A} in the loop).
+    stop: optional threading.Event; when set, the run aborts ("external stop") and safe-stops.
+    Returns {"code", "abort", "result", "csv", "rows", "events", "precondition_failed"}.
+    The caller must hold hv_lock(). Safe-stop always runs before this returns or raises."""
+    err = check_args(mode, vbus, target_kv, abort_kv, ain1_max)
+    if err: raise ValueError(err)
+    max_d = min(max_d, 0.5)
     a0_abort, a0_target = abort_kv / KV_PER_V, target_kv / KV_PER_V
     d_step, slew = TUNING[vbus]
 
     t0 = time.monotonic(); rows = []; ev_log = []
-    def log(m): ev_log.append((round(time.monotonic() - t0, 3), m)); print(f"  [{time.monotonic()-t0:7.3f}s] {m}", flush=True)
+    def log(m): ev_log.append((round(time.monotonic() - t0, 3), m)); out(f"  [{time.monotonic()-t0:7.3f}s] {m}")
+    def add(row, extra=None):
+        rows.append(row)
+        if on_sample is not None: on_sample(row, extra or {})
+    def chk():
+        if stop is not None and stop.is_set(): raise RuntimeError("external stop requested")
+    def nap(s):
+        if stop is not None: stop.wait(s)
+        else: time.sleep(s)
+        chk()
+    ret = {"code": None, "abort": None, "result": {}, "csv": None, "rows": rows, "events": ev_log, "precondition_failed": False}
     gpio(24, 0); gpio(25, 0)
     req = gpiod.request_lines("/dev/gpiochip0", consumer="stage7_ramp",
             config={tuple(lines): gpiod.LineSettings(direction=Direction.INPUT, bias=Bias.AS_IS)})
     gp = lambda: {n: req.get_value(l).value for l, n in lines.items()}
     b = SMBus(1); pd = husb238a.HUSB238A(allow_write=True)
-    abort = None; result = {}
-    out = f"/home/uge/stage7_ramp_{mode}_{vbus}V_{time.strftime('%Y%m%d_%H%M%S')}.csv"
+    abort = None; result = ret["result"]
+    csv_path = os.path.join(out_dir, f"stage7_ramp_{mode}_{vbus}V_{time.strftime('%Y%m%d_%H%M%S')}.csv")
     try:
         c0 = b.read_byte_data(0x42, 0x67) >> 4; vb = ads(b, 2) * 118 / 18; br = ads(b, 3) * 11
         a0 = ads(b, 0); a1 = ads(b, 1); g = gp(); base3 = sorted(i3v3() for _ in range(5))[2]
-        print(f"pre: PD=0x{c0:x} VBUS={vb:.2f} bridge={br:.3f} AIN0={a0:.4f} AIN1={a1:.4f} gpio={g} g18/19={lev1819()} 3V3={base3*1000:.0f}mA "
-              f"| freq={freq} vbus={vbus} target={target_kv} kV abort={abort_kv} kV ain1_max={ain1_max} V max_duty={max_d}", flush=True)
+        out(f"pre: PD=0x{c0:x} VBUS={vb:.2f} bridge={br:.3f} AIN0={a0:.4f} AIN1={a1:.4f} gpio={g} g18/19={lev1819()} 3V3={base3*1000:.0f}mA "
+            f"| freq={freq} vbus={vbus} target={target_kv} kV abort={abort_kv} kV ain1_max={ain1_max} V max_duty={max_d}")
         ok = (c0 == 1 and 4.6 < vb < 5.6 and br < 0.2 and a0 < 0.01 and a1 < 0.1 and g["nFAULT"] == 1 and g["EFUSE_FLT"] == 1
               and g["OVTRIP"] == 0 and (g["INTLK"] == 1 or mode == "align") and lev1819() == (0, 0))
-        if not ok: print("PRECONDITION FAILED - nothing driven"); return 2
+        if not ok:
+            out("PRECONDITION FAILED - nothing driven"); ret.update(code=2, precondition_failed=True); return ret
+        chk()
         period = pwm_prepare(freq); log(f"PWM ch2/ch3 prepared, period {period} ns")
         diff = align(period, log); result["align"] = diff
         set_duty(period, D0); log(f"phase synced; duty -> {D0} (driver still asleep)")
@@ -147,18 +189,20 @@ def main():
                 f1 = sum(a for a, _ in smp) / 300; f2 = sum(b2 for _, b2 in smp) / 300; both = sum(a and b2 for a, b2 in smp) / 300
                 log(f"duty {Dt}: IN1 high {f1*100:.0f}%  IN2 high {f2*100:.0f}%  BOTH high {both*100:.1f}% (expect ~{Dt*100:.0f}/{Dt*100:.0f}/0)")
                 result[f"d{Dt}"] = (round(f1, 3), round(f2, 3), round(both, 3))
-            return 0
+            ret["code"] = 0; return ret
 
         vb_band, br_band = ((4.5, 5.6), (4.0, 5.6)) if vbus == 5 else ((8.5, 9.6), (7.6, 9.4))
         if vbus == 9:
             log("request 9 V (GPIO25 low) - user override")
-            log(f"request 9 V AMS={pd.request_fixed(9, max_volts=9)}"); time.sleep(1.0)
+            log(f"request 9 V AMS={pd.request_fixed(9, max_volts=9)}"); nap(1.0)
             vb = ads(b, 2) * 118 / 18
             if not 8.5 <= vb <= 9.6: raise RuntimeError(f"VBUS {vb:.2f} not at 9 V")
-        gpio(25, 1); log("GPIO25 high"); time.sleep(1.0)
+        chk()
+        gpio(25, 1); log("GPIO25 high"); nap(1.0)
         br = ads(b, 3) * 11
         if not br_band[0] + 0.3 <= br <= br_band[1]: raise RuntimeError(f"bridge {br:.2f} out of band")
         if gp()["nFAULT"] != 1: raise RuntimeError("nFAULT low before wake")
+        chk()
         gpio(24, 1); log(f"GPIO24 high: DRIVE at duty {D0}"); time.sleep(0.003)
 
         D = D0; hist = []; t_step = time.monotonic(); phase = "ramp"; t_hold = None
@@ -179,9 +223,9 @@ def main():
                 dt = hist[-1][0] - hist[0][0]
                 if dt > 0: slope = (hist[-1][1] - hist[0][1]) / dt        # V/s on AIN0
             pred = a0 + max(slope, 0.0) * TAU
-            rows.append([round(t, 4), phase, round(D, 4), round(a0, 4), round(pred, 4), round(slope * KV_PER_V / 1000, 4),
-                         round(last["vb"], 3), round(last["br"], 3), round(last["a1"], 4),
-                         g["nFAULT"], g["EFUSE_FLT"], g["INTLK"], g["OVTRIP"]])
+            add([round(t, 4), phase, round(D, 4), round(a0, 4), round(pred, 4), round(slope * KV_PER_V / 1000, 4),
+                 round(last["vb"], 3), round(last["br"], 3), round(last["a1"], 4),
+                 g["nFAULT"], g["EFUSE_FLT"], g["INTLK"], g["OVTRIP"]], {"i3v3": h3[-1] if h3 else None})
             why = []
             if a0 >= a0_abort or pred >= a0_abort: why.append(f"AIN0 {a0:.3f} pred {pred:.3f} >= {a0_abort:.3f} ({abort_kv} kV)")
             if g["OVTRIP"]:
@@ -197,6 +241,7 @@ def main():
             if n > 3 and not vb_band[0] <= last["vb"] <= vb_band[1]: why.append(f"VBUS {last['vb']:.2f}")
             if n > 6 and not br_band[0] <= last["br"] <= br_band[1]: why.append(f"bridge {last['br']:.2f}")
             if len(h3) >= 3 and sorted(h3[-3:])[1] - base3 > 0.020: why.append("3V3 +20 mA")
+            if stop is not None and stop.is_set(): why.append("external stop")
             if why: abort = "; ".join(why); break
             if phase == "ramp":
                 if pred >= a0_target:
@@ -224,7 +269,7 @@ def main():
             ts = time.monotonic(); a_first = None; a_last = None; amax = 0.0
             while time.monotonic() - ts < 0.100:
                 a0 = ads(b, 0); amax = max(amax, a0); a_first = a_first if a_first is not None else a0; a_last = a0
-                rows.append([round(time.monotonic() - t0, 4), "trip_pwm_on", round(D, 4), round(a0, 4), "", "", "", "", "", gp()["nFAULT"], gp()["EFUSE_FLT"], gp()["INTLK"], gp()["OVTRIP"]])
+                add([round(time.monotonic() - t0, 4), "trip_pwm_on", round(D, 4), round(a0, 4), "", "", "", "", "", gp()["nFAULT"], gp()["EFUSE_FLT"], gp()["INTLK"], gp()["OVTRIP"]])
                 if a0 >= a0_abort: abort = f"HV still rising after trip: AIN0 {a0:.3f}"; break
             result["post_trip_100ms"] = (round(a_first * KV_PER_V, 2), round(amax * KV_PER_V, 2), round(a_last * KV_PER_V, 2))
             log(f"100 ms after trip with PWM still running: AIN0 {a_first*KV_PER_V:.2f} -> {a_last*KV_PER_V:.2f} kV (max {amax*KV_PER_V:.2f})")
@@ -234,7 +279,7 @@ def main():
             ts = time.monotonic(); latched = True
             while time.monotonic() - ts < 5.0:
                 a0 = ads(b, 0); g = gp()
-                rows.append([round(time.monotonic() - t0, 4), "latch", 0, round(a0, 4), "", "", "", "", "", g["nFAULT"], g["EFUSE_FLT"], g["INTLK"], g["OVTRIP"]])
+                add([round(time.monotonic() - t0, 4), "latch", 0, round(a0, 4), "", "", "", "", "", g["nFAULT"], g["EFUSE_FLT"], g["INTLK"], g["OVTRIP"]])
                 if g["OVTRIP"] == 0: latched = False
                 if a0 * KV_PER_V < 2.0 and time.monotonic() - ts > 0.5: break
                 time.sleep(0.01)
@@ -256,7 +301,7 @@ def main():
             ts = time.monotonic()
             while time.monotonic() - ts < 5.0:
                 try:
-                    a0 = ads(b, 0); rows.append([round(time.monotonic() - t0, 4), "decay", 0, round(a0, 4), "", "", "", round(ads(b, 3) * 11, 3), "", "", "", "", ""])
+                    a0 = ads(b, 0); add([round(time.monotonic() - t0, 4), "decay", 0, round(a0, 4), "", "", "", round(ads(b, 3) * 11, 3), "", "", "", "", ""])
                 except Exception: break
                 time.sleep(0.02)
         if mode == "ramp" and vbus == 9:
@@ -265,22 +310,44 @@ def main():
         try: req.release()
         except Exception: pass
         b.close()
-    with open(out, "w", newline="") as f:
+    with open(csv_path, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["t_s", "phase", "duty", "ain0_V", "pred_V", "slope_kV_per_ms", "vbus_V", "bridge_V", "ain1_V", "nFAULT", "EFUSE_FLT", "INTLK", "OVTRIP"])
+        w.writerow(CSV_HEADER)
         w.writerows(rows)
     live = [r for r in rows if r[1] in ("ramp", "hold")]
     if live:
         sl = [r[5] for r in live if r[5] != ""]
-        print(f"  live n={len(live)} t={live[0][0]:.2f}-{live[-1][0]:.2f}s  duty {live[0][2]:.3f}->{live[-1][2]:.3f}  "
-              f"AIN0 max {max(r[3] for r in live):.4f} V (~{max(r[3] for r in live)*KV_PER_V:.2f} kV)  "
-              f"max slope {max(sl):.3f} kV/ms  bridge min {min(r[7] for r in live):.3f}  AIN1 max {max(r[8] for r in live):.4f}")
+        out(f"  live n={len(live)} t={live[0][0]:.2f}-{live[-1][0]:.2f}s  duty {live[0][2]:.3f}->{live[-1][2]:.3f}  "
+            f"AIN0 max {max(r[3] for r in live):.4f} V (~{max(r[3] for r in live)*KV_PER_V:.2f} kV)  "
+            f"max slope {max(sl):.3f} kV/ms  bridge min {min(r[7] for r in live):.3f}  AIN1 max {max(r[8] for r in live):.4f}")
     dec = [r for r in rows if r[1] == "decay"]
     if dec:
-        print(f"  decay: AIN0 max {max(r[3] for r in dec):.4f} V (~{max(r[3] for r in dec)*KV_PER_V:.2f} kV, filter lag)  end {dec[-1][3]:.4f} V")
-    print("RESULT:", ("ABORT - " + abort) if abort else "completed, no abort", result)
-    print("csv:", out)
-    return 1 if abort else 0
+        out(f"  decay: AIN0 max {max(r[3] for r in dec):.4f} V (~{max(r[3] for r in dec)*KV_PER_V:.2f} kV, filter lag)  end {dec[-1][3]:.4f} V")
+    out("RESULT: " + (("ABORT - " + abort) if abort else "completed, no abort") + " " + str(result))
+    out("csv: " + csv_path)
+    ret.update(code=1 if abort else 0, abort=abort, csv=csv_path)
+    return ret
+
+def main():
+    args = sys.argv[1:]
+    if not args or args[0] not in ("align", "ramp"): print(__doc__); return 2
+    mode = args[0]
+    def opt(name, default, cast=float):
+        return cast(args[args.index(name) + 1]) if name in args else default
+    freq = int(opt("--freq", 32000 if mode == "ramp" else (float(args[1]) if len(args) > 1 and not args[1].startswith("--") else 32000)))
+    vbus = int(opt("--vbus", 5, int)); target_kv = opt("--target-kv", 5.0); max_d = min(opt("--max-duty", 0.5), 0.5)
+    hold = opt("--hold", 0.5)
+    abort_kv = opt("--abort-kv", ABORT_KV); expect_trip = "--expect-trip" in args
+    ain1_max = opt("--ain1-max", 0.10)        # V on AIN1 (100 uA/V); 0.5 V = 50 uA corona design point
+    err = check_args(mode, vbus, target_kv, abort_kv, ain1_max)
+    if err: print(err); return 2
+    try: lk = hv_lock()
+    except HVLockBusy as e: print(f"REFUSED: {e}"); return 2
+    try:
+        return run(mode, freq=freq, vbus=vbus, target_kv=target_kv, max_d=max_d, hold=hold, abort_kv=abort_kv,
+                   expect_trip=expect_trip, ain1_max=ain1_max)["code"]
+    finally:
+        lk.close()
 
 if __name__ == "__main__":
     sys.exit(main())

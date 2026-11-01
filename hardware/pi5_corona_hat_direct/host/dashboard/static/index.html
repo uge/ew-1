@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ew-1 HV Dashboard</title>
+<style>
+:root{
+  --bg:#0f1216; --panel:#171b21; --panel2:#1d222a; --line:#2a313b; --text:#e6e9ee; --mute:#8b95a3;
+  --ok:#2fbf71; --okbg:#123322; --bad:#ff4d4f; --badbg:#3a1416; --warn:#f5a623; --warnbg:#3a2a0c;
+  --info:#4aa3ff; --hv:#ffcf3f; --ua:#c084fc;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+header{position:sticky;top:0;z-index:5;display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  padding:10px 16px;background:#0b0e12;border-bottom:1px solid var(--line)}
+header h1{font-size:16px;margin:0 8px 0 0;font-weight:600;letter-spacing:.02em}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid var(--line);background:var(--panel2);color:var(--mute)}
+.badge.ok{background:var(--okbg);color:var(--ok);border-color:#1f5a3a}
+.badge.bad{background:var(--badbg);color:var(--bad);border-color:#6b2023}
+.badge.warn{background:var(--warnbg);color:var(--warn);border-color:#6b4a12}
+.badge.info{background:#0e2440;color:var(--info);border-color:#1d4776}
+.spacer{flex:1}
+#stopBtn{font-size:20px;font-weight:800;letter-spacing:.06em;padding:12px 26px;border-radius:10px;border:3px solid #ffb3b3;
+  background:#d1191c;color:#fff;cursor:pointer;box-shadow:0 0 0 3px #4a0c0d}
+#stopBtn:hover{background:#ee2225}
+#stopBtn:active{transform:translateY(1px)}
+main{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:14px;padding:14px 16px;max-width:1500px;margin:0 auto}
+@media (max-width:980px){main{grid-template-columns:minmax(0,1fr)}}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+section h2{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);font-weight:600}
+.col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.hvrow{display:flex;gap:18px;align-items:flex-end;flex-wrap:wrap}
+.big{font-size:64px;font-weight:700;line-height:1;color:var(--hv);font-variant-numeric:tabular-nums}
+.big small{font-size:22px;color:var(--mute);font-weight:500;margin-left:4px}
+.med{font-size:30px;font-weight:600;color:var(--ua);font-variant-numeric:tabular-nums}
+.med small{font-size:15px;color:var(--mute);font-weight:500;margin-left:3px}
+canvas{width:100%;height:220px;display:block;background:#0c0f13;border:1px solid var(--line);border-radius:8px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.tile{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
+.tile .k{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}
+.tile .v{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .s{font-size:11px;color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:500;font-size:12px}
+.chip{display:inline-block;min-width:64px;text-align:center;padding:2px 8px;border-radius:6px;font-weight:700;font-size:12px}
+.chip.ok{background:var(--okbg);color:var(--ok)} .chip.bad{background:var(--badbg);color:var(--bad)}
+.chip.warn{background:var(--warnbg);color:var(--warn)} .chip.na{background:var(--panel2);color:var(--mute)}
+#touch{display:none;padding:14px 16px;border-radius:10px;background:var(--warnbg);border:2px solid var(--warn);color:var(--warn);font-weight:700;font-size:18px}
+#touch .cd{font-size:30px;font-variant-numeric:tabular-nums;margin-left:8px}
+#hvwarn{display:none;padding:10px 14px;border-radius:10px;background:var(--badbg);border:2px solid var(--bad);color:#ffd6d6;font-weight:700}
+form .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}
+label{display:flex;flex-direction:column;font-size:12px;color:var(--mute);gap:3px}
+input,select{background:#0c0f13;color:var(--text);border:1px solid var(--line);border-radius:6px;padding:7px 8px;font:inherit;width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid #2d5c8f;border-color:#2d5c8f}
+.btn{padding:9px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font-weight:600;cursor:pointer;font:inherit}
+.btn:hover{border-color:#44505f}
+.btn.hv{background:#5a1a0a;border-color:#a13a17;color:#ffd9c7}
+.btn.hv:disabled,.btn:disabled{opacity:.45;cursor:not-allowed}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.hint{font-size:12px;color:var(--mute)}
+ul.pre{margin:6px 0 0;padding-left:18px;font-size:12px;color:var(--warn)}
+ul.pre.okk{color:var(--ok);list-style:none;padding-left:0}
+#log{height:260px;overflow:auto;background:#0c0f13;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:12px}
+#log div{white-space:pre-wrap;word-break:break-word}
+#log .warn{color:var(--warn)} #log .error{color:var(--bad)} #log .t{color:var(--mute)}
+.runs{max-height:260px;overflow:auto}
+a{color:var(--info)}
+dialog{background:var(--panel);color:var(--text);border:2px solid var(--bad);border-radius:12px;padding:18px 20px;max-width:440px;width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog h3{margin:0 0 8px;color:var(--bad)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--mute);margin:6px 0 0}
+.legend i{display:inline-block;width:12px;height:3px;vertical-align:middle;margin-right:5px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+canvas.sm{height:120px} canvas.md{height:150px}
+.gridc{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.gridc .t{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;margin:0 0 3px}
+#camImg{width:100%;max-height:360px;object-fit:contain;background:#000;border-radius:8px;display:none}
+.settings{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px}
+.settings b{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<header>
+  <h1>ew-1 HV board</h1>
+  <span id="conn" class="badge">connecting</span>
+  <span id="runBadge" class="badge">idle</span>
+  <span id="srcBadge" class="badge">monitor</span>
+  <span class="spacer"></span>
+  <span class="hint mono" id="clock"></span>
+  <button id="stopBtn" title="GPIO24 low, PWM off, polarity normal, GPIO25 low">SAFE STOP</button>
+</header>
+
+<main>
+<div class="col">
+  <div id="touch">DO NOT TOUCH the HV section <span class="cd" id="touchCd">5:00</span>
+    <div class="hint" style="color:#d9b36a;font-weight:500">Countdown from the end of the last HV run. HV stages may hold charge; AIN0 sees HV_OUT only.</div></div>
+  <div id="hvwarn"></div>
+
+  <section>
+    <h2>High voltage</h2>
+    <div class="hvrow">
+      <div><div class="big" id="hvKv">--<small>kV</small></div><div class="hint">HV_OUT, AIN0 x 6.10 kV/V (nominal, uncalibrated; ~16 ms readout lag)</div></div>
+      <div><div class="med" id="iUa">--<small>uA</small></div><div class="hint">return current AIN1 x 100 uA/V</div></div>
+      <div class="spacer"></div>
+      <div class="row"><label style="flex-direction:row;align-items:center;gap:6px">window
+        <select id="win" style="width:auto"><option value="30">30 s</option><option value="60" selected>60 s</option><option value="300">5 min</option></select></label></div>
+    </div>
+    <canvas id="chart" width="1000" height="220"></canvas>
+    <div class="legend"><span><i style="background:var(--hv)"></i>HV kV (left)</span><span><i style="background:var(--ua)"></i>return uA (right)</span></div>
+  </section>
+
+  <section>
+    <h2>Run graphs <span id="rgTitle" class="hint" style="text-transform:none;letter-spacing:0"></span></h2>
+    <div class="gridc">
+      <div><div class="t">HV kV (solid), predicted (dashed), target / abort</div><canvas class="md" id="rgKv"></canvas></div>
+      <div><div class="t">Return current uA, AIN1 abort</div><canvas class="md" id="rgUa"></canvas></div>
+      <div><div class="t">Duty, max duty</div><canvas class="md" id="rgDuty"></canvas></div>
+      <div><div class="t">Bridge V (green), VBUS (blue)</div><canvas class="md" id="rgV"></canvas></div>
+    </div>
+    <div class="hint" style="margin-top:4px">x = run time (s) from the CSV t_s. Shaded: hold (amber), decay after safe-stop (grey). Temperature/RH are not sampled during runs (I2C reserved for the control loop).</div>
+  </section>
+
+  <section>
+    <h2>Supplies and environment</h2>
+    <div class="tiles">
+      <div class="tile"><div class="k">VBUS</div><div class="v" id="vbus">--</div><div class="s">AIN2 x 118/18</div></div>
+      <div class="tile"><div class="k">Bridge</div><div class="v" id="bridge">--</div><div class="s">AIN3 x 11</div></div>
+      <div class="tile"><div class="k">Pi 3V3 current</div><div class="v" id="i3v3">--</div><div class="s">3V3_SYS_A median/3</div></div>
+      <div class="tile"><div class="k">Pi 3V3 voltage</div><div class="v" id="v3v3">--</div><div class="s">3V3_SYS_V</div></div>
+      <div class="tile"><div class="k">PD contract</div><div class="v" id="pd">--</div><div class="s" id="pdS">HUSB238A</div></div>
+      <div class="tile"><div class="k">Temperature</div><div class="v" id="tc">--</div><div class="s">BME280</div></div>
+      <div class="tile"><div class="k">Pressure</div><div class="v" id="ph">--</div><div class="s">BME280</div></div>
+      <div class="tile"><div class="k">Humidity</div><div class="v" id="rh">--</div><div class="s">BME280</div></div>
+      <div class="tile"><div class="k">Light (TSL2591)</div><div class="v" id="lux" style="font-size:16px">--</div><div class="s" id="luxS">0x29</div></div>
+      <div class="tile"><div class="k">Since last HV</div><div class="v" id="since">--</div><div class="s" id="sinceS"></div></div>
+    </div>
+    <div class="hint mono" id="raw" style="margin-top:8px"></div>
+  </section>
+
+  <section>
+    <h2>History, last 10 min (1 Hz)</h2>
+    <div class="gridc" id="slowGrid"></div>
+  </section>
+
+  <section>
+    <h2>Event log</h2>
+    <div id="log" class="mono"></div>
+  </section>
+</div>
+
+<div class="col">
+  <section>
+    <h2>Status lines</h2>
+    <table id="gpioT"></table>
+  </section>
+
+  <section>
+    <h2>PWM (sysfs pwmchip0)</h2>
+    <table id="pwmT"></table>
+  </section>
+
+  <section>
+    <h2>Control</h2>
+    <label>Control token <span class="hint">(from ~/.ew1-dashboard-token on ew-1; kept in this browser only)</span>
+      <input id="token" type="password" autocomplete="off" placeholder="paste token"></label>
+    <form id="runForm" onsubmit="return false" style="margin-top:10px">
+      <div class="grid">
+        <label>PD contract (V)<select id="f_vbus"><option>5</option><option>9</option></select></label>
+        <label>Frequency (Hz)<input id="f_freq" type="number" step="1000"></label>
+        <label>Target (kV)<input id="f_target" type="number" step="0.1"></label>
+        <label>Abort (kV)<input id="f_abort" type="number" step="0.1"></label>
+        <label>Max duty<input id="f_duty" type="number" step="0.005"></label>
+        <label>AIN1 abort (V)<input id="f_ain1" type="number" step="0.01"></label>
+        <label>Hold (s)<input id="f_hold" type="number" step="0.5"></label>
+        <label>&nbsp;<span class="hint" id="limitsHint"></span></label>
+      </div>
+      <div class="btns">
+        <button class="btn hv" id="runBtn" type="button">Start HV ramp...</button>
+        <button class="btn" id="alignBtn" type="button" title="driver asleep, bridge off: enables IN1/IN2 and runs rp1_pwm_sync.py">Dry phase-sync check</button>
+      </div>
+      <div class="hint" style="margin-top:6px">Ramp: stage7_ramp.run() (phase sync, slew-limited ramp, predictive abort, regulated hold). While a run is active this page heartbeats; if no control page heartbeats for 2 s the run safe-stops.</div>
+      <div id="preBox"></div>
+      <div id="ctlMsg" class="hint mono" style="margin-top:6px"></div>
+    </form>
+  </section>
+
+  <section>
+    <h2>Active / last run settings</h2>
+    <div class="settings" id="runSet"><span class="hint">no run yet</span></div>
+  </section>
+
+  <section>
+    <h2>Camera</h2>
+    <div id="camStat" class="hint">checking...</div>
+    <img id="camImg" alt="camera live view">
+    <div class="btns">
+      <button class="btn" id="camView" type="button">Show live view</button>
+      <button class="btn" id="camRec" type="button">Start recording</button>
+      <label style="flex-direction:row;align-items:center;gap:6px;color:var(--text)"><input type="checkbox" id="camAuto" style="width:auto"> auto-record HV runs</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Runs (~/dashboard_runs)</h2>
+    <div class="runs"><table id="runsT"></table></div>
+  </section>
+</div>
+</main>
+
+<dialog id="confirmDlg">
+  <h3>HV ON?</h3>
+  <div class="kv mono" id="confirmKv"></div>
+  <p class="hint">Lid closed, nobody near the HV section. After the run, do not touch for 5 min.</p>
+  <div class="btns">
+    <button class="btn hv" id="confirmGo" style="font-size:18px;padding:12px 18px">HV ON</button>
+    <button class="btn" id="confirmCancel">Cancel</button>
+  </div>
+</dialog>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+let L = null, S = null, lastEv = 0, es = null, hbTimer = null;
+const hist = [];   // [t, kv, ua]
+const fmt = (v, d=2) => { if (v === null || v === undefined || Number.isNaN(v)) return "--"; const t = Number(v).toFixed(d); return /^-0\.?0*$/.test(t) ? t.slice(1) : t; };
+
+function tokenGet(){ try { return localStorage.getItem("ew1tok") || ""; } catch(e){ return $("token").value; } }
+$("token").addEventListener("input", () => { try { localStorage.setItem("ew1tok", $("token").value.trim()); } catch(e){} });
+$("token").value = tokenGet();
+const FIELDS = {vbus:"f_vbus", freq_hz:"f_freq", target_kv:"f_target", abort_kv:"f_abort", max_duty:"f_duty", ain1_max_v:"f_ain1", hold_s:"f_hold"};
+function loadForm(){ let saved = {}; try { saved = JSON.parse(localStorage.getItem("ew1form") || "{}"); } catch(e){}
+  for (const [k, id] of Object.entries(FIELDS)) $(id).value = saved[k] ?? L.defaults[k]; }
+function formVals(){ const o = {}; for (const [k, id] of Object.entries(FIELDS)) o[k] = Number($(id).value);
+  try { localStorage.setItem("ew1form", JSON.stringify(o)); } catch(e){} return o; }
+
+async function post(path, body){
+  const r = await fetch(path, {method:"POST", headers:{"Content-Type":"application/json", "X-EW1-Token": tokenGet().trim()}, body: JSON.stringify(body||{})});
+  let j = {}; try { j = await r.json(); } catch(e){}
+  return {status:r.status, j};
+}
+function msg(t, bad){ $("ctlMsg").textContent = t; $("ctlMsg").style.color = bad ? "var(--bad)" : "var(--mute)"; }
+
+$("stopBtn").onclick = async () => {
+  const r = await post("/api/safe_stop", {});
+  if (r.status === 200) msg("SAFE STOP done: " + JSON.stringify(r.j.out));
+  else { msg("SAFE STOP " + r.status + ": " + (r.j.errors||[]).join("; "), true); if (r.status === 401) alert("SAFE STOP rejected: enter the control token.\n\nThe board can also be stopped from a shell: python3 ~/dashboard/ew1_safestop.py --force"); }
+};
+$("alignBtn").onclick = async () => {
+  const r = await post("/api/align", {freq_hz: Number($("f_freq").value)});
+  msg(r.status === 200 ? "dry phase-sync check started" : ("align " + r.status + ": " + (r.j.errors||[]).join("; ")), r.status !== 200);
+};
+$("runBtn").onclick = () => {
+  const v = formVals();
+  $("confirmKv").innerHTML = `<span>target</span><b style="color:var(--hv);font-size:20px">${v.target_kv} kV</b>
+    <span>abort</span><span>${v.abort_kv} kV (predictive)</span><span>PD contract</span><span>${v.vbus} V</span>
+    <span>frequency</span><span>${v.freq_hz} Hz</span><span>max duty</span><span>${v.max_duty}</span>
+    <span>AIN1 abort</span><span>${v.ain1_max_v} V (${(v.ain1_max_v*100).toFixed(0)} uA)</span><span>hold</span><span>${v.hold_s} s</span>`;
+  $("confirmGo").textContent = `HV ON - ${v.target_kv} kV`;
+  $("confirmDlg").showModal();
+};
+$("confirmCancel").onclick = () => $("confirmDlg").close();
+$("confirmGo").onclick = async () => {
+  $("confirmDlg").close();
+  const v = formVals(); v.confirm = L.confirm;
+  const r = await post("/api/run", v);
+  msg(r.status === 200 ? "ramp started" : ("run " + r.status + ": " + (r.j.errors||[]).join("; ")), r.status !== 200);
+};
+
+function heartbeat(active){
+  if (active && tokenGet() && !hbTimer) hbTimer = setInterval(() => post("/api/heartbeat", {}).catch(()=>{}), 500);
+  if (!active && hbTimer){ clearInterval(hbTimer); hbTimer = null; }
+}
+
+function chip(ok, okText, badText, warn){ if (ok === null || ok === undefined) return `<span class="chip na">--</span>`;
+  return ok ? `<span class="chip ok">${okText}</span>` : `<span class="chip ${warn?'warn':'bad'}">${badText}</span>`; }
+
+function render(s){
+  S = s;
+  const run = s.run || {}, a = run.active;
+  $("hvKv").innerHTML = fmt(s.hv_kv, 2) + "<small>kV</small>";
+  $("iUa").innerHTML = fmt(s.i_ua, 1) + "<small>uA</small>";
+  $("vbus").textContent = fmt(s.vbus_v, 2) + " V";
+  $("bridge").textContent = fmt(s.bridge_v, 2) + " V";
+  $("i3v3").textContent = s.i3v3_ma == null ? "--" : fmt(s.i3v3_ma, 0) + " mA";
+  $("v3v3").textContent = s.v3v3_v == null ? "--" : fmt(s.v3v3_v, 3) + " V";
+  if (!s.tsl2591) { $("lux").textContent = "not connected"; $("luxS").textContent = "0x29 probed every 30 s"; }
+  else { const t = s.tsl || {}; $("lux").textContent = t.saturated ? "saturated" : (t.lux == null ? "--" : fmt(t.lux, 1) + " lx");
+    $("luxS").textContent = `CH0 ${t.ch0} CH1 ${t.ch1} (gain ${t.gain}x, ${t.atime_ms} ms)`; }
+  const pd = s.pd || {};
+  $("pd").textContent = pd.pd_contract || "--";
+  $("pdS").textContent = pd.contract_ma ? `${pd.contract_ma} mA, PDOs ${(s.pd_pdos||[]).join("/")} V` : "HUSB238A";
+  const b = s.bme || {};
+  $("tc").textContent = b.t_c == null ? "--" : fmt(b.t_c,1) + " C";
+  $("ph").textContent = b.p_hpa == null ? "--" : fmt(b.p_hpa,1) + " hPa";
+  $("rh").textContent = b.rh_pct == null ? "--" : fmt(b.rh_pct,0) + " %";
+  if (s.since_hv_s == null){ $("since").textContent = "never"; $("sinceS").textContent = ""; }
+  else { const m = Math.floor(s.since_hv_s/60); $("since").textContent = m >= 120 ? (m/60).toFixed(1)+" h" : (m >= 1 ? m+" min" : Math.floor(s.since_hv_s)+" s");
+    const lh = run.last_hv || {}; $("sinceS").textContent = (lh.peak_kv ? "peak " + fmt(lh.peak_kv,2) + " kV " : "") + (lh.source || ""); }
+  $("raw").textContent = `AIN0 ${fmt(s.ain0_v,4)} V  AIN1 ${fmt(s.ain1_v,4)} V  VBUS ${fmt(s.vbus_v,3)} V  bridge ${fmt(s.bridge_v,3)} V` +
+    (s.i2c_paused ? "  | I2C monitor paused (HV owner active)" : "") +
+    (Object.keys(s.errors||{}).length ? "  | errors: " + JSON.stringify(s.errors) : "");
+
+  // touch countdown + HV-present warning
+  const dnt = s.do_not_touch_s || 0;
+  $("touch").style.display = dnt > 0 ? "block" : "none";
+  if (dnt > 0) $("touchCd").textContent = a && a.mode === "ramp" ? "HV RUN ACTIVE" : `${Math.floor(dnt/60)}:${String(Math.floor(dnt%60)).padStart(2,"0")}`;
+  const hvp = s.hv_kv != null && s.hv_kv > 0.1;
+  $("hvwarn").style.display = hvp ? "block" : "none";
+  if (hvp) $("hvwarn").textContent = `HV PRESENT: ${fmt(s.hv_kv,2)} kV on HV_OUT`;
+
+  // badges
+  const rb = $("runBadge");
+  if (a){ rb.className = "badge " + (a.mode === "ramp" ? "bad" : "info"); rb.textContent = `${a.mode.toUpperCase()} ${a.state} ${a.phase||""}` + (run.sample && run.sample.duty != null ? ` D=${run.sample.duty}` : ""); }
+  else if (run.last_run){ rb.className = "badge " + (run.last_run.abort ? "warn" : "ok"); rb.textContent = "idle, last: " + (run.last_run.abort ? "ABORT" : "ok"); }
+  else { rb.className = "badge"; rb.textContent = "idle"; }
+  $("srcBadge").textContent = s.source === "run" ? "data: control loop" : "data: monitor";
+  $("srcBadge").className = "badge " + (s.source === "run" ? "info" : "");
+  heartbeat(!!a);
+
+  // GPIO table
+  const g = s.gpio || {}, o = s.out || {}, f = s.out_func || {};
+  const lvl = v => v == null ? null : v;
+  let h = `<tr><th>line</th><th>signal</th><th>state</th></tr>`;
+  h += `<tr><td>GPIO5</td><td>DRV_nFAULT</td><td>${chip(lvl(g.nFAULT) == null ? null : g.nFAULT === 1, "OK", "FAULT")}</td></tr>`;
+  h += `<tr><td>GPIO6</td><td>EFUSE_FLT</td><td>${chip(g.EFUSE_FLT == null ? null : g.EFUSE_FLT === 1, "OK", "FAULT")}</td></tr>`;
+  h += `<tr><td>GPIO23</td><td>INTERLOCK</td><td>${chip(g.INTLK == null ? null : g.INTLK === 1, "CLOSED", "OPEN")}</td></tr>`;
+  h += `<tr><td>GPIO26</td><td>HV_OV_TRIP</td><td>${chip(g.OVTRIP == null ? null : g.OVTRIP === 0, "OK", "TRIPPED")}</td></tr>`;
+  for (const [pin, name] of [["24","DRV_SLEEP_CMD"],["25","BULK_CMD"],["18","IN1 / PWM ch2"],["19","IN2 / PWM ch3"]])
+    h += `<tr><td>GPIO${pin}</td><td>${name} <span class="hint">${f[pin]||""}</span></td><td>${chip(o[pin] == null ? null : o[pin] === 0, "LOW", "HIGH", true)}</td></tr>`;
+  $("gpioT").innerHTML = h;
+
+  // PWM table
+  const p = s.pwm || {};
+  let ph = `<tr><th></th><th>ch2 (IN1)</th><th>ch3 (IN2)</th></tr>`;
+  const cell = (c, k) => { const x = p[c] || p[String(c)] || {}; if (!x.exported) return "not exported"; return x[k] ?? "--"; };
+  const en = c => { const x = p[c] || p[String(c)] || {}; if (!x.exported) return chip(true, "OFF", ""); return chip(x.enable === 0, "OFF", "ENABLED", true); };
+  const pol = c => { const x = p[c] || p[String(c)] || {}; if (!x.exported) return "--"; return x.polarity === "normal" ? "normal" : `<span class="chip warn">${x.polarity}</span>`; };
+  ph += `<tr><td>enable</td><td>${en(2)}</td><td>${en(3)}</td></tr>`;
+  ph += `<tr><td>polarity</td><td>${pol(2)}</td><td>${pol(3)}</td></tr>`;
+  ph += `<tr><td>period ns</td><td class="mono">${cell(2,"period")}</td><td class="mono">${cell(3,"period")}</td></tr>`;
+  ph += `<tr><td>freq Hz</td><td class="mono">${cell(2,"freq_hz")}</td><td class="mono">${cell(3,"freq_hz")}</td></tr>`;
+  ph += `<tr><td>duty_cycle ns</td><td class="mono">${cell(2,"duty_cycle")}</td><td class="mono">${cell(3,"duty_cycle")}</td></tr>`;
+  ph += `<tr><td>duty</td><td class="mono">${cell(2,"duty")}</td><td class="mono">${cell(3,"duty")}</td></tr>`;
+  $("pwmT").innerHTML = ph;
+
+  // preconditions
+  const pre = s.pre_ramp || [];
+  $("preBox").innerHTML = pre.length ? `<ul class="pre">${pre.map(x => `<li>${x}</li>`).join("")}</ul>`
+    : `<ul class="pre okk"><li>Preconditions OK for an HV ramp (re-checked on the board at start)</li></ul>`;
+  $("runBtn").disabled = !!a || pre.length > 0;
+  $("alignBtn").disabled = !!a || (s.pre_align || []).length > 0;
+
+  // events
+  if (s.events && s.events.length){
+    const box = $("log"), stick = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
+    for (const e of s.events){
+      const d = document.createElement("div"); d.className = e.level;
+      d.innerHTML = `<span class="t">${new Date(e.t*1000).toLocaleTimeString()}</span> `; d.appendChild(document.createTextNode(e.msg));
+      box.appendChild(d); lastEv = Math.max(lastEv, e.id);
+    }
+    while (box.childNodes.length > 800) box.removeChild(box.firstChild);
+    if (stick) box.scrollTop = box.scrollHeight;
+    if (s.events.some(e => /finished|SAFE STOP|refused/.test(e.msg))) loadRuns();
+  }
+  if (s.hv_kv != null) { hist.push([s.t, s.hv_kv, s.i_ua]); }
+  renderRunSet(s); renderCam(s);
+  if (s.run_reset && RG.mode === "live") { RG.rows = []; }
+  if (s.run_samples && s.run_samples.length && RG.mode === "live") { for (const r of s.run_samples) RG.rows.push(r); RG.dirty = true; }
+  const meta = run.run_meta; if (meta && RG.mode === "live") { RG.params = meta.params; RG.title = `live: ${meta.mode} run #${meta.run_id}` + (meta.csv ? ` (${meta.csv})` : (a ? " - running" : "")); }
+  const cut = Date.now()/1000 - 310; while (hist.length && hist[0][0] < cut) hist.shift();
+}
+
+// ---- generic canvas plot
+// series: [{pts:[[x,y]..], color, dash, axis:"l"|"r", width}], hl: [{y, color, label, axis}], bands: [{x0,x1,color}]
+function plot(cv, o){
+  const dpr = window.devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+  if (!w || !h) return;
+  if (cv.width !== Math.round(w*dpr) || cv.height !== Math.round(h*dpr)) { cv.width = Math.round(w*dpr); cv.height = Math.round(h*dpr); }
+  const x = cv.getContext("2d"); x.setTransform(dpr,0,0,dpr,0,0); x.clearRect(0,0,w,h);
+  const rng = ax => { let lo = Infinity, hi = -Infinity;
+    for (const s of o.series) if ((s.axis||"l") === ax) for (const p of s.pts) if (p[1] != null && p[0] >= o.x0 && p[0] <= o.x1) { lo = Math.min(lo,p[1]); hi = Math.max(hi,p[1]); }
+    for (const l of (o.hl||[])) if ((l.axis||"l") === ax && l.y != null) { lo = Math.min(lo,l.y); hi = Math.max(hi,l.y); }
+    if (!isFinite(lo)) { lo = 0; hi = 1; }
+    if (o["zero_"+ax] !== false) lo = Math.min(lo, 0);
+    if (hi - lo < (o["minspan_"+ax] || 1e-6)) { const m = (hi+lo)/2, sp = (o["minspan_"+ax] || 1)/2; lo = m - sp; hi = m + sp; if (o["zero_"+ax] !== false && lo < 0 && m >= 0) { hi -= lo; lo = 0; } }
+    const pad = (hi-lo)*0.08; return [lo - (lo === 0 ? 0 : pad), hi + pad]; };
+  const hasR = o.series.some(s => s.axis === "r");
+  const [l0,l1] = rng("l"), [r0,r1] = hasR ? rng("r") : [0,1];
+  const L0 = 42, R0 = w - (hasR ? 42 : 8), T0 = 6, B0 = h - 18, X = v => L0 + (R0-L0)*(v-o.x0)/((o.x1-o.x0)||1);
+  const Y = (v, ax) => ax === "r" ? B0 - (B0-T0)*(v-r0)/((r1-r0)||1) : B0 - (B0-T0)*(v-l0)/((l1-l0)||1);
+  for (const b of (o.bands||[])) { x.fillStyle = b.color; x.fillRect(X(Math.max(b.x0,o.x0)), T0, X(Math.min(b.x1,o.x1)) - X(Math.max(b.x0,o.x0)), B0-T0); }
+  x.font = "10px system-ui"; x.lineWidth = 1;
+  const dg = v => { const a = Math.abs(v); return a >= 100 ? 0 : a >= 10 ? 1 : a >= 1 ? 2 : 3; };
+  for (let i = 0; i <= 4; i++){ const y = B0 - (B0-T0)*i/4; x.strokeStyle = "#232a33"; x.beginPath(); x.moveTo(L0,y); x.lineTo(R0,y); x.stroke();
+    x.fillStyle = o.lc || "#8b95a3"; x.textAlign = "right"; const lv = l0 + (l1-l0)*i/4; x.fillText(lv.toFixed(dg(l1-l0)), L0-3, y+3);
+    if (hasR){ x.fillStyle = o.rc || "#8b95a3"; x.textAlign = "left"; const rv = r0 + (r1-r0)*i/4; x.fillText(rv.toFixed(dg(r1-r0)), R0+3, y+3); } }
+  x.fillStyle = "#8b95a3"; x.textAlign = "center";
+  for (let i = 0; i <= 5; i++){ const v = o.x0 + (o.x1-o.x0)*i/5; x.fillText(o.xfmt ? o.xfmt(v) : v.toFixed(1), L0 + (R0-L0)*i/5, h-4); }
+  for (const l of (o.hl||[])) { if (l.y == null) continue; const y = Y(l.y, l.axis||"l"); if (y < T0 || y > B0) continue;
+    x.strokeStyle = l.color; x.setLineDash([5,4]); x.beginPath(); x.moveTo(L0,y); x.lineTo(R0,y); x.stroke(); x.setLineDash([]);
+    if (l.label){ x.fillStyle = l.color; x.textAlign = "right"; x.fillText(l.label, R0-3, y-3); } }
+  x.save(); x.beginPath(); x.rect(L0, T0, R0-L0, B0-T0); x.clip();
+  for (const sr of o.series){ x.strokeStyle = sr.color; x.lineWidth = sr.width || 1.5; x.setLineDash(sr.dash || []); x.beginPath(); let first = true;
+    const ax = sr.axis || "l";
+    for (const p of sr.pts){ if (p[1] == null || p[0] < o.x0 - 1e-9) { first = true; continue; } if (p[0] > o.x1) break;
+      const xx = X(p[0]), yy = Y(p[1], ax); if (first){ x.moveTo(xx,yy); first = false; } else x.lineTo(xx,yy); }
+    x.stroke(); }
+  x.restore(); x.setLineDash([]);
+}
+
+// ---- rolling HV chart
+function drawRolling(){
+  const win = Number($("win").value), now = (S && S.t) || Date.now()/1000;
+  plot($("chart"), {x0: now - win, x1: now, xfmt: v => "-" + Math.round(now - v) + "s", lc:"#ffcf3f", rc:"#c084fc", minspan_l: 1, minspan_r: 5,
+    series: [{pts: hist.map(p => [p[0], p[2]]), color:"#c084fc", axis:"r"}, {pts: hist.map(p => [p[0], p[1]]), color:"#ffcf3f", width:1.8}]});
+}
+
+// ---- run graphs (live from the control loop, or loaded from a CSV)
+const RG = {mode:"live", rows:[], params:null, title:"", dirty:true};
+const PH = {ramp:0, hold:1, decay:2};
+function drawRun(){
+  const rows = RG.rows, p = RG.params || {};
+  $("rgTitle").textContent = RG.title ? "- " + RG.title : "- no run yet";
+  if (!rows.length) { for (const id of ["rgKv","rgUa","rgDuty","rgV"]) plot($(id), {x0:0, x1:10, series:[]}); return; }
+  const x0 = rows[0][0], x1 = Math.max(rows[rows.length-1][0], x0 + 1);
+  const bands = []; let cur = null;
+  for (const r of rows){ const ph = r[1]; if (!cur || cur.ph !== ph){ if (cur) cur.x1 = r[0]; cur = {ph, x0:r[0], x1:r[0]}; if (ph === "hold" || ph === "decay") bands.push(cur); } else cur.x1 = r[0]; }
+  for (const b of bands) b.color = b.ph === "hold" ? "rgba(245,166,35,.10)" : "rgba(139,149,163,.10)";
+  const col = i => rows.map(r => [r[0], r[i] === "" ? null : r[i]]);
+  plot($("rgKv"), {x0, x1, bands, minspan_l: 1, series:[{pts: col(4), color:"#ffcf3f", dash:[3,3], width:1}, {pts: col(3), color:"#ffcf3f", width:1.8}],
+    hl:[{y:p.target_kv, color:"#2fbf71", label:"target " + p.target_kv}, {y:p.abort_kv, color:"#ff4d4f", label:"abort " + p.abort_kv}]});
+  plot($("rgUa"), {x0, x1, bands, minspan_l: 5, series:[{pts: col(5), color:"#c084fc"}],
+    hl:[{y: p.ain1_max_v != null ? p.ain1_max_v*100 : null, color:"#ff4d4f", label:"abort " + (p.ain1_max_v*100).toFixed(0) + " uA"}]});
+  plot($("rgDuty"), {x0, x1, bands, minspan_l: 0.02, series:[{pts: rows.filter(r => r[1] !== "decay").map(r => [r[0], r[2]]), color:"#4aa3ff"}],
+    hl:[{y:p.max_duty, color:"#ff4d4f", label:"max " + p.max_duty}]});
+  plot($("rgV"), {x0, x1, bands, minspan_l: 1, series:[{pts: col(7), color:"#4aa3ff"}, {pts: col(6), color:"#2fbf71"}]});
+}
+async function loadRunCsv(csv, json){
+  try {
+    const KV = L.kv_per_v, txt = await (await fetch("/runs/" + csv)).text();
+    const lines = txt.trim().split(/\r?\n/), hdr = lines.shift().split(","), ix = k => hdr.indexOf(k);
+    const num = v => v === "" || v == null ? null : Number(v);
+    const rows = lines.map(l => { const c = l.split(","); const a0 = num(c[ix("ain0_V")]), pr = num(c[ix("pred_V")]), a1 = num(c[ix("ain1_V")]);
+      return [num(c[ix("t_s")]), c[ix("phase")], num(c[ix("duty")]), a0 == null ? null : a0*KV, pr == null ? null : pr*KV, a1 == null ? null : a1*100, num(c[ix("bridge_V")]), num(c[ix("vbus_V")])]; });
+    let params = null;
+    if (json) { try { const j = await (await fetch("/runs/" + json)).json(); params = j.params; } catch(e){} }
+    RG.mode = "file"; RG.rows = rows; RG.params = params; RG.title = `loaded: ${csv} (${rows.length} rows)  `; RG.dirty = true;
+    $("rgTitle").innerHTML = "";
+    window.scrollTo({top: $("rgKv").getBoundingClientRect().top + window.scrollY - 120, behavior:"smooth"});
+  } catch(e){ msg("could not load " + csv + ": " + e, true); }
+}
+function backToLive(){ RG.mode = "live"; RG.rows = []; RG.dirty = true; fetch("/api/run_samples").then(r => r.json()).then(j => { RG.rows = j.rows || []; RG.params = j.meta && j.meta.params; RG.title = j.meta ? `live: ${j.meta.mode} run #${j.meta.run_id}` + (j.meta.csv ? ` (${j.meta.csv})` : "") : ""; }); }
+
+// ---- slow history (10 min, 1 Hz)
+const SLOWDEF = [["hv_kv","HV kV","#ffcf3f",1],["i_ua","return uA","#c084fc",5],["vbus_v","VBUS V","#4aa3ff",1],["bridge_v","bridge V","#2fbf71",1],
+  ["i3v3_ma","Pi 3V3 mA","#e879f9",20],["v3v3_v","Pi 3V3 V","#38bdf8",0.05],["t_c","temperature C","#f97316",1],["p_hpa","pressure hPa","#a3e635",1],
+  ["rh_pct","humidity %","#22d3ee",5],["lux","light lx","#fde047",1]];
+let SL = {keys:[], rows:[]};
+(function(){ const g = $("slowGrid"); for (const [k, t] of SLOWDEF) { const d = document.createElement("div");
+  d.innerHTML = `<div class="t">${t} <span id="sl_${k}" style="color:var(--text)"></span></div><canvas class="sm" id="sc_${k}"></canvas>`; g.appendChild(d); } })();
+async function loadSlow(){ try { SL = await (await fetch("/api/slow_history")).json(); } catch(e){} }
+function drawSlow(){
+  const now = Date.now()/1000, x0 = now - 600;
+  for (const [k, , c, span] of SLOWDEF){ const i = SL.keys.indexOf(k); if (i < 0) continue;
+    const pts = SL.rows.map(r => [r[0], r[i]]); const last = pts.length ? pts[pts.length-1][1] : null;
+    $("sl_" + k).textContent = last == null ? (k === "lux" ? "not connected" : "--") : Number(last).toFixed(k.endsWith("_v") && k !== "v3v3_v" ? 2 : (k === "v3v3_v" ? 3 : 1));
+    plot($("sc_" + k), {x0, x1: now, minspan_l: span, zero_l: ["p_hpa","t_c","v3v3_v","rh_pct"].includes(k) ? false : undefined,
+      xfmt: v => "-" + Math.round((now - v)/60) + "m", series:[{pts, color:c}]}); }
+}
+
+// ---- run settings + camera panels
+function renderRunSet(s){
+  const run = s.run || {}, a = run.active, meta = run.run_meta, smp = run.sample || {};
+  const p = (a && a.params) || (meta && meta.params);
+  if (!p) return;
+  const lr = run.last_run || {};
+  const rows = [["state", a ? `<b style="color:var(--bad)">${a.mode} ${a.state} / ${a.phase||""}</b>` : `idle (last: ${lr.abort ? "ABORT - " + lr.abort : (lr.code === 0 ? "completed" : "--")})`],
+    ["PD contract", (p.vbus ?? "--") + " V"], ["frequency", (p.freq_hz ?? "--") + " Hz"], ["target", (p.target_kv ?? "--") + " kV"], ["abort (predictive)", (p.abort_kv ?? "--") + " kV"],
+    ["max duty", p.max_duty ?? "--"], ["AIN1 abort", p.ain1_max_v != null ? `${p.ain1_max_v} V (${(p.ain1_max_v*100).toFixed(0)} uA)` : "--"], ["hold", (p.hold_s ?? "--") + " s"],
+    ["current duty", a && smp.duty != null ? `<b>${smp.duty}</b>` : "--"], ["predicted kV", a && smp.pred_kv != null ? fmt(smp.pred_kv,2) : "--"],
+    ["slope", a && smp.slope_kv_ms != null ? smp.slope_kv_ms + " kV/ms" : "--"], ["heartbeat age", run.heartbeat_age_s != null ? run.heartbeat_age_s + " s" : "--"]];
+  if (!a && lr.result && lr.result.peak_kv) rows.push(["last peak", fmt(lr.result.peak_kv,2) + " kV"]);
+  $("runSet").innerHTML = rows.map(([k,v]) => `<span class="hint">${k}</span><span class="mono">${v}</span>`).join("");
+}
+let camOn = false;
+function renderCam(s){
+  const c = s.camera || {};
+  let t;
+  if (!c.ok) t = "camera helper not running" + (c.error ? ` (${c.error})` : "");
+  else if (!c.detected) t = "no camera detected";
+  else t = "camera: " + c.cameras.map(x => x.kind === "csi" ? `CSI ${x.sensor}` : `USB ${x.name} ${x.dev}`).join(", ");
+  if (c.ok && c.missing && c.missing.length) t += ` | missing tools: ${c.missing.join(", ")}`;
+  if (c.recording) t += ` | REC ${c.recording.file} ${c.recording.elapsed_s}s`;
+  if (c.error && c.ok) t += ` | ${c.error}`;
+  $("camStat").textContent = t;
+  $("camView").disabled = !c.detected; $("camRec").disabled = !c.detected;
+  $("camRec").textContent = c.recording ? "Stop recording" : "Start recording";
+  const st = s.settings || {}; if (document.activeElement !== $("camAuto")) $("camAuto").checked = !!st.camera_autorecord;
+  if (!c.detected && camOn) { camOn = false; $("camImg").src = ""; $("camImg").style.display = "none"; $("camView").textContent = "Show live view"; }
+}
+$("camView").onclick = () => { camOn = !camOn; const im = $("camImg");
+  if (camOn) { im.src = `${location.protocol}//${location.hostname}:${S && S.camera && S.camera.port || 8081}/stream.mjpg?ts=${Date.now()}`; im.style.display = "block"; $("camView").textContent = "Hide live view"; }
+  else { im.src = ""; im.style.display = "none"; $("camView").textContent = "Show live view"; } };
+$("camRec").onclick = async () => { const rec = S && S.camera && S.camera.recording;
+  const r = await post("/api/camera/record", {action: rec ? "stop" : "start"}); msg("camera: " + JSON.stringify(r.j), r.status !== 200); loadRuns(); };
+$("camAuto").onchange = async () => { const r = await post("/api/settings", {camera_autorecord: $("camAuto").checked}); msg("settings: " + JSON.stringify(r.j), r.status !== 200); };
+
+function frame(){
+  drawRolling();
+  if (RG.dirty || (S && S.run && S.run.active)) { drawRun(); RG.dirty = false; }
+  requestAnimationFrame(frame);
+}
+setInterval(drawSlow, 1000);
+setInterval(loadSlow, 5000);
+window.addEventListener("resize", () => { RG.dirty = true; drawSlow(); });
+
+async function loadRuns(){
+  try {
+    const r = await (await fetch("/api/runs")).json();
+    let h = `<tr><th>run</th><th>result</th><th>files</th></tr>`;
+    for (const x of r){
+      const p = x.params || {};
+      const desc = x.mode === "ramp" ? `${p.vbus}V ${p.freq_hz/1000}k ${p.target_kv}kV` : (x.mode || "");
+      const res = x.abort ? `<span class="chip warn" title="${String(x.abort).replace(/"/g,"'")}">ABORT</span>` : (x.code === 0 ? `<span class="chip ok">ok</span>` : "");
+      h += `<tr><td class="mono">${x.stem.replace("stage7_ramp_","")}<div class="hint">${desc}${x.peak_kv ? " peak " + x.peak_kv.toFixed(2) + " kV" : ""}</div></td><td>${res}</td>
+        <td>${x.csv ? `<a href="#" onclick="loadRunCsv('${x.csv}', ${x.json ? `'${x.json}'` : "null"});return false">graph</a> <a href="/runs/${x.csv}">csv</a>` : ""} ${x.json ? `<a href="/runs/${x.json}">json</a>` : ""} ${x.video ? `<a href="/runs/${x.video}">video</a> <span class="hint">${(x.video_bytes/1e6).toFixed(1)} MB</span>` : ""}</td></tr>`;
+    }
+    $("runsT").innerHTML = (r.length ? h : `<tr><td class="hint">no runs yet</td></tr>`) +
+      `<tr><td colspan="3"><a href="#" onclick="backToLive();return false">show live / latest run graphs</a></td></tr>`;
+  } catch(e){}
+}
+
+function connect(){
+  if (es) es.close();
+  es = new EventSource("/api/stream?since=" + lastEv);
+  es.onopen = () => { $("conn").className = "badge ok"; $("conn").textContent = "live"; };
+  es.onmessage = ev => { try { render(JSON.parse(ev.data)); } catch(e){ console.error(e); } };
+  es.onerror = () => { $("conn").className = "badge bad"; $("conn").textContent = "disconnected"; es.close(); setTimeout(connect, 1500); };
+}
+setInterval(() => { $("clock").textContent = new Date().toLocaleTimeString(); }, 1000);
+
+(async () => {
+  L = await (await fetch("/api/limits")).json();
+  const l = L.limits;
+  $("limitsHint").textContent = `limits: ${l.vbus.join("/")} V, ${l.freq_hz[0]/1000}-${l.freq_hz[1]/1000} kHz, target <= ${l.target_kv[1]} kV, abort <= ${l.abort_kv[1]} kV, duty <= ${l.max_duty[1]}, AIN1 <= ${l.ain1_max_v[1]} V, hold <= ${l.hold_s[1]} s`;
+  loadForm();
+  try { const h = await (await fetch("/api/history")).json(); for (const p of h) hist.push(p); } catch(e){}
+  loadRuns(); loadSlow(); backToLive(); connect(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

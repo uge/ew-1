@@ -851,3 +851,40 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - Script: `--ain1-max` option added; the banner now prints the active
     abort level (it showed the 6 kV constant while the 11 kV abort was the
     one in effect).
+- **2026-11-01 13:52–14:06 — HV dashboard deployed (no HV).**
+  - [dashboard/README.md](dashboard/README.md); runs from `~/dashboard/` on ew-1, port 8080
+    (camera helper 8081). Token in `~/.ew1-dashboard-token`. Run data in `~/dashboard_runs/`.
+  - `stage7_ramp.py` refactored: `main()` → `run()` plus a thin CLI. It adds the optional
+    `on_sample` / `stop` hooks and a shared HV-owner flock (`/run/lock/ew1-hv.lock`). With no
+    hooks the behaviour is unchanged. The old ew-1 copy is kept as `~/stage7_ramp.py.orig-5aaeea89`.
+  - Verified without HV:
+    - SSE values match `ew1_selftest.py`;
+    - auth: control endpoints return 401 without the token;
+    - every out-of-limit parameter returns 400;
+    - preconditions: start() refuses (412/409) with `run()` stubbed;
+    - the monitor pauses whenever the HV lock is held (CLI or dashboard);
+    - the CLI refuses while the lock is held;
+    - dry phase-sync through the dashboard: 100% complementary;
+    - the safe-stop paths: button, SIGTERM, SIGKILL→dead-man child, startup.
+  - TSL2591 absent; no camera detected (ffmpeg / rpicam-apps / v4l2-ctl / picamera2 present).
+  - End state 14:06: GPIO18/19/24/25 = 0, pwm2/3 disabled + normal, 5 V contract, AIN0 ≈ 0.
+    Dashboard left running (started with `setsid nohup`, not as a service).
+  - **Not yet exercised:**
+    - an HV ramp from the dashboard, including the live run graphs;
+    - heartbeat/watchdog aborts mid-run;
+    - SAFE STOP mid-run;
+    - the 9 V round-trip;
+    - camera auto-record.
+- **2026-11-01 14:37**: dashboard limits changed at the user's request
+  ("allow up to 10 kV").
+  - `target_kv` max is now **10.0** (was 10.5). `abort_kv` max stays
+    **11.0**.
+  - **`max_duty` max raised 0.17 → 0.25**, so a corona-loaded gap can reach
+    10 kV. At 13:37 the 0.17 cap held a 10 mm gap at 9.46 kV / 24 µA.
+    Raising it cannot cause overvoltage: HV vs duty is non-monotonic
+    (unloaded peak ≈ 0.16), so past the peak more duty gives *less* HV,
+    and the predictive 11 kV abort is unchanged.
+  - Default `max_duty` left at 0.17.
+  - Deployed and restarted 14:37:54 (safe-stop on stop and start). Served
+    `/api/limits` shows the new caps. Target 10.5 and duty 0.26 are
+    rejected with 400. Unit tests updated and passing.

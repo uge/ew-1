@@ -1,0 +1,27 @@
+# ew-1 HV dashboard. Installed by install_service.sh, NOT enabled automatically.
+#   sudo systemctl start ew1-dashboard     # run now
+#   sudo systemctl enable ew1-dashboard    # start at boot (only if you want that)
+#   sudo systemctl stop ew1-dashboard      # stop: SIGTERM -> safe-stop, then ExecStopPost safe-stop
+[Unit]
+Description=ew-1 HV board dashboard (http :8080)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=uge
+Group=uge
+SupplementaryGroups=gpio i2c
+WorkingDirectory=/home/uge/dashboard
+ExecStart=/usr/bin/python3 -u /home/uge/dashboard/ew1_dashboard.py --port 8080 --bind 0.0.0.0
+# Runs after the main process exits for ANY reason (clean stop, crash, SIGKILL).
+# Skips only if a different process (e.g. a CLI stage7_ramp.py run) holds the HV lock.
+ExecStopPost=/usr/bin/python3 /home/uge/dashboard/ew1_safestop.py
+KillMode=control-group
+KillSignal=SIGTERM
+TimeoutStopSec=20
+# Never restart an HV controller automatically.
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
