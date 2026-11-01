@@ -614,3 +614,10 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - **Best so far ≈ 0.36 kV at the 5 V bridge**, about 1/37 of the 13 kV
     design target. More output needs a higher bridge voltage, which stays
     blocked by option 1 until the hardware OV trip is verified.
+- **2026-11-01 12:50**: wrote [GAIN_SHORTFALL.md](GAIN_SHORTFALL.md), a
+  findings note on the 0.36 kV best case vs the 13.3 kV model.
+  - The response peaks at 26/32 kHz, not at the 68 kHz design point.
+  - H1/H2: secondary capacitance reflected ×2500 dominates the tank.
+  - H3: 2CL75 VF ≤ 43 V threshold.
+  - Next: scope/IPROPI measurements, a sweep below 20 kHz, and a re-model.
+  - Bring-up CSVs from stages 5–7 copied to `host/data/`.

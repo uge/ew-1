@@ -57,6 +57,13 @@ The hardware trip still needs bench characterization.
     [host/STAGE6_PLAN.md](host/STAGE6_PLAN.md).
   - Next revision: add a test point on HV_SENSE_RAW, or a Pi-controlled
     self-test injection into OV_SENSE.
+- **HV gain shortfall (2026-11-01, bench):** best HV_OUT ≈ 0.36 kV at a 4.8 V
+  bridge (complementary, 32 kHz).
+  - The response peaks at 26/32 kHz, not at the 68 kHz design drive point,
+    and is ~0 by 50 kHz. A linear extrapolation gives only ≈ 1.5 kV at 20 V.
+  - The drive-to-secondary path was never modelled (the SPICE run drove the
+    secondary directly).
+  - See [host/GAIN_SHORTFALL.md](host/GAIN_SHORTFALL.md).
 - T1 remains externally sourced. Four-switch contact mapping/load ratings and Pi
   standoff/connector/enclosure assumptions remain to be confirmed physically.
 
