@@ -8,6 +8,8 @@ Why: 2026-11-01 12:36 vs 12:51, identical complementary settings gave 0.36 kV vs
 (uncontrolled phase between separately enabled RP1 PWM ch2/ch3), and a 0.16 kV/ms ramp
 overshot the 16 ms-filtered readout by ~2.5 kV.
 
+Phase: ch2/ch3 counters re-synchronised by rp1_pwm_sync.py (root) before the driver wakes.
+Hold: duty regulated around the target (down above it, up below target - 0.1 kV).
 Drive: IN1 = ch2 normal, duty D*T (high at period start); IN2 = ch3 INVERSED, duty (1-D)*T
 (high for the last D*T). D = 0.5 is full complementary. Phase is checked with the driver
 ASLEEP by sampling GPIO18/19 (they must differ >= ALIGN_MIN of the time at D = 0.5); the
@@ -29,7 +31,8 @@ PWMCHIP = "/sys/class/pwm/pwmchip0"
 KV_PER_V = 1.000164e9 / 164e3 / 1e3          # nominal, uncalibrated (~6.10 kV/V)
 ABORT_KV, TAU = 6.0, 0.016
 SLEW_KV_PER_MS = 0.020
-D0, D_STEP, STEP_DT = 0.02, 0.005, 0.020
+D0, D_STEP, STEP_DT = 0.005, 0.0025, 0.020
+HOLD_BAND_KV = 0.10
 ALIGN_MIN, ALIGN_TRIES, ALIGN_SAMPLES = 0.90, 30, 150
 F_MIN, F_MAX = 20_000, 50_000
 RAMP_TIMEOUT = 20.0
@@ -71,17 +74,17 @@ def set_duty(period, D):
     return D
 
 def align(period, log):
-    """ADVISORY (2026-11-01): at 32 kHz the ch2/ch3 phase is set by the ~5-15 us gap between the
-    two sysfs enable writes and is random run to run (1 kHz diagnostic: in phase / complementary
-    as expected). The slew-limited ramp is gain-agnostic, so a poor phase only lowers the HV.
-    Driver must be ASLEEP. Enables both channels at D=0.5 and logs IN1!=IN2 (100% = ideal)."""
-    if lev(24) != 0: raise RuntimeError("align requires GPIO24 low")
+    """Enable ch2/ch3 at D=0.5 (ch3 inversed) with the driver ASLEEP, then re-synchronise
+    their counters with rp1_pwm_sync.py (one GLOBAL_CTRL write + SET_UPDATE, root).
+    Refuses unless the helper verifies >= 99 % complementary."""
+    if lev(24) != 0 or lev(25) != 0: raise RuntimeError("align requires GPIO24/25 low")
     for ch in (2, 3): pw(f"{d(ch)}/enable", 0)
     pw(f"{d(3)}/polarity", "normal"); set_duty(period, 0.5); pw(f"{d(3)}/polarity", "inversed")
     pw(f"{d(2)}/enable", 1); pw(f"{d(3)}/enable", 1)
-    diff = sum(a != b for a, b in (lev1819() for _ in range(ALIGN_SAMPLES))) / ALIGN_SAMPLES
-    log(f"phase check (advisory): IN1!=IN2 {diff*100:.0f}% of samples (100% = ideal complementary)")
-    return diff
+    r = subprocess.run(["sudo", "-n", "python3", "/home/uge/rp1_pwm_sync.py"], capture_output=True, text=True)
+    log((r.stdout + r.stderr).strip())
+    if r.returncode != 0: raise RuntimeError("IN1/IN2 phase sync failed - refusing to drive")
+    return 1.0
 
 def safe_stop(log):
     gpio(24, 0)
@@ -123,7 +126,7 @@ def main():
         if not ok: print("PRECONDITION FAILED - nothing driven"); return 2
         period = pwm_prepare(freq); log(f"PWM ch2/ch3 prepared, period {period} ns")
         diff = align(period, log); result["align"] = diff
-        set_duty(period, D0); log(f"duty -> {D0} (driver still asleep)")
+        set_duty(period, D0); log(f"phase synced; duty -> {D0} (driver still asleep)")
         if mode == "align":
             for Dt in (0.25, D0):
                 set_duty(period, Dt); time.sleep(0.01)
@@ -188,8 +191,13 @@ def main():
                         phase, t_hold = "hold", now; log(f"max duty {max_d} reached, HV settled at {a0*KV_PER_V:.2f} kV; hold {hold}s")
                 if now - t_ramp > RAMP_TIMEOUT:
                     phase, t_hold = "hold", now; log("ramp timeout; hold")
-            elif now - t_hold >= hold:
-                log("hold complete"); break
+            else:
+                if now - t_step >= STEP_DT:            # regulate around target during hold
+                    t_step = now; kv = a0 * KV_PER_V
+                    if kv > target_kv: D = set_duty(period, max(D - D_STEP, 0.0))
+                    elif kv < target_kv - HOLD_BAND_KV and slope * KV_PER_V / 1000 < SLEW_KV_PER_MS: D = set_duty(period, min(D + D_STEP, max_d))
+                if now - t_hold >= hold:
+                    log(f"hold complete (duty {D:.4f})"); break
             time.sleep(0.001)
         result.update(peak_kv=peak * KV_PER_V, duty_end=D, duty_at_target=d_at_target)
     except Exception as e:

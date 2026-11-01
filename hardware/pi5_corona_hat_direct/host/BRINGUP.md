@@ -690,3 +690,33 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - **Next:** make the hold regulate (back the duty off above target), fix
     the phase (one RP1 register write for both enables, or PIO), and only
     then consider 9 V.
+- **2026-11-01 13:01–13:05**: **IN1/IN2 phase fixed; ramp control refined; 9 V
+  ramp done.**
+  - **Phase:** a single-read measurement (SYS_RIO0 +0x08, bits 18/19)
+    showed the ch2/ch3 phase random per enable: 2.5–98% complementary over
+    16 trials (`host/rp1_pwm_phase_test.py`).
+  - The earlier `pinctrl` 32 kHz readings were sampling artefacts.
+  - Fix, `host/rp1_pwm_sync.py` (root): clear and re-set both enable bits
+    in **one GLOBAL_CTRL write with SET_UPDATE (bit 31)**. Gave **8/8
+    trials 100% complementary**; without bit 31, no effect. It refuses
+    unless GPIO24/25 are low and ch2/ch3 are configured as expected, and
+    verifies ≥ 99%.
+  - Register map verified: GLOBAL_CTRL 0x000; CHANn CTRL / RANGE / PHASE /
+    DUTY at 0x14 / 18 / 1c / 20 + 0x10n; 50 MHz clock.
+  - `stage7_ramp.py`: sync before the driver wakes (refuses on failure);
+    D0 0.005, step 0.0025; the hold regulates (duty down above target, up
+    below target − 0.1 kV).
+- **13:04 5 V ramp, phase-synced** (`data/stage7_ramp_ramp_5V_20261101_130400.csv`):
+  - 1 kV +282 ms (D 0.0350); 2 kV +353 ms (D 0.0425); 3 kV +426 ms (D 0.0500); 4 kV +519 ms (D 0.0600); 5 kV +691 ms (D 0.0775);
+  - hold 4.83–5.13 kV (duty regulated 0.078 → 0.0575);
+  - **peak 5.13 kV**, max slope 0.015 kV/ms;
+  - bridge min 4.78 V, no faults. **PASS.**
+- **13:04:47 9 V ramp, phase-synced** (user-approved 9 V, 6 kV limit;
+  `data/stage7_ramp_ramp_9V_20261101_130447.csv`):
+  - 1 kV +237 ms (D 0.0300); 2 kV +288 ms (D 0.0325); 3 kV +347 ms (D 0.0350); 4 kV +398 ms (D 0.0400); 5 kV +457 ms (D 0.0425);
+  - hold 4.22–5.69 kV (duty 0.043 → 0.0325);
+  - **peak 5.69 kV** (0.31 kV under the 6 kV abort), max slope 0.022 kV/ms;
+  - bridge min 8.65 V, AIN1 ≤ 5.6 mV, no faults;
+  - returned to 5 V (AMS True). **PASS, but small margin:** each 0.0025 duty
+    step is worth more kV at 9 V. Next: a smaller step or slew limit at 9 V,
+    or a lower target.
