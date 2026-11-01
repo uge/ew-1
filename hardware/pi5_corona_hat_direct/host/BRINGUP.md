@@ -20,7 +20,7 @@ GPIO18/19/24/25 have never been driven high with the board attached.
 | Host | Pi 5 ew-1, serial `9b8f9676cf6e79ad`, wlan0 192.168.0.130 (eth0 unplugged) |
 | Image | Reloaded 2026-10-31 ~17:18. Passwordless sudo. `ew1_host_setup.sh` re-run 17:24 |
 | Board | N-layout-17-hv-warnings on J2. **D3, D90, D91 re-fitted by hand** (all three were placed reversed) |
-| J3 USB-C | **Connected** to a 65 W SPR PD supply (5/9/12/15 V @ 3 A, 20 V @ 3.2 A, not EPR). AIN2 ≈ 5.1 V. U7 ENABLE = 0, no contract |
+| J3 USB-C | **65 W fixed-PDO SPR supply** (5/9/12/15 V @ 3 A, 20 V @ 3.2 A). **No PPS, AVS or EPR advertised** (U7 SRC_PDO_PPS1–3 = 0x00, verified 10:52). Explicit **5 V / 3 A** contract since 10:47. AIN2 ≈ 5.1 V. A PPS supply is wanted (design intent) but **not attached** |
 | Lid chain S3–S6 | **Closed (taped)**. GPIO23 = 1, K1 energized (3V3 ≈ 85–90 mA) |
 | Illumination mini board (TSL2591, 0x29) | Disconnected |
 | HV output J60/J61 | Unchanged since attach |
@@ -49,7 +49,7 @@ abort condition appears, return to the previous safe state.
 | 2 | J3 at default 5 V, lid open | Stage 1 pass | AIN2 ≈ 0.76 V (5 V). AIN0/1/3 ≈ 0. Faults idle. 3V3 steady | ✅ 2026-10-31 17:30 |
 | 3 | Interlock chain | Stage 2 pass. Pi holds 24/25 low. J62↔J64, J63↔J65, J66↔J68, J67↔J69 wired | All four closed → GPIO23=1. Any one open → 0. Faults stay idle | ✅ 2026-11-01 10:35 (after D3/D90/D91 re-fit; S3–S6 each break the chain) |
 | 4 | PD source readout / contract | Unofficial map in [HUSB238A.md](HUSB238A.md). Non-EPR source on J3. Attach question resolved | `srccap --arm` lists PDOs. `request V --arm --max V` shows V on AIN2 (×6.556) | ✅ 2026-10-31 18:07 (PDOs 5/9/12/15/20 V; 20 V auto-boot, 9 V & 5 V verified) |
-| 5 | Bulk enable (GPIO25) at 5 V | Stage 3 pass, lid closed, 4 defined | U9 turns on without EFUSE_FLT. AIN3 tracks the bridge supply. GPIO25 low turns it off again | proposed |
+| 5 | Bulk enable (GPIO25) at 5 V | Stage 3 pass, lid closed, explicit 5 V contract | 5.1 contract; 5.2 GPIO25 high → bridge ≈ 4.8 V, no EFUSE_FLT; 5.3 low → decays in about 3 s; 5.4 lid open cuts it in hardware; 5.5 (opt) 9 V | ⏳ 5.1 ✅ 10:47, 5.2 ✅ + 5.3 ✅ 10:51, 5.4 ✅ 10:53 (5.0 inspection skipped by user); 5.5 ✅ 10:57 (option a step-down) → **stage 5 complete** |
 | 6 | Driver enable (GPIO24), no PWM | Stage 5 pass | DRV_nFAULT stays 1. GPIO24 low disables the driver and clears the OV latch | proposed |
 | 7 | PWM / first HV | Bench HV plan, OV trip characterization (AUDIT.md) | Defined by the supervised HV procedure | proposed |
 
@@ -307,3 +307,143 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
     the coil current dropping to baseline every time.
   - The earlier all-closed attempt at 10:34 read 0 because one switch was not
     made. It was mechanical (tape/plunger), not electrical.
+- **2026-11-01 10:44**: **stage 5.1 attempted** (user skipped the 5.0
+  inspection). `request_fixed(5)` set CONTROL1.ENABLE 0→1 (0x13 → 0x1b), then
+  returned AMS success = False.
+  - U7 stays **unattached**: STATUS 0x00, CC none/Ra, SNK_FSM 0x01. That held
+    for about 8 s of polling; DPDM_STATUS raw = 0x08 (undocumented bit 3).
+  - Chip VBUS 5.125 V. AIN2 5.02–5.19 V over 303 samples at about 200 Hz, so
+    no automatic-request excursion. AIN3 ≤ 4 mV.
+  - GPIO24/25 low, GPIO23 = 1, faults idle, GPIO26 = 0, 3V3 95 mA.
+  - On 2026-10-31 the same command attached within tCCdeb. The difference
+    since: the Pi was power-cycled with J3 left plugged in, so U7 lost VDD
+    while VBUS stayed up. Likely needs a J3 re-attach. Not yet retried.
+- **2026-11-01 10:47**: re-attach step 1: cleared U7 CONTROL1.ENABLE
+  (0x1b → 0x13, read back 0x13). U7 disabled and unattached. AIN2 5.15 V,
+  AIN3 0.6 mV, GPIO24/25 low, GPIO23 = 1, faults idle, GPIO26 = 0. Waiting
+  for the user to unplug and replug J3.
+- **2026-11-01 10:46**: the user replugged J3 (with U7 ENABLE = 0), then
+  stage 5.1 was retried.
+  - **Same failure:** ENABLE 0→1 but attach = 0, CC none/Ra (BC_LVL 0, no Rp
+    seen), SNK_FSM 0x01, AMS success False.
+  - VBUS 5.02–5.19 V (303 samples), no excursion. Chip VBUS 5.000 V.
+    AIN3 ≤ 4 mV.
+  - So re-attach is not the fix. VBUS without any Rp on CC points to the
+    source/cable (USB-A→C, non-PD path) or CC continuity at J3/U7.3–4 after
+    handling.
+  - Set ENABLE back to 0, so a sudden attach cannot leave an automatic 20 V
+    request standing. Stage 5.1 not passed.
+- **2026-11-01 10:47**: J3 cable flipped and the correct supply connected (see
+  the correction below), then stage 5.1 retried.
+  **Stage 5.1 PASSED.**
+  - `request_fixed(5)`: ENABLE 0→1, attach, AMS success True. Explicit
+    **5 V / 3 A** contract (PD_CONTRACT 0x1, CC 3.0 A, SNK_FSM 0x06). Source
+    PDOs 5/9/12/15 V @ 3 A and 20 V @ 3.2 A, not EPR.
+  - VBUS sampled at about 200 Hz (714 samples, 3.55 s):
+    - a dip to 0.02 V during attach/negotiation;
+    - automatic-request excursion: **peak 19.61 V, above 5.6 V for 0.63 s**
+      (1.835–2.460 s), then re-held to 5 V. That is within the abort-rule
+      allowance (≤ 21 V, non-EPR, re-held at once).
+  - AIN3 ≤ 5 mV throughout (U9 off). Final AIN2 5.11 V. GPIO24/25 low,
+    GPIO23 = 1, faults idle, GPIO26 = 0, 3V3 92 mA.
+  - ~~**Finding:** CC works in only one plug orientation~~ **Withdrawn
+    2026-11-01 10:52** (see the correction entry below). The 10:44–10:46
+    failures were caused by the wrong supply being plugged in, not by a CC
+    defect.
+- **2026-11-01 10:52 — correction.** The user reports the **wrong power supply
+  was plugged into J3** during the 10:44–10:46 stage 5.1 attempts.
+  - U7 seeing no Rp (CC none/Ra) with 5 V on VBUS was that supply, not a CC
+    fault. The "CC works in one orientation only" finding is withdrawn; J3/CC
+    repair is not indicated.
+  - The supply attached since 10:47 was checked read-only. Fixed PDOs are
+    5/9/12/15 V @ 3 A and 20 V @ 3.2 A. **SRC_PDO_PPS1–3 = 00 00 00,
+    SRC_PPS_VOLTAGE = 00, SRC_PDO_AVS = 00, SOURCECAP_INFO = 00, so no PPS is
+    advertised.** It matches the 2026-10-31 65 W SPR supply.
+  - The user wants a PPS supply attached. **Not yet true.** Caveat: the PPS
+    fields of the unofficial register map have never been seen populated, so
+    confirm with the next (PPS) supply or a USB-PD tester.
+- **2026-11-01 10:49**: **stage 5.2 run** (`host/stage5_2.py`, CSV
+  `~/stage5_2_20261101_104922.csv` on ew-1).
+  - Preconditions OK: PD 5 V contract, VBUS 5.12 V, bridge 3 mV, GPIO24 = 0,
+    GPIO23 = 1, faults idle, 3V3 89 mA.
+  - **GPIO25 high** (the first time ever with the board attached). The bridge
+    rose to **4.88–4.90 V within 0.1 s**, matching the 4.8 V expected.
+  - Steady for 7 s:
+    - VBUS 5.09–5.11 V (no measurable dip);
+    - EFUSE_FLT = 1, DRV_nFAULT = 1, OV trip 0, interlock 1;
+    - 3V3 84–95 mA, since the bridge is powered from USB, not 3V3.
+  - **Auto-abort at 7.0 s on "3V3 +35 mA".** It was a single vcgencmd sample
+    of 123.9 mA, with 94.7 mA before and 85.9 mA after. The same size as the
+    idle spikes seen earlier (99 and 137 mA), so it looks like a
+    **false trip** on measurement noise, not a load.
+  - **5.3 decay, from the abort:** the bridge fell below 2.0 V in 0.5 s,
+    1.0 V in 1.0 s, 0.5 V in 1.5 s and 0.1 V in 2.9 s (τ ≈ 0.6 s; about
+    0.75 s estimated from R60 × C). GPIO25 confirmed low afterwards.
+  - Verdict: U9 path, D50 forward and D51 not shorting are all behaving
+    correctly (no EFUSE_FLT, the bridge sits one Schottky drop below VBUS).
+    The 30 s hold was not completed. The abort rule needs debouncing (median
+    of 3 consecutive 3V3 samples) before a rerun.
+- **2026-11-01 10:51**: **stage 5.2 rerun with the debounced 3V3 check**
+  (median of 3), CSV `~/stage5_2_20261101_105101.csv`. **5.2 PASSED.**
+  **5.3 PASSED.**
+  - Preconditions OK (5 V contract, VBUS 5.10 V, bridge 3 mV, GPIO24 = 0,
+    interlock 1, faults idle, 3V3 88 mA).
+  - **GPIO25 high for 29.9 s, with no abort:**
+    - bridge > 4.0 V within 0.1 s, steady **4.88–4.90 V** (300 samples at
+      10 Hz);
+    - VBUS 5.09–5.12 V;
+    - EFUSE_FLT = 1, DRV_nFAULT = 1, OV trip 0, interlock 1 throughout;
+    - 3V3 84.9–93.7 mA (no load on the Pi).
+  - **5.3 decay after GPIO25 low:** below 2.0 V in 0.6 s, 1.0 V in 1.1 s,
+    0.5 V in 1.6 s and **0.1 V in 3.1 s**. End: bridge 17 mV, VBUS 5.10 V.
+  - GPIO25 confirmed low afterwards. Next: 5.4, interlock under power.
+- **2026-11-01 10:53**: **stage 5.4 (interlock under power) PASSED**
+  (`host/stage5_4.py`, CSV `~/stage5_4_20261101_105321.csv`).
+  - Preconditions OK. GPIO25 high, and the bridge reached 4.90 V within
+    0.1 s.
+  - The user opened one lid switch at t = 0.70 s; GPIO23 → 0.
+  - With **GPIO25 still high**, the bridge fell below 2.0 V in 0.6 s, 1.0 V
+    in 1.1 s, 0.5 V in 1.6 s and **0.1 V in 2.8 s**, and was at 33 mV at the
+    end of the 4 s hold. That matches the software turn-off decay, so K1
+    dropping out opens BULK_EN and turns U9 off in hardware.
+  - EFUSE_FLT = 1, DRV_nFAULT = 1, OV trip 0, VBUS 5.09–5.12 V throughout.
+  - Then GPIO25 low; final bridge 7 mV. The switch is left open (GPIO23 = 0)
+    pending the user reclosing it.
+- **2026-11-01 10:55**: **stage 5.5** (`host/stage5_5.py`, CSV
+  `~/stage5_5_20261101_105504.csv`). Preconditions OK (5 V contract,
+  SRC_PDO_9V advertised 0x9e, interlock 1).
+  - GPIO25 high at 5 V: bridge 4.90 V.
+  - **request 9 V at t = 2.0 s → AMS True.** VBUS 8.96–8.97 V, bridge
+    **8.73–8.74 V** over a 10 s hold. EFUSE_FLT/nFAULT 1, OV trip 0, 3V3
+    86–91 mA. **5 → 9 V with the bridge powered: PASS.**
+  - **request 5 V at t = 15.0 s → EFUSE_FLT low within 0.1 s** (VBUS 6.97 V,
+    bridge 7.75 V at that sample). The script aborted: GPIO25 low, then a
+    final request of 5 V (AMS True). EFUSE_FLT was back to 1 throughout the
+    off phase; final PD contract 5 V, bridge 40 mV.
+  - **Cause (TPS25947 datasheet, Table 7-3):** "Reverse Current
+    (VOUT − VIN) > VREVTH" leads to reverse-current blocking, **not
+    latched, FLT = L**. VREVTH is about −29 mV. On a downward PD step, VBUS
+    falls faster than VIN_PROTECTED (C22 + C70 = 32 µF, which drains only
+    through D50 → bridge → R60 10 kΩ), so U9 blocks and flags FLT until
+    VOUT < VIN. It is an expected indication, not a hardware fault.
+  - **Firmware implication:** EFUSE_FLT alone cannot tell an overcurrent or
+    thermal fault from RCB during a voltage step-down. Either drop GPIO25
+    before lowering the PD voltage, or treat FLT as RCB only while the
+    bridge is above the new VBUS and only for a bounded time (≤ 3 s, about
+    5 × τ of the R60 bleed).
+- **2026-11-01 10:57**: **stage 5.5 rerun with option (a)** (GPIO25 low before
+  the step-down; `host/stage5_5.py`, CSV `~/stage5_5a_20261101_105701.csv`).
+  **PASSED. Stage 5 complete** (5.0 inspection skipped by the user).
+  - 5 V on: bridge 4.90 V.
+  - request 9 V (AMS True). Hold 10 s: VBUS 8.96–8.97 V, bridge
+    8.73–8.74 V.
+  - GPIO25 low at 15.01 s, request 5 V at 15.31 s (AMS True). The bridge
+    fell 8.70 → 1.20 V by 16.31 s.
+  - GPIO25 high again at 16.41 s, once the bridge was below VBUS − 0.5 V. The
+    bridge returned to 4.88–4.91 V at VBUS 5.09–5.12 V for 3 s.
+  - GPIO25 low at 19.41 s; bridge 30 mV at the end.
+  - **EFUSE_FLT = 1, DRV_nFAULT = 1, OV trip 0, interlock 1 in every phase.**
+    3V3 85–93 mA. Final PD contract 5 V.
+  - **Firmware rule adopted:** always drop GPIO25 (BULK_CMD) before
+    requesting a lower PD voltage. Re-enable only once the bridge is below
+    the new VBUS − 0.5 V. With that rule, any EFUSE_FLT is a real fault.
