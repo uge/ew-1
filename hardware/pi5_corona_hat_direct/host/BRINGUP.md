@@ -826,3 +826,28 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
       ≈ 7 µA at 12.5 kV.
     - The trip remains best tested with a temporarily lowered threshold
       (15 kΩ across R103 → ≈ 3.9 kV) or a fly-lead injection.
+- **2026-11-01 13:37 — first corona run: 10 s into a bare ≈ 10 mm gap at J60.**
+  - User request: leads ≈ 10 mm apart, not insulated; "10 kV for 10 s".
+  - CSV `data/stage7_ramp_ramp_9V_20261101_133747.csv`.
+  - Settings: 9 V contract, 32 kHz, phase-synced 100%, target 10 kV,
+    predictive abort 11 kV, **duty capped at 0.17** (rising side of the
+    non-monotonic curve).
+  - **AIN1 abort raised to 0.5 V (50 µA)** for corona; the 100 MΩ ballast
+    limits output current to ≈ 100 µA even into a spark. The lid interlock
+    was checked closed before the run.
+  - **Result:** 10 kV was *not* reached. The ramp hit the 0.17 duty cap and
+    held **10.0 s at max duty**: HV_OUT **9.46 kV mean** (9.29–9.57, σ 0.05),
+    peak 9.65 kV. No abort, no faults, bridge 8.60–8.61 V.
+  - **Corona current (AIN1/R90): 24.2 µA mean (23.6–24.9, σ 0.2), very
+    steady**, rising slightly 9.38 → 9.50 kV over the 10 s.
+  - **Onset:** 0.3 µA at 2–4 kV, 0.5 µA at 6 kV (duty 0.046), 13.8 µA at
+    8 kV (duty 0.126), 22.7 µA at 9 kV (duty 0.142). Corona starts between
+    6 and 8 kV for this gap.
+  - The load shifts the duty curve: unloaded, 9 kV needed duty ≈ 0.06.
+  - Estimated ballast drop 24 µA × 100 MΩ ≈ 2.4 kV, so the multiplier
+    output is ≈ 11.9 kV. Gap power ≈ 9.46 kV × 24 µA ≈ 0.23 W.
+  - Safe-stop and the return to 5 V were clean. AIN0 decayed to 12 mV within
+    5 s. Post: GPIO18/19/24/25/26 = 0, AIN1 offset.
+  - Script: `--ain1-max` option added; the banner now prints the active
+    abort level (it showed the 6 kV constant while the 11 kV abort was the
+    one in effect).

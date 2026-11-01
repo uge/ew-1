@@ -3,6 +3,10 @@
 
   stage7_ramp.py align [FREQ]                         dry: driver asleep, bridge off; align IN1/IN2, report
   stage7_ramp.py ramp [--vbus 5|9] [--freq F] [--target-kv K] [--max-duty D] [--hold S]
+  stage7_ramp.py ramp ... --ain1-max V   return-current abort on AIN1 (default 0.10 V = 10 uA; max 0.6)
+  stage7_ramp.py ramp ... --abort-kv A --expect-trip   OV-trip test (2026-11-01, user request): ramp until
+        the HARDWARE trip (GPIO26) fires; keep PWM 100 ms to prove Q2 stops the drive; check latch (D90)
+        with GPIO24 high after HV decays; GPIO24 low must clear it (D91). --abort-kv is the firmware backstop.
 
 Why: 2026-11-01 12:36 vs 12:51, identical complementary settings gave 0.36 kV vs >= 3 kV
 (uncontrolled phase between separately enabled RP1 PWM ch2/ch3), and a 0.16 kV/ms ramp
@@ -108,8 +112,12 @@ def main():
     vbus = int(opt("--vbus", 5, int)); target_kv = opt("--target-kv", 5.0); max_d = min(opt("--max-duty", 0.5), 0.5)
     hold = opt("--hold", 0.5)
     if vbus not in (5, 9): print("--vbus must be 5 or 9"); return 2
-    if target_kv >= ABORT_KV: print("target must be below the 6.0 kV abort"); return 2
-    a0_abort, a0_target = ABORT_KV / KV_PER_V, target_kv / KV_PER_V
+    abort_kv = opt("--abort-kv", ABORT_KV); expect_trip = "--expect-trip" in args
+    ain1_max = opt("--ain1-max", 0.10)        # V on AIN1 (100 uA/V); 0.5 V = 50 uA corona design point
+    if ain1_max > 0.6: print("ain1-max capped at 0.6 V (60 uA)"); return 2
+    if abort_kv > 19.0: print("abort-kv capped at 19.0"); return 2
+    if target_kv >= abort_kv: print("target must be below the abort"); return 2
+    a0_abort, a0_target = abort_kv / KV_PER_V, target_kv / KV_PER_V
     d_step, slew = TUNING[vbus]
 
     t0 = time.monotonic(); rows = []; ev_log = []
@@ -125,7 +133,7 @@ def main():
         c0 = b.read_byte_data(0x42, 0x67) >> 4; vb = ads(b, 2) * 118 / 18; br = ads(b, 3) * 11
         a0 = ads(b, 0); a1 = ads(b, 1); g = gp(); base3 = sorted(i3v3() for _ in range(5))[2]
         print(f"pre: PD=0x{c0:x} VBUS={vb:.2f} bridge={br:.3f} AIN0={a0:.4f} AIN1={a1:.4f} gpio={g} g18/19={lev1819()} 3V3={base3*1000:.0f}mA "
-              f"| freq={freq} vbus={vbus} target={target_kv} kV abort={ABORT_KV} kV max_duty={max_d}", flush=True)
+              f"| freq={freq} vbus={vbus} target={target_kv} kV abort={abort_kv} kV ain1_max={ain1_max} V max_duty={max_d}", flush=True)
         ok = (c0 == 1 and 4.6 < vb < 5.6 and br < 0.2 and a0 < 0.01 and a1 < 0.1 and g["nFAULT"] == 1 and g["EFUSE_FLT"] == 1
               and g["OVTRIP"] == 0 and (g["INTLK"] == 1 or mode == "align") and lev1819() == (0, 0))
         if not ok: print("PRECONDITION FAILED - nothing driven"); return 2
@@ -175,12 +183,17 @@ def main():
                          round(last["vb"], 3), round(last["br"], 3), round(last["a1"], 4),
                          g["nFAULT"], g["EFUSE_FLT"], g["INTLK"], g["OVTRIP"]])
             why = []
-            if a0 >= a0_abort or pred >= a0_abort: why.append(f"AIN0 {a0:.3f} pred {pred:.3f} >= {a0_abort:.3f} (6 kV)")
-            if g["OVTRIP"]: why.append("OV trip")
+            if a0 >= a0_abort or pred >= a0_abort: why.append(f"AIN0 {a0:.3f} pred {pred:.3f} >= {a0_abort:.3f} ({abort_kv} kV)")
+            if g["OVTRIP"]:
+                if expect_trip:
+                    result["trip_kv_ain0"] = round(a0 * KV_PER_V, 3); result["trip_t"] = round(t, 4); result["trip_duty"] = D
+                    log(f"HARDWARE OV TRIP: GPIO26=1 at AIN0 {a0:.4f} V (~{a0*KV_PER_V:.2f} kV), duty {D:.4f}")
+                    break
+                why.append("OV trip")
             if g["EFUSE_FLT"] == 0: why.append("EFUSE_FLT low")
             if g["nFAULT"] == 0: why.append("nFAULT low")
             if g["INTLK"] == 0: why.append("interlock opened")
-            if last["a1"] > 0.10: why.append(f"AIN1 {last['a1']:.3f}")
+            if last["a1"] > ain1_max: why.append(f"AIN1 {last['a1']:.3f} V > {ain1_max} (return current ~{last['a1']*100:.0f} uA)")
             if n > 3 and not vb_band[0] <= last["vb"] <= vb_band[1]: why.append(f"VBUS {last['vb']:.2f}")
             if n > 6 and not br_band[0] <= last["br"] <= br_band[1]: why.append(f"bridge {last['br']:.2f}")
             if len(h3) >= 3 and sorted(h3[-3:])[1] - base3 > 0.020: why.append("3V3 +20 mA")
@@ -206,6 +219,35 @@ def main():
                     log(f"hold complete (duty {D:.4f})"); break
             time.sleep(0.001)
         result.update(peak_kv=peak * KV_PER_V, duty_end=D, duty_at_target=d_at_target)
+        if expect_trip and "trip_kv_ain0" in result and not abort:
+            # 1) PWM keeps running 100 ms: HV must FALL (Q2 holds DRV_nSLEEP low)
+            ts = time.monotonic(); a_first = None; a_last = None; amax = 0.0
+            while time.monotonic() - ts < 0.100:
+                a0 = ads(b, 0); amax = max(amax, a0); a_first = a_first if a_first is not None else a0; a_last = a0
+                rows.append([round(time.monotonic() - t0, 4), "trip_pwm_on", round(D, 4), round(a0, 4), "", "", "", "", "", gp()["nFAULT"], gp()["EFUSE_FLT"], gp()["INTLK"], gp()["OVTRIP"]])
+                if a0 >= a0_abort: abort = f"HV still rising after trip: AIN0 {a0:.3f}"; break
+            result["post_trip_100ms"] = (round(a_first * KV_PER_V, 2), round(amax * KV_PER_V, 2), round(a_last * KV_PER_V, 2))
+            log(f"100 ms after trip with PWM still running: AIN0 {a_first*KV_PER_V:.2f} -> {a_last*KV_PER_V:.2f} kV (max {amax*KV_PER_V:.2f})")
+            for ch in (2, 3): pw(f"{d(ch)}/enable", 0); pw(f"{d(ch)}/polarity", "normal")
+            log("PWM disabled (GPIO24 still high)")
+            # 2) latch: wait for HV < 2 kV with GPIO24 high, GPIO26 must stay 1
+            ts = time.monotonic(); latched = True
+            while time.monotonic() - ts < 5.0:
+                a0 = ads(b, 0); g = gp()
+                rows.append([round(time.monotonic() - t0, 4), "latch", 0, round(a0, 4), "", "", "", "", "", g["nFAULT"], g["EFUSE_FLT"], g["INTLK"], g["OVTRIP"]])
+                if g["OVTRIP"] == 0: latched = False
+                if a0 * KV_PER_V < 2.0 and time.monotonic() - ts > 0.5: break
+                time.sleep(0.01)
+            result["latch_held"] = latched; result["latch_hv_kv"] = round(a0 * KV_PER_V, 2)
+            log(f"latch check: GPIO26 {'stayed 1' if latched else 'DROPPED'} while HV fell to {a0*KV_PER_V:.2f} kV (GPIO24 high)")
+            # 3) clear: GPIO24 low -> GPIO26 must go 0
+            gpio(24, 0); tc = time.monotonic(); cleared = None
+            while time.monotonic() - tc < 0.5:
+                if gp()["OVTRIP"] == 0: cleared = round((time.monotonic() - tc) * 1000, 2); break
+            result["clear_ms"] = cleared
+            log(f"clear check: GPIO24 low -> GPIO26 {'0 after ' + str(cleared) + ' ms' if cleared is not None else 'STILL 1 after 500 ms'}")
+        elif expect_trip and not abort:
+            abort = "expected hardware trip did not occur"
     except Exception as e:
         abort = f"exception {type(e).__name__}: {e}"
     finally:
