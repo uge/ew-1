@@ -47,6 +47,16 @@ The hardware trip still needs bench characterization.
     D3/D90/D91. Then regenerate the CPL and check it in the JLCPCB placement
     preview before the next order.
   - D5, D50, D51, D1/D4 and C60/C70 have no offset entry either; check them.
+- **Hardware HV overvoltage trip unverified on the bench** (2026-11-01, user decision):
+  - The injected-trip test was impractical. HV_SENSE_RAW has no test point and
+    no adjustable source was available.
+  - The U4/U11 trip at 16.96 kV, the D90 latch, the D91 clear and the Q2
+    action are untested. D90/D91 were hand-re-fitted after reversed assembly.
+  - Until verified, stage 7 runs with firmware-only OV protection: a 5 V
+    contract and an AIN0 > 0.50 V (≈ 3 kV) cutoff. See
+    [host/STAGE6_PLAN.md](host/STAGE6_PLAN.md).
+  - Next revision: add a test point on HV_SENSE_RAW, or a Pi-controlled
+    self-test injection into OV_SENSE.
 - T1 remains externally sourced. Four-switch contact mapping/load ratings and Pi
   standoff/connector/enclosure assumptions remain to be confirmed physically.
 

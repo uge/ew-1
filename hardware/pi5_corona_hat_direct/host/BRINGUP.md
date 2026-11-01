@@ -6,34 +6,38 @@ This is the living record of bring-up on the bench. **Update it after every
 step:** change the snapshot, tick the stage, and append to the log. Host setup
 commands are in [RUNBOOK.md](RUNBOOK.md). Release status is in [AUDIT.md](../AUDIT.md).
 
-## Current state — 2026-11-01 10:36 PST
+## Current state — 2026-11-01 12:17 PST
 
-**Stage reached: 4 of 7. Stages 0–4 all pass.** Stage 3 (interlock) passed
-2026-11-01 10:35, after D3/D90/D91 were re-fitted. The lid switches are taped
-closed, so K1 is energized. Through K1, GPIO24/25 now reach DRV_nSLEEP and
-BULK_EN, but both are held low. The U7 PD contract was reset by the
-2026-10-31 power-down: U7 is at ENABLE = 0, unattached, default 5 V.
-GPIO18/19/24/25 have never been driven high with the board attached.
+**Stage reached: 6 of 7. Stages 0–6 pass.**
+- Stage 5 (bulk enable) was run without the 5.0 inspection.
+- Stage 6 is the reduced version (option 1): **the hardware OV trip, the D90
+  latch and Q2 are unverified**, and firmware-only OV limits apply to stage 7.
+- GPIO18/19 have never toggled with the board attached; no HV has ever been
+  generated.
 
 | Item | State |
 |---|---|
-| Host | Pi 5 ew-1, serial `9b8f9676cf6e79ad`, wlan0 192.168.0.130 (eth0 unplugged) |
-| Image | Reloaded 2026-10-31 ~17:18. Passwordless sudo. `ew1_host_setup.sh` re-run 17:24 |
-| Board | N-layout-17-hv-warnings on J2. **D3, D90, D91 re-fitted by hand** (all three were placed reversed) |
-| J3 USB-C | **65 W fixed-PDO SPR supply** (5/9/12/15 V @ 3 A, 20 V @ 3.2 A). **No PPS, AVS or EPR advertised** (U7 SRC_PDO_PPS1–3 = 0x00, verified 10:52). Explicit **5 V / 3 A** contract since 10:47. AIN2 ≈ 5.1 V. A PPS supply is wanted (design intent) but **not attached** |
-| Lid chain S3–S6 | **Closed (taped)**. GPIO23 = 1, K1 energized (3V3 ≈ 85–90 mA) |
+| Host | Pi 5 ew-1, serial `9b8f9676cf6e79ad`, wlan0 192.168.0.130 (eth0 unplugged). Booted ~11:47 |
+| Board | N-layout-17-hv-warnings on J2. **D3/D90/D91 re-fitted by hand** (all three were assembled reversed) |
+| J3 USB-C | 65 W SPR supply (5/9/12/15 V @ 3 A, 20 V @ 3.2 A). **No PPS / AVS / EPR advertised.** Explicit **5 V / 3 A** contract. AIN2 ≈ 5.1 V |
+| U7 | ENABLE = 1, attached, 5 V contract |
+| Lid chain S3–S6 | Closed (GPIO23 = 1), K1 energized |
 | Illumination mini board (TSL2591, 0x29) | Disconnected |
-| HV output J60/J61 | Unchanged since attach |
-| Pi outputs | GPIO18/19 PWM idle low. GPIO24/25 driven low |
+| HV output J60/J61 | Unchanged since attach, never energized |
+| Pi outputs | GPIO18/19 PWM a3, low, channels not exported. GPIO24/25 low |
 | Faults | DRV_nFAULT = 1, EFUSE_FLT = 1, HV_OV_TRIP = 0 |
 
-**Next action, before stage 5:**
-1. Inspect the polarized parts that have no CPL rotation entry: D51, D50, D5,
-   D1/D4, C60/C70 (see AUDIT.md). D51 or D50 reversed would show up at stage 5.
-2. Write the stage 5–7 bench plan, including the injected OV-trip test (D90
-   latch, D91 clear).
-3. Re-establish an explicit 5 V contract
-   (`husb238a.py request 5 --arm --max 5`) before any GPIO25 test.
+**Next action:** write the **stage 7 plan** (first PWM / first HV) within the
+option 1 limits in [STAGE6_PLAN.md](STAGE6_PLAN.md):
+- 5 V contract only;
+- software cutoff AIN0 > 0.50 V (≈ 3 kV);
+- short bursts, lid closed.
+
+It must also define:
+- the J60/J61 termination/load;
+- the HV probe and discharge-verification procedure;
+- the drive frequency/duty start point (the model used 68 kHz);
+- the handling of nFAULT current-chopping pulses (IMODE = 62 kΩ).
 
 **Until the 28 V boot-up auto-request is mitigated in hardware/strapping, J3 may only be fed by a source that cannot offer EPR** (≤ 20 V, ≤ 100 W SPR, or 5 V only).
 
@@ -50,7 +54,7 @@ abort condition appears, return to the previous safe state.
 | 3 | Interlock chain | Stage 2 pass. Pi holds 24/25 low. J62↔J64, J63↔J65, J66↔J68, J67↔J69 wired | All four closed → GPIO23=1. Any one open → 0. Faults stay idle | ✅ 2026-11-01 10:35 (after D3/D90/D91 re-fit; S3–S6 each break the chain) |
 | 4 | PD source readout / contract | Unofficial map in [HUSB238A.md](HUSB238A.md). Non-EPR source on J3. Attach question resolved | `srccap --arm` lists PDOs. `request V --arm --max V` shows V on AIN2 (×6.556) | ✅ 2026-10-31 18:07 (PDOs 5/9/12/15/20 V; 20 V auto-boot, 9 V & 5 V verified) |
 | 5 | Bulk enable (GPIO25) at 5 V | Stage 3 pass, lid closed, explicit 5 V contract | 5.1 contract; 5.2 GPIO25 high → bridge ≈ 4.8 V, no EFUSE_FLT; 5.3 low → decays in about 3 s; 5.4 lid open cuts it in hardware; 5.5 (opt) 9 V | ⏳ 5.1 ✅ 10:47, 5.2 ✅ + 5.3 ✅ 10:51, 5.4 ✅ 10:53 (5.0 inspection skipped by user); 5.5 ✅ 10:57 (option a step-down) → **stage 5 complete** |
-| 6 | Driver enable (GPIO24), no PWM | Stage 5 pass | DRV_nFAULT stays 1. GPIO24 low disables the driver and clears the OV latch | proposed |
+| 6 | Driver enable (GPIO24), no PWM — **reduced** | Stage 5 pass. [STAGE6_PLAN.md](STAGE6_PLAN.md) rev 3 (option 1) | 6.A′ no false trip at GPIO24 high. 6.B driver awake at 9 V with VM, nFAULT = 1, no drive. 6.C1 lid open → sleep. 6.C3 software safe-stop. **Hardware OV trip NOT verified** | ✅ 2026-11-01 12:17 (6.A′, 6.B, 6.C3, 6.C1 all passed; **hardware OV trip still unverified**) |
 | 7 | PWM / first HV | Bench HV plan, OV trip characterization (AUDIT.md) | Defined by the supervised HV procedure | proposed |
 
 Stages 5–7 are an outline only. They need a written bench plan before they run.
@@ -447,3 +451,77 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - **Firmware rule adopted:** always drop GPIO25 (BULK_CMD) before
     requesting a lower PD voltage. Re-enable only once the bridge is below
     the new VBUS − 0.5 V. With that rule, any EFUSE_FLT is a real fault.
+- **2026-11-01 11:04**: powered down at the user's request.
+  - State before shutdown: GPIO24/25 already low (forced low again),
+    GPIO23 = 0 (lid open), VBUS 5.10 V, bridge 0.6 mV.
+  - U7 CONTROL1 0x1b → 0x13 (ENABLE cleared), so it comes back disabled.
+  - `systemctl poweroff`; ew-1 stopped answering ping within 15 s.
+    POWER_OFF_ON_HALT=1 removes 3V3 from the board.
+  - J3 may still be plugged in: VBUS stays on the input side, but U9 and
+    downstream are off.
+  - Stage 6 plan rev 2 drafted ([STAGE6_PLAN.md](STAGE6_PLAN.md)), awaiting
+    approval.
+- **2026-11-01 11:10**: stage 6 plan **rev 3 (option 1, user decision)**.
+  - The injected OV-trip test is impractical (no clip point on HV_SENSE_RAW,
+    no adjustable supply), so stage 6 is reduced to 6.A′/6.B/6.C1/6.C3.
+  - **The hardware OV trip stays unverified**, including D90 latch and D91
+    clear (both hand-re-fitted) and Q2.
+  - Stage 7 limits: 5 V contract only, software cutoff AIN0 > 0.50 V
+    (≈ 3 kV), short bursts, lid closed. Recorded in AUDIT.md.
+  - Script: `host/stage6.py` (subcommands a, b, c1, c3).
+- **2026-11-01 11:47–11:48**: ew-1 powered on again.
+  - U7 came up disabled. `request 5 --arm --max 5` gave AMS True and a
+    5 V / 3 A contract; AIN2 5.12 V, bridge 0.6 mV.
+  - `stage6.py`/`husb238a.py` deployed (md5 matches the repo).
+- **2026-11-01 11:48**: **6.A′ PASSED** (`stage6.py a`, CSV
+  `~/stage6_a_20261101_114826.csv`). Lid open, which is allowed for 6.A′:
+  D91's cathode is on DRV_SLEEP_CMD ahead of K1.
+  - GPIO24 high for 5.0 s with the bridge off (GPIO25 low): **GPIO26 = 0 in
+    all 79 samples**, so no false OV trip and D91 is not reversed.
+  - AIN0 ≤ 1 mV, nFAULT 1, EFUSE_FLT 1, GPIO18/19 0, VBUS 5.09–5.12 V,
+    bridge ≤ 4 mV.
+  - GPIO24 low afterwards; safe-stop order logged (GPIO24 → PWM → GPIO25
+    within 1.6 ms).
+  - 6.B/6.C need the lid closed: GPIO23 = 0 at 11:48.
+- **2026-11-01 12:15**: **6.B PASSED** (`stage6.py b`, CSV
+  `~/stage6_b_20261101_121506.csv`). Lid closed (GPIO23 = 1).
+  - request 9 V gave AMS True (VBUS 8.96–8.97 V). GPIO25 high gave a bridge
+    of 8.74 V.
+  - **GPIO24 high, driver awake with IN1 = IN2 = 0, for 30.0 s (469
+    samples):**
+    - nFAULT 1, EFUSE_FLT 1, OV trip 0, interlock 1;
+    - **AIN0 ≤ 1 mV, so no drive and no HV**;
+    - GPIO18/19 0;
+    - bridge 8.701–8.708 V, about 30 mV below the asleep 8.74 V, which is
+      consistent with the DRV8876 charge pump/quiescent current.
+  - Safe-stop GPIO24 → PWM → GPIO25 within 1.6 ms. Bridge decayed to
+    74 mV in 4 s. Then request 5 V (AMS True); VBUS 5.10–5.12 V, bridge
+    22–33 mV.
+- **2026-11-01 12:16**: **6.C3 PASSED** (`stage6.py c3`, CSV
+  `~/stage6_c3_20261101_121552.csv`).
+  - Driver awake at 9 V for 3 s: bridge 8.702–8.707 V, nFAULT 1, AIN0 ≤ 1 mV.
+  - The **software safe-stop** ran in order: GPIO24 low (0 ms) → PWM
+    disabled/normal (0.05 ms) → GPIO25 low (1.6 ms).
+  - Bridge 8.70 → 0.066 V in 4 s. Back to 5 V (AMS True). All flags idle
+    throughout.
+  - Remaining: **6.C1** (the user opens a lid switch with the driver awake).
+- **2026-11-01 12:17**: **6.C1 PASSED. Stage 6 (reduced) complete.**
+  (`stage6.py c1`, CSV `~/stage6_c1_20261101_121638.csv`.)
+  - 9 V contract. GPIO25 high gave a bridge of 8.74 V. GPIO24 high, driver
+    awake, bridge 8.70 V.
+  - The user opened one lid switch at t = 20.6 s, with **GPIO24 and GPIO25
+    still high**. The hardware cut (K1 drops: R5 pulls DRV_nSLEEP low and
+    BULK_EN opens) took the bridge below 4.0 V in 0.45 s, 1.0 V in 1.41 s
+    and **0.1 V in 3.53 s**.
+  - nFAULT 1, EFUSE_FLT 1, OV trip 0, AIN0 ≤ 1 mV throughout. No DRV8876
+    UVLO fault was reported, because it was already asleep.
+  - Safe-stop GPIO24 → PWM → GPIO25 within 1.6 ms. request 5 V gave AMS True
+    with GPIO25 low. The user reclosed the switch afterwards (GPIO23 = 1).
+  - **Stage 6 summary:**
+    - D91 not reversed;
+    - the driver wakes with VM present and stays idle at IN1 = IN2 = 0;
+    - lid opening and the software safe-stop both sleep the driver and cut
+      the bridge.
+  - **Not verified:** the hardware OV trip / D90 latch / Q2 (option 1, see
+    AUDIT.md). Stage 7 limits apply: 5 V contract, AIN0 > 0.50 V cutoff,
+    short bursts, lid closed.
