@@ -720,3 +720,69 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - returned to 5 V (AMS True). **PASS, but small margin:** each 0.0025 duty
     step is worth more kV at 9 V. Next: a smaller step or slew limit at 9 V,
     or a lower target.
+- **2026-11-01 13:07**: **hold loop tuned; 9 V ramp re-run: PASS** (`data/stage7_ramp_ramp_9V_20261101_130659.csv`).
+  - Tuning:
+    - duty step and slew limit per bridge voltage (9 V: 0.001 and 10 V/ms;
+      5 V: 0.0025 and 20 V/ms);
+    - target entry and hold regulation both use the **predicted** value
+      (AIN0 + slope × 16 ms);
+    - the hold corrects every 50 ms.
+  - Results:
+    - 5 kV (predicted) at duty 0.039, 0.93 s after wake;
+    - hold 2.0 s over 4.78–5.31 kV; after the first
+      0.5 s, 4.78–5.02 kV (mean 4.93,
+      σ 0.051 kV);
+    - **peak 5.31 kV** (was 5.69), max slope 0.012 kV/ms;
+    - bridge min 8.65 V, AIN1 ≤ 4.7 mV, no faults; returned to 5 V.
+  - The hold no longer limit-cycles (was 4.22–5.69 kV).
+- **2026-11-01 13:09–13:13**: **phase-synced frequency recheck**, 5 V bridge,
+  ramp to a 3 kV target (predicted), hold 0.3 s, 22–36 kHz in 1 kHz steps,
+  10 s apart (`data/stage7_ramp_ramp_5V_20261101_1309*–1313*.csv`).
+  Phase sync verified 100% every run. No aborts, no faults; bridge min
+  4.78 V; AIN1 ≤ 3.1 mV.
+
+  | f (kHz) | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | duty at 3 kV | .0400 | .0400 | **.0375** | .0400 | .0425 | .0450 | .0450 | .0425 | .0425 | .0450 | .0475 | .0500 | .0525 | .0525 | .0500 |
+  | peak (kV) | 3.53 | 3.47 | 3.54 | 3.85 | 3.46 | 3.38 | 3.45 | 3.46 | 3.66 | 3.72 | 3.49 | 3.29 | 3.30 | 3.26 | 3.33 |
+
+  - **No distinct 26 kHz (or 32 kHz) peak.** With synced complementary
+    drive, the duty needed for 3 kV is nearly flat across 22–36 kHz:
+    0.0375–0.0525, a 1.4× spread. It is lowest at 22–25 kHz and rises
+    slowly with frequency. The step is 0.0025, so the resolution is ±6%.
+  - The 26/32 kHz twin peaks in the 7.3 / 7.3b / 7.4 data came from
+    different drives: single-ended at 50% duty, and complementary with
+    random phase. They don't describe the synced narrow-pulse drive used
+    now. At ~4% duty each half-cycle is a short pulse that excites the tank
+    broadly, so the gain depends only weakly on the repetition rate.
+  - **5 V loop overshoot:** 0.26–0.85 kV over a 3 kV target with the 5 V
+    tuning (step 0.0025, 20 V/ms). Use the 9 V-style tuning (0.001 /
+    10 V/ms) at 5 V as well.
+- **2026-11-01 13:17–13:22**: **phase-synced sweep 36–100 kHz** at a 5 V bridge
+  (user request).
+  - 3 kV target, hold 0.3 s, duty cap 0.25. Finer 5 V tuning (step 0.001,
+    10 V/ms). `F_MAX` raised to 100 kHz (DRV8876 fPWM max).
+  - All 14 runs completed: phase sync 100%, no aborts, no faults. Bridge
+    min 4.77 V; AIN1 ≤ 4.0 mV.
+
+  | f (kHz) | 36 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 | 85 | 90 | 95 | 100 |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | duty at 3 kV | 0.045 | 0.049 | 0.060 | 0.057 | 0.063 | 0.069 | 0.074 | 0.086 | 0.078 | 0.083 | 0.089 | 0.095 | 0.103 | 0.107 |
+  | pulse width D·T (µs) | 1.25 | 1.22 | 1.33 | 1.14 | 1.15 | 1.15 | 1.14 | 1.23 | 1.04 | 1.04 | 1.05 | 1.06 | 1.08 | 1.07 |
+  | peak (kV) | 3.16 | 3.38 | 3.14 | 3.20 | 3.19 | 3.14 | 3.10 | 3.04 | 3.08 | 3.13 | 3.14 | 3.15 | 3.23 | 3.09 |
+
+  - The required duty rises steadily from 0.045 (36 kHz) to 0.107
+    (100 kHz), but the **pulse width per half-cycle stays nearly constant
+    at ≈ 1.1–1.25 µs**. In the 22–36 kHz sweep it was ≈ 1.5–1.8 µs, with
+    the coarser step.
+  - So the HV is set mainly by **energy per pulse**, not by repetition
+    rate: each narrow pulse rings the C11/T1/CW network, and the multiplier
+    charges toward the peak of that ringing.
+  - The frequency choice is free across 22–100 kHz as far as kV goes.
+    Lower frequencies need less duty and switch less often, so they should
+    have lower DRV8876 switching loss (eq. 12/13). Not measured: there is
+    no input-current measurement.
+  - At 100 kHz the pulse (≈ 1.07 µs) is close to the DRV8876 tPD (650 ns)
+    + tDEAD (300 ns). Don't go higher.
+  - The finer 5 V tuning cut the overshoot to ≤ 0.38 kV (peaks
+    3.04–3.38 kV), from up to 0.85 kV.

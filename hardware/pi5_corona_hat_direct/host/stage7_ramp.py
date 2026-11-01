@@ -9,7 +9,8 @@ Why: 2026-11-01 12:36 vs 12:51, identical complementary settings gave 0.36 kV vs
 overshot the 16 ms-filtered readout by ~2.5 kV.
 
 Phase: ch2/ch3 counters re-synchronised by rp1_pwm_sync.py (root) before the driver wakes.
-Hold: duty regulated around the target (down above it, up below target - 0.1 kV).
+Hold: duty regulated every 50 ms on the PREDICTED value (down above target, up below target - 0.1 kV).
+Tuning per bridge voltage: TUNING[vbus] = (duty step, slew limit); target entry also uses the prediction.
 Drive: IN1 = ch2 normal, duty D*T (high at period start); IN2 = ch3 INVERSED, duty (1-D)*T
 (high for the last D*T). D = 0.5 is full complementary. Phase is checked with the driver
 ASLEEP by sampling GPIO18/19 (they must differ >= ALIGN_MIN of the time at D = 0.5); the
@@ -33,8 +34,11 @@ ABORT_KV, TAU = 6.0, 0.016
 SLEW_KV_PER_MS = 0.020
 D0, D_STEP, STEP_DT = 0.005, 0.0025, 0.020
 HOLD_BAND_KV = 0.10
+HOLD_DT = 0.050
+# per-bridge-voltage loop tuning (2026-11-01: 9 V hold limit-cycled 4.2-5.7 kV with 0.0025 / 20 V/ms)
+TUNING = {5: (0.0010, 0.010), 9: (0.0010, 0.010)}  # 5 V: finer after 0.3-0.85 kV overshoot at 3 kV (13:09 sweep)   # (duty step, slew kV/ms)
 ALIGN_MIN, ALIGN_TRIES, ALIGN_SAMPLES = 0.90, 30, 150
-F_MIN, F_MAX = 20_000, 50_000
+F_MIN, F_MAX = 20_000, 100_000   # 100 kHz = DRV8876 fPWM max (user-requested 36-100 kHz sweep 2026-11-01)
 RAMP_TIMEOUT = 20.0
 lines = {5: "nFAULT", 6: "EFUSE_FLT", 23: "INTLK", 26: "OVTRIP"}
 
@@ -106,6 +110,7 @@ def main():
     if vbus not in (5, 9): print("--vbus must be 5 or 9"); return 2
     if target_kv >= ABORT_KV: print("target must be below the 6.0 kV abort"); return 2
     a0_abort, a0_target = ABORT_KV / KV_PER_V, target_kv / KV_PER_V
+    d_step, slew = TUNING[vbus]
 
     t0 = time.monotonic(); rows = []; ev_log = []
     def log(m): ev_log.append((round(time.monotonic() - t0, 3), m)); print(f"  [{time.monotonic()-t0:7.3f}s] {m}", flush=True)
@@ -181,21 +186,22 @@ def main():
             if len(h3) >= 3 and sorted(h3[-3:])[1] - base3 > 0.020: why.append("3V3 +20 mA")
             if why: abort = "; ".join(why); break
             if phase == "ramp":
-                if a0 >= a0_target:
-                    phase, t_hold, d_at_target = "hold", now, D; log(f"target {target_kv} kV reached at duty {D:.3f}; hold {hold}s")
+                if pred >= a0_target:
+                    phase, t_hold, d_at_target = "hold", now, D
+                    log(f"target {target_kv} kV reached (predicted) at duty {D:.4f}, AIN0 {a0*KV_PER_V:.2f} kV; hold {hold}s")
                 elif now - t_step >= STEP_DT:
                     t_step = now
-                    if slope * KV_PER_V / 1000 < SLEW_KV_PER_MS and D < max_d:
-                        D = set_duty(period, min(D + D_STEP, max_d))
+                    if slope * KV_PER_V / 1000 < slew and D < max_d:
+                        D = set_duty(period, min(D + d_step, max_d))
                     elif D >= max_d and abs(slope * KV_PER_V / 1000) < 0.002 and now - t_ramp > 2.0:
                         phase, t_hold = "hold", now; log(f"max duty {max_d} reached, HV settled at {a0*KV_PER_V:.2f} kV; hold {hold}s")
                 if now - t_ramp > RAMP_TIMEOUT:
                     phase, t_hold = "hold", now; log("ramp timeout; hold")
             else:
-                if now - t_step >= STEP_DT:            # regulate around target during hold
-                    t_step = now; kv = a0 * KV_PER_V
-                    if kv > target_kv: D = set_duty(period, max(D - D_STEP, 0.0))
-                    elif kv < target_kv - HOLD_BAND_KV and slope * KV_PER_V / 1000 < SLEW_KV_PER_MS: D = set_duty(period, min(D + D_STEP, max_d))
+                if now - t_step >= HOLD_DT:            # regulate on the PREDICTED value, slow loop
+                    t_step = now; kv = pred * KV_PER_V
+                    if kv > target_kv: D = set_duty(period, max(D - d_step, 0.0))
+                    elif kv < target_kv - HOLD_BAND_KV and slope * KV_PER_V / 1000 < slew: D = set_duty(period, min(D + d_step, max_d))
                 if now - t_hold >= hold:
                     log(f"hold complete (duty {D:.4f})"); break
             time.sleep(0.001)
