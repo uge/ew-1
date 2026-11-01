@@ -40,6 +40,13 @@ The hardware trip still needs bench characterization.
   - While `CONTROL1.ENABLE = 0` (`0x13` at power-up), internal PD functions are off and `VBUS_RAW` stays at default 5 V. As soon as `CONTROL1.ENABLE = 1` (`0x1b`) is set in I²C mode, `U7` completes its 150 ms `tCCdeb` attach debounce and automatically negotiates the highest source PDO up to 28 V (`20 V / 3.0 A` measured on `AIN2 = 19.92 V` with a 65 W SPR supply) before any host `SELECT_PDO` command. See [host/HUSB238A.md](host/HUSB238A.md).
   - U7.14 FLGIN is tied to GND, so nothing holds Q1 off. On an EPR source, 28 V on VIN_PD would exceed U9's 28 V absolute max and F1's 24 V rating, even with BULK_EN low.
   - Until fixed in hardware (FLGIN host/K1 control, GPIO-mode VSET strapping, or `-BB004` 5 V variant), feed J3 only from sources that cannot offer EPR (≤ 20 V SPR).
+- 1N4148WS (C2128) assembly orientation (2026-11-01, bench-confirmed):
+  - D3, D90 and D91 came back from JLCPCB rotated 180°, with the cathode on
+    the wrong pad. They have been re-fitted by hand on this board.
+  - `layout/generate_jlcpcb_cpl.py` `ROTATION_OFFSETS` needs a 180° entry for
+    D3/D90/D91. Then regenerate the CPL and check it in the JLCPCB placement
+    preview before the next order.
+  - D5, D50, D51, D1/D4 and C60/C70 have no offset entry either; check them.
 - T1 remains externally sourced. Four-switch contact mapping/load ratings and Pi
   standoff/connector/enclosure assumptions remain to be confirmed physically.
 

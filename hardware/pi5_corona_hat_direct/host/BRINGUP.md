@@ -6,24 +6,34 @@ This is the living record of bring-up on the bench. **Update it after every
 step:** change the snapshot, tick the stage, and append to the log. Host setup
 commands are in [RUNBOOK.md](RUNBOOK.md). Release status is in [AUDIT.md](../AUDIT.md).
 
-## Current state — 2026-10-31 18:07 PDT
+## Current state — 2026-11-01 10:36 PST
 
-**Stage reached: 4 of 7 (Stage 3 interlock chain still pending manual lid closure).**
-`U7` (`HUSB238A-BB001-QN16R`) is enabled (`CONTROL1 = 0x1b`) and holding an explicit **5 V / 3.0 A PD contract** (`AIN2 = +0.7810 V ≈ 5.12 V`). Everything downstream of the `U9` eFuse remains unpowered (`AIN3 = 0.6 mV`). `GPIO18/19/24/25` have never been driven high.
+**Stage reached: 4 of 7. Stages 0–4 all pass.** Stage 3 (interlock) passed
+2026-11-01 10:35, after D3/D90/D91 were re-fitted. The lid switches are taped
+closed, so K1 is energized. Through K1, GPIO24/25 now reach DRV_nSLEEP and
+BULK_EN, but both are held low. The U7 PD contract was reset by the
+2026-10-31 power-down: U7 is at ENABLE = 0, unattached, default 5 V.
+GPIO18/19/24/25 have never been driven high with the board attached.
 
 | Item | State |
 |---|---|
 | Host | Pi 5 ew-1, serial `9b8f9676cf6e79ad`, wlan0 192.168.0.130 (eth0 unplugged) |
 | Image | Reloaded 2026-10-31 ~17:18. Passwordless sudo. `ew1_host_setup.sh` re-run 17:24 |
-| Board | N-layout-17-hv-warnings on J2 |
-| J3 USB-C | **Connected** to a 65 W SPR PD supply (`5/9/12/15 V @ 3.0 A, 20 V @ 3.2 A`, `source_epr_capable = 0`). Currently holding **5 V / 3.0 A** explicit contract (`AIN2 = 5.12 V`, `VBUS(chip) = 5.000 V`) |
-| Lid chain S3–S6 | **Open** (`GPIO23 = 0`; K1 cannot pull in) |
+| Board | N-layout-17-hv-warnings on J2. **D3, D90, D91 re-fitted by hand** (all three were placed reversed) |
+| J3 USB-C | **Connected** to a 65 W SPR PD supply (5/9/12/15 V @ 3 A, 20 V @ 3.2 A, not EPR). AIN2 ≈ 5.1 V. U7 ENABLE = 0, no contract |
+| Lid chain S3–S6 | **Closed (taped)**. GPIO23 = 1, K1 energized (3V3 ≈ 85–90 mA) |
 | Illumination mini board (TSL2591, 0x29) | Disconnected |
 | HV output J60/J61 | Unchanged since attach |
 | Pi outputs | GPIO18/19 PWM idle low. GPIO24/25 driven low |
-| Faults | DRV_nFAULT=1, EFUSE_FLT=1, HV_OV_TRIP=0 |
+| Faults | DRV_nFAULT = 1, EFUSE_FLT = 1, HV_OV_TRIP = 0 |
 
-**Next action:** stage 3, the interlock chain test (needs the four lid switches closed by hand while `GPIO24/25` remain low).
+**Next action, before stage 5:**
+1. Inspect the polarized parts that have no CPL rotation entry: D51, D50, D5,
+   D1/D4, C60/C70 (see AUDIT.md). D51 or D50 reversed would show up at stage 5.
+2. Write the stage 5–7 bench plan, including the injected OV-trip test (D90
+   latch, D91 clear).
+3. Re-establish an explicit 5 V contract
+   (`husb238a.py request 5 --arm --max 5`) before any GPIO25 test.
 
 **Until the 28 V boot-up auto-request is mitigated in hardware/strapping, J3 may only be fed by a source that cannot offer EPR** (≤ 20 V, ≤ 100 W SPR, or 5 V only).
 
@@ -37,7 +47,7 @@ abort condition appears, return to the previous safe state.
 | 0 | Host setup (RUNBOOK §2–7) | Board detached | I²C, PWM on a3, 24/25 op dl, watchdog, EEPROM | ✅ 2026-10-31 (twice, after reimage) |
 | 1 | Logic attach, J3 unplugged | Pi off when fitting | 0x42/0x48/0x76 present, BME280 id 0x60, ADC ≈ 0, faults idle | ✅ 2026-10-31 17:28 |
 | 2 | J3 at default 5 V, lid open | Stage 1 pass | AIN2 ≈ 0.76 V (5 V). AIN0/1/3 ≈ 0. Faults idle. 3V3 steady | ✅ 2026-10-31 17:30 |
-| 3 | Interlock chain | Stage 2 pass. Pi holds 24/25 low | All four closed → GPIO23=1. Any one open → 0. Faults stay idle | ⏳ next (manual switch test) |
+| 3 | Interlock chain | Stage 2 pass. Pi holds 24/25 low. J62↔J64, J63↔J65, J66↔J68, J67↔J69 wired | All four closed → GPIO23=1. Any one open → 0. Faults stay idle | ✅ 2026-11-01 10:35 (after D3/D90/D91 re-fit; S3–S6 each break the chain) |
 | 4 | PD source readout / contract | Unofficial map in [HUSB238A.md](HUSB238A.md). Non-EPR source on J3. Attach question resolved | `srccap --arm` lists PDOs. `request V --arm --max V` shows V on AIN2 (×6.556) | ✅ 2026-10-31 18:07 (PDOs 5/9/12/15/20 V; 20 V auto-boot, 9 V & 5 V verified) |
 | 5 | Bulk enable (GPIO25) at 5 V | Stage 3 pass, lid closed, 4 defined | U9 turns on without EFUSE_FLT. AIN3 tracks the bridge supply. GPIO25 low turns it off again | proposed |
 | 6 | Driver enable (GPIO24), no PWM | Stage 5 pass | DRV_nFAULT stays 1. GPIO24 low disables the driver and clears the OV latch | proposed |
@@ -173,3 +183,127 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
     5 V hold after enable, srccap and fresh request, and fallback to 5 V on an
     unadvertised hold.
   - On ew-1: read-only status and unarmed refusals only. No new writes to U7.
+- **2026-10-31 18:35**: BME280 (U5, 0x76) forced read: chip ID 0x60, 26.87 °C,
+  1009.11 hPa, 34.8 % RH (Pi SoC at 39.5 °C). Readings are plausible. The
+  sensor works; the board temperature reads a little above room temperature.
+- **2026-10-31 18:33**: stage 3 attempted. The user reports all lid switches
+  S3–S6 closed.
+  - **GPIO23 = 0, so stage 3 fails.** It was steady across three samples.
+  - Everything else is unchanged and safe:
+    - GPIO24/25 low; faults idle; OV trip 0;
+    - 5 V / 3 A contract, AIN3 0.6 mV;
+    - 3V3 3.30 V at 69 mA (58 mA earlier, cause unknown).
+  - The netlist shows the chain only closes through wire pairs. Each switch's
+    COM/NO nets (S3_1/S3_2 …) reach only its mini-board pads
+    (J62/J63/J66/J67). The relay feed path is COIL_3V (U10) → J64.1,
+    J64.2 → J65.1 (LOOP_1), J65.2 → J68.1, J68.2 → J69.1, J69.2 →
+    RELAY_COIL_POS → R92 → GPIO23.
+  - With no wires J62↔J64, J63↔J65, J66↔J68 and J67↔J69, the chain is open
+    whatever the switch positions. Next: confirm the wiring and the COM/NO
+    contact map.
+- **2026-10-31 18:34–18:35**: the user reports one switch had come open, then
+  that the switches "may be closed now".
+  - GPIO23 is still 0 (5 and then 10 samples).
+  - **Pi 3V3_SYS current is 545–555 mA, steady over 4 s.** It was 58–69 mA
+    all session; 3V3 held at 3.30 V, throttled 0x0.
+  - That is about 490 mA of new load on 3V3, which suggests a short. One
+    candidate is COIL_3V (U10 output, J64.1) to GND in the switch wiring,
+    which would put U10 into current limit and also explain GPIO23 = 0.
+  - Advised immediate power-down.
+- **2026-10-31 ~18:37**: powered ew-1 down (`systemctl poweroff`) at the
+  user's request.
+  - Just before shutdown: 3V3_SYS was **66 mA**, so the 550 mA load had
+    already gone. That points to an intermittent short, probably from the
+    switch wiring being handled. GPIO24/25 were 0.
+  - ew-1 stopped answering ping within 15 s. With POWER_OFF_ON_HALT=1, the
+    3V3 to the HV board is off.
+  - Next: inspect U10 and the J62–J69 wiring, then measure COIL_3V (J64.1)
+    and 3V3 to GND unpowered. Restart with J3 unplugged and confirm about
+    60 mA on 3V3.
+- **2026-10-31 18:46**: ew-1 back up after the power-down.
+  - 3V3_SYS 55.6–71.2 mA at 3.30–3.32 V over 6 samples, throttled 0x0. The
+    550 mA fault is not present.
+  - Boot pin states are correct (18/19 a3 low, 24/25 op dl low). I²C sees
+    0x42, 0x48 and 0x76.
+  - J3 is still plugged in (AIN2 5.11 V). U7 came back with ENABLE = 0 and
+    unattached, so its 3V3 was cut, there is no contract, and there was no
+    automatic 20 V request.
+  - AIN3 0.8 mV; faults idle; GPIO23 = 0. The interlock chain is still open
+    or the switches are open. Cause of the 550 mA event not yet found.
+- **2026-10-31 18:47**: the switches are taped closed. Over 5 s (10 samples):
+  - GPIO23 = 0 throughout;
+  - 3V3 52–62 mA. There was no rise, so the K1 coil (about 33 mA at 3 V) is
+    not being fed, and the 550 mA fault did not recur.
+  - Faults idle; GPIO24/25 low; AIN3 0.6 mV.
+  - Conclusion: the interlock chain is open between COIL_3V (J64.1) and
+    RELAY_COIL_POS (J69.2). Stage 3 still fails. It needs bench probing of the
+    wire pairs and the COM/NO contacts.
+- **2026-11-01 08:52**: the user reports the diodes have been flipped (re-fitted
+  in the correct orientation; which of D3/D90/D91 not yet confirmed). ew-1 boot
+  retest, read only:
+  - 3V3_SYS 50–94 mA at 3.30–3.33 V, throttled 0x0. No 550 mA load.
+  - Boot pin states correct (18/19 a3 low, 24/25 op dl low). I²C 0x42, 0x48,
+    0x76 present.
+  - J3 plugged in (AIN2 5.07 V). U7 ENABLE=0, unattached, no automatic request.
+  - Faults idle, GPIO26=0, AIN3 0.6 mV.
+  - **GPIO23 = 0.** Switch state at this moment not confirmed, so stage 3 is
+    not yet re-run.
+- **2026-11-01 10:26**: **GPIO23 = 1** (6 samples). 3V3_SYS 80–89 mA, about
+  25–30 mA above the ~57 mA baseline, which is consistent with the K1 coil
+  (about 33 mA at 3 V) being fed through a closed chain. No 490 mA fault.
+  - GPIO24/25 op dl low, faults idle, GPIO26 = 0, AIN3 0.8 mV.
+  - With the diode re-fit, the closed half of stage 3 passes. Still to do:
+    open each switch in turn and confirm GPIO23 → 0.
+  - D90 orientation (silent OV-trip disable if reversed) should be confirmed
+    by inspection and by an injected trip test before any HV.
+- **2026-11-01 10:30**: user confirms **D3, D90 and D91 were all reversed as
+  assembled** and have been re-fitted (flipped).
+  - Same part, 1N4148WS C2128. This is systematic: `generate_jlcpcb_cpl.py`
+    `ROTATION_OFFSETS` has no 180° entry for these parts, unlike the SS36
+    D52–D55, U10 and Q2 entries. The JLCPCB-assembled orientation was 180° off.
+  - Consequences, now corrected:
+    - D3 reversed clamped RELAY_COIL_POS → the 490 mA U10 current limit and
+      GPIO23 = 0.
+    - D90 reversed would have silently disabled the hardware OV trip.
+    - D91 reversed would have tripped OV as soon as GPIO24 went high.
+  - U10 ran in current limit for several minutes; its output measures fine
+    (coil fed, GPIO23 = 1).
+  - Polarized parts still to inspect against their markings: D5 SMBJ15A,
+    D50 VSSA310S, D51 SMBJ22A, D1/D4 BAT54S, and C60/C70 electrolytics.
+  - New gate before HV: injected OV-trip test (latch via D90, clear via D91 /
+    GPIO24 low).
+- **2026-11-01 10:29**: switches taped closed.
+  - GPIO23 = 1 steady (8 samples); 3V3_SYS 85–97 mA (K1 coil fed).
+  - GPIO24/25 low, faults idle, GPIO26 = 0, AIN3 0.6 mV.
+  - Closed half of stage 3 confirmed. Open-each-switch half still pending.
+- **2026-11-01 10:31**: one switch opened (which one not stated).
+  - GPIO23 = 0 steady (8 samples); 3V3_SYS 55–60 mA, back to baseline, so
+    K1 has dropped out.
+  - Faults idle, GPIO26 = 0, AIN3 0.6 mV.
+  - Opening that one switch breaks the chain. Repeat for the remaining three
+    to complete stage 3.
+  - The user says it was the "top switch". On the board layout (front side,
+    mini boards on the left) the top switch board is **S3**: J62 → J64, first
+    in the chain from COIL_3V. Assumed, not confirmed physically.
+  - Stage 3 progress: S3 ✅; S4, S5, S6 pending.
+- **2026-11-01 10:32**: S4 open (S3 reclosed per sequence, not separately
+  verified): GPIO23 = 0 steady (8 samples), 3V3_SYS 53–65 mA, faults idle,
+  GPIO26 = 0, AIN3 0.6 mV. **S4 ✅.** S5, S6 pending.
+- **2026-11-01 10:33**: S5 open: GPIO23 = 0 steady (8 samples), 3V3_SYS
+  55–60 mA, faults idle, GPIO26 = 0, AIN3 0.6 mV. **S5 ✅.** S6 pending, then
+  re-confirm all-closed GPIO23 = 1.
+- **2026-11-01 10:33**: S6 open: GPIO23 = 0 steady (8 samples), 3V3_SYS
+  53–71 mA, faults idle, GPIO26 = 0, AIN3 0.6 mV. **S6 ✅.** All four
+  individual-open checks pass. Final all-closed GPIO23 = 1 re-check pending.
+- **2026-11-01 10:34**: user reports all switches closed, but GPIO23 = 0 (18
+  samples over about 16 s). 3V3_SYS 53–68 mA (one 99 mA spike), no coil
+  current. At least one switch is not actually made: possibly not reclosed or
+  re-taped after its open test, or plunger travel/tape is marginal. Faults
+  idle, GPIO24/25 low, GPIO26 = 0. The all-closed re-check is not yet passed.
+- **2026-11-01 10:35**: all switches closed: GPIO23 = 1 steady (10 samples),
+  3V3_SYS 84–91 mA (one 137 mA spike) = K1 coil fed. GPIO24/25 low, faults
+  idle, GPIO26 = 0, AIN3 0.6 mV, throttled 0x0.
+  - **Stage 3 PASSED.** All closed → 1; S3, S4, S5 and S6 each open → 0, with
+    the coil current dropping to baseline every time.
+  - The earlier all-closed attempt at 10:34 read 0 because one switch was not
+    made. It was mechanical (tape/plunger), not electrical.
