@@ -57,13 +57,22 @@ The hardware trip still needs bench characterization.
     [host/STAGE6_PLAN.md](host/STAGE6_PLAN.md).
   - Next revision: add a test point on HV_SENSE_RAW, or a Pi-controlled
     self-test injection into OV_SENSE.
-- **HV gain shortfall (2026-11-01, bench):** best HV_OUT ≈ 0.36 kV at a 4.8 V
-  bridge (complementary, 32 kHz).
-  - The response peaks at 26/32 kHz, not at the 68 kHz design drive point,
-    and is ~0 by 50 kHz. A linear extrapolation gives only ≈ 1.5 kV at 20 V.
-  - The drive-to-secondary path was never modelled (the SPICE run drove the
-    secondary directly).
-  - See [host/GAIN_SHORTFALL.md](host/GAIN_SHORTFALL.md).
+- **HV gain shortfall: SUPERSEDED (2026-11-01).** The 0.36 kV "best" came from a random phase
+  between separately enabled RP1 PWM channels. With `host/rp1_pwm_sync.py`, phase-synced
+  complementary drive reaches 5 kV at duty ≈ 0.08 (5 V bridge) / ≈ 0.04 (9 V), and
+  **≈ 12.5 kV peak** at duty ≈ 0.16 (9 V).
+  - The output is non-monotonic in duty (second maximum ≈ 11.1 kV at D 0.30, ≈ 6.7 kV at
+    D ≥ 0.38).
+  - The 68 kHz design drive point is irrelevant: HV is set mainly by pulse width
+    (≈ 1.1 µs per half-cycle for 3 kV across 22–100 kHz).
+  - See host/BRINGUP.md; host/GAIN_SHORTFALL.md is superseded in part.
+- **HV leakage at 12.5 kV (2026-11-01, bench):** return current (AIN1, R90) rose to ≈ 7 µA
+  near the 12.5 kV peak, from ≈ 0.5 µA at 5 kV. The leakage/corona path (J60 wiring,
+  board surface, CW stages) is unidentified. That is relevant to the unqualified insulation
+  above.
+- **Hardware HV overvoltage trip: still unverified.** A 17 kV attempt at the 9 V bridge
+  peaked at 12.5 kV, so the trip was not exercised. Firmware remains the only OV
+  protection.
 - T1 remains externally sourced. Four-switch contact mapping/load ratings and Pi
   standoff/connector/enclosure assumptions remain to be confirmed physically.
 

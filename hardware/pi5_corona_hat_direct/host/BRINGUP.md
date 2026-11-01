@@ -786,3 +786,43 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
     + tDEAD (300 ns). Don't go higher.
   - The finer 5 V tuning cut the overshoot to ≤ 0.38 kV (peaks
     3.04–3.38 kV), from up to 0.85 kV.
+- **2026-11-01 13:27–13:31 — OV-trip attempt at 17 kV by the forked session**
+  (user-directed; this session stood down meanwhile; the user then told the
+  fork to stand down).
+  - Script `host/ov_trip_test.py` (imports the `stage7_ramp.py` helpers
+    unchanged), CSV `data/ov_trip_test_9V_20261101_132910.csv`.
+  - Settings: 9 V contract, 32 kHz, phase-synced 100%, slew 10 V/ms,
+    firmware backstop 18.5 kV, duty swept up to 0.5.
+  - **Result: 17 kV not reached. The hardware OV trip was not exercised
+    (GPIO26 = 0 throughout). It stays UNVERIFIED.**
+  - **New highest HV on this board: ≈ 12.5 kV** (AIN0 2.050 V, nominal
+    scale) at duty ≈ 0.155–0.16. The previous maximum was 5.7 kV.
+  - **HV vs duty is non-monotonic** (max per 0.01 duty bin, from the CSV):
+
+    | duty | 0.03 | 0.04 | 0.06 | 0.07–0.12 | **0.16** | 0.20 | 0.24 | **0.30** | 0.38–0.50 |
+    |---|---|---|---|---|---|---|---|---|---|
+    | kV | 3.4 | 5.9 | 9.0 | ≈ 9.3–9.5 plateau | **12.5** | 11.8 | 9.1 | **11.1** | ≈ 6.7–7.0 |
+
+  - The maxima fall at pulse widths ≈ 5.0 µs (D 0.16) and ≈ 9.4 µs (D 0.30)
+    at 32 kHz. That spacing of ≈ 4.4 µs suggests ringing near ~230 kHz,
+    which fits C11 (120 nF) with ~4 µH of T1 leakage inductance.
+    **Hypothesis:** the pulse that ends in phase with that ringing transfers
+    the most energy. Not measured; a scope on DRV_A/DRV_B would confirm.
+  - **AIN1 rose to 70.6 mV (≈ 7 µA return current) near the 12.5 kV peak**,
+    against ≈ 0.5 µA at 5 kV. That is the first sign of leakage/corona at
+    the HV output or on the board, close to the 10 µA firmware abort.
+  - Bridge 8.61–8.70 V; nFAULT and EFUSE_FLT 1 throughout. The safe-stop
+    and the return to 5 V were clean.
+  - End state, checked by this session at 13:31:24: GPIO18/19/24/25 = 0,
+    GPIO26 = 0, GPIO23 = 1, pwm2/3 disabled and normal, 5 V contract, AIN0
+    ≈ 0, AIN1 offset.
+  - ew-1 `stage7_ramp.py` / `rp1_pwm_sync.py` / `husb238a.py` unchanged
+    (md5 = repo `aaae859`).
+  - **Implications:**
+    - with this drive, HV peaks at ≈ 12.5 kV at a 9 V bridge;
+    - beyond D ≈ 0.16 more duty gives *less* HV;
+    - reaching the 16.96 kV trip would need a higher bridge voltage (12/15 V
+      contract, beyond the approved 9 V), on insulation that already shows
+      ≈ 7 µA at 12.5 kV.
+    - The trip remains best tested with a temporarily lowered threshold
+      (15 kΩ across R103 → ≈ 3.9 kV) or a fly-lead injection.
