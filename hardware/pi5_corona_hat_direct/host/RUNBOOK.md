@@ -5,6 +5,8 @@ here is done with the **HV board detached**. Nothing in this runbook energizes
 the transformer driver or requests a USB-PD contract. Bringing up high voltage
 is a separate, supervised bench procedure gated by [AUDIT.md](../AUDIT.md).
 
+Current bench state and stage-by-stage bring-up: [BRINGUP.md](BRINGUP.md).
+
 ## 0. Baseline (observed 2026-10-31)
 
 | Item | State on ew-1 |

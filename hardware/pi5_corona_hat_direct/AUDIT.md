@@ -35,6 +35,11 @@ The hardware trip still needs bench characterization.
   - R14 now uses C25819, which is exactly 0603WAF4702T5E (47 kΩ). The former C25816
     is a 383 kΩ part and would have left Q1 under-driven.
   - C18 keeps C15849, with its MPN corrected to CL10A105KB8NNNC (1 µF, 50 V, X5R).
+- U7 HUSB238A-BB001-QN16R boot voltage (2026-10-31, **confirmed on this board**):
+  - Factory `SNK_PDO2` for `-BB001` is 28 V / 3 A (datasheet Ordering Guide, p. 19).
+  - While `CONTROL1.ENABLE = 0` (`0x13` at power-up), internal PD functions are off and `VBUS_RAW` stays at default 5 V. As soon as `CONTROL1.ENABLE = 1` (`0x1b`) is set in I²C mode, `U7` completes its 150 ms `tCCdeb` attach debounce and automatically negotiates the highest source PDO up to 28 V (`20 V / 3.0 A` measured on `AIN2 = 19.92 V` with a 65 W SPR supply) before any host `SELECT_PDO` command. See [host/HUSB238A.md](host/HUSB238A.md).
+  - U7.14 FLGIN is tied to GND, so nothing holds Q1 off. On an EPR source, 28 V on VIN_PD would exceed U9's 28 V absolute max and F1's 24 V rating, even with BULK_EN low.
+  - Until fixed in hardware (FLGIN host/K1 control, GPIO-mode VSET strapping, or `-BB004` 5 V variant), feed J3 only from sources that cannot offer EPR (≤ 20 V SPR).
 - T1 remains externally sourced. Four-switch contact mapping/load ratings and Pi
   standoff/connector/enclosure assumptions remain to be confirmed physically.
 

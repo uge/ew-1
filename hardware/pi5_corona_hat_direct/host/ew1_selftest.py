@@ -85,8 +85,15 @@ def main():
             print(f"  TSL2591 id 0x{tid:02x} ({'ok' if tid == 0x50 else 'UNEXPECTED'})")
             failures += tid != 0x50
         if present[ADDR_HUSB238A]:
-            st = bus.read_byte_data(ADDR_HUSB238A, 0x00)
-            print(f"  HUSB238A reg 0x00 = 0x{st:02x} (PD status; read only)")
+            # Unofficial map (see HUSB238A.md): CONTROL1 0x02, STATUS 0x63,
+            # CONTRACT_STATUS0 0x67, VBUS_MEASUREMENT 0x87 (125 mV/LSB)
+            c1 = bus.read_byte_data(ADDR_HUSB238A, 0x02)
+            st = bus.read_byte_data(ADDR_HUSB238A, 0x63)
+            cs0 = bus.read_byte_data(ADDR_HUSB238A, 0x67)
+            vb = bus.read_byte_data(ADDR_HUSB238A, 0x87)
+            print(f"  HUSB238A ENABLE={c1 >> 3 & 1} attached={st & 1} "
+                  f"PD_CONTRACT=0x{cs0 >> 4:x} VBUS(chip)={vb * 0.125:.3f} V "
+                  "(read only; details: husb238a.py status)")
         if present[ADDR_ADS1115]:
             print("  ADS1115 single-shot, +/-4.096 V:")
             for ch, (net, k, unit) in ADS_CHANNELS.items():

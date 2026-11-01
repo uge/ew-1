@@ -27,7 +27,7 @@ previews show current markings. These are diagnostic layer previews, not 3D asse
 fit certification. Dated procurement evidence remains under `procurement/`.
 Stock evidence is a snapshot, not a reservation or guarantee of orderability.
 
-[Pi 5 host runbook](host/RUNBOOK.md) prepares ew-1 for the board.
+[Pi 5 host runbook](host/RUNBOOK.md) prepares ew-1 for the board; [bring-up log](host/BRINGUP.md), [handoff summary](host/HANDOFF.md), and [HUSB238A notes](host/HUSB238A.md) record current bench state and USB-PD driver behavior.
 [Validation/export instructions](layout/README.md) reproduce current outputs.
 [Design status](AUDIT.md) records the unresolved HV and procurement issues.
 The native files are the working design, not an archival or experimental copy.
