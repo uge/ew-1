@@ -55,7 +55,7 @@ abort condition appears, return to the previous safe state.
 | 4 | PD source readout / contract | Unofficial map in [HUSB238A.md](HUSB238A.md). Non-EPR source on J3. Attach question resolved | `srccap --arm` lists PDOs. `request V --arm --max V` shows V on AIN2 (×6.556) | ✅ 2026-10-31 18:07 (PDOs 5/9/12/15/20 V; 20 V auto-boot, 9 V & 5 V verified) |
 | 5 | Bulk enable (GPIO25) at 5 V | Stage 3 pass, lid closed, explicit 5 V contract | 5.1 contract; 5.2 GPIO25 high → bridge ≈ 4.8 V, no EFUSE_FLT; 5.3 low → decays in about 3 s; 5.4 lid open cuts it in hardware; 5.5 (opt) 9 V | ⏳ 5.1 ✅ 10:47, 5.2 ✅ + 5.3 ✅ 10:51, 5.4 ✅ 10:53 (5.0 inspection skipped by user); 5.5 ✅ 10:57 (option a step-down) → **stage 5 complete** |
 | 6 | Driver enable (GPIO24), no PWM — **reduced** | Stage 5 pass. [STAGE6_PLAN.md](STAGE6_PLAN.md) rev 3 (option 1) | 6.A′ no false trip at GPIO24 high. 6.B driver awake at 9 V with VM, nFAULT = 1, no drive. 6.C1 lid open → sleep. 6.C3 software safe-stop. **Hardware OV trip NOT verified** | ✅ 2026-11-01 12:17 (6.A′, 6.B, 6.C3, 6.C1 all passed; **hardware OV trip still unverified**) |
-| 7 | PWM / first HV | Bench HV plan, OV trip characterization (AUDIT.md) | Defined by the supervised HV procedure | proposed |
+| 7 | PWM / first HV (option 1 limits) | Stage 6 pass. [STAGE7_PLAN.md](STAGE7_PLAN.md) approved. J60/J61 termination, grounding stick, lid closed | 7.1 dry PWM with driver asleep. 7.2 20 kHz single-ended 1 s burst. 7.3 sweep 25–50 kHz, stop at AIN0 ≥ 0.33 V (≈ 2 kV), abort > 0.50 V. 7.5 discharge timing | ⏳ plan rev 2 approved (2 kV limit); 7.1 ✅ 12:24; **7.2 ✅ 12:25 (first HV ≈ 50 V)**; 7.3 ✅ 12:27 (peak ≈ 165 V @ 30 kHz; gain falls above); 7.3b ✅ 12:32 (max ≈ 205 V @ 32 kHz; second peak 26 kHz); **7.4 ✅ 12:36 (complementary 32 kHz ≈ 357 V)** |
 
 Stages 5–7 are an outline only. They need a written bench plan before they run.
 
@@ -525,3 +525,92 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - **Not verified:** the hardware OV trip / D90 latch / Q2 (option 1, see
     AUDIT.md). Stage 7 limits apply: 5 V contract, AIN0 > 0.50 V cutoff,
     short bursts, lid closed.
+- **2026-11-01 12:20**: stage 7 plan **rev 2 approved** by the user.
+  - J60 insulated and > 10 mm clear. **No grounding stick**, so discharge is
+    ≥ 5 min wait + AIN0 < 0.01 V, and no hands in the HV section. Lid assumed
+    on. 2 kV initial limit.
+  - Script `host/stage7.py` (dry / burst / sweep / decay). Single-ended drive
+    only (IN1 PWM ch2 50%, IN2 = 0, no inverted channel); f 20–50 kHz with
+    sysfs readback; AIN0 abort 0.50 V, target 0.33 V; ≤ 1 s bursts,
+    ≥ 10 s gaps.
+- **2026-11-01 12:24**: **7.1 dry PWM check PASSED** (CSVs
+  `~/stage7_dry_20261101_122422.csv`, `..._122425.csv`). Lid open, which is
+  allowed for dry. Driver asleep (GPIO24 low), bridge off (GPIO25 low).
+  - **20 kHz** and **50 kHz**: PWM ch2 configured, readback OK (period
+    50000/20000 ns, 50%, normal).
+  - Enabled for 1.0 s each. GPIO18 sampled high 17/29 and 16/29 times, so
+    it is toggling.
+  - AIN0 ≤ 0.8 mV (no HV with the driver asleep), AIN1 ≤ 2.1 mV, nFAULT 1,
+    EFUSE_FLT 1, OV trip 0, VBUS 5.09–5.12 V, bridge ≤ 4 mV.
+  - AIN0 sampled at ~205 Hz.
+  - Safe-stop order held every time. Afterwards GPIO18/19 a3 low, pwm2
+    disabled/normal, pwm3 never exported, GPIO24/25 low.
+- **2026-11-01 12:25**: **7.2 PASSED: FIRST HV GENERATED.** (`stage7.py burst
+  20000 1.0`, CSV `~/stage7_burst_20261101_122525.csv`; analysis with
+  `host/stage7_analyze.py`.)
+  - Lid closed (GPIO23 = 1), 5 V contract, bridge 4.90 V. GPIO24 high, then
+    PWM ch2 at 20 kHz, 50%, single-ended, for 1.0 s.
+  - **AIN0 rose 2.4 mV @ 18 ms → 7.3 mV @ 0.1 s → peak 8.5 mV (≈ 52 V HV_OUT
+    nominal)**, with a plateau of about 8.2 mV.
+  - Bridge sagged 4.90 → 4.83 V during drive. VBUS 5.09–5.11 V. AIN1
+    ≤ 2.1 mV (offset only, no return current). nFAULT 1, EFUSE_FLT 1, OV
+    trip 0.
+  - **Discharge:** AIN0 fell below 0.5 mV within 0.5 s of the safe-stop
+    (fit τ ≈ 0.2 s), and stayed near 0 for 15 s.
+  - **Measured gain is about one third of the ideal lossless estimate**
+    (≈ 150 V at 20 kHz single-ended). AIN0 is still uncalibrated.
+  - Post: GPIO18/19/24/25 low, GPIO26 = 0.
+- **2026-11-01 12:27**: **7.3 sweep completed, no abort** (`stage7.py sweep
+  25000,…,50000`, CSV `~/stage7_sweep_20261101_122655.csv`). Single-ended,
+  5 V bridge, 1 s bursts, 10 s gaps.
+
+  | f (kHz) | 20 (7.2) | 25 | 30 | 35 | 40 | 45 | 50 |
+  |---|---|---|---|---|---|---|---|
+  | AIN0 plateau (mV) | 8.2 | 23.1 | **26.9** | 13.6 | 12.4 | 1.5 | 0.3 |
+  | ≈ HV_OUT (V, nominal) | 50 | 141 | **164** | 83 | 76 | 9 | 2 |
+
+  - Bridge 4.83 V under drive at every frequency (≈ 70 mV sag). AIN1 is
+    offset only, nFAULT/EFUSE_FLT 1, OV trip 0. Every step discharged before
+    the next.
+  - **Finding:** the response **peaks near 30 kHz and falls toward 50 kHz**.
+    That is the opposite of the C11 + L_pri (69 kHz) model, which predicted
+    a steep rise toward 69 kHz. The real tank resonance is much lower,
+    plausibly because the multiplier's input capacitance reflected through
+    1:50 (×2500) dominates. The 68 kHz design drive point would give almost
+    no output.
+  - Peak ≈ 165 V at 5 V single-ended, far below the 2 kV target.
+  - Script note: the end-of-sweep "decay" report uses the last t_stop
+    against all decay rows (cosmetic bug); the per-step data is correct.
+- **2026-11-01 12:30–12:33**: **7.3b fine sweep completed, no abort** (CSV
+  `~/stage7_sweep_20261101_123015.csv`). Same conditions as 7.3, 1 kHz
+  steps.
+
+  | f (kHz) | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | **32** | 33 | 34 |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | AIN0 peak (mV) | 4.1 | 6.0 | 14.6 | 24.6 | 28.4 | 20.6 | 21.4 | 23.9 | 28.4 | 28.6 | **33.6** | 31.4 | 21.4 |
+  | ≈ HV_OUT (V) | 25 | 37 | 89 | 150 | 173 | 126 | 131 | 146 | 173 | 174 | **205** | 191 | 131 |
+
+  - **Two maxima: ≈ 26 kHz and ≈ 32 kHz (best, ≈ 205 V), with a dip at
+    27–28 kHz.** 25 and 30 kHz reproduce the 7.3 values to within 1 mV.
+  - Bridge 4.83 V under drive; AIN1 offset only; nFAULT/EFUSE_FLT 1; OV trip
+    0; all post-states low.
+  - The twin peaks suggest two coupled resonances: C11 with the leakage
+    inductance and the reflected multiplier capacitance, or a
+    single-ended/coast artefact. Characterize further with complementary
+    drive (7.4) or a scope on DRV_A/DRV_B.
+- **2026-11-01 12:36**: **7.4 complementary drive PASSED** (approved by the
+  user; `stage7.py comp 32000 1.0`, CSV `~/stage7_comp_20261101_123545.csv`).
+  - Safety fix before the run: ch3 is kept **normal and disabled (pin low)**
+    until IN1 is already toggling, then switched to `inversed` and enabled
+    with readback. A disabled `inversed` channel idles HIGH, which would have
+    put a static reverse-drive step on IN2 with the driver awake.
+  - 32 kHz, IN1 = ch2 normal 50%, IN2 = ch3 inversed 50%, 1.0 s, 5 V
+    bridge. **AIN0 peak 58.6 mV (≈ 357 V)**, end 56.0 mV: **1.74× the
+    single-ended 33.6 mV** at the same frequency.
+  - Bridge 4.833–4.844 V. AIN1 ≤ 2.4 mV. nFAULT/EFUSE_FLT 1, OV trip 0.
+  - Discharge: below 305 V in 0.03 s and **below 61 V in 0.28 s**.
+  - Post-stop check: ch3 enable 0, polarity normal; GPIO18/19 = 0;
+    GPIO24/25 low; GPIO26 0.
+  - **Best so far ≈ 0.36 kV at the 5 V bridge**, about 1/37 of the 13 kV
+    design target. More output needs a higher bridge voltage, which stays
+    blocked by option 1 until the hardware OV trip is verified.
