@@ -25,6 +25,7 @@ The page is self-contained: no CDN, canvas charts, vanilla JS.
 | `bme280.py`, `tsl2591.py` | Sensor drivers |
 | `static/index.html` | The page |
 | `test_ew1_limits.py` | `python3 test_ew1_limits.py` (no hardware) |
+| `test_pd_init.py` | Startup PD-init logic with fakes, `python3 test_pd_init.py` (no hardware) |
 | `ew1-dashboard.service`, `install_service.sh` | systemd unit (installed, never auto-enabled) |
 | `deploy.sh` | Copies everything from the repo to ew-1. Run it on the workstation |
 
@@ -121,7 +122,39 @@ browser ──SSE /api/stream (5 Hz idle, 20 Hz in a run)──► ThreadingHTTP
 - After any HV ramp, the page shows a **"DO NOT TOUCH" 5-minute countdown** and the time
   since the last HV. This is persisted in `~/dashboard_runs/last_hv.json` and seeded from the
   newest `~/stage7_ramp_ramp_*.csv`.
-- **HUSB238A:** the monitor only reads it. Only `run()` with `vbus 9` writes to it.
+- **HUSB238A:** the monitor only reads it. Two things write to it:
+  - `run()` with `vbus 9`;
+  - the optional startup PD init below.
+
+## Startup PD init (opt-in, `pd_auto_init`)
+
+U7 comes up with `CONTROL1.ENABLE = 0` after every power cycle and reports
+`Type-C 5V (no PD)`. `check_preconditions()` then refuses every run ("PD contract … is not
+5V"). To establish the explicit 5 V contract automatically when the dashboard starts:
+
+```sh
+# on ew-1; any existing keys are preserved
+python3 - <<'EOF'
+import json, os; p = os.path.expanduser("~/dashboard_runs/settings.json")
+s = json.load(open(p)) if os.path.exists(p) else {}; s["pd_auto_init"] = True; json.dump(s, open(p, "w"))
+EOF
+```
+
+- **Off by default.** It runs only if the setting is exactly `true`. `--no-pd-init` overrides
+  it. It is deliberately not settable from the web page.
+- **What it does** (`ensure_pd_5v()`): it runs after the startup safe-stop and before the
+  monitor starts. It takes the HV lock, then requires GPIO24/25 low, a bridge < 0.2 V and
+  VBUS 4.5–5.6 V. If the contract isn't already 5 V, it calls `request_fixed(5, max_volts=5)`.
+  If any check fails it logs the reason and does nothing. It never raises.
+- ⚠️ **Only with an SPR-only source on J3** (≤ 20 V, no EPR). Enabling U7 makes this
+  `-BB001` part **auto-request the source's highest PDO** before 5 V is selected (AUDIT.md,
+  U7 boot voltage). On the 65 W SPR supply that is a brief ~20 V excursion upstream of U9,
+  with U9 off and OVLO at 22 V. **With an EPR charger it would be 28 V into U9 (28 V abs max)
+  and F1 (24 V).**
+  - Every startup with the setting on logs a warning.
+  - If the source reports EPR capability afterwards, the init logs an error to inspect U9/F1.
+  - Set `pd_auto_init` false before connecting any other charger.
+- Test without hardware: `python3 test_pd_init.py`. It fakes the lock, pins, ADC and U7.
 
 ## API
 

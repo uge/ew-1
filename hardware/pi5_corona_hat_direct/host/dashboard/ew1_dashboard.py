@@ -109,6 +109,70 @@ def do_safe_stop(why):
         return False
 
 
+def read_setting(key, default=None):
+    """One key from ~/dashboard_runs/settings.json; default if absent or unreadable."""
+    try:
+        with open(SETTINGS_PATH) as f:
+            return json.load(f).get(key, default)
+    except Exception:
+        return default
+
+
+def ensure_pd_5v():
+    """Establish the explicit 5 V PD contract at startup (2026-11-01).
+
+    U7 (HUSB238A) comes up with CONTROL1.ENABLE = 0 after every power cycle, reporting
+    "Type-C 5V (no PD)", and check_preconditions() then refuses every run. This performs the
+    same step as `husb238a.py request 5 --arm --max 5`, but only when it is safe:
+      * the HV lock is free (taken for the duration, so no CLI run or monitor poll overlaps);
+      * GPIO24 and GPIO25 are low (driver asleep, U9 eFuse off) and the bridge is < 0.2 V.
+    Enabling U7 makes it auto-request the source's highest PDO (<= 20 V on the non-EPR
+    supply) for a moment before request_fixed() re-selects 5 V; U9 is off, so that excursion
+    stays upstream of the eFuse. Returns a short status string. Never raises."""
+    try:
+        lk = R.hv_lock()
+    except Exception as e:
+        warn(f"PD init skipped: {e}")
+        return "skipped: HV lock busy"
+    try:
+        pd = husb238a.HUSB238A(allow_write=False)
+        st = pd.status()
+        if st["pd_contract"] == "5V":
+            info("PD init: explicit 5V contract already present")
+            return "already 5V"
+        if R.lev(24) != 0 or R.lev(25) != 0:
+            warn("PD init skipped: GPIO24/25 not low")
+            return "skipped: outputs not low"
+        with R.SMBus(1) as b:
+            bridge = R.ads(b, 3) * 11
+            vbus = R.ads(b, 2) * 118 / 18
+        if bridge >= 0.2:
+            warn(f"PD init skipped: bridge {bridge:.2f} V not discharged")
+            return "skipped: bridge not discharged"
+        if not 4.5 <= vbus <= 5.6:
+            warn(f"PD init skipped: VBUS {vbus:.2f} V (no source on J3?)")
+            return "skipped: VBUS out of range"
+        info(f"PD init: contract was {st['pd_contract']!r}; requesting 5V (brief auto-request "
+             f"excursion upstream of U9 is expected)")
+        ams = husb238a.HUSB238A(allow_write=True).request_fixed(5, max_volts=5)
+        st = pd.status()
+        if st.get("source_epr_capable"):
+            err("PD init: J3 source reports EPR capability. U7's automatic request at enable may have "
+                "put up to 28 V on VIN_PD (U9 abs max 28 V, F1 24 V). Use an SPR-only supply and set "
+                "pd_auto_init false; inspect U9/F1 before further use")
+        if st["pd_contract"] == "5V":
+            info(f"PD init: explicit 5V/{st['contract_ma']} mA contract established (AMS {ams})")
+            return "established 5V"
+        warn(f"PD init: request returned AMS {ams} but contract is {st['pd_contract']!r} "
+             f"(attached={st['attached']}); runs stay refused until a 5V contract exists")
+        return "failed"
+    except Exception as e:
+        warn(f"PD init error: {type(e).__name__}: {e}")
+        return "error"
+    finally:
+        lk.close()
+
+
 # ------------------------------------------------------------------ camera helper (separate process)
 CAM_TOKEN = {"t": ""}
 
@@ -945,6 +1009,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--port", type=int, default=8080)
     ap.add_argument("--bind", default="0.0.0.0")
+    ap.add_argument("--no-pd-init", action="store_true",
+                    help="do not establish the explicit 5 V PD contract at startup")
     a = ap.parse_args()
     os.makedirs(RUNS_DIR, exist_ok=True)
     token = load_token()
@@ -959,6 +1025,17 @@ def main():
         warn(f"HV lock held by {holders} at startup; outputs left alone, monitoring paused until released")
     else:
         do_safe_stop("dashboard start")
+        # Opt-in (default OFF): {"pd_auto_init": true} in ~/dashboard_runs/settings.json. Enabling U7
+        # triggers its automatic highest-PDO request, so this is only safe with an SPR-only (<= 20 V,
+        # non-EPR) source on J3 -- an EPR charger would put 28 V on U9 (28 V abs max) and F1 (24 V).
+        if a.no_pd_init:
+            info("PD init: disabled by --no-pd-init")
+        elif read_setting("pd_auto_init", False) is True:
+            warn("PD init enabled (pd_auto_init): J3 MUST be an SPR-only source (<= 20 V, no EPR); "
+                 "U7's automatic request at enable reaches the source's highest PDO before 5 V is selected")
+            ensure_pd_5v()          # before the monitor starts, so no I2C polling overlaps
+        else:
+            info("PD init off (set \"pd_auto_init\": true in settings.json to establish 5V at startup)")
 
     bus_lock = threading.Lock()
     mon = Monitor(bus_lock)
