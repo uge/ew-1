@@ -888,3 +888,60 @@ The readings below come from `ew1_selftest.py`, `vcgencmd pmic_read_adc` and
   - Deployed and restarted 14:37:54 (safe-stop on stop and start). Served
     `/api/limits` shows the new caps. Target 10.5 and duty 0.26 are
     rejected with 400. Unit tests updated and passing.
+- **2026-11-01 19:49–19:54**: ew-1 power-cycled (reboot ~19:45).
+  - The forked session started the dashboard (single instance, PID 1903).
+  - At the user's request it set an **explicit 5 V / 3 A PD contract** with
+    `husb238a.py request 5 --arm --max 5` (AMS True; source PDOs 5/9/12/15 V
+    @ 3 A and 20 V @ 3.2 A), GPIO24/25 low and no HV lock held.
+  - **Reason:** after the reboot U7 is disabled ("Type-C 5V (no PD)"), and the
+    dashboard's precondition check refused a run with "PD contract ... is not
+    5V". Every power cycle needs this step before a run.
+  - This session verified read-only: GPIO18/19/24/25/26 low, interlock 1,
+    PWM off/normal.
+- **2026-11-01 19:50**: dashboard page: camera panel moved to a new leftmost
+  column at the top; **live view starts automatically when a camera is
+  detected** (hide choice remembered per browser; stream retries every 3 s).
+  Not visually verified.
+- **2026-11-01 19:56–19:58**: **opt-in startup PD init** added to the dashboard
+  by the forked session (commit `6fa1ca7`, user-requested).
+  - `ensure_pd_5v()` runs after the startup safe-stop and before the monitor
+    starts:
+    - it takes the HV lock;
+    - it requires GPIO24/25 low, bridge < 0.2 V and VBUS 4.5–5.6 V;
+    - it calls `request_fixed(5, max_volts=5)` only if the contract isn't
+      already 5 V;
+    - it never raises and always releases the lock; with an EPR-capable
+      source it logs an error.
+  - **Default OFF.** Enabled with `{"pd_auto_init": true}` in
+    `~/dashboard_runs/settings.json`; `--no-pd-init` overrides. It can't be
+    set from the web, and every startup with it on logs the SPR-only warning
+    (the `-BB001` auto-request reaches the source's highest PDO before 5 V
+    is selected).
+  - **On ew-1 it is enabled**, since J3 is the 65 W SPR supply (no EPR).
+    U7 was disabled to simulate a boot and the dashboard restarted: the log
+    shows "contract was 'Type-C 5V (no PD)'; requesting 5V" → "explicit
+    5V/3000 mA contract established (AMS True)" at 19:58:16.
+  - **If the J3 supply is ever changed to an EPR-capable one, turn
+    `pd_auto_init` off first** (a 28 V request would hit U9's 28 V abs max
+    and F1's 24 V).
+  - Verified by this session at 19:58:43, read-only: dashboard single
+    instance, PD 5 V / 3 A, GPIO18/19/24/25/26 low, interlock 1, pwm2/3
+    disabled and normal.
+- **2026-11-01 20:01–20:05**: **limits raised to 15 kV** (user request; forked
+  session, commit `421ca37`; this session added the page options).
+  - Limits: target ≤ **15.0 kV**; **abort ≤ 15.5 kV** (the fork took this
+    session's suggestion: 1.46 kV below the unverified 16.96 kV trip);
+    PD contract **5/9/12/15 V**; max duty 0.25; AIN1 ≤ 0.5 V; hold ≤ 30 s.
+  - `stage7_ramp.py`: tuning at 12/15 V (duty step 0.00075/0.0005, 10 V/ms);
+    VBUS and bridge bands follow the 9 V pattern; any non-5 V contract is
+    requested with GPIO25 low; the run returns to 5 V after the safe-stop.
+  - README: caveat that **above ~12.5 kV is untested** (step 12 → 13.5 → 15 kV
+    with a tight AIN1 abort; unqualified insulation; unverified trip; no
+    grounding stick; wait 5 min).
+  - Dashboard page: `f_vbus` now offers 5/9/12/15 (no restart needed).
+  - Verified by this session, nothing driven: `/api/limits` shows the new
+    caps, and 15.5 kV target / 16 kV abort / a 20 V contract all return 400.
+    Board idle: GPIO18/19/24/25/26 low, 5 V contract.
+  - **Still true: the hardware OV trip is unverified and 15 kV exceeds
+    anything the board has run.** 12.5 kV was the highest HV so far (9 V
+    contract, unloaded); 9.5 kV the highest into the 10 mm gap.

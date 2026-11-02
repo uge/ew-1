@@ -57,7 +57,7 @@ def validate_run_params(d):
     p = {}
     vbus = _num(d, "vbus", errors, integer=True)
     if vbus is not None and vbus not in LIMITS["vbus"]:
-        errors.append(f"vbus: {vbus} not allowed (5 or 9 only)")
+        errors.append(f"vbus: {vbus} not allowed (one of {', '.join(str(v) for v in LIMITS['vbus'])})")
     p["vbus"] = vbus
     for key, integer in (("freq_hz", True), ("target_kv", False), ("abort_kv", False),
                          ("max_duty", False), ("ain1_max_v", False), ("hold_s", False)):
