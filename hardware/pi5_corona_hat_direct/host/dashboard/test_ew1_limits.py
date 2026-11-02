@@ -30,13 +30,22 @@ class TestRunParams(unittest.TestCase):
         return e
 
     def test_limits(self):
-        self.bad(vbus=12); self.bad(vbus=20); self.bad(vbus=5.5)
+        self.bad(vbus=20); self.bad(vbus=5.5); self.bad(vbus=10)
         self.bad(freq_hz=19999); self.bad(freq_hz=100001); self.bad(freq_hz=32000.5)
-        self.bad(target_kv=10.01); self.bad(abort_kv=11.01); self.bad(max_duty=0.26); self.bad(max_duty=0.5)
+        self.bad(target_kv=15.01, abort_kv=15.5); self.bad(abort_kv=15.51); self.bad(max_duty=0.26); self.bad(max_duty=0.5)
         self.bad(ain1_max_v=0.51); self.bad(hold_s=30.1); self.bad(hold_s=-1)
         self.bad(target_kv=6.0, abort_kv=6.0)
         self.bad(target_kv=float("nan")); self.bad(target_kv="inf"); self.bad(target_kv=True)
         self.bad(target_kv=[1]); self.bad(confirm="yes")
+
+    def test_15kv_limits(self):
+        # user 2026-11-01: allow up to 15 kV; abort capped at 15.5 kV, 1.46 kV below the 16.96 kV hardware trip
+        for v in (5, 9, 12, 15):
+            p, e = validate_run_params(dict(GOOD, vbus=v))
+            self.assertEqual(e, [], v); self.assertEqual(p["vbus"], v)
+        p, e = validate_run_params(dict(GOOD, vbus=15, target_kv=15.0, abort_kv=15.5))
+        self.assertEqual(e, []); self.assertEqual((p["target_kv"], p["abort_kv"]), (15.0, 15.5))
+        self.bad(target_kv=15.0, abort_kv=15.0)          # target must stay below abort
 
     def test_missing(self):
         d = dict(GOOD); del d["abort_kv"]

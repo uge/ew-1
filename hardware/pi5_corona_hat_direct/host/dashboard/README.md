@@ -73,14 +73,23 @@ browser ──SSE /api/stream (5 Hz idle, 20 Hz in a run)──► ThreadingHTTP
 
 | Parameter | Allowed |
 |---|---|
-| PD contract `vbus` | 5 or 9 V |
+| PD contract `vbus` | 5, 9, 12 or 15 V (12/15 V added 2026-11-01: 9 V tops out at ≈ 12.5 kV unloaded) |
 | `freq_hz` | 20 000 – 100 000 |
-| `target_kv` | 0.1 – 10.0, and < `abort_kv` |
-| `abort_kv` | ≤ 11.0 (predictive) |
+| `target_kv` | 0.1 – 15.0, and < `abort_kv` (user: up to 15 kV, 2026-11-01) |
+| `abort_kv` | ≤ 15.5 (predictive), 1.46 kV below the 16.96 kV hardware OV trip, which is **unverified** |
 | `max_duty` | 0.01 – 0.25 (raised from 0.17 so a corona-loaded gap can reach 10 kV; HV vs duty is non-monotonic, unloaded peak ≈ 0.16, so beyond it more duty gives less HV) |
 | `ain1_max_v` | 0.01 – 0.5 V (≤ 50 µA) |
 | `hold_s` | 0 – 30 |
 
+- ⚠️ **Above ~12.5 kV the board is outside anything bench-tested** (highest so far: 12.5 kV
+  unloaded, with ≈ 7 µA return current). The insulation is unqualified (AUDIT.md), the
+  hardware OV trip is unverified, there's no grounding stick, and bare leads ~10 mm apart will
+  likely arc near 15 kV. Approach 15 kV stepwise (for example 12 → 13.5 → 15 kV targets) with a
+  tight `ain1_max_v`, and keep the 5-minute do-not-touch wait.
+- **12/15 V contracts** are requested by `run()` with GPIO25 low. VBUS is verified in the
+  contract's band before GPIO25 goes high, and the bridge is verified after. The run returns to
+  5 V after safe-stop. `stage7_ramp.TUNING`: 12 V step 0.00075, 15 V step 0.0005, both
+  10 V/ms.
 - Every field is required.
 - `confirm` must be the string `"HV ON"`; the UI sends it only from the confirmation dialog,
   which shows the target.

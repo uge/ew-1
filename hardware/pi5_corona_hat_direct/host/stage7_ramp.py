@@ -2,7 +2,7 @@
 """Stage 7.6: phase-aligned complementary drive with a slew-limited soft start.
 
   stage7_ramp.py align [FREQ]                         dry: driver asleep, bridge off; align IN1/IN2, report
-  stage7_ramp.py ramp [--vbus 5|9] [--freq F] [--target-kv K] [--max-duty D] [--hold S]
+  stage7_ramp.py ramp [--vbus 5|9|12|15] [--freq F] [--target-kv K] [--max-duty D] [--hold S]
   stage7_ramp.py ramp ... --ain1-max V   return-current abort on AIN1 (default 0.10 V = 10 uA; max 0.6)
   stage7_ramp.py ramp ... --abort-kv A --expect-trip   OV-trip test (2026-11-01, user request): ramp until
         the HARDWARE trip (GPIO26) fires; keep PWM 100 ms to prove Q2 stops the drive; check latch (D90)
@@ -23,7 +23,7 @@ channels are re-enabled until aligned, then D drops to D0 before the driver wake
 Limits (user-approved 2026-11-01): abort when AIN0 or the PREDICTED AIN0 (a0 + slope*TAU)
 reaches 6.0 kV (0.984 V); stop ramping at --target-kv (default 5.0) and hold; duty only
 increases while the HV slope is below SLEW (20 V/ms). Plus every stage7.py abort.
-Safe-stop: GPIO24 low -> PWM disable -> polarity normal -> GPIO25 low. --vbus 9 returns to 5 V.
+Safe-stop: GPIO24 low -> PWM disable -> polarity normal -> GPIO25 low. Any --vbus other than 5 returns to 5 V.
 
 Library use (2026-11-01, dashboard/): run(mode, ...) is the whole align/ramp procedure; main() only parses
 the CLI, takes the shared HV-owner lock (hv_lock(), /run/lock/ew1-hv.lock) and calls run(). run() adds an
@@ -44,7 +44,8 @@ D0, D_STEP, STEP_DT = 0.005, 0.0025, 0.020
 HOLD_BAND_KV = 0.10
 HOLD_DT = 0.050
 # per-bridge-voltage loop tuning (2026-11-01: 9 V hold limit-cycled 4.2-5.7 kV with 0.0025 / 20 V/ms)
-TUNING = {5: (0.0010, 0.010), 9: (0.0010, 0.010)}  # 5 V: finer after 0.3-0.85 kV overshoot at 3 kV (13:09 sweep)   # (duty step, slew kV/ms)
+TUNING = {5: (0.0010, 0.010), 9: (0.0010, 0.010), 12: (0.00075, 0.010), 15: (0.0005, 0.010)}  # 12/15 V added 2026-11-01 (15 kV limit): finer step as kV per duty rises with VM
+# previous 5/9 V tuning note:  # 5 V: finer after 0.3-0.85 kV overshoot at 3 kV (13:09 sweep)   # (duty step, slew kV/ms)
 ALIGN_MIN, ALIGN_TRIES, ALIGN_SAMPLES = 0.90, 30, 150
 F_MIN, F_MAX = 20_000, 100_000   # 100 kHz = DRV8876 fPWM max (user-requested 36-100 kHz sweep 2026-11-01)
 RAMP_TIMEOUT = 20.0
@@ -126,10 +127,17 @@ def hv_lock(path=LOCK_PATH):
     f.seek(0); f.truncate(); f.write(f"{os.getpid()} {os.path.basename(sys.argv[0])} {time.strftime('%H:%M:%S')}\n"); f.flush()
     return f
 
+def vbus_bands(vbus):
+    """(VBUS band, bridge band) in V for a PD contract. 5 and 9 V keep their measured bands;
+    12/15 V follow the 9 V pattern (VBUS V-0.5..V+0.6, bridge V-1.4..V+0.4; the bridge sits one
+    D50 Schottky drop below VBUS and sags ~0.1 V under drive)."""
+    if vbus == 5: return (4.5, 5.6), (4.0, 5.6)
+    return (vbus - 0.5, vbus + 0.6), (vbus - 1.4, vbus + 0.4)
+
 def check_args(mode, vbus, target_kv, abort_kv, ain1_max):
     """The CLI's argument limits; returns an error string or None."""
     if mode not in ("align", "ramp"): return "mode must be align or ramp"
-    if vbus not in (5, 9): return "--vbus must be 5 or 9"
+    if vbus not in TUNING: return f"--vbus must be one of {sorted(TUNING)}"
     if ain1_max > 0.6: return "ain1-max capped at 0.6 V (60 uA)"
     if abort_kv > 19.0: return "abort-kv capped at 19.0"
     if target_kv >= abort_kv: return "target must be below the abort"
@@ -191,12 +199,12 @@ def run(mode, freq=32000, vbus=5, target_kv=5.0, max_d=0.5, hold=0.5, abort_kv=A
                 result[f"d{Dt}"] = (round(f1, 3), round(f2, 3), round(both, 3))
             ret["code"] = 0; return ret
 
-        vb_band, br_band = ((4.5, 5.6), (4.0, 5.6)) if vbus == 5 else ((8.5, 9.6), (7.6, 9.4))
-        if vbus == 9:
-            log("request 9 V (GPIO25 low) - user override")
-            log(f"request 9 V AMS={pd.request_fixed(9, max_volts=9)}"); nap(1.0)
+        vb_band, br_band = vbus_bands(vbus)
+        if vbus != 5:
+            log(f"request {vbus} V (GPIO25 low) - user override")
+            log(f"request {vbus} V AMS={pd.request_fixed(vbus, max_volts=vbus)}"); nap(1.0)
             vb = ads(b, 2) * 118 / 18
-            if not 8.5 <= vb <= 9.6: raise RuntimeError(f"VBUS {vb:.2f} not at 9 V")
+            if not vb_band[0] <= vb <= vb_band[1]: raise RuntimeError(f"VBUS {vb:.2f} not at {vbus} V")
         chk()
         gpio(25, 1); log("GPIO25 high"); nap(1.0)
         br = ads(b, 3) * 11
@@ -304,7 +312,7 @@ def run(mode, freq=32000, vbus=5, target_kv=5.0, max_d=0.5, hold=0.5, abort_kv=A
                     a0 = ads(b, 0); add([round(time.monotonic() - t0, 4), "decay", 0, round(a0, 4), "", "", "", round(ads(b, 3) * 11, 3), "", "", "", "", ""])
                 except Exception: break
                 time.sleep(0.02)
-        if mode == "ramp" and vbus == 9:
+        if mode == "ramp" and vbus != 5:
             try: log(f"request 5 V AMS={pd.request_fixed(5, max_volts=5)}")
             except Exception as e: log(f"request 5 V FAILED {e}")
         try: req.release()

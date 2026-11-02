@@ -7,10 +7,10 @@ import math
 
 # Hard limits the UI cannot exceed (user-specified 2026-11-01).
 LIMITS = {
-    "vbus": (5, 9),                 # allowed PD contracts, V (fixed PDOs only)
+    "vbus": (5, 9, 12, 15),         # allowed PD contracts, V (fixed PDOs only); 12/15 added for 15 kV (2026-11-01)
     "freq_hz": (20_000, 100_000),   # DRV8876 fPWM max 100 kHz
-    "target_kv": (0.1, 10.0),      # user: allow up to 10 kV (2026-11-01)
-    "abort_kv": (0.2, 11.0),
+    "target_kv": (0.1, 15.0),      # user: allow up to 15 kV (2026-11-01; was 10)
+    "abort_kv": (0.2, 15.5),        # predictive firmware abort; 1.46 kV below the 16.96 kV hardware OV trip (unverified)
     "max_duty": (0.01, 0.25),       # raised from 0.17 (2026-11-01) so a corona-loaded gap can reach 10 kV;
                                     # HV vs duty is non-monotonic (unloaded peak ~0.16): past it more duty gives LESS HV
     "ain1_max_v": (0.01, 0.5),      # 100 uA/V -> 50 uA
