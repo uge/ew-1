@@ -14,7 +14,7 @@ echo "== step 2: packages"
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get full-upgrade -y
 DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  i2c-tools gpiod python3-libgpiod python3-smbus2 python3-venv git
+  i2c-tools gpiod python3-libgpiod python3-smbus2 python3-venv git ffmpeg
 if command -v rpi-eeprom-update >/dev/null 2>&1; then
   rpi-eeprom-update || true
 fi

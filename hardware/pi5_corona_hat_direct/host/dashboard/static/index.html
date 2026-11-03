@@ -118,6 +118,24 @@ canvas.sm{height:120px} canvas.md{height:150px}
       <button class="btn" id="camRec" type="button">Start recording</button>
       <label style="flex-direction:row;align-items:center;gap:6px;color:var(--text)"><input type="checkbox" id="camAuto" style="width:auto"> auto-record HV runs</label>
     </div>
+    <details id="llBox" style="margin-top:8px">
+      <summary>Low-light (exposure, gain, frame integration)</summary>
+      <div class="hint" id="llNote"></div>
+      <div class="row" style="flex-wrap:wrap;gap:10px;align-items:flex-end">
+        <label>Exposure<select id="llExpMode"><option value="auto">auto</option><option value="manual">manual</option></select></label>
+        <label>Manual exposure <span id="llExpV" class="mono"></span><input type="range" id="llExp" min="1" max="200" step="1"></label>
+        <label>Gain <span id="llGainV" class="mono"></span><input type="range" id="llGain" min="0" max="255" step="1"></label>
+        <label>Integrate<select id="llInt"><option>1</option><option>2</option><option>4</option><option>8</option><option>16</option><option>32</option></select></label>
+        <label>Stack<select id="llStack"><option value="mean">average (less noise)</option><option value="peak">peak hold (transients)</option></select></label>
+        <label>Boost <span id="llBoostV" class="mono"></span><input type="range" id="llBoost" min="1" max="16" step="0.5"></label>
+        <label>Gamma <span id="llGamV" class="mono"></span><input type="range" id="llGam" min="0.3" max="1" step="0.05"></label>
+      </div>
+      <div class="btns">
+        <button class="btn" id="llNight" type="button">Night preset</button>
+        <button class="btn" id="llReset" type="button">Reset</button>
+        <span class="hint" id="llFps"></span>
+      </div>
+    </details>
   </section>
 </div>
 
@@ -244,6 +262,7 @@ canvas.sm{height:120px} canvas.md{height:150px}
     <div class="row" style="justify-content:space-between;margin-bottom:10px">
       <h2 style="margin:0">Recorded Sessions (~/dashboard_runs/ew1_runs.sqlite3)</h2>
       <div class="row">
+        <span id="dbSessStatusMsg" class="hint mono"></span>
         <button class="btn sm" id="dbNewSessBtn" type="button">+ New Session</button>
         <button class="btn sm" id="dbRefreshBtn" type="button">Refresh</button>
         <a class="btn sm" href="/api/db/download" style="text-decoration:none">Download SQLite DB (.sqlite3)</a>
@@ -292,8 +311,17 @@ let L = null, S = null, lastEv = 0, es = null, hbTimer = null;
 const hist = [];   // [t, kv, ua]
 const fmt = (v, d=2) => { if (v === null || v === undefined || Number.isNaN(v)) return "--"; const t = Number(v).toFixed(d); return /^-0\.?0*$/.test(t) ? t.slice(1) : t; };
 
-function tokenGet(){ try { return localStorage.getItem("ew1tok") || ""; } catch(e){ return $("token").value; } }
-$("token").addEventListener("input", () => { try { localStorage.setItem("ew1tok", $("token").value.trim()); } catch(e){} });
+function tokenGet(){
+  const fv = ($("token") && $("token").value.trim()) || "";
+  if (fv) return fv;
+  try { return localStorage.getItem("ew1tok") || ""; } catch(e){ return ""; }
+}
+function tokenSet(v){
+  const t = (v || "").trim();
+  if ($("token")) $("token").value = t;
+  try { localStorage.setItem("ew1tok", t); } catch(e){}
+}
+$("token").addEventListener("input", () => tokenSet($("token").value));
 $("token").value = tokenGet();
 const FIELDS = {vbus:"f_vbus", freq_hz:"f_freq", target_kv:"f_target", abort_kv:"f_abort", max_duty:"f_duty", ain1_max_v:"f_ain1", hold_s:"f_hold"};
 function loadForm(){ let saved = {}; try { saved = JSON.parse(localStorage.getItem("ew1form") || "{}"); } catch(e){}
@@ -302,7 +330,14 @@ function formVals(){ const o = {}; for (const [k, id] of Object.entries(FIELDS))
   try { localStorage.setItem("ew1form", JSON.stringify(o)); } catch(e){} return o; }
 
 async function post(path, body){
-  const r = await fetch(path, {method:"POST", headers:{"Content-Type":"application/json", "X-EW1-Token": tokenGet().trim()}, body: JSON.stringify(body||{})});
+  let r = await fetch(path, {method:"POST", headers:{"Content-Type":"application/json", "X-EW1-Token": tokenGet().trim()}, body: JSON.stringify(body||{})});
+  if (r.status === 401 && path !== "/api/heartbeat"){
+    const entered = prompt("Control token required (from ~/.ew1-dashboard-token on the Pi):", "");
+    if (entered && entered.trim()){
+      tokenSet(entered.trim());
+      r = await fetch(path, {method:"POST", headers:{"Content-Type":"application/json", "X-EW1-Token": tokenGet().trim()}, body: JSON.stringify(body||{})});
+    }
+  }
   let j = {}; try { j = await r.json(); } catch(e){}
   return {status:r.status, j};
 }
@@ -334,9 +369,16 @@ $("confirmGo").onclick = async () => {
   msg(r.status === 200 ? "ramp started" : ("run " + r.status + ": " + (r.j.errors||[]).join("; ")), r.status !== 200);
 };
 
+let hbBusy = false;
 function heartbeat(active){
-  if (active && tokenGet() && !hbTimer) hbTimer = setInterval(() => post("/api/heartbeat", {}).catch(()=>{}), 500);
-  if (!active && hbTimer){ clearInterval(hbTimer); hbTimer = null; }
+  if (active && tokenGet() && !hbTimer) hbTimer = setInterval(async () => {
+    if (hbBusy) return;
+    hbBusy = true;
+    const ac = new AbortController(), tm = setTimeout(() => ac.abort(), 1500);
+    try { await fetch("/api/heartbeat", {method:"POST", headers:{"Content-Type":"application/json", "X-EW1-Token": tokenGet().trim()}, body:"{}", signal: ac.signal}); }
+    catch(e){} finally { clearTimeout(tm); hbBusy = false; }
+  }, 500);
+  if (!active && hbTimer){ clearInterval(hbTimer); hbTimer = null; hbBusy = false; }
 }
 
 function chip(ok, okText, badText, warn){ if (ok === null || ok === undefined) return `<span class="chip na">--</span>`;
@@ -433,11 +475,11 @@ function render(s){
     }
     while (box.childNodes.length > 800) box.removeChild(box.firstChild);
     if (stick) box.scrollTop = box.scrollHeight;
-    if (s.events.some(e => /finished|SAFE STOP|refused/.test(e.msg))) loadRuns();
+    if (s.events.some(e => /ramp finished|align finished|SAFE STOP button|refused/.test(e.msg))) { loadRuns(); if (typeof loadDbData === "function") loadDbData(); }
   }
   if (s.hv_kv != null) { hist.push([s.t, s.hv_kv, s.i_ua]); }
   renderRunSet(s); renderCam(s);
-  if (s.run_reset && RG.mode === "live") { RG.rows = []; }
+  if (s.run_reset && RG.mode === "live") { RG.rows = []; RG.dirty = true; }
   if (s.run_samples && s.run_samples.length && RG.mode === "live") { for (const r of s.run_samples) RG.rows.push(r); RG.dirty = true; }
   const meta = run.run_meta; if (meta && RG.mode === "live") { RG.params = meta.params; RG.title = `live: ${meta.mode} run #${meta.run_id}` + (meta.csv ? ` (${meta.csv})` : (a ? " - running" : "")); }
   const cut = Date.now()/1000 - 310; while (hist.length && hist[0][0] < cut) hist.shift();
@@ -580,18 +622,48 @@ function renderCam(s){
   $("camView").disabled = !c.detected; $("camRec").disabled = !c.detected;
   $("camRec").textContent = c.recording ? "Stop recording" : "Start recording";
   const st = s.settings || {}; if (document.activeElement !== $("camAuto")) $("camAuto").checked = !!st.camera_autorecord;
+  renderLowLight(c);
   if (!c.detected && camOn) showCam(false);
   // default: a detected camera shows its live view unless the user hid it in this browser
   else if (c.detected && !camOn && !camHidden()) showCam(true);
 }
+// ---- low-light controls (hardware exposure/gain via the helper + ffmpeg frame integration)
+const LL = {pending:null, timer:null};
+const llEls = {exposure_mode:"llExpMode", exposure_ms:"llExp", gain:"llGain", integrate:"llInt", stack:"llStack", boost:"llBoost", gamma:"llGam"};
+function llRead(){ return {exposure_mode:$("llExpMode").value, exposure_ms:Number($("llExp").value), gain:Number($("llGain").value),
+  integrate:Number($("llInt").value), stack:$("llStack").value, boost:Number($("llBoost").value), gamma:Number($("llGam").value)}; }
+function llLabels(){ $("llExpV").textContent = $("llExp").value + " ms"; $("llGainV").textContent = $("llGain").value;
+  $("llBoostV").textContent = "x" + $("llBoost").value; $("llGamV").textContent = $("llGam").value;
+  $("llExp").disabled = $("llExpMode").value !== "manual"; }
+function llPush(vals){ llLabels(); LL.pending = Object.assign(LL.pending || {}, vals); clearTimeout(LL.timer);
+  LL.timer = setTimeout(async () => { const body = LL.pending; LL.pending = null;
+    const r = await post("/api/camera/controls", body); if (r.status !== 200) msg("camera options: " + JSON.stringify(r.j), true); }, 400); }
+for (const [k, id] of Object.entries(llEls)){ const ev = $(id).tagName === "SELECT" ? "change" : "input";
+  $(id).addEventListener(ev, () => { const v = llRead(); llPush({[k]: v[k]}); }); }
+$("llNight").onclick = () => { const v = {exposure_mode:"manual", exposure_ms:150, gain:255, integrate:8, stack:"mean", boost:4, gamma:0.6}; llFill(v); llPush(v); };
+$("llReset").onclick = () => { const v = {exposure_mode:"auto", exposure_ms:66, gain:255, integrate:1, stack:"mean", boost:1, gamma:1}; llFill(v); llPush(v); };
+function llFill(o){ for (const [k, id] of Object.entries(llEls)) $(id).value = o[k]; llLabels(); }
+function renderLowLight(c){
+  const ok = !!c.lowlight_supported; $("llBox").style.display = c.detected ? "" : "none";
+  $("llNote").textContent = ok ? "Manual exposure up to 200 ms lowers the frame rate; integrating N frames averages noise (or holds peaks); boost/gamma brighten the result."
+    : "Low-light processing needs a USB (UVC) camera with ffmpeg and v4l2-ctl.";
+  if (!c.opts) return;
+  $("llFps").textContent = `${c.fps} fps` + (c.processing ? ", processed" : "");
+  if (LL.pending || $("llBox").contains(document.activeElement)) return;      // do not fight the user's input
+  llFill(c.opts);
+}
+
 $("camView").onclick = () => { const on = !camOn; setCamHidden(!on); showCam(on); };
 $("camRec").onclick = async () => { const rec = S && S.camera && S.camera.recording;
   const r = await post("/api/camera/record", {action: rec ? "stop" : "start"}); msg("camera: " + JSON.stringify(r.j), r.status !== 200); loadRuns(); };
 $("camAuto").onchange = async () => { const r = await post("/api/settings", {camera_autorecord: $("camAuto").checked}); msg("settings: " + JSON.stringify(r.j), r.status !== 200); };
 
-function frame(){
-  drawRolling();
-  if (RG.dirty || (S && S.run && S.run.active)) { drawRun(); RG.dirty = false; }
+let lastRoll = 0;
+function frame(ts){
+  try {
+    if (!ts || ts - lastRoll >= 100) { drawRolling(); lastRoll = ts || 0; }
+    if (RG.dirty) { RG.dirty = false; drawRun(); }
+  } catch(e){ console.error(e); }
   requestAnimationFrame(frame);
 }
 setInterval(drawSlow, 1000);
@@ -640,7 +712,11 @@ let DB_SESSIONS = [], DB_RECS = [];
 const DB_SEL = new Set();
 const escHtml = s => String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmtTs = ts => ts ? new Date(ts * 1000).toISOString().replace("T", " ").slice(0, 19) : "—";
-function dbMsg(t, bad){ $("dbStatusMsg").textContent = t; $("dbStatusMsg").style.color = bad ? "var(--bad)" : "var(--mute)"; }
+function dbMsg(t, bad){
+  for (const id of ["dbSessStatusMsg", "dbStatusMsg"]){
+    if ($(id)){ $(id).textContent = t; $(id).style.color = bad ? "var(--bad)" : "var(--ok)"; }
+  }
+}
 
 function switchTab(which){
   const isDb = which === "db";
@@ -897,7 +973,16 @@ $("verGoBtn").onclick = async () => {
   }
   m.style.color = "var(--ok)";
   m.textContent = `installed ${tag} (sha256 ${(r.j.sha256||"").slice(0,12)}...). Waiting for service restart...`;
-  setTimeout(() => { location.reload(); }, 3000);
+  const t0 = Date.now();
+  const poll = async () => {
+    try {
+      const st = await (await fetch("/api/state")).json();
+      if (st && st.version && st.version.version === tag && Date.now() - t0 > 3500) { location.reload(); return; }
+    } catch(e){}
+    if (Date.now() - t0 < 20000) setTimeout(poll, 1500);
+    else location.reload();
+  };
+  setTimeout(poll, 3500);
 };
 </script>
 </body>

@@ -56,9 +56,12 @@ def gpio(n, level): sh("pinctrl", "set", str(n), "op", "dh" if level else "dl")
 def lev(n): return int(sh("pinctrl", "lev", str(n)) or "1")
 def lev1819():
     a, b = sh("pinctrl", "lev", "18,19").split(); return int(a), int(b)
+_I3V3_OK = True
 def i3v3():
+    global _I3V3_OK
+    if not _I3V3_OK: return float("nan")
     try: return float(sh("vcgencmd", "pmic_read_adc", "3V3_SYS_A").split("=")[1].rstrip("A"))
-    except Exception: return float("nan")
+    except Exception: _I3V3_OK = False; return float("nan")
 def ads(b, ch):
     b.write_i2c_block_data(0x48, 1, [0xC3 | (ch << 4), 0xE3]); time.sleep(0.0013)
     hi, lo = b.read_i2c_block_data(0x48, 0, 2); r = (hi << 8) | lo

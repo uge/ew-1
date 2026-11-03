@@ -14,6 +14,7 @@ import copy
 import glob
 import hmac
 import json
+import math
 import os
 import re
 import secrets
@@ -297,15 +298,22 @@ def read_pwm():
     return res
 
 
+_V3V3_OK = True
+
+
 def read_i3v3_median():
     v = sorted(R.i3v3() for _ in range(3))
     return v[1]
 
 
 def read_v3v3():
+    global _V3V3_OK
+    if not _V3V3_OK:
+        return None
     try:
         return float(sh("vcgencmd", "pmic_read_adc", "3V3_SYS_V").split("=")[1].strip().rstrip("V"))
     except Exception:
+        _V3V3_OK = False
         return None
 
 
@@ -350,19 +358,31 @@ class Monitor(threading.Thread):
 
     def run(self):
         n = 0
-        last_bme = last_pd = last_tsl = last_3v3 = 0.0
+        last_bme = last_pd = last_tsl = last_3v3 = last_pins = 0.0
         bus = None
         while not shutdown_evt.is_set():
             t_cycle = time.monotonic()
-            # non-I2C state: always (cheap; never touches the ADC or the PWM)
-            try:
-                out, func = read_outputs()
-                self._set(out=out, out_func=func, pwm=read_pwm())
-                self._err("pins", None)
-            except Exception as e:
-                self._err("pins", e)
-            holders = [p for p in lock_holder_pids() if p != os.getpid()]
-            own = os.getpid() in lock_holder_pids()
+            if self.paused:
+                if t_cycle - last_pins >= 1.0:
+                    last_pins = t_cycle
+                    try:
+                        self._set(pwm=read_pwm())
+                    except Exception:
+                        pass
+                self._set(i2c_paused=True, lock_holders=[], t=time.time())
+                time.sleep(0.25)
+                continue
+            if t_cycle - last_pins >= 0.5:
+                last_pins = t_cycle
+                try:
+                    out, func = read_outputs()
+                    self._set(out=out, out_func=func, pwm=read_pwm())
+                    self._err("pins", None)
+                except Exception as e:
+                    self._err("pins", e)
+            all_holders = lock_holder_pids()
+            holders = [p for p in all_holders if p != os.getpid()]
+            own = os.getpid() in all_holders
             if holders or own or self.paused or not self.bus_lock.acquire(blocking=False):
                 self._set(i2c_paused=True, lock_holders=holders, t=time.time())
                 time.sleep(0.2)          # keep the bus fd open (no traffic); the sensor objects hold it
@@ -538,8 +558,9 @@ class Controller:
                "ain1_v": row[8] if row[8] != "" else None,
                "gpio": None if row[9] == "" else {"nFAULT": row[9], "EFUSE_FLT": row[10], "INTLK": row[11],
                                                    "OVTRIP": row[12]}}
-        if extra.get("i3v3") is not None:
-            smp["i3v3_a"] = extra["i3v3"]
+        i3 = extra.get("i3v3")
+        if isinstance(i3, (int, float)) and math.isfinite(i3):     # NaN would make the SSE JSON unparseable
+            smp["i3v3_a"] = i3
         with self.lock:
             prev = self.last_sample or {}
             for k in ("vbus_v", "bridge_v", "ain1_v", "gpio", "i3v3_a"):     # keep last known value
@@ -735,6 +756,22 @@ class Controller:
 
 
 # ------------------------------------------------------------------ snapshot for clients
+VERSION_INFO = ew1_upgrader.current_version(HERE, HOME)
+
+
+def jdumps(o):
+    """json.dumps that never emits NaN/Infinity (invalid JSON; browser JSON.parse rejects it)."""
+    def clean(x):
+        if isinstance(x, float):
+            return x if math.isfinite(x) else None
+        if isinstance(x, dict):
+            return {k: clean(v) for k, v in x.items()}
+        if isinstance(x, (list, tuple)):
+            return [clean(v) for v in x]
+        return x
+    return json.dumps(clean(o), default=str, allow_nan=False)
+
+
 def build_state(mon, ctl):
     s = mon.snap()
     c = ctl.status()
@@ -752,7 +789,7 @@ def build_state(mon, ctl):
         "pwm": s["pwm"], "bme": s["bme"], "pd": s["pd"], "pd_pdos": s.get("pd_pdos"),
         "tsl2591": s["tsl2591"], "tsl": s.get("tsl"), "errors": s["errors"], "i2c_paused": s["i2c_paused"],
         "camera": ctl.camera, "settings": ctl.settings,
-        "version": ew1_upgrader.current_version(HERE, HOME),
+        "version": VERSION_INFO,
         "lock_holders": s.get("lock_holders", []), "t_i2c": s.get("t_i2c"),
         "run": c,
     }
@@ -829,7 +866,7 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
     def _send(self, code, body, ctype="application/json", extra=None):
-        data = body if isinstance(body, bytes) else (json.dumps(body, default=str).encode()
+        data = body if isinstance(body, bytes) else (jdumps(body).encode()
                                                      if ctype == "application/json" else body.encode())
         self.send_response(code)
         self.send_header("Content-Type", ctype)
@@ -971,9 +1008,9 @@ class Handler(BaseHTTPRequestHandler):
                 buf = ctl.run_buf
                 st["run_samples"] = buf[ridx:ridx + 600]
                 ridx += len(st["run_samples"])
-                self.wfile.write(b"data: " + json.dumps(st, default=str).encode() + b"\n\n")
+                self.wfile.write(b"data: " + jdumps(st).encode() + b"\n\n")
                 self.wfile.flush()
-                time.sleep(0.05 if st["run"]["active"] else 0.2)
+                time.sleep(0.10 if st["run"]["active"] else 0.25)
         except (BrokenPipeError, ConnectionResetError, OSError):
             return
 
@@ -981,8 +1018,8 @@ class Handler(BaseHTTPRequestHandler):
         path = self.path.split("?", 1)[0]
         ctl = self.server.ctl
         if not self._authed():
-            if path == "/api/safe_stop":
-                warn(f"SAFE STOP request from {self.client_address[0]} rejected: missing/bad token")
+            if path != "/api/heartbeat":
+                warn(f"POST {path} from {self.client_address[0]} rejected: missing/bad token")
             return self._send(401, {"ok": False, "errors": ["missing or bad token (X-EW1-Token)"]})
         try:
             body = self._body()
@@ -1009,6 +1046,9 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(200, {"ok": True, "settings": ctl.save_settings(body)})
                 except ValueError as e:
                     return self._send(400, {"ok": False, "errors": [str(e)]})
+            if path == "/api/camera/controls":
+                r = camera_call("/controls", body, timeout=15.0)       # restarts the capture when needed
+                return self._send(200 if "error" not in r else 400, dict(r, ok="error" not in r))
             if path == "/api/camera/record":
                 act = body.get("action")
                 if act == "start":
@@ -1150,12 +1190,11 @@ def main():
         # non-EPR) source on J3 -- an EPR charger would put 28 V on U9 (28 V abs max) and F1 (24 V).
         if a.no_pd_init:
             info("PD init: disabled by --no-pd-init")
-        elif read_setting("pd_auto_init", False) is True:
-            warn("PD init enabled (pd_auto_init): J3 MUST be an SPR-only source (<= 20 V, no EPR); "
-                 "U7's automatic request at enable reaches the source's highest PDO before 5 V is selected")
-            ensure_pd_5v()          # before the monitor starts, so no I2C polling overlaps
+        elif read_setting("pd_auto_init", True) is False:
+            info("PD init off (pd_auto_init is false in settings.json)")
         else:
-            info("PD init off (set \"pd_auto_init\": true in settings.json to establish 5V at startup)")
+            info("PD init: resetting/enabling HUSB238A (U7) and establishing 5V contract at startup")
+            ensure_pd_5v()          # before the monitor starts, so no I2C polling overlaps
 
     bus_lock = threading.Lock()
     mon = Monitor(bus_lock)
