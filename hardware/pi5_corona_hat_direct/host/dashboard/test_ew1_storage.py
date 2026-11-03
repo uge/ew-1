@@ -73,6 +73,23 @@ class TestStorage(unittest.TestCase):
             self.assertEqual(len(st.list_recordings(session_id=m2["session_id"])), 1)
             self.assertEqual(len(st.list_recordings()), 2)
 
+            # Notes update + ZIP archives + SQLite export
+            st.update_recording_notes(stem, "gap=10mm clean")
+            self.assertEqual(st.list_recordings(session_id=sid)[0]["notes"], "gap=10mm clean")
+            rzip = st.build_recording_zip(stem)
+            self.assertGreater(len(rzip), 50)
+            szip = st.build_session_zip(sid)
+            self.assertGreater(len(szip), 50)
+            db_bytes = st.export_sqlite_bytes()
+            self.assertTrue(db_bytes.startswith(b"SQLite format 3"))
+
+            # Delete recording and delete session
+            st.delete_recording(stem)
+            self.assertIsNone(st.resolve_file(f"{stem}.csv"))
+            self.assertEqual(len(st.list_recordings(session_id=sid)), 0)
+            st.delete_session(sid)
+            self.assertNotIn(sid, {s["session_id"] for s in st.list_sessions()})
+
     def test_legacy_flat_files_imported(self):
         with tempfile.TemporaryDirectory() as root:
             stem = "stage7_ramp_align_5V_20261101_120000"

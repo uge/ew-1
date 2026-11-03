@@ -18,6 +18,7 @@ Directory layout under ~/dashboard_runs/:
 import contextlib
 import csv
 import glob
+import io
 import json
 import os
 import re
@@ -25,8 +26,10 @@ import secrets
 import shutil
 import socket
 import sqlite3
+import tempfile
 import threading
 import time
+import zipfile
 
 DB_FILENAME = "ew1_runs.sqlite3"
 SAFE_NAME_RE = re.compile(r"^(stage7_ramp|cam)_[A-Za-z0-9_]+\.(csv|json|mp4|mjpg)$")
@@ -472,3 +475,111 @@ class Storage:
         if flat.startswith(os.path.realpath(self.root_dir) + os.sep) and os.path.isfile(flat):
             return flat
         return None
+
+    def update_recording_notes(self, stem, notes):
+        with self.lock, self._connect() as conn:
+            cur = conn.execute("UPDATE recordings SET notes = ? WHERE stem = ?", (str(notes or "")[:500], stem))
+            if cur.rowcount == 0:
+                raise ValueError(f"unknown recording: {stem}")
+
+    def delete_recording(self, stem):
+        real_root = os.path.realpath(self.root_dir)
+        with self.lock, self._connect() as conn:
+            row = conn.execute(
+                "SELECT csv_relpath, json_relpath, video_relpath FROM recordings WHERE stem = ?",
+                (stem,),
+            ).fetchone()
+            if not row:
+                raise ValueError(f"unknown recording: {stem}")
+            dirs = set()
+            for col in ("csv_relpath", "json_relpath", "video_relpath"):
+                rel = row[col]
+                if not rel:
+                    continue
+                fp = os.path.realpath(os.path.join(real_root, rel))
+                if fp.startswith(real_root + os.sep) and os.path.isfile(fp):
+                    dirs.add(os.path.dirname(fp))
+                    try:
+                        os.remove(fp)
+                    except OSError:
+                        pass
+            for d in dirs:
+                if os.path.basename(d) == stem and d.startswith(real_root + os.sep):
+                    try:
+                        os.rmdir(d)
+                    except OSError:
+                        pass
+            conn.execute("DELETE FROM recordings WHERE stem = ?", (stem,))
+        return {"deleted": stem}
+
+    def delete_session(self, session_id):
+        if session_id == self.current_session_id:
+            self.start_session(label="boot session")
+        real_root = os.path.realpath(self.root_dir)
+        with self.lock, self._connect() as conn:
+            row = conn.execute("SELECT rel_dir FROM sessions WHERE session_id = ?", (session_id,)).fetchone()
+            if not row:
+                raise ValueError(f"unknown session_id: {session_id}")
+            rel_dir = row["rel_dir"]
+            conn.execute("DELETE FROM recordings WHERE session_id = ?", (session_id,))
+            conn.execute("DELETE FROM sessions WHERE session_id = ?", (session_id,))
+            abs_dir = os.path.realpath(os.path.join(real_root, rel_dir))
+            if abs_dir.startswith(real_root + os.sep) and os.path.isdir(abs_dir):
+                shutil.rmtree(abs_dir, ignore_errors=True)
+        return {"deleted_session": session_id, "current_session_id": self.current_session_id}
+
+    def build_session_zip(self, session_id):
+        real_root = os.path.realpath(self.root_dir)
+        with self.lock, self._connect() as conn:
+            row = conn.execute("SELECT rel_dir FROM sessions WHERE session_id = ?", (session_id,)).fetchone()
+            if not row:
+                raise ValueError(f"unknown session_id: {session_id}")
+            abs_dir = os.path.realpath(os.path.join(real_root, row["rel_dir"]))
+        if not abs_dir.startswith(real_root + os.sep) or not os.path.isdir(abs_dir):
+            raise FileNotFoundError(f"session directory missing for {session_id}")
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            for dirpath, _, filenames in os.walk(abs_dir):
+                for fn in sorted(filenames):
+                    full = os.path.join(dirpath, fn)
+                    arcname = os.path.join(session_id, os.path.relpath(full, abs_dir))
+                    zf.write(full, arcname)
+        return buf.getvalue()
+
+    def build_recording_zip(self, stem):
+        real_root = os.path.realpath(self.root_dir)
+        with self.lock, self._connect() as conn:
+            row = conn.execute(
+                "SELECT csv_relpath, json_relpath, video_relpath FROM recordings WHERE stem = ?",
+                (stem,),
+            ).fetchone()
+            if not row:
+                raise ValueError(f"unknown recording: {stem}")
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            for col in ("csv_relpath", "json_relpath", "video_relpath"):
+                rel = row[col]
+                if not rel:
+                    continue
+                fp = os.path.realpath(os.path.join(real_root, rel))
+                if fp.startswith(real_root + os.sep) and os.path.isfile(fp):
+                    zf.write(fp, os.path.join(stem, os.path.basename(fp)))
+        return buf.getvalue()
+
+    def export_sqlite_bytes(self):
+        with tempfile.NamedTemporaryFile(suffix=".sqlite3", delete=False) as tmp:
+            tmp_path = tmp.name
+        try:
+            with self.lock, self._connect() as src:
+                dst = sqlite3.connect(tmp_path)
+                try:
+                    src.backup(dst)
+                finally:
+                    dst.close()
+            with open(tmp_path, "rb") as f:
+                return f.read()
+        finally:
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass

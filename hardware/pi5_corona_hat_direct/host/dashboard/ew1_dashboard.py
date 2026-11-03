@@ -891,6 +891,28 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/sessions":
                 return self._send(200, {"current_session_id": ctl.storage.current_session_id,
                                         "sessions": ctl.storage.list_sessions()})
+            if path == "/api/db/download":
+                data = ctl.storage.export_sqlite_bytes()
+                return self._send(200, data, "application/x-sqlite3",
+                                  {"Content-Disposition": 'attachment; filename="ew1_runs.sqlite3"'})
+            m_sa = re.fullmatch(r"/api/sessions/([A-Za-z0-9_.-]+)/archive", path)
+            if m_sa:
+                sid = m_sa.group(1)
+                try:
+                    zdata = ctl.storage.build_session_zip(sid)
+                except (ValueError, FileNotFoundError) as e:
+                    return self._send(404, {"error": str(e)})
+                return self._send(200, zdata, "application/zip",
+                                  {"Content-Disposition": f'attachment; filename="{sid}.zip"'})
+            m_ra = re.fullmatch(r"/api/recordings/([A-Za-z0-9_.-]+)/archive", path)
+            if m_ra:
+                stem = m_ra.group(1)
+                try:
+                    zdata = ctl.storage.build_recording_zip(stem)
+                except ValueError as e:
+                    return self._send(404, {"error": str(e)})
+                return self._send(200, zdata, "application/zip",
+                                  {"Content-Disposition": f'attachment; filename="{stem}.zip"'})
             if path == "/api/versions":
                 cur = ew1_upgrader.current_version(HERE, HOME)
                 repo = cur.get("repo") or ew1_upgrader.DEFAULT_REPO
@@ -1014,7 +1036,32 @@ class Handler(BaseHTTPRequestHandler):
                     sid = body.get("session_id") or ctl.storage.current_session_id
                     ctl.storage.update_session_label(sid, label)
                     return self._send(200, {"ok": True, "session_id": sid, "label": label})
-                return self._send(400, {"ok": False, "errors": ["action must be new or label"]})
+                if act == "delete":
+                    if ctl.active:
+                        return self._send(409, {"ok": False, "errors": ["cannot delete session during an active run"]})
+                    sid = str(body.get("session_id") or "").strip()
+                    res = ctl.storage.delete_session(sid)
+                    info(f"deleted session {sid}")
+                    return self._send(200, dict(res, ok=True))
+                return self._send(400, {"ok": False, "errors": ["action must be new, label, or delete"]})
+            if path == "/api/recordings":
+                act = body.get("action") or ""
+                if act == "notes":
+                    stem = str(body.get("stem") or "").strip()
+                    notes = str(body.get("notes") or "").strip()[:500]
+                    ctl.storage.update_recording_notes(stem, notes)
+                    return self._send(200, {"ok": True, "stem": stem, "notes": notes})
+                if act == "delete":
+                    if ctl.active:
+                        return self._send(409, {"ok": False, "errors": ["cannot delete recordings during an active run"]})
+                    stems = body.get("stems") or ([body["stem"]] if body.get("stem") else [])
+                    deleted = []
+                    for s in stems:
+                        ctl.storage.delete_recording(str(s).strip())
+                        deleted.append(str(s).strip())
+                    info(f"deleted recording(s): {', '.join(deleted)}")
+                    return self._send(200, {"ok": True, "deleted": deleted})
+                return self._send(400, {"ok": False, "errors": ["action must be notes or delete"]})
             if path == "/api/align":
                 p, errors = validate_align_params(body)
                 if errors:

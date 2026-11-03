@@ -82,11 +82,22 @@ canvas.sm{height:120px} canvas.md{height:150px}
 #camImg{width:100%;max-height:70vh;object-fit:contain;background:#000;border-radius:8px;display:none;margin-top:8px}
 .settings{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px}
 .settings b{font-variant-numeric:tabular-nums}
+.tabs{display:flex;gap:6px;margin-left:8px}
+.tabbtn{padding:6px 13px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--mute);font-weight:600;cursor:pointer;font:inherit;font-size:13px}
+.tabbtn.active{background:#163256;color:#fff;border-color:#2d5c8f}
+.btn.sm{padding:4px 8px;font-size:12px;border-radius:6px}
+.btn.danger{background:var(--badbg);border-color:#6b2023;color:#ffb3b3}
+#dbView{display:none;max-width:2000px;margin:0 auto;padding:14px 16px;flex-direction:column;gap:14px}
+.filterbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:10px;align-items:end}
 </style>
 </head>
 <body>
 <header>
   <h1>ew-1 HV board</h1>
+  <div class="tabs">
+    <button class="tabbtn active" id="tabLiveBtn" type="button">Live Control</button>
+    <button class="tabbtn" id="tabDbBtn" type="button">Sessions &amp; Recordings DB</button>
+  </div>
   <span id="conn" class="badge">connecting</span>
   <span id="runBadge" class="badge">idle</span>
   <span id="srcBadge" class="badge">monitor</span>
@@ -96,7 +107,7 @@ canvas.sm{height:120px} canvas.md{height:150px}
   <button id="stopBtn" title="GPIO24 low, PWM off, polarity normal, GPIO25 low">SAFE STOP</button>
 </header>
 
-<main>
+<main id="liveView">
 <div class="col camcol">
   <section>
     <h2>Camera</h2>
@@ -144,8 +155,6 @@ canvas.sm{height:120px} canvas.md{height:150px}
     <div class="tiles">
       <div class="tile"><div class="k">VBUS</div><div class="v" id="vbus">--</div><div class="s">AIN2 x 118/18</div></div>
       <div class="tile"><div class="k">Bridge</div><div class="v" id="bridge">--</div><div class="s">AIN3 x 11</div></div>
-      <div class="tile"><div class="k">Pi 3V3 current</div><div class="v" id="i3v3">--</div><div class="s">3V3_SYS_A median/3</div></div>
-      <div class="tile"><div class="k">Pi 3V3 voltage</div><div class="v" id="v3v3">--</div><div class="s">3V3_SYS_V</div></div>
       <div class="tile"><div class="k">PD contract</div><div class="v" id="pd">--</div><div class="s" id="pdS">HUSB238A</div></div>
       <div class="tile"><div class="k">Temperature</div><div class="v" id="tc">--</div><div class="s">BME280</div></div>
       <div class="tile"><div class="k">Pressure</div><div class="v" id="ph">--</div><div class="s">BME280</div></div>
@@ -230,6 +239,42 @@ canvas.sm{height:120px} canvas.md{height:150px}
 </div>
 </main>
 
+<div id="dbView">
+  <section>
+    <div class="row" style="justify-content:space-between;margin-bottom:10px">
+      <h2 style="margin:0">Recorded Sessions (~/dashboard_runs/ew1_runs.sqlite3)</h2>
+      <div class="row">
+        <button class="btn sm" id="dbNewSessBtn" type="button">+ New Session</button>
+        <button class="btn sm" id="dbRefreshBtn" type="button">Refresh</button>
+        <a class="btn sm" href="/api/db/download" style="text-decoration:none">Download SQLite DB (.sqlite3)</a>
+      </div>
+    </div>
+    <div style="overflow:auto;max-height:280px">
+      <table id="dbSessionsT"></table>
+    </div>
+  </section>
+
+  <section>
+    <div class="row" style="justify-content:space-between;margin-bottom:10px">
+      <h2 style="margin:0">Recordings Browser <span id="dbCountHint" class="hint" style="text-transform:none;letter-spacing:0"></span></h2>
+      <div class="row">
+        <button class="btn sm danger" id="dbBulkDelBtn" type="button" disabled>Delete selected (0)</button>
+        <span id="dbStatusMsg" class="hint mono"></span>
+      </div>
+    </div>
+    <div class="filterbar">
+      <label>Session<select id="dbSessSel"><option value="">All sessions</option></select></label>
+      <label>Type<select id="dbKindSel"><option value="">All types</option><option value="ramp">HV Ramp</option><option value="align">Phase Align</option><option value="camera">Camera Clip</option></select></label>
+      <label>Outcome<select id="dbStatusSel"><option value="">All outcomes</option><option value="ok">Completed (OK)</option><option value="abort">Aborted</option></select></label>
+      <label>Min Peak (kV)<input id="dbMinKv" type="number" step="0.5" min="0" placeholder="0.0"></label>
+      <label>Search (stem, session, notes, abort)<input id="dbSearch" type="search" placeholder="filter..."></label>
+    </div>
+    <div style="overflow:auto;max-height:60vh">
+      <table id="dbRecsT"></table>
+    </div>
+  </section>
+</div>
+
 <dialog id="confirmDlg">
   <h3>HV ON?</h3>
   <div class="kv mono" id="confirmKv"></div>
@@ -304,8 +349,6 @@ function render(s){
   $("iUa").innerHTML = fmt(s.i_ua, 1) + "<small>uA</small>";
   $("vbus").textContent = fmt(s.vbus_v, 2) + " V";
   $("bridge").textContent = fmt(s.bridge_v, 2) + " V";
-  $("i3v3").textContent = s.i3v3_ma == null ? "--" : fmt(s.i3v3_ma, 0) + " mA";
-  $("v3v3").textContent = s.v3v3_v == null ? "--" : fmt(s.v3v3_v, 3) + " V";
   if (!s.tsl2591) { $("lux").textContent = "not connected"; $("luxS").textContent = "0x29 probed every 30 s"; }
   else { const t = s.tsl || {}; $("lux").textContent = t.saturated ? "saturated" : (t.lux == null ? "--" : fmt(t.lux, 1) + " lx");
     $("luxS").textContent = `CH0 ${t.ch0} CH1 ${t.ch1} (gain ${t.gain}x, ${t.atime_ms} ms)`; }
@@ -483,7 +526,7 @@ function backToLive(){ RG.mode = "live"; RG.rows = []; RG.dirty = true; fetch("/
 
 // ---- slow history (10 min, 1 Hz)
 const SLOWDEF = [["hv_kv","HV kV","#ffcf3f",1],["i_ua","return uA","#c084fc",5],["vbus_v","VBUS V","#4aa3ff",1],["bridge_v","bridge V","#2fbf71",1],
-  ["i3v3_ma","Pi 3V3 mA","#e879f9",20],["v3v3_v","Pi 3V3 V","#38bdf8",0.05],["t_c","temperature C","#f97316",1],["p_hpa","pressure hPa","#a3e635",1],
+  ["t_c","temperature C","#f97316",1],["p_hpa","pressure hPa","#a3e635",1],
   ["rh_pct","humidity %","#22d3ee",5],["lux","light lx","#fde047",1]];
 let SL = {keys:[], rows:[]};
 (function(){ const g = $("slowGrid"); for (const [k, t] of SLOWDEF) { const d = document.createElement("div");
@@ -590,8 +633,212 @@ $("newSessBtn").onclick = async () => {
   if (lbl === null) return;
   const r = await post("/api/sessions", {action: "new", label: lbl});
   msg(r.status === 200 ? `started session ${r.j.session.session_id}` : `session error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
-  loadRuns();
+  loadRuns(); loadDbData();
 };
+
+let DB_SESSIONS = [], DB_RECS = [];
+const DB_SEL = new Set();
+const escHtml = s => String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtTs = ts => ts ? new Date(ts * 1000).toISOString().replace("T", " ").slice(0, 19) : "—";
+function dbMsg(t, bad){ $("dbStatusMsg").textContent = t; $("dbStatusMsg").style.color = bad ? "var(--bad)" : "var(--mute)"; }
+
+function switchTab(which){
+  const isDb = which === "db";
+  $("liveView").style.display = isDb ? "none" : "grid";
+  $("dbView").style.display = isDb ? "flex" : "none";
+  $("tabLiveBtn").classList.toggle("active", !isDb);
+  $("tabDbBtn").classList.toggle("active", isDb);
+  if (isDb) loadDbData();
+  else { RG.dirty = true; drawSlow(); }
+}
+$("tabLiveBtn").onclick = () => switchTab("live");
+$("tabDbBtn").onclick = () => switchTab("db");
+
+async function loadDbData(){
+  try {
+    const [sj, rj] = await Promise.all([
+      fetch("/api/sessions").then(r => r.json()),
+      fetch("/api/runs").then(r => r.json()),
+    ]);
+    DB_SESSIONS = sj.sessions || [];
+    DB_RECS = Array.isArray(rj) ? rj : [];
+    $("tabDbBtn").textContent = `Sessions & Recordings DB (${DB_RECS.length})`;
+    const sel = $("dbSessSel"), cur = sel.value;
+    const opts = [`<option value="">All sessions (${DB_SESSIONS.length})</option>`];
+    for (const s of DB_SESSIONS){
+      const tag = s.active ? " [active]" : "";
+      const lbl = s.label ? ` — ${escHtml(s.label)}` : "";
+      opts.push(`<option value="${escHtml(s.session_id)}">${escHtml(s.session_id)}${tag}${lbl} (${s.recording_count||0})</option>`);
+    }
+    sel.innerHTML = opts.join("");
+    sel.value = cur;
+    renderDbSessions();
+    renderDbRecs();
+  } catch(e){ dbMsg("load failed: " + e, true); }
+}
+
+function renderDbSessions(){
+  let h = `<tr><th>Session ID</th><th>Label</th><th>Started (UTC)</th><th>Recordings</th><th>Max Peak</th><th>Path</th><th>Actions</th></tr>`;
+  for (const s of DB_SESSIONS){
+    const badge = s.active ? ` <span class="chip ok">active</span>` : "";
+    const sid = escHtml(s.session_id);
+    const lbl = escHtml(s.label || "");
+    const maxPk = s.max_peak_kv != null ? `${fmt(s.max_peak_kv, 2)} kV` : `<span class="hint">—</span>`;
+    h += `<tr>
+      <td class="mono"><a href="#" onclick="filterBySession('${sid}');return false">${sid}</a>${badge}</td>
+      <td>${lbl || `<span class="hint">—</span>`}</td>
+      <td class="mono hint">${escHtml(fmtTs(s.t_start))}</td>
+      <td class="mono">${s.recording_count || 0}${s.ramp_count ? ` <span class="hint">(${s.ramp_count} ramp)</span>` : ""}</td>
+      <td class="mono">${maxPk}</td>
+      <td class="mono hint">${escHtml(s.rel_dir || "")}</td>
+      <td>
+        <button class="btn sm" onclick="filterBySession('${sid}')">Filter</button>
+        <button class="btn sm" onclick="renameSession('${sid}', '${lbl.replace(/'/g,"\\'")}')">Label</button>
+        <a class="btn sm" href="/api/sessions/${encodeURIComponent(s.session_id)}/archive" style="text-decoration:none">ZIP</a>
+        <button class="btn sm danger" onclick="deleteSession('${sid}', ${s.recording_count||0})">Delete</button>
+      </td>
+    </tr>`;
+  }
+  $("dbSessionsT").innerHTML = DB_SESSIONS.length ? h : `<tr><td class="hint">No sessions recorded yet.</td></tr>`;
+}
+
+function filteredDbRecs(){
+  const sid = $("dbSessSel").value;
+  const kind = $("dbKindSel").value;
+  const st = $("dbStatusSel").value;
+  const minKv = parseFloat($("dbMinKv").value);
+  const q = ($("dbSearch").value || "").trim().toLowerCase();
+  return DB_RECS.filter(r => {
+    if (sid && r.session_id !== sid) return false;
+    const rKind = r.kind || r.mode || "";
+    if (kind && rKind !== kind) return false;
+    if (st === "ok" && (r.abort || (r.code !== 0 && rKind !== "camera"))) return false;
+    if (st === "abort" && !r.abort && (r.code === 0 || rKind === "camera")) return false;
+    if (!Number.isNaN(minKv) && minKv > 0 && (r.peak_kv == null || r.peak_kv < minKv)) return false;
+    if (q){
+      const hay = `${r.stem||""} ${r.session_id||""} ${r.session_label||""} ${r.abort||""} ${r.notes||""} ${rKind}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function updateBulkBtn(){
+  const n = DB_SEL.size;
+  $("dbBulkDelBtn").disabled = n === 0;
+  $("dbBulkDelBtn").textContent = `Delete selected (${n})`;
+}
+
+function renderDbRecs(){
+  const list = filteredDbRecs();
+  $("dbCountHint").textContent = `(showing ${list.length} of ${DB_RECS.length})`;
+  let h = `<tr><th><input type="checkbox" id="dbSelAll" title="Select all visible"></th><th>Recording Stem</th><th>Session</th><th>Type / Params</th><th>Peak</th><th>Dur (s)</th><th>Outcome</th><th>Notes</th><th>Downloads & Actions</th></tr>`;
+  for (const x of list){
+    const stem = escHtml(x.stem);
+    const p = x.params || {};
+    const kind = x.kind || x.mode || "";
+    const desc = kind === "ramp" && p.vbus ? `ramp · ${p.vbus}V ${(p.freq_hz||0)/1000}kHz → ${p.target_kv}kV (duty ≤ ${p.max_duty})` : escHtml(kind);
+    const peak = (x.peak_kv != null || x.peak_ua != null)
+      ? `${x.peak_kv != null ? fmt(x.peak_kv, 2) + " kV" : "--"} / ${x.peak_ua != null ? fmt(x.peak_ua, 1) + " uA" : "--"}`
+      : `<span class="hint">—</span>`;
+    const dur = x.duration_s != null ? fmt(x.duration_s, 1) : "—";
+    const res = x.abort
+      ? `<span class="chip warn" title="${escHtml(x.abort)}">ABORT: ${escHtml(String(x.abort).slice(0,28))}</span>`
+      : (x.code === 0 ? `<span class="chip ok">OK</span>` : (kind === "camera" ? `<span class="chip na">CAM</span>` : `<span class="chip bad">exit ${x.code ?? "?"}</span>`));
+    const sLbl = x.session_label ? ` <span class="hint">(${escHtml(x.session_label)})</span>` : "";
+    const notes = escHtml(x.notes || "");
+    const checked = DB_SEL.has(x.stem) ? "checked" : "";
+    const files = [
+      `<a class="btn sm" href="/api/recordings/${encodeURIComponent(x.stem)}/archive" style="text-decoration:none" title="Download bundle ZIP">ZIP</a>`,
+      x.csv ? `<button class="btn sm" onclick="plotRecInLive('${escHtml(x.csv)}', ${x.json ? `'${escHtml(x.json)}'` : "null"})">Plot</button>` : "",
+      x.csv ? `<a href="/runs/${escHtml(x.csv)}">csv</a>` : "",
+      x.json ? `<a href="/runs/${escHtml(x.json)}">json</a>` : "",
+      x.video ? `<a href="/runs/${escHtml(x.video)}">mp4 (${((x.video_bytes||0)/1e6).toFixed(1)}M)</a>` : "",
+      `<button class="btn sm danger" onclick="deleteRec('${stem}')">Del</button>`
+    ].filter(Boolean).join(" ");
+    h += `<tr>
+      <td><input type="checkbox" class="dbRecChk" data-stem="${stem}" ${checked}></td>
+      <td class="mono">${stem}<div class="hint">${escHtml(fmtTs(x.t_start))}</div></td>
+      <td class="mono"><a href="#" onclick="filterBySession('${escHtml(x.session_id||"")}');return false">${escHtml(x.session_id || "—")}</a>${sLbl}</td>
+      <td class="mono">${desc}</td>
+      <td class="mono">${peak}</td>
+      <td class="mono">${dur}</td>
+      <td>${res}</td>
+      <td><span class="mono">${notes || `<span class="hint">—</span>`}</span> <a href="#" onclick="editRecNotes('${stem}', '${notes.replace(/'/g,"\\'")}');return false" class="hint">[edit]</a></td>
+      <td style="white-space:nowrap">${files}</td>
+    </tr>`;
+  }
+  $("dbRecsT").innerHTML = list.length ? h : `<tr><td class="hint">No recordings match the current filter.</td></tr>`;
+  const selAll = $("dbSelAll");
+  if (selAll){
+    selAll.onchange = () => {
+      for (const x of list){
+        if (selAll.checked) DB_SEL.add(x.stem); else DB_SEL.delete(x.stem);
+      }
+      renderDbRecs();
+    };
+  }
+  for (const cb of document.querySelectorAll(".dbRecChk")){
+    cb.onchange = () => {
+      const st = cb.getAttribute("data-stem");
+      if (cb.checked) DB_SEL.add(st); else DB_SEL.delete(st);
+      updateBulkBtn();
+    };
+  }
+  updateBulkBtn();
+}
+
+function filterBySession(sid){
+  $("dbSessSel").value = sid;
+  renderDbRecs();
+}
+async function renameSession(sid, oldLabel){
+  const lbl = prompt(`Update label for session ${sid}:`, oldLabel || "");
+  if (lbl === null) return;
+  const r = await post("/api/sessions", {action: "label", session_id: sid, label: lbl});
+  dbMsg(r.status === 200 ? `updated ${sid}` : `error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
+  loadDbData(); loadRuns();
+}
+async function deleteSession(sid, count){
+  if (!confirm(`Delete session ${sid} and all ${count} recording(s) on disk and in SQLite?`)) return;
+  const r = await post("/api/sessions", {action: "delete", session_id: sid});
+  dbMsg(r.status === 200 ? `deleted session ${sid}` : `error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
+  if ($("dbSessSel").value === sid) $("dbSessSel").value = "";
+  loadDbData(); loadRuns();
+}
+async function editRecNotes(stem, oldNotes){
+  const n = prompt(`Notes for ${stem}:`, oldNotes || "");
+  if (n === null) return;
+  const r = await post("/api/recordings", {action: "notes", stem, notes: n});
+  dbMsg(r.status === 200 ? `saved notes for ${stem}` : `error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
+  loadDbData();
+}
+async function deleteRec(stem){
+  if (!confirm(`Delete recording ${stem} and its files from disk?`)) return;
+  const r = await post("/api/recordings", {action: "delete", stem});
+  DB_SEL.delete(stem);
+  dbMsg(r.status === 200 ? `deleted ${stem}` : `error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
+  loadDbData(); loadRuns();
+}
+function plotRecInLive(csv, json){
+  switchTab("live");
+  loadRunCsv(csv, json);
+}
+$("dbBulkDelBtn").onclick = async () => {
+  const stems = Array.from(DB_SEL);
+  if (!stems.length) return;
+  if (!confirm(`Delete ${stems.length} selected recording(s) from disk and SQLite?`)) return;
+  const r = await post("/api/recordings", {action: "delete", stems});
+  DB_SEL.clear();
+  dbMsg(r.status === 200 ? `deleted ${stems.length} recording(s)` : `error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
+  loadDbData(); loadRuns();
+};
+$("dbNewSessBtn").onclick = () => $("newSessBtn").click();
+$("dbRefreshBtn").onclick = loadDbData;
+for (const id of ["dbSessSel", "dbKindSel", "dbStatusSel", "dbMinKv", "dbSearch"]){
+  $(id).addEventListener("input", renderDbRecs);
+  $(id).addEventListener("change", renderDbRecs);
+}
 
 function connect(){
   if (es) es.close();
@@ -608,7 +855,7 @@ setInterval(() => { $("clock").textContent = new Date().toLocaleTimeString(); },
   $("limitsHint").textContent = `limits: ${l.vbus.join("/")} V, ${l.freq_hz[0]/1000}-${l.freq_hz[1]/1000} kHz, target <= ${l.target_kv[1]} kV, abort <= ${l.abort_kv[1]} kV, duty <= ${l.max_duty[1]}, AIN1 <= ${l.ain1_max_v[1]} V, hold <= ${l.hold_s[1]} s`;
   loadForm();
   try { const h = await (await fetch("/api/history")).json(); for (const p of h) hist.push(p); } catch(e){}
-  loadRuns(); loadSlow(); backToLive(); connect(); requestAnimationFrame(frame);
+  loadRuns(); loadDbData(); loadSlow(); backToLive(); connect(); requestAnimationFrame(frame);
 })();
 
 async function loadVersions(){
