@@ -18,6 +18,7 @@ import os
 import re
 import secrets
 import signal
+import socket
 import subprocess
 import sys
 import threading
@@ -39,6 +40,8 @@ import tsl2591                                   # noqa: E402
 from ew1_limits import (LIMITS, DEFAULTS, CONFIRM_WORD, DO_NOT_TOUCH_S,  # noqa: E402
                         validate_run_params, validate_align_params, check_preconditions)
 from ew1_safestop import lock_holder_pids        # noqa: E402
+import ew1_storage                               # noqa: E402
+import ew1_upgrader                              # noqa: E402
 
 HOME = os.path.expanduser("~")
 TOKEN_PATH = os.path.join(HOME, ".ew1-dashboard-token")
@@ -97,9 +100,10 @@ def do_safe_stop(why):
             R.gpio(24, 0)
         except Exception:
             pass
-        for ch in (2, 3):
+        for ch in (0, 1, 2, 3):
             try:
-                R.pw(f"{R.d(ch)}/enable", 0); R.pw(f"{R.d(ch)}/polarity", "normal")
+                if os.path.isdir(R.d(ch)):
+                    R.pw(f"{R.d(ch)}/enable", 0); R.pw(f"{R.d(ch)}/polarity", "normal")
             except Exception:
                 pass
         try:
@@ -270,7 +274,11 @@ def read_outputs():
 
 def read_pwm():
     res = {}
-    for ch in (2, 3):
+    try:
+        chs = R.pwm_channels()
+    except Exception:
+        chs = (2, 3)
+    for ch in chs:
         p = R.d(ch)
         if not os.path.isdir(p):
             res[ch] = {"exported": False}
@@ -463,6 +471,8 @@ class Controller:
         self.run_meta = None        # {"run_id", "mode", "params", "t_start", "csv", "video"}
         self.settings = self._load_settings()
         self.camera = {"ok": False}
+        ver = ew1_upgrader.current_version(HERE, HOME).get("version") or "dev"
+        self.storage = ew1_storage.Storage(RUNS_DIR, version=ver)
 
     def _load_settings(self):
         s = {"camera_autorecord": False}
@@ -681,13 +691,10 @@ class Controller:
             if mode == "ramp" and hv:
                 peak = (res or {}).get("result", {}).get("peak_kv")
                 self._save_last_hv({"t_end": t_end, "source": rec["csv"], "peak_kv": peak})
-            stem = os.path.splitext(rec["csv"])[0] if rec["csv"] else \
-                f"stage7_ramp_{mode}_{p.get('vbus', 5)}V_{time.strftime('%Y%m%d_%H%M%S', time.localtime(t_start))}"
             try:
-                with open(os.path.join(RUNS_DIR, stem + ".json"), "w") as f:
-                    json.dump(rec, f, indent=1, default=str)
+                self.storage.register_run(rec, rows=(res or {}).get("rows"))
             except Exception as e:
-                warn(f"could not write run summary: {e}")
+                warn(f"could not register run in SQLite storage: {e}")
             self.last_run = {k: rec[k] for k in ("mode", "t_start", "t_end", "code", "abort", "csv",
                                                  "result", "stop_reason")}
             lvl = warn if rec["abort"] else info
@@ -745,6 +752,7 @@ def build_state(mon, ctl):
         "pwm": s["pwm"], "bme": s["bme"], "pd": s["pd"], "pd_pdos": s.get("pd_pdos"),
         "tsl2591": s["tsl2591"], "tsl": s.get("tsl"), "errors": s["errors"], "i2c_paused": s["i2c_paused"],
         "camera": ctl.camera, "settings": ctl.settings,
+        "version": ew1_upgrader.current_version(HERE, HOME),
         "lock_holders": s.get("lock_holders", []), "t_i2c": s.get("t_i2c"),
         "run": c,
     }
@@ -875,13 +883,28 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/events":
                 return self._send(200, EV.since(0))
             if path == "/api/runs":
-                return self._send(200, list_runs())
+                q = self.path.split("?", 1)[1] if "?" in self.path else ""
+                m = re.search(r"session_id=([A-Za-z0-9_.-]+)", q)
+                sid = m.group(1) if m else None
+                ctl.storage.sync_legacy_files()
+                return self._send(200, ctl.storage.list_recordings(session_id=sid))
+            if path == "/api/sessions":
+                return self._send(200, {"current_session_id": ctl.storage.current_session_id,
+                                        "sessions": ctl.storage.list_sessions()})
+            if path == "/api/versions":
+                cur = ew1_upgrader.current_version(HERE, HOME)
+                repo = cur.get("repo") or ew1_upgrader.DEFAULT_REPO
+                gh, gh_err = [], None
+                try:
+                    gh = ew1_upgrader.fetch_github_releases(repo=repo)
+                except Exception as e:
+                    gh_err = f"{type(e).__name__}: {e}"
+                return self._send(200, {"current": cur, "repo": repo, "releases": gh,
+                                        "local": ew1_upgrader.list_local_releases(HOME), "error": gh_err})
             if path.startswith("/runs/"):
                 name = path[6:]
-                if not re.fullmatch(r"(stage7_ramp|cam)_[A-Za-z0-9_]+\.(csv|json|mp4|mjpg)", name):
-                    return self._send(404, {"error": "not found"})
-                fp = os.path.join(RUNS_DIR, name)
-                if not os.path.isfile(fp):
+                fp = ctl.storage.resolve_file(name)
+                if not fp or not os.path.isfile(fp):
                     return self._send(404, {"error": "not found"})
                 with open(fp, "rb") as f:
                     data = f.read()
@@ -972,15 +995,50 @@ class Handler(BaseHTTPRequestHandler):
                     r = camera_call("/record/start", {"name": time.strftime("cam_%Y%m%d_%H%M%S")}, timeout=5.0)
                 elif act == "stop":
                     r = camera_call("/record/stop", {}, timeout=30.0)
+                    if r.get("file"):
+                        try:
+                            ctl.storage.register_camera_clip(r["file"], t0=r.get("t0"), t1=r.get("t1"))
+                        except Exception as e:
+                            warn(f"could not index camera clip: {e}")
                 else:
                     return self._send(400, {"ok": False, "errors": ["action must be start or stop"]})
                 return self._send(200 if "error" not in r else 409, dict(r, ok="error" not in r))
+            if path == "/api/sessions":
+                act = body.get("action") or "new"
+                label = str(body.get("label") or "").strip()[:120]
+                if act == "new":
+                    meta = ctl.storage.start_session(label=label or "manual session")
+                    info(f"started new session {meta['session_id']} ({meta['label']})")
+                    return self._send(200, {"ok": True, "session": meta})
+                if act == "label":
+                    sid = body.get("session_id") or ctl.storage.current_session_id
+                    ctl.storage.update_session_label(sid, label)
+                    return self._send(200, {"ok": True, "session_id": sid, "label": label})
+                return self._send(400, {"ok": False, "errors": ["action must be new or label"]})
             if path == "/api/align":
                 p, errors = validate_align_params(body)
                 if errors:
                     return self._send(400, {"ok": False, "errors": errors})
                 code, res = ctl.start("align", p)
                 return self._send(code, res)
+            if path == "/api/upgrade":
+                tag = (body.get("tag") or "").strip()
+                if not ew1_upgrader.valid_tag(tag):
+                    return self._send(400, {"ok": False, "errors": [f"invalid release tag: {tag!r}"]})
+                if ctl.active or lock_holder_pids():
+                    return self._send(409, {"ok": False, "errors": ["cannot upgrade while an HV run or lock is active"]})
+                do_safe_stop(f"pre-upgrade to {tag}")
+                repo = ew1_upgrader.current_version(HERE, HOME).get("repo") or ew1_upgrader.DEFAULT_REPO
+                info(f"starting upgrade to {tag} from {repo}...")
+                try:
+                    res = ew1_upgrader.install_from_github(tag, repo=repo, home_dir=HOME)
+                except Exception as e:
+                    err(f"upgrade to {tag} failed: {type(e).__name__}: {e}")
+                    return self._send(500, {"ok": False, "errors": [f"{type(e).__name__}: {e}"]})
+                info(f"installed {tag} (sha256 {res['sha256'][:12]}...); scheduling service restart")
+                restarting = ew1_upgrader.schedule_service_restart()
+                return self._send(200, {"ok": True, "version": res["version"], "sha256": res["sha256"],
+                                        "restarting": restarting})
             return self._send(404, {"ok": False, "errors": ["not found"]})
         except (BrokenPipeError, ConnectionResetError):
             return
@@ -992,6 +1050,21 @@ class Handler(BaseHTTPRequestHandler):
 class Server(ThreadingHTTPServer):
     daemon_threads = True
     allow_reuse_address = True
+
+    def __init__(self, server_address, RequestHandlerClass):
+        host, port = server_address
+        if host in ("0.0.0.0", "::", ""):
+            self.address_family = socket.AF_INET6
+            server_address = ("::", port)
+        super().__init__(server_address, RequestHandlerClass)
+
+    def server_bind(self):
+        if self.address_family == socket.AF_INET6:
+            try:
+                self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
+            except OSError:
+                pass
+        super().server_bind()
 
 
 # ------------------------------------------------------------------ main

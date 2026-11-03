@@ -6,6 +6,7 @@ the transformer driver or requests a USB-PD contract. Bringing up high voltage
 is a separate, supervised bench procedure gated by [AUDIT.md](../AUDIT.md).
 
 Current bench state and stage-by-stage bring-up: [BRINGUP.md](BRINGUP.md).
+For concurrent Wi-Fi client + open AP setup on `ew-1-zero-2w.local`, see [ZERO2W_MIXED_AP.md](ZERO2W_MIXED_AP.md).
 
 ## 0. Baseline (observed 2026-10-31)
 

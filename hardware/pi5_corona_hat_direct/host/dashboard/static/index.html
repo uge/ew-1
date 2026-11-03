@@ -90,6 +90,7 @@ canvas.sm{height:120px} canvas.md{height:150px}
   <span id="conn" class="badge">connecting</span>
   <span id="runBadge" class="badge">idle</span>
   <span id="srcBadge" class="badge">monitor</span>
+  <span id="verBadge" class="badge mono" title="installed host/dashboard version">--</span>
   <span class="spacer"></span>
   <span class="hint mono" id="clock"></span>
   <button id="stopBtn" title="GPIO24 low, PWM off, polarity normal, GPIO25 low">SAFE STOP</button>
@@ -208,8 +209,23 @@ canvas.sm{height:120px} canvas.md{height:150px}
   </section>
 
   <section>
-    <h2>Runs (~/dashboard_runs)</h2>
+    <h2>Recordings &amp; Sessions (SQLite + ~/dashboard_runs/sessions)</h2>
+    <div class="row" style="margin-bottom:8px">
+      <select id="sessFilter" style="flex:1"><option value="">All sessions</option></select>
+      <button class="btn" id="newSessBtn" type="button" title="Start a new recording session directory">New session...</button>
+    </div>
     <div class="runs"><table id="runsT"></table></div>
+  </section>
+
+  <section>
+    <h2>Version &amp; GitHub Release Upgrade</h2>
+    <div id="verCur" class="hint mono">current: --</div>
+    <div class="row" style="margin-top:8px">
+      <select id="verSelect" style="flex:1"><option value="">Click "Check GitHub releases"...</option></select>
+      <button class="btn" id="verCheckBtn" type="button">Check GitHub releases</button>
+      <button class="btn" id="verGoBtn" type="button" disabled>Install selected</button>
+    </div>
+    <div id="verMsg" class="hint mono" style="margin-top:6px"></div>
   </section>
 </div>
 </main>
@@ -322,6 +338,12 @@ function render(s){
   else { rb.className = "badge"; rb.textContent = "idle"; }
   $("srcBadge").textContent = s.source === "run" ? "data: control loop" : "data: monitor";
   $("srcBadge").className = "badge " + (s.source === "run" ? "info" : "");
+  if (s.version && s.version.version) {
+    const v = s.version;
+    $("verBadge").textContent = v.version;
+    $("verCur").textContent = `current: ${v.version}` + (v.commit ? ` (${String(v.commit).slice(0,7)})` : "") + (v.built_at ? ` built ${v.built_at}` : "");
+  }
+  $("verGoBtn").disabled = !!a || !$("verSelect").value;
   heartbeat(!!a);
 
   // GPIO table
@@ -338,16 +360,17 @@ function render(s){
 
   // PWM table
   const p = s.pwm || {};
-  let ph = `<tr><th></th><th>ch2 (IN1)</th><th>ch3 (IN2)</th></tr>`;
+  const [c1, c2] = (p[0] || p["0"]) ? [0, 1] : [2, 3];
+  let ph = `<tr><th></th><th>ch${c1} (IN1)</th><th>ch${c2} (IN2)</th></tr>`;
   const cell = (c, k) => { const x = p[c] || p[String(c)] || {}; if (!x.exported) return "not exported"; return x[k] ?? "--"; };
   const en = c => { const x = p[c] || p[String(c)] || {}; if (!x.exported) return chip(true, "OFF", ""); return chip(x.enable === 0, "OFF", "ENABLED", true); };
   const pol = c => { const x = p[c] || p[String(c)] || {}; if (!x.exported) return "--"; return x.polarity === "normal" ? "normal" : `<span class="chip warn">${x.polarity}</span>`; };
-  ph += `<tr><td>enable</td><td>${en(2)}</td><td>${en(3)}</td></tr>`;
-  ph += `<tr><td>polarity</td><td>${pol(2)}</td><td>${pol(3)}</td></tr>`;
-  ph += `<tr><td>period ns</td><td class="mono">${cell(2,"period")}</td><td class="mono">${cell(3,"period")}</td></tr>`;
-  ph += `<tr><td>freq Hz</td><td class="mono">${cell(2,"freq_hz")}</td><td class="mono">${cell(3,"freq_hz")}</td></tr>`;
-  ph += `<tr><td>duty_cycle ns</td><td class="mono">${cell(2,"duty_cycle")}</td><td class="mono">${cell(3,"duty_cycle")}</td></tr>`;
-  ph += `<tr><td>duty</td><td class="mono">${cell(2,"duty")}</td><td class="mono">${cell(3,"duty")}</td></tr>`;
+  ph += `<tr><td>enable</td><td>${en(c1)}</td><td>${en(c2)}</td></tr>`;
+  ph += `<tr><td>polarity</td><td>${pol(c1)}</td><td>${pol(c2)}</td></tr>`;
+  ph += `<tr><td>period ns</td><td class="mono">${cell(c1,"period")}</td><td class="mono">${cell(c2,"period")}</td></tr>`;
+  ph += `<tr><td>freq Hz</td><td class="mono">${cell(c1,"freq_hz")}</td><td class="mono">${cell(c2,"freq_hz")}</td></tr>`;
+  ph += `<tr><td>duty_cycle ns</td><td class="mono">${cell(c1,"duty_cycle")}</td><td class="mono">${cell(c2,"duty_cycle")}</td></tr>`;
+  ph += `<tr><td>duty</td><td class="mono">${cell(c1,"duty")}</td><td class="mono">${cell(c2,"duty")}</td></tr>`;
   $("pwmT").innerHTML = ph;
 
   // preconditions
@@ -534,19 +557,41 @@ window.addEventListener("resize", () => { RG.dirty = true; drawSlow(); });
 
 async function loadRuns(){
   try {
-    const r = await (await fetch("/api/runs")).json();
-    let h = `<tr><th>run</th><th>result</th><th>files</th></tr>`;
+    try {
+      const sj = await (await fetch("/api/sessions")).json();
+      const sel = $("sessFilter"), curVal = sel.value;
+      const opts = [`<option value="">All sessions (${(sj.sessions||[]).length})</option>`];
+      for (const s of (sj.sessions || [])) {
+        const tag = s.active ? " [active]" : "";
+        const lbl = s.label ? ` — ${s.label}` : "";
+        opts.push(`<option value="${s.session_id}">${s.session_id}${tag}${lbl} (${s.recording_count||0})</option>`);
+      }
+      sel.innerHTML = opts.join("");
+      sel.value = curVal;
+    } catch(e){}
+    const sid = $("sessFilter").value;
+    const r = await (await fetch("/api/runs" + (sid ? `?session_id=${encodeURIComponent(sid)}` : ""))).json();
+    let h = `<tr><th>run / session</th><th>result</th><th>files</th></tr>`;
     for (const x of r){
       const p = x.params || {};
       const desc = x.mode === "ramp" ? `${p.vbus}V ${p.freq_hz/1000}k ${p.target_kv}kV` : (x.mode || "");
-      const res = x.abort ? `<span class="chip warn" title="${String(x.abort).replace(/"/g,"'")}">ABORT</span>` : (x.code === 0 ? `<span class="chip ok">ok</span>` : "");
-      h += `<tr><td class="mono">${x.stem.replace("stage7_ramp_","")}<div class="hint">${desc}${x.peak_kv ? " peak " + x.peak_kv.toFixed(2) + " kV" : ""}</div></td><td>${res}</td>
+      const sInfo = x.session_label ? `${x.session_id} (${x.session_label})` : (x.session_id || "");
+      const res = x.abort ? `<span class="chip warn" title="${String(x.abort).replace(/"/g,"'")}">ABORT</span>` : (x.code === 0 ? `<span class="chip ok">ok</span>` : (x.mode === "camera" ? `<span class="chip na">cam</span>` : ""));
+      h += `<tr><td class="mono">${x.stem.replace("stage7_ramp_","")}<div class="hint">${desc}${x.peak_kv ? " peak " + x.peak_kv.toFixed(2) + " kV" : ""}${x.peak_ua ? " / " + x.peak_ua.toFixed(1) + " uA" : ""}${sInfo ? " · " + sInfo : ""}</div></td><td>${res}</td>
         <td>${x.csv ? `<a href="#" onclick="loadRunCsv('${x.csv}', ${x.json ? `'${x.json}'` : "null"});return false">graph</a> <a href="/runs/${x.csv}">csv</a>` : ""} ${x.json ? `<a href="/runs/${x.json}">json</a>` : ""} ${x.video ? `<a href="/runs/${x.video}">video</a> <span class="hint">${(x.video_bytes/1e6).toFixed(1)} MB</span>` : ""}</td></tr>`;
     }
     $("runsT").innerHTML = (r.length ? h : `<tr><td class="hint">no runs yet</td></tr>`) +
       `<tr><td colspan="3"><a href="#" onclick="backToLive();return false">show live / latest run graphs</a></td></tr>`;
   } catch(e){}
 }
+$("sessFilter").onchange = loadRuns;
+$("newSessBtn").onclick = async () => {
+  const lbl = prompt("Label for the new recording session (optional):", "");
+  if (lbl === null) return;
+  const r = await post("/api/sessions", {action: "new", label: lbl});
+  msg(r.status === 200 ? `started session ${r.j.session.session_id}` : `session error ${r.status}: ${(r.j.errors||[]).join("; ")}`, r.status !== 200);
+  loadRuns();
+};
 
 function connect(){
   if (es) es.close();
@@ -565,6 +610,48 @@ setInterval(() => { $("clock").textContent = new Date().toLocaleTimeString(); },
   try { const h = await (await fetch("/api/history")).json(); for (const p of h) hist.push(p); } catch(e){}
   loadRuns(); loadSlow(); backToLive(); connect(); requestAnimationFrame(frame);
 })();
+
+async function loadVersions(){
+  const m = $("verMsg"), sel = $("verSelect");
+  m.style.color = "var(--mute)"; m.textContent = "fetching releases from GitHub...";
+  try {
+    const j = await (await fetch("/api/versions")).json();
+    const cur = (j.current && j.current.version) || "dev";
+    const rels = (j.releases || []).filter(r => r.ready);
+    if (j.error) { m.style.color = "var(--bad)"; m.textContent = "GitHub check error: " + j.error; return; }
+    if (!rels.length) {
+      sel.innerHTML = `<option value="">no packaged releases found in ${j.repo || "uge/ew-1"}</option>`;
+      m.textContent = "no packaged releases found (push a v* tag to trigger the GitHub Release workflow)";
+      $("verGoBtn").disabled = true;
+      return;
+    }
+    sel.innerHTML = rels.map(r => `<option value="${r.tag}">${r.tag}${r.tag === cur ? " (current)" : ""}${r.prerelease ? " [pre]" : ""} — ${r.published_at ? r.published_at.slice(0,10) : ""}</option>`).join("");
+    m.textContent = `found ${rels.length} release(s) in ${j.repo}`;
+    $("verGoBtn").disabled = !!(S && S.run && S.run.active) || !sel.value;
+  } catch (e) {
+    m.style.color = "var(--bad)"; m.textContent = "could not fetch versions: " + e;
+  }
+}
+$("verCheckBtn").onclick = loadVersions;
+$("verSelect").onchange = () => { $("verGoBtn").disabled = !!(S && S.run && S.run.active) || !$("verSelect").value; };
+$("verGoBtn").onclick = async () => {
+  const tag = $("verSelect").value;
+  if (!tag) return;
+  if (!confirm(`Download, verify SHA-256 + unit tests, and switch to release ${tag}?\n\nThe dashboard service will safe-stop and restart (~2 s).`)) return;
+  const m = $("verMsg");
+  $("verGoBtn").disabled = true;
+  m.style.color = "var(--info)"; m.textContent = `installing ${tag} (downloading & verifying)...`;
+  const r = await post("/api/upgrade", {tag});
+  if (r.status !== 200) {
+    m.style.color = "var(--bad)";
+    m.textContent = `upgrade ${r.status}: ${(r.j.errors || []).join("; ")}`;
+    $("verGoBtn").disabled = false;
+    return;
+  }
+  m.style.color = "var(--ok)";
+  m.textContent = `installed ${tag} (sha256 ${(r.j.sha256||"").slice(0,12)}...). Waiting for service restart...`;
+  setTimeout(() => { location.reload(); }, 3000);
+};
 </script>
 </body>
 </html>

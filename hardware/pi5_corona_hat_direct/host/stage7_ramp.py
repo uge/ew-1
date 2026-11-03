@@ -69,21 +69,32 @@ def pr(path):
     with open(path) as f: return f.read().strip()
 def d(ch): return f"{PWMCHIP}/pwm{ch}"
 
+def pwm_channels():
+    dev = os.path.realpath(f"{PWMCHIP}/device") if os.path.exists(f"{PWMCHIP}/device") else ""
+    if "1f00098000" in dev:
+        return (2, 3)
+    if "3f20c000" in dev:
+        return (0, 1)
+    raise RuntimeError(f"pwmchip0 is not RP1 PWM0 or BCM2835 PWM0 ({dev})")
+
 def pwm_prepare(freq):
     if not F_MIN <= freq <= F_MAX: raise ValueError(f"freq {freq} outside {F_MIN}-{F_MAX}")
-    if "1f00098000" not in os.path.realpath(f"{PWMCHIP}/device"): raise RuntimeError("pwmchip0 is not RP1 PWM0")
+    c_in1, c_in2 = pwm_channels()
     period = round(1e9 / freq)
-    for ch in (2, 3):
+    for ch in (c_in1, c_in2):
         if not os.path.isdir(d(ch)): pw(f"{PWMCHIP}/export", ch); time.sleep(0.3)
         pw(f"{d(ch)}/enable", 0); pw(f"{d(ch)}/polarity", "normal"); pw(f"{d(ch)}/duty_cycle", 0)
         pw(f"{d(ch)}/period", period)
-        if int(pr(f"{d(ch)}/period")) != period: raise RuntimeError(f"pwm{ch} period readback")
-    return period
+        # BCM2835 PWM quantises period to ~10 ns clock ticks; allow <= 20 ns rounding
+        rb = int(pr(f"{d(ch)}/period"))
+        if abs(rb - period) > 20: raise RuntimeError(f"pwm{ch} period readback {rb} != {period}")
+    return int(pr(f"{d(c_in1)}/period"))
 
 def set_duty(period, D):
+    c_in1, c_in2 = pwm_channels()
     D = max(0.0, min(0.5, D))
-    pw(f"{d(2)}/duty_cycle", round(D * period))
-    pw(f"{d(3)}/duty_cycle", round((1 - D) * period))
+    pw(f"{d(c_in1)}/duty_cycle", round(D * period))
+    pw(f"{d(c_in2)}/duty_cycle", round((1 - D) * period))
     return D
 
 def align(period, log):
@@ -91,9 +102,10 @@ def align(period, log):
     their counters with rp1_pwm_sync.py (one GLOBAL_CTRL write + SET_UPDATE, root).
     Refuses unless the helper verifies >= 99 % complementary."""
     if lev(24) != 0 or lev(25) != 0: raise RuntimeError("align requires GPIO24/25 low")
-    for ch in (2, 3): pw(f"{d(ch)}/enable", 0)
-    pw(f"{d(3)}/polarity", "normal"); set_duty(period, 0.5); pw(f"{d(3)}/polarity", "inversed")
-    pw(f"{d(2)}/enable", 1); pw(f"{d(3)}/enable", 1)
+    c_in1, c_in2 = pwm_channels()
+    for ch in (c_in1, c_in2): pw(f"{d(ch)}/enable", 0)
+    pw(f"{d(c_in2)}/polarity", "normal"); set_duty(period, 0.5); pw(f"{d(c_in2)}/polarity", "inversed")
+    pw(f"{d(c_in1)}/enable", 1); pw(f"{d(c_in2)}/enable", 1)
     r = subprocess.run(["sudo", "-n", "python3", "/home/uge/rp1_pwm_sync.py"], capture_output=True, text=True)
     log((r.stdout + r.stderr).strip())
     if r.returncode != 0: raise RuntimeError("IN1/IN2 phase sync failed - refusing to drive")
@@ -101,7 +113,9 @@ def align(period, log):
 
 def safe_stop(log):
     gpio(24, 0)
-    for ch in (2, 3):
+    try: chs = pwm_channels()
+    except Exception: chs = (0, 1, 2, 3)
+    for ch in chs:
         if os.path.isdir(d(ch)):
             try: pw(f"{d(ch)}/enable", 0); pw(f"{d(ch)}/polarity", "normal")
             except OSError as e: log(f"pwm{ch} stop error {e}")
@@ -281,7 +295,7 @@ def run(mode, freq=32000, vbus=5, target_kv=5.0, max_d=0.5, hold=0.5, abort_kv=A
                 if a0 >= a0_abort: abort = f"HV still rising after trip: AIN0 {a0:.3f}"; break
             result["post_trip_100ms"] = (round(a_first * KV_PER_V, 2), round(amax * KV_PER_V, 2), round(a_last * KV_PER_V, 2))
             log(f"100 ms after trip with PWM still running: AIN0 {a_first*KV_PER_V:.2f} -> {a_last*KV_PER_V:.2f} kV (max {amax*KV_PER_V:.2f})")
-            for ch in (2, 3): pw(f"{d(ch)}/enable", 0); pw(f"{d(ch)}/polarity", "normal")
+            for ch in pwm_channels(): pw(f"{d(ch)}/enable", 0); pw(f"{d(ch)}/polarity", "normal")
             log("PWM disabled (GPIO24 still high)")
             # 2) latch: wait for HV < 2 kV with GPIO24 high, GPIO26 must stay 1
             ts = time.monotonic(); latched = True

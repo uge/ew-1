@@ -1,0 +1,112 @@
+name: Release ew-1 Host & Dashboard
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to build and publish (e.g. v0.1.0)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build, Test & Publish Host Bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Determine release version
+        id: meta
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.tag }}"
+          else
+            VERSION="${GITHUB_REF_NAME}"
+          fi
+          BUILT_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "built_at=${BUILT_AT}" >> "${GITHUB_OUTPUT}"
+
+      - name: Syntax check & unit tests
+        run: |
+          HOST_DIR="hardware/pi5_corona_hat_direct/host"
+          python3 -m py_compile \
+            "${HOST_DIR}/stage7_ramp.py" \
+            "${HOST_DIR}/husb238a.py" \
+            "${HOST_DIR}/rp1_pwm_sync.py" \
+            "${HOST_DIR}/ew1_selftest.py" \
+            "${HOST_DIR}/dashboard/"*.py
+          python3 "${HOST_DIR}/dashboard/test_ew1_limits.py"
+          python3 "${HOST_DIR}/dashboard/test_ew1_upgrader.py"
+          python3 "${HOST_DIR}/dashboard/test_ew1_storage.py"
+
+      - name: Package release bundle
+        run: |
+          VERSION="${{ steps.meta.outputs.version }}"
+          BUILT_AT="${{ steps.meta.outputs.built_at }}"
+          HOST_DIR="hardware/pi5_corona_hat_direct/host"
+          STAGE_DIR="dist/stage"
+
+          rm -rf dist
+          mkdir -p "${STAGE_DIR}/dashboard/static"
+
+          cat > "${STAGE_DIR}/VERSION.json" <<EOF
+          {
+            "version": "${VERSION}",
+            "commit": "${GITHUB_SHA}",
+            "built_at": "${BUILT_AT}",
+            "repo": "${GITHUB_REPOSITORY}"
+          }
+          EOF
+          cp "${STAGE_DIR}/VERSION.json" "${STAGE_DIR}/dashboard/VERSION.json"
+
+          cp \
+            "${HOST_DIR}/stage7_ramp.py" \
+            "${HOST_DIR}/husb238a.py" \
+            "${HOST_DIR}/rp1_pwm_sync.py" \
+            "${HOST_DIR}/ew1_selftest.py" \
+            "${HOST_DIR}/ew1_host_setup.sh" \
+            "${STAGE_DIR}/"
+
+          cp \
+            "${HOST_DIR}/dashboard/"*.py \
+            "${HOST_DIR}/dashboard/ew1-dashboard.service" \
+            "${HOST_DIR}/dashboard/install_service.sh" \
+            "${HOST_DIR}/dashboard/README.md" \
+            "${STAGE_DIR}/dashboard/"
+
+          cp "${HOST_DIR}/dashboard/static/index.html" "${STAGE_DIR}/dashboard/static/"
+
+          TARBALL="ew1-host-${VERSION}.tar.gz"
+          tar -C "${STAGE_DIR}" -czf "dist/${TARBALL}" .
+          (
+            cd dist
+            sha256sum "${TARBALL}" > "${TARBALL}.sha256"
+            cp "${TARBALL}" ew1-host.tar.gz
+            sha256sum ew1-host.tar.gz > ew1-host.tar.gz.sha256
+          )
+          ls -lh dist/
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.version }}
+          name: "ew-1 Host & Dashboard ${{ steps.meta.outputs.version }}"
+          generate_release_notes: true
+          files: |
+            dist/ew1-host-${{ steps.meta.outputs.version }}.tar.gz
+            dist/ew1-host-${{ steps.meta.outputs.version }}.tar.gz.sha256
+            dist/ew1-host.tar.gz
+            dist/ew1-host.tar.gz.sha256
