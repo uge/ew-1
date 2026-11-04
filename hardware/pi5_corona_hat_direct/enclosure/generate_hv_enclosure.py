@@ -21,6 +21,7 @@ Key design parameters:
 """
 
 import os
+import subprocess
 import sys
 import FreeCAD as App
 import Part
@@ -367,11 +368,112 @@ def build_bottom_half():
     return shell
 
 
+def load_pcb_models(pcb_path, gui_active):
+    """Export (if needed) and load the 3D PCB substrate and populated components."""
+    board_only_step = "/tmp/board_only.step"
+    board_comp_step = "/tmp/board_components.step"
+
+    if not os.path.exists(board_only_step) and os.path.exists(pcb_path):
+        subprocess.run(
+            [
+                "kicad-cli",
+                "pcb",
+                "export",
+                "step",
+                "--force",
+                "--board-only",
+                "-o",
+                board_only_step,
+                pcb_path,
+            ],
+            check=True,
+        )
+
+    if not os.path.exists(board_comp_step) and os.path.exists(pcb_path):
+        subprocess.run(
+            [
+                "kicad-cli",
+                "pcb",
+                "export",
+                "step",
+                "--force",
+                "--subst-models",
+                "--no-dnp",
+                "--no-board-body",
+                "-o",
+                board_comp_step,
+                pcb_path,
+            ],
+            check=True,
+        )
+
+    pcb_shape = None
+    if os.path.exists(board_only_step):
+        pcb_shape = Part.Shape()
+        pcb_shape.read(board_only_step)
+
+    comp_shape = None
+    comp_face_colors = []
+    if os.path.exists(board_comp_step):
+        if gui_active:
+            import ImportGui
+
+            tmp_doc = App.newDocument("TmpBoardImport")
+            ImportGui.insert(board_comp_step, tmp_doc.Name)
+            comp_shapes = []
+            for obj in tmp_doc.Objects:
+                if obj.TypeId == "Part::Feature" and hasattr(obj, "Shape"):
+                    sh = obj.Shape.copy()
+                    if hasattr(obj, "getGlobalPlacement"):
+                        sh.Placement = obj.getGlobalPlacement()
+                    n_faces = len(sh.Faces)
+                    if n_faces > 0:
+                        cols = list(getattr(obj.ViewObject, "DiffuseColor", []))
+                        if len(cols) == n_faces:
+                            comp_face_colors.extend(cols)
+                        elif len(cols) >= 1:
+                            comp_face_colors.extend([cols[0]] * n_faces)
+                        else:
+                            comp_face_colors.extend([(0.70, 0.72, 0.75, 1.0)] * n_faces)
+                        comp_shapes.append(sh)
+            if comp_shapes:
+                comp_shape = Part.makeCompound(comp_shapes)
+            App.closeDocument(tmp_doc.Name)
+        else:
+            comp_shape = Part.Shape()
+            comp_shape.read(board_comp_step)
+
+    return pcb_shape, comp_shape, comp_face_colors
+
+
 def main():
-    out_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    out_dir = os.environ.get("ENCLOSURE_OUT_DIR", script_dir)
     os.makedirs(out_dir, exist_ok=True)
+    pcb_path = os.path.abspath(os.path.join(script_dir, "..", "pi5_corona_hv.kicad_pcb"))
+
+    gui_active = False
+    try:
+        import FreeCADGui
+        if not App.GuiUp:
+            FreeCADGui.showMainWindow()
+        gui_active = True
+    except Exception:
+        gui_active = False
+
+    pcb_shape, comp_shape, comp_face_colors = load_pcb_models(pcb_path, gui_active)
 
     doc = App.newDocument("HV_Enclosure")
+
+    if pcb_shape is not None:
+        pcb_obj = doc.addObject("Part::Feature", "PI5_Corona_HV_PCB")
+        pcb_obj.Label = "PI5_Corona_HV_PCB"
+        pcb_obj.Shape = pcb_shape
+
+    if comp_shape is not None:
+        comp_obj = doc.addObject("Part::Feature", "PI5_Corona_HV_Components")
+        comp_obj.Label = "PI5_Corona_HV_Components"
+        comp_obj.Shape = comp_shape
 
     top_shape = build_top_half()
     bot_shape = build_bottom_half()
@@ -386,8 +488,47 @@ def main():
 
     doc.recompute()
 
+    if gui_active:
+        App.setActiveDocument(doc.Name)
+        gdoc = FreeCADGui.getDocument(doc.Name)
+
+        if pcb_shape is not None:
+            vp_pcb = gdoc.getObject("PI5_Corona_HV_PCB")
+            vp_pcb.Visibility = True
+            vp_pcb.DisplayMode = "Flat Lines"
+            vp_pcb.ShapeColor = (0.08, 0.42, 0.20)
+            vp_pcb.Transparency = 0
+
+        if comp_shape is not None:
+            vp_comp = gdoc.getObject("PI5_Corona_HV_Components")
+            vp_comp.Visibility = True
+            vp_comp.DisplayMode = "Flat Lines"
+            vp_comp.ShapeColor = (0.70, 0.72, 0.75)
+            if comp_face_colors and len(comp_face_colors) == len(comp_shape.Faces):
+                vp_comp.DiffuseColor = comp_face_colors
+
+        vp_top = gdoc.getObject("HV_Enclosure_Top_Half")
+        vp_top.Visibility = True
+        vp_top.DisplayMode = "Flat Lines"
+        vp_top.ShapeColor = (0.28, 0.52, 0.78)
+        vp_top.Transparency = 35
+
+        vp_bot = gdoc.getObject("HV_Enclosure_Bottom_Half")
+        vp_bot.Visibility = True
+        vp_bot.DisplayMode = "Flat Lines"
+        vp_bot.ShapeColor = (0.24, 0.27, 0.32)
+        vp_bot.Transparency = 0
+
+        view = gdoc.activeView()
+        if view is not None:
+            view.setAnimationEnabled(False)
+            view.viewIsometric()
+            view.fitAll()
+
     # Save native FreeCAD file (.FCStd)
     fcstd_path = os.path.join(out_dir, "hv_enclosure.FCStd")
+    if os.path.exists(fcstd_path):
+        os.remove(fcstd_path)
     doc.saveAs(fcstd_path)
     print(f"Saved FreeCAD document: {fcstd_path}")
 
