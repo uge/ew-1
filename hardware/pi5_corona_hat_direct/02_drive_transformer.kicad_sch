@@ -7809,6 +7809,17 @@
 		)
 		(uuid "d4231cc8-99ad-47a3-b010-59d05a4fba8e")
 	)
+	(text "HV_BRIDGE / 11 -> ADS1115 AIN3 on sheet 01 (BRIDGE_VMON). 3.23 V at the 35.5 V D51 clamp. Nominal 20 V reads 1.82 V."
+		(exclude_from_sim no)
+		(at 40.64 231.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e16fec30-005f-4d10-997f-4a07537a3098")
+	)
 	(junction
 		(at 246.38 60.96)
 		(diameter 0)
@@ -7820,12 +7831,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4db39151-8a1b-4460-b2c7-37292dbae548")
-	)
-	(junction
-		(at 162.56 205.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c7fc95e3-cc2a-4c9b-85b9-baeedb56f79d")
 	)
 	(junction
 		(at 330.2 60.96)
@@ -7973,6 +7978,16 @@
 	)
 	(wire
 		(pts
+			(xy 45.72 237.49) (xy 45.72 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24df9153-52be-48ab-83a1-d0b267b6cf1f")
+	)
+	(wire
+		(pts
 			(xy 289.56 60.96) (xy 289.56 57.15)
 		)
 		(stroke
@@ -8000,6 +8015,16 @@
 			(type default)
 		)
 		(uuid "2c7d94be-acfc-419c-b617-f41b6524c898")
+	)
+	(wire
+		(pts
+			(xy 66.04 237.49) (xy 66.04 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cac388f-cae7-49f1-860e-2fd64c1eedf5")
 	)
 	(wire
 		(pts
@@ -8063,16 +8088,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 45.72) (xy 46.99 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b68abde-a938-465d-a489-28b844c9e03c")
-	)
-	(wire
-		(pts
 			(xy 50.8 158.75) (xy 63.5 158.75)
 		)
 		(stroke
@@ -8083,7 +8098,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 195.58) (xy 350.52 195.58)
+			(xy 314.96 195.58) (xy 365.76 195.58)
 		)
 		(stroke
 			(width 0)
@@ -8273,16 +8288,6 @@
 	)
 	(wire
 		(pts
-			(xy 350.52 195.58) (xy 365.76 195.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94ab8b65-3f3f-4e25-841f-4c7e4273fb6d")
-	)
-	(wire
-		(pts
 			(xy 66.04 45.72) (xy 73.66 45.72)
 		)
 		(stroke
@@ -8290,6 +8295,16 @@
 			(type default)
 		)
 		(uuid "992af820-dfbf-4d14-a9c5-c5e6b2a79d56")
+	)
+	(wire
+		(pts
+			(xy 66.04 245.11) (xy 66.04 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e951145-7f9c-4751-8a27-3cf0b4b3bfe8")
 	)
 	(wire
 		(pts
@@ -8330,6 +8345,16 @@
 			(type default)
 		)
 		(uuid "b7f11708-91cb-4b12-9d08-a412533ca740")
+	)
+	(wire
+		(pts
+			(xy 86.36 237.49) (xy 86.36 234.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8e8d307-cc33-43be-8422-ed7528eccd5d")
 	)
 	(wire
 		(pts
@@ -8413,7 +8438,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 45.72) (xy 45.72 45.72)
+			(xy 35.56 45.72) (xy 46.99 45.72)
 		)
 		(stroke
 			(width 0)
@@ -8503,6 +8528,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 245.11) (xy 86.36 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df644ec6-d512-48a8-bdba-595ac9c6126c")
+	)
+	(wire
+		(pts
 			(xy 35.56 196.85) (xy 35.56 191.77)
 		)
 		(stroke
@@ -8520,6 +8555,16 @@
 			(type default)
 		)
 		(uuid "e8cc913d-1463-43d3-94ab-5550dd191f4f")
+	)
+	(wire
+		(pts
+			(xy 45.72 245.11) (xy 45.72 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecdf740b-3988-4160-a21d-9d36cd865fdf")
 	)
 	(wire
 		(pts
@@ -8691,19 +8736,6 @@
 		)
 		(uuid "7ba60e15-24f7-443b-b79c-d2c66445e5ec")
 	)
-	(global_label "DRV_nFAULT"
-		(shape bidirectional)
-		(at 50.800 165.100 0)
-		(effects (font (size 1.016 1.016)) (justify left))
-		(uuid "25c8484d-ceaf-42a0-9d89-df58c37a8bdc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.800 165.100 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-	)
 	(label "DRV_VCP"
 		(at 134.62 139.7 0)
 		(effects
@@ -8804,17 +8836,114 @@
 		)
 		(uuid "f1c54437-39c1-429b-8165-6f78f69c16ec")
 	)
-	(global_label "DRV_nFAULT"
+	(global_label "BRIDGE_VMON"
 		(shape bidirectional)
-		(at 162.560 205.740 0)
-		(effects (font (size 1.016 1.016)) (justify left))
-		(uuid "fe16c053-69b9-4c9c-ab2d-8eb8ed322c39")
+		(at 86.36 234.95 90)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "114c9a8c-2422-4e4f-9abb-d42ccec38578")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 162.560 205.740 0)
+			(at 86.36 234.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+	)
+	(global_label "BRIDGE_VMON"
+		(shape bidirectional)
+		(at 45.72 247.65 270)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify right)
+		)
+		(uuid "23c0c3ed-60d2-4078-88a7-8190838095c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.72 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+	)
+	(global_label "DRV_nFAULT"
+		(shape bidirectional)
+		(at 50.8 165.1 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "25c8484d-ceaf-42a0-9d89-df58c37a8bdc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+	)
+	(global_label "BRIDGE_VMON"
+		(shape bidirectional)
+		(at 66.04 234.95 90)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "7dd777a4-a46d-46e7-b7cc-f0229fa50443")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 66.04 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+	)
+	(global_label "DRV_nFAULT"
+		(shape bidirectional)
+		(at 162.56 205.74 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left)
+		)
+		(uuid "fe16c053-69b9-4c9c-ab2d-8eb8ed322c39")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.56 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
 		)
 	)
 	(hierarchical_label "GND"
@@ -9246,6 +9375,206 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 45.72 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0b54ff20-549e-4f74-a92e-3a322d4cb4f5")
+		(property "Reference" "R108"
+			(at 45.72 238.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k 1%"
+			(at 45.72 244.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25803"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "LCSC Part" "C25803"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C25803"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "JLCPCB Library" "Basic"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Procurement Status" "CATALOG_MATCH"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Procurement Notes" "HV_BRIDGE monitor divider top; AIN3 = HV_BRIDGE/11."
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25803"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Catalog Checked" "2026-10-20"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Assembly Process" "smtWeld"
+			(at 45.72 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e1fe408d-2cbc-4fd8-bb2a-2af463bfcd2b")
+		)
+		(pin "2"
+			(uuid "bf358dbf-1bad-4aec-80b2-7d242b3ddd6b")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
+					(reference "R108")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "ionic_thrust_hv:HV_BRIDGE")
 		(at 276.86 123.19 0)
 		(unit 1)
@@ -9516,6 +9845,206 @@
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
 					(reference "D51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 86.36 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "16418944-3c15-4931-9068-aeefa1977bab")
+		(property "Reference" "C92"
+			(at 86.36 238.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 86.36 244.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C14663"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "LCSC Part" "C14663"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C14663"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "JLCPCB Library" "Basic"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Procurement Status" "CATALOG_MATCH"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Procurement Notes" "HV_BRIDGE monitor filter."
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C14663"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Catalog Checked" "2026-10-20"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Assembly Process" "smtWeld"
+			(at 86.36 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5cb5f51c-5599-4ad6-8adc-9001e215b4fb")
+		)
+		(pin "2"
+			(uuid "00cef1ac-4d29-4d8d-b56d-719084fe1c4c")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
+					(reference "C92")
 					(unit 1)
 				)
 			)
@@ -10626,6 +11155,84 @@
 		)
 	)
 	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 86.36 247.65 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3e6d90cb-0fc0-47ab-849b-118794636cc1")
+		(property "Reference" "#PWR4919"
+			(at 86.36 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 250.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 86.36 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3d73bac2-3d2f-46ef-a5bf-37fef068676c")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
+					(reference "#PWR4919")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "ionic_thrust_hv:VIN_PROTECTED")
 		(at 35.56 45.72 0)
 		(unit 1)
@@ -11461,7 +12068,7 @@
 		)
 		(instances
 			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2d319"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
 					(reference "#PWR1410")
 					(unit 1)
 				)
@@ -11888,8 +12495,208 @@
 		)
 		(instances
 			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2d319"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
 					(reference "#PWR1411")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.04 241.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "765abe5b-b14c-4b22-8db1-fdc7c106f6d0")
+		(property "Reference" "R109"
+			(at 66.04 238.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 66.04 244.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "LCSC Part" "C25804"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "JLCPCB Part #" "C25804"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "JLCPCB Library" "Basic"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Procurement Status" "CATALOG_MATCH"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Procurement Notes" "HV_BRIDGE monitor divider bottom."
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25804"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Catalog Checked" "2026-10-20"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Assembly Process" "smtWeld"
+			(at 66.04 241.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "92ba2f71-38b8-48d6-b824-1556ca2f25a7")
+		)
+		(pin "2"
+			(uuid "c348e0fe-1f01-4307-98c4-e4eab7067949")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
+					(reference "R109")
 					(unit 1)
 				)
 			)
@@ -12619,6 +13426,84 @@
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
 					(reference "#PWR2005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ionic_thrust_hv:GND")
+		(at 66.04 247.65 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a504efbc-7f6e-418a-87fc-ee27055b430d")
+		(property "Reference" "#PWR4918"
+			(at 66.04 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 66.04 250.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 247.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "705c0482-0f57-4e62-a73e-89d05e35b0b8")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
+					(reference "#PWR4918")
 					(unit 1)
 				)
 			)
@@ -15034,6 +15919,84 @@
 		)
 	)
 	(symbol
+		(lib_id "ionic_thrust_hv:HV_BRIDGE")
+		(at 45.72 234.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e9089321-4781-4582-844c-59c5a8a12f18")
+		(property "Reference" "#PWR4917"
+			(at 45.72 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HV_BRIDGE"
+			(at 45.72 238.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 45.72 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 234.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cf79aa13-0089-432c-888b-931c44860501")
+		)
+		(instances
+			(project "pi5_corona_hv"
+				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
+					(reference "#PWR4917")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "ionic_thrust_hv:GND")
 		(at 246.38 80.01 0)
 		(unit 1)
@@ -15781,692 +16744,5 @@
 				)
 			)
 		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 45.720 241.300 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0b54ff20-549e-4f74-a92e-3a322d4cb4f5")
-		(property "Reference" "R108"
-			(at 45.720 238.100 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Value" "100k 1%"
-			(at 45.720 244.500 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25803"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Description" ""
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "LCSC Part" "C25803"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "LCSC" "C25803"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "JLCPCB Part #" "C25803"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "MPN" "0603WAF1003T5E"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "JLCPCB Library" "Basic"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Procurement Status" "CATALOG_MATCH"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Procurement Notes" "HV_BRIDGE monitor divider top; AIN3 = HV_BRIDGE/11."
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25803"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Catalog Checked" "2026-10-20"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Assembly Process" "smtWeld"
-			(at 45.720 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(pin "1"
-			(uuid "e1fe408d-2cbc-4fd8-bb2a-2af463bfcd2b")
-		)
-		(pin "2"
-			(uuid "bf358dbf-1bad-4aec-80b2-7d242b3ddd6b")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "R108")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 45.720 237.490) (xy 45.720 234.950)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "24df9153-52be-48ab-83a1-d0b267b6cf1f")
-	)
-	(symbol
-		(lib_id "ionic_thrust_hv:HV_BRIDGE")
-		(at 45.720 234.950 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e9089321-4781-4582-844c-59c5a8a12f18")
-		(property "Reference" "#PWR4917"
-			(at 45.720 234.950 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Value" "HV_BRIDGE"
-			(at 45.720 238.150 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Footprint" ""
-			(at 45.720 234.950 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Datasheet" ""
-			(at 45.720 234.950 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Description" ""
-			(at 45.720 234.950 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(pin "1"
-			(uuid "cf79aa13-0089-432c-888b-931c44860501")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "#PWR4917")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 45.720 245.110) (xy 45.720 247.650)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ecdf740b-3988-4160-a21d-9d36cd865fdf")
-	)
-	(global_label "BRIDGE_VMON"
-		(shape bidirectional)
-		(at 45.720 247.650 270)
-		(effects (font (size 1.016 1.016)) (justify right))
-		(uuid "23c0c3ed-60d2-4078-88a7-8190838095c8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 45.720 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 66.040 241.300 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "765abe5b-b14c-4b22-8db1-fdc7c106f6d0")
-		(property "Reference" "R109"
-			(at 66.040 238.100 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Value" "10k"
-			(at 66.040 244.500 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C25804"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Description" ""
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "LCSC Part" "C25804"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "LCSC" "C25804"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "JLCPCB Part #" "C25804"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "MPN" "0603WAF1002T5E"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "JLCPCB Library" "Basic"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Procurement Status" "CATALOG_MATCH"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Procurement Notes" "HV_BRIDGE monitor divider bottom."
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C25804"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Catalog Checked" "2026-10-20"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Assembly Process" "smtWeld"
-			(at 66.040 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(pin "1"
-			(uuid "92ba2f71-38b8-48d6-b824-1556ca2f25a7")
-		)
-		(pin "2"
-			(uuid "c348e0fe-1f01-4307-98c4-e4eab7067949")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "R109")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 66.040 237.490) (xy 66.040 234.950)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2cac388f-cae7-49f1-860e-2fd64c1eedf5")
-	)
-	(global_label "BRIDGE_VMON"
-		(shape bidirectional)
-		(at 66.040 234.950 90)
-		(effects (font (size 1.016 1.016)) (justify left))
-		(uuid "7dd777a4-a46d-46e7-b7cc-f0229fa50443")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 66.040 234.950 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-	)
-	(wire
-		(pts
-			(xy 66.040 245.110) (xy 66.040 247.650)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e951145-7f9c-4751-8a27-3cf0b4b3bfe8")
-	)
-	(symbol
-		(lib_id "ionic_thrust_hv:GND")
-		(at 66.040 247.650 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a504efbc-7f6e-418a-87fc-ee27055b430d")
-		(property "Reference" "#PWR4918"
-			(at 66.040 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Value" "GND"
-			(at 66.040 250.850 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Footprint" ""
-			(at 66.040 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Datasheet" ""
-			(at 66.040 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Description" ""
-			(at 66.040 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(pin "1"
-			(uuid "705c0482-0f57-4e62-a73e-89d05e35b0b8")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "#PWR4918")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 86.360 241.300 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "16418944-3c15-4931-9068-aeefa1977bab")
-		(property "Reference" "C92"
-			(at 86.360 238.100 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Value" "100nF"
-			(at 86.360 244.500 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Datasheet" "https://jlcpcb.com/partdetail/C14663"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Description" ""
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "LCSC Part" "C14663"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "LCSC" "C14663"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "JLCPCB Part #" "C14663"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Manufacturer" "YAGEO"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "MPN" "CC0603KRX7R9BB104"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "JLCPCB Library" "Basic"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Procurement Status" "CATALOG_MATCH"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Procurement Notes" "HV_BRIDGE monitor filter."
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Catalog URL" "https://jlcpcb.com/partdetail/C14663"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Catalog Checked" "2026-10-20"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Assembly Process" "smtWeld"
-			(at 86.360 241.300 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(pin "1"
-			(uuid "5cb5f51c-5599-4ad6-8adc-9001e215b4fb")
-		)
-		(pin "2"
-			(uuid "00cef1ac-4d29-4d8d-b56d-719084fe1c4c")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "C92")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 86.360 237.490) (xy 86.360 234.950)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b8e8d307-cc33-43be-8422-ed7528eccd5d")
-	)
-	(global_label "BRIDGE_VMON"
-		(shape bidirectional)
-		(at 86.360 234.950 90)
-		(effects (font (size 1.016 1.016)) (justify left))
-		(uuid "114c9a8c-2422-4e4f-9abb-d42ccec38578")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 86.360 234.950 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-	)
-	(wire
-		(pts
-			(xy 86.360 245.110) (xy 86.360 247.650)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df644ec6-d512-48a8-bdba-595ac9c6126c")
-	)
-	(symbol
-		(lib_id "ionic_thrust_hv:GND")
-		(at 86.360 247.650 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3e6d90cb-0fc0-47ab-849b-118794636cc1")
-		(property "Reference" "#PWR4919"
-			(at 86.360 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Value" "GND"
-			(at 86.360 250.850 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Footprint" ""
-			(at 86.360 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.27 1.27)))
-		)
-		(property "Datasheet" ""
-			(at 86.360 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(property "Description" ""
-			(at 86.360 247.650 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects (font (size 1.016 1.016)))
-		)
-		(pin "1"
-			(uuid "3d73bac2-3d2f-46ef-a5bf-37fef068676c")
-		)
-		(instances
-			(project "pi5_corona_hv"
-				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/6db4da9a-2f77-41fb-a28d-f514a0b2daea"
-					(reference "#PWR4919")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(text "HV_BRIDGE / 11 -> ADS1115 AIN3 on sheet 01 (BRIDGE_VMON). 3.23 V at the 35.5 V D51 clamp. Nominal 20 V reads 1.82 V."
-		(exclude_from_sim no)
-		(at 40.64 231.14 0)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "e16fec30-005f-4d10-997f-4a07537a3098")
 	)
 )

@@ -11465,6 +11465,26 @@
 		)
 		(uuid "f3b1b39d-221f-4891-80a4-de4ca5f2fa8d")
 	)
+	(label "TSL_SCL"
+		(at 35.56 91.44 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "981e1160-69d0-47d6-acf8-4c304c986109")
+	)
+	(label "TSL_SDA"
+		(at 35.56 86.36 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "b5c7c8f8-02a5-4a6b-b3ec-321f00341037")
+	)
 	(label "TSL_SDA"
 		(at 208.28 81.28 0)
 		(effects
@@ -11485,25 +11505,85 @@
 		)
 		(uuid "d2cec7f1-5ad6-4eef-ab73-27f9b57e0479")
 	)
-	(label "TSL_SCL"
-		(at 35.56 91.44 0)
+	(label "TSL_3V3"
+		(at 40.64 81.28 0)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
 			(justify left bottom)
 		)
-		(uuid "981e1160-69d0-47d6-acf8-4c304c986109")
+		(uuid "e1000001-0001-4000-8000-000000000001")
 	)
-	(label "TSL_SDA"
-		(at 35.56 86.36 0)
+	(label "TSL_3V3"
+		(at 111.76 76.2 0)
 		(effects
 			(font
 				(size 1.016 1.016)
 			)
 			(justify left bottom)
 		)
-		(uuid "b5c7c8f8-02a5-4a6b-b3ec-321f00341037")
+		(uuid "e1000001-0001-4000-8000-000000000002")
+	)
+	(label "TSL_3V3"
+		(at 139.7 76.2 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1000001-0001-4000-8000-000000000003")
+	)
+	(label "TSL_3V3"
+		(at 180.34 68.58 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1000001-0001-4000-8000-000000000004")
+	)
+	(label "TSL_GND"
+		(at 30.48 76.2 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2000001-0001-4000-8000-000000000001")
+	)
+	(label "TSL_GND"
+		(at 111.76 91.44 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2000001-0001-4000-8000-000000000002")
+	)
+	(label "TSL_GND"
+		(at 139.7 91.44 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2000001-0001-4000-8000-000000000003")
+	)
+	(label "TSL_GND"
+		(at 180.34 99.06 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2000001-0001-4000-8000-000000000004")
 	)
 	(symbol
 		(lib_id "Sensor_Optical:TSL25911FN")
@@ -12327,46 +12407,6 @@
 			)
 		)
 	)
-	(label "TSL_3V3"
-		(at 40.64 81.28 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e1000001-0001-4000-8000-000000000001")
-	)
-	(label "TSL_3V3"
-		(at 111.76 76.2 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e1000001-0001-4000-8000-000000000002")
-	)
-	(label "TSL_3V3"
-		(at 139.7 76.2 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e1000001-0001-4000-8000-000000000003")
-	)
-	(label "TSL_3V3"
-		(at 180.34 68.58 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e1000001-0001-4000-8000-000000000004")
-	)
-	(label "TSL_GND"
-		(at 30.48 76.2 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e2000001-0001-4000-8000-000000000001")
-	)
-	(label "TSL_GND"
-		(at 111.76 91.44 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e2000001-0001-4000-8000-000000000002")
-	)
-	(label "TSL_GND"
-		(at 139.7 91.44 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e2000001-0001-4000-8000-000000000003")
-	)
-	(label "TSL_GND"
-		(at 180.34 99.06 0)
-		(effects (font (size 1.016 1.016)) (justify left bottom))
-		(uuid "e2000001-0001-4000-8000-000000000004")
-	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 40.64 81.28 0)
@@ -12380,16 +12420,60 @@
 		(uuid "e3000001-0001-4000-8000-000000000001")
 		(property "Reference" "#FLG4201"
 			(at 40.64 77.47 0)
-			(effects (font (size 1.27 1.27)))
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(property "Value" "PWR_FLAG"
 			(at 40.64 77.47 0)
-			(effects (font (size 1.27 1.27)))
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
-		(property "Footprint" "" (at 40.64 81.28 0) (hide yes) (show_name no) (do_not_autoplace no))
-		(property "Datasheet" "" (at 40.64 81.28 0) (hide yes) (show_name no) (do_not_autoplace no))
-		(property "Description" "" (at 40.64 81.28 0) (hide yes) (show_name no) (do_not_autoplace no))
-		(pin "1" (uuid "e3000001-0001-4000-8000-000000000002"))
+		(property "Footprint" ""
+			(at 40.64 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 40.64 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3000001-0001-4000-8000-000000000002")
+		)
 		(instances
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/70a5f7e9-c52e-4234-9093-1233f0587cec"
@@ -12412,16 +12496,60 @@
 		(uuid "e3000001-0001-4000-8000-000000000003")
 		(property "Reference" "#FLG4200"
 			(at 30.48 72.39 0)
-			(effects (font (size 1.27 1.27)))
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(property "Value" "PWR_FLAG"
 			(at 30.48 72.39 0)
-			(effects (font (size 1.27 1.27)))
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
-		(property "Footprint" "" (at 30.48 76.2 0) (hide yes) (show_name no) (do_not_autoplace no))
-		(property "Datasheet" "" (at 30.48 76.2 0) (hide yes) (show_name no) (do_not_autoplace no))
-		(property "Description" "" (at 30.48 76.2 0) (hide yes) (show_name no) (do_not_autoplace no))
-		(pin "1" (uuid "e3000001-0001-4000-8000-000000000004"))
+		(property "Footprint" ""
+			(at 30.48 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 30.48 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e3000001-0001-4000-8000-000000000004")
+		)
 		(instances
 			(project "pi5_corona_hv"
 				(path "/2cb9381c-6d13-4956-a4c3-b4bdd2869741/70a5f7e9-c52e-4234-9093-1233f0587cec"
